@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-d37040c82c7188a54921770ea6f3f2a61185a894.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/src/main/assets/libs/core-3.2.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e019d15a13a9786f881141d2df6654b8510bce8b">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/core-3.2.0-a50e4f88035e44c29a4964c00160855be952ecef.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-afbb6673194209cca2335dd55b6b555ebf54f4a1.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-6082bafb23691d1463e8cbec306bf9e247fe1ce6.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-b98c8694ed5704eaaf6488fda041f96a279e13eb.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-a8f8eff59a1a360cefaa0f9c6e684971996d76e2.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-943518b648451f2807e0f67e43d34ced876f8c00.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-e3a95a18543a2a77f7a03d823be9fa675725440f.jar" />
+    </item>
+    <item
+        jar="/ADT/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-32cbecbf114ccd643b9b9d0ffb17f7aadc7dba3a.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-4e1f3d187d6d67f1dda1c7d9e744dd20f1e2fa79.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-2fe016820c5c2d37971f3bf008a23948600e0e86.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-b6696305dc3ce4c2de2beaeaff7dde1de4562a85.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-c7ac3b98e0323e7ba9785723c6261264023d3772.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-f681b07efe149d7ed9ec2a3840560976a080f953.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-f01db8a1fb525e8f2d8b93f0a30c3f957ec50d96.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-98c564e9c260f1fa8c9406340099b4b573d1e75d.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-5964ac63b60dbc2845d0369bdc3307297c7981b3.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-4337eca3ae9f487d9e26355ecb1e838a7359e72d.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-e3e2be0c5084da677f774f163bb45ac26b45f705.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-6b5ebb3b1700f0d47947b513c015cb4c31bf2bcd.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-94c54644a12827341d7d73b177f5a41a9abad186.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-83bc5865685f8331bc162faf1cc8deee476d28df.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-5026aaa400b6a74a0ab8094ceecb00b0e7bcd8b4.jar" />
+    </item>
+    <item
+        jar="/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="/Workspace/Android/hostapp_v0.2/app/build/intermediates/pre-dexed/debug/classes-18187622854626d8467a4e3ef19f416f0c88e156.jar" />
+    </item>
+
+</items>

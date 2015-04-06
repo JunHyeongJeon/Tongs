@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-de/values.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Zur Startseite"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s: %2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s: %3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Nach oben"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Weitere Optionen"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Fertig"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Alle ansehen"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"App auswählen"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Suchanfrage löschen"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Suchanfrage"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Suchen"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Suchanfrage senden"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Sprachsuche"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Freigeben für"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Freigeben für %s"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-de/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Barcode Scanner</string>
+    <string name="app_picker_name">Anwendungen</string>
+    <string name="bookmark_picker_name">Lesezeichen</string>
+    <string name="button_add_calendar">Termin hinzufügen</string>
+    <string name="button_add_contact">Kontakt hinzufügen</string>
+    <string name="button_book_search">Büchersuche</string>
+    <string name="button_cancel">Abbruch</string>
+    <string name="button_custom_product_search">Benutzersuche</string>
+    <string name="button_dial">Nummer wählen</string>
+    <string name="button_email">E-Mail senden</string>
+    <string name="button_get_directions">Route berechnen</string>
+    <string name="button_mms">MMS senden</string>
+    <string name="button_ok">OK</string>
+    <string name="button_open_browser">Browser öffnen</string>
+    <string name="button_product_search">Produktsuche</string>
+    <string name="button_search_book_contents">Buchinhalt durchsuchen</string>
+    <string name="button_share_app">Anwendung</string>
+    <string name="button_share_bookmark">Lesezeichen</string>
+    <string name="button_share_by_email">Als E-Mail weitergeben</string>
+    <string name="button_share_by_sms">Als SMS weitergeben</string>
+    <string name="button_share_clipboard">Zwischenablage</string>
+    <string name="button_share_contact">Kontakt</string>
+    <string name="button_show_map">Karte anzeigen</string>
+    <string name="button_sms">SMS senden</string>
+    <string name="button_web_search">Im Web suchen</string>
+    <string name="button_wifi">Mit diesem WLAN verbinden</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-de/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"Für eine App ist die Aktualisierung der Android Wear App erforderlich."</string>
+    <string msgid="3046420540094071256" name="common_android_wear_update_text">"Diese App funktioniert erst nach der Aktualisierung der Android Wear App."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"Android Wear aktualisieren"</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"Google Play-Dienste aktivieren"</string>
+    <string msgid="7627896071867667758" name="common_google_play_services_enable_text">"Diese App funktioniert nur, wenn Sie die Google Play-Dienste aktivieren."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"Google Play-Dienste aktivieren"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"Angefordert von <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"Google Play-Dienste installieren"</string>
+    <string msgid="8685301130651051380" name="common_google_play_services_install_text_phone">"Zur Nutzung dieser App sind Google Play-Dienste erforderlich, die auf Ihrem Telefon nicht installiert sind."</string>
+    <string msgid="1589957570365247855" name="common_google_play_services_install_text_tablet">"Zur Nutzung dieser App sind Google Play-Dienste erforderlich, die auf Ihrem Tablet nicht installiert sind."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"Google Play-Dienste installieren"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"Das angegebene Konto ist auf diesem Gerät nicht vorhanden. Bitte wählen Sie ein anderes Konto aus."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"Ungültiges Konto"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"App erfordert die Aktivierung der Google Play-Dienste"</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"Um eine Verbindung zu den Google Play-Diensten herzustellen, ist eine Datenverbindung erforderlich."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"Netzwerkfehler"</string>
+    <string msgid="8120534356798772974" name="common_google_play_services_notification_needs_installation_title">"App erfordert die Installation der Google Play-Dienste"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"App erfordert ein Update der Google Play-Dienste"</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"Fehler bei Zugriff auf Google Play-Dienste"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"Fehler beim Anmelden im angegebenen Konto. Bitte wählen Sie ein anderes Konto aus."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"Anmeldung fehlgeschlagen"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"Unbekanntes Problem mit Google Play-Diensten"</string>
+    <string msgid="3542578567569488671" name="common_google_play_services_unsupported_text">"Google Play-Dienste, auf denen einige Ihrer Apps basieren, werden von diesem Gerät nicht unterstützt. Wenden Sie sich für weitere Informationen an den Hersteller."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"Google Play-Dienste"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"Aktualisieren"</string>
+    <string msgid="448354684997260580" name="common_google_play_services_update_text">"Diese App wird nur ausgeführt, wenn Sie die Google Play-Dienste aktualisieren."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"Google Play-Dienste aktualisieren"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"Auf Telefon öffnen"</string>
+    <string msgid="9071884888741449141" name="common_signin_button_text">"Anmelden"</string>
+    <string msgid="2429381841831957106" name="common_signin_button_text_long">"Über Google anmelden"</string>
+    <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"Diese App erfordert einen oder mehrere Google Play-Dienste, die derzeit nicht verfügbar sind. Bitte wenden Sie sich an den Entwickler, um Unterstützung zu erhalten."</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-de/strings.xml -->
+    <eat-comment/>
+    <string name="contents_contact">Kontaktinfo</string>
+    <string name="contents_email">E-Mail Adresse</string>
+    <string name="contents_location">Koordinaten</string>
+    <string name="contents_phone">Telefonnummer</string>
+    <string name="contents_sms">SMS Adresse</string>
+    <string name="contents_text">Text</string>
+    <string name="history_clear_one_history_text">Löschen</string>
+    <string name="history_clear_text">Verlauf löschen</string>
+    <string name="history_email_title">Barcode Scanner Verlauf</string>
+    <string name="history_empty">Leer</string>
+    <string name="history_empty_detail">Es wurden keine Barcodes aufgezeichnet.</string>
+    <string name="history_send">Verlauf senden</string>
+    <string name="history_title">Verlauf</string>
+    <string name="menu_encode_mecard">MECARD verwenden</string>
+    <string name="menu_encode_vcard">vCard verwenden</string>
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_history">Verlauf</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="menu_share">Senden</string>
+    <string name="msg_bulk_mode_scanned">Bulk-Modus: Barcode gescannt und gespeichert</string>
+    <string name="msg_camera_framework_bug">Mit der Android-Kamera ist leider ein Fehler aufgetreten. Es könnte sein, dass Sie das Gerät neu starten müssen.</string>
+    <string name="msg_default_format">Format</string>
+    <string name="msg_default_meta">Metadaten</string>
+    <string name="msg_default_mms_subject">Hi</string>
+    <string name="msg_default_status">Positionieren Sie den Barcode innerhalb des Rechteckes.</string>
+    <string name="msg_default_time">Zeit</string>
+    <string name="msg_default_type">Typ</string>
+    <string name="msg_encode_contents_failed">Aus den Daten kann kein Barcode erzeugt werden.</string>
+    <string name="msg_error">Fehler</string>
+    <string name="msg_google_books">Google</string>
+    <string name="msg_google_product">Google</string>
+    <string name="msg_intent_failed">Die gewünschte Applikation kann nicht geöffnet werden. Der Barcode könnte ungültig sein.</string>
+    <string name="msg_invalid_value">Ungültiger Wert</string>
+    <string name="msg_redirect">Umleiten</string>
+    <string name="msg_sbc_book_not_searchable">Dieses Buch kann nicht durchsucht werden.</string>
+    <string name="msg_sbc_failed">Bei der Suche ist ein Fehler aufgetreten.</string>
+    <string name="msg_sbc_no_page_returned">Keine Seite zurückgeliefert.</string>
+    <string name="msg_sbc_page">Seite</string>
+    <string name="msg_sbc_results">Ergebnisse</string>
+    <string name="msg_sbc_searching_book">Durchsuche Buch\u2026</string>
+    <string name="msg_sbc_snippet_unavailable">Textschnipsel nicht verfügbar.</string>
+    <string name="msg_share_explanation">Sie können Daten weitergeben, indem Sie einen Barcode auf Ihrem Bildschirm erzeugen und mit einem anderen Handy einscannen.</string>
+    <string name="msg_share_text">Oder geben Sie hier einen Text ein</string>
+    <string name="msg_sure">Sind Sie sicher?</string>
+    <string name="msg_unmount_usb">Leider kann nicht auf die SD-Karte zugegriffen werden.</string>
+    <string name="preferences_actions_title">Wenn ein Barcode erkannt wurde\u2026</string>
+    <string name="preferences_auto_focus_title">Autofokus verwenden</string>
+    <string name="preferences_auto_open_web_title">Öffnen Sie Webseiten automatisch</string>
+    <string name="preferences_bulk_mode_summary">Scannt und speichert mehrere Barcodes nacheinander</string>
+    <string name="preferences_bulk_mode_title">Massenscan</string>
+    <string name="preferences_copy_to_clipboard_title">In die Zwischenablage kopieren</string>
+    <string formatted="false" name="preferences_custom_product_search_summary">Platzhalter: %s = Inhalt, %f = Format, %t = Typ</string>
+    <string name="preferences_custom_product_search_title">Eigene Such-URL</string>
+    <string name="preferences_decode_1D_industrial_title">1D-Industrie</string>
+    <string name="preferences_decode_1D_product_title">1D-Produkt</string>
+    <string name="preferences_decode_Aztec_title">Aztec</string>
+    <string name="preferences_decode_Data_Matrix_title">Data Matrix</string>
+    <string name="preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="preferences_decode_QR_title">QR Codes</string>
+    <string name="preferences_device_bug_workarounds_title">Geräteabhängige Problemumgehung</string>
+    <string name="preferences_disable_barcode_scene_mode_title">Kein Barcode-Szene-Modus</string>
+    <string name="preferences_disable_continuous_focus_summary">Nur Standard-Fokus-Modus verwenden</string>
+    <string name="preferences_disable_continuous_focus_title">Kein kontinuierlicher Fokus</string>
+    <string name="preferences_disable_exposure_title">Keine Belichtungsmessung</string>
+    <string name="preferences_disable_metering_title">Keine Dosierung</string>
+    <string name="preferences_front_light_auto">Automatisch</string>
+    <string name="preferences_front_light_off">Aus</string>
+    <string name="preferences_front_light_on">Ein</string>
+    <string name="preferences_front_light_summary">Verbessert bei einigen Mobiltelefonen das Scannen bei schwachem Licht, kann aber Überbelichtung verursachen. Funktioniert nicht mit allen Handys.</string>
+    <string name="preferences_front_light_title">Foto LED einschalten</string>
+    <string name="preferences_general_title">Allgemeine Einstellungen</string>
+    <string name="preferences_history_summary">Speichern Sie Ihre Scans im Verlauf</string>
+    <string name="preferences_history_title">Speichern im Verlauf</string>
+    <string name="preferences_invert_scan_summary">Für weiße Barcodes auf schwarzem Hintergrund. Nicht bei allen Geräten verfügbar.</string>
+    <string name="preferences_invert_scan_title">Negativ-Scan</string>
+    <string name="preferences_name">Einstellungen</string>
+    <string name="preferences_orientation_title">Nicht automatisch drehen</string>
+    <string name="preferences_play_beep_title">Piepsen</string>
+    <string name="preferences_remember_duplicates_summary">Speichern mehrerer Scans des gleichen Barcodes im Verlauf</string>
+    <string name="preferences_remember_duplicates_title">Duplikate speichern</string>
+    <string name="preferences_result_title">Ergebnis-Einstellungen</string>
+    <string name="preferences_scanning_title">Beim Scannen von Barcodes, dekodieren\u2026</string>
+    <string name="preferences_search_country">Land für die Suche</string>
+    <string name="preferences_supplemental_summary">Erfahren Sie mehr über den Barcode</string>
+    <string name="preferences_supplemental_title">Weitere Informationen abrufen</string>
+    <string name="preferences_vibrate_title">Vibrieren</string>
+    <string name="result_address_book">Kontakt gefunden</string>
+    <string name="result_calendar">Termin gefunden</string>
+    <string name="result_email_address">E-Mail-Adresse gefunden</string>
+    <string name="result_geo">Koordinaten gefunden</string>
+    <string name="result_isbn">Buch gefunden</string>
+    <string name="result_product">Produkt gefunden</string>
+    <string name="result_sms">SMS-Adresse gefunden</string>
+    <string name="result_tel">Telefonnummer gefunden</string>
+    <string name="result_text">Text gefunden</string>
+    <string name="result_uri">URL gefunden</string>
+    <string name="result_wifi">WLAN-Konfiguration gefunden</string>
+    <string name="sbc_name">Google Book Search</string>
+    <string name="wifi_changing_network">Verbindung zum Netzwerk anfordern\u2026</string>
+</resources>

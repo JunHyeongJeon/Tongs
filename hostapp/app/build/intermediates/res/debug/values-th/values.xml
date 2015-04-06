@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-th/values.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"นำทางไปหน้าแรก"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s, %2$s, %3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"นำทางขึ้น"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"ตัวเลือกอื่น"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"เสร็จสิ้น"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"ดูทั้งหมด"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"เลือกแอป"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"ล้างข้อความค้นหา"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"ข้อความค้นหา"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"ค้นหา"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"ส่งข้อความค้นหา"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"ค้นหาด้วยเสียง"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"แชร์กับ"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"แชร์กับ %s"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"ยุบ"</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-th/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Barcode Scanner</string>
+    <string name="app_picker_name">แอพพลิเคชั่น</string>
+    <string name="bookmark_picker_name">บุ๊คมาร์ก</string>
+    <string name="button_add_calendar">เพิ่มไปยังปฏิทิน</string>
+    <string name="button_add_contact">เพิ่มผู้ติดต่อ</string>
+    <string name="button_book_search">ค้นหาหนังสือ</string>
+    <string name="button_cancel">ยกเลิก</string>
+    <string name="button_custom_product_search">ค้นหาแบบกำหนดเอง</string>
+    <string name="button_dial">เรียกเลขหมาย</string>
+    <string name="button_email">ส่งอีเมล</string>
+    <string name="button_get_directions">รับข้อมูลเส้นทาง</string>
+    <string name="button_mms">ส่ง MMS</string>
+    <string name="button_ok">ตกลง</string>
+    <string name="button_open_browser">เปิดเบราว์เซอร์</string>
+    <string name="button_product_search">ค้นหาสินค้า</string>
+    <string name="button_search_book_contents">ค้นหาเนื้อหา</string>
+    <string name="button_share_app">แอพพลิเคชั่น</string>
+    <string name="button_share_bookmark">บุ๊คมาร์ก</string>
+    <string name="button_share_by_email">แบ่งปันผ่านอีเมล</string>
+    <string name="button_share_by_sms">แบ่งปันผ่าน SMS</string>
+    <string name="button_share_clipboard">คลิปบอร์ด</string>
+    <string name="button_share_contact">ผู้ติดต่อ</string>
+    <string name="button_show_map">แสดงแผนที่</string>
+    <string name="button_sms">ส่ง SMS</string>
+    <string name="button_web_search">ค้นหาเว็บ</string>
+    <string name="button_wifi">เชื่อมต่อกับเครือข่าย</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-th/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"แอปพลิเคชันรายการหนึ่งต้องการให้อัปเดตแอป Android Wear"</string>
+    <string msgid="3046420540094071256" name="common_android_wear_update_text">"แอปนี้จะไม่ทำงานจนกว่าคุณจะอัปเดตแอป Android Wear"</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"อัปเดต Android Wear"</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"เปิดใช้งานบริการ Google Play"</string>
+    <string msgid="7627896071867667758" name="common_google_play_services_enable_text">"แอปพลิเคชันนี้จะไม่ทำงานจนกว่าคุณจะเปิดใช้งานบริการ Google Play"</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"เปิดใช้งานบริการ Google Play"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"ขอโดย <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"รับบริการ Google Play"</string>
+    <string msgid="8685301130651051380" name="common_google_play_services_install_text_phone">"แอปพลิเคชันนี้จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งไม่มีในโทรศัพท์ของคุณ"</string>
+    <string msgid="1589957570365247855" name="common_google_play_services_install_text_tablet">"แอปพลิเคชันนี้จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งไม่มีในแท็บเล็ตของคุณ"</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"รับบริการ Google Play"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"บัญชีที่ระบุไม่มีอยู่บนอุปกรณ์นี้ โปรดเลือกบัญชีอื่น"</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"บัญชีไม่ถูกต้อง"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"แอปพลิเคชันหนึ่งจำเป็นต้องมีบริการ Google Play เพื่อเปิดใช้งาน"</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"ต้องมีการเขื่อมต่อข้อมูลเพื่อเชื่อมต่อกับบริการ Google Play"</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"ข้อผิดพลาดของเครือข่าย"</string>
+    <string msgid="8120534356798772974" name="common_google_play_services_notification_needs_installation_title">"แอปพลิเคชันหนึ่งจำเป็นต้องมีการติดตั้งบริการ Google Play"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"แอปพลิเคชันหนึ่งจำเป็นต้องมีการอัปเดตสำหรับบริการ Google Play"</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"ข้อผิดพลาดของบริการ Google Play"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"เกิดข้อผิดพลาดในการลงชื่อเข้าใช้บัญชีที่ระบุ โปรดเลือกบัญชีอื่น"</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"การลงชื่อเข้าใช้ล้มเหลว"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"ปัญหาที่ไม่รู้จักของบริการ Google Play"</string>
+    <string msgid="3542578567569488671" name="common_google_play_services_unsupported_text">"บริการ Google Play ซึ่งใช้งานในบางแอปพลิเคชัน ไม่ได้รับการสนับสนุนโดยอุปกรณ์ของคุณ โปรดติดต่อผู้ผลิตเพื่อขอรับความช่วยเหลือ"</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"บริการ Google Play"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"อัปเดต"</string>
+    <string msgid="448354684997260580" name="common_google_play_services_update_text">"แอปพลิเคชันนี้จะไม่ทำงานจนกว่าคุณจะอัปเดตบริการ Google Play"</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"อัปเดตบริการ Google Play"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"เปิดบนโทรศัพท์"</string>
+    <string msgid="9071884888741449141" name="common_signin_button_text">"ลงชื่อใช้"</string>
+    <string msgid="2429381841831957106" name="common_signin_button_text_long">"ลงชื่อเข้าใช้ด้วย Google"</string>
+    <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"แอปนี้ต้องใช้บริการ Google Play อย่างน้อย 1 บริการ ซึ่งไม่พร้อมใช้งานในปัจจุบัน โปรดติดต่อนักพัฒนาซอฟต์แวร์เพื่อขอความช่วยเหลือ"</string>
+    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-th/strings.xml -->
+    <eat-comment/>
+    <string name="contents_contact">ข้อมูลผู้ติดต่อ</string>
+    <string name="contents_email">ที่อยู่อีเมล</string>
+    <string name="contents_location">พิกัดทางภูมิศาสตร์</string>
+    <string name="contents_phone">เบอร์โทรศัพท์</string>
+    <string name="contents_sms">ที่อยู่ SMS</string>
+    <string name="contents_text">ข้อความธรรมดา</string>
+    <string name="history_clear_one_history_text">ล้าง</string>
+    <string name="history_clear_text">ล้างประวัติ</string>
+    <string name="history_email_title">ประวัติ Barcode Scanner</string>
+    <string name="history_empty">ว่าง</string>
+    <string name="history_empty_detail">ไม่มีบาร์โค้ดที่ถูกบันทึกไว้</string>
+    <string name="history_send">ส่งประวัติ</string>
+    <string name="history_title">ประวัติ</string>
+    <string name="menu_encode_mecard">ใช้ MECARD</string>
+    <string name="menu_encode_vcard">ใช้ vCard</string>
+    <string name="menu_help">ช่วยเหลือ</string>
+    <string name="menu_history">ประวัติ</string>
+    <string name="menu_settings">การตั้งค่า</string>
+    <string name="menu_share">แบ่งปัน</string>
+    <string name="msg_bulk_mode_scanned">โหมดเป็นกลุ่ม: บาร์โค้ดที่สแกนและบันทึกไว้</string>
+    <string name="msg_camera_framework_bug">ขออภัย พบปัญหาของกล้อง Android คุณอาจจะต้องรีสตาร์ทอุปกรณ์</string>
+    <string name="msg_default_format">รูปแบบ</string>
+    <string name="msg_default_meta">ข้อมูลเมตา</string>
+    <string name="msg_default_mms_subject">สวัสดี</string>
+    <string name="msg_default_status">วางบาร์โค้ดภายในสี่เหลี่ยมผืนผ้าที่ช่องมองภาพเพื่อสแกน</string>
+    <string name="msg_default_time">เวลา</string>
+    <string name="msg_default_type">ชนิด</string>
+    <string name="msg_encode_contents_failed">ไม่สามารถเข้ารหัสบาร์โค้ดจากข้อมูลที่มี</string>
+    <string name="msg_error">ข้อผิดพลาด</string>
+    <string name="msg_google_books">Google</string>
+    <string name="msg_google_product">Google</string>
+    <string name="msg_intent_failed">ขออภัย แอพพลิเคชั่นที่ร้องขอไม่สามารถเปิดใช้ได้ เนื้อหาบาร์โค้ดอาจจะไม่ถูกต้อง</string>
+    <string name="msg_invalid_value">ค่าไม่ถูกต้อง</string>
+    <string name="msg_redirect">เปลี่ยนเส้นทาง</string>
+    <string name="msg_sbc_book_not_searchable">ขออภัย ไม่สามารถค้นหาหนังสือเล่มนี้ได้</string>
+    <string name="msg_sbc_failed">ขออภัย พบปัญหาในการค้นหา</string>
+    <string name="msg_sbc_no_page_returned">ไม่มีหน้าที่ส่งกลับมา</string>
+    <string name="msg_sbc_page">หน้า</string>
+    <string name="msg_sbc_results">ผลลัพธ์</string>
+    <string name="msg_sbc_searching_book">กำลังค้นหาหนังสือ\u2026</string>
+    <string name="msg_sbc_snippet_unavailable">ส่วนย่อยไม่สามารถใช้ได้</string>
+    <string name="msg_share_explanation">คุณสามารถแบ่งปันข้อมูลโดยการแสดงบาร์โค้ดบนหน้าจอของคุณและสแกนด้วยโทรศัพท์อื่น</string>
+    <string name="msg_share_text">หรือพิมพ์ข้อความบางอย่างและกด Enter</string>
+    <string name="msg_sure">คุณแน่ใจหรือไม่?</string>
+    <string name="msg_unmount_usb">ขออภัย ไม่สามารถเข้าถึง SD การ์ดได้</string>
+    <string name="preferences_actions_title">เมื่อพบบาร์โค้ด\u2026</string>
+    <string name="preferences_auto_focus_title">ใช้ระบบโฟกัสอัตโนมัติ</string>
+    <string name="preferences_auto_open_web_title">เปิดหน้าเว็บโดยอัตโนมัติ</string>
+    <string name="preferences_bulk_mode_summary">สแกนและบันทึกบาร์โค้ดเป็นจำนวนมากอย่างต่อเนื่อง</string>
+    <string name="preferences_bulk_mode_title">โหมดการสแกนเป็นกลุ่ม</string>
+    <string name="preferences_copy_to_clipboard_title">คัดลอกไปยังคลิปบอร์ด</string>
+    <string formatted="false" name="preferences_custom_product_search_summary">การแทนที่: %s = เนื้อหา, %f = รูปแบบ, %t = ชนิด</string>
+    <string name="preferences_custom_product_search_title">ค้นหาตาม URL ที่กำหนดเอง</string>
+    <string name="preferences_decode_1D_industrial_title">1D อุตสาหกรรม</string>
+    <string name="preferences_decode_1D_product_title">1D สินค้า</string>
+    <string name="preferences_decode_Aztec_title">แอซเท็ก</string>
+    <string name="preferences_decode_Data_Matrix_title">ข้อมูลเมทริกซ์</string>
+    <string name="preferences_decode_PDF417_title">PDF417 (β)</string>
+    <string name="preferences_decode_QR_title">คิวอาร์โค้ด</string>
+    <string name="preferences_device_bug_workarounds_title">วิธีการแก้ปัญหาจุดบกพร่องของอุปกรณ์</string>
+    <string name="preferences_disable_barcode_scene_mode_title">ไม่มีโหมดฉากบาร์โค้ด</string>
+    <string name="preferences_disable_continuous_focus_summary">ใช้โหมดโฟกัสมาตรฐานเท่านั้น</string>
+    <string name="preferences_disable_continuous_focus_title">ไม่มีการโฟกัสอย่างต่อเนื่อง</string>
+    <string name="preferences_disable_exposure_title">ไม่มีการการเปิดรับแสง</string>
+    <string name="preferences_disable_metering_title">ไม่มีการวัดแสง</string>
+    <string name="preferences_front_light_auto">อัตโนมัติ</string>
+    <string name="preferences_front_light_off">ปิด</string>
+    <string name="preferences_front_light_on">เปิด</string>
+    <string name="preferences_front_light_summary">ปรับปรุงการสแกนในที่มีแสงน้อยบนโทรศัพท์บางรุ่น แต่อาจก่อให้เกิดแสงจ้า ไม่ได้ทำงานบนโทรศัพท์ทุกรุ่น</string>
+    <string name="preferences_front_light_title">ใช้แฟลช</string>
+    <string name="preferences_general_title">การตั้งค่าทั่วไป</string>
+    <string name="preferences_history_summary">เก็บภาพสแกนในประวัติศาสตร์</string>
+    <string name="preferences_history_title">เพิ่มลงในประวัติศาสตร์</string>
+    <string name="preferences_invert_scan_summary">สแกนบาร์โค้ดสีขาวบนพื้นหลังสีดำ ไม่สามารถใช้ได้บนบางอุปกรณ์</string>
+    <string name="preferences_invert_scan_title">สลับการสแกน</string>
+    <string name="preferences_name">การตั้งค่า</string>
+    <string name="preferences_orientation_title">ไม่มีการหมุนอัตโนมัติ</string>
+    <string name="preferences_play_beep_title">เสียงเตือน</string>
+    <string name="preferences_remember_duplicates_summary">จัดเก็บการสแกนบาร์โค้ดที่เหมือนกันหลายครั้งในประวัติ</string>
+    <string name="preferences_remember_duplicates_title">จดจำรายการที่ซ้ำกัน</string>
+    <string name="preferences_result_title">ผลการตั้งค่า</string>
+    <string name="preferences_scanning_title">เมื่อสแกนหาบาร์โค้ด, ถอดรหัส\u2026</string>
+    <string name="preferences_search_country">ประเทศที่ค้นหา</string>
+    <string name="preferences_supplemental_summary">พยายามที่จะเรียกข้อมูลเพิ่มเติมเกี่ยวกับเนื้อหาของบาร์โค้ด</string>
+    <string name="preferences_supplemental_title">เรียกข้อมูลเพิ่มเติม</string>
+    <string name="preferences_vibrate_title">การสั่น</string>
+    <string name="result_address_book">พบข้อมูลผู้ติดต่อ</string>
+    <string name="result_calendar">พบเหตุการณ์ในปฏิทิน</string>
+    <string name="result_email_address">พบที่อยู่อีเมล</string>
+    <string name="result_geo">พบพิกัดทางภูมิศาสตร์</string>
+    <string name="result_isbn">พบหนังสือ</string>
+    <string name="result_product">พบสินค้า</string>
+    <string name="result_sms">พบที่อยู่ SMS</string>
+    <string name="result_tel">พบเบอร์โทรศัพท์</string>
+    <string name="result_text">พบข้อความธรรมดา</string>
+    <string name="result_uri">พบ URL</string>
+    <string name="result_wifi">พบการกำหนดค่า WLAN</string>
+    <string name="sbc_name">ค้นหาหนังสือจาก Google</string>
+    <string name="wifi_changing_network">กำลังร้องขอการเชื่อมต่อกับเครือข่าย\u2026</string>
+</resources>
