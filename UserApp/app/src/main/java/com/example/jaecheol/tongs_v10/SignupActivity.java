@@ -32,6 +32,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 
 /**
@@ -179,50 +181,65 @@ public class SignupActivity extends ActionBarActivity
 
             case R.id.id_startButton:
 
-                JSONObject obj = new JSONObject();
+                JSONObject json = new JSONObject();
                 try {
-                    obj.put("mobile_number", number);
-                    obj.put("sex", sex);
-                    obj.put("birthdate", birthdate);
-                    obj.put("auth_token", authToken);
+                    json.put("mobile_number", number);
+                    json.put("sex", sex);
+                    json.put("birthdate", birthdate);
+                    json.put("auth_token", authToken);
 
-                } catch (JSONException e) {
-                }
-                String json = obj.toString();
+                    String jsonUrl = URLEncoder.encode(json.toString(), "UTF-8");
+                    Log.d("Hello", "encode " + jsonUrl);
 
-                String jsonObj = NetworkActivity.sendJsonDataToServer(1, 0, json,
-                        "http://tongs.kr/user/join");
-                String[][] result = NetworkActivity.jsonParserList(jsonObj);
+                    String str = URLDecoder.decode(jsonUrl, "UTF-8");
+                    Log.d("Hello", "decode " + jsonUrl);
 
-                if (result == null) {
-                    Toast toast2 = Toast.makeText(getApplicationContext(),
-                            "서버에서 응답이 없습니다.", Toast.LENGTH_SHORT);
-                    toast2.show();
-                } else {
 
-                    if (result[0][1] == "success") {
-                        Toast toast2 = Toast.makeText(getApplicationContext(),
-                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
-                        toast2.show();
+                    state = 3;
+                    String url = getText(R.string.Server_URL)
+                            + "user/join"
+                            + "?token=" + authToken
+                            + "&data=" + jsonUrl;
 
-                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                        SharedPreferences.Editor editor = mPref.edit();
-                        editor.putString("auth_token", authToken);
-                        editor.putString("birth_date", birthdate);
-                        editor.putString("number", number);
-                        editor.putString("sex", sex);
-                        editor.commit();
+                    new HttpTask().execute(url);
 
-                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                        intent.putExtra("authToken", authToken);
-                        startActivity(intent);
-                        this.finish();
-                    } else {
-                        Toast toast2 = Toast.makeText(getApplicationContext(),
-                                "로그인에 실패하셨습니다. (" + result[1][1] + ")", Toast.LENGTH_SHORT);
-                        toast2.show();
-                    }
-                }
+                } catch (Exception e)   { }
+
+
+
+//                String jsonObj = NetworkActivity.sendJsonDataToServer(1, 0, json,
+//                        "http://tongs.kr/user/join");
+//                String[][] result = NetworkActivity.jsonParserList(jsonObj);
+
+//                if (result == null) {
+//                    Toast toast2 = Toast.makeText(getApplicationContext(),
+//                            "서버에서 응답이 없습니다.", Toast.LENGTH_SHORT);
+//                    toast2.show();
+//                } else {
+//
+//                    if (result[0][1] == "success") {
+//                        Toast toast2 = Toast.makeText(getApplicationContext(),
+//                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
+//                        toast2.show();
+//
+//                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//                        SharedPreferences.Editor editor = mPref.edit();
+//                        editor.putString("auth_token", authToken);
+//                        editor.putString("birth_date", birthdate);
+//                        editor.putString("number", number);
+//                        editor.putString("sex", sex);
+//                        editor.commit();
+//
+//                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+//                        intent.putExtra("authToken", authToken);
+//                        startActivity(intent);
+//                        this.finish();
+//                    } else {
+//                        Toast toast2 = Toast.makeText(getApplicationContext(),
+//                                "로그인에 실패하셨습니다. (" + result[1][1] + ")", Toast.LENGTH_SHORT);
+//                        toast2.show();
+//                    }
+//                }
                 break;
         }
     }
@@ -314,35 +331,54 @@ public class SignupActivity extends ActionBarActivity
                 JSONObject json = new JSONObject(result);
                 Log.d("Hello", json.get("result_code").toString());
                 int resultCode = Integer.parseInt(json.get("result_code").toString());
-
-                Log.d("Hello", String.valueOf(resultCode));
-                Log.d("Hello", String.valueOf(json.get("result_msg").toString()));
                 if( resultCode == -1 )  {
                     return;
                 }
 
                 switch( state ) {
                     case 1 :
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                number + "로 전송된 인증번호를 입력하세요", Toast.LENGTH_SHORT);
+                        toast.show();
+
                         tooltip.setText("인증 번호");
                         editText.setText(null);
                         editText.setHint("인증 번호");
                         certificButton.setText("확인");
-
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                number + "로 전송된 인증번호를 입력하세요", Toast.LENGTH_SHORT);
-                        toast.show();
                         break;
 
                     case 2 :
+                        Toast toast2 = Toast.makeText(getApplicationContext(),
+                                "인증에 성공하셨습니다. 추가 정보를 입력하세요.", Toast.LENGTH_LONG);
+                        toast2.show();
+
                         infoLayout.setVisibility(LinearLayout.VISIBLE);
                         certificButton.setEnabled(false);
                         certificButton.setTextColor(getResources().getColor(android.R.color.tertiary_text_light));
                         certificButton.setBackgroundColor(getResources().getColor(android.R.color.background_light));
                         editText.setEnabled(false);
 
-                        Toast toast2 = Toast.makeText(getApplicationContext(),
-                                "인증에 성공하셨습니다. 추가 정보를 입력하세요.", Toast.LENGTH_LONG);
-                        toast2.show();
+                        authToken = json.get("token").toString();
+
+                        uid = Integer.parseInt(json.get("uid").toString());
+                        break;
+
+                    case 3 :
+                        Toast toast3 = Toast.makeText(getApplicationContext(),
+                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
+                        toast3.show();
+
+                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        SharedPreferences.Editor editor = mPref.edit();
+                        editor.putString("auth_token", authToken);
+                        editor.putString("birth_date", birthdate);
+                        editor.putString("number", number);
+                        editor.putString("sex", sex);
+                        editor.commit();
+
+                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                        intent.putExtra("authToken", authToken);
+                        startActivity(intent);
                         break;
                 }
 

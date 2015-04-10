@@ -1,7 +1,9 @@
 package com.example.jaecheol.tongs_v10;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +18,8 @@ public class IntroActivity extends ActionBarActivity
 
     Button startButton;
 
+    String authToken;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,7 @@ public class IntroActivity extends ActionBarActivity
         startButton = (Button)findViewById(R.id.id_startButton);
         startButton.setOnClickListener(this);
 
+        autoLoginCheck();
     }
 
     public void onClick(View v) {
@@ -33,6 +38,19 @@ public class IntroActivity extends ActionBarActivity
                 startActivity(intent);
                 this.finish();
                 break;
+        }
+    }
+
+    private void autoLoginCheck()
+    {
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        authToken = mPref.getString("auth_token", null);
+
+        if( authToken != null ) {
+            Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+            intent.putExtra("auth_token", authToken);
+            startActivity(intent);
+            this.finish();
         }
     }
 

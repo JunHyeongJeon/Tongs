@@ -1,5 +1,6 @@
 package com.example.jaecheol.tongs_v10;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -77,8 +78,8 @@ public class MainActivity extends ActionBarActivity
 
 
 
-//        Intent intent = this.getIntent();
-//        authToken = intent.getStringExtra("authToken");
+        Intent intent = this.getIntent();
+        authToken = intent.getStringExtra("auth_token");
 
         Toast toast = Toast.makeText(getApplicationContext(),
                             "메인 액티비티 입니다.", Toast.LENGTH_SHORT);
