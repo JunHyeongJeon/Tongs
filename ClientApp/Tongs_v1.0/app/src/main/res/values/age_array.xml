@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="selected_age">
+        <item>10대</item>
+        <item>20대</item>
+        <item>30대</item>
+        <item>40대</item>
+        <item>50대 이상</item>
+    </string-array>
+</resources>

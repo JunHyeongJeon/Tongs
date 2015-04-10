@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tongs_User</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Server_URL">http://tongs.kr</string>
+</resources>
