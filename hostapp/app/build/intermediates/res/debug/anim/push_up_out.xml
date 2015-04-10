@@ -18,4 +18,4 @@
 	<translate android:fromYDelta="0" android:toYDelta="-100%p" android:duration="300"/>
 	<alpha android:fromAlpha="1.0" android:toAlpha="0.0" android:duration="300" />
 </set>
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/push_up_out.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/push_up_out.xml -->

@@ -15,4 +15,4 @@
 -->
 
 <alpha xmlns:android="http://schemas.android.com/apk/res/android" android:fromAlpha="0.0" android:toAlpha="1.0" android:duration="300" android:startOffset="1200" />
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/hyperspace_in.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/hyperspace_in.xml -->

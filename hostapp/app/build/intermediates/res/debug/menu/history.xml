@@ -25,4 +25,4 @@
         android:icon="@android:drawable/ic_menu_delete"
         android:orderInCategory="2"
         android:showAsAction="withText|ifRoom"/>
-</menu><!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/menu/history.xml -->
+</menu><!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/menu/history.xml -->

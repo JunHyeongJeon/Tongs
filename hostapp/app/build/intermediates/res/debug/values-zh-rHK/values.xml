@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-zh-rHK/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-zh-rHK/values.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"瀏覽主頁"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s：%2$s"</string>
@@ -18,7 +18,7 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"分享對象"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"與「%s」分享"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"收合"</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-zh-rHK/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-zh-rHK/strings.xml -->
     <eat-comment/>
     <string name="app_name">條碼掃描器</string>
     <string name="app_picker_name">應用程式</string>
@@ -46,7 +46,7 @@
     <string name="button_sms">發送簡訊</string>
     <string name="button_web_search">網頁搜尋</string>
     <string name="button_wifi">連接網路</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-zh-rHK/common_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-zh-rHK/common_strings.xml -->
     <eat-comment/>
     <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"有一個應用程式要求更新 Android Wear 應用程式。"</string>
     <string msgid="3046420540094071256" name="common_android_wear_update_text">"您必須更新 Android Wear 應用程式，這個應用程式才能運作。"</string>
@@ -79,7 +79,7 @@
     <string msgid="9071884888741449141" name="common_signin_button_text">"登入"</string>
     <string msgid="2429381841831957106" name="common_signin_button_text_long">"登入 Google"</string>
     <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"此應用程式需要一個或多個目前尚未支援的 Google Play 服務。請聯絡開發商尋求協助。"</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-zh-rHK/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-zh-rHK/strings.xml -->
     <eat-comment/>
     <string name="contents_contact">聯絡人資訊</string>
     <string name="contents_email">電子郵件地址</string>

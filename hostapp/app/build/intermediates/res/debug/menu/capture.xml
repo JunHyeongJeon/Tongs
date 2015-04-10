@@ -35,4 +35,4 @@
         android:icon="@android:drawable/ic_menu_help"
         android:orderInCategory="4"
         android:showAsAction="withText"/>
-</menu><!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/menu/capture.xml -->
+</menu><!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/menu/capture.xml -->

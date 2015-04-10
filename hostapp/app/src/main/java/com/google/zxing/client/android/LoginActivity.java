@@ -1,13 +1,12 @@
 package com.google.zxing.client.android;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.app.Notification;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
-import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -16,8 +15,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,9 +27,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +34,7 @@ import java.util.List;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
+public class LoginActivity extends ActionBarActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -63,7 +59,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -87,16 +82,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 attemptLogin();
             }
         });
-        //button control
-
-        Button mEmailSignUpButton = (Button) findViewById(R.id.sign_up);
-        mEmailSignUpButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attemptSignUp();
-            }
-        });
-
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -124,14 +109,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
-
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("id",email);
-            obj.put("password",password);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         boolean cancel = false;
         View focusView = null;
@@ -164,15 +141,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             // perform the user login attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute( (Void) null);
+            mAuthTask.execute((Void) null);
         }
-    }
-
-    public void attemptSignUp(){
-
-        Log.v("1", "test");
-
-
     }
 
     private boolean isEmailValid(String email) {
@@ -291,7 +261,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO:attempt authentication against a network service.
+            // TODO: attempt authentication against a network service.
 
             try {
                 // Simulate network access.
@@ -313,15 +283,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         }
 
         @Override
-        protected void onPostExecute(Boolean success) {
-
-
+        protected void onPostExecute(final Boolean success) {
             mAuthTask = null;
             showProgress(false);
 
             if (success) {
                 finish();
-                gotoMainActivity();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
@@ -333,11 +300,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             mAuthTask = null;
             showProgress(false);
         }
-    }
-    public void gotoMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
 }
 

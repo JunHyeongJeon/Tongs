@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-fi/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-fi/values.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Siirry etusivulle"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s, %2$s"</string>
@@ -18,7 +18,7 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Jakaminen:"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Jakaminen: %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Kutista"</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-fi/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-fi/strings.xml -->
     <eat-comment/>
     <string name="app_name">Barcode Scanner</string>
     <string name="app_picker_name">Ohjelmat</string>
@@ -46,7 +46,7 @@
     <string name="button_sms">Lähetä tekstiviesti</string>
     <string name="button_web_search">Haku netistä</string>
     <string name="button_wifi">Yhdistä verkkoon</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-fi/common_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-fi/common_strings.xml -->
     <eat-comment/>
     <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"Android Wear -sovellus täytyy päivittää toisen sovelluksen takia."</string>
     <string msgid="3046420540094071256" name="common_android_wear_update_text">"Tämä sovellus ei toimi, ellet päivitä Android Wear -sovellusta."</string>
@@ -79,7 +79,7 @@
     <string msgid="9071884888741449141" name="common_signin_button_text">"Kirjaudu"</string>
     <string msgid="2429381841831957106" name="common_signin_button_text_long">"Kirjaudu Google-tiliin"</string>
     <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"Sovellus tarvitsee yhtä tai useampaa Google Play -palvelua, jotka eivät ole saatavilla tällä hetkellä. Voit pyytää lisätietoja kehittäjältä."</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-fi/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-fi/strings.xml -->
     <eat-comment/>
     <string name="contents_contact">Yhteystiedot</string>
     <string name="contents_email">Sähköpostiosoite</string>

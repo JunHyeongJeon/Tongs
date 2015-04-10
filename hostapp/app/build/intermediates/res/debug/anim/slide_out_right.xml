@@ -28,4 +28,4 @@
         android:fromAlpha="1.0"
         android:toAlpha="0.0"
         android:duration="300" />
-</set><!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/slide_out_right.xml -->
+</set><!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/slide_out_right.xml -->

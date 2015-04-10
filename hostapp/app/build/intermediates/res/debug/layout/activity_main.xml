@@ -17,4 +17,4 @@ tools:context="com.tongs.hostapp.LoginActivity">
         android:id="@+id/button_client"/>
 
 </LinearLayout>
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/layout/activity_main.xml -->

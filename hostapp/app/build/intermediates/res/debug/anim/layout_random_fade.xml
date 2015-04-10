@@ -18,4 +18,4 @@
         android:delay="0.5"
         android:animationOrder="random"
         android:animation="@anim/fade" />
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/layout_random_fade.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/layout_random_fade.xml -->

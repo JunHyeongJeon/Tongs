@@ -31,4 +31,4 @@
     <alpha android:fromAlpha="1.0" android:toAlpha="0"
             android:duration="@android:integer/config_mediumAnimTime"/>
 </set>
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/zoom_exit.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/zoom_exit.xml -->

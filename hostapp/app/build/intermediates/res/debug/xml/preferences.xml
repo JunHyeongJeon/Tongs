@@ -133,4 +133,4 @@
         android:title="@string/preferences_disable_barcode_scene_mode_title"/>
   </PreferenceCategory>
 </PreferenceScreen>
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/xml/preferences.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/xml/preferences.xml -->

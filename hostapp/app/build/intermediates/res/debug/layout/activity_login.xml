@@ -1,9 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical"
+    android:layout_height="match_parent" android:gravity="center_horizontal"
     android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin"
-
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -17,12 +15,8 @@
     <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <LinearLayout android:id="@+id/email_login_form"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+        <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
 
             <AutoCompleteTextView android:id="@+id/email" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:hint="@string/prompt_email"
@@ -38,40 +32,8 @@
 
             <Button android:id="@+id/email_sign_in_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" android:text="@string/action_sign_in_short"
-                android:textStyle="bold"
-                />
-            <CheckBox
-                android:id="@+id/passwordsave"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginTop="16dp" android:text="@string/action_passwordsave"/>
-
-
-            <LinearLayout android:id="@+id/idpasswordfindform"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/find_id" style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" android:text="@string/action_find_id"
-                    />
-                <Button
-                    android:id="@+id/find_password" style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" android:text="@string/action_find_password"
-                    />
-                <Button
-                    android:id="@+id/sign_up" style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp" android:text="@string/action_sign_up"
-                    />
-
-            </LinearLayout>
+                android:layout_marginTop="16dp" android:text="@string/action_sign_in"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
@@ -80,4 +42,4 @@
 
 
 
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/layout/activity_login.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/layout/activity_login.xml -->

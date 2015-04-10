@@ -73,6 +73,9 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
 
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
     <android:uses-permission android:name="android.permission.READ_CALL_LOG" />
 
     <application
@@ -226,10 +229,6 @@
         <activity
             android:name="com.google.zxing.client.android.MainActivity"
             android:label="@string/title_activity_main" >
-        </activity>
-        <activity
-            android:name="com.google.zxing.client.android.MainActivity2"
-            android:label="@string/title_activity_main_activity2" >
         </activity>
     </application>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-de/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values-de/values.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Zur Startseite"</string>
     <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s: %2$s"</string>
@@ -18,7 +18,7 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Freigeben für"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Freigeben für %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Minimieren"</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-de/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-de/strings.xml -->
     <eat-comment/>
     <string name="app_name">Barcode Scanner</string>
     <string name="app_picker_name">Anwendungen</string>
@@ -46,7 +46,7 @@
     <string name="button_sms">SMS senden</string>
     <string name="button_web_search">Im Web suchen</string>
     <string name="button_wifi">Mit diesem WLAN verbinden</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-de/common_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values-de/common_strings.xml -->
     <eat-comment/>
     <string msgid="473679118463211576" name="common_android_wear_notification_needs_update_text">"Für eine App ist die Aktualisierung der Android Wear App erforderlich."</string>
     <string msgid="3046420540094071256" name="common_android_wear_update_text">"Diese App funktioniert erst nach der Aktualisierung der Android Wear App."</string>
@@ -79,7 +79,7 @@
     <string msgid="9071884888741449141" name="common_signin_button_text">"Anmelden"</string>
     <string msgid="2429381841831957106" name="common_signin_button_text_long">"Über Google anmelden"</string>
     <string msgid="5000919058582214855" name="commono_google_play_services_api_unavailable_text">"Diese App erfordert einen oder mehrere Google Play-Dienste, die derzeit nicht verfügbar sind. Bitte wenden Sie sich an den Entwickler, um Unterstützung zu erhalten."</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values-de/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values-de/strings.xml -->
     <eat-comment/>
     <string name="contents_contact">Kontaktinfo</string>
     <string name="contents_email">E-Mail Adresse</string>

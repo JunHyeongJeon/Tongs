@@ -17,6 +17,8 @@ ADDED from AndroidManifest.xml:17:1
 		ADDED from AndroidManifest.xml:19:5
 uses-sdk
 ADDED from AndroidManifest.xml:23:5
+MERGED from com.android.support:appcompat-v7:22.0.0:20:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
 MERGED from com.google.android.gms:play-services:7.0.0:18:5
 MERGED from com.google.android.gms:play-services-ads:7.0.0:18:5
 MERGED from com.google.android.gms:play-services-base:7.0.0:18:5
@@ -95,8 +97,19 @@ MERGED from com.android.support:support-v4:22.0.0:20:5
 MERGED from com.google.android.gms:play-services-wearable:7.0.0:18:5
 MERGED from com.google.android.gms:play-services-base:7.0.0:18:5
 MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.android.support:cardview-v7:22.0.0:20:5
+MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:2:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from fr.baloomba:viewpagerindicator:2.4.2:7:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from tk.zielony:carbon:0.7.2:8:5
 MERGED from com.android.support:appcompat-v7:22.0.0:20:5
 MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.android.support:gridlayout-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.0.0:20:5
+MERGED from com.joooonho:selectableroundedimageview:1.0.1:7:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:25:9
 		INJECTED from AndroidManifest.xml:0:0
@@ -207,12 +220,20 @@ android:uses-permission#android.permission.READ_PHONE_STATE
 ADDED from AndroidManifest.xml:75:5
 	android:name
 		ADDED from AndroidManifest.xml:75:30
-android:uses-permission#android.permission.READ_CALL_LOG
+android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from AndroidManifest.xml:76:5
+	android:maxSdkVersion
+		ADDED from AndroidManifest.xml:78:9
 	android:name
-		ADDED from AndroidManifest.xml:76:30
+		ADDED from AndroidManifest.xml:77:9
+android:uses-permission#android.permission.READ_CALL_LOG
+ADDED from AndroidManifest.xml:79:5
+	android:name
+		ADDED from AndroidManifest.xml:79:30
 application
-ADDED from AndroidManifest.xml:78:5
+ADDED from AndroidManifest.xml:81:5
+MERGED from com.android.support:appcompat-v7:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
 MERGED from com.google.android.gms:play-services:7.0.0:19:5
 MERGED from com.google.android.gms:play-services-ads:7.0.0:19:5
 MERGED from com.google.android.gms:play-services-base:7.0.0:20:5
@@ -291,150 +312,158 @@ MERGED from com.android.support:support-v4:22.0.0:22:5
 MERGED from com.google.android.gms:play-services-wearable:7.0.0:19:5
 MERGED from com.google.android.gms:play-services-base:7.0.0:20:5
 MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:cardview-v7:22.0.0:22:5
+MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:4:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
 MERGED from com.android.support:appcompat-v7:22.0.0:22:5
 MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
+MERGED from com.android.support:gridlayout-v7:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.0.0:22:5
 	android:label
-		ADDED from AndroidManifest.xml:81:9
+		ADDED from AndroidManifest.xml:84:9
 	android:allowBackup
-		ADDED from AndroidManifest.xml:79:9
-	android:icon
-		ADDED from AndroidManifest.xml:80:9
-	android:logo
 		ADDED from AndroidManifest.xml:82:9
+	android:icon
+		ADDED from AndroidManifest.xml:83:9
+	android:logo
+		ADDED from AndroidManifest.xml:85:9
 activity#com.google.zxing.client.android.CaptureActivity
-ADDED from AndroidManifest.xml:83:9
+ADDED from AndroidManifest.xml:86:9
 	android:clearTaskOnLaunch
-		ADDED from AndroidManifest.xml:85:13
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:86:13
-	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:87:13
-	android:windowSoftInputMode
-		ADDED from AndroidManifest.xml:89:13
-	android:theme
 		ADDED from AndroidManifest.xml:88:13
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:89:13
+	android:stateNotNeeded
+		ADDED from AndroidManifest.xml:90:13
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:92:13
+	android:theme
+		ADDED from AndroidManifest.xml:91:13
 	android:name
-		ADDED from AndroidManifest.xml:84:13
+		ADDED from AndroidManifest.xml:87:13
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SCAN
-ADDED from AndroidManifest.xml:90:13
+ADDED from AndroidManifest.xml:93:13
 action#com.google.zxing.client.android.SCAN
-ADDED from AndroidManifest.xml:91:17
+ADDED from AndroidManifest.xml:94:17
 	android:name
-		ADDED from AndroidManifest.xml:91:25
+		ADDED from AndroidManifest.xml:94:25
 category#android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:93:17
+ADDED from AndroidManifest.xml:96:17
 	android:name
-		ADDED from AndroidManifest.xml:93:27
+		ADDED from AndroidManifest.xml:96:27
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:96:13
+ADDED from AndroidManifest.xml:99:13
 action#android.intent.action.VIEW
-ADDED from AndroidManifest.xml:97:17
-	android:name
-		ADDED from AndroidManifest.xml:97:25
-category#android.intent.category.BROWSABLE
 ADDED from AndroidManifest.xml:100:17
 	android:name
-		ADDED from AndroidManifest.xml:100:27
-data
-ADDED from AndroidManifest.xml:102:17
-	android:path
-		ADDED from AndroidManifest.xml:104:21
-	android:host
-		ADDED from AndroidManifest.xml:103:21
-	android:scheme
-		ADDED from AndroidManifest.xml:105:21
-activity#com.google.zxing.client.android.PreferencesActivity
-ADDED from AndroidManifest.xml:144:9
-	android:label
-		ADDED from AndroidManifest.xml:146:13
-	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:147:13
+		ADDED from AndroidManifest.xml:100:25
+category#android.intent.category.BROWSABLE
+ADDED from AndroidManifest.xml:103:17
 	android:name
-		ADDED from AndroidManifest.xml:145:13
-activity#com.google.zxing.client.android.encode.EncodeActivity
-ADDED from AndroidManifest.xml:148:9
+		ADDED from AndroidManifest.xml:103:27
+data
+ADDED from AndroidManifest.xml:105:17
+	android:path
+		ADDED from AndroidManifest.xml:107:21
+	android:host
+		ADDED from AndroidManifest.xml:106:21
+	android:scheme
+		ADDED from AndroidManifest.xml:108:21
+activity#com.google.zxing.client.android.PreferencesActivity
+ADDED from AndroidManifest.xml:147:9
+	android:label
+		ADDED from AndroidManifest.xml:149:13
 	android:stateNotNeeded
 		ADDED from AndroidManifest.xml:150:13
 	android:name
-		ADDED from AndroidManifest.xml:149:13
+		ADDED from AndroidManifest.xml:148:13
+activity#com.google.zxing.client.android.encode.EncodeActivity
+ADDED from AndroidManifest.xml:151:9
+	android:stateNotNeeded
+		ADDED from AndroidManifest.xml:153:13
+	android:name
+		ADDED from AndroidManifest.xml:152:13
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.ENCODE
-ADDED from AndroidManifest.xml:151:13
+ADDED from AndroidManifest.xml:154:13
 action#com.google.zxing.client.android.ENCODE
-ADDED from AndroidManifest.xml:152:17
+ADDED from AndroidManifest.xml:155:17
 	android:name
-		ADDED from AndroidManifest.xml:152:25
+		ADDED from AndroidManifest.xml:155:25
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from AndroidManifest.xml:157:13
+ADDED from AndroidManifest.xml:160:13
 action#android.intent.action.SEND
-ADDED from AndroidManifest.xml:158:17
+ADDED from AndroidManifest.xml:161:17
 	android:name
-		ADDED from AndroidManifest.xml:158:25
+		ADDED from AndroidManifest.xml:161:25
 activity#com.google.zxing.client.android.book.SearchBookContentsActivity
-ADDED from AndroidManifest.xml:173:9
+ADDED from AndroidManifest.xml:176:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:176:13
+		ADDED from AndroidManifest.xml:179:13
 	android:label
-		ADDED from AndroidManifest.xml:175:13
+		ADDED from AndroidManifest.xml:178:13
 	android:stateNotNeeded
+		ADDED from AndroidManifest.xml:180:13
+	android:name
 		ADDED from AndroidManifest.xml:177:13
-	android:name
-		ADDED from AndroidManifest.xml:174:13
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SEARCH_BOOK_CONTENTS
-ADDED from AndroidManifest.xml:178:13
+ADDED from AndroidManifest.xml:181:13
 action#com.google.zxing.client.android.SEARCH_BOOK_CONTENTS
-ADDED from AndroidManifest.xml:179:17
+ADDED from AndroidManifest.xml:182:17
 	android:name
-		ADDED from AndroidManifest.xml:179:25
+		ADDED from AndroidManifest.xml:182:25
 activity#com.google.zxing.client.android.share.ShareActivity
-ADDED from AndroidManifest.xml:184:9
+ADDED from AndroidManifest.xml:187:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:186:13
+		ADDED from AndroidManifest.xml:189:13
 	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:187:13
+		ADDED from AndroidManifest.xml:190:13
 	android:name
-		ADDED from AndroidManifest.xml:185:13
+		ADDED from AndroidManifest.xml:188:13
 intent-filter#android.intent.category.DEFAULT+com.google.zxing.client.android.SHARE
-ADDED from AndroidManifest.xml:188:13
+ADDED from AndroidManifest.xml:191:13
 action#com.google.zxing.client.android.SHARE
-ADDED from AndroidManifest.xml:189:17
+ADDED from AndroidManifest.xml:192:17
 	android:name
-		ADDED from AndroidManifest.xml:189:25
+		ADDED from AndroidManifest.xml:192:25
 activity#com.google.zxing.client.android.history.HistoryActivity
-ADDED from AndroidManifest.xml:194:9
+ADDED from AndroidManifest.xml:197:9
 	android:label
-		ADDED from AndroidManifest.xml:196:13
-	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:197:13
-	android:name
-		ADDED from AndroidManifest.xml:195:13
-activity#com.google.zxing.client.android.share.BookmarkPickerActivity
-ADDED from AndroidManifest.xml:198:9
-	android:label
-		ADDED from AndroidManifest.xml:200:13
-	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:201:13
-	android:name
 		ADDED from AndroidManifest.xml:199:13
-activity#com.google.zxing.client.android.share.AppPickerActivity
-ADDED from AndroidManifest.xml:202:9
-	android:label
-		ADDED from AndroidManifest.xml:204:13
 	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:205:13
+		ADDED from AndroidManifest.xml:200:13
 	android:name
+		ADDED from AndroidManifest.xml:198:13
+activity#com.google.zxing.client.android.share.BookmarkPickerActivity
+ADDED from AndroidManifest.xml:201:9
+	android:label
 		ADDED from AndroidManifest.xml:203:13
-activity#com.google.zxing.client.android.HelpActivity
-ADDED from AndroidManifest.xml:206:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:209:13
-	android:label
-		ADDED from AndroidManifest.xml:208:13
 	android:stateNotNeeded
-		ADDED from AndroidManifest.xml:210:13
+		ADDED from AndroidManifest.xml:204:13
 	android:name
+		ADDED from AndroidManifest.xml:202:13
+activity#com.google.zxing.client.android.share.AppPickerActivity
+ADDED from AndroidManifest.xml:205:9
+	android:label
 		ADDED from AndroidManifest.xml:207:13
+	android:stateNotNeeded
+		ADDED from AndroidManifest.xml:208:13
+	android:name
+		ADDED from AndroidManifest.xml:206:13
+activity#com.google.zxing.client.android.HelpActivity
+ADDED from AndroidManifest.xml:209:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:212:13
+	android:label
+		ADDED from AndroidManifest.xml:211:13
+	android:stateNotNeeded
+		ADDED from AndroidManifest.xml:213:13
+	android:name
+		ADDED from AndroidManifest.xml:210:13
 meta-data#com.google.android.gms.version
-ADDED from AndroidManifest.xml:212:9
+ADDED from AndroidManifest.xml:215:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
@@ -462,36 +491,30 @@ MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 	android:value
-		ADDED from AndroidManifest.xml:214:13
-	android:name
-		ADDED from AndroidManifest.xml:213:13
-activity#com.google.zxing.client.android.LoginActivity
-ADDED from AndroidManifest.xml:216:9
-	android:label
-		ADDED from AndroidManifest.xml:218:13
-	android:windowSoftInputMode
-		ADDED from AndroidManifest.xml:219:13
-	android:name
 		ADDED from AndroidManifest.xml:217:13
+	android:name
+		ADDED from AndroidManifest.xml:216:13
+activity#com.google.zxing.client.android.LoginActivity
+ADDED from AndroidManifest.xml:219:9
+	android:label
+		ADDED from AndroidManifest.xml:221:13
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:222:13
+	android:name
+		ADDED from AndroidManifest.xml:220:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:220:13
+ADDED from AndroidManifest.xml:223:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:221:17
+ADDED from AndroidManifest.xml:224:17
 	android:name
-		ADDED from AndroidManifest.xml:221:25
+		ADDED from AndroidManifest.xml:224:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:223:17
+ADDED from AndroidManifest.xml:226:17
 	android:name
-		ADDED from AndroidManifest.xml:223:27
+		ADDED from AndroidManifest.xml:226:27
 activity#com.google.zxing.client.android.MainActivity
-ADDED from AndroidManifest.xml:226:9
+ADDED from AndroidManifest.xml:229:9
 	android:label
-		ADDED from AndroidManifest.xml:228:13
-	android:name
-		ADDED from AndroidManifest.xml:227:13
-activity#com.google.zxing.client.android.MainActivity2
-ADDED from AndroidManifest.xml:230:9
-	android:label
-		ADDED from AndroidManifest.xml:232:13
-	android:name
 		ADDED from AndroidManifest.xml:231:13
+	android:name
+		ADDED from AndroidManifest.xml:230:13

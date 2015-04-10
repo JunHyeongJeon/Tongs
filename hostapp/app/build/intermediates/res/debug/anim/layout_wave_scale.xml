@@ -19,4 +19,4 @@
         android:columnDelay="0%"
         android:directionPriority="none"
         android:animation="@anim/wave_scale" />
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/layout_wave_scale.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/layout_wave_scale.xml -->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="http://schemas.android.com/tools">
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/arrays.xml -->
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="country_codes" ns1:ignore="MissingTranslation">
     <item>-</item>
@@ -46,18 +46,95 @@
     <item>AUTO</item>
     <item>OFF</item>
   </string-array>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/tk.zielony/carbon/0.7.2/res/values/values.xml -->
+    <eat-comment/>
+    <attr format="reference" name="carbon_cardViewStyle"/>
+    <attr name="carbon_checkBoxStyle"/>
+    <attr format="dimension" name="carbon_cornerRadius"/>
+    <attr format="reference" name="carbon_dividerStyle"/>
+    <attr format="reference" name="carbon_drawerLayoutStyle"/>
+    <attr format="color|reference" name="carbon_edgeEffectColor"/>
+    <attr format="reference" name="carbon_editTextStyle"/>
+    <attr format="dimension" name="carbon_elevation"/>
+    <attr format="reference" name="carbon_fabStyle"/>
+    <attr format="reference|color" name="carbon_filterColor"/>
+    <attr format="reference" name="carbon_frameLayoutStyle"/>
+    <attr format="reference" name="carbon_horizontalScrollViewStyle"/>
+    <attr format="reference" name="carbon_imageViewStyle"/>
+    <attr format="reference" name="carbon_linearLayoutStyle"/>
+    <attr format="reference" name="carbon_navigationBarStyle"/>
+    <attr format="enum" name="carbon_overScroll">
+        <enum name="always" value="0"/>
+        <enum name="ifContentScrolls" value="1"/>
+        <enum name="never" value="2"/>
+    </attr>
+    <attr format="reference" name="carbon_pagerTabStripStyle"/>
+    <attr format="reference" name="carbon_progressBarStyle"/>
+    <attr name="carbon_radioButtonStyle"/>
+    <attr format="reference" name="carbon_relativeLayoutStyle"/>
+    <attr format="reference" name="carbon_scrimInsetsLayoutStyle"/>
+    <attr format="reference" name="carbon_snackbarStyle"/>
+    <attr format="reference" name="carbon_src"/>
+    <attr format="reference" name="carbon_statusBarStyle"/>
+    <attr format="reference" name="carbon_svgViewStyle"/>
+    <attr format="boolean" name="carbon_textAllCaps"/>
+    <attr format="enum" name="carbon_textStyle">
+        <enum name="black" value="0"/>
+        <enum name="blackItalic" value="1"/>
+        <enum name="bold" value="2"/>
+        <enum name="boldItalic" value="3"/>
+        <enum name="italic" value="4"/>
+        <enum name="light" value="5"/>
+        <enum name="lightItalic" value="6"/>
+        <enum name="medium" value="7"/>
+        <enum name="mediumItalic" value="8"/>
+        <enum name="regular" value="9"/>
+        <enum name="thin" value="10"/>
+        <enum name="thinItalic" value="11"/>
+        <enum name="condensedBold" value="12"/>
+        <enum name="condensedBoldItalic" value="13"/>
+        <enum name="condensedItalic" value="14"/>
+        <enum name="condensedLight" value="15"/>
+        <enum name="condensedLightItalic" value="16"/>
+        <enum name="condensedRegular" value="17"/>
+    </attr>
+    <attr format="reference" name="carbon_toolbarStyle"/>
+    <attr format="reference" name="carbon_viewPagerStyle"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <attr format="boolean" name="centered"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <attr format="color" name="selectedColor"/>
+    <attr format="dimension" name="strokeWidth"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <attr format="string" name="title"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <attr format="color" name="unselectedColor"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_action_bar_embed_tabs_pre_jb">false</bool>
     <bool name="abc_action_bar_expanded_action_views_exclusive">true</bool>
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
     <bool name="abc_config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <bool name="default_circle_indicator_centered">true</bool>
+    <bool name="default_circle_indicator_snap">false</bool>
+    <bool name="default_line_indicator_centered">true</bool>
+    <bool name="default_title_indicator_selected_bold">true</bool>
+    <bool name="default_underline_indicator_fades">true</bool>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
@@ -68,6 +145,11 @@
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/res/values/values.xml -->
+    <eat-comment/>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -76,7 +158,71 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/common_colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/tk.zielony/carbon/0.7.2/res/values/values.xml -->
+    <eat-comment/>
+    <color name="carbon_background_dark">#ff333333</color>
+    <color name="carbon_background_light">#ffeeeeee</color>
+    <color name="carbon_black">#ff000000</color>
+    <color name="carbon_black_26">#42000000</color>
+    <color name="carbon_black_54">#8a000000</color>
+    <color name="carbon_debug">#ffff0000</color>
+    <color name="carbon_divider_dark">#1fffffff</color>
+    <color name="carbon_divider_light">#1f000000</color>
+    <color name="carbon_icon_dark">#de000000</color>
+    <color name="carbon_icon_light">#deffffff</color>
+    <color name="carbon_ripple_dark">#42cccccc</color>
+    <color name="carbon_ripple_light">#42999999</color>
+    <color name="carbon_tab_text_selected">#ff000000</color>
+    <color name="carbon_tab_text_unselected">#8a000000</color>
+    <color name="carbon_text_body1_dark">#deffffff</color>
+    <color name="carbon_text_body1_light">#de000000</color>
+    <color name="carbon_text_body2_dark">#deffffff</color>
+    <color name="carbon_text_body2_light">#de000000</color>
+    <color name="carbon_text_button_dark">#deffffff</color>
+    <color name="carbon_text_button_light">#de000000</color>
+    <color name="carbon_text_caption_dark">#8affffff</color>
+    <color name="carbon_text_caption_light">#8a000000</color>
+    <color name="carbon_text_headline_dark">#deffffff</color>
+    <color name="carbon_text_headline_light">#de000000</color>
+    <color name="carbon_text_menu_dark">#deffffff</color>
+    <color name="carbon_text_menu_light">#de000000</color>
+    <color name="carbon_text_subhead_dark">#deffffff</color>
+    <color name="carbon_text_subhead_light">#de000000</color>
+    <color name="carbon_text_title_dark">#deffffff</color>
+    <color name="carbon_text_title_light">#de000000</color>
+    <color name="carbon_white">#ffffffff</color>
+    <color name="carbon_white_30">#4dffffff</color>
+    <color name="carbon_white_70">#b3ffffff</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="cardview_background">#fafafa</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="cardview_dark_background">#FF202020</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="cardview_highlight_button_color">#ffab40</color>
+    <color name="cardview_image_left_description_color">#757575</color>
+    <color name="cardview_image_left_title_color">#212121</color>
+    <color name="cardview_image_top_description_color">#212121</color>
+    <color name="cardview_image_top_title_color">#ffffff</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="cardview_light_background">#FFFAFAFA</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="cardview_normal_button_color">#212121</color>
+    <color name="cardview_normal_button_ripple_color">#66999999</color>
+    <color name="cardview_normal_description_color">#212121</color>
+    <color name="cardview_separator_color">#dcdcdc</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="color_primary_dark">#ff5d79ea</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/common_colors.xml -->
     <eat-comment/>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_signin_btn_dark_text_default">@android:color/white</color>
@@ -88,19 +234,30 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="contents_text">#ff000000</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
+    <color name="default_circle_indicator_page_color">#00000000</color>
+    <color name="default_circle_indicator_stroke_color">#FFDDDDDD</color>
+    <color name="default_line_indicator_selected_color">#FF33B5E5</color>
+    <color name="default_line_indicator_unselected_color">#FFBBBBBB</color>
+    <color name="default_title_indicator_footer_color">#FF33B5E5</color>
+    <color name="default_title_indicator_selected_color">#FFFFFFFF</color>
+    <color name="default_title_indicator_text_color">#BBFFFFFF</color>
+    <color name="default_underline_indicator_selected_color">#FF33B5E5</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="encode_view">#ffffffff</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
@@ -113,10 +270,15 @@
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
+    <color name="navigation_drawer_accounts_separator_color">#e0e0e0</color>
+    <color name="navigation_drawer_item_header_color">#999999</color>
+    <color name="navigation_drawer_item_header_separator_color">#e0e0e0</color>
+    <color name="navigation_drawer_item_title_color">#212121</color>
+    <color name="navigation_drawer_item_top_background">#f6f6f6</color>
     <color name="possible_result_points">#c0ffbd21</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
@@ -126,13 +288,13 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="result_minor_text">#ffc0c0c0</color>
     <color name="result_points">#c099cc00</color>
     <color name="result_text">#ffffffff</color>
     <color name="result_view">#b0000000</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
     <color name="ripple_material_light">#40000000</color>
@@ -140,19 +302,29 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="status_text">#ffffffff</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="transparent">#00000000</color>
     <color name="viewfinder_laser">#ffcc0000</color>
     <color name="viewfinder_mask">#60000000</color>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_colors.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <color name="vpi__background_holo_dark">#ff000000</color>
+    <color name="vpi__background_holo_light">#fff3f3f3</color>
+    <color name="vpi__bright_foreground_disabled_holo_dark">#ff4c4c4c</color>
+    <color name="vpi__bright_foreground_disabled_holo_light">#ffb2b2b2</color>
+    <color name="vpi__bright_foreground_holo_dark">@color/vpi__background_holo_light</color>
+    <color name="vpi__bright_foreground_holo_light">@color/vpi__background_holo_dark</color>
+    <color name="vpi__bright_foreground_inverse_holo_dark">@color/vpi__bright_foreground_holo_light</color>
+    <color name="vpi__bright_foreground_inverse_holo_light">@color/vpi__bright_foreground_holo_dark</color>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
@@ -174,30 +346,64 @@
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
     <declare-styleable name="AdsAttrs"><attr format="string" name="adSize"/><attr format="string" name="adSizes"/><attr format="string" name="adUnitId"/></declare-styleable>
+    <declare-styleable name="Button"><attr name="carbon_elevation"/><attr name="carbon_textStyle"/><attr name="carbon_textAllCaps"/><attr name="android:textAppearance"/><attr name="carbon_touchMargin"/><attr name="carbon_touchMarginLeft"/><attr name="carbon_touchMarginTop"/><attr name="carbon_touchMarginRight"/><attr name="carbon_touchMarginBottom"/><attr name="carbon_cornerRadius"/></declare-styleable>
+    <declare-styleable name="Carbon"><attr format="reference|color" name="carbon_colorPrimary"/><attr format="reference|color" name="carbon_colorPrimaryDark"/><attr format="reference|color" name="carbon_colorAccent"/><attr format="reference|color" name="carbon_colorBackground"/><attr format="reference|color" name="carbon_colorBackground_inverse"/><attr format="reference|color" name="carbon_colorError"/><attr format="reference|color" name="carbon_colorDisabled"/><attr format="reference|color" name="carbon_colorControl"/><attr format="reference|color" name="carbon_dividerColor"/><attr format="reference|color" name="carbon_iconColor"/><attr format="reference|color" name="carbon_rippleColor"/><attr format="boolean" name="carbon_rippleHotspot"/><attr format="enum" name="carbon_rippleStyle"><enum name="over" value="0"/><enum name="background" value="1"/><enum name="borderless" value="2"/></attr><attr format="enum" name="carbon_inAnimation"><enum name="none" value="0"/><enum name="fade" value="1"/><enum name="pop" value="2"/><enum name="fly" value="3"/><enum name="brightnessSaturationFade" value="4"/><enum name="progressWidth" value="5"/></attr><attr format="enum" name="carbon_outAnimation"><enum name="none" value="0"/><enum name="fade" value="1"/><enum name="pop" value="2"/><enum name="fly" value="3"/><enum name="brightnessSaturationFade" value="4"/><enum name="progressWidth" value="5"/></attr><attr format="boolean" name="carbon_debugMode"/><attr format="dimension" name="carbon_touchMargin"/><attr format="dimension" name="carbon_touchMarginLeft"/><attr format="dimension" name="carbon_touchMarginTop"/><attr format="dimension" name="carbon_touchMarginRight"/><attr format="dimension" name="carbon_touchMarginBottom"/><attr format="reference" name="carbon_textAppearance_headline"/><attr format="reference" name="carbon_textAppearance_title"/><attr format="reference" name="carbon_textAppearance_subhead"/><attr format="reference" name="carbon_textAppearance_body2"/><attr format="reference" name="carbon_textAppearance_body1"/><attr format="reference" name="carbon_textAppearance_caption"/><attr format="reference" name="carbon_textAppearance_button"/><attr format="reference" name="carbon_textAppearance_headline_inverse"/><attr format="reference" name="carbon_textAppearance_title_inverse"/><attr format="reference" name="carbon_textAppearance_subhead_inverse"/><attr format="reference" name="carbon_textAppearance_body2_inverse"/><attr format="reference" name="carbon_textAppearance_body1_inverse"/><attr format="reference" name="carbon_textAppearance_caption_inverse"/><attr format="reference" name="carbon_textAppearance_button_inverse"/></declare-styleable>
+    <declare-styleable name="CardView"><attr format="dimension" name="carbon_cardElevation"/><attr format="dimension" name="carbon_cardCornerRadius"/><attr format="color|reference" name="carbon_cardBackground"/><attr format="dimension" name="carbon_cardPadding"/><attr name="android:padding"/><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/></declare-styleable>
+    <declare-styleable name="CheckBox"><attr name="carbon_textStyle"/><attr name="carbon_textAllCaps"/><attr name="android:textAppearance"/><attr format="reference|color" name="carbon_checkColor"/></declare-styleable>
+    <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="CompatTextView"><attr format="reference|boolean" name="textAllCaps"/></declare-styleable>
     <declare-styleable name="CustomWalletTheme"><attr format="enum" name="windowTransitionStyle"><enum name="slide" value="1"/><enum name="none" value="2"/></attr></declare-styleable>
+    <declare-styleable name="Divider"><attr name="android:background"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="topBottomBarArrowSize"/><attr format="dimension" name="middleBarArrowSize"/><attr format="dimension" name="barSize"/><attr format="dimension" name="thickness"/></declare-styleable>
+    <declare-styleable name="DrawerLayout"><attr name="carbon_rippleColor"/><attr name="carbon_elevation"/><attr name="carbon_cornerRadius"/></declare-styleable>
+    <declare-styleable name="EditText"><attr name="carbon_textAllCaps"/><attr name="carbon_textStyle"/><attr format="integer" name="carbon_minCharacters"/><attr format="integer" name="carbon_maxCharacters"/><attr format="string" name="carbon_pattern"/><attr format="string" name="carbon_errorMessage"/><attr name="carbon_dividerColor"/><attr format="dimension" name="carbon_dividerPadding"/></declare-styleable>
+    <declare-styleable name="FrameLayout"><attr name="carbon_rippleColor"/><attr name="carbon_elevation"/><attr name="carbon_cornerRadius"/></declare-styleable>
+    <declare-styleable name="GridLayout"><attr name="orientation"><enum name="horizontal" value="0"/><enum name="vertical" value="1"/></attr><attr format="integer" name="rowCount"/><attr format="integer" name="columnCount"/><attr format="boolean" name="useDefaultMargins"/><attr name="alignmentMode"><enum name="alignBounds" value="0"/><enum name="alignMargins" value="1"/></attr><attr format="boolean" name="rowOrderPreserved"/><attr format="boolean" name="columnOrderPreserved"/></declare-styleable>
+    <declare-styleable name="GridLayout_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_margin"/><attr name="android:layout_marginLeft"/><attr name="android:layout_marginTop"/><attr name="android:layout_marginRight"/><attr name="android:layout_marginBottom"/><attr format="integer" name="layout_row"/><attr format="integer" min="1" name="layout_rowSpan"/><attr format="float" name="layout_rowWeight"/><attr format="integer" name="layout_column"/><attr format="integer" min="1" name="layout_columnSpan"/><attr format="float" name="layout_columnWeight"/><attr name="layout_gravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="fill_horizontal" value="0x07"/><flag name="center" value="0x11"/><flag name="fill" value="0x77"/><flag name="clip_vertical" value="0x80"/><flag name="clip_horizontal" value="0x08"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr></declare-styleable>
+    <declare-styleable name="HorizontalScrollView"><attr name="carbon_edgeEffectColor"/><attr name="carbon_overScroll"/></declare-styleable>
+    <declare-styleable name="ImageView"><attr name="carbon_rippleColor"/><attr name="carbon_elevation"/><attr name="carbon_touchMargin"/><attr name="carbon_touchMarginLeft"/><attr name="carbon_touchMarginTop"/><attr name="carbon_touchMarginRight"/><attr name="carbon_touchMarginBottom"/><attr name="carbon_cornerRadius"/></declare-styleable>
+    <declare-styleable name="LinePageIndicator"><attr name="centered"/><attr name="unselectedColor"/><attr name="selectedColor"/><attr format="dimension" name="lineWidth"/><attr name="strokeWidth"/><attr format="dimension" name="gapWidth"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="LinearLayout"><attr name="carbon_rippleColor"/><attr name="carbon_elevation"/><attr name="carbon_cornerRadius"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
+    <declare-styleable name="ListView"><attr name="carbon_edgeEffectColor"/><attr name="carbon_overScroll"/></declare-styleable>
     <declare-styleable name="LoadingImageView"><attr format="enum" name="imageAspectRatioAdjust"><enum name="none" value="0"/><enum name="adjust_width" value="1"/><enum name="adjust_height" value="2"/></attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
     <declare-styleable name="MapAttrs"><attr format="enum" name="mapType"><enum name="none" value="0"/><enum name="normal" value="1"/><enum name="satellite" value="2"/><enum name="terrain" value="3"/><enum name="hybrid" value="4"/></attr><attr format="float" name="cameraBearing"/><attr format="float" name="cameraTargetLat"/><attr format="float" name="cameraTargetLng"/><attr format="float" name="cameraTilt"/><attr format="float" name="cameraZoom"/><attr format="boolean" name="liteMode"/><attr format="boolean" name="uiCompass"/><attr format="boolean" name="uiRotateGestures"/><attr format="boolean" name="uiScrollGestures"/><attr format="boolean" name="uiTiltGestures"/><attr format="boolean" name="uiZoomControls"/><attr format="boolean" name="uiZoomGestures"/><attr format="boolean" name="useViewLifecycle"/><attr format="boolean" name="zOrderOnTop"/><attr format="boolean" name="uiMapToolbar"/></declare-styleable>
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction"><flag name="never" value="0"/><flag name="ifRoom" value="1"/><flag name="always" value="2"/><flag name="withText" value="4"/><flag name="collapseActionView" value="8"/></attr><attr format="reference" name="actionLayout"/><attr format="string" name="actionViewClass"/><attr format="string" name="actionProviderClass"/></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
+    <declare-styleable name="NavigationBar"><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/></declare-styleable>
+    <declare-styleable name="PagerTabStrip"><attr format="color|reference" name="carbon_indicatorColor"/><attr format="dimension" name="carbon_indicatorWidth"/><attr format="boolean" name="carbon_fixedTabs"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
+    <declare-styleable name="ProgressBar"><attr format="enum" name="carbon_progressStyle"><enum name="bar_determinate" value="0"/><enum name="bar_indeterminate" value="1"/><enum name="bar_query" value="2"/><enum name="circular_determinate" value="3"/><enum name="circular_indeterminate" value="4"/></attr><attr format="color|reference" name="carbon_barColor"/><attr format="color|reference" name="carbon_barBackground"/><attr format="dimension" name="carbon_barWidth"/><attr format="dimension" name="carbon_barPadding"/></declare-styleable>
+    <declare-styleable name="RadioButton"><attr name="carbon_textStyle"/><attr name="carbon_textAllCaps"/><attr name="android:textAppearance"/><attr format="reference|color" name="carbon_radioColor"/></declare-styleable>
+    <declare-styleable name="RelativeLayout"><attr name="carbon_rippleColor"/><attr name="carbon_elevation"/><attr name="carbon_cornerRadius"/></declare-styleable>
+    <declare-styleable name="SVGView"><attr name="carbon_rippleColor"/><attr name="carbon_filterColor"/><attr name="carbon_src"/><attr name="carbon_touchMargin"/><attr name="carbon_touchMarginLeft"/><attr name="carbon_touchMarginTop"/><attr name="carbon_touchMarginRight"/><attr name="carbon_touchMarginBottom"/></declare-styleable>
+    <declare-styleable name="ScrimInsetsLayout"><attr format="color|reference" name="carbon_insetForeground"/></declare-styleable>
+    <declare-styleable name="ScrollView"><attr name="carbon_edgeEffectColor"/><attr name="carbon_overScroll"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
+    <declare-styleable name="SelectableRoundedImageView"><attr format="dimension" name="sriv_left_top_corner_radius"/><attr format="dimension" name="sriv_right_top_corner_radius"/><attr format="dimension" name="sriv_left_bottom_corner_radius"/><attr format="dimension" name="sriv_right_bottom_corner_radius"/><attr format="dimension" name="sriv_border_width"/><attr format="color" name="sriv_border_color"/><attr format="boolean" name="sriv_oval"/><attr name="android:scaleType"/></declare-styleable>
+    <declare-styleable name="Snackbar"><attr format="enum" name="carbon_layoutStyle"><enum name="floating" value="0"/><enum name="docked" value="1"/></attr><attr name="android:background"/><attr format="integer" name="carbon_duration"/></declare-styleable>
     <declare-styleable name="Spinner"><attr format="reference" name="prompt"/><attr format="enum" name="spinnerMode"><enum name="dialog" value="0"/><enum name="dropdown" value="1"/></attr><attr name="android:dropDownSelector"/><attr name="android:popupBackground"/><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/><attr name="android:dropDownWidth"/><attr format="reference" name="popupPromptView"/><attr name="android:gravity"/><attr format="boolean" name="disableChildrenWhenDisabled"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="StatusBar"><attr name="android:background"/></declare-styleable>
     <declare-styleable name="SwitchCompat"><attr name="android:thumb"/><attr format="reference" name="track"/><attr name="android:textOn"/><attr name="android:textOff"/><attr format="dimension" name="thumbTextPadding"/><attr format="reference" name="switchTextAppearance"/><attr format="dimension" name="switchMinWidth"/><attr format="dimension" name="switchPadding"/><attr format="boolean" name="splitTrack"/><attr format="boolean" name="showText"/></declare-styleable>
     <declare-styleable name="SwitchCompatTextAppearance"><attr name="android:textSize"/><attr name="android:textColor"/><attr name="textAllCaps"/></declare-styleable>
+    <declare-styleable name="TextAppearance"><attr name="carbon_textStyle"/><attr name="carbon_textAllCaps"/></declare-styleable>
+    <declare-styleable name="TextView"><attr name="carbon_textStyle"/><attr name="carbon_textAllCaps"/><attr name="android:textAppearance"/></declare-styleable>
     <declare-styleable name="Theme"><attr format="boolean" name="windowActionBar"/><attr format="boolean" name="windowActionBarOverlay"/><attr format="boolean" name="windowActionModeOverlay"/><attr format="dimension|fraction" name="windowFixedWidthMajor"/><attr format="dimension|fraction" name="windowFixedHeightMinor"/><attr format="dimension|fraction" name="windowFixedWidthMinor"/><attr format="dimension|fraction" name="windowFixedHeightMajor"/><attr name="android:windowIsFloating"/><attr name="android:windowAnimationStyle"/><attr format="reference" name="actionBarTabStyle"/><attr format="reference" name="actionBarTabBarStyle"/><attr format="reference" name="actionBarTabTextStyle"/><attr format="reference" name="actionOverflowButtonStyle"/><attr format="reference" name="actionOverflowMenuStyle"/><attr format="reference" name="actionBarPopupTheme"/><attr format="reference" name="actionBarStyle"/><attr format="reference" name="actionBarSplitStyle"/><attr format="reference" name="actionBarTheme"/><attr format="reference" name="actionBarWidgetTheme"/><attr format="dimension" name="actionBarSize"><enum name="wrap_content" value="0"/></attr><attr format="reference" name="actionBarDivider"/><attr format="reference" name="actionBarItemBackground"/><attr format="reference" name="actionMenuTextAppearance"/><attr format="color|reference" name="actionMenuTextColor"/><attr format="reference" name="actionModeStyle"/><attr format="reference" name="actionModeCloseButtonStyle"/><attr format="reference" name="actionModeBackground"/><attr format="reference" name="actionModeSplitBackground"/><attr format="reference" name="actionModeCloseDrawable"/><attr format="reference" name="actionModeCutDrawable"/><attr format="reference" name="actionModeCopyDrawable"/><attr format="reference" name="actionModePasteDrawable"/><attr format="reference" name="actionModeSelectAllDrawable"/><attr format="reference" name="actionModeShareDrawable"/><attr format="reference" name="actionModeFindDrawable"/><attr format="reference" name="actionModeWebSearchDrawable"/><attr format="reference" name="actionModePopupWindowStyle"/><attr format="reference" name="textAppearanceLargePopupMenu"/><attr format="reference" name="textAppearanceSmallPopupMenu"/><attr format="reference" name="actionDropDownStyle"/><attr format="dimension" name="dropdownListPreferredItemHeight"/><attr format="reference" name="spinnerStyle"/><attr format="reference" name="spinnerDropDownItemStyle"/><attr format="reference" name="homeAsUpIndicator"/><attr format="reference" name="actionButtonStyle"/><attr format="reference" name="buttonBarStyle"/><attr format="reference" name="buttonBarButtonStyle"/><attr format="reference" name="selectableItemBackground"/><attr format="reference" name="selectableItemBackgroundBorderless"/><attr format="reference" name="dividerVertical"/><attr format="reference" name="dividerHorizontal"/><attr format="reference" name="activityChooserViewStyle"/><attr format="reference" name="toolbarStyle"/><attr format="reference" name="toolbarNavigationButtonStyle"/><attr format="reference" name="popupMenuStyle"/><attr format="reference" name="popupWindowStyle"/><attr format="reference|color" name="editTextColor"/><attr format="reference" name="editTextBackground"/><attr format="reference" name="switchStyle"/><attr format="reference" name="textAppearanceSearchResultTitle"/><attr format="reference" name="textAppearanceSearchResultSubtitle"/><attr format="reference|color" name="textColorSearchUrl"/><attr format="reference" name="searchViewStyle"/><attr format="dimension" name="listPreferredItemHeight"/><attr format="dimension" name="listPreferredItemHeightSmall"/><attr format="dimension" name="listPreferredItemHeightLarge"/><attr format="dimension" name="listPreferredItemPaddingLeft"/><attr format="dimension" name="listPreferredItemPaddingRight"/><attr format="reference" name="dropDownListViewStyle"/><attr format="reference" name="listPopupWindowStyle"/><attr format="reference" name="textAppearanceListItem"/><attr format="reference" name="textAppearanceListItemSmall"/><attr format="reference" name="panelBackground"/><attr format="dimension" name="panelMenuListWidth"/><attr format="reference" name="panelMenuListTheme"/><attr format="reference" name="listChoiceBackgroundIndicator"/><attr format="color" name="colorPrimary"/><attr format="color" name="colorPrimaryDark"/><attr format="color" name="colorAccent"/><attr format="color" name="colorControlNormal"/><attr format="color" name="colorControlActivated"/><attr format="color" name="colorControlHighlight"/><attr format="color" name="colorButtonNormal"/><attr format="color" name="colorSwitchThumbNormal"/></declare-styleable>
-    <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="theme"/><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/></declare-styleable>
+    <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle"><enum name="none" value="0"/><enum name="triangle" value="1"/><enum name="underline" value="2"/></attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr name="linePosition"><enum name="bottom" value="0"/><enum name="top" value="1"/></attr><attr name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr name="android:textColor"/><attr name="android:textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="theme"/><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/><attr name="carbon_elevation"/><attr name="android:background"/></declare-styleable>
+    <declare-styleable name="UnderlinePageIndicator"><attr format="boolean" name="fades"/><attr format="integer" name="fadeDelay"/><attr format="integer" name="fadeLength"/><attr name="selectedColor"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
+    <declare-styleable name="ViewPager"><attr name="carbon_edgeEffectColor"/><attr name="carbon_overScroll"/></declare-styleable>
+    <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiLinePageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiUnderlinePageIndicatorStyle"/></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
     <declare-styleable name="WalletFragmentOptions"><attr format="enum" name="appTheme"><enum name="holo_dark" value="0"/><enum name="holo_light" value="1"/></attr><attr format="enum" name="environment"><enum name="production" value="1"/><enum name="sandbox" value="0"/><enum name="strict_sandbox" value="2"/></attr><attr format="reference" name="fragmentStyle"/><attr format="enum" name="fragmentMode"><enum name="buyButton" value="1"/><enum name="selectionDetails" value="2"/></attr></declare-styleable>
     <declare-styleable name="WalletFragmentStyle"><attr format="dimension" name="buyButtonHeight"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="dimension" name="buyButtonWidth"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="enum" name="buyButtonText"><enum name="buy_with_google" value="1"/><enum name="buy_now" value="2"/><enum name="book_now" value="3"/><enum name="donate_with_google" value="4"/></attr><attr format="enum" name="buyButtonAppearance"><enum name="classic" value="1"/><enum name="grayscale" value="2"/><enum name="monochrome" value="3"/></attr><attr format="reference" name="maskedWalletDetailsTextAppearance"/><attr format="reference" name="maskedWalletDetailsHeaderTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsBackground"/><attr format="reference" name="maskedWalletDetailsButtonTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsButtonBackground"/><attr format="color" name="maskedWalletDetailsLogoTextColor"/><attr format="enum" name="maskedWalletDetailsLogoImageType"><enum name="classic" value="1"/><enum name="monochrome" value="2"/></attr></declare-styleable>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_material">4dp</dimen>
@@ -241,11 +447,56 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/tk.zielony/carbon/0.7.2/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="carbon_1dip">1dp</dimen>
+    <dimen name="carbon_avatarSize">40dp</dimen>
+    <dimen name="carbon_dialogPadding">24dp</dimen>
+    <dimen name="carbon_elevationFlat">0dp</dimen>
+    <dimen name="carbon_elevationHigh">6dp</dimen>
+    <dimen name="carbon_elevationLow">2dp</dimen>
+    <dimen name="carbon_elevationMax">8dp</dimen>
+    <dimen name="carbon_elevationMedium">4dp</dimen>
+    <dimen name="carbon_errorTextSize">12sp</dimen>
+    <dimen name="carbon_fabSize">56dp</dimen>
+    <dimen name="carbon_labelTextSize">12sp</dimen>
+    <dimen name="carbon_padding">16dp</dimen>
+    <dimen name="carbon_paddingHalf">8dp</dimen>
+    <dimen name="carbon_statusBarHeight">25dp</dimen>
+    <dimen name="carbon_timelineTextSize">14sp</dimen>
+    <dimen name="carbon_toolbarHeight">56dp</dimen>
+    <dimen name="carbon_toolbarTextSize">20sp</dimen>
+    <dimen name="carbon_translation">2dp</dimen>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="cardview_compat_inset_shadow">1dp</dimen>
+    <dimen name="cardview_default_elevation">2dp</dimen>
+    <dimen name="cardview_default_radius">2dp</dimen>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+    <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/gridlayout-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="default_gap">16dip</dimen>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <dimen name="default_line_indicator_gap_width">4dp</dimen>
+    <dimen name="default_line_indicator_line_width">12dp</dimen>
+    <dimen name="default_line_indicator_stroke_width">1dp</dimen>
+    <dimen name="default_title_indicator_clip_padding">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_height">4dp</dimen>
+    <dimen name="default_title_indicator_footer_indicator_underline_padding">20dp</dimen>
+    <dimen name="default_title_indicator_footer_line_height">2dp</dimen>
+    <dimen name="default_title_indicator_footer_padding">7dp</dimen>
+    <dimen name="default_title_indicator_text_size">15dp</dimen>
+    <dimen name="default_title_indicator_title_padding">5dp</dimen>
+    <dimen name="default_title_indicator_top_padding">7dp</dimen>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -253,47 +504,57 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="half_padding">4dip</dimen>
     <dimen name="standard_padding">8dip</dimen>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/ids.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/ids.xml -->
     <eat-comment/>
     <item name="decode" type="id"/>
     <item name="decode_failed" type="id"/>
     <item name="decode_succeeded" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="home" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/ids.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/ids.xml -->
     <eat-comment/>
     <item name="launch_product_query" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/ids.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/ids.xml -->
     <eat-comment/>
     <item name="quit" type="id"/>
     <item name="restart_preview" type="id"/>
     <item name="return_scan_result" type="id"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <item name="split_action_bar" type="id"/>
     <item name="up" type="id"/>
     <integer name="abc_config_activityDefaultDur">220</integer>
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="abc_max_action_buttons">2</integer>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/version.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/tk.zielony/carbon/0.7.2/res/values/values.xml -->
+    <eat-comment/>
+    <integer name="carbon_snackbarDuration">2000</integer>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <integer name="default_circle_indicator_orientation">0</integer>
+    <integer name="default_title_indicator_footer_indicator_style">2</integer>
+    <integer name="default_title_indicator_line_position">0</integer>
+    <integer name="default_underline_indicator_fade_delay">300</integer>
+    <integer name="default_underline_indicator_fade_length">400</integer>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">7095000</integer>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -311,23 +572,23 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="action_find_id">Find id /</string>
     <string name="action_find_password">Find password /</string>
     <string name="action_passwordsave">Save password</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="action_sign_up">Sign up</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Host App</string>
     <string name="app_picker_name">Applications</string>
@@ -355,7 +616,7 @@
     <string name="button_sms">Send SMS</string>
     <string name="button_web_search">Web search</string>
     <string name="button_wifi">Connect to Network</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/common_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.0.0/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text">An application requires an update to the Android Wear app.</string>
     <string name="common_android_wear_update_text">This app won\'t run unless you update the Android Wear app.</string>
@@ -389,7 +650,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="commono_google_play_services_api_unavailable_text">This app requires one or more Google Play services that are not currently
 available. Please contact the developer for assistance.</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="contents_contact">Contact info</string>
     <string name="contents_email">Email address</string>
@@ -397,18 +658,18 @@ available. Please contact the developer for assistance.</string>
     <string name="contents_phone">Phone number</string>
     <string name="contents_sms">SMS address</string>
     <string name="contents_text">Plain text</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="decline">Decline</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="error_field_required">This field is required</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="hello_world">Hello world!</string>
     <string name="history_clear_one_history_text">Clear</string>
@@ -491,11 +752,11 @@ available. Please contact the developer for assistance.</string>
     <string name="preferences_supplemental_summary">Try to retrieve more information about the barcode contents</string>
     <string name="preferences_supplemental_title">Retrieve more info</string>
     <string name="preferences_vibrate_title">Vibrate</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password~</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="result_address_book">Found contact info</string>
     <string name="result_calendar">Found calendar event</string>
@@ -509,27 +770,27 @@ available. Please contact the developer for assistance.</string>
     <string name="result_uri">Found URL</string>
     <string name="result_wifi">Found WLAN Configuration</string>
     <string name="sbc_name">Google Book Search</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="title_activity_login">Sign in</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_main_activity2">MainActivity2</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="wifi_changing_network">Requesting connection to network\u2026</string>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="Base.Animation.AppCompat.DropDownUp" parent="android:Animation">
@@ -1385,7 +1646,7 @@ available. Please contact the developer for assistance.</string>
         <item name="android:scaleType">center</item>
         <item name="android:background">?attr/selectableItemBackground</item>
     </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/themes.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/themes.xml -->
     <eat-comment/>
     <style name="CaptureTheme" parent="android:Theme.Holo">
     <item name="android:windowFullscreen">true</item>
@@ -1393,7 +1654,23 @@ available. Please contact the developer for assistance.</string>
     <item name="android:windowActionBarOverlay">true</item>
     <item name="android:windowActionModeOverlay">true</item>
   </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
+    <style name="CardView">
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+        <item name="cardCornerRadius">@dimen/cardview_default_radius</item>
+        <item name="cardElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardMaxElevation">@dimen/cardview_default_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">true</item>
+    </style>
+    <style name="CardView.Dark">
+        <item name="cardBackgroundColor">@color/cardview_dark_background</item>
+    </style>
+    <style name="CardView.Light">
+        <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1532,14 +1809,14 @@ available. Please contact the developer for assistance.</string>
         <item name="android:listChoiceIndicatorMultiple">@drawable/abc_btn_check_material</item>
     </style>
     <style name="Platform.AppCompat.Light.Dialog" parent="Platform.AppCompat.Dialog"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="ResultButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
     <item name="android:layout_width">0dip</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_weight">1</item>
   </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
         <item name="android:layout_gravity">center_vertical|left</item>
@@ -1582,13 +1859,13 @@ available. Please contact the developer for assistance.</string>
     <style name="RtlOverlay.Widget.AppCompat.SearchView.MagIcon" parent="android:Widget">
         <item name="android:layout_marginLeft">@dimen/abc_dropdownitem_text_padding_left</item>
     </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="ShareButton" parent="@android:style/Widget.Holo.Button.Borderless.Small">
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
   </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
@@ -1646,6 +1923,14 @@ available. Please contact the developer for assistance.</string>
     </style>
     <style name="TextAppearance.AppCompat.Widget.Switch" parent="Base.TextAppearance.AppCompat.Widget.Switch"/>
     <style name="TextAppearance.AppCompat.Widget.TextView.SpinnerItem" parent="Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <style name="TextAppearance.TabPageIndicator" parent="Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/vpi__dark_theme</item>
+    </style>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <eat-comment/>
     <style name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item" parent="Base.TextAppearance.Widget.AppCompat.ExpandedMenu.Item">
     </style>
     <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
@@ -1670,7 +1955,7 @@ available. Please contact the developer for assistance.</string>
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_iap_style.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.0.0/res/values/admob_iap_style.xml -->
     <eat-comment/>
     <style name="Theme.IAPTheme" parent="android:Theme">
     <item name="android:windowIsTranslucent">true</item>
@@ -1680,14 +1965,20 @@ available. Please contact the developer for assistance.</string>
     <item name="android:windowIsFloating">true</item>
     <item name="android:backgroundDimEnabled">false</item>
   </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <style name="Theme.PageIndicatorDefaults" parent="android:Theme">
+        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
     <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_styles.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.0.0/res/values/wallet_styles.xml -->
     <eat-comment/>
     <style name="WalletFragmentDefaultButtonTextAppearance">
         <item name="android:textColor">@color/wallet_primary_text_holo_light</item>
@@ -1721,7 +2012,10 @@ available. Please contact the developer for assistance.</string>
         <item name="maskedWalletDetailsLogoTextColor">@color/wallet_bright_foreground_holo_dark</item>
         <item name="maskedWalletDetailsLogoImageType">classic</item>
     </style>
-    <!-- From: file:/Workspace/Android/hostapp_v0.2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <style name="Widget"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
@@ -1806,4 +2100,529 @@ available. Please contact the developer for assistance.</string>
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/fr.baloomba/viewpagerindicator/2.4.2/res/values/values.xml -->
+    <eat-comment/>
+    <style name="Widget.IconPageIndicator" parent="Widget">
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+    </style>
+    <style name="Widget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/build/intermediates/exploded-aar/tk.zielony/carbon/0.7.2/res/values/values.xml -->
+    <eat-comment/>
+    <style name="carbon_Button" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/carbon_padding</item>
+        <item name="android:paddingRight">@dimen/carbon_padding</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:background">?attr/carbon_colorPrimary</item>
+        <item name="carbon_elevation">@dimen/carbon_elevationLow</item>
+        <item name="carbon_touchMarginTop">6dp</item>
+        <item name="carbon_touchMarginBottom">6dp</item>
+        <item name="carbon_cornerRadius">2dp</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:textAppearance">?attr/carbon_textAppearance_button_inverse</item>
+    </style>
+    <style name="carbon_Button.Flat">
+        <item name="carbon_elevation">@dimen/carbon_elevationFlat</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:textAppearance">?attr/carbon_textAppearance_button</item>
+    </style>
+    <style name="carbon_CardView">
+        <item name="carbon_cardBackground">?attr/carbon_colorBackground</item>
+        <item name="carbon_cardElevation">@dimen/carbon_elevationLow</item>
+        <item name="carbon_cardCornerRadius">2dp</item>
+        <item name="carbon_cardPadding">0dp</item>
+        <item name="android:padding">@dimen/carbon_paddingHalf</item>
+    </style>
+    <style name="carbon_CheckBox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:paddingLeft">@dimen/carbon_padding</item>
+        <item name="carbon_rippleColor">@null</item>
+        <item name="android:textAppearance">?attr/carbon_textAppearance_body1</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/carbon_paddingHalf</item>
+        <item name="carbon_checkColor">@null</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="carbon_Divider">
+        <item name="android:background">?attr/carbon_dividerColor</item>
+    </style>
+    <style name="carbon_DrawerLayout">
+        <item name="carbon_rippleColor">@null</item>
+    </style>
+    <style name="carbon_EditText" parent="@android:style/Widget.EditText">
+        <item name="android:textAppearance">?attr/carbon_textAppearance_subhead</item>
+        <item name="carbon_dividerColor">?attr/carbon_colorPrimary</item>
+        <item name="carbon_dividerPadding">8dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingTop">@dimen/carbon_padding</item>
+        <item name="android:paddingBottom">@dimen/carbon_padding</item>
+    </style>
+    <style name="carbon_FloatingActionButton">
+        <item name="carbon_cornerRadius">28dp</item>
+        <item name="carbon_rippleColor">?attr/carbon_rippleColor</item>
+        <item name="carbon_filterColor">?attr/carbon_iconColor</item>
+        <item name="carbon_inAnimation">pop</item>
+        <item name="carbon_outAnimation">pop</item>
+        <item name="carbon_elevation">@dimen/carbon_elevationHigh</item>
+        <item name="android:background">?attr/carbon_colorAccent</item>
+        <item name="android:padding">@dimen/carbon_padding</item>
+        <item name="android:minWidth">@dimen/carbon_fabSize</item>
+        <item name="android:minHeight">@dimen/carbon_fabSize</item>
+    </style>
+    <style name="carbon_FrameLayout">
+        <item name="carbon_rippleColor">@null</item>
+    </style>
+    <style name="carbon_HorizontalScrollView">
+        <item name="carbon_edgeEffectColor">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_ImageView">
+        <item name="carbon_rippleColor">@null</item>
+        <item name="carbon_rippleStyle">over</item>
+        <item name="carbon_inAnimation">brightnessSaturationFade</item>
+        <item name="carbon_outAnimation">brightnessSaturationFade</item>
+    </style>
+    <style name="carbon_LinearLayout">
+        <item name="carbon_rippleColor">@null</item>
+    </style>
+    <style name="carbon_ListView" parent="@android:style/Widget.ListView">
+        <item name="android:divider">?attr/carbon_dividerColor</item>
+        <item name="android:dividerHeight">1px</item>
+        <item name="carbon_edgeEffectColor">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_NavigationBar">
+        <item name="android:background">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_PagerTabStrip" parent="carbon_HorizontalScrollView">
+        <item name="carbon_indicatorColor">?attr/carbon_colorAccent</item>
+        <item name="carbon_indicatorWidth">2dp</item>
+        <item name="carbon_fixedTabs">true</item>
+    </style>
+    <style name="carbon_ProgressBar">
+        <item name="carbon_progressStyle">bar_indeterminate</item>
+        <item name="carbon_barColor">?attr/carbon_colorPrimary</item>
+        <item name="carbon_barBackground">@null</item>
+        <item name="carbon_barWidth">3dp</item>
+        <item name="carbon_inAnimation">progressWidth</item>
+        <item name="carbon_outAnimation">progressWidth</item>
+    </style>
+    <style name="carbon_RadioButton" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:paddingLeft">@dimen/carbon_padding</item>
+        <item name="carbon_rippleColor">@null</item>
+        <item name="android:textAppearance">?attr/carbon_textAppearance_body1</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">@dimen/carbon_paddingHalf</item>
+        <item name="carbon_radioColor">@null</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="carbon_RelativeLayout">
+        <item name="carbon_rippleColor">@null</item>
+    </style>
+    <style name="carbon_SVGView">
+        <item name="carbon_rippleColor">@null</item>
+        <item name="carbon_filterColor">?attr/carbon_iconColor</item>
+        <item name="carbon_inAnimation">fade</item>
+        <item name="carbon_outAnimation">fade</item>
+    </style>
+    <style name="carbon_ScrimInsetsLayout" parent="carbon_FrameLayout">
+        <item name="carbon_insetForeground">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_ScrollView">
+        <item name="carbon_edgeEffectColor">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_Snackbar">
+        <item name="carbon_layoutStyle">floating</item>
+        <item name="carbon_inAnimation">fly</item>
+        <item name="carbon_outAnimation">fly</item>
+        <item name="carbon_duration">@integer/carbon_snackbarDuration</item>
+    </style>
+    <style name="carbon_StatusBar">
+        <item name="android:background">?attr/carbon_colorPrimary</item>
+    </style>
+    <style name="carbon_TextAppearance" parent="@android:style/TextAppearance"/>
+    <style name="carbon_TextAppearance.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="carbon_textStyle">regular</item>
+    </style>
+    <style name="carbon_TextAppearance.Body1.Dark">
+        <item name="android:textColor">@color/carbon_text_body1_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Body1.Light">
+        <item name="android:textColor">@color/carbon_text_body1_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="carbon_textStyle">medium</item>
+    </style>
+    <style name="carbon_TextAppearance.Body2.Dark">
+        <item name="android:textColor">@color/carbon_text_body2_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Body2.Light">
+        <item name="android:textColor">@color/carbon_text_body2_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="carbon_textStyle">medium</item>
+        <item name="carbon_textAllCaps">true</item>
+    </style>
+    <style name="carbon_TextAppearance.Button.Dark">
+        <item name="android:textColor">@color/carbon_text_button_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Button.Light">
+        <item name="android:textColor">@color/carbon_text_button_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="carbon_textStyle">regular</item>
+    </style>
+    <style name="carbon_TextAppearance.Caption.Dark">
+        <item name="android:textColor">@color/carbon_text_caption_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Caption.Light">
+        <item name="android:textColor">@color/carbon_text_caption_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Headline">
+        <item name="android:textSize">24sp</item>
+        <item name="carbon_textStyle">regular</item>
+    </style>
+    <style name="carbon_TextAppearance.Headline.Dark">
+        <item name="android:textColor">@color/carbon_text_headline_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Headline.Light">
+        <item name="android:textColor">@color/carbon_text_headline_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Subhead">
+        <item name="android:textSize">16sp</item>
+        <item name="carbon_textStyle">regular</item>
+    </style>
+    <style name="carbon_TextAppearance.Subhead.Dark">
+        <item name="android:textColor">@color/carbon_text_subhead_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Subhead.Light">
+        <item name="android:textColor">@color/carbon_text_subhead_light</item>
+    </style>
+    <style name="carbon_TextAppearance.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="carbon_textStyle">medium</item>
+    </style>
+    <style name="carbon_TextAppearance.Title.Dark">
+        <item name="android:textColor">@color/carbon_text_title_dark</item>
+    </style>
+    <style name="carbon_TextAppearance.Title.Light">
+        <item name="android:textColor">@color/carbon_text_title_light</item>
+    </style>
+    <style name="carbon_TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textAppearance">?attr/carbon_textAppearance_body1</item>
+    </style>
+    <style name="carbon_Theme.AppCompat.Dark" parent="Theme.AppCompat">
+        <item name="carbon_colorError">#ffF44336</item>
+        <item name="carbon_debugMode">false</item>
+
+        <item name="android:buttonStyle">@style/carbon_Button</item>
+        <item name="android:textViewStyle">@style/carbon_TextView</item>
+        <item name="android:listViewStyle">@style/carbon_ListView</item>
+        <item name="android:scrollViewStyle">@style/carbon_ScrollView</item>
+
+        <item name="carbon_horizontalScrollViewStyle">@style/carbon_HorizontalScrollView</item>
+        <item name="carbon_imageViewStyle">@style/carbon_ImageView</item>
+        <item name="carbon_fabStyle">@style/carbon_FloatingActionButton</item>
+        <item name="carbon_statusBarStyle">@style/carbon_StatusBar</item>
+        <item name="carbon_navigationBarStyle">@style/carbon_NavigationBar</item>
+        <item name="carbon_svgViewStyle">@style/carbon_SVGView</item>
+        <item name="carbon_frameLayoutStyle">@style/carbon_FrameLayout</item>
+        <item name="carbon_relativeLayoutStyle">@style/carbon_RelativeLayout</item>
+        <item name="carbon_linearLayoutStyle">@style/carbon_LinearLayout</item>
+        <item name="carbon_drawerLayoutStyle">@style/carbon_DrawerLayout</item>
+        <item name="carbon_scrimInsetsLayoutStyle">@style/carbon_ScrimInsetsLayout</item>
+        <item name="carbon_snackbarStyle">@style/carbon_Snackbar</item>
+        <item name="carbon_toolbarStyle">@style/carbon_Toolbar</item>
+        <item name="carbon_dividerStyle">@style/carbon_Divider</item>
+        <item name="carbon_progressBarStyle">@style/carbon_ProgressBar</item>
+        <item name="carbon_cardViewStyle">@style/carbon_CardView</item>
+        <item name="carbon_editTextStyle">@style/carbon_EditText</item>
+        <item name="carbon_pagerTabStripStyle">@style/carbon_PagerTabStrip</item>
+        <item name="carbon_checkBoxStyle">@style/carbon_CheckBox</item>
+        <item name="carbon_radioButtonStyle">@style/carbon_RadioButton</item>
+        <item name="carbon_viewPagerStyle">@style/carbon_ViewPager</item>
+
+        <item name="carbon_colorPrimary">#ff213C6B</item>
+        <item name="carbon_colorPrimaryDark">#ff162949</item>
+        <item name="carbon_colorAccent">#ff9ACE00</item>
+        <item name="carbon_colorBackground">@color/carbon_background_dark</item>
+        <item name="carbon_colorBackground_inverse">@color/carbon_background_light</item>
+        <item name="carbon_dividerColor">@color/carbon_divider_dark</item>
+        <item name="carbon_rippleColor">@color/carbon_ripple_dark</item>
+        <item name="carbon_iconColor">@color/carbon_icon_dark</item>
+        <item name="carbon_colorDisabled">@color/carbon_white_30</item>
+        <item name="carbon_colorControl">@color/carbon_white_70</item>
+
+        <item name="carbon_textAppearance_headline">@style/carbon_TextAppearance.Headline.Dark
+        </item>
+        <item name="carbon_textAppearance_title">@style/carbon_TextAppearance.Title.Dark</item>
+        <item name="carbon_textAppearance_subhead">@style/carbon_TextAppearance.Subhead.Dark</item>
+        <item name="carbon_textAppearance_body2">@style/carbon_TextAppearance.Body2.Dark</item>
+        <item name="carbon_textAppearance_body1">@style/carbon_TextAppearance.Body1.Dark</item>
+        <item name="carbon_textAppearance_caption">@style/carbon_TextAppearance.Caption.Dark</item>
+        <item name="carbon_textAppearance_button">@style/carbon_TextAppearance.Button.Dark</item>
+        <item name="carbon_textAppearance_headline_inverse">
+            @style/carbon_TextAppearance.Headline.Light
+        </item>
+        <item name="carbon_textAppearance_title_inverse">@style/carbon_TextAppearance.Title.Light
+        </item>
+        <item name="carbon_textAppearance_subhead_inverse">
+            @style/carbon_TextAppearance.Subhead.Light
+        </item>
+        <item name="carbon_textAppearance_body2_inverse">@style/carbon_TextAppearance.Body2.Light
+        </item>
+        <item name="carbon_textAppearance_body1_inverse">@style/carbon_TextAppearance.Body1.Light
+        </item>
+        <item name="carbon_textAppearance_caption_inverse">
+            @style/carbon_TextAppearance.Caption.Light
+        </item>
+        <item name="carbon_textAppearance_button_inverse">
+            @style/carbon_TextAppearance.Button.Light
+        </item>
+
+        <item name="android:windowBackground">@drawable/carbon_windowbackground_dark</item>
+    </style>
+    <style name="carbon_Theme.AppCompat.Light" parent="Theme.AppCompat.Light">
+        <item name="carbon_colorError">#ffF44336</item>
+        <item name="carbon_debugMode">false</item>
+
+        <item name="android:buttonStyle">@style/carbon_Button</item>
+        <item name="android:textViewStyle">@style/carbon_TextView</item>
+        <item name="android:listViewStyle">@style/carbon_ListView</item>
+        <item name="android:scrollViewStyle">@style/carbon_ScrollView</item>
+
+        <item name="carbon_horizontalScrollViewStyle">@style/carbon_HorizontalScrollView</item>
+        <item name="carbon_imageViewStyle">@style/carbon_ImageView</item>
+        <item name="carbon_fabStyle">@style/carbon_FloatingActionButton</item>
+        <item name="carbon_statusBarStyle">@style/carbon_StatusBar</item>
+        <item name="carbon_navigationBarStyle">@style/carbon_NavigationBar</item>
+        <item name="carbon_svgViewStyle">@style/carbon_SVGView</item>
+        <item name="carbon_frameLayoutStyle">@style/carbon_FrameLayout</item>
+        <item name="carbon_relativeLayoutStyle">@style/carbon_RelativeLayout</item>
+        <item name="carbon_linearLayoutStyle">@style/carbon_LinearLayout</item>
+        <item name="carbon_drawerLayoutStyle">@style/carbon_DrawerLayout</item>
+        <item name="carbon_scrimInsetsLayoutStyle">@style/carbon_ScrimInsetsLayout</item>
+        <item name="carbon_snackbarStyle">@style/carbon_Snackbar</item>
+        <item name="carbon_toolbarStyle">@style/carbon_Toolbar</item>
+        <item name="carbon_dividerStyle">@style/carbon_Divider</item>
+        <item name="carbon_progressBarStyle">@style/carbon_ProgressBar</item>
+        <item name="carbon_cardViewStyle">@style/carbon_CardView</item>
+        <item name="carbon_editTextStyle">@style/carbon_EditText</item>
+        <item name="carbon_pagerTabStripStyle">@style/carbon_PagerTabStrip</item>
+        <item name="carbon_checkBoxStyle">@style/carbon_CheckBox</item>
+        <item name="carbon_radioButtonStyle">@style/carbon_RadioButton</item>
+        <item name="carbon_viewPagerStyle">@style/carbon_ViewPager</item>
+
+        <item name="carbon_colorPrimary">#ff213C6B</item>
+        <item name="carbon_colorPrimaryDark">#ff162949</item>
+        <item name="carbon_colorAccent">#ff9ACE00</item>
+        <item name="carbon_colorBackground">@color/carbon_background_light</item>
+        <item name="carbon_colorBackground_inverse">@color/carbon_background_dark</item>
+        <item name="carbon_dividerColor">@color/carbon_divider_light</item>
+        <item name="carbon_rippleColor">@color/carbon_ripple_light</item>
+        <item name="carbon_iconColor">@color/carbon_icon_light</item>
+        <item name="carbon_colorDisabled">@color/carbon_black_26</item>
+        <item name="carbon_colorControl">@color/carbon_black_54</item>
+
+        <item name="carbon_textAppearance_headline">@style/carbon_TextAppearance.Headline.Light
+        </item>
+        <item name="carbon_textAppearance_title">@style/carbon_TextAppearance.Title.Light</item>
+        <item name="carbon_textAppearance_subhead">@style/carbon_TextAppearance.Subhead.Light</item>
+        <item name="carbon_textAppearance_body2">@style/carbon_TextAppearance.Body2.Light</item>
+        <item name="carbon_textAppearance_body1">@style/carbon_TextAppearance.Body1.Light</item>
+        <item name="carbon_textAppearance_caption">@style/carbon_TextAppearance.Caption.Light</item>
+        <item name="carbon_textAppearance_button">@style/carbon_TextAppearance.Button.Light</item>
+        <item name="carbon_textAppearance_headline_inverse">
+            @style/carbon_TextAppearance.Headline.Dark
+        </item>
+        <item name="carbon_textAppearance_title_inverse">@style/carbon_TextAppearance.Title.Dark
+        </item>
+        <item name="carbon_textAppearance_subhead_inverse">
+            @style/carbon_TextAppearance.Subhead.Dark
+        </item>
+        <item name="carbon_textAppearance_body2_inverse">@style/carbon_TextAppearance.Body2.Dark
+        </item>
+        <item name="carbon_textAppearance_body1_inverse">@style/carbon_TextAppearance.Body1.Dark
+        </item>
+        <item name="carbon_textAppearance_caption_inverse">
+            @style/carbon_TextAppearance.Caption.Dark
+        </item>
+        <item name="carbon_textAppearance_button_inverse">@style/carbon_TextAppearance.Button.Dark
+        </item>
+
+        <item name="android:windowBackground">@drawable/carbon_windowbackground_light</item>
+    </style>
+    <style name="carbon_Theme.Dark" parent="android:Theme.NoTitleBar">
+        <item name="carbon_colorError">#ffF44336</item>
+        <item name="carbon_debugMode">false</item>
+
+        <item name="android:buttonStyle">@style/carbon_Button</item>
+        <item name="android:textViewStyle">@style/carbon_TextView</item>
+        <item name="android:listViewStyle">@style/carbon_ListView</item>
+        <item name="android:scrollViewStyle">@style/carbon_ScrollView</item>
+
+        <item name="carbon_horizontalScrollViewStyle">@style/carbon_HorizontalScrollView</item>
+        <item name="carbon_imageViewStyle">@style/carbon_ImageView</item>
+        <item name="carbon_fabStyle">@style/carbon_FloatingActionButton</item>
+        <item name="carbon_statusBarStyle">@style/carbon_StatusBar</item>
+        <item name="carbon_navigationBarStyle">@style/carbon_NavigationBar</item>
+        <item name="carbon_svgViewStyle">@style/carbon_SVGView</item>
+        <item name="carbon_frameLayoutStyle">@style/carbon_FrameLayout</item>
+        <item name="carbon_relativeLayoutStyle">@style/carbon_RelativeLayout</item>
+        <item name="carbon_linearLayoutStyle">@style/carbon_LinearLayout</item>
+        <item name="carbon_drawerLayoutStyle">@style/carbon_DrawerLayout</item>
+        <item name="carbon_scrimInsetsLayoutStyle">@style/carbon_ScrimInsetsLayout</item>
+        <item name="carbon_snackbarStyle">@style/carbon_Snackbar</item>
+        <item name="carbon_toolbarStyle">@style/carbon_Toolbar</item>
+        <item name="carbon_dividerStyle">@style/carbon_Divider</item>
+        <item name="carbon_progressBarStyle">@style/carbon_ProgressBar</item>
+        <item name="carbon_cardViewStyle">@style/carbon_CardView</item>
+        <item name="carbon_editTextStyle">@style/carbon_EditText</item>
+        <item name="carbon_pagerTabStripStyle">@style/carbon_PagerTabStrip</item>
+        <item name="carbon_checkBoxStyle">@style/carbon_CheckBox</item>
+        <item name="carbon_radioButtonStyle">@style/carbon_RadioButton</item>
+        <item name="carbon_viewPagerStyle">@style/carbon_ViewPager</item>
+
+        <item name="carbon_colorPrimary">#ff213C6B</item>
+        <item name="carbon_colorPrimaryDark">#ff162949</item>
+        <item name="carbon_colorAccent">#ff9ACE00</item>
+        <item name="carbon_colorBackground">@color/carbon_background_dark</item>
+        <item name="carbon_colorBackground_inverse">@color/carbon_background_light</item>
+        <item name="carbon_dividerColor">@color/carbon_divider_dark</item>
+        <item name="carbon_rippleColor">@color/carbon_ripple_dark</item>
+        <item name="carbon_iconColor">@color/carbon_icon_dark</item>
+        <item name="carbon_colorDisabled">@color/carbon_white_30</item>
+        <item name="carbon_colorControl">@color/carbon_white_70</item>
+
+        <item name="carbon_textAppearance_headline">@style/carbon_TextAppearance.Headline.Dark
+        </item>
+        <item name="carbon_textAppearance_title">@style/carbon_TextAppearance.Title.Dark</item>
+        <item name="carbon_textAppearance_subhead">@style/carbon_TextAppearance.Subhead.Dark</item>
+        <item name="carbon_textAppearance_body2">@style/carbon_TextAppearance.Body2.Dark</item>
+        <item name="carbon_textAppearance_body1">@style/carbon_TextAppearance.Body1.Dark</item>
+        <item name="carbon_textAppearance_caption">@style/carbon_TextAppearance.Caption.Dark</item>
+        <item name="carbon_textAppearance_button">@style/carbon_TextAppearance.Button.Dark</item>
+        <item name="carbon_textAppearance_headline_inverse">
+            @style/carbon_TextAppearance.Headline.Light
+        </item>
+        <item name="carbon_textAppearance_title_inverse">@style/carbon_TextAppearance.Title.Light
+        </item>
+        <item name="carbon_textAppearance_subhead_inverse">
+            @style/carbon_TextAppearance.Subhead.Light
+        </item>
+        <item name="carbon_textAppearance_body2_inverse">@style/carbon_TextAppearance.Body2.Light
+        </item>
+        <item name="carbon_textAppearance_body1_inverse">@style/carbon_TextAppearance.Body1.Light
+        </item>
+        <item name="carbon_textAppearance_caption_inverse">
+            @style/carbon_TextAppearance.Caption.Light
+        </item>
+        <item name="carbon_textAppearance_button_inverse">
+            @style/carbon_TextAppearance.Button.Light
+        </item>
+
+        <item name="android:windowBackground">@drawable/carbon_windowbackground_dark</item>
+    </style>
+    <style name="carbon_Theme.Light" parent="android:Theme.Light.NoTitleBar">
+        <item name="carbon_colorError">#ffF44336</item>
+        <item name="carbon_debugMode">false</item>
+
+        <item name="android:buttonStyle">@style/carbon_Button</item>
+        <item name="android:textViewStyle">@style/carbon_TextView</item>
+        <item name="android:listViewStyle">@style/carbon_ListView</item>
+        <item name="android:scrollViewStyle">@style/carbon_ScrollView</item>
+
+        <item name="carbon_horizontalScrollViewStyle">@style/carbon_HorizontalScrollView</item>
+        <item name="carbon_imageViewStyle">@style/carbon_ImageView</item>
+        <item name="carbon_fabStyle">@style/carbon_FloatingActionButton</item>
+        <item name="carbon_statusBarStyle">@style/carbon_StatusBar</item>
+        <item name="carbon_navigationBarStyle">@style/carbon_NavigationBar</item>
+        <item name="carbon_svgViewStyle">@style/carbon_SVGView</item>
+        <item name="carbon_frameLayoutStyle">@style/carbon_FrameLayout</item>
+        <item name="carbon_relativeLayoutStyle">@style/carbon_RelativeLayout</item>
+        <item name="carbon_linearLayoutStyle">@style/carbon_LinearLayout</item>
+        <item name="carbon_drawerLayoutStyle">@style/carbon_DrawerLayout</item>
+        <item name="carbon_scrimInsetsLayoutStyle">@style/carbon_ScrimInsetsLayout</item>
+        <item name="carbon_snackbarStyle">@style/carbon_Snackbar</item>
+        <item name="carbon_toolbarStyle">@style/carbon_Toolbar</item>
+        <item name="carbon_dividerStyle">@style/carbon_Divider</item>
+        <item name="carbon_progressBarStyle">@style/carbon_ProgressBar</item>
+        <item name="carbon_cardViewStyle">@style/carbon_CardView</item>
+        <item name="carbon_editTextStyle">@style/carbon_EditText</item>
+        <item name="carbon_pagerTabStripStyle">@style/carbon_PagerTabStrip</item>
+        <item name="carbon_checkBoxStyle">@style/carbon_CheckBox</item>
+        <item name="carbon_radioButtonStyle">@style/carbon_RadioButton</item>
+        <item name="carbon_viewPagerStyle">@style/carbon_ViewPager</item>
+
+        <item name="carbon_colorPrimary">#ff213C6B</item>
+        <item name="carbon_colorPrimaryDark">#ff162949</item>
+        <item name="carbon_colorAccent">#ff9ACE00</item>
+        <item name="carbon_colorBackground">@color/carbon_background_light</item>
+        <item name="carbon_colorBackground_inverse">@color/carbon_background_dark</item>
+        <item name="carbon_dividerColor">@color/carbon_divider_light</item>
+        <item name="carbon_rippleColor">@color/carbon_ripple_light</item>
+        <item name="carbon_iconColor">@color/carbon_icon_light</item>
+        <item name="carbon_colorDisabled">@color/carbon_black_26</item>
+        <item name="carbon_colorControl">@color/carbon_black_54</item>
+
+        <item name="carbon_textAppearance_headline">@style/carbon_TextAppearance.Headline.Light
+        </item>
+        <item name="carbon_textAppearance_title">@style/carbon_TextAppearance.Title.Light</item>
+        <item name="carbon_textAppearance_subhead">@style/carbon_TextAppearance.Subhead.Light</item>
+        <item name="carbon_textAppearance_body2">@style/carbon_TextAppearance.Body2.Light</item>
+        <item name="carbon_textAppearance_body1">@style/carbon_TextAppearance.Body1.Light</item>
+        <item name="carbon_textAppearance_caption">@style/carbon_TextAppearance.Caption.Light</item>
+        <item name="carbon_textAppearance_button">@style/carbon_TextAppearance.Button.Light</item>
+        <item name="carbon_textAppearance_headline_inverse">
+            @style/carbon_TextAppearance.Headline.Dark
+        </item>
+        <item name="carbon_textAppearance_title_inverse">@style/carbon_TextAppearance.Title.Dark
+        </item>
+        <item name="carbon_textAppearance_subhead_inverse">
+            @style/carbon_TextAppearance.Subhead.Dark
+        </item>
+        <item name="carbon_textAppearance_body2_inverse">@style/carbon_TextAppearance.Body2.Dark
+        </item>
+        <item name="carbon_textAppearance_body1_inverse">@style/carbon_TextAppearance.Body1.Dark
+        </item>
+        <item name="carbon_textAppearance_caption_inverse">
+            @style/carbon_TextAppearance.Caption.Dark
+        </item>
+        <item name="carbon_textAppearance_button_inverse">@style/carbon_TextAppearance.Button.Dark
+        </item>
+
+        <item name="android:windowBackground">@drawable/carbon_windowbackground_light</item>
+    </style>
+    <style name="carbon_ToggleButton" parent="@android:style/Widget.Button.Toggle">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingLeft">@dimen/carbon_padding</item>
+        <item name="android:paddingRight">@dimen/carbon_padding</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="carbon_Toolbar">
+        <item name="android:background">?attr/carbon_colorPrimary</item>
+        <item name="carbon_elevation">@dimen/carbon_elevationMax</item>
+    </style>
+    <style name="carbon_ViewPager">
+        <item name="carbon_edgeEffectColor">?attr/carbon_colorPrimary</item>
+    </style>
 </resources>

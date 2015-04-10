@@ -26,4 +26,4 @@
            android:pivotX="50%p" android:pivotY="50%p"
            android:duration="@android:integer/config_mediumAnimTime" />
 </set>
-<!-- From: file:/Workspace/Android/hostapp_v0.2/app/src/main/res/anim/zoom_enter.xml -->
+<!-- From: file:/Users/jun/Workspace/Tongs/hostapp/app/src/main/res/anim/zoom_enter.xml -->
