@@ -4,9 +4,11 @@ import android.util.Log;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreProtocolPNames;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -99,6 +101,35 @@ public class NetworkActivity {
         }
     }
 
+
+    public static void HttpGet() {
+
+        Thread myThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                HttpClient client = new DefaultHttpClient();
+
+                String getURL = "http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=01089399673";
+                HttpGet get = new HttpGet(getURL);
+                get.setHeader("Content-Type", "text/xml");
+
+                HttpResponse response;
+
+                client.getParams().setParameter(CoreProtocolPNames.USER_AGENT, System.getProperty("http.agent"));
+
+                try {
+                    response = client.execute(get);
+
+                    Log.d("Response of GET request", response.toString());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        myThread.start();
+    }
 
 
     /**
