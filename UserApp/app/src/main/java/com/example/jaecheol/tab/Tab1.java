@@ -22,5 +22,4 @@ public class Tab1 extends Fragment {
         View v = inflater.inflate(R.layout.tab_1, container, false);
         return v;
     }
-
 }

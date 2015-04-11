@@ -16,6 +16,8 @@ import com.onbarcode.barcode.android.QRCode;
  */
 public class BarcodeView extends View {
 
+    String barcodeNum="01089399673";
+
     public BarcodeView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -28,14 +30,25 @@ public class BarcodeView extends View {
         super(context);
     }
 
+    public void setBarcodeNum(String _barcodeNum)    {
+        barcodeNum = _barcodeNum;
+    }
+
+    public String getBarcodeNum()   {
+        return barcodeNum;
+    }
+
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        if( barcodeNum == null)
+            return;
 
         try {
             CODE128(canvas);
 //            QRCode(canvas);
 
-        } catch (Exception e)   {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -67,15 +80,15 @@ public class BarcodeView extends View {
         // Unit of Measure, pixel, cm, or inch
         barcode.setUom(IBarcode.UOM_PIXEL);
         // barcode bar module width (X) in pixel
-        barcode.setX(5f);
+        barcode.setX(3f);
         // barcode bar module height (Y) in pixel
-        barcode.setY(375f);
+        barcode.setY(200f);
 
         // barcode image margins
-        barcode.setLeftMargin(10f);
-        barcode.setRightMargin(10f);
-        barcode.setTopMargin(10f);
-        barcode.setBottomMargin(10f);
+        barcode.setLeftMargin(2f);
+        barcode.setRightMargin(2f);
+        barcode.setTopMargin(2f);
+        barcode.setBottomMargin(2f);
 
         // barcode image resolution in dpi
         barcode.setResolution(72);
@@ -95,7 +108,7 @@ public class BarcodeView extends View {
         /*
         specify your barcode drawing area
 	    */
-        RectF bounds = new RectF(450, 0, 0, 0);
+        RectF bounds = new RectF(0, 0, 0, 0);
         barcode.drawBarcode(canvas, bounds);
     }
 

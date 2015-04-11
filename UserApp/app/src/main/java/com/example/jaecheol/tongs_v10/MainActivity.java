@@ -26,6 +26,8 @@ public class MainActivity extends ActionBarActivity
     com.example.jaecheol.tab.SlidingTabLayout tabs;
     CharSequence Titles[]={"바코드","대기표"};
     int Numboftabs =2;
+    int numOfTabs;
+    String titles[] = {""};
 
     Button ShowTicketButton;
 
@@ -43,13 +45,11 @@ public class MainActivity extends ActionBarActivity
 
 
         // Creating The Toolbar and setting it as the Toolbar for the activity
-
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new com.example.jaecheol.tab.ViewPagerAdapter(getSupportFragmentManager(),Titles,Numboftabs);
+        adapter =  new com.example.jaecheol.tab.ViewPagerAdapter(getSupportFragmentManager(), Titles, Numboftabs);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager) findViewById(R.id.pager);
@@ -63,20 +63,12 @@ public class MainActivity extends ActionBarActivity
         tabs.setCustomTabColorizer(new com.example.jaecheol.tab.SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
+            return getResources().getColor(R.color.tabsScrollColor);
             }
         });
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
-
-
-
-
-
-
-
-
 
         Intent intent = this.getIntent();
         authToken = intent.getStringExtra("auth_token");
@@ -85,6 +77,8 @@ public class MainActivity extends ActionBarActivity
                             "메인 액티비티 입니다.", Toast.LENGTH_SHORT);
         toast.show();
 
+//        Button button = (Button)findViewById(R.id.button);
+//        button.setOnClickListener(this);
 //        ShowTicketButton = (Button)findViewById(R.id.id_showTicketButton);
 //        ShowTicketButton.setOnClickListener(this);
 
@@ -93,6 +87,12 @@ public class MainActivity extends ActionBarActivity
 
     public void onClick(View v) {
         switch (v.getId()) {
+//            case R.id.button :
+//                BarcodeView barcodeView = new BarcodeView(this.getApplicationContext());
+//                barcodeView.setBarcodeNum("12345");
+//                barcodeView.invalidate();
+//                Log.d("Hello", barcodeView.getBarcodeNum());
+//                break;
 //            case R.id.id_showTicketButton :
 
 //                int resultCode = -1;

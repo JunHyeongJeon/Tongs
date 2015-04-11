@@ -23,7 +23,9 @@
             android:id="@+id/id_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="phone"
             android:hint="number" />
+
 
         <Button
             android:id="@+id/id_certificButton"

@@ -21,19 +21,22 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         this.NumbOfTabs = mNumbOfTabsumb;
 
     }
-
+    com.example.jaecheol.tab.Tab1 tab1;
+    com.example.jaecheol.tab.Tab2 tab2;
     //This method return the fragment for the every position in the View Pager
     @Override
     public Fragment getItem(int position) {
 
         if(position == 0) // if the position is 0 we are returning the First tab
         {
-            com.example.jaecheol.tab.Tab1 tab1 = new com.example.jaecheol.tab.Tab1();
+            if(tab1 == null)
+                tab1 = new com.example.jaecheol.tab.Tab1();
             return tab1;
         }
         else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
-            com.example.jaecheol.tab.Tab2 tab2 = new com.example.jaecheol.tab.Tab2();
+            if(tab2 == null)
+                tab2 = new com.example.jaecheol.tab.Tab2();
             return tab2;
         }
 

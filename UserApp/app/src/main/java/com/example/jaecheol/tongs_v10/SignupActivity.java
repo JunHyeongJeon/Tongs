@@ -25,13 +25,10 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -130,6 +127,7 @@ public class SignupActivity extends ActionBarActivity
 
         certificButton = (Button)findViewById(R.id.id_certificButton);
         certificButton.setOnClickListener(this);
+        certificButton.setTag("certific");
 
         editText = (EditText)findViewById(R.id.id_editText);
 
@@ -137,30 +135,46 @@ public class SignupActivity extends ActionBarActivity
     }
 
 
-
-
-
-
-
     public void onClick(View v) {
         switch (v.getId()) {
 
             case R.id.id_certificButton :
-                String buttonText = (String)certificButton.getText().toString();
-
-                if( buttonText.equals("인증") == true ) {
+                String tag = (String)certificButton.getTag();
+                if( "certific".equals(tag) ) {
 
                     number = editText.getText().toString();
 
-                    int resultCode = -1;
                     String url = getText(R.string.Server_URL)
                             + "user/auth/sms_request"
                             + "?mdn=" + number;
 
-                    state = 1;
-                    new HttpTask().execute(url);
+                    IHttpRecvCallback cb = new IHttpRecvCallback(){
+                        public void onRecv(String result) {
+                            try {
+                                JSONObject json = new JSONObject(result);
+                                String result_code = json.get("result_code").toString();
+                                Log.d("Hello", result_code);
+                                if( "-1".equals(result_code) )
+                                    return;
 
-                } else {
+                                Toast toast = Toast.makeText(getApplicationContext(),
+                                        number + "로 전송된 인증번호를 입력하세요", Toast.LENGTH_SHORT);
+                                toast.show();
+
+                                tooltip.setText("인증 번호");
+
+                                editText.setText(null);
+                                editText.setHint("인증 번호");
+
+                                certificButton.setText("확인");
+                                certificButton.setTag("check");
+                            }
+                            catch(Exception e){}
+                        }
+                    };
+                    new HttpTask(cb).execute(url);
+
+                } else if( "check".equals(tag) ) {
                     // 서버로 인증번호 전송
 
                     certificationNumber = editText.getText().toString();
@@ -168,13 +182,38 @@ public class SignupActivity extends ActionBarActivity
                             "입력된 인증번호는 " + certificationNumber, Toast.LENGTH_SHORT);
                     toast.show();
 
-                    state = 2;
                     String url = getText(R.string.Server_URL)
                             + "user/auth/sms_check"
                             + "?mdn=" + number
                             + "&code=" + certificationNumber;
+                    IHttpRecvCallback cb = new IHttpRecvCallback() {
+                        public void onRecv(String result) {
+                            try {
+                                JSONObject json = new JSONObject(result);
+                                String result_code = json.get("result_code").toString();
+                                Log.d("Hello", result_code);
+                                if( "-1".equals(result_code) )
+                                    return;
 
-                    new HttpTask().execute(url);
+                                Toast toast2 = Toast.makeText(getApplicationContext(),
+                                        "인증에 성공하셨습니다. 추가 정보를 입력하세요.", Toast.LENGTH_LONG);
+                                toast2.show();
+
+                                infoLayout.setVisibility(LinearLayout.VISIBLE);
+                                certificButton.setEnabled(false);
+                                certificButton.setTextColor(getResources().getColor(android.R.color.tertiary_text_light));
+                                certificButton.setBackgroundColor(getResources().getColor(android.R.color.background_light));
+                                editText.setEnabled(false);
+
+                                authToken = json.get("token").toString();
+
+                                uid = Integer.parseInt(json.get("uid").toString());
+
+                            } catch (Exception e) { }
+                        }
+                    };
+
+                    new HttpTask(cb).execute(url);
 
                 }
                 break;
@@ -194,52 +233,44 @@ public class SignupActivity extends ActionBarActivity
                     String str = URLDecoder.decode(jsonUrl, "UTF-8");
                     Log.d("Hello", "decode " + jsonUrl);
 
-
-                    state = 3;
                     String url = getText(R.string.Server_URL)
                             + "user/join"
                             + "?token=" + authToken
                             + "&data=" + jsonUrl;
 
-                    new HttpTask().execute(url);
+                    IHttpRecvCallback cb = new IHttpRecvCallback() {
+                        public void onRecv(String result) {
+                            try {
+                                JSONObject json = new JSONObject(result);
+                                String result_code = json.get("result_code").toString();
+                                Log.d("Hello", result_code);
+                                if( "-1".equals(result_code) )
+                                    return;
+
+                                Toast toast3 = Toast.makeText(getApplicationContext(),
+                                        "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
+                                toast3.show();
+
+                                SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                SharedPreferences.Editor editor = mPref.edit();
+                                editor.putString("auth_token", authToken);
+                                editor.putString("birth_date", birthdate);
+                                editor.putString("number", number);
+                                editor.putString("sex", sex);
+                                editor.commit();
+
+                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                intent.putExtra("authToken", authToken);
+                                startActivity(intent);
+
+                            } catch (Exception e) { }
+                        }
+                    };
+
+                    new HttpTask(cb).execute(url);
 
                 } catch (Exception e)   { }
 
-
-
-//                String jsonObj = NetworkActivity.sendJsonDataToServer(1, 0, json,
-//                        "http://tongs.kr/user/join");
-//                String[][] result = NetworkActivity.jsonParserList(jsonObj);
-
-//                if (result == null) {
-//                    Toast toast2 = Toast.makeText(getApplicationContext(),
-//                            "서버에서 응답이 없습니다.", Toast.LENGTH_SHORT);
-//                    toast2.show();
-//                } else {
-//
-//                    if (result[0][1] == "success") {
-//                        Toast toast2 = Toast.makeText(getApplicationContext(),
-//                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
-//                        toast2.show();
-//
-//                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-//                        SharedPreferences.Editor editor = mPref.edit();
-//                        editor.putString("auth_token", authToken);
-//                        editor.putString("birth_date", birthdate);
-//                        editor.putString("number", number);
-//                        editor.putString("sex", sex);
-//                        editor.commit();
-//
-//                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-//                        intent.putExtra("authToken", authToken);
-//                        startActivity(intent);
-//                        this.finish();
-//                    } else {
-//                        Toast toast2 = Toast.makeText(getApplicationContext(),
-//                                "로그인에 실패하셨습니다. (" + result[1][1] + ")", Toast.LENGTH_SHORT);
-//                        toast2.show();
-//                    }
-//                }
                 break;
         }
     }
@@ -268,50 +299,58 @@ public class SignupActivity extends ActionBarActivity
     }
 
 
+
     private static String convertStreamToString(InputStream is)
     {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-
-        try
-        {
-            while ((line = reader.readLine()) != null)
-            {
-                sb.append(line + "\n");
-            }
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(1024*64);
+        byte data[] = new byte[10240];
+        while(true) {
+            try {
+                int len = is.read(data);
+                if (len == -1)
+                    break;
+                baos.write(data, 0, len);
+            } catch (Exception e) { }
         }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            try
-            {
-                is.close();
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
+        String str = new String(baos.toByteArray());
+        return str;
     }
+
+
 
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
         try{
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse response = httpclient.execute(new HttpGet(url));
+            if(response.getStatusLine().getStatusCode() != 200)
+            {
+                // 네트워크 오류입니다.
+                Log.d("Hello", "Network Error");
+            }
             content = response.getEntity().getContent();
         } catch (Exception e) {
             Log.d("[GET REQUEST]", "Network exception", e);
         }
         return content;
+
     }
 
+
+    interface IHttpRecvCallback
+    {
+        public void onRecv(String result);
+    }
+
+
     class HttpTask extends AsyncTask<String , Void , String> {
+
+        IHttpRecvCallback m_cb;
+        HttpTask(IHttpRecvCallback cb)
+        {
+            m_cb = cb;
+        }
+
         protected String doInBackground(String... params)
         {
             Log.d("Hello", "Start");
@@ -325,65 +364,12 @@ public class SignupActivity extends ActionBarActivity
 
         protected void onPostExecute(String result)
         {
+            if(m_cb != null)
+            {
+                m_cb.onRecv(result);
+                return;
+            }
             Log.d("Hello", result);
-
-            try {
-                JSONObject json = new JSONObject(result);
-                Log.d("Hello", json.get("result_code").toString());
-                int resultCode = Integer.parseInt(json.get("result_code").toString());
-                if( resultCode == -1 )  {
-                    return;
-                }
-
-                switch( state ) {
-                    case 1 :
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                number + "로 전송된 인증번호를 입력하세요", Toast.LENGTH_SHORT);
-                        toast.show();
-
-                        tooltip.setText("인증 번호");
-                        editText.setText(null);
-                        editText.setHint("인증 번호");
-                        certificButton.setText("확인");
-                        break;
-
-                    case 2 :
-                        Toast toast2 = Toast.makeText(getApplicationContext(),
-                                "인증에 성공하셨습니다. 추가 정보를 입력하세요.", Toast.LENGTH_LONG);
-                        toast2.show();
-
-                        infoLayout.setVisibility(LinearLayout.VISIBLE);
-                        certificButton.setEnabled(false);
-                        certificButton.setTextColor(getResources().getColor(android.R.color.tertiary_text_light));
-                        certificButton.setBackgroundColor(getResources().getColor(android.R.color.background_light));
-                        editText.setEnabled(false);
-
-                        authToken = json.get("token").toString();
-
-                        uid = Integer.parseInt(json.get("uid").toString());
-                        break;
-
-                    case 3 :
-                        Toast toast3 = Toast.makeText(getApplicationContext(),
-                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
-                        toast3.show();
-
-                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                        SharedPreferences.Editor editor = mPref.edit();
-                        editor.putString("auth_token", authToken);
-                        editor.putString("birth_date", birthdate);
-                        editor.putString("number", number);
-                        editor.putString("sex", sex);
-                        editor.commit();
-
-                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                        intent.putExtra("authToken", authToken);
-                        startActivity(intent);
-                        break;
-                }
-
-
-            } catch (JSONException e) { }
         }
     }
 
