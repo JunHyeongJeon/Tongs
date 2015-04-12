@@ -1,4 +1,4 @@
 # Tongs
 
-Korean Software Maestro 05 Projects of tongs team
-----
+Korean Software Maestro 05 Project
+
