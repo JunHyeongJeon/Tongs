@@ -11,13 +11,10 @@
         android:id="@+id/button"
         android:layout_gravity="center_horizontal" />
 
-    <view class="com.example.jaecheol.tongs_v10.BarcodeView"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/barcode_view" />
-
+        android:id="@+id/imageView" />
 
     <TextView
         android:layout_width="wrap_content"
