@@ -77,20 +77,6 @@ public class MainActivity extends ActionBarActivity
                             "메인 액티비티 입니다.", Toast.LENGTH_SHORT);
         toast.show();
 
-
-
-
-//        BarcodeView barcodeView = (BarcodeView)findViewById(R.id.barcode_view);
-
-//        barcodeView.setVisibility(View.INVISIBLE);
-
-//        Bitmap bit = barcodeView.getBarcodeCODE128(400, 200, "01012345678");
-
-//        Button button = (Button)findViewById(R.id.button);
-//        button.setOnClickListener(this);
-//        ShowTicketButton = (Button)findViewById(R.id.id_showTicketButton);
-//        ShowTicketButton.setOnClickListener(this);
-
     }
 
 
