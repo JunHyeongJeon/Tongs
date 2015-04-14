@@ -37,7 +37,7 @@ public class WaitingTicketActivity extends ActionBarActivity {
         createTime = intent.getIntExtra("createTime", 0);
         extraTime = intent.getIntExtra("extraTime", 0);
 
-        storeNameView = (TextView)findViewById(R.id.id_storeNameText);
+        storeNameView  = (TextView)findViewById(R.id.id_storeNameText);
         currentNumView = (TextView)findViewById(R.id.id_currentNumText);
         receiptNumView = (TextView)findViewById(R.id.id_numberText);
         expectWaitView = (TextView)findViewById(R.id.id_expectWaitText);

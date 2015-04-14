@@ -89,8 +89,7 @@ public class SignupActivity extends ActionBarActivity
         ageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(SignupActivity.this,
-                        ageAdapter.getItem(position) + "를 선택 했습니다.", Toast.LENGTH_LONG).show();
+
             }
 
             @Override
@@ -112,8 +111,7 @@ public class SignupActivity extends ActionBarActivity
         genderSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(SignupActivity.this,
-                        genderAdapter.getItem(position) + "을 선택 했습니다.", Toast.LENGTH_LONG).show();
+
             }
 
             @Override
@@ -178,9 +176,6 @@ public class SignupActivity extends ActionBarActivity
                     // 서버로 인증번호 전송
 
                     certificationNumber = editText.getText().toString();
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "입력된 인증번호는 " + certificationNumber, Toast.LENGTH_SHORT);
-                    toast.show();
 
                     String url = getText(R.string.Server_URL)
                             + "user/auth/sms_check"
@@ -202,7 +197,8 @@ public class SignupActivity extends ActionBarActivity
                                 infoLayout.setVisibility(LinearLayout.VISIBLE);
                                 certificButton.setEnabled(false);
                                 certificButton.setTextColor(getResources().getColor(android.R.color.tertiary_text_light));
-                                certificButton.setBackgroundColor(getResources().getColor(android.R.color.background_light));
+                                certificButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                                certificButton.setText("인증 성공");
                                 editText.setEnabled(false);
 
                                 authToken = json.get("token").toString();

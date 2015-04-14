@@ -35,7 +35,7 @@ public class SignupTermsActivity extends ActionBarActivity
         switch (v.getId()) {
             case R.id.id_agreeButton1 :
                 agreeButton2.setEnabled(true);
-                agreeButton2.setBackgroundColor(Color.parseColor("#3F51B5"));
+                agreeButton2.setBackgroundColor(getResources().getColor(R.color.tabsScrollColor));
                 agreeButton2.setTextColor(Color.parseColor("#FFFFFF"));
                 break;
 

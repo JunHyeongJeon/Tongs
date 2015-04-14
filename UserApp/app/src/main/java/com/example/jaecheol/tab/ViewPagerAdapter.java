@@ -39,8 +39,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 tab2 = new com.example.jaecheol.tab.Tab2();
             return tab2;
         }
-
-
     }
 
     // This method return the titles for the Tabs in the Tab Strip

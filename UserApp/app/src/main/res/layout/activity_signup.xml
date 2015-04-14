@@ -32,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#3F51B5"
-            android:textColor="#FFFFFF"
+            android:background="@color/tabsScrollColor"
+            android:textColor="#ffffff"
             android:text="인증" />
 
     </LinearLayout>
@@ -80,8 +80,8 @@
             android:layout_height="wrap_content"
             android:text="Let's Start"
             android:id="@+id/id_startButton"
-            android:background="#3F51B5"
-            android:textColor="#FFFFFF"
+            android:background="@color/tabsScrollColor"
+            android:textColor="#ffffff"
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>

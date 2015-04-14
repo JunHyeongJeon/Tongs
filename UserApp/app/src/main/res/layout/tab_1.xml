@@ -2,19 +2,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/id_tab1_layout">
+    android:id="@+id/id_tab1_layout"
+    android:background="#ffffff">
 
-    <ImageView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="2dp"
+        android:background="@drawable/toolber_dropshadow" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:id="@+id/id_noBarcodeLayout">
+
+        <ImageView
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:src="@drawable/blank_xhdpi"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40.25dp"
+            android:layout_gravity="center_horizontal"
+            android:text="바코드가 존재하지 않습니다."
+            android:textColor="#23272e"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:id="@+id/id_barcodeView" />
+        android:id="@+id/id_barcodeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="현재 인원은 X명입니다."
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/id_currentNum"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/id_barcodeView" />
+
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NewBarcode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/tabsScrollColor"
+        android:textColor="#ffffff"
+        android:text="바코드 발급"
         android:id="@+id/id_barcodeGenerateButton"
         android:layout_gravity="center_horizontal" />
 
