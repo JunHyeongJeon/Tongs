@@ -1,17 +1,26 @@
 package com.csform.android.uiapptemplate;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -32,10 +41,20 @@ import java.util.regex.Pattern;
 
 public class SignUpActivitySecond extends ActionBarActivity {
 
+
+
+    private EditText mEmailView;
+    private EditText mPasswordView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_activity_second);
+
+
+        // Set up the login form.
+        mEmailView = (EditText) findViewById(R.id.sign_up_email);
+        mPasswordView = (EditText) findViewById(R.id.sign_up_password);
 
         Button mBackButton = (Button)findViewById(R.id.sign_up_back_button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +68,8 @@ public class SignUpActivitySecond extends ActionBarActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityNext();
+                attemptSignup();
+                //ActivityNext();
 
             }
         });
@@ -121,6 +141,51 @@ public class SignUpActivitySecond extends ActionBarActivity {
 
         }
     }
+    public void attemptSignup() {
+
+
+        // Reset errors.
+        mEmailView.setError(null);
+        mPasswordView.setError(null);
+
+        // Store values at the time of the login attempt.
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+
+        boolean cancel = false;
+        View focusView = null;
+
+
+        // Check for a valid password, if the user entered one.
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
+            cancel = true;
+        }
+
+        // Check for a valid email address.
+        if (TextUtils.isEmpty(email)) {
+            mEmailView.setError(getString(R.string.error_field_required));
+            focusView = mEmailView;
+            cancel = true;
+        } else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }
+    }
+
+    private boolean isEmailValid(String email) {
+        //TODO: Replace this with your own logic
+        return email.contains("@");
+    }
+
+    private boolean isPasswordValid(String password) {
+        //TODO: Replace this with your own logic
+        return password.length() > 4;
+    }
+
+
 
     public boolean isValidCellPhoneNumber(String cellphoneNumber) {
         boolean returnValue = false;
@@ -199,4 +264,6 @@ public class SignUpActivitySecond extends ActionBarActivity {
             //result를 처리한다.
         }
     }
+
+
 }
