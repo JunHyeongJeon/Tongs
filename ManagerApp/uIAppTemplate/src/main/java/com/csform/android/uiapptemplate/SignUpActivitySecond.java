@@ -2,6 +2,7 @@ package com.csform.android.uiapptemplate;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,7 +53,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
 
             }
         });
-        Button mSendButton = (Button)findViewById(R.id.sign_up_next_button);
+        Button mSendButton = (Button)findViewById(R.id.send_button);
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,6 +103,11 @@ public class SignUpActivitySecond extends ActionBarActivity {
         phoneNumber = phoneNumberEditText.getText().toString();
 
         if(phoneNumber != null && isValidCellPhoneNumber(phoneNumber)){
+
+
+            String url = getText(R.string.sign_up_sms_check_url) + phoneNumber;
+            new HttpTask().execute(url);
+
             Toast toast = Toast.makeText(getApplicationContext(),
                     "인증번호를 전송하였습니다", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
@@ -114,5 +132,71 @@ public class SignUpActivitySecond extends ActionBarActivity {
             returnValue = true;
         }
         return returnValue;
+    }
+
+    public InputStream getInputStreamFromUrl(String url) {
+        InputStream content = null;
+        try{
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            content = response.getEntity().getContent();
+        } catch (Exception e) {
+            Log.e("[GET REQUEST]", "Network exception", e);
+        }
+        return content;
+    }
+
+    private static String convertStreamToString(InputStream is)
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+
+        String line = null;
+        try{
+            while ((line = reader.readLine()) != null){
+                sb.append(line + "\n");
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                is.close();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+
+    }
+    class HttpTask extends AsyncTask<String , Void , String> {
+        protected String doInBackground(String... params)
+        {
+            InputStream is = getInputStreamFromUrl(params[0]);
+
+            String result = convertStreamToString(is);//
+
+            return result;
+        }
+
+        protected void onPostExecute(String result)
+        {
+            Log.d("Hello", result);
+
+            try {
+                JSONObject jsonObject = new JSONObject(result);
+
+                JSONArray nameArray =  jsonObject.names();
+                JSONArray valArray = jsonObject.toJSONArray(nameArray);
+
+
+                Log.d("Hello", nameArray.getString(0) + "  " + valArray.getString(0));
+
+            } catch(JSONException e) {  }
+
+            //result를 처리한다.
+        }
     }
 }
