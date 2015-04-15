@@ -107,5 +107,38 @@
     <string name="actionbar_name_store_management_activity">매장관리</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
     <string name="phonenumber">전화번</string>
+    <string name="title_activity_sign_up_activity_first">SignUpActivityFirst</string>
+    <string name="title_activity_sign_up_activity_second">SignUpActivitySecond</string>
+    <string name="title_activity_sign_up_activity_third">SignUpActivityThird</string>
+
+
+
+    <!-- Sign up Activity First -->
+    <string name="agreement_use">Agreement Use</string>
+    <string name="agreement_personal_information_use">Personal Infomation Use</string>
+    <string name="agreement_use_check">Agree</string>
+    <string name="agreement_personal_information_use_check">Agree</string>
+    <string name="title_activity_signup_activity_page1">SignupActivity_page1</string>
+    <string name="title_activity_signup_activity_page2">SignupActivity_page2</string>
+
+
+    <!-- Sign up Activity second -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password~</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_find_id">Find id /</string>
+    <string name="action_find_password">Find password /</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_passwordsave">Save password</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="cellphone_certification">Cellphone Certification</string>
+    <string name="cellphone_number">ex)010-1234-5678</string>
+    <string name="certification_number">Certification Number</string>
+    <string name="enter_certification_number">Enter Certification Number</string>
+
 
 </resources>

@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -45,12 +44,13 @@
         <activity
             android:name=".SplashScreensActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".ListViewsActivity" />
         <activity
@@ -64,16 +64,23 @@
             android:name=".StoreManagementActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up" >
+        </activity>
+        <activity
+            android:name=".SignUpActivityFirst"
+            android:label="@string/title_activity_sign_up_activity_first" >
+        </activity>
+        <activity
+            android:name=".SignUpActivitySecond"
+            android:label="@string/title_activity_sign_up_activity_second" >
+        </activity>
+        <activity
+            android:name=".SignUpActivityThird"
+            android:label="@string/title_activity_sign_up_activity_third" >
         </activity>
     </application>
 
