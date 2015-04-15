@@ -4,10 +4,17 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class SignUpActivitySecond extends ActionBarActivity {
@@ -33,6 +40,16 @@ public class SignUpActivitySecond extends ActionBarActivity {
 
             }
         });
+        Button mSendButton = (Button)findViewById(R.id.sign_up_next_button);
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Send();
+
+            }
+        });
+
+
     }
 
 
@@ -66,5 +83,36 @@ public class SignUpActivitySecond extends ActionBarActivity {
         Intent intent = new Intent(this, SignUpActivityThird.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+    }
+    public void Send(){
+        EditText phoneNumberEditText = (EditText)findViewById(R.id.phonenumber);
+        String phoneNumber;
+        phoneNumber = phoneNumberEditText.getText().toString();
+
+        if(phoneNumber != null && isValidCellPhoneNumber(phoneNumber)){
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "인증번호를 전송하였습니다", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "올바른 전화번호를 입력해주세요", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+
+        }
+    }
+
+    public boolean isValidCellPhoneNumber(String cellphoneNumber) {
+        boolean returnValue = false;
+        Log.i("cell", cellphoneNumber);
+        String regex = "^\\s*(010|011|012|013|014|015|016|017|018|019)(-|\\)|\\s)*(\\d{3,4})(-|\\s)*(\\d{4})\\s*$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(cellphoneNumber);
+        if (m.matches()) {
+            returnValue = true;
+        }
+        return returnValue;
     }
 }

@@ -139,5 +139,9 @@
     <string name="certification_number">Certification Number</string>
     <string name="enter_certification_number">Enter Certification Number</string>
 
+    <!-- URL String  -->
+
+    <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=</string>
+
 
 </resources>

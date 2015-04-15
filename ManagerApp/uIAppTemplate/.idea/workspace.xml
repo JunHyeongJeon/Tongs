@@ -86,12 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignUpActivitySecond.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SignUpActivitySecond.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-              <folding />
+            <state vertical-scroll-proportion="0.6484375" vertical-offset="981" max-vertical-offset="1650">
+              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+              <folding>
+                <element signature="e#834#986#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+                <element signature="e#1105#1257#0" expanded="true" />
+                <element signature="e#1246#1247#0" expanded="true" />
+                <element signature="e#1376#1520#0" expanded="true" />
+                <element signature="e#1509#1510#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,30 +109,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.111111" vertical-offset="0" max-vertical-offset="1575">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#288#321#0" expanded="true" />
-                <element signature="e#347#382#0" expanded="true" />
-                <element signature="e#408#443#0" expanded="true" />
-                <element signature="e#467#500#0" expanded="true" />
-                <element signature="e#688#710#0" expanded="true" />
-                <element signature="e#992#1017#0" expanded="true" />
-                <element signature="e#1090#1120#0" expanded="true" />
-                <element signature="e#1337#1370#0" expanded="true" />
-                <element signature="e#1881#1907#0" expanded="true" />
-                <element signature="e#2209#2239#0" expanded="true" />
-                <element signature="e#2589#2625#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../legacy/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.16" vertical-offset="66" max-vertical-offset="450">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.9245284" vertical-offset="565" max-vertical-offset="1590">
+              <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -144,18 +129,18 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.16" vertical-offset="1784" max-vertical-offset="2235">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.04" vertical-offset="1874" max-vertical-offset="2295">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54189944" vertical-offset="31" max-vertical-offset="1365">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="1365">
+              <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
               <folding>
                 <element signature="e#830#848#0" expanded="true" />
                 <element signature="e#976#994#0" expanded="true" />
@@ -2373,11 +2358,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/LogInPageActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivityFirst.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_activity_third.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_activity_second.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/../legacy/src/main/res/values/strings_activity_login.xml" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_activity_second.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java" />
       </list>
     </option>
   </component>
@@ -2798,7 +2783,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2868,7 +2853,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../build.gradle">
@@ -3036,14 +3023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../legacy/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.16" vertical-offset="66" max-vertical-offset="450">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../legacy/src/main/java/com/tongs/hostapp/SignupActivity_page1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.296875" vertical-offset="36" max-vertical-offset="855">
@@ -3093,10 +3072,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java">
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        <state vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="1365">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="e#830#848#0" expanded="true" />
+            <element signature="e#976#994#0" expanded="true" />
+            <element signature="e#1667#1685#0" expanded="true" />
+            <element signature="e#2482#2500#0" expanded="true" />
+            <element signature="e#2667#2699#0" expanded="true" />
+            <element signature="e#2814#2861#0" expanded="true" />
+            <element signature="e#2977#3025#0" expanded="true" />
+            <element signature="e#3140#3187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../legacy/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5682451" vertical-offset="66" max-vertical-offset="450">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3106,28 +3102,16 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.111111" vertical-offset="0" max-vertical-offset="1575">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#288#321#0" expanded="true" />
-            <element signature="e#347#382#0" expanded="true" />
-            <element signature="e#408#443#0" expanded="true" />
-            <element signature="e#467#500#0" expanded="true" />
-            <element signature="e#688#710#0" expanded="true" />
-            <element signature="e#992#1017#0" expanded="true" />
-            <element signature="e#1090#1120#0" expanded="true" />
-            <element signature="e#1337#1370#0" expanded="true" />
-            <element signature="e#1881#1907#0" expanded="true" />
-            <element signature="e#2209#2239#0" expanded="true" />
-            <element signature="e#2589#2625#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-2.9245284" vertical-offset="565" max-vertical-offset="1590">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.16" vertical-offset="1784" max-vertical-offset="2235">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.04" vertical-offset="1874" max-vertical-offset="2295">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3140,19 +3124,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54189944" vertical-offset="31" max-vertical-offset="1365">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.6484375" vertical-offset="981" max-vertical-offset="1650">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
           <folding>
-            <element signature="e#830#848#0" expanded="true" />
-            <element signature="e#976#994#0" expanded="true" />
-            <element signature="e#1667#1685#0" expanded="true" />
-            <element signature="e#2482#2500#0" expanded="true" />
-            <element signature="e#2667#2699#0" expanded="true" />
-            <element signature="e#2814#2861#0" expanded="true" />
-            <element signature="e#2977#3025#0" expanded="true" />
-            <element signature="e#3140#3187#0" expanded="true" />
+            <element signature="e#834#986#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+            <element signature="e#1105#1257#0" expanded="true" />
+            <element signature="e#1246#1247#0" expanded="true" />
+            <element signature="e#1376#1520#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
           </folding>
         </state>
       </provider>
