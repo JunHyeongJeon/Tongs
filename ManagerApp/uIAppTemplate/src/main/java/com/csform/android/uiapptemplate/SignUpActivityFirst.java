@@ -3,6 +3,7 @@ package com.csform.android.uiapptemplate;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 
-public class SignUpActivityFirst extends Activity {
+public class SignUpActivityFirst extends ActionBarActivity {
 
     //public static SignupActivity sSignupActivity;
 
@@ -142,8 +143,8 @@ public class SignUpActivityFirst extends Activity {
 
     }
     public void ActivityNext(){
- //       Intent intent = new Intent(this, SignupActivity_page1.class);
-   //     startActivity(intent);
-     //   overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+        Intent intent = new Intent(this, SignUpActivitySecond.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
 }
