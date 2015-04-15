@@ -41,6 +41,7 @@ import java.util.regex.Pattern;
 
 public class SignUpActivitySecond extends ActionBarActivity {
 
+    
 
 
     private EditText mEmailView;
