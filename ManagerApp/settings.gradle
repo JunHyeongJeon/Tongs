@@ -1,3 +1,2 @@
 include ':stickyListHeaders'
 include ':uIAppTemplate'
-include ':legacy'
