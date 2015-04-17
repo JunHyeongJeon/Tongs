@@ -44,8 +44,6 @@ public class Tab2 extends Fragment
 
         initWaitingTicket(v);
 
-
-
         return v;
     }
 
