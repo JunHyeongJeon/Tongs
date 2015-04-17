@@ -142,18 +142,20 @@
     <string name="error_field_required">이 칸을 채워주세요</string>
     <string name="cellphone_certification">인증받을 전화번호</string>
     <string name="the_last_word">핸드폰 인증과정입니다. 문자를 받을수 있는 전화번호를 입력해 주세요</string>
-
-    <string name="cellphone_number">ex)01033303330("-"를 빼고 입력)</string>
+    <string name="cellphone_number">전화번호를 입력해주세요</string>
     <string name="certification_number">인증번호</string>
     <string name="enter_certification_number">인증번호</string>
     <string name="under_the_email">이메일 주소로는 계정을 확인하기 위한 메일이 갈것입니다. 정확한 이메일을 입력해 주세요. 발송되는 이메일에는 계정을 활성화 시키는 코드가 들어있습니다.</string>
     <string name="send_button">보내기</string>
     <string name="check_button">확인</string>
 
+    <!-- Sign up Activity third -->
+    <string name="button_certification">인증하기</string>
+
+
     <!-- URL String  -->
 
-    <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=</string>
+    <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/store/auth/sms_request?mdn=</string>
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
-
-
+    <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
 </resources>

@@ -5,8 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -42,10 +44,14 @@ import java.util.regex.Pattern;
 public class SignUpActivityThird extends ActionBarActivity {
 
 
-
-
-    private EditText mEmailView;
-    private EditText mPasswordView;
+    private String emailToken = null;
+    private String smsResultCode ="-1";
+    private boolean succeceFlag = false;
+    private EditText mPhoneNumber;
+    private Button mSendButton;
+    private String phoneNumber;
+    private String code;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +60,8 @@ public class SignUpActivityThird extends ActionBarActivity {
 
 
         // Set up the login form.
-        mEmailView = (EditText) findViewById(R.id.sign_up_email);
-        mPasswordView = (EditText) findViewById(R.id.sign_up_password);
+        mPhoneNumber = (EditText) findViewById(R.id.phone_number);
+
 
         Button mBackButton = (Button)findViewById(R.id.sign_up_back_button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
@@ -69,17 +75,22 @@ public class SignUpActivityThird extends ActionBarActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptSignup();
+                //attemptSignup();
                 //ActivityNext();
 
             }
         });
 
-        Button mSendButton = (Button)findViewById(R.id.send_button);
+        mSendButton = (Button)findViewById(R.id.send_button);
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Send();
+                String tag = (String)mSendButton.getTag();
+                if("check".equals(tag)) {
+                    Check();
+                }else {
+                    Send();
+                }
 
             }
         });
@@ -122,19 +133,32 @@ public class SignUpActivityThird extends ActionBarActivity {
     }
     public void Send(){
         EditText phoneNumberEditText = (EditText)findViewById(R.id.phone_number);
-        String phoneNumber;
+
         phoneNumber = phoneNumberEditText.getText().toString();
 
         if(phoneNumber != null && isValidCellPhoneNumber(phoneNumber)){
 
-
+            phoneNumber = extract_numeral(phoneNumber);
+            Log.v("PhoneNumber",phoneNumber);
             String url = getText(R.string.sign_up_sms_check_url) + phoneNumber;
             new HttpTask().execute(url);
+            if(!succeceFlag) {
 
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "인증번호를 전송하였습니다", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "인증번호를 전송하였습니다. 인증번호를 입력하세요.", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+                ChangeToEnterNumber();
+            }
+                else if(succeceFlag){
+                //ChangeToEnterNumber();
+
+            }
+
         }
         else {
             Toast toast = Toast.makeText(getApplicationContext(),
@@ -144,53 +168,26 @@ public class SignUpActivityThird extends ActionBarActivity {
 
         }
     }
-    public void attemptSignup() {
+    public String extract_numeral(String str){
 
+        String numeral = "";
+        if( str == null )
+        {
+            numeral = null;
+        }
+        else {
+            String patternStr = "\\d"; //숫자를 패턴으로 지정
+            Pattern pattern = Pattern.compile(patternStr);
+            Matcher matcher = pattern.matcher(str);
 
-        // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
-
-        // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
-
-        boolean cancel = false;
-        View focusView = null;
-
-
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password)) {
-            mPasswordView.setError(getString(R.string.error_field_required));
-            focusView = mPasswordView;
-            cancel = true;
-        } else if(!isPasswordValid(password)){
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-
+            while(matcher.find()) {
+                numeral += matcher.group(0); //지정된 패턴과 매칭되면 numeral 변수에 넣는다. 여기서는 숫자!!
+            }
         }
 
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = mEmailView;
-            cancel = true;
-        }
-
+        return numeral;
     }
 
-    private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
-        return email.contains("@");
-    }
-
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 4;
-    }
 
 
 
@@ -258,18 +255,46 @@ public class SignUpActivityThird extends ActionBarActivity {
             Log.d("Hello", result);
 
             try {
-                JSONObject jsonObject = new JSONObject(result);
+                JSONObject json = new JSONObject(result);
 
-                JSONArray nameArray =  jsonObject.names();
-                JSONArray valArray = jsonObject.toJSONArray(nameArray);
+                String result_code = json.get("result_code").toString();
+                smsResultCode = result_code;
+                if("0".equals(result_code))
+                    succeceFlag = true;
 
-
-                Log.d("Hello", nameArray.getString(0) + "  " + valArray.getString(0));
+                Log.v("jsonObjectCheck", json.toString());
 
             } catch(JSONException e) {  }
 
             //result를 처리한다.
         }
+    }
+    private void ChangeToEnterNumber(){
+
+        mPhoneNumber.setText(null);
+        mPhoneNumber.setHint(R.string.enter_certification_number);
+        mSendButton.setText(R.string.button_certification);
+        mSendButton.setTag("check");
+    }
+    private void Check(){
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "Check", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        emailToken = mPref.getString("emailToken", null);
+        password = mPref.getString("password", null);
+        code = mPhoneNumber.getText().toString();
+        Log.v("code",code);
+        Log.v("emailToken",emailToken);
+
+        if(!"".equals(mPhoneNumber.getText())){
+            String url = getText(R.string.sign_up_sms_check) + emailToken +
+                    "&code="+code + "&password=" + password +"&mdn=" + phoneNumber;
+            Log.v("URL_LOGIN",url);
+            new HttpTask().execute(url);
+        }
+
     }
 
 

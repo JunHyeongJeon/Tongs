@@ -20,27 +20,23 @@
         />
 
 
-    <TextView
-        android:layout_weight="1"
-        android:text="@string/cellphone_certification" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        />
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
 
         >
+
         <EditText
-            android:id="@+id/phone_number" android:layout_width="wrap_content"
+            android:id="@+id/phone_number" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:hint="@string/cellphone_number"
             android:maxLines="1" android:singleLine="true"
         />
         <Button
             android:id="@+id/send_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/send_button"/>
     </LinearLayout>
