@@ -98,7 +98,6 @@
     <string name="raised">RAISED</string>
     <string name="flat">FLAT</string>
     <string name="title_activity_store_management">StoreManagementActivity</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -106,6 +105,49 @@
 
     <string name="actionbar_name_store_management_activity">매장관리</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
-    <string name="phonenumber">전화번</string>
+    <string name="phonenumber">전화번호</string>
+    <string name="title_activity_sign_up_activity_first">SignUpActivityFirst</string>
+    <string name="title_activity_sign_up_activity_second">SignUpActivitySecond</string>
+    <string name="title_activity_sign_up_activity_third">SignUpActivityThird</string>
+
+    <!-- Sign up Activity 공통 -->
+    <string name="next_button">다음</string>
+    <string name="back_button">이전</string>
+
+
+    <!-- Sign up Activity First -->
+    <string name="agreement_use">이용약관</string>
+    <string name="agreement_personal_information_use">개인정보이용동의</string>
+    <string name="agreement_use_check">동의합니다</string>
+    <string name="agreement_personal_information_use_check">동의합니다</string>
+    <string name="title_activity_signup_activity_page1">SignupActivity_page1</string>
+    <string name="title_activity_signup_activity_page2">SignupActivity_page2</string>
+
+
+    <!-- Sign up Activity second -->
+    <string name="prompt_email">이메일</string>
+    <string name="prompt_password">비밀번호</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_find_id">Find id /</string>
+    <string name="action_find_password">Find password /</string>
+    <string name="action_sign_up">Sign up</string>
+    <string name="action_password_save">Save password</string>
+    <string name="error_invalid_email">이메일 형태가 아닙니다.</string>
+    <string name="error_invalid_password">비밀번호가 너무 짧습니다</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">이 칸을 채워주세요</string>
+    <string name="cellphone_certification">인증받을 전화번호</string>
+    <string name="cellphone_number">ex)01033303330("-"를 빼고 입력)</string>
+    <string name="certification_number">인증번호</string>
+    <string name="enter_certification_number">Enter Certification Number</string>
+    <string name="under_the_email">이메일 주소로는 계정을 확인하기 위한 메일이 갈것입니다. 정확한 이메일을 입력해 주세요.</string>
+    <string name="send_button">보내기</string>
+    <string name="check_button">확</string>
+
+    <!-- URL String  -->
+
+    <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=</string>
+
 
 </resources>
