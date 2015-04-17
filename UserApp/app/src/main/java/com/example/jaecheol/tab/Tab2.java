@@ -27,9 +27,11 @@ import java.io.InputStream;
 /**
  * Created by JaeCheol on 15. 4. 7..
  */
-public class Tab2 extends Fragment {
+public class Tab2 extends Fragment
+                  implements View.OnClickListener   {
 
     WaitingTicket waitingTicket;
+    Button cancelWaitingButton;
 
     String authToken;
 
@@ -42,7 +44,6 @@ public class Tab2 extends Fragment {
 
         initWaitingTicket(v);
 
-        getWaitingTicket(v);
 
 
         return v;
@@ -51,11 +52,13 @@ public class Tab2 extends Fragment {
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
 
+        cancelWaitingButton = (Button)v.findViewById(R.id.id_cancelWaitingTicket);
+        cancelWaitingButton.setOnClickListener(this);
+
         waitingTicket.expectTime = (TextView)v.findViewById(R.id.id_expectText);
-        waitingTicket.currentNum = (TextView)v.findViewById(R.id.id_currentNum);
+        waitingTicket.currentNum = (TextView)v.findViewById(R.id.currentText);
         waitingTicket.storeName =  (TextView)v.findViewById(R.id.id_storeNameText);
         waitingTicket.waitingNum = (Button)v.findViewById(R.id.id_waitingnum);
-
     }
 
     private void getWaitingTicket(View v) {
@@ -67,6 +70,8 @@ public class Tab2 extends Fragment {
                 + "user/waiting/get"
                 + "?token=" + authToken;
 
+        Log.d("Fuck", authToken);
+
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
                 try {
@@ -76,15 +81,18 @@ public class Tab2 extends Fragment {
                     if( "-1".equals(result_code) )
                         return;
 
-                    String waitingNum = json.getString("ticket");
-                    String currentNum = json.getString("");
-                    String storeName = json.getString("");
-                    String extraTime = json.getString("");
+                    String waitingNum = json.getJSONObject("ticket").getString("ticket");
+                    Log.d("Hello", waitingNum);
+                    String currentNum = json.getJSONObject("store").getString("current_num");
+                    Log.d("Hello", currentNum);
+                    String storeName = json.getJSONObject("store").getString("brand_name");
+                    Log.d("Hello", storeName);
+//                    String extraTime = json.getJSONObject("ticket");
 
                     waitingTicket.setWaitingNum(waitingNum);
                     waitingTicket.setCurrentNum(currentNum);
                     waitingTicket.setStoreName(storeName);
-                    waitingTicket.setExpectTime(extraTime);
+//                    waitingTicket.setExpectTime(extraTime);
                 }
                 catch(Exception e){}
             }
@@ -93,7 +101,14 @@ public class Tab2 extends Fragment {
 
     }
 
+    public void onClick(View v) {
+        switch (v.getId()) {
 
+            case R.id.id_cancelWaitingTicket:
+                getWaitingTicket(v);
+                break;
+        }
+    }
 
 
     private static String convertStreamToString(InputStream is)
@@ -174,16 +189,20 @@ public class Tab2 extends Fragment {
 
         void setWaitingNum(String text)  {
             waitingNum.setText(text);
+            Log.d("QQQQQ", text);
         }
         void setStoreName(String text)   {
             storeName.setText(text);
+            Log.d("QQQQQ", text);
         }
         void setCurrentNum(String text)  {
             currentNum.setText(text);
+            Log.d("QQQQQ", text);
         }
         void setExpectTime(String text)  {
             expectTime.setText(text);
         }
 
     }
+
 }
