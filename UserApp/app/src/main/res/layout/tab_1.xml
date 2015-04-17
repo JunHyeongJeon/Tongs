@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40.25dp"
             android:layout_gravity="center_horizontal"
-            android:text="바코드가 존재하지 않습니다."
+            android:text="바코드를 생성해주세요."
             android:textColor="#23272e"
             android:textSize="18dp"/>
 
@@ -65,7 +65,7 @@
         android:layout_marginTop="90dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/tabsScrollColor"
+        android:background="@drawable/btn_solid"
         android:textColor="#ffffff"
         android:text="바코드 발급"
         android:id="@+id/id_barcodeGenerateButton"

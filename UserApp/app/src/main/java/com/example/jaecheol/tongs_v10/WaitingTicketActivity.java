@@ -1,12 +1,10 @@
 package com.example.jaecheol.tongs_v10;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by JaeCheol on 15. 4. 4..
@@ -30,27 +28,27 @@ public class WaitingTicketActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_waitingticket);
 
-        Intent intent = this.getIntent();
-
-        sid = intent.getIntExtra("sid", 0);
-        number = intent.getIntExtra("number", 0);
-        createTime = intent.getIntExtra("createTime", 0);
-        extraTime = intent.getIntExtra("extraTime", 0);
-
-        storeNameView  = (TextView)findViewById(R.id.id_storeNameText);
-        currentNumView = (TextView)findViewById(R.id.id_currentNumText);
-        receiptNumView = (TextView)findViewById(R.id.id_numberText);
-        expectWaitView = (TextView)findViewById(R.id.id_expectWaitText);
-        createTimeView = (TextView)findViewById(R.id.id_createTimeText);
-
-        storeNameView.setText(sid);
-        receiptNumView.setText(number);
-        expectWaitView.setText(extraTime);
-        createTimeView.setText(createTime);
-
-        Toast toast = Toast.makeText(getApplicationContext(),
-                "대기표 액티비티 입니다.", Toast.LENGTH_SHORT);
-        toast.show();
+//        Intent intent = this.getIntent();
+//
+//        sid = intent.getIntExtra("sid", 0);
+//        number = intent.getIntExtra("number", 0);
+//        createTime = intent.getIntExtra("createTime", 0);
+//        extraTime = intent.getIntExtra("extraTime", 0);
+//
+//        storeNameView  = (TextView)findViewById(R.id.id_storeNameText);
+//        currentNumView = (TextView)findViewById(R.id.id_currentNumText);
+//        receiptNumView = (TextView)findViewById(R.id.id_numberText);
+//        expectWaitView = (TextView)findViewById(R.id.id_expectWaitText);
+//        createTimeView = (TextView)findViewById(R.id.id_createTimeText);
+//
+//        storeNameView.setText(sid);
+//        receiptNumView.setText(number);
+//        expectWaitView.setText(extraTime);
+//        createTimeView.setText(createTime);
+//
+//        Toast toast = Toast.makeText(getApplicationContext(),
+//                "대기표 액티비티 입니다.", Toast.LENGTH_SHORT);
+//        toast.show();
 
     }
 

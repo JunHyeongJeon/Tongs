@@ -10,13 +10,76 @@
         android:layout_height="2dp"
         android:background="@drawable/toolber_dropshadow" />
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="대기표가 존재하지 않습니다."
-        android:textSize="24dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/entrance_xhdpi"/>
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="294dp"
+        android:layout_height="329dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginTop="70dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+
+            android:src="@drawable/bg_ticket"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/id_storeNameText"
+            android:text="Title"
+            android:textSize="32dp"/>
+        
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/id_waitingnum"
+            android:text="18"
+            android:textSize="76dp"
+            android:textColor="#ffffff"
+            android:background="@color/tabsScrollColor"
+            android:layout_below="@id/id_storeNameText"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="37.5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/line1"
+            android:layout_below="@id/id_waitingnum"
+            android:background="@color/tabsScrollColor" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="36.5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_below="@id/line1"
+            android:background="#23272e"
+            android:id="@+id/line2"/>
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
