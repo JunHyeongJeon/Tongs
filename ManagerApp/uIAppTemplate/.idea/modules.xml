@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ManagerApp.iml" filepath="$PROJECT_DIR$/../ManagerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../legacy/legacy.iml" filepath="$PROJECT_DIR$/../legacy/legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../stickyListHeaders/stickyListHeaders.iml" filepath="$PROJECT_DIR$/../stickyListHeaders/stickyListHeaders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uIAppTemplate.iml" filepath="$PROJECT_DIR$/uIAppTemplate.iml" />
+    </modules>
+  </component>
+</project>
+
