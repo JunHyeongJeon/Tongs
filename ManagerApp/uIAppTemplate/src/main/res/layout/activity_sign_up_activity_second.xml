@@ -14,16 +14,21 @@
         android:text="@string/under_the_email" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="64dp"
 
         />
+
+
     <EditText android:id="@+id/sign_up_email" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:hint="@string/prompt_email"
         android:inputType="textEmailAddress" android:maxLines="1"
         android:singleLine="true"
-        android:layout_weight="1">
-
-
+        android:layout_weight="1"
+        android:layout_marginTop="64dp">
     </EditText>
+
+
+
 
     <EditText android:id="@+id/sign_up_password" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:hint="@string/prompt_password"
@@ -34,58 +39,19 @@
         android:layout_weight="1"
         />
 
-    <TextView
-        android:text="@string/cellphone_certification" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:textStyle="bold"
+
+    <EditText android:id="@+id/sign_up_password_confirm" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:hint="@string/prompt_password_confirm"
+        android:imeActionId="@+id/login"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionUnspecified" android:inputType="textPassword"
+        android:maxLines="1" android:singleLine="true"
         android:layout_weight="1"
+        android:layout_marginBottom="64dp"
 
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+    />
 
-        <EditText
-            android:id="@+id/phone_number" android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:hint="@string/cellphone_number"
-            android:maxLines="1" android:singleLine="true"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/send_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/send_button"/>
-    </LinearLayout>
 
-    <TextView
-        android:text="@string/certification_number" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:textStyle="bold"
-        android:layout_weight="1"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        >
-        <EditText
-
-            android:id="@+id/cellphonenumber" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:hint="@string/enter_certification_number"
-            android:maxLines="1" android:singleLine="true"
-
-            android:layout_weight="1">
-                <requestFocus/>
-        </EditText>
-        <Button
-            android:id="@+id/check_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/check_button"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

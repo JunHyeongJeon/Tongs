@@ -5,8 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -46,6 +48,17 @@ public class SignUpActivitySecond extends ActionBarActivity {
 
     private EditText mEmailView;
     private EditText mPasswordView;
+    private EditText mPasswordConfirmView;
+    private boolean mEmailValid = false;
+    private boolean mPasswordValid = false;
+    private boolean mPasswordConfirmValid = false;
+
+    private String email;
+    private String password;
+    private String passwordConfirm;
+    private String emailToken;
+    private String emailResultCode = "-1";
+    private boolean succeseFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +69,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.sign_up_email);
         mPasswordView = (EditText) findViewById(R.id.sign_up_password);
-
+        mPasswordConfirmView = (EditText) findViewById(R.id.sign_up_password_confirm);
         Button mBackButton = (Button)findViewById(R.id.sign_up_back_button);
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,18 +83,16 @@ public class SignUpActivitySecond extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 attemptSignup();
-                //ActivityNext();
+                if(mEmailValid && mPasswordValid && mPasswordConfirmValid){
+
+                    Send();
+                    //ActivityNext();
+                }
+
 
             }
         });
-        Button mSendButton = (Button)findViewById(R.id.send_button);
-        mSendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Send();
 
-            }
-        });
 
 
 
@@ -120,28 +131,30 @@ public class SignUpActivitySecond extends ActionBarActivity {
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
     public void Send(){
-        EditText phoneNumberEditText = (EditText)findViewById(R.id.phone_number);
-        String phoneNumber;
-        phoneNumber = phoneNumberEditText.getText().toString();
+        Log.v("Send", "SendFunction");
+        if(email != null && isEmailValid(email)) {
 
-        if(phoneNumber != null && isValidCellPhoneNumber(phoneNumber)){
+            if(!succeseFlag) {
+                String url = getText(R.string.sign_up_email) + email;
+                new HttpTask().execute(url);
 
+                Log.v("ResultCodeCheck", emailResultCode);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "이메일이 전송중입니다. 한번 더 눌러주세요.", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+            }
+            else if(succeseFlag){
+                Log.v("ResultCodeCheck", emailResultCode);
+                SaveManagerData();
+                ActivityNext();
+//                succeseFlag = ㄹ;
+            }
 
-            String url = getText(R.string.sign_up_sms_check_url) + phoneNumber;
-            new HttpTask().execute(url);
-
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "인증번호를 전송하였습니다", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
         }
-        else {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "올바른 전화번호를 입력해주세요", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-            toast.show();
 
-        }
+
+
     }
     public void attemptSignup() {
 
@@ -149,24 +162,27 @@ public class SignUpActivitySecond extends ActionBarActivity {
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
-
+        mPasswordConfirmView.setError(null);
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        email = mEmailView.getText().toString();
+        password = mPasswordView.getText().toString();
+        passwordConfirm = mPasswordConfirmView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password)) {
+        if (TextUtils.isEmpty(password)) {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
             cancel = true;
         } else if(!isPasswordValid(password)){
             mPasswordView.setError(getString(R.string.error_invalid_password));
 
-        }
+        } else mPasswordValid = true;
+
+
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
@@ -177,7 +193,20 @@ public class SignUpActivitySecond extends ActionBarActivity {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
+        } else mEmailValid = true;
+
+        if (TextUtils.isEmpty(passwordConfirm)) {
+            mPasswordConfirmView.setError(getString(R.string.error_field_required));
+            focusView = mPasswordConfirmView;
+            cancel = true;
+        } else if (!isPasswordConfirmValid(password, passwordConfirm)) {
+            mPasswordConfirmView.setError(getString(R.string.error_invalid_password_check));
+
+        } else {
+            //mPasswordConfirmView.setError(getString(R.string.error_invalid_password_check_test));
+            mPasswordConfirmValid = true;
         }
+
     }
 
     private boolean isEmailValid(String email) {
@@ -189,7 +218,11 @@ public class SignUpActivitySecond extends ActionBarActivity {
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
+    private boolean isPasswordConfirmValid(String password,String passwordConfirm) {
+        //TODO: Replace this with your own logic
 
+            return password.equals(passwordConfirm);
+         }
 
 
     public boolean isValidCellPhoneNumber(String cellphoneNumber) {
@@ -215,8 +248,23 @@ public class SignUpActivitySecond extends ActionBarActivity {
         }
         return content;
     }
+    private void SaveManagerData(){
+        Log.v("SaveManagerData", "I'm SaveManagerDataFunction");
+        Log.v("email", email);
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = mPref.edit();
+        editor.putString("email", email);
+        editor.putString("password", password);
+        Log.v("emailToken" ,emailToken);
+        editor.putString("emailToken",emailToken);
 
-    private static String convertStreamToString(InputStream is)
+        editor.commit();
+
+
+
+    }
+
+    private String convertStreamToString(InputStream is)
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
@@ -256,14 +304,36 @@ public class SignUpActivitySecond extends ActionBarActivity {
             Log.d("Hello", result);
 
             try {
-                JSONObject jsonObject = new JSONObject(result);
+                //JSONObject jsonObject = new JSONObject(result);
+                JSONObject json = new JSONObject(result);
 
+
+                String result_code = json.get("result_code").toString();
+                //Log.v("result_code", result_code);
+                emailResultCode = result_code;
+
+                String token = json.get("token").toString();
+                //Log.v("token", token);
+                emailToken = token;
+                SaveManagerData();
+
+                if("0".equals(result_code))
+                    succeseFlag = true;
+                //  result_code가 fail때에 대한 처리 시작
+
+
+                //  result_code가 fail때에 대한 처리 끝
+
+
+                Log.v("jsonObjectCheck", json.toString());
+
+                /*
                 JSONArray nameArray =  jsonObject.names();
                 JSONArray valArray = jsonObject.toJSONArray(nameArray);
 
 
                 Log.d("Hello", nameArray.getString(0) + "  " + valArray.getString(0));
-
+                */
             } catch(JSONException e) {  }
 
             //result를 처리한다.

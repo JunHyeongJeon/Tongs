@@ -44,8 +44,8 @@ public class MainActivity extends ActionBarActivity
         setContentView(R.layout.activity_main_topdrawer);
 
         setToolbar();
-        setNavigationDrawer();
-//        setTabView();
+//        setNavigationDrawer();
+        setTabView();
 
         getDataFromIntent();
 
