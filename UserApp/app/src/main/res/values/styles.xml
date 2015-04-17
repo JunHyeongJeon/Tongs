@@ -11,13 +11,4 @@
         <item name="colorControlNormal">#FF0000</item>
     </style>
 
-    <declare-styleable name="ScrimInsetsView">
-        <attr name="insetForeground" format="reference|color" />
-    </declare-styleable>
-
-    <style name="ToolBarStyle" parent="">
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
-        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-    </style>
-
 </resources>
