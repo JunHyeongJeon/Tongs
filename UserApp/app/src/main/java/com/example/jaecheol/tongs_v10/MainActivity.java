@@ -6,7 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.View;
 
 import com.example.jaecheol.navigationdrawer.NavigationDrawerFragment;
@@ -66,9 +65,9 @@ public class MainActivity extends ActionBarActivity
 
     private void setNavigationDrawer()  {
 
-        navigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.fragment_drawer);
+        navigationDrawerFragment = (NavigationDrawerFragment)getFragmentManager().findFragmentById(R.id.fragment_drawer);
         navigationDrawerFragment.setup(R.id.fragment_drawer,
-                (DrawerLayout) findViewById(R.id.drawer), toolbar);
+                                        (DrawerLayout)findViewById(R.id.drawer), toolbar);
     }
 
     private void setTabView()   {
@@ -113,13 +112,6 @@ public class MainActivity extends ActionBarActivity
 //    public void onNavigationDrawerItemSelected(int position) {
 //        Toast.makeText(this, "Menu item selected -> " + position, Toast.LENGTH_SHORT).show();
 //    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
     @Override
     public void onBackPressed() {
