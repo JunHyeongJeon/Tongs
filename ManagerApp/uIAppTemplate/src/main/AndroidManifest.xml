@@ -15,9 +15,7 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
-        android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
+
 
     <application
         android:name=".MainApplication"
@@ -44,8 +42,8 @@
         <activity
             android:name=".SplashScreensActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
         <activity android:name=".ListViewsActivity" />
         <activity
@@ -59,18 +57,23 @@
             android:name=".StoreManagementActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+
         </activity>
         <activity
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up" >
+
         </activity>
         <activity
             android:name=".SignUpActivityFirst"
             android:label="@string/title_activity_sign_up_activity_first" >
+
         </activity>
         <activity
             android:name=".SignUpActivitySecond"
             android:label="@string/title_activity_sign_up_activity_second" >
+
+
         </activity>
         <activity
             android:name=".SignUpActivityThird"
@@ -80,6 +83,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

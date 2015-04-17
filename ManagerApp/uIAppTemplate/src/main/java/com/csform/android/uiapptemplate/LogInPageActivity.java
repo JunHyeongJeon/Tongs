@@ -51,7 +51,7 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
             }else if(v.getId()== R.id.register){
                 Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, SignUpActivity.class);
+                Intent intent = new Intent(this, SignUpActivityFirst.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
             }else if(v.getId()== R.id.skip){
