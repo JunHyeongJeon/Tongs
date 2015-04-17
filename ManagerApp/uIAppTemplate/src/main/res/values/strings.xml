@@ -113,10 +113,10 @@
 
 
     <!-- Sign up Activity First -->
-    <string name="agreement_use">Agreement Use</string>
-    <string name="agreement_personal_information_use">Personal Infomation Use</string>
-    <string name="agreement_use_check">Agree</string>
-    <string name="agreement_personal_information_use_check">Agree</string>
+    <string name="agreement_use">이용약관</string>
+    <string name="agreement_personal_information_use">개인정보이용동의</string>
+    <string name="agreement_use_check">동의합니다</string>
+    <string name="agreement_personal_information_use_check">동의합니다</string>
     <string name="title_activity_signup_activity_page1">SignupActivity_page1</string>
     <string name="title_activity_signup_activity_page2">SignupActivity_page2</string>
 
