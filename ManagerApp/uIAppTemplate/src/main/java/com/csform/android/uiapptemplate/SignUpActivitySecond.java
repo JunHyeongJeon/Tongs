@@ -119,7 +119,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
     public void Send(){
-        EditText phoneNumberEditText = (EditText)findViewById(R.id.phonenumber);
+        EditText phoneNumberEditText = (EditText)findViewById(R.id.phone_number);
         String phoneNumber;
         phoneNumber = phoneNumberEditText.getText().toString();
 

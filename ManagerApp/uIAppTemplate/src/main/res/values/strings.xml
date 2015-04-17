@@ -122,8 +122,8 @@
 
 
     <!-- Sign up Activity second -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_email">이메일</string>
+    <string name="prompt_password">비밀번호</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="action_find_id">Find id /</string>
@@ -134,10 +134,11 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="cellphone_certification">Cellphone Certification</string>
+    <string name="cellphone_certification">인증받을 전화번호</string>
     <string name="cellphone_number">ex)01033303330("-"를 빼고 입력)</string>
-    <string name="certification_number">Certification Number</string>
+    <string name="certification_number">인증번호</string>
     <string name="enter_certification_number">Enter Certification Number</string>
+    <string name="under_the_email">이메일 주소로는 계정을 확인하기 위한 메일이 갈것입니다. 정확한 이메일을 입력해 주세요.</string>
 
     <!-- URL String  -->
 
