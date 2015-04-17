@@ -148,7 +148,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
                 Log.v("ResultCodeCheck", emailResultCode);
                 SaveManagerData();
                 ActivityNext();
-//                succeseFlag = ㄹ;
+                succeseFlag = false;
             }
 
         }

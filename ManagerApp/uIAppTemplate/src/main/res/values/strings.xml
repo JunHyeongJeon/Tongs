@@ -141,6 +141,8 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">이 칸을 채워주세요</string>
     <string name="cellphone_certification">인증받을 전화번호</string>
+    <string name="the_last_word">핸드폰 인증과정입니다. 문자를 받을수 있는 전화번호를 입력해 주세요</string>
+
     <string name="cellphone_number">ex)01033303330("-"를 빼고 입력)</string>
     <string name="certification_number">인증번호</string>
     <string name="enter_certification_number">인증번호</string>

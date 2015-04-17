@@ -72,17 +72,18 @@
         <activity
             android:name=".SignUpActivitySecond"
             android:label="@string/title_activity_sign_up_activity_second" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
         <activity
             android:name=".SignUpActivityThird"
             android:label="@string/title_activity_sign_up_activity_third" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
     </application>
 
