@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hostapp.iml" filepath="$PROJECT_DIR$/hostapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ManagerApp.iml" filepath="$PROJECT_DIR$/ManagerApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stickyListHeaders/stickyListHeaders.iml" filepath="$PROJECT_DIR$/stickyListHeaders/stickyListHeaders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uIAppTemplate/uIAppTemplate.iml" filepath="$PROJECT_DIR$/uIAppTemplate/uIAppTemplate.iml" />
     </modules>
   </component>
 </project>

@@ -106,7 +106,6 @@
 
     <string name="actionbar_name_store_management_activity">매장관리</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
-<<<<<<< HEAD
     <string name="phonenumber">전화번호</string>
     <string name="title_activity_sign_up_activity_first">SignUpActivityFirst</string>
     <string name="title_activity_sign_up_activity_second">SignUpActivitySecond</string>
@@ -157,8 +156,5 @@
     <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=</string>
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
 
-=======
-    <string name="phonenumber">전화번</string>
->>>>>>> origin/master
 
 </resources>
