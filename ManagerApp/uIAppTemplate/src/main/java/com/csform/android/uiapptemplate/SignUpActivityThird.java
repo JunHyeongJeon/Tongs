@@ -52,6 +52,7 @@ public class SignUpActivityThird extends ActionBarActivity {
     private String phoneNumber;
     private String code;
     private String password;
+    private boolean signUpSucceceFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +195,8 @@ public class SignUpActivityThird extends ActionBarActivity {
     public boolean isValidCellPhoneNumber(String cellphoneNumber) {
         boolean returnValue = false;
         Log.i("cell", cellphoneNumber);
-        String regex = "^\\s*(010|011|012|013|014|015|016|017|018|019)(-|\\)|\\s)*(\\d{3,4})(-|\\s)*(\\d{4})\\s*$";
+        String regex = "^\\s*(010|011|012|013|014|015|016|017|018|019)(-|\\)|\\s)*"
+                + "(\\d{3,4})(-|\\s)*(\\d{4})\\s*$";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(cellphoneNumber);
         if (m.matches()) {
@@ -259,7 +261,13 @@ public class SignUpActivityThird extends ActionBarActivity {
 
                 String result_code = json.get("result_code").toString();
                 smsResultCode = result_code;
-                if("0".equals(result_code))
+
+                if("yeah".equals(result_code)){
+                    signUpSucceceFlag = true;
+                    mSendButton.setText(R.string.button_certification_success);
+                }
+
+                else if("0".equals(result_code))
                     succeceFlag = true;
 
                 Log.v("jsonObjectCheck", json.toString());
