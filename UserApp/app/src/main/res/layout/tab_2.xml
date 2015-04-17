@@ -14,9 +14,10 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginRight="40dp"
+        android:id="@+id/relativeLayout">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -28,7 +29,8 @@
         android:layout_height="329dp"
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="80dp"
+        android:id="@+id/relativeLayout2">
 
         <ImageView
             android:layout_width="match_parent"
@@ -117,7 +119,7 @@
             android:layout_toRightOf="@id/expectText"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:id="@+id/expeText2"
+            android:id="@+id/id_expectText"
             android:text="1시간 18분"/>
 
         <View
@@ -131,5 +133,20 @@
             android:id="@+id/line3"/>
 
     </RelativeLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/btn_solid"
+        android:textColor="#ffffff"
+        android:text="대기표 취소"
+        android:id="@+id/id_cancelWaitingTicket"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
