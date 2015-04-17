@@ -162,8 +162,8 @@
       <file leaf-file-name="SplashScreensActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SplashScreensActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.859375" vertical-offset="210" max-vertical-offset="1650">
-              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.390625" vertical-offset="210" max-vertical-offset="1650">
+              <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -2704,7 +2704,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="730" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3038,6 +3038,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.769231" vertical-offset="1605" max-vertical-offset="3435">
+          <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
+          <folding>
+            <element signature="e#3954#3993#0" expanded="true" />
+            <element signature="e#5018#5058#0" expanded="true" />
+            <element signature="e#5209#5251#0" expanded="true" />
+            <element signature="e#5382#5422#0" expanded="true" />
+            <element signature="e#5563#5602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-nodpi/splash_screen_background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43808532" vertical-offset="314" max-vertical-offset="1410">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding>
+            <element signature="e#830#848#0" expanded="true" />
+            <element signature="e#976#994#0" expanded="true" />
+            <element signature="e#1667#1685#0" expanded="true" />
+            <element signature="e#2482#2500#0" expanded="true" />
+            <element signature="e#2667#2699#0" expanded="true" />
+            <element signature="e#2815#2862#0" expanded="true" />
+            <element signature="e#2979#3027#0" expanded="true" />
+            <element signature="e#3143#3190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_sign_up_activity_second.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -3066,46 +3102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SignUpActivitySecond.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.769231" vertical-offset="1605" max-vertical-offset="3435">
-          <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
-          <folding>
-            <element signature="e#3954#3993#0" expanded="true" />
-            <element signature="e#5018#5058#0" expanded="true" />
-            <element signature="e#5209#5251#0" expanded="true" />
-            <element signature="e#5382#5422#0" expanded="true" />
-            <element signature="e#5563#5602#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43808532" vertical-offset="314" max-vertical-offset="1410">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-          <folding>
-            <element signature="e#830#848#0" expanded="true" />
-            <element signature="e#976#994#0" expanded="true" />
-            <element signature="e#1667#1685#0" expanded="true" />
-            <element signature="e#2482#2500#0" expanded="true" />
-            <element signature="e#2667#2699#0" expanded="true" />
-            <element signature="e#2815#2862#0" expanded="true" />
-            <element signature="e#2979#3027#0" expanded="true" />
-            <element signature="e#3143#3190#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-nodpi/splash_screen_background.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/csform/android/uiapptemplate/SplashScreensActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.859375" vertical-offset="210" max-vertical-offset="1650">
-          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.390625" vertical-offset="210" max-vertical-offset="1650">
+          <caret line="37" column="28" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
           <folding />
         </state>
       </provider>
