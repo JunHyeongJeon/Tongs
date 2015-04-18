@@ -3,12 +3,9 @@ package com.example.jaecheol.tongs_v10;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
-import com.example.jaecheol.navigationdrawer.NavigationDrawerFragment;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,8 +22,6 @@ public class MainActivity extends ActionBarActivity
     com.example.jaecheol.tab.ViewPagerAdapter adapter;
     com.example.jaecheol.tab.SlidingTabLayout tabs;
 
-    NavigationDrawerFragment navigationDrawerFragment;
-
     CharSequence titles[]={"바코드","대기표"};
     int numOfTabs =2;
 
@@ -40,15 +35,12 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main_topdrawer);
+        setContentView(R.layout.activity_main);
 
         setToolbar();
-//        setNavigationDrawer();
         setTabView();
 
         getDataFromIntent();
-
     }
 
 
@@ -56,18 +48,11 @@ public class MainActivity extends ActionBarActivity
     private void setToolbar()   {
 
         // Creating The Toolbar and setting it as the Toolbar for the activity
-        toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-    }
-
-    private void setNavigationDrawer()  {
-
-        navigationDrawerFragment = (NavigationDrawerFragment)getFragmentManager().findFragmentById(R.id.fragment_drawer);
-        navigationDrawerFragment.setup(R.id.fragment_drawer,
-                                        (DrawerLayout)findViewById(R.id.drawer), toolbar);
     }
 
     private void setTabView()   {
@@ -107,19 +92,6 @@ public class MainActivity extends ActionBarActivity
         }
     }
 
-
-//    @Override
-//    public void onNavigationDrawerItemSelected(int position) {
-//        Toast.makeText(this, "Menu item selected -> " + position, Toast.LENGTH_SHORT).show();
-//    }
-
-    @Override
-    public void onBackPressed() {
-        if (navigationDrawerFragment.isDrawerOpen())
-            navigationDrawerFragment.closeDrawer();
-        else
-            super.onBackPressed();
-    }
 
 
     public static String convertStreamToString(InputStream is) {
