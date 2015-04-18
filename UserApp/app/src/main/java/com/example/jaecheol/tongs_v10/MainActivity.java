@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
@@ -22,8 +20,8 @@ public class MainActivity extends ActionBarActivity
     com.example.jaecheol.tab.ViewPagerAdapter adapter;
     com.example.jaecheol.tab.SlidingTabLayout tabs;
 
-    CharSequence titles[]={"바코드","대기표"};
-    int numOfTabs =2;
+    CharSequence titles[] = {"바코드", "대기표"};
+    int numOfTabs = 2;
 
     String authToken;
 
@@ -43,9 +41,34 @@ public class MainActivity extends ActionBarActivity
         getDataFromIntent();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_registerEmail:
+                registerEmail();
+                break;
+            case R.id.action_logout:
+                logout();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
-    private void setToolbar()   {
+    private void setToolbar() {
 
         // Creating The Toolbar and setting it as the Toolbar for the activity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -55,10 +78,10 @@ public class MainActivity extends ActionBarActivity
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
-    private void setTabView()   {
+    private void setTabView() {
 
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter =  new com.example.jaecheol.tab.ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
+        adapter = new com.example.jaecheol.tab.ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager) findViewById(R.id.pager);
@@ -80,7 +103,7 @@ public class MainActivity extends ActionBarActivity
         tabs.setViewPager(pager);
     }
 
-    private void getDataFromIntent()    {
+    private void getDataFromIntent() {
 
         Intent intent = this.getIntent();
         authToken = intent.getStringExtra("auth_token");
@@ -93,31 +116,17 @@ public class MainActivity extends ActionBarActivity
     }
 
 
+    private void registerEmail() {
 
-    public static String convertStreamToString(InputStream is) {
-/*
- * To convert the InputStream to String we use the BufferedReader.readLine()
- * method. We iterate until the BufferedReader return null which means
- * there's no more data to read. Each line will appended to a StringBuilder
- * and returned as String.
- */
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "이메일 등록", Toast.LENGTH_LONG);
+        toast.show();
+    }
 
-        String line = null;
-        try {
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
+    private void logout()   {
+
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "로그아웃", Toast.LENGTH_LONG);
+        toast.show();
     }
 }

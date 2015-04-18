@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jaecheol.tongs_v10.R;
@@ -35,6 +36,9 @@ public class Tab2 extends Fragment
 
     String authToken;
 
+    RelativeLayout waitTicketLayout;
+    RelativeLayout noWaitTicketLayout;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
@@ -50,6 +54,9 @@ public class Tab2 extends Fragment
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
 
+        waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
+        noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
+
         cancelWaitingButton = (Button)v.findViewById(R.id.id_cancelWaitingTicket);
         cancelWaitingButton.setOnClickListener(this);
 
@@ -57,6 +64,23 @@ public class Tab2 extends Fragment
         waitingTicket.currentNum = (TextView)v.findViewById(R.id.currentText);
         waitingTicket.storeName =  (TextView)v.findViewById(R.id.id_storeNameText);
         waitingTicket.waitingNum = (Button)v.findViewById(R.id.id_waitingnum);
+
+        showTicketLayout(false);
+    }
+
+    private void showTicketLayout(boolean isTicketExist)    {
+        if( isTicketExist == true ) {
+            noWaitTicketLayout.setVisibility(View.GONE);
+
+            waitTicketLayout.setVisibility(View.VISIBLE);
+            cancelWaitingButton.setVisibility(View.VISIBLE);
+        }
+        else    {
+            noWaitTicketLayout.setVisibility(View.VISIBLE);
+
+            waitTicketLayout.setVisibility(View.GONE);
+            cancelWaitingButton.setVisibility(View.GONE);
+        }
     }
 
     private void getWaitingTicket(View v) {
