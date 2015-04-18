@@ -46,7 +46,7 @@ public class ListViewsActivity extends ActionBarActivity {
 		
 		mDynamicListView = (DynamicListView) findViewById(R.id.dynamic_listview);
 
-		String category = LIST_VIEW_OPTION_2;
+		String category = LIST_VIEW_OPTION_3;
 		Bundle extras = getIntent().getExtras();
 		if (extras != null && extras.containsKey(LIST_VIEW_OPTION)) {
 			category = extras.getString(LIST_VIEW_OPTION, LIST_VIEW_OPTION_1);

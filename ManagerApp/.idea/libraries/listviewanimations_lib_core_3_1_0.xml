@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="listviewanimations_lib-core_3.1.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Main/libs/listviewanimations_lib-core_3.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/uIAppTemplate/libs/listviewanimations_lib-core_3.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

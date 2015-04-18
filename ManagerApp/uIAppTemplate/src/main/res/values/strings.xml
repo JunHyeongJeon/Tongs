@@ -159,4 +159,10 @@
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
     <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
+    <string name="title_activity_client_management">ClientManagementActivity</string>
+
+    <!-- ClientManagementActivity  -->
+
+    <string name="client_call">고객 호출</string>
+    <string name="client_add">고객 등록</string>
 </resources>

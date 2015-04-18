@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -86,6 +87,8 @@ public class StoreManagementActivity extends ActionBarActivity {
         mHandler = new Handler();
 
         if (savedInstanceState == null) {
+            Log.v("savedInstanceState", "savedInstanceState");
+
             int position = 0;
             selectItem(position, mDrawerItems.get(position).getTag());
             mDrawerLayout.openDrawer(mDrawerList);
@@ -180,18 +183,17 @@ public class StoreManagementActivity extends ActionBarActivity {
 
     }
 
-    private class DrawerItemClickListener implements
-            ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position,
-                                long id) {
-            selectItem(position, mDrawerItems.get(position).getTag());
-        }
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItem(position, mDrawerItems.get(position).getTag());
+            }
     }
 
     private void selectItem(int position, int drawerTag) {
         Fragment fragment = getFragmentByDrawerTag(drawerTag);
         commitFragment(fragment);
+        Log.v("selectItem", "selectItem");
 
         mDrawerList.setItemChecked(position, true);
         setTitle(mDrawerItems.get(position).getTitle());
@@ -240,6 +242,7 @@ public class StoreManagementActivity extends ActionBarActivity {
 
         @Override
         public void run() {
+            Log.v("run", "run");
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame, fragment)
