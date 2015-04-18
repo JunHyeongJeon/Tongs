@@ -130,6 +130,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:id="@+id/id_currectText"
+            android:textStyle="bold"
             android:text="18번"/>
 
         <View
@@ -158,6 +159,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:id="@+id/id_expectText"
+            android:textStyle="bold"
             android:text="1시간 18분"/>
 
         <View

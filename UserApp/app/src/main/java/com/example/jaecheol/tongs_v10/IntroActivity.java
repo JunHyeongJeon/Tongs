@@ -32,7 +32,8 @@ public class IntroActivity extends ActionBarActivity
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.id_startButton:
-                Intent intent = new Intent(IntroActivity.this, SignupTermsActivity.class);
+//                Intent intent = new Intent(IntroActivity.this, SignupTermsActivity.class);
+                Intent intent = new Intent(IntroActivity.this, SignupActivity.class);
                 startActivity(intent);
                 this.finish();
                 break;

@@ -9,8 +9,8 @@
         android:id="@+id/id_popup_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:layout_marginRight="10dp" />
-
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="numberSigned"/>
 
 </LinearLayout>

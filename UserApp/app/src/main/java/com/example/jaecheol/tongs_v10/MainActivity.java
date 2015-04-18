@@ -1,7 +1,9 @@
 package com.example.jaecheol.tongs_v10;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -56,9 +58,9 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.action_registerEmail:
-                registerEmail();
-                break;
+//            case R.id.action_registerEmail:
+//                registerEmail();
+//                break;
             case R.id.action_logout:
                 logout();
                 break;
@@ -128,5 +130,20 @@ public class MainActivity extends ActionBarActivity
         Toast toast = Toast.makeText(getApplicationContext(),
                 "로그아웃", Toast.LENGTH_LONG);
         toast.show();
+
+        // SharedPreferences에 담겨있는 정보들 모두 삭제.
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = mPref.edit();
+        editor.clear();
+        editor.commit();
+
+        // 초기 페이지로 되돌림.
+        Intent intent = new Intent(MainActivity.this, IntroActivity.class);
+        startActivity(intent);
+        this.finish();
     }
+
+
+
+
 }

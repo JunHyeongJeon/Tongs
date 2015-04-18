@@ -29,6 +29,7 @@
             android:layout_marginTop="40.25dp"
             android:layout_gravity="center_horizontal"
             android:text="바코드를 생성해주세요."
+            android:textStyle="bold"
             android:textColor="#23272e"
             android:textSize="18dp"/>
 
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="현재 인원은 X명입니다."
+            android:textStyle="bold"
             android:layout_gravity="center_horizontal"
             android:id="@+id/id_currentNum"/>
 
@@ -68,6 +70,7 @@
         android:background="@drawable/btn_solid"
         android:textColor="#ffffff"
         android:text="바코드 발급"
+        android:textStyle="bold"
         android:id="@+id/id_barcodeGenerateButton"
         android:layout_gravity="center_horizontal" />
 

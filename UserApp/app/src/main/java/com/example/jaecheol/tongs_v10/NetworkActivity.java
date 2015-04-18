@@ -1,194 +1,90 @@
 package com.example.jaecheol.tongs_v10;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.CoreProtocolPNames;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 
 /**
  * Created by JaeCheol on 15. 3. 28..
  */
 public class NetworkActivity {
 
-    /**
-     * 서버에 데이터를 보내는 메소드
-     *
-     * @param json
-     * @return
-     */
-    static public String sendJsonDataToServer(int major, int minor, String json, String ServerURL) {
-        InputStream inputStream = null;
-        String result = "";
+    NetworkActivity()   {}
 
-        if (json == null)
-            json = "";
-
-        DefaultHttpClient client = new DefaultHttpClient();
-        try {
-
-            // 1. create HttpClient
-            HttpClient httpClient = new DefaultHttpClient();
-
-            // 2. make POST request to the given URL
-            HttpPost httpPost = new HttpPost(ServerURL);
-
-            // 4. set json to StringEntity
-            StringEntity se = new StringEntity(json);
-
-            // 5. set httpPost Entity
-            httpPost.setEntity(se);
-
-            // 6. Set some header to inform server about
-            SetHttpHeader(major, minor, httpPost);
-
-            // 7. Execute POST request to the given URL
-            HttpResponse httpResponse = httpClient.execute(httpPost);
-
-            // 8. receive response as inputStream
-            inputStream = httpResponse.getEntity().getContent();
-
-            // 9. convert inputStream to string
-            if (inputStream != null) {
-                result = convertInputStreamToString(inputStream);
-            } else {
-                result = "Did not work!";
-            }
-
-        } catch (Exception e) {
-            Log.d("InputStream", e.getLocalizedMessage());
-        }
-
-        // 10. return result
-        return result;
-    }
-
-
-
-    private static void SetHttpHeader(int major, int minor, HttpPost httpPost)
+    private String convertStreamToString(InputStream is)
     {
-        if( major == 0 )    {
-            if( minor == 0 )    {
-
-                httpPost.setHeader("mobile_number", "application/json");
-            }
-            else if( minor == 1 )   {
-
-                httpPost.setHeader("mobile_number", "application/json");
-                httpPost.setHeader("verification_code", "application/json");
-            }
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(1024*64);
+        byte data[] = new byte[10240];
+        while(true) {
+            try {
+                int len = is.read(data);
+                if (len == -1)
+                    break;
+                baos.write(data, 0, len);
+            } catch (Exception e) { }
         }
-        else if( major == 1 )   {
-            if( minor == 0 )    {
+        String str = new String(baos.toByteArray());
+        return str;
+    }
 
-                httpPost.setHeader("mobile_number", "application/json");
-                httpPost.setHeader("sex", "application/json");
-                httpPost.setHeader("birthdate", "application/json");
-                httpPost.setHeader("auth_token", "application/json");
+    public InputStream getInputStreamFromUrl(String url) {
+        InputStream content = null;
+        try{
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            if(response.getStatusLine().getStatusCode() != 200)
+            {
+                // 네트워크 오류입니다.
+                Log.d("Hello", "Network Error");
             }
+            content = response.getEntity().getContent();
+        } catch (Exception e) {
+            Log.d("[GET REQUEST]", "Network exception", e);
         }
+        return content;
+
     }
 
 
-    public static void HttpGet() {
-
-        Thread myThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                HttpClient client = new DefaultHttpClient();
-
-                String getURL = "http://somabell01.cloudapp.net:8080/user/auth/sms_request?mdn=01089399673";
-                HttpGet get = new HttpGet(getURL);
-                get.setHeader("Content-Type", "text/xml");
-
-                HttpResponse response;
-
-                client.getParams().setParameter(CoreProtocolPNames.USER_AGENT, System.getProperty("http.agent"));
-
-                try {
-                    response = client.execute(get);
-
-                    Log.d("Response of GET request", response.toString());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        myThread.start();
+    interface IHttpRecvCallback
+    {
+        public void onRecv(String result);
     }
 
 
-    /**
-     * InputStream to String
-     * @param inputStream
-     * @return
-     * @throws IOException
-     */
-    private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader((inputStream)));
-        String line = "";
-        String result = "";
-        while( (line = bufferedReader.readLine()) != null ) {
-            result += line;
+    class HttpTask extends AsyncTask<String , Void , String> {
+
+        IHttpRecvCallback m_cb;
+        HttpTask(IHttpRecvCallback cb)
+        {
+            m_cb = cb;
         }
 
-        inputStream.close();
-        return result;
-    }
+        protected String doInBackground(String... params)
+        {
+            InputStream is = getInputStreamFromUrl(params[0]);
 
+            String result = convertStreamToString(is);
 
-    /**
-     * 받은 JSON 객체를 파싱하는 메소드
-     * @param pRecvServerPage
-     * @return
-     */
-    public static String[][] jsonParserList(String pRecvServerPage) {
+            return result;
+        }
 
-        Log.i("서버에서 받은 전체 내용 : ", pRecvServerPage);
-
-        try {
-            JSONObject json = new JSONObject(pRecvServerPage);
-            JSONArray jArr = json.getJSONArray("List");
-
-
-            // 받아온 pRecvServerPage를 분석하는 부분
-            String[] jsonName = {"msg1", "msg2", "msg3"};
-            String[][] parseredData = new String[jArr.length()][jsonName.length];
-            for (int i = 0; i < jArr.length(); i++) {
-                json = jArr.getJSONObject(i);
-                if(json != null) {
-                    for(int j = 0; j < jsonName.length; j++) {
-                        parseredData[i][j] = json.getString(jsonName[j]);
-                    }
-                }
+        protected void onPostExecute(String result)
+        {
+            if(m_cb != null)
+            {
+                m_cb.onRecv(result);
+                return;
             }
-
-
-            // 분해 된 데이터를 확인하기 위한 부분
-            for(int i=0; i<parseredData.length; i++){
-                Log.i("JSON을 분석한 데이터 "+i+" : ", parseredData[i][0]);
-                Log.i("JSON을 분석한 데이터 "+i+" : ", parseredData[i][1]);
-                Log.i("JSON을 분석한 데이터 "+i+" : ", parseredData[i][2]);
-            }
-
-            return parseredData;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
+            Log.d("Hello", result);
         }
     }
+
 }

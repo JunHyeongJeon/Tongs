@@ -207,6 +207,7 @@ public class SignupActivity extends ActionBarActivity
                         }
                     };
 
+
                     new HttpTask(cb).execute(url);
 
                 }
@@ -259,7 +260,6 @@ public class SignupActivity extends ActionBarActivity
                             } catch (Exception e) { }
                         }
                     };
-
                     new HttpTask(cb).execute(url);
 
                 } catch (Exception e)   { }
