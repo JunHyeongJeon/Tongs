@@ -21,6 +21,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
@@ -68,11 +69,11 @@ public class GcmIntentService extends IntentService {
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 // This loop represents the service doing some work.
-                for (int i = 0; i < 1; i++) {
+                for (int i = 0; i < 2; i++) {
                     Log.i(TAG, "Working... " + (i + 1)
                             + "/5 @ " + SystemClock.elapsedRealtime());
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                     }
                 }
@@ -81,6 +82,14 @@ public class GcmIntentService extends IntentService {
 //                sendNotification("Received: " + extras.toString());
                 sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
                 Log.i(TAG, "Received: " + extras.toString());
+
+
+                Log.d("123", "START");
+                Intent intent2 = new Intent("android.intent.action.GCMRECV");
+                intent2.setData(Uri.parse(extras.toString()));
+                sendBroadcast(intent2);
+                Log.d("123", "END");
+
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
@@ -94,6 +103,7 @@ public class GcmIntentService extends IntentService {
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
 
+
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, SignupActivity.class), 0);
 
@@ -103,7 +113,8 @@ public class GcmIntentService extends IntentService {
         .setContentTitle("GCM Notification")
         .setStyle(new NotificationCompat.BigTextStyle()
         .bigText(msg))
-        .setContentText(msg);
+        .setContentText(msg)
+        .setVibrate(new long[] {0, 800});
 
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());

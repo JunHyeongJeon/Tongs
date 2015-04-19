@@ -68,7 +68,7 @@ public class Tab2 extends Fragment
         showTicketLayout(false);
     }
 
-    private void showTicketLayout(boolean isTicketExist)    {
+    public void showTicketLayout(boolean isTicketExist)    {
         if( isTicketExist == true ) {
             noWaitTicketLayout.setVisibility(View.GONE);
 
