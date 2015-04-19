@@ -1,13 +1,15 @@
-package com.example.jaecheol.tongs_v10;
+package com.example.jaecheol.tongs;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.Toast;
 
+import com.example.jaecheol.tongs_v10.R;
+
 /**
  * Created by JaeCheol on 15. 3. 31..
  */
-public class BarcodeActivity extends ActionBarActivity {
+public class StoreViewActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

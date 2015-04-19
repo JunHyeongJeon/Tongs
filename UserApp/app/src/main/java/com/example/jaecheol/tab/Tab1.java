@@ -23,7 +23,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.jaecheol.ble.BleManager;
-import com.example.jaecheol.ble.MyBeacon;
 import com.example.jaecheol.tongs_v10.BarcodeGenerator;
 import com.example.jaecheol.tongs_v10.R;
 import com.google.zxing.BarcodeFormat;
@@ -109,13 +108,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         dialog.setView(layout);
     }
 
-    private void showBarcodeLayout(boolean isBarcodeExist)   {
-        if( isBarcodeExist == true )    {
+    private void showBarcodeLayout(boolean isBarcodeExist) {
+        if (isBarcodeExist == true) {
 
             barcodeLayout.setVisibility(View.VISIBLE);
             noBarcodeLayout.setVisibility(View.GONE);
-        }
-        else    {
+        } else {
 
             barcodeLayout.setVisibility(View.GONE);
             noBarcodeLayout.setVisibility(View.VISIBLE);
@@ -209,7 +207,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                     if( scanData != null) {
                         Log.d("BLE", scanData);
 
-                        MyBeacon beacon;
 //                        beacon.
 
 
@@ -233,29 +230,30 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         BleManager.getInstance(this.getView().getContext(), handler).scanLeDevice(true);
     }
 
-    private void getBeconInfo() {
+    private void parseDataToBeacon(String scanData) {
+
         String beconName=null;
         String uuid=null;
         String major=null;
         String minor=null;
         String accurancy=null;
-//
-//        int index=0;
-//        char ch;
-//        while( (ch = scanData.charAt(index++)) == ':' )    {
-//            beconName += ch;
-//        }
-//        while( (ch = scanData.charAt(index++)) == ',' )    {
-//            uuid += ch;
-//        }
-//        while( (ch = scanData.charAt(index++)) == '/' )    {
-//            major += ch;
-//        }
-//        while( (ch = scanData.charAt(index++)) == ',' )    {
-//            minor += ch;
-//        }
-//        while( (ch = scanData.charAt(index++)) == ';' )    {
-//            accurancy += ch;
-//        }
+
+        int index=0;
+        char ch;
+        while( (ch = scanData.charAt(index++)) == ':' )    {
+            beconName += ch;
+        }
+        while( (ch = scanData.charAt(index++)) == ',' )    {
+            uuid += ch;
+        }
+        while( (ch = scanData.charAt(index++)) == '/' )    {
+            major += ch;
+        }
+        while( (ch = scanData.charAt(index++)) == ',' )    {
+            minor += ch;
+        }
+        while( (ch = scanData.charAt(index++)) == ';' )    {
+            accurancy += ch;
+        }
     }
 }

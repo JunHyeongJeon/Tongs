@@ -1,4 +1,4 @@
-package com.example.jaecheol.tongs_v10;
+package com.example.jaecheol.tongs;
 
 import android.annotation.TargetApi;
 import android.content.Context;

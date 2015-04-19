@@ -1,4 +1,4 @@
-package com.example.jaecheol.tongs_v10;
+package com.example.jaecheol.tongs;
 
 import android.os.AsyncTask;
 import android.util.Log;

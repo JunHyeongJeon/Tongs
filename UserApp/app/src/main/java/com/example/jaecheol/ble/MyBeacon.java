@@ -279,7 +279,16 @@ public class MyBeacon
 	{
 		this.isRemembered = paramBoolean;
 	}
-	
+
+    public void setMajor(int major) {
+        this.major = major;
+    }
+
+    public void setMinor(int minor) {
+        this.minor = minor;
+    }
+
+
 	public String getSummary()
 	{
 		StringBuilder sb = new StringBuilder();
