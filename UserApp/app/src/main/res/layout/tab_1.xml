@@ -64,7 +64,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/btn_solid"
@@ -72,6 +72,20 @@
         android:text="바코드 발급"
         android:textStyle="bold"
         android:id="@+id/id_barcodeGenerateButton"
+        android:layout_gravity="center_horizontal" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/btn_border"
+        android:textColor="@color/tabsScrollColor"
+        android:text="주변매장 탐색"
+        android:textStyle="bold"
+        android:id="@+id/id_scanBLEButton"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

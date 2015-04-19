@@ -291,7 +291,8 @@ public class MyBeacon
 		sb.append("/");
 		sb.append(minor);
 		sb.append(",");
-		sb.append(String.format("%.2f", accuracy2));
+        sb.append(String.format("%.2f", accuracy2));
+        sb.append(";");
 		return sb.toString();
 	}
 	

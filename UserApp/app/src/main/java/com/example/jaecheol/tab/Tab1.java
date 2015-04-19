@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.jaecheol.ble.BleManager;
+import com.example.jaecheol.ble.MyBeacon;
 import com.example.jaecheol.tongs_v10.BarcodeGenerator;
 import com.example.jaecheol.tongs_v10.R;
 import com.google.zxing.BarcodeFormat;
@@ -38,11 +39,14 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     Button barcodeGenerateButton;
     TextView currentNumText;
 
+    Button scanBLEButton;
+
     LinearLayout barcodeLayout;
     LinearLayout noBarcodeLayout;
 
     String mobileNumber;
     String peopleNumber;
+    String uid;
     EditText peopleEditText;
 
     BarcodeGenerator barcodeGenerator;
@@ -62,6 +66,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         setBarcode(view);
         setDialog(view);
 
+        scanBLEButton = (Button)view.findViewById(R.id.id_scanBLEButton);
+        scanBLEButton.setOnClickListener(this);
         handler = new ServiceHandler();
 
         return view;
@@ -125,6 +131,9 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
                 break;
 
+            case R.id.id_scanBLEButton :
+                scanBeacon();
+                break;
         }
     }
 
@@ -164,12 +173,13 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                         // 확인 버튼 눌렀을때 액션
                         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
                         mobileNumber = mPref.getString("number", null);
+                        uid = mPref.getString("uid", null);
                         if( peopleEditText != null )
                             peopleNumber = peopleEditText.getText().toString();
 
                         if (mobileNumber.isEmpty() == false) {
 
-                            setBarcodeContents(mobileNumber + "_" + peopleNumber);
+                            setBarcodeContents(uid + "_" + mobileNumber + "_" + peopleNumber);
                             currentNumText.setText("현재 인원은 " + peopleNumber + "명 입니다.");
                             registerBarcode();
                         }
@@ -196,6 +206,14 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                     break;
                 case 112:
                     scanData = (String)msg.obj;
+                    if( scanData != null) {
+                        Log.d("BLE", scanData);
+
+                        MyBeacon beacon;
+//                        beacon.
+
+
+                    }
 //                    m_webView.loadUrl("javascript:output('"+scanData+"')");
                     break;
                 case 113:
@@ -210,8 +228,34 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void searchBeacon()
+    public void scanBeacon()
     {
-        BleManager.getInstance(this, m_handler).scanLeDevice(true);
+        BleManager.getInstance(this.getView().getContext(), handler).scanLeDevice(true);
+    }
+
+    private void getBeconInfo() {
+        String beconName=null;
+        String uuid=null;
+        String major=null;
+        String minor=null;
+        String accurancy=null;
+//
+//        int index=0;
+//        char ch;
+//        while( (ch = scanData.charAt(index++)) == ':' )    {
+//            beconName += ch;
+//        }
+//        while( (ch = scanData.charAt(index++)) == ',' )    {
+//            uuid += ch;
+//        }
+//        while( (ch = scanData.charAt(index++)) == '/' )    {
+//            major += ch;
+//        }
+//        while( (ch = scanData.charAt(index++)) == ',' )    {
+//            minor += ch;
+//        }
+//        while( (ch = scanData.charAt(index++)) == ';' )    {
+//            accurancy += ch;
+//        }
     }
 }

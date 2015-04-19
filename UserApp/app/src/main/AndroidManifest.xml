@@ -10,6 +10,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
     <!--
      Creates a custom permission so only this app can receive its messages.
 

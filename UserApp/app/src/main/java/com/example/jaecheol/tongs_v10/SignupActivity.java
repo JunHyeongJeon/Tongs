@@ -66,9 +66,8 @@ public class SignupActivity extends ActionBarActivity
      */
     String SENDER_ID = "211629096961";
 
-    int uid;
-
     String sex;
+    String uid;
     String number;
     String authToken;
     String birthdate;
@@ -226,7 +225,12 @@ public class SignupActivity extends ActionBarActivity
 
                                 authToken = json.get("token").toString();
 
-                                uid = Integer.parseInt(json.get("uid").toString());
+                                uid = json.get("uid").toString();
+
+                                SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                SharedPreferences.Editor editor = mPref.edit();
+                                editor.putString("uid", uid);
+                                editor.commit();
 
                             } catch (Exception e) { }
                         }
