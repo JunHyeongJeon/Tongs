@@ -6,9 +6,12 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.jaecheol.ble.BleManager;
 import com.example.jaecheol.tongs_v10.BarcodeGenerator;
 import com.example.jaecheol.tongs_v10.R;
 import com.google.zxing.BarcodeFormat;
@@ -45,6 +49,9 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     AlertDialog dialog;
 
+
+    private ServiceHandler handler;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
@@ -54,6 +61,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
         setBarcode(view);
         setDialog(view);
+
+        handler = new ServiceHandler();
 
         return view;
     }
@@ -172,5 +181,37 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                     }
                 }).create();
         return dialogBox;
+    }
+
+
+    class ServiceHandler extends Handler
+    {
+        public void handleMessage(Message msg)
+        {
+            String scanData;
+
+            switch (msg.what)
+            {
+                case 111:
+                    break;
+                case 112:
+                    scanData = (String)msg.obj;
+//                    m_webView.loadUrl("javascript:output('"+scanData+"')");
+                    break;
+                case 113:
+                    scanData = (String)msg.obj;
+                    Log.d("JACH", "load success");
+
+//                    m_webView.loadUrl("javascript:getSoundScanJson('"+scanData+"')");
+                    break;
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
+
+    public void searchBeacon()
+    {
+        BleManager.getInstance(this, m_handler).scanLeDevice(true);
     }
 }
