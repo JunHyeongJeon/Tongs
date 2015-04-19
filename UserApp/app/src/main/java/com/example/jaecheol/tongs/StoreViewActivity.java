@@ -2,24 +2,45 @@ package com.example.jaecheol.tongs;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.widget.Toast;
-
-import com.example.jaecheol.tongs_v10.R;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 /**
  * Created by JaeCheol on 15. 3. 31..
  */
 public class StoreViewActivity extends ActionBarActivity {
 
+    WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_barcode);
+        setContentView(R.layout.activity_storeview);
 
-        Toast toast = Toast.makeText(getApplicationContext(),
-                "바코드 액티비티 입니다.", Toast.LENGTH_SHORT);
-        toast.show();
+        initWebView();
     }
 
+    private void initWebView() {
 
+        WebSettings settings = webView.getSettings();
+        WebViewClient webViewClient = new WebViewClient(){
+            public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            };
+
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+            };
+
+        };
+
+        webView.setWebViewClient(webViewClient);
+        settings.setJavaScriptEnabled(true);
+
+        String url = "file:///android_asset/testpages/index.html";
+
+        webView.loadUrl(url);
+        webView.addJavascriptInterface(this, "webBridge");
+    }
 }

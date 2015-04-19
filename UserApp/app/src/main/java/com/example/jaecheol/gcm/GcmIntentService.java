@@ -27,8 +27,8 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.example.jaecheol.tongs_v10.R;
-import com.example.jaecheol.tongs_v10.SignupActivity;
+import com.example.jaecheol.tongs.R;
+import com.example.jaecheol.tongs.SignupActivity;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 /**

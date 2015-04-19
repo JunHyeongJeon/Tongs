@@ -23,8 +23,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.jaecheol.ble.BleManager;
-import com.example.jaecheol.tongs_v10.BarcodeGenerator;
-import com.example.jaecheol.tongs_v10.R;
+import com.example.jaecheol.tongs.BarcodeGenerator;
+import com.example.jaecheol.tongs.R;
 import com.google.zxing.BarcodeFormat;
 
 /**

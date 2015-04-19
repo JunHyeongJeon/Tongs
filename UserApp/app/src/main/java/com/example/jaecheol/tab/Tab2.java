@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.jaecheol.tongs_v10.R;
+import com.example.jaecheol.tongs.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
