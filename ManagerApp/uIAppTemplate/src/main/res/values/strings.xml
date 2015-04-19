@@ -154,6 +154,8 @@
     <string name="button_certification_success">인증성공</string>
 
     <!-- URL String  -->
+    <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
+    <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
 
     <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/store/auth/sms_request?mdn=</string>
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
@@ -161,8 +163,11 @@
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
     <string name="title_activity_client_management">ClientManagementActivity</string>
 
+
     <!-- ClientManagementActivity  -->
 
     <string name="client_call">고객 호출</string>
     <string name="client_add">고객 등록</string>
+
+
 </resources>

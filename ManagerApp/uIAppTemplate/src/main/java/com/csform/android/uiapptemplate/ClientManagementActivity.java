@@ -1,14 +1,24 @@
 package com.csform.android.uiapptemplate;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Point;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -23,6 +33,13 @@ import android.widget.TextView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.AnimatedExpandableListAdapter;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * This is an example usage of the AnimatedExpandableListView class.
  *
@@ -30,10 +47,23 @@ import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.Animated
  * where each group has from 1 to 100 children (so the first group will have one
  * child, the second will have two children and so on...).
  */
+
+
 public class ClientManagementActivity extends ActionBarActivity {
+
+
+    private String emailToken;
 
     private AnimatedExpandableListView listView;
     private ExampleAdapter adapter;
+    private String content = null;
+    private List<GroupItem> items = new ArrayList<GroupItem>();
+    private boolean succeceFlag = false;
+
+
+    private String sid = "1";
+    private String uid = null;
+    private String num = null;
 
     @SuppressLint("NewApi")
     @Override
@@ -41,18 +71,27 @@ public class ClientManagementActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expandable_list_view);
 
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        emailToken  = mPref.getString("emailToken", null);
+
+
         Button mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               AddClient();
+                AddClient();
+
+
+
             }
         });
 
-        List<GroupItem> items = new ArrayList<GroupItem>();
+        //List<GroupItem> items = new ArrayList<GroupItem>();
 
         // Populate our list with groups and it's children
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 5; i++) {
             GroupItem item = new GroupItem();
 
             item.title = "대기번호" + i;
@@ -111,7 +150,6 @@ public class ClientManagementActivity extends ActionBarActivity {
         Point size = new Point();
         display.getSize(size);
         int width = size.x;
-        //Log.v("width", width + "");
         Resources r = getResources();
         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 50, r.getDisplayMetrics());
@@ -253,6 +291,116 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     }
     private void AddClient(){
+        Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+        intent.putExtra("SCAN_MODE", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR,EAN_13,EAN_8,UPC_A,QR_CODE");
+        startActivityForResult(intent, 0);
+
+      /*  if( !("".equals(intent.getStringExtra("SCAN_RESULT"))) ) {
+            uid = intent.getStringExtra("SCAN_RESULT"); //content에 바코드 값이 들어갑니다.
+            Log.v("Hello","dldld");
+        }*/
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                Log.v("onActivityResult", contents);
+                bacodeSplitAndSend(contents);
+                // Handle successful scan
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
+    }
+
+    public InputStream getInputStreamFromUrl(String url) {
+        InputStream content = null;
+        try{
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            content = response.getEntity().getContent();
+        } catch (Exception e) {
+            Log.e("[GET REQUEST]", "Network exception", e);
+        }
+        return content;
+    }
+
+    private static String convertStreamToString(InputStream is)
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+
+        String line = null;
+        try{
+            while ((line = reader.readLine()) != null){
+                sb.append(line + "\n");
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                is.close();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+
+    }
+    class HttpTask extends AsyncTask<String , Void , String> {
+        protected String doInBackground(String... params)
+        {
+            InputStream is = getInputStreamFromUrl(params[0]);
+
+            String result = convertStreamToString(is);//
+
+            return result;
+        }
+
+        protected void onPostExecute(String result)
+        {
+            Log.d("result", result);
+
+            try {
+                JSONObject json = new JSONObject(result);
+
+                String result_code = json.get("result_code").toString();
+
+                if( ("0".equals(result_code) ) && succeceFlag) {
+                    succeceFlag = false;
+                    Log.v("Succes",result_code);
+
+                    String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                            + "&sid=" + sid;
+                    new HttpTask().execute(url);
+                }
+
+            } catch(JSONException e) {  }
+
+            //result를 처리한다.
+        }
+    }
+
+    private void bacodeSplitAndSend(String bacode){
+        String[] result = bacode.split("_");
+
+
+
+      //d  Log.v("Hello2", emailToken);
+        uid = result[0];
+        num = result[2];
+
+        String url = getText(R.string.server_api_put_url) +"token="+ emailToken +
+                "&uid="+ uid + "&sid=" + sid +"&num=" + num;
+
+        Log.v("url", url);
+        succeceFlag = true;
+        new HttpTask().execute(url);
 
     }
 
