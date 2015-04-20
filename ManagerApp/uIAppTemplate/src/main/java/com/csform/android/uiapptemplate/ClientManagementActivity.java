@@ -394,18 +394,18 @@ public class ClientManagementActivity extends ActionBarActivity {
                     String createTime = obj.optString("createTime", null);
 
                     HashMap<String, String> map = new HashMap<String, String>();
-                    map.put("ticket", ticketNo);
-                    map.put("uid", uid);
-                    map.put("num", num);
+                    map.put("ticket", "대기표 번호 : "+ ticketNo);
+                    map.put("uid", uid + "번째 고객");
+                    map.put("num", "인원수 : " + num);
                     map.put("gcm", gcm);
-                    map.put("mdn", mdn);
+                    map.put("mdn", "전화번호 : " + mdn );
                     map.put("createTime", createTime);
                     list.add(map);
                     // 레코드 생성 및 추가
                 }
 
                 /** Keys used in Hashmap */
-                String[] from = { "ticket","uid","num" };
+                String[] from = { "ticket","mdn","num" };
 
                 /** Ids of views in listview_layout */
                 int[] to = { R.id.tv_country,R.id.tv_country_details,R.id.iv_flag};
