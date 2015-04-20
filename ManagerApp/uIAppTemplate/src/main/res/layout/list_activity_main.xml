@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+
+<ListView
+        android:id="@+id/lv_countries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        tools:context=".MainActivity"
+        android:layout_weight="6"/>
+
+    <LinearLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="0dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/client_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/client_call"
+            android:layout_weight="1"
+            android:background="@color/Gold"
+            android:layout_marginRight="2dp">
+
+        </Button>
+        <Button
+            android:id="@+id/client_add"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/client_add"
+            android:layout_weight="1"
+            android:background="@color/Gold"
+            android:layout_marginLeft="2dp">
+        </Button>
+    </LinearLayout>
+</LinearLayout>
