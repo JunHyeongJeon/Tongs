@@ -1,0 +1,10 @@
+token : <input type="text" id="token"><br>
+json : <textarea id="json"></textarea><br>
+<input type="button" onclick="send();">
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  function send(){
+  	socket.emit("gcm",{"token": token.value, "json": json.value});
+  }
+</script>
