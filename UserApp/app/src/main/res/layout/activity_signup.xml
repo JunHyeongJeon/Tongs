@@ -34,6 +34,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_solid"
             android:textColor="#ffffff"
+            android:textStyle="bold"
             android:text="인증" />
 
     </LinearLayout>
@@ -80,8 +81,9 @@
             android:layout_height="wrap_content"
             android:text="Let's Start"
             android:id="@+id/id_startButton"
-            android:background="@color/tabsScrollColor"
+            android:background="@drawable/btn_solid"
             android:textColor="#ffffff"
+            android:textStyle="bold"
             android:layout_marginTop="30dp"/>
 
     </LinearLayout>

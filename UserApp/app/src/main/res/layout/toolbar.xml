@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="28dp"
+            android:layout_marginLeft="15dp"
             android:src="@drawable/toplogo_xhdpi"
             android:layout_centerHorizontal="true"/>
 

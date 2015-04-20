@@ -17,23 +17,30 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시작하기"
-        android:background="@drawable/btn_solid"
-        android:textColor="#ffffff"
-        android:id="@+id/id_startButton"
-        android:layout_above="@+id/id_loginButton"
-        android:layout_alignParentStart="true" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="로그인"
-        android:background="#ffffff"
-        android:textColor="@color/tabsScrollColor"
-        android:id="@+id/id_loginButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="48dp" />
+        android:text="시작하기"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/btn_solid"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/id_startButton"
+        android:typeface="normal" />
+
 
 
 </RelativeLayout>
+
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:text="로그인"-->
+    <!--android:background="@drawable/btn_border"-->
+    <!--android:textColor="@color/tabsScrollColor"-->
+    <!--android:textStyle="bold"-->
+    <!--android:id="@+id/id_loginButton"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginBottom="48dp"-->
+    <!--android:typeface="normal" />-->

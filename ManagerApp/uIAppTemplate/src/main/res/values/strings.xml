@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ManagerApp</string>
+    <string name="app_name">매장관리앱</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     
@@ -106,9 +106,9 @@
     <string name="actionbar_name_store_management_activity">매장관리</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
     <string name="phonenumber">전화번호</string>
-    <string name="title_activity_sign_up_activity_first">SignUpActivityFirst</string>
-    <string name="title_activity_sign_up_activity_second">SignUpActivitySecond</string>
-    <string name="title_activity_sign_up_activity_third">SignUpActivityThird</string>
+    <string name="title_activity_sign_up_activity_first">회원가입</string>
+    <string name="title_activity_sign_up_activity_second">회원가입</string>
+    <string name="title_activity_sign_up_activity_third">회원가입</string>
 
     <!-- Sign up Activity 공통 -->
     <string name="next_button">다음</string>
@@ -161,7 +161,7 @@
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
     <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
-    <string name="title_activity_client_management">ClientManagementActivity</string>
+    <string name="title_activity_client_management">고객관리화면</string>
 
 
     <!-- ClientManagementActivity  -->
