@@ -170,4 +170,10 @@
     <string name="client_add">고객 등록</string>
 
 
+
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">JSON Parser Demo</string>
+    <string name="str_iv_flag">Flag</string>
+
+
 </resources>

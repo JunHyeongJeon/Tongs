@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -28,6 +29,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
@@ -37,6 +40,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -58,8 +62,9 @@ public class ClientManagementActivity extends ActionBarActivity {
     private ExampleAdapter adapter;
     private String content = null;
     private List<GroupItem> items = new ArrayList<GroupItem>();
-    private boolean succeceFlag = false;
-
+    private int m_protocolStatus = 0;
+    public static final int PROTOCOL_STATUS_USER_ADD = 1;
+    public static final int PROTOCOL_STATUS_GET_LIST = 2;
 
     private String sid = "1";
     private String uid = null;
@@ -69,7 +74,7 @@ public class ClientManagementActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expandable_list_view);
+        setContentView(R.layout.list_activity_main);
 
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -88,10 +93,10 @@ public class ClientManagementActivity extends ActionBarActivity {
             }
         });
 
+/*
         //List<GroupItem> items = new ArrayList<GroupItem>();
 
-        // Populate our list with groups and it's children
-        for (int i = 1; i < 5; i++) {
+        // Populate our list with g5{
             GroupItem item = new GroupItem();
 
             item.title = "대기번호" + i;
@@ -158,6 +163,7 @@ public class ClientManagementActivity extends ActionBarActivity {
         } else {
             listView.setIndicatorBoundsRelative(width - px, width);
         }
+        */
     }
 
     @Override
@@ -352,6 +358,85 @@ public class ClientManagementActivity extends ActionBarActivity {
         return sb.toString();
 
     }
+
+    public void processReceive(String strJson)
+    {
+        try {
+            JSONObject json = new JSONObject(strJson);
+
+            String result_code = json.optString("result_code", null);
+            boolean isSuccess = "0".equals(result_code) ? true : false;
+
+            Log.v("result", m_protocolStatus+" : "+isSuccess);
+
+            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST))
+            {
+                Log.v("json", json.toString());
+
+                JSONArray jsonArr = json.optJSONArray("tickets");
+                if(jsonArr == null)
+                    return;
+
+
+                int ticketLen = jsonArr.length();
+                ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
+                for(int i=0; i<ticketLen; i++)
+                {
+                    JSONObject obj = jsonArr.optJSONObject(i);
+                    if(obj == null)
+                        break;
+
+                    String ticketNo = obj.optString("ticket", null);
+                    String uid = obj.optString("uid", null);
+                    String num = obj.optString("num", null);
+                    String gcm = obj.optString("gcm", null);
+                    String mdn = obj.optString("mdn", null);
+                    String createTime = obj.optString("createTime", null);
+
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    map.put("ticket", ticketNo);
+                    map.put("uid", uid);
+                    map.put("num", num);
+                    map.put("gcm", gcm);
+                    map.put("mdn", mdn);
+                    map.put("createTime", createTime);
+                    list.add(map);
+                    // 레코드 생성 및 추가
+                }
+
+                /** Keys used in Hashmap */
+                String[] from = { "ticket","uid","num" };
+
+                /** Ids of views in listview_layout */
+                int[] to = { R.id.tv_country,R.id.tv_country_details,R.id.iv_flag};
+
+                /** Instantiating an adapter to store each items
+                 *  R.layout.listview_layout defines the layout of each item
+                 */
+                SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
+
+//                ListViewLoaderTask listViewLoaderTask = new ListViewLoaderTask();
+//                listViewLoaderTask.execute(result);
+                ListView listView = ( ListView ) findViewById(R.id.lv_countries);
+                listView.setAdapter(adapter);
+
+            }
+            // 서버로 부터 고객의 리스트를 받아온다.
+            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD))
+            {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                new HttpTask().execute(url);
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
     class HttpTask extends AsyncTask<String , Void , String> {
         protected String doInBackground(String... params)
         {
@@ -364,33 +449,15 @@ public class ClientManagementActivity extends ActionBarActivity {
 
         protected void onPostExecute(String result)
         {
-            Log.d("result", result);
+            Log.d("Server_result", result);
 
-            try {
-                JSONObject json = new JSONObject(result);
-
-                String result_code = json.get("result_code").toString();
-
-                if( ("0".equals(result_code) ) && succeceFlag) {
-                    succeceFlag = false;
-                    Log.v("Succes",result_code);
-
-                    String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                            + "&sid=" + sid;
-                    new HttpTask().execute(url);
-                }
-
-            } catch(JSONException e) {  }
-
-            //result를 처리한다.
+            processReceive(result);
         }
     }
 
     private void bacodeSplitAndSend(String bacode){
+
         String[] result = bacode.split("_");
-
-
-
       //d  Log.v("Hello2", emailToken);
         uid = result[0];
         num = result[2];
@@ -399,9 +466,81 @@ public class ClientManagementActivity extends ActionBarActivity {
                 "&uid="+ uid + "&sid=" + sid +"&num=" + num;
 
         Log.v("url", url);
-        succeceFlag = true;
+        //userAdd = true;
+        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
+
         new HttpTask().execute(url);
 
+    }
+
+    public void setProtocolStatus(int status)
+    {
+        m_protocolStatus = status;
+    }
+
+    public int getProtocolStatus()
+    {
+        return m_protocolStatus;
+    }
+
+    public boolean isProtocolStatus(int status)
+    {
+        return m_protocolStatus == status ? true : false;
+    }
+
+
+    private class ListViewLoaderTask extends AsyncTask<String, Void, SimpleAdapter>{
+
+        JSONObject jObject;
+        /** Doing the parsing of xml data in a non-ui thread */
+        @Override
+        protected SimpleAdapter doInBackground(String... strJson) {
+            try{
+                jObject = new JSONObject(strJson[0]);
+                TicketJSONParser ticketJSONParser = new TicketJSONParser();
+                ticketJSONParser.parse(jObject);
+                Log.d("JSON Message"," " + jObject.getJSONArray("tickets").length());
+            }catch(Exception e){
+                Log.d("JSON Exception1",e.toString());
+            }
+
+            TicketJSONParser ticketJSONParser = new TicketJSONParser();
+
+            List<HashMap<String, String>> tickets = null;
+
+            try{
+                /** Getting the parsed data as a List construct */
+                tickets = ticketJSONParser.parse(jObject);
+                Log.v("Hello", tickets.toString());
+            }catch(Exception e){
+                Log.d("Exception",e.toString());
+            }
+
+            /** Keys used in Hashmap */
+            String[] from = { "ticket","uid","num" };
+
+            /** Ids of views in listview_layout */
+            int[] to = { R.id.tv_country,R.id.iv_flag,R.id.tv_country_details};
+
+            /** Instantiating an adapter to store each items
+             *  R.layout.listview_layout defines the layout of each item
+             */
+            SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), tickets, R.layout.lv_layout, from, to);
+
+            return adapter;
+        }
+
+        /** Invoked by the Android system on "doInBackground" is executed completely */
+        /** This will be executed in ui thread */
+        @Override
+        protected void onPostExecute(SimpleAdapter adapter) {
+
+            /** Getting a reference to listview of main.xml layout file */
+            ListView listView = ( ListView ) findViewById(R.id.lv_countries);
+
+            /** Setting the adapter containing the country list to listview */
+            listView.setAdapter(adapter);
+        }
     }
 
 }
