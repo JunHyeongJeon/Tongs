@@ -293,15 +293,14 @@ public class MyBeacon
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append(beaconName);
-		sb.append(":");
+		sb.append("_");
 		sb.append(proximityUuid);
-		sb.append(",");
+		sb.append("_");
 		sb.append(major);
-		sb.append("/");
+		sb.append("_");
 		sb.append(minor);
-		sb.append(",");
+		sb.append("_");
         sb.append(String.format("%.2f", accuracy2));
-        sb.append(";");
 		return sb.toString();
 	}
 	

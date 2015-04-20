@@ -100,7 +100,7 @@ public class BleManager implements BluetoothAdapter.LeScanCallback
 		this.mAdapter.stopLeScan(this);
 //		this.mAdapter.getBluetoothLeScanner().stopScan(this);
 		if(this.mState == STATE_SCANNING)
-			sendHandler(113);
+			sendHandler(111);
 		this.mState = STATE_IDLE;
 	}
 	  

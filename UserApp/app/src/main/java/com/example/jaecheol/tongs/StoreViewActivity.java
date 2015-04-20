@@ -1,5 +1,6 @@
 package com.example.jaecheol.tongs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.webkit.WebSettings;
@@ -13,6 +14,8 @@ public class StoreViewActivity extends ActionBarActivity {
 
     WebView webView;
 
+    String sid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,11 @@ public class StoreViewActivity extends ActionBarActivity {
     }
 
     private void initWebView() {
+
+        Intent intent = this.getIntent();
+        sid = intent.getStringExtra("sid");
+
+        webView = (WebView)findViewById(R.id.id_webStoreView);
 
         WebSettings settings = webView.getSettings();
         WebViewClient webViewClient = new WebViewClient(){
@@ -38,7 +46,7 @@ public class StoreViewActivity extends ActionBarActivity {
         webView.setWebViewClient(webViewClient);
         settings.setJavaScriptEnabled(true);
 
-        String url = "file:///android_asset/testpages/index.html";
+        String url = "http://somabell01.cloudapp.net/tool/shop.php?sid=" + sid;
 
         webView.loadUrl(url);
         webView.addJavascriptInterface(this, "webBridge");
