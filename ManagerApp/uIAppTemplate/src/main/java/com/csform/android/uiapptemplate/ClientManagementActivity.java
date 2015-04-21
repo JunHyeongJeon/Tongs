@@ -59,9 +59,6 @@ public class ClientManagementActivity extends ActionBarActivity {
     private String emailToken;
 
     private AnimatedExpandableListView listView;
-    private ExampleAdapter adapter;
-    private String content = null;
-    private List<GroupItem> items = new ArrayList<GroupItem>();
     private int m_protocolStatus = 0;
     public static final int PROTOCOL_STATUS_USER_ADD = 1;
     public static final int PROTOCOL_STATUS_GET_LIST = 2;
@@ -74,15 +71,16 @@ public class ClientManagementActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_activity_main);
+        setContentView(R.layout.activity_expandable_list_view);
 
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        emailToken  = mPref.getString("emailToken", null);
+        emailToken = mPref.getString("emailToken", null);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button mClientAddButton = (Button)findViewById(R.id.client_add);
+        Button mClientAddButton = (Button) findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,82 +88,13 @@ public class ClientManagementActivity extends ActionBarActivity {
                 AddClient();
 
 
-
             }
         });
 
-/*
-        //List<GroupItem> items = new ArrayList<GroupItem>();
 
-        // Populate our list with g5{
-            GroupItem item = new GroupItem();
-
-            item.title = "대기번호" + i;
-
-
-            ChildItem child = new ChildItem();
-            child.title = "호출";
-            //child.hint = "Too awesome";
-
-            item.items.add(child);
-            child = new ChildItem();
-            child.title = "대기열 삭제";
-            //child.hint = "Too awesome";
-
-            item.items.add(child);
-            child = new ChildItem();
-            child.title = "고객 상세정보";
-            //child.hint = "Too awesome";
-
-            item.items.add(child);
-
-
-            items.add(item);
-        }
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        adapter = new ExampleAdapter(this);
-        adapter.setData(items);
-
-        listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
-
-        // In order to show animations, we need to use a custom click handler
-        // for our ExpandableListView.
-        listView.setOnGroupClickListener(new OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v,
-                                        int groupPosition, long id) {
-                // We call collapseGroupWithAnimation(int) and
-                // expandGroupWithAnimation(int) to animate group
-                // expansion/collapse.
-                if (listView.isGroupExpanded(groupPosition)) {
-                    listView.collapseGroupWithAnimation(groupPosition);
-                } else {
-                    listView.expandGroupWithAnimation(groupPosition);
-                }
-                return true;
-            }
-
-        });
-
-        // Set indicator (arrow) to the right
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int width = size.x;
-        Resources r = getResources();
-        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                50, r.getDisplayMetrics());
-        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            listView.setIndicatorBounds(width - px, width);
-        } else {
-            listView.setIndicatorBoundsRelative(width - px, width);
-        }
-        */
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -297,7 +226,8 @@ public class ClientManagementActivity extends ActionBarActivity {
         }
 
     }
-    private void AddClient(){
+
+    private void AddClient() {
         Intent intent = new Intent("com.google.zxing.client.android.SCAN");
         intent.putExtra("SCAN_MODE", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR,EAN_13,EAN_8,UPC_A,QR_CODE");
         startActivityForResult(intent, 0);
@@ -324,7 +254,7 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
-        try{
+        try {
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse response = httpclient.execute(new HttpGet(url));
             content = response.getEntity().getContent();
@@ -334,25 +264,21 @@ public class ClientManagementActivity extends ActionBarActivity {
         return content;
     }
 
-    private static String convertStreamToString(InputStream is)
-    {
+    private static String convertStreamToString(InputStream is) {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
 
         String line = null;
-        try{
-            while ((line = reader.readLine()) != null){
+        try {
+            while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
             }
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally{
-            try{
+        } finally {
+            try {
                 is.close();
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -360,31 +286,28 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     }
 
-    public void processReceive(String strJson)
-    {
+    public void processReceive(String strJson) {
         try {
             JSONObject json = new JSONObject(strJson);
 
             String result_code = json.optString("result_code", null);
             boolean isSuccess = "0".equals(result_code) ? true : false;
 
-            Log.v("result", m_protocolStatus+" : "+isSuccess);
+            Log.v("result", m_protocolStatus + " : " + isSuccess);
 
-            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST))
-            {
+            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
                 Log.v("json", json.toString());
 
                 JSONArray jsonArr = json.optJSONArray("tickets");
-                if(jsonArr == null)
+                if (jsonArr == null)
                     return;
 
 
                 int ticketLen = jsonArr.length();
                 ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
-                for(int i=0; i<ticketLen; i++)
-                {
+                for (int i = 0; i < ticketLen; i++) {
                     JSONObject obj = jsonArr.optJSONObject(i);
-                    if(obj == null)
+                    if (obj == null)
                         break;
 
                     String ticketNo = obj.optString("ticket", null);
@@ -395,52 +318,122 @@ public class ClientManagementActivity extends ActionBarActivity {
                     String createTime = obj.optString("createTime", null);
 
                     HashMap<String, String> map = new HashMap<String, String>();
-                    map.put("ticket", "대기표 번호 : "+ ticketNo);
+                    map.put("ticket", "대기표 번호 : " + ticketNo);
                     map.put("uid", uid + "번째 고객");
                     map.put("num", "인원수 : " + num);
                     map.put("gcm", gcm);
-                    map.put("mdn", "전화번호 : " + mdn );
+                    map.put("mdn", "전화번호 : " + mdn);
                     map.put("createTime", createTime);
                     list.add(map);
                     // 레코드 생성 및 추가
                 }
 
                 /** Keys used in Hashmap */
-                String[] from = { "ticket","mdn","num" };
+
+
+                String[] from = {"ticket", "mdn", "num"};
 
                 /** Ids of views in listview_layout */
-                int[] to = { R.id.tv_country,R.id.tv_country_details,R.id.iv_flag};
+                int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
 
-                /** Instantiating an adapter to store each items
-                 *  R.layout.listview_layout defines the layout of each item
-                 */
+
+
+//              ListViewLoaderTask listViewLoaderTask = new ListViewLoaderTask();
+//              listViewLoaderTask.execute(result);
+/*
                 SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
 
-//                ListViewLoaderTask listViewLoaderTask = new ListViewLoaderTask();
-//                listViewLoaderTask.execute(result);
-                ListView listView = ( ListView ) findViewById(R.id.lv_countries);
+                ListView listView = (ListView) findViewById(R.id.lv_countries);
+                listView.setAdapter(adapter);
+*/
+                List<GroupItem> items = new ArrayList<GroupItem>();
+
+                // Populate our list with g5{
+                GroupItem item = new GroupItem();
+
+                item.title = "대기번호";
+
+
+                ChildItem child = new ChildItem();
+                child.title = "호출";
+                //child.hint = "Too awesome";
+
+                item.items.add(child);
+                child = new ChildItem();
+                child.title = "대기열 삭제";
+                //child.hint = "Too awesome";
+
+                item.items.add(child);
+                child = new ChildItem();
+                child.title = "고객 상세정보";
+                //child.hint = "Too awesome";
+
+                item.items.add(child);
+
+
+                items.add(item);
+
+
+                ExampleAdapter adapter;
+
+                adapter = new ExampleAdapter(this);
+                adapter.setData(items);
+
+                listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
                 listView.setAdapter(adapter);
 
+                // In order to show animations, we need to use a custom click handler
+                // for our ExpandableListView.
+                listView.setOnGroupClickListener(new OnGroupClickListener() {
+
+                @Override
+                public boolean onGroupClick(ExpandableListView parent, View v,
+                                            int groupPosition, long id) {
+                    // We call collapseGroupWithAnimation(int) and
+                    // expandGroupWithAnimation(int) to animate group
+                    // expansion/collapse.
+                    if (listView.isGroupExpanded(groupPosition)) {
+                        listView.collapseGroupWithAnimation(groupPosition);
+                    } else {
+                        listView.expandGroupWithAnimation(groupPosition);
+                    }
+                      return true;
+                    }
+
+                });
+
+                // Set indicator (arrow) to the right
+                Display display = getWindowManager().getDefaultDisplay();
+                Point size = new Point();
+                display.getSize(size);
+                int width = size.x;
+                Resources r = getResources();
+                int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                        50, r.getDisplayMetrics());
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    listView.setIndicatorBounds(width - px, width);
+                } else {
+                    listView.setIndicatorBoundsRelative(width - px, width);
+                }
+
+
             }
+
             // 서버로 부터 고객의 리스트를 받아온다.
-            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD))
-            {
+            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
                 setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
                 new HttpTask().execute(url);
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 
-    class HttpTask extends AsyncTask<String , Void , String> {
-        protected String doInBackground(String... params)
-        {
+    class HttpTask extends AsyncTask<String, Void, String> {
+        protected String doInBackground(String... params) {
             InputStream is = getInputStreamFromUrl(params[0]);
 
             String result = convertStreamToString(is);//
@@ -448,23 +441,22 @@ public class ClientManagementActivity extends ActionBarActivity {
             return result;
         }
 
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
             Log.d("Server_result", result);
 
             processReceive(result);
         }
     }
 
-    private void bacodeSplitAndSend(String bacode){
+    private void bacodeSplitAndSend(String bacode) {
 
         String[] result = bacode.split("_");
-      //d  Log.v("Hello2", emailToken);
+        //d  Log.v("Hello2", emailToken);
         uid = result[0];
         num = result[2];
 
-        String url = getText(R.string.server_api_put_url) +"token="+ emailToken +
-                "&uid="+ uid + "&sid=" + sid +"&num=" + num;
+        String url = getText(R.string.server_api_put_url) + "token=" + emailToken +
+                "&uid=" + uid + "&sid=" + sid + "&num=" + num;
 
         Log.v("url", url);
         //userAdd = true;
@@ -474,74 +466,16 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     }
 
-    public void setProtocolStatus(int status)
-    {
+    public void setProtocolStatus(int status) {
         m_protocolStatus = status;
     }
 
-    public int getProtocolStatus()
-    {
+    public int getProtocolStatus() {
         return m_protocolStatus;
     }
 
-    public boolean isProtocolStatus(int status)
-    {
+    public boolean isProtocolStatus(int status) {
         return m_protocolStatus == status ? true : false;
-    }
-
-
-    private class ListViewLoaderTask extends AsyncTask<String, Void, SimpleAdapter>{
-
-        JSONObject jObject;
-        /** Doing the parsing of xml data in a non-ui thread */
-        @Override
-        protected SimpleAdapter doInBackground(String... strJson) {
-            try{
-                jObject = new JSONObject(strJson[0]);
-                TicketJSONParser ticketJSONParser = new TicketJSONParser();
-                ticketJSONParser.parse(jObject);
-                Log.d("JSON Message"," " + jObject.getJSONArray("tickets").length());
-            }catch(Exception e){
-                Log.d("JSON Exception1",e.toString());
-            }
-
-            TicketJSONParser ticketJSONParser = new TicketJSONParser();
-
-            List<HashMap<String, String>> tickets = null;
-
-            try{
-                /** Getting the parsed data as a List construct */
-                tickets = ticketJSONParser.parse(jObject);
-                Log.v("Hello", tickets.toString());
-            }catch(Exception e){
-                Log.d("Exception",e.toString());
-            }
-
-            /** Keys used in Hashmap */
-            String[] from = { "ticket","uid","num" };
-
-            /** Ids of views in listview_layout */
-            int[] to = { R.id.tv_country,R.id.iv_flag,R.id.tv_country_details};
-
-            /** Instantiating an adapter to store each items
-             *  R.layout.listview_layout defines the layout of each item
-             */
-            SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), tickets, R.layout.lv_layout, from, to);
-
-            return adapter;
-        }
-
-        /** Invoked by the Android system on "doInBackground" is executed completely */
-        /** This will be executed in ui thread */
-        @Override
-        protected void onPostExecute(SimpleAdapter adapter) {
-
-            /** Getting a reference to listview of main.xml layout file */
-            ListView listView = ( ListView ) findViewById(R.id.lv_countries);
-
-            /** Setting the adapter containing the country list to listview */
-            listView.setAdapter(adapter);
-        }
     }
 
 }
