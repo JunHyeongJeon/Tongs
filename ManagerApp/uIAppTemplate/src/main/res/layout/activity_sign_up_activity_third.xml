@@ -13,7 +13,7 @@
 
     <TextView
         android:layout_weight="1"
-        android:text="@string/the_last_word" android:layout_width="wrap_content"
+        android:text="@string/phone_certification_page_ment" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:textStyle="bold"

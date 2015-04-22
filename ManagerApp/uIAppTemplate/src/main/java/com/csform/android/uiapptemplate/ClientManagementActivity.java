@@ -493,6 +493,7 @@ public class ClientManagementActivity extends ActionBarActivity {
                     list.add(map);
                     // 레코드 생성 및 추가
 
+
                     GroupItem item = new GroupItem();
 
                     item.title = "대기번호 : " + ticketNo + "\n" +
@@ -538,11 +539,6 @@ public class ClientManagementActivity extends ActionBarActivity {
                 ListView listView = (ListView) findViewById(R.id.lv_countries);
                 listView.setAdapter(adapter);
 */
-
-
-
-
-
                 ExampleAdapter adapter = new ExampleAdapter(this);
                 adapter.setData(items);
 

@@ -26,6 +26,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -38,6 +39,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -56,6 +58,15 @@ public class SignUpActivityThird extends ActionBarActivity {
     private boolean signUpSucceceFlag = false;
 
     private ProgressDialog dialog;
+
+
+    public static final String EXTRA_MESSAGE = "message";
+    public static final String PROPERTY_REG_ID = "registration_id";
+    private static final String PROPERTY_APP_VERSION = "appVersion";
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+
+    static final String TAG = "GCM Demo";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +142,7 @@ public class SignUpActivityThird extends ActionBarActivity {
 
     }
     public void ActivityNext(){
-        Intent intent = new Intent(this, LogInPageActivity.class);
+        Intent intent = new Intent(this, SignUpActivityForth.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
