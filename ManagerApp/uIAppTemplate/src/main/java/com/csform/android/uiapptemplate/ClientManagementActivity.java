@@ -10,7 +10,9 @@ import java.util.List;
 
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -63,6 +65,10 @@ public class ClientManagementActivity extends ActionBarActivity {
     public static final int PROTOCOL_STATUS_USER_ADD = 1;
     public static final int PROTOCOL_STATUS_GET_LIST = 2;
 
+    public static final int CASE_STATUS_USER_CALL = 0;
+    public static final int CASE_STATUS_USER_CANCLE = 1;
+
+
     private String sid = "1";
     private String uid = null;
     private String num = null;
@@ -90,6 +96,11 @@ public class ClientManagementActivity extends ActionBarActivity {
 
             }
         });
+
+        String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                + "&sid=" + sid;
+        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+        new HttpTask().execute(url);
 
 
     }
@@ -305,6 +316,8 @@ public class ClientManagementActivity extends ActionBarActivity {
 
                 int ticketLen = jsonArr.length();
                 ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
+
+                List<GroupItem> items = new ArrayList<GroupItem>();
                 for (int i = 0; i < ticketLen; i++) {
                     JSONObject obj = jsonArr.optJSONObject(i);
                     if (obj == null)
@@ -326,57 +339,58 @@ public class ClientManagementActivity extends ActionBarActivity {
                     map.put("createTime", createTime);
                     list.add(map);
                     // 레코드 생성 및 추가
+
+                    GroupItem item = new GroupItem();
+
+                    item.title = "대기번호 : " + uid + "\n" +
+                    //        "고객전화번호 : " + mdn + "\n" +
+                            "인원수 : " + num + "\n";
+
+
+
+                    ChildItem child = new ChildItem();
+                    child.title = "호출";
+                    //child.hint = "Too awesome";
+
+                    item.items.add(child);
+                    child = new ChildItem();
+                    child.title = "대기열 삭제";
+                    //child.hint = "Too awesome";
+
+
+                    // 고객의 상세정보 보기
+                    //item.items.add(child);
+                    //child = new ChildItem();
+                    //child.title = "고객 상세정보";
+                    //child.hint = "Too awesome";
+
+                    item.items.add(child);
+
+
+                    items.add(item);
                 }
 
                 /** Keys used in Hashmap */
 
 
-                String[] from = {"ticket", "mdn", "num"};
+         //       String[] from = {"ticket", "mdn", "num"};
 
                 /** Ids of views in listview_layout */
-                int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
+        //        int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
 
 
-
-//              ListViewLoaderTask listViewLoaderTask = new ListViewLoaderTask();
-//              listViewLoaderTask.execute(result);
 /*
                 SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
 
                 ListView listView = (ListView) findViewById(R.id.lv_countries);
                 listView.setAdapter(adapter);
 */
-                List<GroupItem> items = new ArrayList<GroupItem>();
-
-                // Populate our list with g5{
-                GroupItem item = new GroupItem();
-
-                item.title = "대기번호";
 
 
-                ChildItem child = new ChildItem();
-                child.title = "호출";
-                //child.hint = "Too awesome";
-
-                item.items.add(child);
-                child = new ChildItem();
-                child.title = "대기열 삭제";
-                //child.hint = "Too awesome";
-
-                item.items.add(child);
-                child = new ChildItem();
-                child.title = "고객 상세정보";
-                //child.hint = "Too awesome";
-
-                item.items.add(child);
 
 
-                items.add(item);
 
-
-                ExampleAdapter adapter;
-
-                adapter = new ExampleAdapter(this);
+                ExampleAdapter adapter = new ExampleAdapter(this);
                 adapter.setData(items);
 
                 listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
@@ -401,6 +415,33 @@ public class ClientManagementActivity extends ActionBarActivity {
                     }
 
                 });
+                listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                    @Override
+                    public boolean onChildClick(ExpandableListView parent, View v,
+                                                int groupPosition, int childPosition , long id) {
+                            Log.v("ClickgroupPosition", String.valueOf(groupPosition));
+                            Log.v("ClickchildPosition", String.valueOf(childPosition));
+                            switch (childPosition) {
+                                case CASE_STATUS_USER_CALL: {
+                                    DialogYesNo(getString(R.string.case_status_user_call),groupPosition
+                                            ,CASE_STATUS_USER_CALL );
+                                    break;
+                                }
+                                case CASE_STATUS_USER_CANCLE: {
+                                    DialogYesNo(getString(R.string.case_status_user_cancle),groupPosition,
+                                            CASE_STATUS_USER_CANCLE);
+                                    break;
+                                }
+                                case 2: {
+                                    // 고객의 상세 정보 관리
+                                    break;
+                                }
+                        }
+                        return false;
+                    }
+                });
+
+
 
                 // Set indicator (arrow) to the right
                 Display display = getWindowManager().getDefaultDisplay();
@@ -434,16 +475,15 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     class HttpTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
+
             InputStream is = getInputStreamFromUrl(params[0]);
-
-            String result = convertStreamToString(is);//
-
+            String result = convertStreamToString(is);
             return result;
         }
 
         protected void onPostExecute(String result) {
-            Log.d("Server_result", result);
 
+            Log.d("Server_result", result);
             processReceive(result);
         }
     }
@@ -478,4 +518,36 @@ public class ClientManagementActivity extends ActionBarActivity {
         return m_protocolStatus == status ? true : false;
     }
 
+    private void DialogYesNo(String ment, final int user, final int cases){
+        AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
+        alt_bld.setMessage(ment).setCancelable(
+                false).setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    // Action for 'Yes' Button
+                        UserStatusControl(user, cases);
+                    }
+                }).setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Action for 'NO' Button
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alt_bld.create();
+        // Title for AlertDialog
+        alert.setTitle("Title");
+        // Icon for AlertDialog
+        alert.setIcon(R.drawable.ic_launcher);
+        alert.show();
+    }
+
+    private void UserStatusControl(int mUser, int mCases){
+        if (mCases == CASE_STATUS_USER_CALL){
+
+        } else if ( mCases == CASE_STATUS_USER_CANCLE){
+
+        }
+
+    }
 }

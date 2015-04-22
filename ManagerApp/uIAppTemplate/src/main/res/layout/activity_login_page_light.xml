@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:layout_marginTop="64dp"
-        android:text="@string/fontello_logo"
+        android:text="@string/fontello_user"
         android:textColor="@color/cpb_blue"
         android:textSize="64dp"
         tools:ignore="SpUsage" />
@@ -44,7 +44,8 @@
             app:fletHintTextColor="@color/main_color_grey_900"
             app:fletSingleLine="true"
             app:fletTextBackground="@drawable/edit_text_background_accent"
-            app:fletTextColor="@color/main_color_grey_400" />
+            app:fletTextColor="@color/main_color_grey_400"
+            android:id= "@+id/login_email"/>
     </LinearLayout>
 
     <LinearLayout
@@ -72,7 +73,8 @@
             app:fletPassword="true"
             app:fletSingleLine="true"
             app:fletTextBackground="@drawable/edit_text_background_accent"
-            app:fletTextColor="@color/main_color_grey_400" />
+            app:fletTextColor="@color/main_color_grey_400"
+            android:id ="@+id/login_password"/>
     </LinearLayout>
 
     <LinearLayout

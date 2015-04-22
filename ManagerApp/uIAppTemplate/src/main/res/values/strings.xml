@@ -83,8 +83,8 @@
     
     <string name="number_of_images">%d image(s)</string>
     
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="username">사용자아이디</string>
+    <string name="password">비밀번호</string>
     <string name="welcome">Welcome!\nTouch Me!</string>
 
 
@@ -92,8 +92,8 @@
     <string name="download">DOWNLOAD</string>
     <string name="done">DONE</string>
     <string name="error">ERROR</string>
-    <string name="login">LOGIN</string>
-    <string name="register">REGISTER</string>
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
     <string name="skip">SKIP</string>
     <string name="raised">RAISED</string>
     <string name="flat">FLAT</string>
@@ -154,6 +154,7 @@
     <string name="button_certification_success">인증성공</string>
 
     <!-- URL String  -->
+    <string name="server_api_email_request">http://somabell01.cloudapp.net:8080/store/auth/email_request?</string>
     <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
     <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
 
@@ -169,7 +170,8 @@
     <string name="client_call">고객 호출</string>
     <string name="client_add">고객 등록</string>
 
-
+    <string name="case_status_user_call">고객을 호출하겠습니까?</string>
+    <string name="case_status_user_cancle">고객을 대기열에서 삭제하겠습니까?</string>
 
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">JSON Parser Demo</string>

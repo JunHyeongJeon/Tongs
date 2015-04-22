@@ -77,7 +77,7 @@ public class SignUpActivityThird extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 //attemptSignup();
-                //ActivityNext();
+                ActivityNext();
 
             }
         });
@@ -128,7 +128,7 @@ public class SignUpActivityThird extends ActionBarActivity {
 
     }
     public void ActivityNext(){
-        Intent intent = new Intent(this, SignUpActivityThird.class);
+        Intent intent = new Intent(this, LogInPageActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }

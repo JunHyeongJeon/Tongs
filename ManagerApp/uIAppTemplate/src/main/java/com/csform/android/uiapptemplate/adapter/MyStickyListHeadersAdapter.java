@@ -68,7 +68,7 @@ public class MyStickyListHeadersAdapter extends ArrayAdapter<String> implements 
 		//TODO Change image URL
 		ImageUtil.displayRoundImage(holder.image, "", null);
 		holder.text.setText(getItem(position));
-		holder.icon.setText(R.string.fontello_heart_empty);
+		holder.icon.setText(R.string.fontello_user);
 		return convertView;
 	}
 	
