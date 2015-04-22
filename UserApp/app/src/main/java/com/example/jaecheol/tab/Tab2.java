@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jaecheol.tongs.R;
 
@@ -33,7 +34,7 @@ public class Tab2 extends Fragment
 
     public WaitingTicket waitingTicket;
 
-    Button cancelWaitingButton;
+    Button refreshButton;
 
     String authToken;
 
@@ -59,8 +60,8 @@ public class Tab2 extends Fragment
         waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
         noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
 
-        cancelWaitingButton = (Button)v.findViewById(R.id.id_cancelWaitingTicket);
-        cancelWaitingButton.setOnClickListener(this);
+        refreshButton = (Button)v.findViewById(R.id.id_refreshButton);
+        refreshButton.setOnClickListener(this);
 
         waitingTicket.expectTime = (TextView)v.findViewById(R.id.id_expectText);
         waitingTicket.currentNum = (TextView)v.findViewById(R.id.id_currentText);
@@ -75,13 +76,13 @@ public class Tab2 extends Fragment
             noWaitTicketLayout.setVisibility(View.GONE);
 
             waitTicketLayout.setVisibility(View.VISIBLE);
-            cancelWaitingButton.setVisibility(View.VISIBLE);
+//            refreshButton.setVisibility(View.VISIBLE);
         }
         else    {
             noWaitTicketLayout.setVisibility(View.VISIBLE);
 
             waitTicketLayout.setVisibility(View.GONE);
-            cancelWaitingButton.setVisibility(View.GONE);
+//            refreshButton.setVisibility(View.GONE);
         }
     }
 
@@ -94,7 +95,7 @@ public class Tab2 extends Fragment
                 + "user/waiting/get"
                 + "?token=" + authToken;
 
-        Log.d("Fuck", authToken);
+        Log.d("auth", authToken);
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
@@ -102,8 +103,13 @@ public class Tab2 extends Fragment
                     JSONObject json = new JSONObject(result);
                     String result_code = json.get("result_code").toString();
                     Log.d("Hello", result_code);
-                    if( "-1".equals(result_code) )
+                    if( "-1".equals(result_code) ) {
+                        Toast.makeText(getActivity(),
+                                "대기표가 존재하지 않습니다.",
+                                Toast.LENGTH_LONG).show();
+                        showTicketLayout(false);
                         return;
+                    }
 
                     String waitingNum = json.getJSONObject("ticket").getString("ticket");
                     Log.d("Hello", waitingNum);
@@ -117,6 +123,8 @@ public class Tab2 extends Fragment
                     waitingTicket.setCurrentNum(currentNum);
                     waitingTicket.setStoreName(storeName);
 //                    waitingTicket.setExpectTime(extraTime);
+
+                    showTicketLayout(true);
                 }
                 catch(Exception e){}
             }
@@ -128,8 +136,8 @@ public class Tab2 extends Fragment
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.id_cancelWaitingTicket:
-//                getWaitingTicket();
+            case R.id.id_refreshButton:
+                getWaitingTicket();
                 break;
         }
     }

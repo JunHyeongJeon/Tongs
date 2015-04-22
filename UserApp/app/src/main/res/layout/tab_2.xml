@@ -180,14 +180,14 @@
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="25dp"
         android:background="@drawable/btn_solid"
         android:textColor="#ffffff"
-        android:text="대기표 취소"
-        android:id="@+id/id_cancelWaitingTicket"
+        android:text="대기표 갱신"
+        android:id="@+id/id_refreshButton"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/id_waitTicketLayout"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp" />
 
 
 </RelativeLayout>
