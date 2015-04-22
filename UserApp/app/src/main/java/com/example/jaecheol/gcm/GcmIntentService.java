@@ -21,12 +21,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.jaecheol.tongs.MainActivity;
 import com.example.jaecheol.tongs.R;
 import com.example.jaecheol.tongs.SignupActivity;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -68,16 +67,20 @@ public class GcmIntentService extends IntentService {
                 sendNotification("Deleted messages on server: " + extras.toString());
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-                // This loop represents the service doing some work.
-                for (int i = 0; i < 2; i++) {
-                    Log.i(TAG, "Working... " + (i + 1)
-                            + "/5 @ " + SystemClock.elapsedRealtime());
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                    }
-                }
-                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
+
+//                String title = extras.getString("title");
+//                String message = extras.getString("message");
+//
+//                // This loop represents the service doing some work.
+//                for (int i = 0; i < 2; i++) {
+//                    Log.i(TAG, "Working... " + (i + 1)
+//                            + "/5 @ " + SystemClock.elapsedRealtime());
+//                    try {
+//                        Thread.sleep(2000);
+//                    } catch (InterruptedException e) {
+//                    }
+//                }
+//                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
                 // Post notification of received message.
 //                sendNotification("Received: " + extras.toString());
                 sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
@@ -85,9 +88,11 @@ public class GcmIntentService extends IntentService {
 
 
                 Log.d("123", "START");
-                Intent intent2 = new Intent("android.intent.action.GCMRECV");
-                intent2.setData(Uri.parse(extras.toString()));
-                sendBroadcast(intent2);
+                Intent intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent2.putExtra("data", extras);
+                //intent2.setData(Uri.parse(extras.toString()));
+                startActivity(intent2);
                 Log.d("123", "END");
 
             }

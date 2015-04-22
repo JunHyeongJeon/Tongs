@@ -11,6 +11,10 @@ import android.widget.Toast;
  */
 public class GcmReceiver extends BroadcastReceiver{
 
+    public GcmReceiver()
+    {
+        Log.d("Hello", "=======================receive");
+    }
     @Override
     public void onReceive(Context context, Intent intent)   {
         Toast.makeText(context,

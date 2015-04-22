@@ -31,7 +31,8 @@ import java.io.InputStream;
 public class Tab2 extends Fragment
                   implements View.OnClickListener   {
 
-    WaitingTicket waitingTicket;
+    public WaitingTicket waitingTicket;
+
     Button cancelWaitingButton;
 
     String authToken;
@@ -51,6 +52,7 @@ public class Tab2 extends Fragment
         return v;
     }
 
+
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
 
@@ -61,7 +63,7 @@ public class Tab2 extends Fragment
         cancelWaitingButton.setOnClickListener(this);
 
         waitingTicket.expectTime = (TextView)v.findViewById(R.id.id_expectText);
-        waitingTicket.currentNum = (TextView)v.findViewById(R.id.currentText);
+        waitingTicket.currentNum = (TextView)v.findViewById(R.id.id_currentText);
         waitingTicket.storeName =  (TextView)v.findViewById(R.id.id_storeNameText);
         waitingTicket.waitingNum = (Button)v.findViewById(R.id.id_waitingnum);
 
@@ -83,9 +85,9 @@ public class Tab2 extends Fragment
         }
     }
 
-    private void getWaitingTicket(View v) {
+    public void getWaitingTicket() {
 
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(v.getContext());
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         authToken = mPref.getString("auth_token", null);
 
         String url = getText(R.string.Server_URL)
@@ -127,7 +129,7 @@ public class Tab2 extends Fragment
         switch (v.getId()) {
 
             case R.id.id_cancelWaitingTicket:
-                getWaitingTicket(v);
+//                getWaitingTicket();
                 break;
         }
     }
@@ -203,25 +205,25 @@ public class Tab2 extends Fragment
             Log.d("Hello", result);
         }
     }
-    private class WaitingTicket {
+    public class WaitingTicket {
         Button waitingNum;
         TextView storeName;
         TextView currentNum;
         TextView expectTime;
 
-        void setWaitingNum(String text)  {
+        public void setWaitingNum(String text)  {
             waitingNum.setText(text);
             Log.d("QQQQQ", text);
         }
-        void setStoreName(String text)   {
+        public void setStoreName(String text)   {
             storeName.setText(text);
             Log.d("QQQQQ", text);
         }
-        void setCurrentNum(String text)  {
+        public void setCurrentNum(String text)  {
             currentNum.setText(text);
             Log.d("QQQQQ", text);
         }
-        void setExpectTime(String text)  {
+        public void setExpectTime(String text)  {
             expectTime.setText(text);
         }
 

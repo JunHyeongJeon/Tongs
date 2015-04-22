@@ -129,7 +129,7 @@
             android:layout_toRightOf="@id/currentText"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
-            android:id="@+id/id_currectText"
+            android:id="@+id/id_currentText"
             android:textStyle="bold"
             android:text="18번"/>
 
