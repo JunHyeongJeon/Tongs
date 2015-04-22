@@ -104,6 +104,8 @@ public class LogInPageActivity extends Activity implements OnClickListener {
                 Log.v("email", signUpEmail);
                 Log.v("password", signUpPassword);
                 Log.v("emailToken", emailToken);
+                mEmailView.setText(signUpEmail);
+                mPasswordView.setText(signUpPassword);
             }
 
         }

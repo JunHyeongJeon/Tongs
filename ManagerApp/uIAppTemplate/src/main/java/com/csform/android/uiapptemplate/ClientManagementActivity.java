@@ -1,9 +1,13 @@
 package com.csform.android.uiapptemplate;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,6 +80,8 @@ public class ClientManagementActivity extends ActionBarActivity {
     private String uid = null;
     private String num = null;
 
+
+    private int mGroupPosition;
     private ProgressDialog dialog;
     @SuppressLint("NewApi")
     @Override
@@ -266,6 +272,117 @@ public class ClientManagementActivity extends ActionBarActivity {
             }
         }
     }
+    public static byte[] remoteSyncHttp(String requestUrl, String arrParam[][])
+    {
+        PrintWriter pw = null;
+        HttpURLConnection conn = null;
+        byte resultData[] = null;
+        try
+        {
+            URL url = new URL(requestUrl);
+            conn = (HttpURLConnection)url.openConnection();
+            if (conn != null) {
+                conn.setConnectTimeout(15000);
+                conn.setReadTimeout(15000);
+                conn.setUseCaches(false);
+
+                if(arrParam != null)
+                {
+                    conn.setRequestMethod("POST");
+                    conn.setDoInput(true);
+                    conn.setDoOutput(true);
+                    conn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+                    StringBuilder param = new StringBuilder();
+                    for (int i=0; i<arrParam.length; i++)
+                    {
+                        param.append(arrParam[i][0]);
+                        param.append("=");
+                        param.append(arrParam[i][1]);
+                        if ( i != (arrParam.length-1) )
+                            param.append("&");
+                    }
+                    String paramStr = param.toString();
+                    conn.setRequestProperty("Content-Length", "" + Integer.toString(paramStr.getBytes().length));
+
+                    pw = new PrintWriter(conn.getOutputStream());
+                    pw.print(paramStr);
+                    pw.flush();
+                    pw.close();
+                }
+                int responseCode = conn.getResponseCode();
+                if ( responseCode == HttpURLConnection.HTTP_OK )
+                {
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    InputStream is = conn.getInputStream();
+                    int nRead;
+                    byte data[] = new byte[10240];
+                    while( (nRead = is.read(data)) != -1 )
+                    {
+                        baos.write(data, 0, nRead);
+                    };
+                    resultData = baos.toByteArray();
+                    baos.close();
+                    is.close();
+
+                }
+                else
+                {
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    InputStream is = conn.getErrorStream();
+                    int nRead;
+                    byte data[] = new byte[10240];
+                    while( (nRead = is.read(data)) != -1 )
+                    {
+                        baos.write(data, 0, nRead);
+                    };
+                    resultData = baos.toByteArray();
+                    baos.close();
+                    is.close();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Log.e("HttpError", requestUrl);
+//            e.printStackTrace();
+        }
+        finally
+        {
+            if(conn != null)
+            {
+                try {
+                    conn.disconnect();
+                } catch(Exception e){}
+            }
+        }
+        return resultData;
+    }
+
+    public String getRemoteData(String url) {
+        byte data[] = new byte[1024 * 64];
+        InputStream is = null;
+        try {
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            is = response.getEntity().getContent();
+
+            int destLength = Integer.parseInt( response.getFirstHeader("Content-Length").getValue() );
+            int totalRead = 0;
+            while(true)
+            {
+                int read = is.read(data, totalRead, 10240);
+                if(read <= 0)
+                    break;
+                totalRead += read;
+            }
+            httpclient.getConnectionManager().shutdown();
+            return new String(data, 0, totalRead);
+
+        } catch (Exception e) {
+            Log.e("[GET REQUEST]", "Network exception", e);
+        }
+        return null;
+    }
 
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
@@ -330,7 +447,7 @@ public class ClientManagementActivity extends ActionBarActivity {
                     String ticketNo = obj.optString("ticket", null);
                     String uid = obj.optString("uid", null);
                     String num = obj.optString("num", null);
-                    String gcm = obj.optString("gcm", null);
+                //    String gcm = obj.optString("gcm", null);
                     String mdn = obj.optString("mdn", null);
                     String createTime = obj.optString("createTime", null);
 
@@ -338,7 +455,7 @@ public class ClientManagementActivity extends ActionBarActivity {
                     map.put("ticket", "대기표 번호 : " + ticketNo);
                     map.put("uid", uid + "번째 고객");
                     map.put("num", "인원수 : " + num);
-                    map.put("gcm", gcm);
+                 //   map.put("gcm", gcm);
                     map.put("mdn", "전화번호 : " + mdn);
                     map.put("createTime", createTime);
                     list.add(map);
@@ -425,15 +542,15 @@ public class ClientManagementActivity extends ActionBarActivity {
                                                 int groupPosition, int childPosition , long id) {
                             Log.v("ClickgroupPosition", String.valueOf(groupPosition));
                             Log.v("ClickchildPosition", String.valueOf(childPosition));
+                            mGroupPosition = groupPosition;
                             switch (childPosition) {
                                 case CASE_STATUS_USER_CALL: {
-                                    DialogYesNo(getString(R.string.case_status_user_call),groupPosition
-                                            ,CASE_STATUS_USER_CALL );
+                                    DialogYesNo(getString(R.string.case_status_user_call) ,CASE_STATUS_USER_CALL );
+
                                     break;
                                 }
                                 case CASE_STATUS_USER_CANCLE: {
-                                    DialogYesNo(getString(R.string.case_status_user_cancle),groupPosition,
-                                            CASE_STATUS_USER_CANCLE);
+                                    DialogYesNo(getString(R.string.case_status_user_cancle), CASE_STATUS_USER_CANCLE);
                                     break;
                                 }
                                 case 2: {
@@ -469,17 +586,20 @@ public class ClientManagementActivity extends ActionBarActivity {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
                 setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                new HttpTask().execute(url);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
             } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
                 setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                new HttpTask().execute(url);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
             } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
                 setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                new HttpTask().execute(url);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
             }
 
         } catch (Exception e) {
@@ -487,18 +607,52 @@ public class ClientManagementActivity extends ActionBarActivity {
         }
     }
 
+    void requestOnUIThread(final String url)
+    {
+        this.runOnUiThread(new Runnable(){
+            public void run()
+            {
+                new HttpTask().execute(url);
+            }
+        });
+    }
+
 
     class HttpTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
 
-            InputStream is = getInputStreamFromUrl(params[0]);
-            String result = convertStreamToString(is);
-            return result;
+//            InputStream is = getInputStreamFromUrl(params[0]);
+//            String result = convertStreamToString(is);
+
+            String response = null;
+
+            if(params[0].equals("http://somabell01.cloudapp.net:8080/store/store/get?token=6001b1ce82bc090f7b29964b888903c318f6d518&sid=1"))
+            {
+                response = null;
+            }
+
+            try {
+                //response = getRemoteData(params[0]);
+                byte data[] = remoteSyncHttp(params[0], null);
+                if(data == null)
+                {
+                    Thread.currentThread().sleep(1000);
+                    data = remoteSyncHttp(params[0], null);
+                }
+                if(data == null)
+                    return null;
+                response = new String(data);
+            }
+            catch(Exception e) {
+                e.printStackTrace();
+            }
+
+            return response;
         }
 
         protected void onPostExecute(String result) {
 
-            Log.d("Server_result", result);
+//            Log.d("Server_result", result);
             processReceive(result);
         }
     }
@@ -533,13 +687,13 @@ public class ClientManagementActivity extends ActionBarActivity {
         return m_protocolStatus == status ? true : false;
     }
 
-    private void DialogYesNo(String ment, final int user, final int cases){
+    private void DialogYesNo(String ment, final int cases){
         AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
         alt_bld.setMessage(ment).setCancelable(false).setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     // Action for 'Yes' Button
-                        UserStatusControl(user, cases);
+                        UserStatusControl(cases);
                     }
                 }).setNegativeButton("No",
                 new DialogInterface.OnClickListener() {
@@ -556,16 +710,26 @@ public class ClientManagementActivity extends ActionBarActivity {
         alert.show();
     }
 
-    private void UserStatusControl(int mUser, int mCases){
+    private void UserStatusControl(int mCases){
+
         if (mCases == CASE_STATUS_USER_CALL){
-            String url = "";
-            new HttpTask().execute(url);
+            Log.v("mCase", mGroupPosition + "&" + mCases);
+
+            String url = getText(R.string.server_api_user_call) +"token=" + emailToken
+                    +"&sid=" + sid + "&index=" + mGroupPosition;
+            Log.v("caseCall", url);
             setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
+            new HttpTask().execute(url);
+
 
         } else if ( mCases == CASE_STATUS_USER_CANCLE){
-            String url = "";
-            new HttpTask().execute(url);
+
+            Log.v("mCase", mGroupPosition + "&" + mCases);
+            String url = getText(R.string.server_api_user_cancle) + "token=" + emailToken
+                    + "&sid=" + sid + "&index=" + mGroupPosition;
+            Log.v("caseCancle", url);
             setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
+            new HttpTask().execute(url);
         }
 
     }

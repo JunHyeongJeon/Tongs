@@ -159,6 +159,8 @@
 
     <!-- URL String  -->
     <string name="server_api_email_request">http://somabell01.cloudapp.net:8080/store/auth/email_request?</string>
+    <string name="server_api_user_cancle">http://somabell01.cloudapp.net:8080/store/store/cancle?</string>
+    <string name="server_api_user_call">http://somabell01.cloudapp.net:8080/store/store/pop?</string>
     <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
     <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
 
