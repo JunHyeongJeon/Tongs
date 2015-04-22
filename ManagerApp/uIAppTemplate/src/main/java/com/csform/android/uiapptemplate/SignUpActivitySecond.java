@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -45,7 +46,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
 
 
 
-
+    private ProgressDialog dialog;
     private EditText mEmailView;
     private EditText mPasswordView;
     private EditText mPasswordConfirmView;
@@ -139,23 +140,30 @@ public class SignUpActivitySecond extends ActionBarActivity {
                 new HttpTask().execute(url);
 
                 Log.v("ResultCodeCheck", emailResultCode);
+                /*
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "이메일이 전송중입니다. 한번 더 눌러주세요.", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
+                */
+                DialogProgress();
+
             }
             else if(succeseFlag){
-                Log.v("ResultCodeCheck", emailResultCode);
-                SaveManagerData();
-                ActivityNext();
-                succeseFlag = false;
             }
 
         }
 
-
-
     }
+
+    private void DialogProgress(){
+        dialog = ProgressDialog.show(SignUpActivitySecond.this, "",
+                "이메일을 전송합니다. 잠시만 기다려 주세요 ...", true);
+        // 창을 내린다.
+        // dialog.dismiss();
+    }
+
+
     public void attemptSignup() {
 
 
@@ -317,13 +325,25 @@ public class SignUpActivitySecond extends ActionBarActivity {
                 emailToken = token;
                 SaveManagerData();
 
-                if("0".equals(result_code))
-                    succeseFlag = true;
-                //  result_code가 fail때에 대한 처리 시작
+                if("0".equals(result_code)) {
+                    SaveManagerData();
+                    ActivityNext();
+                    dialog.dismiss();
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "이메일이 전송완료 되었습니다. 다음으로 넘어갑니다.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
 
+                }else if("-1".equals(result_code)){
+                    dialog.dismiss();
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "이메일이 전송이 실패하였습니다. 중복된 이메일입니다.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
 
-                //  result_code가 fail때에 대한 처리 끝
+                }
 
+                //    succeseFlag = true;
 
                 Log.v("jsonObjectCheck", json.toString());
 

@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:alpha="0.0"
-        android:text="@string/fontello_logo"
+        android:text="@string/fontello_user"
         android:textColor="@color/main_color_500"
         android:textSize="64dp"
         tools:ignore="SpUsage" />

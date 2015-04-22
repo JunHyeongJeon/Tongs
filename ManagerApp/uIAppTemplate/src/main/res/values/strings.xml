@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ManagerApp</string>
+    <string name="app_name">매장관리앱</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     
@@ -83,8 +83,8 @@
     
     <string name="number_of_images">%d image(s)</string>
     
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="username">사용자아이디</string>
+    <string name="password">비밀번호</string>
     <string name="welcome">Welcome!\nTouch Me!</string>
 
 
@@ -92,8 +92,8 @@
     <string name="download">DOWNLOAD</string>
     <string name="done">DONE</string>
     <string name="error">ERROR</string>
-    <string name="login">LOGIN</string>
-    <string name="register">REGISTER</string>
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
     <string name="skip">SKIP</string>
     <string name="raised">RAISED</string>
     <string name="flat">FLAT</string>
@@ -106,9 +106,9 @@
     <string name="actionbar_name_store_management_activity">매장관리</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
     <string name="phonenumber">전화번호</string>
-    <string name="title_activity_sign_up_activity_first">SignUpActivityFirst</string>
-    <string name="title_activity_sign_up_activity_second">SignUpActivitySecond</string>
-    <string name="title_activity_sign_up_activity_third">SignUpActivityThird</string>
+    <string name="title_activity_sign_up_activity_first">회원가입</string>
+    <string name="title_activity_sign_up_activity_second">회원가입</string>
+    <string name="title_activity_sign_up_activity_third">회원가입</string>
 
     <!-- Sign up Activity 공통 -->
     <string name="next_button">다음</string>
@@ -136,6 +136,10 @@
     <string name="action_password_save">Save password</string>
     <string name="error_invalid_email">이메일 형태가 아닙니다</string>
     <string name="error_invalid_password_check">비밀번호와 일치하지 않습니다</string>
+    <string name="error_not_same_email">일치하는 회원정보가 없습니다.</string>
+
+    <string name="error_not_same_password">비밀번호가 일치하지 않습니다.</string>
+
     <string name="error_invalid_password_check_test">비밀번호와 일치</string>
     <string name="error_invalid_password">비밀번호가 너무 짧습니다</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -154,6 +158,9 @@
     <string name="button_certification_success">인증성공</string>
 
     <!-- URL String  -->
+    <string name="server_api_email_request">http://somabell01.cloudapp.net:8080/store/auth/email_request?</string>
+    <string name="server_api_user_cancle">http://somabell01.cloudapp.net:8080/store/store/cancle?</string>
+    <string name="server_api_user_call">http://somabell01.cloudapp.net:8080/store/store/pop?</string>
     <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
     <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
 
@@ -161,7 +168,7 @@
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
     <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
-    <string name="title_activity_client_management">ClientManagementActivity</string>
+    <string name="title_activity_client_management">고객관리화면</string>
 
 
     <!-- ClientManagementActivity  -->
@@ -169,7 +176,8 @@
     <string name="client_call">고객 호출</string>
     <string name="client_add">고객 등록</string>
 
-
+    <string name="case_status_user_call">고객을 호출하겠습니까?</string>
+    <string name="case_status_user_cancle">고객을 대기열에서 삭제하겠습니까?</string>
 
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">JSON Parser Demo</string>

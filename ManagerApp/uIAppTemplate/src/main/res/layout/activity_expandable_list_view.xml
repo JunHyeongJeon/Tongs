@@ -15,6 +15,7 @@
         android:layout_weight="8">
 
 
+
     </com.csform.android.uiapptemplate.view.AnimatedExpandableListView>
 
     <LinearLayout
@@ -34,8 +35,11 @@
             android:layout_height="match_parent"
             android:text="@string/client_call"
             android:layout_weight="1"
-            android:background="@color/Gold"
-            android:layout_marginRight="2dp">
+            android:background="@drawable/buttonshape"
+            android:layout_marginRight="2dp"
+
+
+            >
 
         </Button>
         <Button
@@ -44,7 +48,7 @@
             android:layout_height="match_parent"
             android:text="@string/client_add"
             android:layout_weight="1"
-            android:background="@color/Gold"
+            android:background="@drawable/buttonshape"
             android:layout_marginLeft="2dp"
             >
         </Button>

@@ -14,7 +14,7 @@
         android:gravity="center_vertical"
         android:minHeight="64dp"
         android:padding="8dp"
-        android:text="@string/fontello_heart_empty"
+        android:text="@string/fontello_user"
         android:textColor="@color/main_color_grey_700"
         android:textSize="16sp" />
 

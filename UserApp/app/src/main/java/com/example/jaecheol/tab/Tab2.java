@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.jaecheol.tongs.R;
 
@@ -32,9 +31,8 @@ import java.io.InputStream;
 public class Tab2 extends Fragment
                   implements View.OnClickListener   {
 
-    public WaitingTicket waitingTicket;
-
-    Button refreshButton;
+    WaitingTicket waitingTicket;
+    Button cancelWaitingButton;
 
     String authToken;
 
@@ -53,18 +51,17 @@ public class Tab2 extends Fragment
         return v;
     }
 
-
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
 
         waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
         noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
 
-        refreshButton = (Button)v.findViewById(R.id.id_refreshButton);
-        refreshButton.setOnClickListener(this);
+        cancelWaitingButton = (Button)v.findViewById(R.id.id_cancelWaitingTicket);
+        cancelWaitingButton.setOnClickListener(this);
 
         waitingTicket.expectTime = (TextView)v.findViewById(R.id.id_expectText);
-        waitingTicket.currentNum = (TextView)v.findViewById(R.id.id_currentText);
+        waitingTicket.currentNum = (TextView)v.findViewById(R.id.currentText);
         waitingTicket.storeName =  (TextView)v.findViewById(R.id.id_storeNameText);
         waitingTicket.waitingNum = (Button)v.findViewById(R.id.id_waitingnum);
 
@@ -76,26 +73,26 @@ public class Tab2 extends Fragment
             noWaitTicketLayout.setVisibility(View.GONE);
 
             waitTicketLayout.setVisibility(View.VISIBLE);
-//            refreshButton.setVisibility(View.VISIBLE);
+            cancelWaitingButton.setVisibility(View.VISIBLE);
         }
         else    {
             noWaitTicketLayout.setVisibility(View.VISIBLE);
 
             waitTicketLayout.setVisibility(View.GONE);
-//            refreshButton.setVisibility(View.GONE);
+            cancelWaitingButton.setVisibility(View.GONE);
         }
     }
 
-    public void getWaitingTicket() {
+    private void getWaitingTicket(View v) {
 
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(v.getContext());
         authToken = mPref.getString("auth_token", null);
 
         String url = getText(R.string.Server_URL)
                 + "user/waiting/get"
                 + "?token=" + authToken;
 
-        Log.d("auth", authToken);
+        Log.d("Fuck", authToken);
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
@@ -103,13 +100,8 @@ public class Tab2 extends Fragment
                     JSONObject json = new JSONObject(result);
                     String result_code = json.get("result_code").toString();
                     Log.d("Hello", result_code);
-                    if( "-1".equals(result_code) ) {
-                        Toast.makeText(getActivity(),
-                                "대기표가 존재하지 않습니다.",
-                                Toast.LENGTH_LONG).show();
-                        showTicketLayout(false);
+                    if( "-1".equals(result_code) )
                         return;
-                    }
 
                     String waitingNum = json.getJSONObject("ticket").getString("ticket");
                     Log.d("Hello", waitingNum);
@@ -123,8 +115,6 @@ public class Tab2 extends Fragment
                     waitingTicket.setCurrentNum(currentNum);
                     waitingTicket.setStoreName(storeName);
 //                    waitingTicket.setExpectTime(extraTime);
-
-                    showTicketLayout(true);
                 }
                 catch(Exception e){}
             }
@@ -136,8 +126,8 @@ public class Tab2 extends Fragment
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.id_refreshButton:
-                getWaitingTicket();
+            case R.id.id_cancelWaitingTicket:
+                getWaitingTicket(v);
                 break;
         }
     }
@@ -213,25 +203,25 @@ public class Tab2 extends Fragment
             Log.d("Hello", result);
         }
     }
-    public class WaitingTicket {
+    private class WaitingTicket {
         Button waitingNum;
         TextView storeName;
         TextView currentNum;
         TextView expectTime;
 
-        public void setWaitingNum(String text)  {
+        void setWaitingNum(String text)  {
             waitingNum.setText(text);
             Log.d("QQQQQ", text);
         }
-        public void setStoreName(String text)   {
+        void setStoreName(String text)   {
             storeName.setText(text);
             Log.d("QQQQQ", text);
         }
-        public void setCurrentNum(String text)  {
+        void setCurrentNum(String text)  {
             currentNum.setText(text);
             Log.d("QQQQQ", text);
         }
-        public void setExpectTime(String text)  {
+        void setExpectTime(String text)  {
             expectTime.setText(text);
         }
 
