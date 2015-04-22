@@ -136,6 +136,10 @@
     <string name="action_password_save">Save password</string>
     <string name="error_invalid_email">이메일 형태가 아닙니다</string>
     <string name="error_invalid_password_check">비밀번호와 일치하지 않습니다</string>
+    <string name="error_not_same_email">일치하는 회원정보가 없습니다.</string>
+
+    <string name="error_not_same_password">비밀번호가 일치하지 않습니다.</string>
+
     <string name="error_invalid_password_check_test">비밀번호와 일치</string>
     <string name="error_invalid_password">비밀번호가 너무 짧습니다</string>
     <string name="error_incorrect_password">This password is incorrect</string>

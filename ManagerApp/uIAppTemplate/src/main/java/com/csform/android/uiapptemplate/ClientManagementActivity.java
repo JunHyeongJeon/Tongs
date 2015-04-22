@@ -11,6 +11,7 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -64,6 +65,8 @@ public class ClientManagementActivity extends ActionBarActivity {
     private int m_protocolStatus = 0;
     public static final int PROTOCOL_STATUS_USER_ADD = 1;
     public static final int PROTOCOL_STATUS_GET_LIST = 2;
+    public static final int PROTOCOL_STATUS_USER_CALL = 3;
+    public static final int PROTOCOL_STATUS_USER_CANCLE = 4;
 
     public static final int CASE_STATUS_USER_CALL = 0;
     public static final int CASE_STATUS_USER_CANCLE = 1;
@@ -73,6 +76,7 @@ public class ClientManagementActivity extends ActionBarActivity {
     private String uid = null;
     private String num = null;
 
+    private ProgressDialog dialog;
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -466,7 +470,18 @@ public class ClientManagementActivity extends ActionBarActivity {
                         + "&sid=" + sid;
                 setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
                 new HttpTask().execute(url);
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                new HttpTask().execute(url);
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                new HttpTask().execute(url);
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -520,8 +535,7 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     private void DialogYesNo(String ment, final int user, final int cases){
         AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
-        alt_bld.setMessage(ment).setCancelable(
-                false).setPositiveButton("Yes",
+        alt_bld.setMessage(ment).setCancelable(false).setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     // Action for 'Yes' Button
@@ -544,10 +558,22 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     private void UserStatusControl(int mUser, int mCases){
         if (mCases == CASE_STATUS_USER_CALL){
+            String url = "";
+            new HttpTask().execute(url);
+            setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
 
         } else if ( mCases == CASE_STATUS_USER_CANCLE){
-
+            String url = "";
+            new HttpTask().execute(url);
+            setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
         }
 
+    }
+
+    private void DialogProgress(){
+        dialog = ProgressDialog.show(ClientManagementActivity.this, "",
+                "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);
+        // 창을 내린다.
+        // dialog.dismiss();
     }
 }

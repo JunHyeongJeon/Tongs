@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -47,7 +48,7 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
     private boolean mEmailValid = false;
     private boolean mPasswordValid = false;
-
+    private boolean mEmailPasswordVaild = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -128,6 +129,11 @@ public class LogInPageActivity extends Activity implements OnClickListener {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
+        } else if (!loginEmail.equals(signUpEmail)) {
+            mEmailView.setError(getString(R.string.error_not_same_email));
+            focusView = mEmailView;
+            cancel = true;
+
         } else mEmailValid = true;
 
         // Check for a valid password, if the user entered one.
@@ -135,16 +141,28 @@ public class LogInPageActivity extends Activity implements OnClickListener {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
             cancel = true;
-        } else if(!isPasswordValid(loginPassword)){
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-
-        } else mPasswordValid = true;
-
-        if( mEmailValid && mPasswordValid) {
-            DialogProgress();
-            String url = getString(R.string.server_api_email_request) + "email=" + loginEmail;
-            new HttpTask().execute(url);
+        } else if(!loginPassword.equals(signUpPassword)) {
+            mPasswordView.setError(getString(R.string.error_not_same_password));
         }
+        else mPasswordValid = true;
+
+
+        if(loginPassword.equals(signUpPassword) && loginEmail.equals(signUpEmail))
+            mEmailPasswordVaild = true;
+
+
+        if( mEmailValid && mPasswordValid && mEmailPasswordVaild) {
+            //DialogProgress();
+            //String url = getString(R.string.server_api_email_request) + "email=" + loginEmail;
+            //new HttpTask().execute(url);
+            ActivityNext();
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "로그인에 실패하였습니다.", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+
+        }
+
     }
     private void DialogProgress(){
         dialog = ProgressDialog.show(LogInPageActivity.this, "",
@@ -224,8 +242,14 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
 
                 if("0".equals(result_code)){
-                    ActivityNext();
+//                    ActivityNext();
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "로그인에 실패하였습니다.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+
                 }
+
 
                 Log.v("jsonObjectCheck", json.toString());
 

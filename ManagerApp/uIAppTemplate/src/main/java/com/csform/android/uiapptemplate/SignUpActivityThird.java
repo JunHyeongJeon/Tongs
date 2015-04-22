@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -53,6 +54,8 @@ public class SignUpActivityThird extends ActionBarActivity {
     private String code;
     private String password;
     private boolean signUpSucceceFlag = false;
+
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -261,13 +264,28 @@ public class SignUpActivityThird extends ActionBarActivity {
 
                 String result_code = json.get("result_code").toString();
                 smsResultCode = result_code;
+                String result_msg = json.get("result_msg").toString();
 
-                if("yeah".equals(result_code)){
+                if("yeah".equals(result_msg)){
                     signUpSucceceFlag = true;
+                    dialog.dismiss();
                     mSendButton.setText(R.string.button_certification_success);
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "인증이 완료되었습니다. 다음으로 넘어갑니다.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                    ActivityNext();
+                }
+                else if(!"yeah".equals(result_msg) && succeceFlag){
+                    dialog.dismiss();
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "인증에 실패하였습니다. 올바른 인증번호를 입력해 주세요.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+
                 }
 
-                else if("0".equals(result_code))
+                if("0".equals(result_code))
                     succeceFlag = true;
 
                 Log.v("jsonObjectCheck", json.toString());
@@ -285,10 +303,15 @@ public class SignUpActivityThird extends ActionBarActivity {
         mSendButton.setTag("check");
     }
     private void Check(){
+        /*
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Check", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+        */
+
+        DialogProgress();
+
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         emailToken = mPref.getString("emailToken", null);
         password = mPref.getString("password", null);
@@ -304,6 +327,14 @@ public class SignUpActivityThird extends ActionBarActivity {
         }
 
     }
+    private void DialogProgress(){
+        dialog = ProgressDialog.show(SignUpActivityThird.this, "",
+                "인증번호를 확인하는중입니다.. 잠시만 기다려 주세요 ...", true);
+        // 창을 내린다.
+        // dialog.dismiss();
+    }
+
+
 
 
 }
