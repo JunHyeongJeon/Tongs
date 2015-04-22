@@ -1,6 +1,7 @@
 package com.example.jaecheol.tab;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 
 import com.example.jaecheol.ble.BleManager;
 import com.example.jaecheol.tongs.BarcodeGenerator;
+import com.example.jaecheol.tongs.MainActivity;
 import com.example.jaecheol.tongs.R;
 import com.example.jaecheol.tongs.StoreViewActivity;
 import com.google.zxing.BarcodeFormat;
@@ -82,7 +84,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         scanBLEButton = (Button)view.findViewById(R.id.id_scanBLEButton);
         scanBLEButton.setOnClickListener(this);
         handler = new ServiceHandler();
-
+/*
+        IntentFilter intent = new IntentFilter();
+        intent.addAction("android.intent.action.GCMRECV");
+        getActivity().registerReceiver(receiver, intent);
+*/
         return view;
     }
 
@@ -144,9 +150,21 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.id_scanBLEButton :
-                isStoreSearched = false;
-                scanBeacon();
+
+                //Intent intent2 = new Intent();
+                //intent2.setAction("android.intent.action.GCMRECV");
+//                intent2.setData(Uri.parse(extras.toString()));
+                //getActivity().sendBroadcast(intent2);
+
+            {
+                MainActivity activity = (MainActivity)getActivity();
+                activity.processPush(null);
                 break;
+//                isStoreSearched = false;
+//                scanBeacon();
+            }
+
+
         }
     }
 
@@ -365,4 +383,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             Log.d("Hello", result);
         }
     }
+
+    BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("Tab1", "receive!=============");
+        }
+    };
 }
