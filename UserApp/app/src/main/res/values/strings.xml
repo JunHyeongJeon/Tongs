@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tongs_UserApp</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="Server_URL">http://somabell01.cloudapp.net:8080/</string>
+
+
+    <string name="drawer_open">Menu opened</string>
+    <string name="drawer_close">Menu closed</string>
+</resources>

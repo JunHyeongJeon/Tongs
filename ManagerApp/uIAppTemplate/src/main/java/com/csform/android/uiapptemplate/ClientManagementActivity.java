@@ -431,14 +431,46 @@ public class ClientManagementActivity extends ActionBarActivity {
                 Log.v("json", json.toString());
 
                 JSONArray jsonArr = json.optJSONArray("tickets");
-                if (jsonArr == null)
-                    return;
+                if (jsonArr == null) {
+                    List<GroupItem> items = new ArrayList<GroupItem>();
 
+                    GroupItem item = new GroupItem();
+                    item.title = "대기열에 아무도 없습니다.";
+                    items.add(item);
+
+
+                    ExampleAdapter adapter = new ExampleAdapter(this);
+                    adapter.setData(items);
+
+                    listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
+                    listView.setAdapter(adapter);
+
+                    Display display = getWindowManager().getDefaultDisplay();
+                    Point size = new Point();
+                    display.getSize(size);
+                    int width = size.x;
+                    Resources r = getResources();
+                    int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                            50, r.getDisplayMetrics());
+                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                        listView.setIndicatorBounds(width - px, width);
+                    } else {
+                        listView.setIndicatorBoundsRelative(width - px, width);
+                    }
+
+                    return;
+                }
 
                 int ticketLen = jsonArr.length();
                 ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
 
                 List<GroupItem> items = new ArrayList<GroupItem>();
+
+
+
+
+
+
                 for (int i = 0; i < ticketLen; i++) {
                     JSONObject obj = jsonArr.optJSONObject(i);
                     if (obj == null)
@@ -463,7 +495,7 @@ public class ClientManagementActivity extends ActionBarActivity {
 
                     GroupItem item = new GroupItem();
 
-                    item.title = "대기번호 : " + uid + "\n" +
+                    item.title = "대기번호 : " + ticketNo + "\n" +
                     //        "고객전화번호 : " + mdn + "\n" +
                             "인원수 : " + num + "\n";
 

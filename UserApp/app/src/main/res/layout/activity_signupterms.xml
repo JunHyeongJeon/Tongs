@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/scrollView">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="제 1 조 (목적) 약관(約款)은 계약의 당사자가 다수의 상대편과 계약을 체결하기 위하여 일정한 형식에 따라 미리 마련한 계약의 내용을 뜻한다[1]. 약관에는 이미 작성된 계약조항의 전체를 말하는 보통 거래약관이나 보통약관의 경우와 특약조항이나 면책약관의 경우 등이 있는데, 대량 거래의 수요에 대응하기 위하여 일반적인 계약의 내용을 당사자 한쪽이 미리 정하여 놓은 계약조항을 가리킨다."
+                    android:id="@+id/textView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:autoText="false"
+                    android:nestedScrollingEnabled="true" />
+            </ScrollView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="동의합니다"
+                android:id="@+id/id_agreeButton1"
+                android:background="@color/tabsScrollColor"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/scrollView2">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:text="제 2 조 (행위)  약관(約款)은 계약의 당사자가 다수의 상대편과 계약을 체결하기 위하여 일정한 형식에 따라 미리 마련한 계약의 내용을 뜻한다[1]. 약관에는 이미 작성된 계약조항의 전체를 말하는 보통 거래약관이나 보통약관의 경우와 특약조항이나 면책약관의 경우 등이 있는데, 대량 거래의 수요에 대응하기 위하여 일반적인 계약의 내용을 당사자 한쪽이 미리 정하여 놓은 계약조항을 가리킨다."
+                    android:id="@+id/textView2"
+                    android:layout_gravity="center_horizontal" />
+            </ScrollView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="동의합니다"
+                android:id="@+id/id_agreeButton2"
+                android:background="@android:color/background_light"
+                android:textColor="@android:color/tertiary_text_dark"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+</LinearLayout>
