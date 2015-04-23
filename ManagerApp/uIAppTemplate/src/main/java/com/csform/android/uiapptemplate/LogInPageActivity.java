@@ -101,11 +101,22 @@ public class LogInPageActivity extends Activity implements OnClickListener {
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
             }else if(v.getId()== R.id.skip){
-                Log.v("email", signUpEmail);
-                Log.v("password", signUpPassword);
-                Log.v("emailToken", emailToken);
-                mEmailView.setText(signUpEmail);
-                mPasswordView.setText(signUpPassword);
+
+                if("".equals(signUpEmail) || "".equals(signUpPassword)) {
+
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "저장된 비밀번호가 없습니다..", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+
+                } else {
+                    Log.v("email", signUpEmail);
+                    Log.v("password", signUpPassword);
+                    Log.v("emailToken", emailToken);
+
+                    mEmailView.setText(signUpEmail);
+                    mPasswordView.setText(signUpPassword);
+
+                }
             }
 
         }
