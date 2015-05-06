@@ -1,7 +1,6 @@
 package com.example.jaecheol.tab;
 
 import android.app.AlertDialog;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -27,7 +26,6 @@ import android.widget.TextView;
 
 import com.example.jaecheol.ble.BleManager;
 import com.example.jaecheol.tongs.BarcodeGenerator;
-import com.example.jaecheol.tongs.MainActivity;
 import com.example.jaecheol.tongs.R;
 import com.example.jaecheol.tongs.StoreViewActivity;
 import com.google.zxing.BarcodeFormat;
@@ -157,11 +155,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 //getActivity().sendBroadcast(intent2);
 
             {
-                MainActivity activity = (MainActivity)getActivity();
-                activity.processPush(null);
-                break;
-//                isStoreSearched = false;
-//                scanBeacon();
+//                MainActivity activity = (MainActivity)getActivity();
+//                activity.processPush(null);
+//                break;
+                isStoreSearched = false;
+                scanBeacon();
             }
 
 
@@ -383,11 +381,4 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             Log.d("Hello", result);
         }
     }
-
-    BroadcastReceiver receiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.d("Tab1", "receive!=============");
-        }
-    };
 }

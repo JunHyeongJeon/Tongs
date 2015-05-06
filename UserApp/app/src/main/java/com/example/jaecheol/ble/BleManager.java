@@ -150,8 +150,9 @@ public class BleManager implements BluetoothAdapter.LeScanCallback
 
             com.example.jaecheol.ble.MyBeacon beacon = com.example.jaecheol.ble.MyBeacon.fromScanData(scanRecord, rssi, device);
 			beacon.setBeaconName(name);
-			
-			sendHandler(112, beacon.getSummary());
+
+            if( rssi < 0.1 )
+       			sendHandler(112, beacon.getSummary());
 		}
 	}
 }

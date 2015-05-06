@@ -66,30 +66,32 @@ public class MainActivity extends ActionBarActivity
         String ticketNum;
         String currentNum;
 
-        if(intent == null)
-        {
+//        if(intent == null)
+//        {
             mdn = "";
             title = "진국";
-            ticketNum = "12";
+            ticketNum = "13";
             currentNum = "4";
-        }
-        else {
-            Bundle b = intent.getBundleExtra("data");
-            mdn = b.getString("mobile_number");
-            title = b.getString("title");
-            ticketNum = b.getString("ticket_num");
-            currentNum = b.getString("current_num");
-        }
+//        }
+//        else {
+//            Bundle b = intent.getBundleExtra("data");
+//            b.getStringArray("ticket");
+//
+//            mdn = b.getString("mobile_number");
+//            title = b.getString("title");
+//            ticketNum = b.getString("ticket_num");
+//            currentNum = b.getString("current_num");
+//            Log.d("GCM", b.toString());
+//        }
 
-        if(mdn != null) {
-            pager.setCurrentItem(1, true);
-            Tab2 tab2 = (Tab2)adapter.getTab(1);
 
-            tab2.waitingTicket.setStoreName(title);
-            tab2.waitingTicket.setCurrentNum(currentNum);
-            tab2.waitingTicket.setWaitingNum(ticketNum);
-            tab2.showTicketLayout(true);
-        }
+        pager.setCurrentItem(1, true);
+        Tab2 tab2 = (Tab2)adapter.getTab(1);
+
+        tab2.waitingTicket.setStoreName(title);
+        tab2.waitingTicket.setCurrentNum(currentNum);
+        tab2.waitingTicket.setWaitingNum(ticketNum);
+        tab2.showTicketLayout(true);
     }
 
     @Override

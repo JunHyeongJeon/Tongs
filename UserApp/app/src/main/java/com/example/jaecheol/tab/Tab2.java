@@ -213,6 +213,7 @@ public class Tab2 extends Fragment
             Log.d("Hello", result);
         }
     }
+
     public class WaitingTicket {
         Button waitingNum;
         TextView storeName;

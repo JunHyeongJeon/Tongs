@@ -6,7 +6,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///ADT/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/22.0.0/recyclerview-v7-22.0.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../adt-bundle-mac-x86_64-20131030/android-sdk-macosx/extras/android/m2repository/com/android/support/recyclerview-v7/22.0.0/recyclerview-v7-22.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
