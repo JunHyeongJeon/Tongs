@@ -5,9 +5,10 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:background="@color/colorPrimary"
-    android:elevation="2dp"
-    android:theme="@style/Base.ThemeOverlay.AppCompat.Light">
-
+    android:paddingTop="0dp"
+    android:elevation="4dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <!--android:paddingTop="25dp"-->
     <RelativeLayout
         android:id="@+id/action_bar_layout"
         android:layout_width="match_parent"
@@ -17,7 +18,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_marginLeft="15dp"
             android:src="@drawable/toplogo_xhdpi"
             android:layout_centerHorizontal="true"/>
 

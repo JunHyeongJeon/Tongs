@@ -89,6 +89,8 @@ public class IntroActivity extends ActionBarActivity
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         authToken = mPref.getString("auth_token", null);
 
+        authToken = "SKIP";   // 그냥 넘기기!!!!!!!!!!!!!!!!
+
         if (authToken != null) {
             initGCM();
             sendGCMKey();

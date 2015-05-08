@@ -83,13 +83,16 @@ public class GcmIntentService extends IntentService {
 //                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
                 // Post notification of received message.
 //                sendNotification("Received: " + extras.toString());
-                sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
+                sendNotification("Received: " + extras.getString("key1")
+                                                + extras.getString("key2"));
                 Log.i(TAG, "Received: " + extras.toString());
 
 
                 Log.d("123", "START");
                 Intent intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
-                intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                                    | Intent.FLAG_ACTIVITY_NEW_TASK
+                                    | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent2.putExtra("data", extras);
                 //intent2.setData(Uri.parse(extras.toString()));
                 startActivity(intent2);

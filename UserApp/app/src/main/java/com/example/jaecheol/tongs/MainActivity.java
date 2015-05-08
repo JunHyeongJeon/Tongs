@@ -5,13 +5,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.jaecheol.drawer.MyAdapter;
 import com.example.jaecheol.tab.Tab2;
 
 
@@ -26,6 +32,24 @@ public class MainActivity extends ActionBarActivity
 
     CharSequence titles[] = {"바코드", "대기표"};
     int numOfTabs = 2;
+
+
+    /* drawer variable */
+    String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
+    int ICONS[] = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+
+    String NAME = "Jaecheol GOD";
+    String EMAIL = "jcgod413@gmail.com";
+    int PROFILE = R.drawable.profile;
+
+    RecyclerView mRecyclerView;                           // Declaring RecyclerView
+    RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
+    RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
+    DrawerLayout Drawer;                                  // Declaring DrawerLayout
+
+    ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
+
+
 
     String authToken;
 
@@ -45,6 +69,7 @@ public class MainActivity extends ActionBarActivity
 
         setToolbar();
         setTabView();
+        setDrawer();
 
         getDataFromIntent();
     }
@@ -66,23 +91,33 @@ public class MainActivity extends ActionBarActivity
         String ticketNum;
         String currentNum;
 
-//        if(intent == null)
-//        {
+        if(intent == null)
+        {
             mdn = "";
             title = "진국";
             ticketNum = "13";
             currentNum = "4";
-//        }
-//        else {
-//            Bundle b = intent.getBundleExtra("data");
-//            b.getStringArray("ticket");
-//
-//            mdn = b.getString("mobile_number");
-//            title = b.getString("title");
-//            ticketNum = b.getString("ticket_num");
-//            currentNum = b.getString("current_num");
-//            Log.d("GCM", b.toString());
-//        }
+        }
+        else {
+            Bundle b = intent.getBundleExtra("data");
+            b.getStringArray("ticket");
+
+
+//            title = json.getJSONObject("ticket").getString("ticket");
+//            Log.d("Hello", title);
+//            String currentNum = json.getJSONObject("store").getString("current_num");
+//            Log.d("Hello", currentNum);
+//            String storeName = json.getJSONObject("store").getString("brand_name");
+//            Log.d("Hello", storeName);
+
+            // json 값 제대로 읽어와야함
+
+            mdn = b.getString("mobile_number");
+            title = b.getString("title");
+            ticketNum = b.getString("ticket_num");
+            currentNum = b.getString("current_num");
+            Log.d("GCM", b.toString());
+        }
 
 
         pager.setCurrentItem(1, true);
@@ -156,12 +191,54 @@ public class MainActivity extends ActionBarActivity
         tabs.setViewPager(pager);
     }
 
+
+    private void setDrawer()    {
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
+
+        mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+
+        mAdapter = new MyAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        // And passing the titles,icons,header view name, header view email,
+        // and header view profile picture
+
+        mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
+
+        mLayoutManager = new LinearLayoutManager(this);                 // Creating a layout Manager
+
+        mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
+
+
+        Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
+        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.app_name,R.string.app_name){
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                // code here will execute once the drawer is opened( As I dont want anything happened whe drawer is
+                // open I am not going to put anything here)
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                // Code here will execute once drawer is closed
+            }
+
+
+
+        }; // Drawer Toggle Object Made
+        Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
+        mDrawerToggle.syncState();               // F
+    }
+
+
+
     private void getDataFromIntent() {
 
         Intent intent = this.getIntent();
         authToken = intent.getStringExtra("auth_token");
     }
-
 
     public void onClick(View v) {
         switch (v.getId()) {
@@ -193,8 +270,5 @@ public class MainActivity extends ActionBarActivity
         startActivity(intent);
         this.finish();
     }
-
-
-
 
 }

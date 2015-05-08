@@ -5,8 +5,8 @@
         <item name="windowActionBar">false</item>
 
         <item name="colorAccent">#71bd0b</item>
-        <item name="colorPrimary">#3F51B5</item>
-        <item name="colorPrimaryDark">#303F9F</item>
+        <item name="colorPrimary">#71bd0b</item>
+        <item name="colorPrimaryDark">#eeeef0</item>
         <item name="colorControlHighlight">#00CC55</item>
         <item name="colorControlNormal">#71bd0b</item>
     </style>

@@ -24,6 +24,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.android.support:support-v4:22.0.0'
     compile files('libs/zxing-2.1.jar')
-    compile 'com.android.support:recyclerview-v7:22.0.0'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
+    compile 'de.hdodenhof:circleimageview:1.2.1'
     compile files('libs/google-play-services.jar')
 }

@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jaecheol.ble.BleManager;
 import com.example.jaecheol.tongs.BarcodeGenerator;
@@ -206,7 +207,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                         if( peopleEditText != null )
                             peopleNumber = peopleEditText.getText().toString();
 
-                        if (mobileNumber.isEmpty() == false) {
+                        if( mobileNumber == null ) {
+                            Toast.makeText(getActivity().getApplicationContext(),
+                                            "등록된 정보가 없습니다. 다시 로그인해주세요.",
+                                            Toast.LENGTH_SHORT);
+                        }
+                        else    {
 
                             setBarcodeContents(uid + "_" + mobileNumber + "_" + peopleNumber);
                             currentNumText.setText("현재 인원은 " + peopleNumber + "명 입니다.");
