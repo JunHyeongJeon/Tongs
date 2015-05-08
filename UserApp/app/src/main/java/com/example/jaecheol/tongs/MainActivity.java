@@ -36,11 +36,15 @@ public class MainActivity extends ActionBarActivity
 
     /* drawer variable */
     String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
-    int ICONS[] = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+    int ICONS[] = { R.mipmap.ic_launcher,
+                    R.mipmap.ic_launcher,
+                    R.mipmap.ic_launcher,
+                    R.mipmap.ic_launcher,
+                    R.mipmap.ic_launcher };
 
     String NAME = "Jaecheol GOD";
     String EMAIL = "jcgod413@gmail.com";
-    int PROFILE = R.drawable.profile;
+    int BARCODE = R.drawable.no_barcodes;
 
     RecyclerView mRecyclerView;                           // Declaring RecyclerView
     RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
@@ -50,8 +54,10 @@ public class MainActivity extends ActionBarActivity
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
 
 
-
     String authToken;
+
+
+
 
     int sid;
     int number;
@@ -198,7 +204,7 @@ public class MainActivity extends ActionBarActivity
 
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
 
-        mAdapter = new MyAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        mAdapter = new MyAdapter(TITLES, ICONS, BARCODE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
         // and header view profile picture
 
@@ -224,8 +230,6 @@ public class MainActivity extends ActionBarActivity
                 super.onDrawerClosed(drawerView);
                 // Code here will execute once drawer is closed
             }
-
-
 
         }; // Drawer Toggle Object Made
         Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
