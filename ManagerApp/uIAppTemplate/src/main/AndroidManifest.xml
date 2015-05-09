@@ -3,7 +3,7 @@
     package="com.csform.android.uiapptemplate"
 
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.1" >
 
     <!-- GCM connects to Google Services. -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,6 +12,9 @@
     <!-- Keeps the processor from sleeping when a message is received. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -54,6 +57,10 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ParallaxKenBurnsActivity"
@@ -65,11 +72,19 @@
         <activity
             android:name=".ImageGallerySubcategoryActivity"
             android:theme="@style/AppTheme.NoShadow" />
-        <activity android:name=".LogInPageActivity" />
+        <activity
+            android:name=".LogInPageActivity"
+            android:label="@string/title_activity_login">
+        </activity>
         <activity
             android:name=".SplashScreensActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity android:name=".ListViewsActivity" >
 
@@ -105,11 +120,7 @@
         <activity
             android:name=".SignUpActivityForth"
             android:label="@string/title_activity_sign_up_activity_forth" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ClientManagementActivity"

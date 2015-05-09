@@ -87,7 +87,7 @@ public class SignUpActivitySecond extends ActionBarActivity {
                 if(mEmailValid && mPasswordValid && mPasswordConfirmValid){
 
                     Send();
-                    //ActivityNext();
+                    //moveNextActivity();
                 }
 
 

@@ -1,6 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -12,9 +11,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.csform.android.uiapptemplate.R;
-
 import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -43,7 +41,7 @@ public class SignUpActivityFirst extends ActionBarActivity {
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityBack();
+                backActivity();
 
             }
         });
@@ -51,7 +49,7 @@ public class SignUpActivityFirst extends ActionBarActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityNext();
+                moveNextActivity();
 
             }
         });
@@ -107,24 +105,50 @@ public class SignUpActivityFirst extends ActionBarActivity {
     }
 
     private String readTxt(int Id) {
-        String data = null;
         InputStream inputStream = getResources().openRawResource(Id);
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
         int i;
-        try {
-            i = inputStream.read();
-            while (i != -1) {
-                byteArrayOutputStream.write(i);
-                i = inputStream.read();
-            }
+        try
+        {
+            int len = inputStream.available();
+            if(len == 0)
+                return null;
 
-            data = new String(byteArrayOutputStream.toByteArray(),"UTF-8");
+            byte raw[] = new byte[len];
+
+
+
+            //ByteArrayOutputStream baos = new ByteArrayOutputStream(len);
+            //i = inputStream.read();
+            int nTotal = 0;
+            while (true)
+            {
+                int nRead = inputStream.read(raw, nTotal, len-nTotal);
+                if(nRead <= 0)
+                    break;
+                nTotal += nRead;
+                //baos.write(i);
+                //i = inputStream.read();
+            }
             inputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            //DataInputStream dis = new DataInputStream(inputStream);
+            //dis.readFully(raw);
+
+            //String data = new String(baos.toByteArray(),"UTF-8");
+            if(nTotal != len)
+                return null;
+
+            return new String(raw);
         }
-        return data;
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            String msg = e.getMessage();
+
+
+        }
+        return null;
     }
 
     //dkdkd
@@ -134,7 +158,7 @@ public class SignUpActivityFirst extends ActionBarActivity {
     int ret = is.read(data);
     string str = new string(data);
      */
-    public void ActivityBack(){
+    public void backActivity(){
         // Intent intent = new Intent(this, LoginActivity.class);
         // startActivity(intent);
         // overridePendingTransition(R.anim.fade, R.anim.cycle_7);
@@ -142,7 +166,7 @@ public class SignUpActivityFirst extends ActionBarActivity {
         overridePendingTransition(R.anim.slide_right, R.anim.slide_out_right);
 
     }
-    public void ActivityNext(){
+    public void moveNextActivity(){
         Intent intent = new Intent(this, SignUpActivitySecond.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);

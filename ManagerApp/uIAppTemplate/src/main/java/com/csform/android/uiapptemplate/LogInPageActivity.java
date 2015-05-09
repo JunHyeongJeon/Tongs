@@ -1,22 +1,22 @@
 package com.csform.android.uiapptemplate;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.EditText;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
 
 import org.apache.http.HttpResponse;
@@ -31,151 +31,162 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class LogInPageActivity extends Activity implements OnClickListener {
+public class LogInPageActivity extends ActionBarActivity implements OnClickListener, OnHttpReceive {
 
 	public static final String LOGIN_PAGE_AND_LOADERS_CATEGORY = "com.csform.android.uiapptemplate.LogInPageAndLoadersActivity";
 	public static final String DARK = "Dark";
 	public static final String LIGHT = "Light";
-    private ProgressDialog dialog;
-
-    private String signUpEmail;
-    private String signUpPassword;
-    private String emailToken;
-    private String loginEmail;
-    private String loginPassword;
+    
+    private ProgressDialog mDialog;
+    private String mSignupEmail;
+    private String mSignupPassword;
+    private String mEmailToken;
+    private String mLoginEmail;
+    private String mLoginPassword;
     private FloatLabeledEditText mEmailView;
     private FloatLabeledEditText mPasswordView;
-
     private boolean mEmailValid = false;
     private boolean mPasswordValid = false;
     private boolean mEmailPasswordVaild = false;
+    private boolean mCheck = false;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().requestFeature(Window.FEATURE_NO_TITLE); //Removing ActionBar
-		String category = LIGHT;
-		Bundle extras = getIntent().getExtras();
-		if (extras != null && extras.containsKey(LOGIN_PAGE_AND_LOADERS_CATEGORY)) {
-			category = extras.getString(LOGIN_PAGE_AND_LOADERS_CATEGORY, DARK);
-		}
-		setContentView(category);
+
+		setContentView();
 
 
-
+        //shared preference hardcoding.
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-
         mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
         mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
-        signUpEmail = mPref.getString("email", null);
-        signUpPassword = mPref.getString("password", null);
-        emailToken = mPref.getString("emailToken", null);
+        mSignupEmail = mPref.getString("email", null);
+        mSignupPassword = mPref.getString("password", null);
+        mEmailToken = mPref.getString("mEmailToken", null);
 	}
 	
-	private void setContentView(String category) {
-		if (category.equals(DARK)) {
-			setContentView(R.layout.activity_login_page_dark);
-		} else if (category.equals(LIGHT)) {
-			setContentView(R.layout.activity_login_page_light);
-		}
-		TextView login, register, skip;
-		login = (TextView) findViewById(R.id.login);
-		register = (TextView) findViewById(R.id.register);
-		skip = (TextView) findViewById(R.id.skip);
-		login.setOnClickListener(this);
-		register.setOnClickListener(this);
-		skip.setOnClickListener(this);
+	private void setContentView() {
+
+        setContentView(R.layout.activity_login_page_light);
+
+        getSupportActionBar().setCustomView(R.layout.action_bar_centor);
+
+        //TextView login, register, skip;
+        CheckBox loginKeep;
+		//login = (TextView) findViewById(R.id.login);
+		//register = (TextView) findViewById(R.id.register);
+		//skip = (TextView) findViewById(R.id.skip);
+        loginKeep = (CheckBox)findViewById(R.id.login_keep_checkbox);
+        loginKeep.setOnClickListener(this);
+		//login.setOnClickListener(this);
+		//register.setOnClickListener(this);
+		//skip.setOnClickListener(this);
+
+        ImageView imageView;
+        imageView = (ImageView)findViewById(R.id.LoginImageView);
+        imageView.setImageResource(R.drawable.logo_y);
 	}
 
 	@Override
-	public void onClick(View v) {
-		if (v instanceof TextView) {
-            if(v.getId() == R.id.login){
+	public void onClick(View v)
+    {
+
+        if(v.getId() == R.id.login)
+        {
+
+            doLogin();
+        }/*
+        else if(v.getId()== R.id.register)
+        {
+            Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SignUpActivityFirst.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+        }*/
+        else if(v.getId()== R.id.login_keep_checkbox)
+        {
+            mCheck = !mCheck;
 
 
-                Login();
-
-
-            }else if(v.getId()== R.id.register){
-//                Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, SignUpActivityFirst.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
-            }else if(v.getId()== R.id.skip){
-                Log.v("email", signUpEmail);
-                Log.v("password", signUpPassword);
-                Log.v("emailToken", emailToken);
-                mEmailView.setText(signUpEmail);
-                mPasswordView.setText(signUpPassword);
+            if("".equals(mSignupEmail) || "".equals(mSignupPassword))
+            {
+                printToast("저장된 비밀번호가 없습니다.");
             }
+            else
+            {
+                Log.v("LogIn", String.format("email:%s, pw:%s, token:%s", mSignupEmail, mSignupPassword, mEmailToken));
+                mEmailView.setText(mSignupEmail);
+                mPasswordView.setText(mSignupPassword);
 
+            }
+            if(!mCheck) {
+                mEmailView.setText("");
+                mPasswordView.setText("");
+            }
         }
+
 	}
-    private void Login(){
+    private void doLogin()
+    {
+
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        loginEmail = mEmailView.getText().toString();
-        loginPassword = mPasswordView.getText().toString();
+        mLoginEmail = mEmailView.getText().toString();
+        mLoginPassword = mPasswordView.getText().toString();
 
-        boolean cancel = false;
         View focusView = null;
-
-
         // Check for a valid email address.
-        if (TextUtils.isEmpty(loginEmail)) {
+        if (TextUtils.isEmpty(mLoginEmail)) {
             mEmailView.setError(getString(R.string.error_field_required));
             focusView = mEmailView;
-            cancel = true;
-        } else if (!isEmailValid(loginEmail)) {
+        } else if (!isEmailValid(mLoginEmail)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
-            cancel = true;
-        } else if (!loginEmail.equals(signUpEmail)) {
+        } else if (!mLoginEmail.equals(mSignupEmail)) {
             mEmailView.setError(getString(R.string.error_not_same_email));
             focusView = mEmailView;
-            cancel = true;
 
         } else mEmailValid = true;
 
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(loginPassword)) {
+        if (TextUtils.isEmpty(mLoginPassword)) {
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
-            cancel = true;
-        } else if(!loginPassword.equals(signUpPassword)) {
+
+        } else if(!mLoginPassword.equals(mSignupPassword)) {
             mPasswordView.setError(getString(R.string.error_not_same_password));
         }
         else mPasswordValid = true;
 
 
-        if(loginPassword.equals(signUpPassword) && loginEmail.equals(signUpEmail))
+        if(mLoginPassword.equals(mSignupPassword) && mLoginEmail.equals(mSignupEmail))
             mEmailPasswordVaild = true;
 
 
         if( mEmailValid && mPasswordValid && mEmailPasswordVaild) {
             //DialogProgress();
-            //String url = getString(R.string.server_api_email_request) + "email=" + loginEmail;
+            //String url = getString(R.string.server_api_email_request) + "email=" + mLoginEmail;
             //new HttpTask().execute(url);
-            ActivityNext();
+            moveNextActivity();
         } else {
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "로그인에 실패하였습니다.", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.CENTER, 0, 0);
-
+            printToast("로그인에 실패하였습니다.");
         }
 
     }
     private void DialogProgress(){
-        dialog = ProgressDialog.show(LogInPageActivity.this, "",
+        mDialog = ProgressDialog.show(LogInPageActivity.this, "",
                 "잠시만 기다려 주세요 ...", true);
+
         // 창을 내린다.
         // dialog.dismiss();
     }
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return email.contains("@") && email.contains(".");
     }
 
     private boolean isPasswordValid(String password) {
@@ -220,7 +231,7 @@ public class LogInPageActivity extends Activity implements OnClickListener {
         return sb.toString();
 
     }
-    class HttpTask extends AsyncTask<String , Void , String> {
+ /*   class HttpTask extends AsyncTask<String , Void , String> {
         protected String doInBackground(String... params)
         {
             InputStream is = getInputStreamFromUrl(params[0]);
@@ -232,48 +243,51 @@ public class LogInPageActivity extends Activity implements OnClickListener {
 
         protected void onPostExecute(String result)
         {
-            Log.d("Hello", result);
-            dialog.dismiss();
 
-            try {
-                //JSONObject jsonObject = new JSONObject(result);
-                JSONObject json = new JSONObject(result);
-
-
-                String result_code = json.get("result_code").toString();
-
-
-                if("0".equals(result_code)){
-//                    ActivityNext();
-                } else {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "로그인에 실패하였습니다.", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-
-                }
-
-
-                Log.v("jsonObjectCheck", json.toString());
-
-                /*
-                JSONArray nameArray =  jsonObject.names();
-                JSONArray valArray = jsonObject.toJSONArray(nameArray);
-
-
-                Log.d("Hello", nameArray.getString(0) + "  " + valArray.getString(0));
-                */
-            } catch(JSONException e) {  }
-
-            //result를 처리한다.
         }
-    }
+    }*/
 
-    public void ActivityNext(){
+    public void moveNextActivity(){
         Intent intent = new Intent(this, ClientManagementActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
 
 
+    @Override
+    public void onReceive(byte[] data) {
+        if (data == null)
+        {
+            // 예외처리
+        }
+        String result = new String(data);
+        Log.d("Hello", result);
+        mDialog.dismiss();
 
+        try {
+            //JSONObject jsonObject = new JSONObject(result);
+            JSONObject json = new JSONObject(result);
+
+
+            String result_code = json.optString("result_code", null);
+
+
+            if("0".equals(result_code)){
+//                    moveNextActivity();
+            } else {
+                printToast("로그인에 실패하였습니다.");
+            }
+
+
+            Log.v("jsonObjectCheck", json.toString());
+
+
+        } catch(JSONException e) {  }
+
+        //result를 처리한다.
+    }
+    public void printToast(String string){
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+
+    }
 }
