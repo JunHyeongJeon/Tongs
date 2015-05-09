@@ -104,6 +104,7 @@
     <!-- Added by jun's-->
 
     <string name="actionbar_name_store_management_activity">매장관리</string>
+    <string name="title_activity_login">로그인</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
     <string name="phonenumber">전화번호</string>
     <string name="title_activity_sign_up_activity_first">회원가입</string>

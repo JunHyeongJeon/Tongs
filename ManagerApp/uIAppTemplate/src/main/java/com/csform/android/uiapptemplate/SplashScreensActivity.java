@@ -3,8 +3,14 @@ package com.csform.android.uiapptemplate;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Context;
+import android.os.Build;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -45,10 +51,13 @@ public class SplashScreensActivity extends Activity {
 		}
         //set category option3
         category = SPLASH_SCREEN_OPTION_3;
-
-
-        setAnimation(category);
-
+		animation2();
+		animation3();
+		String appVer = getVersionName(this);
+		String num = getPhoneNumber(this);
+		String model = Build.MODEL;
+		String osVer = Build.VERSION.RELEASE;
+		Log.v("userInfo", "appVer:"+appVer+" num:"+num+" model:"+model +" osVer:"+osVer );
 
 	}
 	
@@ -114,4 +123,28 @@ public class SplashScreensActivity extends Activity {
         }
         return super.onTouchEvent(event);
     }
+	public static String getVersionName(Context context)
+	{
+		try {
+			PackageInfo pi= context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+			return pi.versionName;
+		} catch (PackageManager.NameNotFoundException e) {
+			return null;
+		}
+	}
+
+	public String getPhoneNumber(Context context){
+		TelephonyManager systemService = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+		String PhoneNumber = systemService.getLine1Number();
+		PhoneNumber = PhoneNumber.substring(PhoneNumber.length()-10,PhoneNumber.length());
+		PhoneNumber="0"+PhoneNumber;
+		return PhoneNumber;
+
+		//--얻어온 전화번호에 자동으로 하이픈(-) 추가--
+		//PhoneNumber = PhoneNumberUtils.formatNumber(PhoneNumber);
+		//--원하는 에디트텍스트(여기서는 m_EditText_Phone)를 가져와서 setHint메소드로 디폴트값을 줌--
+		// //m_EditText_phone.setHint(PhoneNumber);
+		//--해당 에디트텍스트를 사용자입력 금지시킴--
+		//m_EditText_phone.setEnabled(false);
+		}
 }

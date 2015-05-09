@@ -117,6 +117,9 @@
         <item name="android:cropToPadding">true</item>
     </style>
 
+
+
+
     <!-- CheckBox related styles -->
     <style name="CheckBoxStyleDark" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:layout_width">wrap_content</item>

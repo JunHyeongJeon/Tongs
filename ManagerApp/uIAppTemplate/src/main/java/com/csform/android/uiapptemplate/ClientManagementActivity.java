@@ -40,6 +40,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.csform.android.uiapptemplate.util.HttpTask;
+import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.AnimatedExpandableListAdapter;
 
@@ -60,7 +62,7 @@ import org.json.JSONObject;
  */
 
 
-public class ClientManagementActivity extends ActionBarActivity {
+public class ClientManagementActivity extends ActionBarActivity implements OnHttpReceive{
 
 
     private String emailToken;
@@ -110,7 +112,7 @@ public class ClientManagementActivity extends ActionBarActivity {
         String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                 + "&sid=" + sid;
         setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-        new HttpTask().execute(url);
+        new HttpTask(this).execute(url);
 
 
     }
@@ -124,6 +126,222 @@ public class ClientManagementActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onReceive(byte[] data) {
+        String strJson = new String(data);
+
+        try {
+            JSONObject json = new JSONObject(strJson);
+
+            String result_code = json.optString("result_code", null);
+            boolean isSuccess = "0".equals(result_code) ? true : false;
+
+            Log.v("result", m_protocolStatus + " : " + isSuccess);
+
+            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
+                Log.v("json", json.toString());
+
+                JSONArray jsonArr = json.optJSONArray("tickets");
+                if (jsonArr == null) {
+                    List<GroupItem> items = new ArrayList<GroupItem>();
+
+                    GroupItem item = new GroupItem();
+                    item.title = "대기열에 아무도 없습니다.";
+                    items.add(item);
+
+
+                    ExampleAdapter adapter = new ExampleAdapter(this);
+                    adapter.setData(items);
+
+                    listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
+                    listView.setAdapter(adapter);
+
+                    Display display = getWindowManager().getDefaultDisplay();
+                    Point size = new Point();
+                    display.getSize(size);
+                    int width = size.x;
+                    Resources r = getResources();
+                    int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                            50, r.getDisplayMetrics());
+                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                        listView.setIndicatorBounds(width - px, width);
+                    } else {
+                        listView.setIndicatorBoundsRelative(width - px, width);
+                    }
+
+                    return;
+                }
+
+                int ticketLen = jsonArr.length();
+                ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
+
+                List<GroupItem> items = new ArrayList<GroupItem>();
+
+
+                for (int i = 0; i < ticketLen; i++) {
+                    JSONObject obj = jsonArr.optJSONObject(i);
+                    if (obj == null)
+                        break;
+
+                    String ticketNo = obj.optString("ticket", null);
+                    String uid = obj.optString("uid", null);
+                    String num = obj.optString("num", null);
+                    //    String gcm = obj.optString("gcm", null);
+                    String mdn = obj.optString("mdn", null);
+                    String createTime = obj.optString("createTime", null);
+
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    map.put("ticket", "대기표 번호 : " + ticketNo);
+                    map.put("uid", uid + "번째 고객");
+                    map.put("num", "인원수 : " + num);
+                    //   map.put("gcm", gcm);
+                    map.put("mdn", "전화번호 : " + mdn);
+                    map.put("createTime", createTime);
+                    list.add(map);
+                    // 레코드 생성 및 추가
+
+
+                    GroupItem item = new GroupItem();
+
+                    item.title = "대기번호 : " + ticketNo + "\n" +
+                            //        "고객전화번호 : " + mdn + "\n" +
+                            "인원수 : " + num + "\n";
+
+
+
+                    ChildItem child = new ChildItem();
+                    child.title = "호출";
+                    //child.hint = "Too awesome";
+
+                    item.items.add(child);
+                    child = new ChildItem();
+                    child.title = "대기열 삭제";
+                    //child.hint = "Too awesome";
+
+
+                    // 고객의 상세정보 보기
+                    //item.items.add(child);
+                    //child = new ChildItem();
+                    //child.title = "고객 상세정보";
+                    //child.hint = "Too awesome";
+
+                    item.items.add(child);
+
+
+                    items.add(item);
+                }
+
+                /** Keys used in Hashmap */
+
+
+                //       String[] from = {"ticket", "mdn", "num"};
+
+                /** Ids of views in listview_layout */
+                //        int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
+
+
+/*
+                SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
+
+                ListView listView = (ListView) findViewById(R.id.lv_countries);
+                listView.setAdapter(adapter);
+*/
+                ExampleAdapter adapter = new ExampleAdapter(this);
+                adapter.setData(items);
+
+                listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
+                listView.setAdapter(adapter);
+
+                // In order to show animations, we need to use a custom click handler
+                // for our ExpandableListView.
+                listView.setOnGroupClickListener(new OnGroupClickListener() {
+
+                    @Override
+                    public boolean onGroupClick(ExpandableListView parent, View v,
+                                                int groupPosition, long id) {
+                        // We call collapseGroupWithAnimation(int) and
+                        // expandGroupWithAnimation(int) to animate group
+                        // expansion/collapse.
+                        if (listView.isGroupExpanded(groupPosition)) {
+                            listView.collapseGroupWithAnimation(groupPosition);
+                        } else {
+                            listView.expandGroupWithAnimation(groupPosition);
+                        }
+                        return true;
+                    }
+
+                });
+                listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                    @Override
+                    public boolean onChildClick(ExpandableListView parent, View v,
+                                                int groupPosition, int childPosition , long id) {
+                        Log.v("ClickgroupPosition", String.valueOf(groupPosition));
+                        Log.v("ClickchildPosition", String.valueOf(childPosition));
+                        mGroupPosition = groupPosition;
+                        switch (childPosition) {
+                            case CASE_STATUS_USER_CALL: {
+                                DialogYesNo(getString(R.string.case_status_user_call) ,CASE_STATUS_USER_CALL );
+
+                                break;
+                            }
+                            case CASE_STATUS_USER_CANCLE: {
+                                DialogYesNo(getString(R.string.case_status_user_cancle), CASE_STATUS_USER_CANCLE);
+                                break;
+                            }
+                            case 2: {
+                                // 고객의 상세 정보 관리
+                                break;
+                            }
+                        }
+                        return false;
+                    }
+                });
+
+
+
+                // Set indicator (arrow) to the right
+                Display display = getWindowManager().getDefaultDisplay();
+                Point size = new Point();
+                display.getSize(size);
+                int width = size.x;
+                Resources r = getResources();
+                int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                        50, r.getDisplayMetrics());
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                    listView.setIndicatorBounds(width - px, width);
+                } else {
+                    listView.setIndicatorBoundsRelative(width - px, width);
+                }
+
+
+            }
+
+            // 서버로 부터 고객의 리스트를 받아온다.
+            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
+                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
+                        + "&sid=" + sid;
+                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+                //new HttpTask().execute(url);
+                requestOnUIThread(url);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static class GroupItem {
@@ -418,234 +636,19 @@ public class ClientManagementActivity extends ActionBarActivity {
 
     }
 
-    public void processReceive(String strJson) {
-        try {
-            JSONObject json = new JSONObject(strJson);
-
-            String result_code = json.optString("result_code", null);
-            boolean isSuccess = "0".equals(result_code) ? true : false;
-
-            Log.v("result", m_protocolStatus + " : " + isSuccess);
-
-            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
-                Log.v("json", json.toString());
-
-                JSONArray jsonArr = json.optJSONArray("tickets");
-                if (jsonArr == null) {
-                    List<GroupItem> items = new ArrayList<GroupItem>();
-
-                    GroupItem item = new GroupItem();
-                    item.title = "대기열에 아무도 없습니다.";
-                    items.add(item);
-
-
-                    ExampleAdapter adapter = new ExampleAdapter(this);
-                    adapter.setData(items);
-
-                    listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
-                    listView.setAdapter(adapter);
-
-                    Display display = getWindowManager().getDefaultDisplay();
-                    Point size = new Point();
-                    display.getSize(size);
-                    int width = size.x;
-                    Resources r = getResources();
-                    int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                            50, r.getDisplayMetrics());
-                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                        listView.setIndicatorBounds(width - px, width);
-                    } else {
-                        listView.setIndicatorBoundsRelative(width - px, width);
-                    }
-
-                    return;
-                }
-
-                int ticketLen = jsonArr.length();
-                ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
-
-                List<GroupItem> items = new ArrayList<GroupItem>();
-
-
-
-
-
-
-                for (int i = 0; i < ticketLen; i++) {
-                    JSONObject obj = jsonArr.optJSONObject(i);
-                    if (obj == null)
-                        break;
-
-                    String ticketNo = obj.optString("ticket", null);
-                    String uid = obj.optString("uid", null);
-                    String num = obj.optString("num", null);
-                //    String gcm = obj.optString("gcm", null);
-                    String mdn = obj.optString("mdn", null);
-                    String createTime = obj.optString("createTime", null);
-
-                    HashMap<String, String> map = new HashMap<String, String>();
-                    map.put("ticket", "대기표 번호 : " + ticketNo);
-                    map.put("uid", uid + "번째 고객");
-                    map.put("num", "인원수 : " + num);
-                 //   map.put("gcm", gcm);
-                    map.put("mdn", "전화번호 : " + mdn);
-                    map.put("createTime", createTime);
-                    list.add(map);
-                    // 레코드 생성 및 추가
-
-
-                    GroupItem item = new GroupItem();
-
-                    item.title = "대기번호 : " + ticketNo + "\n" +
-                    //        "고객전화번호 : " + mdn + "\n" +
-                            "인원수 : " + num + "\n";
-
-
-
-                    ChildItem child = new ChildItem();
-                    child.title = "호출";
-                    //child.hint = "Too awesome";
-
-                    item.items.add(child);
-                    child = new ChildItem();
-                    child.title = "대기열 삭제";
-                    //child.hint = "Too awesome";
-
-
-                    // 고객의 상세정보 보기
-                    //item.items.add(child);
-                    //child = new ChildItem();
-                    //child.title = "고객 상세정보";
-                    //child.hint = "Too awesome";
-
-                    item.items.add(child);
-
-
-                    items.add(item);
-                }
-
-                /** Keys used in Hashmap */
-
-
-         //       String[] from = {"ticket", "mdn", "num"};
-
-                /** Ids of views in listview_layout */
-        //        int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
-
-
-/*
-                SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
-
-                ListView listView = (ListView) findViewById(R.id.lv_countries);
-                listView.setAdapter(adapter);
-*/
-                ExampleAdapter adapter = new ExampleAdapter(this);
-                adapter.setData(items);
-
-                listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
-                listView.setAdapter(adapter);
-
-                // In order to show animations, we need to use a custom click handler
-                // for our ExpandableListView.
-                listView.setOnGroupClickListener(new OnGroupClickListener() {
-
-                @Override
-                public boolean onGroupClick(ExpandableListView parent, View v,
-                                            int groupPosition, long id) {
-                    // We call collapseGroupWithAnimation(int) and
-                    // expandGroupWithAnimation(int) to animate group
-                    // expansion/collapse.
-                    if (listView.isGroupExpanded(groupPosition)) {
-                        listView.collapseGroupWithAnimation(groupPosition);
-                    } else {
-                        listView.expandGroupWithAnimation(groupPosition);
-                    }
-                      return true;
-                    }
-
-                });
-                listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-                    @Override
-                    public boolean onChildClick(ExpandableListView parent, View v,
-                                                int groupPosition, int childPosition , long id) {
-                            Log.v("ClickgroupPosition", String.valueOf(groupPosition));
-                            Log.v("ClickchildPosition", String.valueOf(childPosition));
-                            mGroupPosition = groupPosition;
-                            switch (childPosition) {
-                                case CASE_STATUS_USER_CALL: {
-                                    DialogYesNo(getString(R.string.case_status_user_call) ,CASE_STATUS_USER_CALL );
-
-                                    break;
-                                }
-                                case CASE_STATUS_USER_CANCLE: {
-                                    DialogYesNo(getString(R.string.case_status_user_cancle), CASE_STATUS_USER_CANCLE);
-                                    break;
-                                }
-                                case 2: {
-                                    // 고객의 상세 정보 관리
-                                    break;
-                                }
-                        }
-                        return false;
-                    }
-                });
-
-
-
-                // Set indicator (arrow) to the right
-                Display display = getWindowManager().getDefaultDisplay();
-                Point size = new Point();
-                display.getSize(size);
-                int width = size.x;
-                Resources r = getResources();
-                int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                        50, r.getDisplayMetrics());
-                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    listView.setIndicatorBounds(width - px, width);
-                } else {
-                    listView.setIndicatorBoundsRelative(width - px, width);
-                }
-
-
-            }
-
-            // 서버로 부터 고객의 리스트를 받아온다.
-            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
-                requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
-                requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
-                requestOnUIThread(url);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     void requestOnUIThread(final String url)
     {
+        final OnHttpReceive onReceive = this;
         this.runOnUiThread(new Runnable(){
             public void run()
             {
-                new HttpTask().execute(url);
+                new HttpTask(onReceive).execute(url);
             }
         });
     }
 
-
+/*
     class HttpTask extends AsyncTask<String, Void, String> {
         protected String doInBackground(String... params) {
 
@@ -684,7 +687,7 @@ public class ClientManagementActivity extends ActionBarActivity {
             processReceive(result);
         }
     }
-
+*/
     private void bacodeSplitAndSend(String bacode) {
 
         String[] result = bacode.split("_");
@@ -699,7 +702,7 @@ public class ClientManagementActivity extends ActionBarActivity {
         //userAdd = true;
         setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
 
-        new HttpTask().execute(url);
+        new HttpTask(this).execute(url);
 
     }
 
@@ -747,7 +750,7 @@ public class ClientManagementActivity extends ActionBarActivity {
                     +"&sid=" + sid + "&index=" + mGroupPosition;
             Log.v("caseCall", url);
             setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
-            new HttpTask().execute(url);
+            new HttpTask(this).execute(url);
 
 
         } else if ( mCases == CASE_STATUS_USER_CANCLE){
@@ -757,7 +760,7 @@ public class ClientManagementActivity extends ActionBarActivity {
                     + "&sid=" + sid + "&index=" + mGroupPosition;
             Log.v("caseCancle", url);
             setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
-            new HttpTask().execute(url);
+            new HttpTask(this).execute(url);
         }
 
     }
