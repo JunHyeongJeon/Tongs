@@ -5,6 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
     }
 
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         int Holderid;
 
         TextView textView;
@@ -67,14 +68,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
         TextView Name;
 //        TextView email;
 
-
         RelativeLayout drawerTopLayout;
 
 
 
-        public ViewHolder(View itemView,int ViewType) {                 // Creating ViewHolder Constructor with View and viewType As a parameter
+        public ViewHolder(View itemView, int ViewType) {                 // Creating ViewHolder Constructor with View and viewType As a parameter
             super(itemView);
-
+            itemView.setOnClickListener(this);
 
             // Here we set the appropriate view in accordance with the the view type as passed when the holder object is created
 
@@ -95,6 +95,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
                 Holderid = 0;                                                // Setting holder id = 0 as the object being populated are of type header view
             }
         }
+
+        @Override
+        public void onClick(View view)   {
+            int pos = getPosition();
+            switch (pos)    {
+                case 0 :
+                    Log.d("HELLO", "BARCODE PAGE");
+                    sendHandler(21);
+                    break;
+                case 1 :
+                    Log.d("HELLO", "COUPON PAGE");
+                    sendHandler(22);
+                    break;
+            }
+        }
+
 
         Button.OnClickListener mClickListener = new View.OnClickListener()  {
 
@@ -118,12 +134,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
             mHandler.obtainMessage(msgId).sendToTarget();
         }
     }
-
-
-
-
-
-
 
 
 
@@ -151,8 +161,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
             ViewHolder vhHeader = new ViewHolder(v,viewType); //Creating ViewHolder and passing the object of type view
 
             return vhHeader; //returning the object created
-
-
         }
         return null;
 

@@ -40,12 +40,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
 
     /* drawer variable */
-    String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
-    int ICONS[] = { R.mipmap.ic_launcher,
-                    R.mipmap.ic_launcher,
-                    R.mipmap.ic_launcher,
-                    R.mipmap.ic_launcher,
-                    R.mipmap.ic_launcher };
+    String TITLES[] = { "나의 쿠폰" };
+    int ICONS[] = { R.mipmap.ic_launcher };
 
     String NAME = "Jaecheol GOD";
     String EMAIL = "jcgod413@gmail.com";
@@ -229,6 +225,14 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
 
+//        mRecyclerView.addOnItemTouchListener(
+//            new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(View view, int position) {
+//                    // do whatever
+//                }
+//            });
+
 
         Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
         mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.app_name,R.string.app_name){
@@ -331,6 +335,13 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                         mAdapter = new MyAdapter(TITLES, ICONS, currentNum, barcode, handler);
                         mRecyclerView.setAdapter(mAdapter);
                     }
+                    break;
+                case 21:
+                    break;
+                case 22:
+                    Intent intent = new Intent(MainActivity.this, CouponActivity.class);
+                    if( intent != null )
+                        startActivity(intent);
                     break;
             }
         }
