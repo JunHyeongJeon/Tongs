@@ -337,11 +337,14 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                     }
                     break;
                 case 21:
-                    break;
-                case 22:
-                    Intent intent = new Intent(MainActivity.this, CouponActivity.class);
+                    Intent intent = new Intent(MainActivity.this, BarcodeActivity.class);
                     if( intent != null )
                         startActivity(intent);
+                    break;
+                case 22:
+                    Intent intent2 = new Intent(MainActivity.this, CouponActivity.class);
+                    if( intent2 != null )
+                        startActivity(intent2);
                     break;
             }
         }
