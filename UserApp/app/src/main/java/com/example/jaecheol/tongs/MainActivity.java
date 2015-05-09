@@ -2,7 +2,10 @@ package com.example.jaecheol.tongs;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,10 +22,10 @@ import android.widget.Toast;
 
 import com.example.jaecheol.drawer.MyAdapter;
 import com.example.jaecheol.tab.Tab2;
+import com.google.zxing.BarcodeFormat;
 
 
-public class MainActivity extends ActionBarActivity
-                          implements View.OnClickListener//, NavigationDrawerCallbacks
+public class MainActivity extends ActionBarActivity //, NavigationDrawerCallbacks
 {
     Toolbar toolbar;
     ViewPager pager;
@@ -32,6 +35,8 @@ public class MainActivity extends ActionBarActivity
 
     CharSequence titles[] = {"바코드", "대기표"};
     int numOfTabs = 2;
+
+    int currentNum = 0;
 
 
     /* drawer variable */
@@ -46,6 +51,11 @@ public class MainActivity extends ActionBarActivity
     String EMAIL = "jcgod413@gmail.com";
     int BARCODE = R.drawable.no_barcodes;
 
+    BarcodeGenerator barcodeGenerator;
+    Bitmap barcode;
+
+    private ServiceHandler handler;
+
     RecyclerView mRecyclerView;                           // Declaring RecyclerView
     RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
     RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
@@ -53,9 +63,9 @@ public class MainActivity extends ActionBarActivity
 
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
 
-
     String authToken;
 
+    String mobileNumber;
 
 
 
@@ -73,9 +83,12 @@ public class MainActivity extends ActionBarActivity
 
         //title = savedInstanceState.getString("title", null);
 
+        getDataFromSharedPref();
         setToolbar();
         setTabView();
         setDrawer();
+        setBarcode();
+        setBarcode();
 
         getDataFromIntent();
     }
@@ -200,11 +213,13 @@ public class MainActivity extends ActionBarActivity
 
     private void setDrawer()    {
 
+        handler = new ServiceHandler();
+
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView); // Assigning the RecyclerView Object to the xml View
 
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
 
-        mAdapter = new MyAdapter(TITLES, ICONS, BARCODE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
         // and header view profile picture
 
@@ -236,6 +251,22 @@ public class MainActivity extends ActionBarActivity
         mDrawerToggle.syncState();               // F
     }
 
+    private void setBarcode()   {
+        barcodeGenerator = new BarcodeGenerator();
+    }
+
+    public void registerBarcode()    {
+
+        try {
+            String barcodeContents = mobileNumber + "_" + currentNum;
+            Log.d("HELLO", barcodeContents);
+            barcode = barcodeGenerator.encodeAsBitmap(barcodeContents, BarcodeFormat.CODE_128, 600, 400);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 
     private void getDataFromIntent() {
@@ -244,11 +275,12 @@ public class MainActivity extends ActionBarActivity
         authToken = intent.getStringExtra("auth_token");
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-        }
-    }
 
+    private void getDataFromSharedPref()    {
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        mobileNumber = mPref.getString("number", null);
+    }
 
     private void registerEmail() {
 
@@ -275,4 +307,34 @@ public class MainActivity extends ActionBarActivity
         this.finish();
     }
 
+    class ServiceHandler extends Handler
+    {
+        public void handleMessage(Message msg)
+        {
+            switch (msg.what)
+            {
+                case 11:
+                    Log.d("HELLO", "PLUS");
+                    currentNum++;
+                    registerBarcode();
+
+                    mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);
+                    mRecyclerView.setAdapter(mAdapter);
+
+                    break;
+                case 12:
+                    Log.d("HELLO", "MINUS");
+                    if( currentNum > 0 ) {
+                        currentNum--;
+                        registerBarcode();
+
+                        mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);
+                        mRecyclerView.setAdapter(mAdapter);
+                    }
+                    break;
+            }
+        }
+    }
+
 }
+

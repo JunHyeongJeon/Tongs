@@ -1,9 +1,14 @@
 package com.example.jaecheol.drawer;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,7 +19,7 @@ import com.example.jaecheol.tongs.R;
 /**
  * Created by JaeCheol on 15. 5. 7..
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
 
     private static final int TYPE_HEADER = 0;  // Declaring Variable to Understand which View is being worked on
     // IF the view under inflation and population is header or Item
@@ -27,10 +32,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //    private int profile;        //int Resource for header view profile picture
 //    private String email;       //String Resource for header view email
 
-    private int barcode;
+
+    private Bitmap barcode;
+    static private Handler mHandler=null;
 
     // Creating a ViewHolder which extends the RecyclerView View Holder
     // ViewHolder are used to to store the inflated views in order to recycle them
+
+
+
+    public MyAdapter(String Titles[], int Icons[], Bitmap _barcode, Handler handler){ // MyAdapter Constructor with titles and icons parameter
+        // titles, icons, name, email, profile pic are passed from the main activity as we
+        mNavTitles = Titles;                //have seen earlier
+        mIcons = Icons;
+//        name = Name;
+//        email = Email;
+//        profile = Profile;                     //here we assign those passed values to the values we declared here
+        barcode = _barcode;
+        mHandler = handler;
+        //in adapter
+
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         int Holderid;
@@ -40,6 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 //        ImageView profile;
         TextView Name;
 //        TextView email;
+
 
         RelativeLayout drawerTopLayout;
 
@@ -58,6 +82,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
             else{
                 drawerTopLayout = (RelativeLayout) itemView.findViewById(R.id.id_drawerTop);
+                itemView.findViewById(R.id.id_plusButton).setOnClickListener(mClickListener);
+                itemView.findViewById(R.id.id_minusButton).setOnClickListener(mClickListener);
+
 //                Name = (TextView) itemView.findViewById(R.id.name);         // Creating Text View object from header.xml for name
 //                email = (TextView) itemView.findViewById(R.id.email);       // Creating Text View object from header.xml for email
 //                profile = (ImageView) itemView.findViewById(R.id.circleView);// Creating Image view object from header.xml for profile pic
@@ -65,22 +92,34 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             }
         }
 
+        Button.OnClickListener mClickListener = new View.OnClickListener()  {
 
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.id_plusButton :
+                        sendHandler(11);
+                        break;
+                    case R.id.id_minusButton :
+                        sendHandler(12);
+                        break;
+                }
+            }
+        };
+
+        public void sendHandler(int msgId)
+        {
+            if(mHandler == null)
+                return;
+
+            mHandler.obtainMessage(msgId).sendToTarget();
+        }
     }
 
 
 
-    public MyAdapter(String Titles[], int Icons[], int _barcode){ // MyAdapter Constructor with titles and icons parameter
-        // titles, icons, name, email, profile pic are passed from the main activity as we
-        mNavTitles = Titles;                //have seen earlier
-        mIcons = Icons;
-//        name = Name;
-//        email = Email;
-//        profile = Profile;                     //here we assign those passed values to the values we declared here
-        barcode = _barcode;
-        //in adapter
 
-    }
+
+
 
 
 
@@ -126,8 +165,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             holder.imageView.setImageResource(mIcons[position - 1]);// Settimg the image with array of our icons
         }
         else{
+            Drawable drawableBarcode = new BitmapDrawable(barcode);
 
-            holder.drawerTopLayout.setBackgroundResource(barcode);         // Similarly we set the resources for header view
+            holder.drawerTopLayout.setBackground(drawableBarcode);
+//            holder.drawerTopLayout.setBackgroundResource(barcode);         // Similarly we set the resources for header view
         }
     }
 
