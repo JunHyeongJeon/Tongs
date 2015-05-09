@@ -34,6 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
 
 
     private Bitmap barcode;
+    private int currentNum;
     static private Handler mHandler=null;
 
     // Creating a ViewHolder which extends the RecyclerView View Holder
@@ -41,13 +42,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
 
 
 
-    public MyAdapter(String Titles[], int Icons[], Bitmap _barcode, Handler handler){ // MyAdapter Constructor with titles and icons parameter
+    public MyAdapter(String Titles[], int Icons[], int _currentNum, Bitmap _barcode, Handler handler){ // MyAdapter Constructor with titles and icons parameter
         // titles, icons, name, email, profile pic are passed from the main activity as we
         mNavTitles = Titles;                //have seen earlier
         mIcons = Icons;
 //        name = Name;
 //        email = Email;
 //        profile = Profile;                     //here we assign those passed values to the values we declared here
+        currentNum = _currentNum;
         barcode = _barcode;
         mHandler = handler;
         //in adapter
@@ -60,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
 
         TextView textView;
         ImageView imageView;
+        TextView currentNumText;
 //        ImageView profile;
         TextView Name;
 //        TextView email;
@@ -82,6 +85,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
             }
             else{
                 drawerTopLayout = (RelativeLayout) itemView.findViewById(R.id.id_drawerTop);
+                currentNumText = (TextView) itemView.findViewById(R.id.id_currentNumText);
                 itemView.findViewById(R.id.id_plusButton).setOnClickListener(mClickListener);
                 itemView.findViewById(R.id.id_minusButton).setOnClickListener(mClickListener);
 
@@ -168,6 +172,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>   {
             Drawable drawableBarcode = new BitmapDrawable(barcode);
 
             holder.drawerTopLayout.setBackground(drawableBarcode);
+            holder.currentNumText.setText("현재 인원수 " + currentNum + "명");
 //            holder.drawerTopLayout.setBackgroundResource(barcode);         // Similarly we set the resources for header view
         }
     }

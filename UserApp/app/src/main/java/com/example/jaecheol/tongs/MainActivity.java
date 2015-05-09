@@ -219,7 +219,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
 
-        mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        mAdapter = new MyAdapter(TITLES, ICONS, currentNum, barcode, handler);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
         // and header view profile picture
 
@@ -318,7 +318,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                     currentNum++;
                     registerBarcode();
 
-                    mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);
+                    mAdapter = new MyAdapter(TITLES, ICONS, currentNum, barcode, handler);
                     mRecyclerView.setAdapter(mAdapter);
 
                     break;
@@ -328,7 +328,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                         currentNum--;
                         registerBarcode();
 
-                        mAdapter = new MyAdapter(TITLES, ICONS, barcode, handler);
+                        mAdapter = new MyAdapter(TITLES, ICONS, currentNum, barcode, handler);
                         mRecyclerView.setAdapter(mAdapter);
                     }
                     break;
