@@ -24,7 +24,7 @@
 
     <!-- ActionBar related themes -->
     <style name="ActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
-        <item name="background">@color/Gold</item>
+        <item name="background">@color/AppYellow</item>
         <item name="titleTextStyle">@style/ActionBarStyle.TitleTextStyle</item>
     </style>
 
