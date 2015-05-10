@@ -102,7 +102,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
             switch (pos)    {
                 case 0 :
                     Log.d("HELLO", "BARCODE PAGE");
-                    sendHandler(2);
+                    sendHandler(21);
                     break;
                 case 1 :
                     Log.d("HELLO", "COUPON PAGE");

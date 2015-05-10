@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jaecheol.ble.BleManager;
+import com.example.jaecheol.store.StoreAdapter;
 import com.example.jaecheol.tongs.BarcodeGenerator;
 import com.example.jaecheol.tongs.R;
 import com.example.jaecheol.tongs.StoreViewActivity;
@@ -74,7 +74,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     private ServiceHandler handler;
 
     private ListView listView;
-    private ArrayAdapter<String> adapter;
+    private StoreAdapter adapter;
 
     View view;
 
@@ -85,27 +85,48 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     {
         view = inflater.inflate(R.layout.tab_1, container, false);
 
-        adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1);
+        adapter = new StoreAdapter();
         listView = (ListView)view.findViewById(R.id.id_storeListView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(onClickListItem);
 
 
-
-        adapter.add("하스스톤");
-        adapter.add("몬스터 헌터");
-        adapter.add("디아블로");
-        adapter.add("와우");
-        adapter.add("리니지");
-        adapter.add("안드로이드");
-        adapter.add("아이폰");
-        adapter.add("하스스톤");
-        adapter.add("몬스터 헌터");
-        adapter.add("디아블로");
-        adapter.add("와우");
-        adapter.add("리니지");
-        adapter.add("안드로이드");
-        adapter.add("아이폰");
+        adapter.add("애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
+        adapter.add("애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
+        adapter.add("애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
 
 //        setBarcode(view);
 //        setDialog(view);
@@ -121,7 +142,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
         @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(view.getContext(), adapter.getItem(arg2), Toast.LENGTH_SHORT).show();
+            Toast.makeText(view.getContext(), adapter.getItem(arg2).toString(), Toast.LENGTH_SHORT).show();
         }
     };
 
