@@ -21,7 +21,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.jaecheol.drawer.DrawerAdapter;
+import com.example.jaecheol.tab.SlidingTabLayout;
 import com.example.jaecheol.tab.Tab2;
+import com.example.jaecheol.tab.ViewPagerAdapter;
 import com.google.zxing.BarcodeFormat;
 
 
@@ -184,18 +186,18 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     private void setTabView() {
 
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
-        adapter = new com.example.jaecheol.tab.ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
 
         // Assigning ViewPager View and setting the adapter
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
         // Assiging the Sliding Tab Layout View
-        tabs = (com.example.jaecheol.tab.SlidingTabLayout) findViewById(R.id.tabs);
+        tabs = (SlidingTabLayout)findViewById(R.id.tabs);
         tabs.setDistributeEvenly(true); // To make the Tabs Fixed set this true, This makes the tabs Space Evenly in Available width
 
-        // Setting Custom Color for the Scroll bar indicator of the Tab View
-        tabs.setCustomTabColorizer(new com.example.jaecheol.tab.SlidingTabLayout.TabColorizer() {
+//         Setting Custom Color for the Scroll bar indicator of the Tab View
+        tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
                 return getResources().getColor(R.color.tabsScrollColor);
@@ -225,14 +227,6 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
 
-//        mRecyclerView.addOnItemTouchListener(
-//            new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
-//                @Override
-//                public void onItemClick(View view, int position) {
-//                    // do whatever
-//                }
-//            });
-
 
         Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
         mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.app_name,R.string.app_name){
@@ -253,6 +247,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
         }; // Drawer Toggle Object Made
         Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
         mDrawerToggle.syncState();               // F
+
     }
 
     private void setBarcode()   {

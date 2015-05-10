@@ -90,11 +90,11 @@ public class IntroActivity extends ActionBarActivity
         SharedPreferences.Editor editor = mPref.edit();
 
         authToken = mPref.getString("auth_token", null);
-
-        authToken = "SKIP";   // 그냥 넘기기!!!!!!!!!!!!!!!!
-        editor.putString("number", "01089399673");
-        editor.commit();
-
+//
+//        authToken = "SKIP";   // 그냥 넘기기!!!!!!!!!!!!!!!!
+//        editor.putString("number", "01089399673");
+//        editor.commit();
+//
 
 
 

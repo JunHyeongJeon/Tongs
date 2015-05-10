@@ -165,7 +165,7 @@ public class SignupActivity extends ActionBarActivity
                     number = editText.getText().toString();
 
                     String url = getText(R.string.Server_URL)
-                            + "user/auth/sms_request"
+                            + "user/auth/sms"
                             + "?mdn=" + number;
 
                     IHttpRecvCallback cb = new IHttpRecvCallback(){
@@ -200,7 +200,7 @@ public class SignupActivity extends ActionBarActivity
                     certificationNumber = editText.getText().toString();
 
                     String url = getText(R.string.Server_URL)
-                            + "user/auth/sms_check"
+                            + "user/auth/login"
                             + "?mdn=" + number
                             + "&code=" + certificationNumber;
                     IHttpRecvCallback cb = new IHttpRecvCallback() {
@@ -244,6 +244,8 @@ public class SignupActivity extends ActionBarActivity
 
             case R.id.id_startButton:
 
+                Log.d("HELLO", "START_BUTTON");
+
                 JSONObject json = new JSONObject();
                 try {
                     json.put("mobile_number", number);
@@ -257,7 +259,7 @@ public class SignupActivity extends ActionBarActivity
                     Log.d("Hello", "decode " + jsonUrl);
 
                     String url = getText(R.string.Server_URL)
-                            + "user/join"
+                            + "user/auth/register"
                             + "?token=" + authToken
                             + "&data=" + jsonUrl;
 
@@ -267,12 +269,19 @@ public class SignupActivity extends ActionBarActivity
                                 JSONObject json = new JSONObject(result);
                                 String result_code = json.get("result_code").toString();
                                 Log.d("Hello", result_code);
-                                if( "-1".equals(result_code) )
+                                if( "-1".equals(result_code) )  {
+                                    Toast toast3 = Toast.makeText(getApplicationContext(),
+                                            "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT);
+                                    toast3.show();
+
                                     return;
+                                }
+
 
                                 Toast toast3 = Toast.makeText(getApplicationContext(),
                                         "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
                                 toast3.show();
+
 
                                 SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                 SharedPreferences.Editor editor = mPref.edit();
@@ -312,6 +321,11 @@ public class SignupActivity extends ActionBarActivity
                     }
                 };
                 new HttpTask(cb).execute(url);
+
+
+                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                intent.putExtra("auth_token", authToken);
+                startActivity(intent);
 
                 break;
         }
