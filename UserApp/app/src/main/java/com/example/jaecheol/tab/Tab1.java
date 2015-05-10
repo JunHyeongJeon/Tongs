@@ -18,10 +18,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,40 +73,71 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     private ServiceHandler handler;
 
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
+
+    View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle SavedInstanceState)
     {
-        View view = inflater.inflate(R.layout.tab_1, container, false);
+        view = inflater.inflate(R.layout.tab_1, container, false);
 
-        setBarcode(view);
-        setDialog(view);
+        adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1);
+        listView = (ListView)view.findViewById(R.id.id_storeListView);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(onClickListItem);
 
-        scanBLEButton = (Button)view.findViewById(R.id.id_scanBLEButton);
-        scanBLEButton.setOnClickListener(this);
-        handler = new ServiceHandler();
-/*
-        IntentFilter intent = new IntentFilter();
-        intent.addAction("android.intent.action.GCMRECV");
-        getActivity().registerReceiver(receiver, intent);
-*/
+
+
+        adapter.add("하스스톤");
+        adapter.add("몬스터 헌터");
+        adapter.add("디아블로");
+        adapter.add("와우");
+        adapter.add("리니지");
+        adapter.add("안드로이드");
+        adapter.add("아이폰");
+        adapter.add("하스스톤");
+        adapter.add("몬스터 헌터");
+        adapter.add("디아블로");
+        adapter.add("와우");
+        adapter.add("리니지");
+        adapter.add("안드로이드");
+        adapter.add("아이폰");
+
+//        setBarcode(view);
+//        setDialog(view);
+//
+//        scanBLEButton = (Button)view.findViewById(R.id.id_scanBLEButton);
+//        scanBLEButton.setOnClickListener(this);
+//        handler = new ServiceHandler();
+
         return view;
     }
 
+    private ListView.OnItemClickListener onClickListItem = new ListView.OnItemClickListener() {
+
+        @Override
+        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+            Toast.makeText(view.getContext(), adapter.getItem(arg2), Toast.LENGTH_SHORT).show();
+        }
+    };
+
     private void setBarcode(View view)
     {
-        barcodeGenerator = new BarcodeGenerator();
-
-        barcodeView = (ImageView)view.findViewById(R.id.id_barcodeView);
-        barcodeLayout = (LinearLayout)view.findViewById(R.id.id_barcodeLayout);
-        noBarcodeLayout = (LinearLayout)view.findViewById(R.id.id_noBarcodeLayout);
-        currentNumText = (TextView)view.findViewById(R.id.id_currentNum);
-
-        barcodeGenerateButton = (Button)view.findViewById(R.id.id_barcodeGenerateButton);
-        barcodeGenerateButton.setOnClickListener(this);
-
-        showBarcodeLayout(false);
+//        barcodeGenerator = new BarcodeGenerator();
+//
+//        barcodeView = (ImageView)view.findViewById(R.id.id_barcodeView);
+//        barcodeLayout = (LinearLayout)view.findViewById(R.id.id_barcodeLayout);
+//        noBarcodeLayout = (LinearLayout)view.findViewById(R.id.id_noBarcodeLayout);
+//        currentNumText = (TextView)view.findViewById(R.id.id_currentNum);
+//
+//        barcodeGenerateButton = (Button)view.findViewById(R.id.id_barcodeGenerateButton);
+//        barcodeGenerateButton.setOnClickListener(this);
+//
+//        showBarcodeLayout(false);
     }
 
     private void setDialog(View view)
@@ -143,25 +177,25 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         switch ( v.getId() )    {
-            case R.id.id_barcodeGenerateButton :
-                dialog.show();
-
-                break;
-
-            case R.id.id_scanBLEButton :
-
+//            case R.id.id_barcodeGenerateButton :
+//                dialog.show();
+//
+//                break;
+//
+//            case R.id.id_scanBLEButton :
+//
                 //Intent intent2 = new Intent();
                 //intent2.setAction("android.intent.action.GCMRECV");
 //                intent2.setData(Uri.parse(extras.toString()));
                 //getActivity().sendBroadcast(intent2);
 
-            {
+//            {
 //                MainActivity activity = (MainActivity)getActivity();
 //                activity.processPush(null);
 //                break;
-                isStoreSearched = false;
-                scanBeacon();
-            }
+//                isStoreSearched = false;
+//                scanBeacon();
+//            }
 
 
         }

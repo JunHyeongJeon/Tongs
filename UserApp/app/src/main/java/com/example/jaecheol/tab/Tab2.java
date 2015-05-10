@@ -222,15 +222,12 @@ public class Tab2 extends Fragment
 
         public void setWaitingNum(String text)  {
             waitingNum.setText(text);
-            Log.d("QQQQQ", text);
         }
         public void setStoreName(String text)   {
             storeName.setText(text);
-            Log.d("QQQQQ", text);
         }
         public void setCurrentNum(String text)  {
             currentNum.setText(text);
-            Log.d("QQQQQ", text);
         }
         public void setExpectTime(String text)  {
             expectTime.setText(text);
