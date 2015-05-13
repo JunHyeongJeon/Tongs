@@ -38,6 +38,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
@@ -63,6 +64,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     String peopleNumber;
     String uid;
     String sid;
+    String authToken;
     EditText peopleEditText;
 
     BarcodeGenerator barcodeGenerator;
@@ -90,50 +92,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(onClickListItem);
 
-
-        adapter.add("애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
-        adapter.add("애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
-        adapter.add("애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
-
-//        setBarcode(view);
-//        setDialog(view);
-//
-//        scanBLEButton = (Button)view.findViewById(R.id.id_scanBLEButton);
-//        scanBLEButton.setOnClickListener(this);
-//        handler = new ServiceHandler();
+//        addDummyList();
+        getStoreList(1);
 
         return view;
     }
@@ -220,6 +180,107 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
 
         }
+    }
+
+    private void getStoreList(int storeNum)   {
+
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        authToken = mPref.getString("auth_token", null);
+        if( authToken == null ) {
+            /* 로그인 해제 */
+        }
+
+        String url = getText(R.string.Server_URL)
+                + "user/store/list"
+                + "?token=" + authToken
+                + "&hyper=" + storeNum;
+
+        IHttpRecvCallback cb = new IHttpRecvCallback(){
+            public void onRecv(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    if( result_code == "-1" ) {
+                        Log.d("HELLO", "getStoreListFail");
+                        return;
+                    }
+
+                    String storeId;
+                    String storeName;
+                    String storeLocation;
+                    String storeDescription;
+                    String storeWaitingNum="0";
+
+                    JSONArray storeJArray = json.getJSONArray("list");
+                    for(int i=0; i<storeJArray.length(); i++)   {
+                        JSONObject store = storeJArray.getJSONObject(i);
+
+
+                        storeId = store.get("id").toString();
+                        storeName = store.get("name").toString();
+                        storeLocation = store.get("location").toString();
+                        storeDescription = store.get("description").toString();
+
+                        adapter.add(storeId, storeName,
+                                    storeLocation, storeDescription,
+                                    storeWaitingNum);
+                    }
+
+                }
+                catch(Exception e){}
+            }
+        };
+        new HttpTask(cb).execute(url);
+    }
+
+    private void addDummyList() {
+
+        adapter.add("0",
+                "애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("1",
+                "델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("2",
+                "황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
+        adapter.add("3",
+                "애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("4",
+                "델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("5",
+                "황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
+        adapter.add("6",
+                "애슐리",
+                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
+                "애슐리 서울대입구점 입니다.",
+                "15");
+        adapter.add("7",
+                "델라코트",
+                "서울특별시 강남구 삼성동 159 코엑스 H113",
+                "코엑스 맛집 델라코트!.",
+                "21");
+        adapter.add("8",
+                "황태 명가",
+                "서울특별시 강남구 삼성동 107",
+                "토속음식 전문점",
+                "9");
     }
 
     public void setBarcodeContents(String _barcodeContents) {
@@ -310,6 +371,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
 //                    m_webView.loadUrl("javascript:getSoundScanJson('"+scanData+"')");
                     break;
+
                 default:
                     super.handleMessage(msg);
             }

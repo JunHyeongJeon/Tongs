@@ -92,10 +92,8 @@ public class Tab2 extends Fragment
         authToken = mPref.getString("auth_token", null);
 
         String url = getText(R.string.Server_URL)
-                + "user/waiting/get"
+                + "user/ticket/get"
                 + "?token=" + authToken;
-
-        Log.d("auth", authToken);
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {

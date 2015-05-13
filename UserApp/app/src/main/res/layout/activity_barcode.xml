@@ -10,4 +10,9 @@
         android:text="바코드 페이지입니다."
         android:id="@+id/textView4"
         android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/id_barcodeView"/>
 </LinearLayout>

@@ -224,13 +224,9 @@ public class SignupActivity extends ActionBarActivity
                                 editText.setEnabled(false);
 
                                 authToken = json.get("token").toString();
+                                Log.d("HELLO", "AUTH_TOKEN IS "+authToken);
 
                                 uid = json.get("uid").toString();
-
-                                SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                                SharedPreferences.Editor editor = mPref.edit();
-                                editor.putString("uid", uid);
-                                editor.commit();
 
                             } catch (Exception e) { }
                         }
@@ -246,93 +242,18 @@ public class SignupActivity extends ActionBarActivity
 
                 Log.d("HELLO", "START_BUTTON");
 
-                JSONObject json = new JSONObject();
-                try {
-                    json.put("mobile_number", number);
-                    json.put("sex", sex);
-                    json.put("birthdate", birthdate);
-                    json.put("auth_token", authToken);
+                sendExtraInfoToServer();
 
-                    String jsonUrl = URLEncoder.encode(json.toString(), "UTF-8");
-
-                    String str = URLDecoder.decode(jsonUrl, "UTF-8");
-                    Log.d("Hello", "decode " + jsonUrl);
-
-                    String url = getText(R.string.Server_URL)
-                            + "user/auth/register"
-                            + "?token=" + authToken
-                            + "&data=" + jsonUrl;
-
-                    IHttpRecvCallback cb = new IHttpRecvCallback() {
-                        public void onRecv(String result) {
-                            try {
-                                JSONObject json = new JSONObject(result);
-                                String result_code = json.get("result_code").toString();
-                                Log.d("Hello", result_code);
-                                if( "-1".equals(result_code) )  {
-                                    Toast toast3 = Toast.makeText(getApplicationContext(),
-                                            "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT);
-                                    toast3.show();
-
-                                    return;
-                                }
-
-
-                                Toast toast3 = Toast.makeText(getApplicationContext(),
-                                        "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
-                                toast3.show();
-
-
-                                SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                                SharedPreferences.Editor editor = mPref.edit();
-                                editor.putString("auth_token", authToken);
-                                editor.putString("birth_date", birthdate);
-                                editor.putString("number", number);
-                                editor.putString("sex", sex);
-                                editor.commit();
-
-                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                                intent.putExtra("authToken", authToken);
-                                startActivity(intent);
-
-                            } catch (Exception e) { }
-                        }
-                    };
-                    new HttpTask(cb).execute(url);
-
-                } catch (Exception e)   { }
-
-
-                String url = getText(R.string.Server_URL)
-                        + "user/auth/gcm"
-                        + "?token=" + authToken
-                        + "&gcm=" + regid;
-                IHttpRecvCallback cb = new IHttpRecvCallback() {
-                    public void onRecv(String result) {
-                        try {
-                            JSONObject json = new JSONObject(result);
-                            String result_code = json.get("result_code").toString();
-                            Log.d("Hello", "gcm 전달 : " + result_code);
-                            if( "-1".equals(result_code) )
-                                return;
-
-
-                        } catch (Exception e) { }
-                    }
-                };
-                new HttpTask(cb).execute(url);
-
-
-                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-                intent.putExtra("auth_token", authToken);
-                startActivity(intent);
+                // register api되면 삭제
+//                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+//                intent.putExtra("auth_token", authToken);
+//                startActivity(intent);
 
                 break;
         }
     }
 
     public void initGCM()  {
-        Log.i("a","AA");
         if( checkPlayServices() )   {
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
@@ -347,6 +268,93 @@ public class SignupActivity extends ActionBarActivity
         }
     }
 
+    private void sendExtraInfoToServer() {
+        JSONObject json = new JSONObject();
+        try {
+            json.put("mobile_number", number);
+            json.put("sex", sex);
+            json.put("birthdate", birthdate);
+            json.put("auth_token", authToken);
+
+            String jsonUrl = URLEncoder.encode(json.toString(), "UTF-8");
+
+            String str = URLDecoder.decode(jsonUrl, "UTF-8");
+            Log.d("Hello", "decode " + jsonUrl);
+
+            String url = getText(R.string.Server_URL)
+                    + "user/auth/register"
+                    + "?token=" + authToken
+                    + "&data=" + jsonUrl;
+
+            IHttpRecvCallback cb = new IHttpRecvCallback() {
+                public void onRecv(String result) {
+                    try {
+                        Log.d("HELLO", "RECEIVER START Result is  " + result);
+                        JSONObject json = new JSONObject(result);
+                        String result_code = json.get("result_code").toString();
+                        Log.d("Hello", result_code);
+                        if( "-1".equals(result_code) )  {
+                            Toast toast3 = Toast.makeText(getApplicationContext(),
+                                    "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT);
+                            toast3.show();
+
+                            return;
+                        }
+
+
+                        Log.d("HELLO", "회원가입에 성공하셧씁니다.");
+                        Toast toast3 = Toast.makeText(getApplicationContext(),
+                                "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
+                        toast3.show();
+
+
+                        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                        SharedPreferences.Editor editor = mPref.edit();
+                        editor.putString("auth_token", authToken);
+                        editor.putString("uid", uid);
+                        editor.putString("birth_date", birthdate);
+                        editor.putString("number", number);
+                        editor.putString("sex", sex);
+                        editor.commit();
+
+                        Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                        intent.putExtra("authToken", authToken);
+//                                startActivity(intent);
+                        Log.d("HELLO", "메인페이지로 이동!!");
+
+                        sendGcmInfo();
+
+                    } catch (Exception e) { }
+                }
+            };
+            new HttpTask(cb).execute(url);
+
+        } catch (Exception e)   { }
+    }
+
+    private void sendGcmInfo()  {
+        String url = getText(R.string.Server_URL)
+                + "user/auth/gcm"
+                + "?token=" + authToken
+                + "&gcm=" + regid;
+        IHttpRecvCallback cb = new IHttpRecvCallback() {
+            public void onRecv(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    Log.d("Hello", "gcm 전달 : " + result_code);
+                    if( "-1".equals(result_code) )
+                        return;
+
+                    Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    intent.putExtra("auth_token", authToken);
+                    startActivity(intent);
+
+                } catch (Exception e) { }
+            }
+        };
+        new HttpTask(cb).execute(url);
+    }
 
     /**
      * Check the device to make sure it has the Google Play Services APK. If
@@ -549,19 +557,17 @@ public class SignupActivity extends ActionBarActivity
 
         protected String doInBackground(String... params)
         {
-            Log.d("Hello", "Start");
             InputStream is = getInputStreamFromUrl(params[0]);
 
-            Log.d("Hello", "Get");
             String result = convertStreamToString(is);
 
+            Log.d("Hello", result);
             return result;
         }
 
         protected void onPostExecute(String result)
         {
-            if(m_cb != null)
-            {
+            if(m_cb != null)    {
                 m_cb.onRecv(result);
                 return;
             }

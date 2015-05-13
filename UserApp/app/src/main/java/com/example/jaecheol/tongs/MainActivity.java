@@ -26,6 +26,8 @@ import com.example.jaecheol.tab.Tab2;
 import com.example.jaecheol.tab.ViewPagerAdapter;
 import com.google.zxing.BarcodeFormat;
 
+import java.io.ByteArrayOutputStream;
+
 
 public class MainActivity extends ActionBarActivity //, NavigationDrawerCallbacks
 {
@@ -310,6 +312,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     {
         public void handleMessage(Message msg)
         {
+            Intent intent;
+
             switch (msg.what)
             {
                 case 11:
@@ -332,14 +336,21 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                     }
                     break;
                 case 21:
-                    Intent intent = new Intent(MainActivity.this, BarcodeActivity.class);
-                    if( intent != null )
-                        startActivity(intent);
+                    if( currentNum == 0 ) {
+                        return;
+                    }
+
+                    intent = new Intent(MainActivity.this, BarcodeActivity.class);
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    barcode.compress(Bitmap.CompressFormat.PNG, 100, baos);
+
+                    intent.putExtra("barcode", baos.toByteArray());
+                    startActivity(intent);
                     break;
                 case 22:
-                    Intent intent2 = new Intent(MainActivity.this, CouponActivity.class);
-                    if( intent2 != null )
-                        startActivity(intent2);
+                    intent = new Intent(MainActivity.this, CouponActivity.class);
+                    startActivity(intent);
                     break;
             }
         }
