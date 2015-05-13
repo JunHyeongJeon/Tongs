@@ -71,7 +71,8 @@
             android:theme="@style/AppTheme.NoShadow" />
         <activity
             android:name=".LogInPageActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name=".SplashScreensActivity"

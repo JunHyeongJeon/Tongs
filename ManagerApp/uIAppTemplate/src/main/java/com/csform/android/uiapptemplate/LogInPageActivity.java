@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.util.Preference;
@@ -25,6 +26,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     public static final String ID = "id";
     public static final String PASSWORD = "password";
 
+    private ScrollView mScrollView;
     private FloatLabeledEditText mEmailView;
     private FloatLabeledEditText mPasswordView;
     public CheckBox mloginKeep;
@@ -50,8 +52,40 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_centor);
 
+
+        mScrollView = (ScrollView)findViewById(R.id.login_scroll_view);
         mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
         mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
+        mEmailView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                {
+                    Log.v("test","test");
+                    mEmailView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mScrollView.smoothScrollBy(0, 1200);
+                        }
+                    },100);
+                }
+                else Log.v("test2","test2");
+            }
+        });
+        mPasswordView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus)
+                {
+                    mPasswordView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mScrollView.smoothScrollBy(0, 1200);
+                        }
+                    },100);
+                }
+            }
+        });
 
         Button login;
         login = (Button)findViewById(R.id.login_button);
