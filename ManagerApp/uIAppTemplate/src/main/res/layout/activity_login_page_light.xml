@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:layout_marginBottom="30.5dp"
-        android:id="@+id/LoginImageView"/>
+        android:id="@+id/login_image_view"/>
 
 
     <com.csform.android.uiapptemplate.view.FloatLabeledEditText

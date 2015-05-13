@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
@@ -54,6 +53,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+
 		setContentView();
 
 
@@ -84,7 +84,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 		//skip.setOnClickListener(this);
 
         ImageView imageView;
-        imageView = (ImageView)findViewById(R.id.LoginImageView);
+        imageView = (ImageView)findViewById(R.id.login_image_view);
         imageView.setImageResource(R.drawable.logo_y);
 	}
 

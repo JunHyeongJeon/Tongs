@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.font.FontelloTextView;
@@ -30,7 +31,8 @@ public class SplashScreensActivity extends Activity {
 	
 	private KenBurnsView mKenBurns;
 	private FontelloTextView mLogo;
-	private TextView welcomeText;
+	private TextView mwelcomeText;
+	private ImageView mSplashImage;
 
 
 	@Override
@@ -40,24 +42,15 @@ public class SplashScreensActivity extends Activity {
 		setContentView(R.layout.activity_splash_screen);
 		
 		mKenBurns = (KenBurnsView) findViewById(R.id.ken_burns_images);
-		mLogo = (FontelloTextView) findViewById(R.id.logo);
-		welcomeText = (TextView) findViewById(R.id.welcome_text);
+		//mLogo = (FontelloTextView) findViewById(R.id.logo);
+		//mwelcomeText = (TextView) findViewById(R.id.welcome_text);
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
-		
-		String category = SPLASH_SCREEN_OPTION_1;
-		Bundle extras = getIntent().getExtras();
-		if (extras != null && extras.containsKey(SPLASH_SCREEN_OPTION)) {
-			category = extras.getString(SPLASH_SCREEN_OPTION, SPLASH_SCREEN_OPTION_1);
-		}
-        //set category option3
-        category = SPLASH_SCREEN_OPTION_3;
-		animation2();
-		animation3();
-		String appVer = getVersionName(this);
-		String num = getPhoneNumber(this);
-		String model = Build.MODEL;
-		String osVer = Build.VERSION.RELEASE;
-		Log.v("userInfo", "appVer:"+appVer+" num:"+num+" model:"+model +" osVer:"+osVer );
+		mSplashImage = (ImageView) findViewById(R.id.splash_image_view);
+		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
+
+		setAnimation(SPLASH_SCREEN_OPTION_3);
+
+		getUserInfo();
 
 	}
 	
@@ -70,18 +63,18 @@ public class SplashScreensActivity extends Activity {
 			animation2();
 		} else if (category.equals(SPLASH_SCREEN_OPTION_3)) {
 			animation2();
-			animation3();
+			//animation3();
 		}
 	}
 
 	private void animation1() {
-		ObjectAnimator scaleXAnimation = ObjectAnimator.ofFloat(mLogo, "scaleX", 5.0F, 1.0F);
+		ObjectAnimator scaleXAnimation = ObjectAnimator.ofFloat(mSplashImage, "scaleX", 5.0F, 1.0F);
 		scaleXAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
 		scaleXAnimation.setDuration(1200);
-		ObjectAnimator scaleYAnimation = ObjectAnimator.ofFloat(mLogo, "scaleY", 5.0F, 1.0F);
+		ObjectAnimator scaleYAnimation = ObjectAnimator.ofFloat(mSplashImage, "scaleY", 5.0F, 1.0F);
 		scaleYAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
 		scaleYAnimation.setDuration(1200);
-		ObjectAnimator alphaAnimation = ObjectAnimator.ofFloat(mLogo, "alpha", 0.0F, 1.0F);
+		ObjectAnimator alphaAnimation = ObjectAnimator.ofFloat(mSplashImage, "alpha", 0.0F, 1.0F);
 		alphaAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
 		alphaAnimation.setDuration(1200);
 		AnimatorSet animatorSet = new AnimatorSet();
@@ -91,13 +84,13 @@ public class SplashScreensActivity extends Activity {
 	}
 	
 	private void animation2() {
-		mLogo.setAlpha(1.0F);
+		mSplashImage.setAlpha(1.0F);
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_center);
-		mLogo.startAnimation(anim);
+		mSplashImage.startAnimation(anim);
 	}
 	
 	private void animation3() {
-		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(welcomeText, "alpha", 0.0F, 1.0F);
+		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mwelcomeText, "alpha", 0.0F, 1.0F);
 
         alphaAnimation_welcome.setStartDelay(1700);
         alphaAnimation_welcome.setDuration(500);
@@ -147,4 +140,14 @@ public class SplashScreensActivity extends Activity {
 		//--해당 에디트텍스트를 사용자입력 금지시킴--
 		//m_EditText_phone.setEnabled(false);
 		}
+	private void getUserInfo(){
+
+		// get user infomation
+		String appVer = getVersionName(this);
+		String num = getPhoneNumber(this);
+		String model = Build.MODEL;
+		String osVer = Build.VERSION.RELEASE;
+		Log.v("userInfo", "appVer:"+appVer+" num:"+num+" model:"+model +" osVer:"+osVer );
+
+	}
 }
