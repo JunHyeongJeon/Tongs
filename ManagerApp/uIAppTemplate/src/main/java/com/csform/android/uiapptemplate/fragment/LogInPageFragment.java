@@ -22,6 +22,8 @@ public class LogInPageFragment extends Fragment implements OnItemClickListener {
 	private ListView mListView;
 	private List<String> mLogInPages;
 
+	public static final String LOGIN_PAGE_AND_LOADERS_CATEGORY = "com.csform.android.uiapptemplate.LogInPageAndLoadersActivity";
+
 	public static LogInPageFragment newInstance() {
 		return new LogInPageFragment();
 	}
@@ -49,7 +51,7 @@ public class LogInPageFragment extends Fragment implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Intent intent = new Intent(getActivity(), LogInPageActivity.class);
-		intent.putExtra(LogInPageActivity.LOGIN_PAGE_AND_LOADERS_CATEGORY, mLogInPages.get(position));
+		intent.putExtra(LOGIN_PAGE_AND_LOADERS_CATEGORY, mLogInPages.get(position));
 		startActivity(intent);
 	}
 }

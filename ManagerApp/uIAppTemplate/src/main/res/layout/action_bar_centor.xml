@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="SOME TITLE"
-        android:textSize="18sp" />
-</RelativeLayout>
+        android:layout_gravity="center"
+        android:text="@string/title_activity_login"
+        android:textColor="#ffffff"
+        android:id="@+id/login_actionbar_text"
+        android:textSize="22sp"
+        android:layout_marginRight="3dp"/>
+
+</LinearLayout>
