@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.font.FontelloTextView;
+import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
 
 public class SplashScreensActivity extends Activity {
@@ -28,10 +29,12 @@ public class SplashScreensActivity extends Activity {
 	public static final String SPLASH_SCREEN_OPTION_1 = "Option 1";
 	public static final String SPLASH_SCREEN_OPTION_2 = "Option 2";
 	public static final String SPLASH_SCREEN_OPTION_3 = "Option 3";
-	
+	public static final String APPVERSION = "appVersion";
+    public static final String PHONENUMBER = "phoneNumber";
+    public static final String OSVERSION = "osVersion";
+    public static final String PHONEMODEL = "phoneModel";
+
 	private KenBurnsView mKenBurns;
-	private FontelloTextView mLogo;
-	private TextView mwelcomeText;
 	private ImageView mSplashImage;
 
 
@@ -42,13 +45,11 @@ public class SplashScreensActivity extends Activity {
 		setContentView(R.layout.activity_splash_screen);
 		
 		mKenBurns = (KenBurnsView) findViewById(R.id.ken_burns_images);
-		//mLogo = (FontelloTextView) findViewById(R.id.logo);
-		//mwelcomeText = (TextView) findViewById(R.id.welcome_text);
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
 		mSplashImage = (ImageView) findViewById(R.id.splash_image_view);
 		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
 
-		setAnimation(SPLASH_SCREEN_OPTION_3);
+		setAnimation(SPLASH_SCREEN_OPTION_2);
 
 		getUserInfo();
 
@@ -88,16 +89,14 @@ public class SplashScreensActivity extends Activity {
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_center);
 		mSplashImage.startAnimation(anim);
 	}
-	
-	private void animation3() {
-		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mwelcomeText, "alpha", 0.0F, 1.0F);
-
-        alphaAnimation_welcome.setStartDelay(1700);
-        alphaAnimation_welcome.setDuration(500);
-        alphaAnimation_welcome.start();
-
-
-	}
+//
+//	private void animation3() {
+//		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mwelcomeText, "alpha", 0.0F, 1.0F);
+//
+//        alphaAnimation_welcome.setStartDelay(1700);
+//        alphaAnimation_welcome.setDuration(500);
+//        alphaAnimation_welcome.start();
+//  }
     //화면 터치 이벤트
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -116,7 +115,7 @@ public class SplashScreensActivity extends Activity {
         }
         return super.onTouchEvent(event);
     }
-	public static String getVersionName(Context context)
+	private static String getVersionName(Context context)
 	{
 		try {
 			PackageInfo pi= context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
@@ -126,19 +125,13 @@ public class SplashScreensActivity extends Activity {
 		}
 	}
 
-	public String getPhoneNumber(Context context){
+	private String getPhoneNumber(Context context){
 		TelephonyManager systemService = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
 		String PhoneNumber = systemService.getLine1Number();
 		PhoneNumber = PhoneNumber.substring(PhoneNumber.length()-10,PhoneNumber.length());
 		PhoneNumber="0"+PhoneNumber;
 		return PhoneNumber;
 
-		//--얻어온 전화번호에 자동으로 하이픈(-) 추가--
-		//PhoneNumber = PhoneNumberUtils.formatNumber(PhoneNumber);
-		//--원하는 에디트텍스트(여기서는 m_EditText_Phone)를 가져와서 setHint메소드로 디폴트값을 줌--
-		// //m_EditText_phone.setHint(PhoneNumber);
-		//--해당 에디트텍스트를 사용자입력 금지시킴--
-		//m_EditText_phone.setEnabled(false);
 		}
 	private void getUserInfo(){
 
@@ -147,7 +140,19 @@ public class SplashScreensActivity extends Activity {
 		String num = getPhoneNumber(this);
 		String model = Build.MODEL;
 		String osVer = Build.VERSION.RELEASE;
-		Log.v("userInfo", "appVer:"+appVer+" num:"+num+" model:"+model +" osVer:"+osVer );
+
+		Log.v("userInfo", "appVer:" + appVer + " num:" + num + " model:" + model + " osVer:" + osVer);
+
+        setUserInfo(appVer, num, model, osVer);
 
 	}
+    private void setUserInfo(String appVer, String num, String model, String osVer){
+
+        Preference pref = new Preference(this);
+        pref.put(APPVERSION, appVer);
+        pref.put(PHONENUMBER,num);
+        pref.put(PHONEMODEL,model);
+        pref.put(OSVERSION,osVer);
+
+    }
 }

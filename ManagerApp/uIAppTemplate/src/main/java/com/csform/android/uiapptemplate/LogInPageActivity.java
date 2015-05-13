@@ -5,19 +5,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -30,41 +31,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class LogInPageActivity extends ActionBarActivity implements OnClickListener, OnHttpReceive {
+public class LogInPageActivity extends ActionBarActivity implements OnClickListener/*, OnHttpReceive*/ {
 
 	public static final String LOGIN_PAGE_AND_LOADERS_CATEGORY = "com.csform.android.uiapptemplate.LogInPageAndLoadersActivity";
 	public static final String DARK = "Dark";
 	public static final String LIGHT = "Light";
-    
-    private ProgressDialog mDialog;
-    private String mSignupEmail;
-    private String mSignupPassword;
-    private String mEmailToken;
+
     private String mLoginEmail;
     private String mLoginPassword;
     private FloatLabeledEditText mEmailView;
     private FloatLabeledEditText mPasswordView;
-    private boolean mEmailValid = false;
-    private boolean mPasswordValid = false;
-    private boolean mEmailPasswordVaild = false;
+
     private boolean mCheck = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-
 		setContentView();
-
-
-        //shared preference hardcoding.
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
-        mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
-        mSignupEmail = mPref.getString("email", null);
-        mSignupPassword = mPref.getString("password", null);
-        mEmailToken = mPref.getString("mEmailToken", null);
-	}
+    }
 	
 	private void setContentView() {
 
@@ -72,16 +56,16 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         getSupportActionBar().setCustomView(R.layout.action_bar_centor);
 
-        //TextView login, register, skip;
+        mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
+        mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
+
+        Button login;
+        login = (Button)findViewById(R.id.login_button);
+        login.setOnClickListener(this);
+
         CheckBox loginKeep;
-		//login = (TextView) findViewById(R.id.login);
-		//register = (TextView) findViewById(R.id.register);
-		//skip = (TextView) findViewById(R.id.skip);
         loginKeep = (CheckBox)findViewById(R.id.login_keep_checkbox);
         loginKeep.setOnClickListener(this);
-		//login.setOnClickListener(this);
-		//register.setOnClickListener(this);
-		//skip.setOnClickListener(this);
 
         ImageView imageView;
         imageView = (ImageView)findViewById(R.id.login_image_view);
@@ -91,51 +75,31 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 	@Override
 	public void onClick(View v)
     {
-
-        if(v.getId() == R.id.login)
+        if(v.getId() == R.id.login_button)
         {
-
-            doLogin();
-        }/*
-        else if(v.getId()== R.id.register)
-        {
-            Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, SignUpActivityFirst.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
-        }*/
+            checkIdPassword();
+        }
         else if(v.getId()== R.id.login_keep_checkbox)
         {
-            mCheck = !mCheck;
-
-
-            if("".equals(mSignupEmail) || "".equals(mSignupPassword))
-            {
-                printToast("저장된 비밀번호가 없습니다.");
-            }
-            else
-            {
-                Log.v("LogIn", String.format("email:%s, pw:%s, token:%s", mSignupEmail, mSignupPassword, mEmailToken));
-                mEmailView.setText(mSignupEmail);
-                mPasswordView.setText(mSignupPassword);
-
-            }
-            if(!mCheck) {
-                mEmailView.setText("");
-                mPasswordView.setText("");
-            }
+            doAutoLogin();
         }
 
 	}
-    private void doLogin()
+    private void checkIdPassword()
     {
+
+        boolean mEmailValid = false;
+        boolean mPasswordValid = false;
+
 
         mEmailView.setError(null);
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        mLoginEmail = mEmailView.getText().toString();
-        mLoginPassword = mPasswordView.getText().toString();
+        mLoginEmail = mEmailView.getTextString();
+        mLoginPassword = mPasswordView.getTextString();
+
+        Log.v("info", "id:" + mLoginEmail + " pass:" + mLoginPassword);
 
         View focusView = null;
         // Check for a valid email address.
@@ -145,10 +109,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         } else if (!isEmailValid(mLoginEmail)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
-        } else if (!mLoginEmail.equals(mSignupEmail)) {
-            mEmailView.setError(getString(R.string.error_not_same_email));
-            focusView = mEmailView;
-
         } else mEmailValid = true;
 
         // Check for a valid password, if the user entered one.
@@ -156,28 +116,42 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
             mPasswordView.setError(getString(R.string.error_field_required));
             focusView = mPasswordView;
 
-        } else if(!mLoginPassword.equals(mSignupPassword)) {
-            mPasswordView.setError(getString(R.string.error_not_same_password));
-        }
-        else mPasswordValid = true;
+        } else mPasswordValid = true;
 
-
-        if(mLoginPassword.equals(mSignupPassword) && mLoginEmail.equals(mSignupEmail))
-            mEmailPasswordVaild = true;
-
-
-        if( mEmailValid && mPasswordValid && mEmailPasswordVaild) {
-            //DialogProgress();
-            //String url = getString(R.string.server_api_email_request) + "email=" + mLoginEmail;
-            //new HttpTask().execute(url);
-            moveNextActivity();
+        focusView.requestFocus();
+        if( mEmailValid && mPasswordValid ) {
+          //  doLogin();
         } else {
             printToast("로그인에 실패하였습니다.");
         }
 
     }
+    void doAutoLogin(){
+
+        mCheck = !mCheck;
+
+        if("".equals(mLoginEmail) || "".equals(mLoginPassword))
+        {
+            printToast("저장된 비밀번호가 없습니다.");
+        }
+        else
+        {
+            Log.v("LogIn", String.format("email:%s, pw:%s", mLoginEmail, mLoginPassword));
+            mEmailView.setText(mLoginEmail);
+            mPasswordView.setText(mLoginPassword);
+
+        }
+        if(!mCheck) {
+            mEmailView.setText("");
+            mPasswordView.setText("");
+        }
+
+    }
+    private void doLogin(String Id, String password){
+
+    }
     private void DialogProgress(){
-        mDialog = ProgressDialog.show(LogInPageActivity.this, "",
+        ProgressDialog mDialog = ProgressDialog.show(LogInPageActivity.this, "",
                 "잠시만 기다려 주세요 ...", true);
 
         // 창을 내린다.
@@ -193,7 +167,17 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
+    public void moveNextActivity(){
+        Intent intent = new Intent(this, ClientManagementActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+    }
 
+    public void printToast(String string){
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+    }
+
+/*
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
         try{
@@ -231,7 +215,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         return sb.toString();
 
     }
- /*   class HttpTask extends AsyncTask<String , Void , String> {
+    class HttpTask extends AsyncTask<String , Void , String> {
         protected String doInBackground(String... params)
         {
             InputStream is = getInputStreamFromUrl(params[0]);
@@ -245,16 +229,8 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         {
 
         }
-    }*/
-
-    public void moveNextActivity(){
-        Intent intent = new Intent(this, ClientManagementActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
     }
-
-
-    @Override
+        @Override
     public void onReceive(byte[] data) {
         if (data == null)
         {
@@ -262,7 +238,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         }
         String result = new String(data);
         Log.d("Hello", result);
-        mDialog.dismiss();
 
         try {
             //JSONObject jsonObject = new JSONObject(result);
@@ -285,9 +260,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         } catch(JSONException e) {  }
 
         //result를 처리한다.
-    }
-    public void printToast(String string){
-        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+    }*/
 
-    }
 }
