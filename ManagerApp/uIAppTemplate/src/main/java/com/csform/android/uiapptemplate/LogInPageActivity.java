@@ -104,7 +104,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         setContentView(R.layout.activity_login_page_light);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
+        getSupportActionBar().setCustomView(R.layout.action_bar_login);
 
 
         mScrollView = (ScrollView)findViewById(R.id.login_scroll_view);

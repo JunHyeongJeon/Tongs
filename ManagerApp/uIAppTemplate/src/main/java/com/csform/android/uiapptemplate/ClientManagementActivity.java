@@ -74,7 +74,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         setContentView(R.layout.activity_expandable_list_view);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().setCustomView(R.layout.action_bar_centor);
+        getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
         Button mClientAddButton;
         mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener((View.OnClickListener) this);

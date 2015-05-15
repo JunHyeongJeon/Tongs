@@ -169,7 +169,6 @@
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
     <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
-    <string name="title_activity_client_management">고객관리화면</string>
 
     <string name="api_server">http://tongs.kr/api/</string>
     <string name="api_store_login">store/auth/login/?</string>
@@ -200,10 +199,10 @@
     <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>
     <string name="toast_login_account_fail">회원정보가 존재하지 않습니다.</string>
 
-    <!--Actionbar Title -->
+    <!--Activity Title -->
 
-    <string name="title_actionbar_login">로그인</string>
-    <string name="title_actionbar_client_management">매장 대기 정보</string>
+    <string name="title_activity_login">로그인</string>
+    <string name="title_activity_client_management">매장 대기 정보</string>
 
 
 </resources>
