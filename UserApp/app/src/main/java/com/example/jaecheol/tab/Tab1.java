@@ -87,7 +87,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     {
         view = inflater.inflate(R.layout.tab_1, container, false);
 
-        adapter = new StoreAdapter();
+        adapter = new StoreAdapter(getActivity());
         listView = (ListView)view.findViewById(R.id.id_storeListView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(onClickListItem);
@@ -182,8 +182,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void getStoreList(int storeNum)   {
+    public void removeStoreList()   {
+        adapter.removeList();
+    }
 
+    public void getStoreList(int storeNum)   {
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         authToken = mPref.getString("auth_token", null);
@@ -234,7 +237,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         new HttpTask(cb).execute(url);
     }
 
-    private void addDummyList() {
+    public void addDummyList() {
 
         adapter.add("0",
                 "애슐리",
@@ -467,8 +470,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         } catch (Exception e) {
             Log.d("[GET REQUEST]", "Network exception", e);
         }
-        return content;
 
+        return content;
     }
 
     interface IHttpRecvCallback

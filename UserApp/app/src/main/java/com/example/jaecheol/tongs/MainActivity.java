@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.jaecheol.drawer.DrawerAdapter;
 import com.example.jaecheol.tab.SlidingTabLayout;
+import com.example.jaecheol.tab.Tab1;
 import com.example.jaecheol.tab.Tab2;
 import com.example.jaecheol.tab.ViewPagerAdapter;
 import com.google.zxing.BarcodeFormat;
@@ -67,6 +68,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
     String mobileNumber;
 
+    Tab1 storeTab;
+    Tab2 ticketTab;
 
 
     int sid;
@@ -87,7 +90,6 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
         setToolbar();
         setTabView();
         setDrawer();
-        setBarcode();
         setBarcode();
 
         getDataFromIntent();
@@ -138,14 +140,12 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
             Log.d("GCM", b.toString());
         }
 
-
         pager.setCurrentItem(1, true);
-        Tab2 tab2 = (Tab2)adapter.getTab(1);
 
-        tab2.waitingTicket.setStoreName(title);
-        tab2.waitingTicket.setCurrentNum(currentNum);
-        tab2.waitingTicket.setWaitingNum(ticketNum);
-        tab2.showTicketLayout(true);
+        ticketTab.waitingTicket.setStoreName(title);
+        ticketTab.waitingTicket.setCurrentNum(currentNum);
+        ticketTab.waitingTicket.setWaitingNum(ticketNum);
+        ticketTab.showTicketLayout(true);
     }
 
     @Override
@@ -166,8 +166,16 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 //            case R.id.action_registerEmail:
 //                registerEmail();
 //                break;
+            case R.id.action_renew:
+                renewAll();
+                break;
             case R.id.action_logout:
                 logout();
+                break;
+
+            case R.id.action_summon:
+                Intent intent = new Intent(MainActivity.this, SummonActivity.class);
+                startActivity(intent);
                 break;
         }
 
@@ -208,6 +216,9 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
+
+        storeTab = (Tab1)adapter.getTab(0);
+        ticketTab = (Tab2)adapter.getTab(1);
     }
 
 
@@ -268,6 +279,14 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
     }
 
+    private void renewAll()    {
+        /* Store Renew */
+//        storeTab.removeStoreList();
+//        storeTab.getStoreList(1);
+//        storeTab.addDummyList();
+        /* Ticket Renew */
+
+    }
 
 
     private void getDataFromIntent() {
@@ -357,4 +376,3 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     }
 
 }
-

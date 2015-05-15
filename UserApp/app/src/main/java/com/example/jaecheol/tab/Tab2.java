@@ -56,6 +56,7 @@ public class Tab2 extends Fragment
 
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
+//                    String storeName = json.getJSONObject("store").getString("brand_name");
 
         waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
         noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
@@ -109,11 +110,13 @@ public class Tab2 extends Fragment
                         return;
                     }
 
-                    String waitingNum = json.getJSONObject("ticket").getString("ticket");
+//                    String waitingNum = json.getJSONObject("ticket").getString("ticket");
+                    String waitingNum = json.getJSONObject("number").toString();
                     Log.d("Hello", waitingNum);
-                    String currentNum = json.getJSONObject("store").getString("current_num");
+//                    String currentNum = json.getJSONObject("store").getString("current_num");
+                    String currentNum = json.getJSONObject("last").toString();
                     Log.d("Hello", currentNum);
-                    String storeName = json.getJSONObject("store").getString("brand_name");
+                    String storeName = json.getJSONObject("store").toString();
                     Log.d("Hello", storeName);
 //                    String extraTime = json.getJSONObject("ticket");
 
