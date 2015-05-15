@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/id_couponTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceInverse"
+        android:text="쿠폰 이름"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <TextView
+        android:id="@+id/id_couponContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceInverse"
+        android:text="쿠폰 내용"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:id="@+id/id_couponTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textAppearance="?android:attr/textAppearanceInverse"
+        android:text="쿠폰 사용시간"
+        android:textSize="15dp"
+        android:textColor="#000000"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

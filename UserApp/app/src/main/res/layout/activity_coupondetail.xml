@@ -7,13 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="쿠폰 액티비티 입니다."
-        android:id="@+id/textView3"
+        android:text="쿠폰 상세페이지"
+        android:id="@+id/textView8"
         android:layout_gravity="center_horizontal" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/id_couponList" />
-
 </LinearLayout>

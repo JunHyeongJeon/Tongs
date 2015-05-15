@@ -28,7 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jaecheol.ble.BleManager;
-import com.example.jaecheol.store.StoreAdapter;
+import com.example.jaecheol.adapter.StoreAdapter;
 import com.example.jaecheol.tongs.BarcodeGenerator;
 import com.example.jaecheol.tongs.R;
 import com.example.jaecheol.tongs.StoreViewActivity;

@@ -18,7 +18,7 @@
         android:id="@+id/id_checkButton"
         android:layout_gravity="center_horizontal"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
@@ -54,7 +54,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="280dp"
         android:id="@+id/imageView"
         android:background="@drawable/wallpaper"
         android:layout_below="@+id/textView5"

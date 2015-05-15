@@ -20,11 +20,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.jaecheol.drawer.DrawerAdapter;
+import com.example.jaecheol.adapter.DrawerAdapter;
 import com.example.jaecheol.tab.SlidingTabLayout;
 import com.example.jaecheol.tab.Tab1;
 import com.example.jaecheol.tab.Tab2;
-import com.example.jaecheol.tab.ViewPagerAdapter;
+import com.example.jaecheol.adapter.ViewPagerAdapter;
 import com.google.zxing.BarcodeFormat;
 
 import java.io.ByteArrayOutputStream;
@@ -35,7 +35,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     Toolbar toolbar;
     ViewPager pager;
 
-    com.example.jaecheol.tab.ViewPagerAdapter adapter;
+    ViewPagerAdapter adapter;
     com.example.jaecheol.tab.SlidingTabLayout tabs;
 
     CharSequence titles[] = {"바코드", "대기표"};
@@ -210,7 +210,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
         tabs.setCustomTabColorizer(new SlidingTabLayout.TabColorizer() {
             @Override
             public int getIndicatorColor(int position) {
-                return getResources().getColor(R.color.tabsScrollColor);
+                return getResources().getColor(R.color.colorBackground);
             }
         });
 
@@ -242,7 +242,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
 
         Drawer = (DrawerLayout) findViewById(R.id.DrawerLayout);        // Drawer object Assigned to the view
-        mDrawerToggle = new ActionBarDrawerToggle(this,Drawer,toolbar,R.string.app_name,R.string.app_name){
+        mDrawerToggle = new ActionBarDrawerToggle(this, Drawer, toolbar, R.string.app_name, R.string.app_name){
 
             @Override
             public void onDrawerOpened(View drawerView) {
@@ -368,7 +368,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                     startActivity(intent);
                     break;
                 case 22:
-                    intent = new Intent(MainActivity.this, CouponActivity.class);
+                    intent = new Intent(MainActivity.this, CouponListActivity.class);
                     startActivity(intent);
                     break;
             }
