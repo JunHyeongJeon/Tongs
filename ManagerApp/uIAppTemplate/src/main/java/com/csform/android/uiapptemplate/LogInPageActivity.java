@@ -22,6 +22,12 @@ import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import org.json.JSONException;
 import org.json.JSONObject;
+import static com.csform.android.uiapptemplate.util.ManagementMethod.isProtocolStatus;
+import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
+import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_MANAGER_LOGIN;
+import static com.csform.android.uiapptemplate.util.ManagementValue.TOKEN;
+
+
 
 
 
@@ -32,6 +38,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     public static final String ISAUTOLOGIN = "autoLogin";
     public static final String ID = "id";
     public static final String PASSWORD = "password";
+
 
     private ScrollView mScrollView;
     private FloatLabeledEditText mEmailView;
@@ -67,9 +74,9 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
                 Log.v("OnReceive/Json", json.toString());
 
                 String resultCode = json.optString("result_code", null);
-                String token = json.optString("token", null);
+                String token = json.optString(TOKEN, null);
                 Preference pref = new Preference(this);
-                pref.put("token", token);
+                pref.put(TOKEN, token);
 
 
                 if("0".equals(resultCode)) {
@@ -206,11 +213,15 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
     private void doLogin(String id, String password){
         Log.v("LoginAc/doLogin", "ID: "+ id + " PASSWORD: " + password);
-        if( "".equals(id)|| "".equals(password))
+
+        if( "".equals(id)|| "".equals(password)){
             return;
-        else {
+
+        }
+        else
+        {
             progressDialog();
-            ManagementMethod.setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_LOGIN);
+            setProtocolStatus(PROTOCOL_STATUS_MANAGER_LOGIN);
             String url = getString(R.string.api_server) + getString(R.string.api_store_login)
                     + "email=" + id + "&password=" + password;
             Log.v("LoginAc/doLogin", url);

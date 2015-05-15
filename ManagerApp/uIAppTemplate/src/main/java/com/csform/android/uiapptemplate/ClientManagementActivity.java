@@ -1,6 +1,8 @@
 package com.csform.android.uiapptemplate;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,6 +34,7 @@ import android.widget.TextView;
 import com.csform.android.uiapptemplate.util.HttpTask;
 import com.csform.android.uiapptemplate.util.ManagementMethod;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
+import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.AnimatedExpandableListAdapter;
 
@@ -41,38 +44,55 @@ import org.json.JSONObject;
 
 import static com.csform.android.uiapptemplate.util.ManagementMethod.isProtocolStatus;
 import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
+import static com.csform.android.uiapptemplate.util.ManagementValue.TOKEN;
+import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_GET_LIST;
+import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_ADD;
+import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_CALL;
+import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_CANCLE;
 
-/**
- * This is an example usage of the AnimatedExpandableListView class.
- *
- * It is an activity that holds a listview which is populated with 100 groups
- * where each group has from 1 to 100 children (so the first group will have one
- * child, the second will have two children and so on...).
- */
 
 
 public class ClientManagementActivity extends ActionBarActivity implements View.OnClickListener, OnHttpReceive{
 
     private AnimatedExpandableListView listView;
-    private int m_protocolStatus = 0;
 
     public static final int CASE_STATUS_USER_CALL = 0;
     public static final int CASE_STATUS_USER_CANCLE = 1;
 
-    private String emailToken = "";
-    private String sid = "1";
-    private String uid = null;
-    private String num = null;
-
-
+    private String mToken;
+    private String mTodayDate;
     private int mGroupPosition;
     private ProgressDialog dialog;
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_expandable_list_view);
+        setContentView();
 
+        Preference pref = new Preference(this);
+        mToken = pref.getValue(TOKEN,"");
+
+        getTicketList();
+        viewTicketList();
+
+        mTodayDate = getTodayDate();
+
+
+    }
+    public String getTodayDate(){
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
+        SimpleDateFormat CurMonthFormat = new SimpleDateFormat("MM");
+        SimpleDateFormat CurDayFormat = new SimpleDateFormat("dd");
+        String todayDate = CurYearFormat.format(date) + CurMonthFormat.format(date) + CurDayFormat.format(date);
+        Log.v("getTodayDate", todayDate);
+
+        return todayDate;
+
+    }
+    private void setContentView(){
+        setContentView(R.layout.activity_expandable_list_view);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
         Button mClientAddButton;
@@ -86,7 +106,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     {
         if(v.getId() == R.id.client_add)
         {
-            AddClient();
+            recognitionBacode();
         }
 
 
@@ -98,6 +118,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -105,28 +126,25 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
     @Override
     public void onReceive(String data) {
-        String strJson = new String(data);
+        Log.v("ClientMa/onReceive",data);
 
         try {
-            JSONObject json = new JSONObject(strJson);
+            JSONObject json = new JSONObject(data);
 
             String result_code = json.optString("result_code", null);
             boolean isSuccess = "0".equals(result_code) ? true : false;
 
-            Log.v("result", m_protocolStatus + " : " + isSuccess);
 
-            if (isSuccess &&
-                    isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST)) {
-                Log.v("json", json.toString());
+            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
+                Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
 
-                JSONArray jsonArr = json.optJSONArray("tickets");
+                JSONArray jsonArr = json.optJSONArray("list");
                 if (jsonArr == null) {
                     List<GroupItem> items = new ArrayList<GroupItem>();
 
                     GroupItem item = new GroupItem();
                     item.title = "대기열에 아무도 없습니다.";
                     items.add(item);
-
 
                     ExampleAdapter adapter = new ExampleAdapter(this);
                     adapter.setData(items);
@@ -161,69 +179,50 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                     if (obj == null)
                         break;
 
-                    String ticketNo = obj.optString("ticket", null);
-                    String uid = obj.optString("uid", null);
-                    String num = obj.optString("num", null);
-                    //    String gcm = obj.optString("gcm", null);
-                    String mdn = obj.optString("mdn", null);
-                    String createTime = obj.optString("createTime", null);
+                    String id = obj.optString("id", null);
+                    String owner = obj.optString("owner", null);
+                    String store = obj.optString("store", null);
+                    String pivot = obj.optString("pivot", null);
+                    String status = obj.optString("status", null);
+                    String time = obj.optString("time", null);
 
                     HashMap<String, String> map = new HashMap<String, String>();
-                    map.put("ticket", "대기표 번호 : " + ticketNo);
-                    map.put("uid", uid + "번째 고객");
-                    map.put("num", "인원수 : " + num);
-                    //   map.put("gcm", gcm);
-                    map.put("mdn", "전화번호 : " + mdn);
-                    map.put("createTime", createTime);
+                    map.put("id", id);
+                    map.put("owner", owner);
+                    map.put("store", store);
+                    map.put("pivot",pivot);
+                    map.put("status", status);
+                    map.put("time", time);
+
                     list.add(map);
                     // 레코드 생성 및 추가
 
 
                     GroupItem item = new GroupItem();
 
-                    item.title = "대기번호 : " + ticketNo + "\n" +
-                            //        "고객전화번호 : " + mdn + "\n" +
-                            "인원수 : " + num + "\n";
+                    item.title = "ID : " + id + "\n"
+                            + "owner : " + owner + "\n"
+                            + "status : " + status + "\n";
 
 
 
                     ChildItem child = new ChildItem();
                     child.title = "호출";
-                    //child.hint = "Too awesome";
 
                     item.items.add(child);
                     child = new ChildItem();
                     child.title = "대기열 삭제";
-                    //child.hint = "Too awesome";
 
-
-                    // 고객의 상세정보 보기
-                    //item.items.add(child);
-                    //child = new ChildItem();
-                    //child.title = "고객 상세정보";
-                    //child.hint = "Too awesome";
 
                     item.items.add(child);
+                    child = new ChildItem();
+                    child.title = "고객 상세정보";
 
+                    item.items.add(child);
 
                     items.add(item);
                 }
 
-                /** Keys used in Hashmap */
-
-
-                //       String[] from = {"ticket", "mdn", "num"};
-
-                /** Ids of views in listview_layout */
-                //        int[] to = {R.id.tv_country, R.id.tv_country_details, R.id.iv_flag};
-
-
-/*
-                SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), list, R.layout.lv_layout, from, to);
-
-                ListView listView = (ListView) findViewById(R.id.lv_countries);
-                listView.setAdapter(adapter);
-*/
                 ExampleAdapter adapter = new ExampleAdapter(this);
                 adapter.setData(items);
 
@@ -237,9 +236,6 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                     @Override
                     public boolean onGroupClick(ExpandableListView parent, View v,
                                                 int groupPosition, long id) {
-                        // We call collapseGroupWithAnimation(int) and
-                        // expandGroupWithAnimation(int) to animate group
-                        // expansion/collapse.
                         if (listView.isGroupExpanded(groupPosition)) {
                             listView.collapseGroupWithAnimation(groupPosition);
                         } else {
@@ -255,22 +251,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                                                 int groupPosition, int childPosition , long id) {
                         Log.v("ClickgroupPosition", String.valueOf(groupPosition));
                         Log.v("ClickchildPosition", String.valueOf(childPosition));
-                        mGroupPosition = groupPosition;
-                        switch (childPosition) {
-                            case CASE_STATUS_USER_CALL: {
-                                DialogYesNo(getString(R.string.case_status_user_call) ,CASE_STATUS_USER_CALL );
 
-                                break;
-                            }
-                            case CASE_STATUS_USER_CANCLE: {
-                                DialogYesNo(getString(R.string.case_status_user_cancle), CASE_STATUS_USER_CANCLE);
-                                break;
-                            }
-                            case 2: {
-                                // 고객의 상세 정보 관리
-                                break;
-                            }
-                        }
                         return false;
                     }
                 });
@@ -295,46 +276,36 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
             }
 
             // 서버로 부터 고객의 리스트를 받아온다.
-            /*
-            else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_ADD)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
 
-                requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CALL)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
-                requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CANCLE)) {
-                String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                        + "&sid=" + sid;
-                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
-                requestOnUIThread(url);
-            }*/
+            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
+                getTicketList();
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
+                getTicketList();
+            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
+                getTicketList();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static class GroupItem {
+    private class GroupItem {
         String title;
         List<ChildItem> items = new ArrayList<ChildItem>();
     }
 
-    private static class ChildItem {
+    private class ChildItem {
         String title;
         //String hint;
     }
 
-    private static class ChildHolder {
+    private class ChildHolder {
         TextView title;
         //TextView hint;
     }
 
-    private static class GroupHolder {
+    private class GroupHolder {
         TextView title;
     }
 
@@ -441,20 +412,38 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
     }
 
-    private void pushTicket(){
+    private void pushTicket(String user, String people){
+
+        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
+        String url;
+        url = getString(R.string.api_server) + getString(R.string.api_store_ticket_push)
+                + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate;
+        requestOnUIThread(url);
 
     }
 
-    private void popTicket(){
+    private void popTicket(String id){
 
     }
-    private void removeTicket(){
+    private void removeTicket(String id){
 
     }
     private void getTicketList(){
 
+        String url;
+        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+        url = getString(R.string.api_server) +
+                getString(R.string.api_store_ticket_list) +
+                "token=" + mToken +
+                "&pivot=" + "20150513" +
+                "&type=" + "0";
+
+        requestOnUIThread(url);
     }
-    private void AddClient() {
+    private void viewTicketList(){
+
+    }
+    private void recognitionBacode() {
         Intent intent = new Intent("com.google.zxing.client.android.SCAN");
         intent.putExtra("SCAN_MODE", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR,EAN_13,EAN_8,UPC_A,QR_CODE");
         startActivityForResult(intent, 0);
@@ -466,9 +455,16 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
             if (resultCode == RESULT_OK) {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                Log.v("onActivityResult", contents);
-                bacodeSplitAndSend(contents);
-                // Handle successful scan
+                Log.v("bacodeNUM", contents);
+
+                String[] bacodeData;
+                bacodeData = bacodeSplit(contents);
+
+                String phoneNum = bacodeData[0];
+                String peopleNum = bacodeData[2];
+
+                pushTicket(phoneNum, peopleNum);
+
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel
             }
@@ -486,22 +482,13 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         });
     }
 
-    private void bacodeSplitAndSend(String bacode) {
+    private String[] bacodeSplit(String bacode) {
 
-        String[] result = bacode.split("_");
-        //d  Log.v("Hello2", emailToken);
-        uid = result[0];
-        num = result[2];
+    //    String[] result = bacode.split("_");
+    //    String phoneNumber = result[0];
+    //    String peopleNumber = result[2];
 
-        String url = getText(R.string.server_api_put_url) + "token=" + emailToken +
-                "&uid=" + uid + "&sid=" + sid + "&num=" + num;
-
-        Log.v("url", url);
-        //userAdd = true;
-        setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_ADD);
-
-        new HttpTask(this).execute(url);
-
+        return bacode.split("_");
     }
 
 
@@ -512,7 +499,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     // Action for 'Yes' Button
-                        UserStatusControl(cases);
+                        userStatusControl(cases);
                     }
                 }).setNegativeButton("No",
                 new DialogInterface.OnClickListener() {
@@ -529,30 +516,20 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         alert.show();
     }
 
-    private void UserStatusControl(int mCases){
+    private void userStatusControl(int cases) {
 
-        if (mCases == CASE_STATUS_USER_CALL){
-            Log.v("mCase", mGroupPosition + "&" + mCases);
+        if (cases == CASE_STATUS_USER_CALL) {
+            Log.v("mCase", mGroupPosition + "&" + cases);
+            popTicket("");
+        }
+        else if ( cases == CASE_STATUS_USER_CANCLE){
 
-            String url = getText(R.string.server_api_user_call) +"token=" + emailToken
-                    +"&sid=" + sid + "&index=" + mGroupPosition;
-            Log.v("caseCall", url);
-            setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CALL);
-            new HttpTask(this).execute(url);
-
-
-        } else if ( mCases == CASE_STATUS_USER_CANCLE){
-
-            Log.v("mCase", mGroupPosition + "&" + mCases);
-            String url = getText(R.string.server_api_user_cancle) + "token=" + emailToken
-                    + "&sid=" + sid + "&index=" + mGroupPosition;
-            Log.v("caseCancle", url);
-            setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CANCLE);
-            new HttpTask(this).execute(url);
+            Log.v("mCase", mGroupPosition + "&" + cases);
+            removeTicket("");
         }
 
-    }
 
+    }
     private void DialogProgress(){
         dialog = ProgressDialog.show(ClientManagementActivity.this, "",
                 "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);

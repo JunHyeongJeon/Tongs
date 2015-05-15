@@ -37,6 +37,7 @@ public class SplashScreensActivity extends Activity {
 
 	private KenBurnsView mKenBurns;
 	private ImageView mSplashImage;
+	private boolean isClickStatus;
 
 
 
@@ -55,12 +56,14 @@ public class SplashScreensActivity extends Activity {
 
 		Handler handler = new Handler() {
 			public void handleMessage(Message msg) {
-				super.handleMessage(msg);
-				startActivity(new Intent(SplashScreensActivity.this, LogInPageActivity.class));
-				finish();
+				if( !isClickStatus ){
+					super.handleMessage(msg);
+					startActivity(new Intent(SplashScreensActivity.this, LogInPageActivity.class));
+					finish();
+				}
 			}
 		};
-		handler.sendEmptyMessageDelayed(0, 4000);
+		handler.sendEmptyMessageDelayed(0, 3000);
 	}
 	
 	/** Animation depends on category.
@@ -117,7 +120,8 @@ public class SplashScreensActivity extends Activity {
         int action = event.getAction();
         switch(action) {
             case MotionEvent.ACTION_DOWN :    //화면을 터치했을때
-                moveActivity();
+                isClickStatus = true;
+				moveActivity();
                 finish();
                 break;
             case MotionEvent.ACTION_UP :    //화면을 터치했다 땠을때

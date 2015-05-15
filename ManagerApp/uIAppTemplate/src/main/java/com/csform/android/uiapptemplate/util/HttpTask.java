@@ -26,7 +26,7 @@ import java.net.URL;
 public class HttpTask extends AsyncTask<String, Void, String>{
     OnHttpReceive mHttpReceive;
     private int mServerError;
-    public static final int MAXNETWORKEXCEPTIONCOUNT = 10;
+    public static final int MAXNETWORKEXCEPTIONCOUNT = 5;
 
     public HttpTask(OnHttpReceive httpReceive)
     {
