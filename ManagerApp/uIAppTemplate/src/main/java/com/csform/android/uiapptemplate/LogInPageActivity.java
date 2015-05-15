@@ -1,5 +1,6 @@
 package com.csform.android.uiapptemplate;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +16,16 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.util.ManagementMethod;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
+import com.csform.android.uiapptemplate.util.OnHttpReceive;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class LogInPageActivity extends ActionBarActivity implements OnClickListener/*, OnHttpReceive*/ {
+
+
+public class LogInPageActivity extends ActionBarActivity implements OnClickListener, OnHttpReceive {
 
 	public static final String DARK = "Dark";
 	public static final String LIGHT = "Light";
@@ -29,8 +36,8 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     private ScrollView mScrollView;
     private FloatLabeledEditText mEmailView;
     private FloatLabeledEditText mPasswordView;
-    public CheckBox mloginKeep;
-
+    private CheckBox mloginKeep;
+    private ProgressDialog mDialog;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,48 +51,65 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         if(mloginKeep.isChecked())
             doAutoLogin();
     }
-	
-	private void setContentView() {
+
+
+    @Override
+    public void onReceive(String data) {
+        if(null != mDialog)
+            mDialog.dismiss();
+        Log.v("OnReceive/Login", data);
+        if("Error".equals(data))
+            printToast(getString(R.string.toast_login_server_fail));
+        else {
+            JSONObject json = null;
+            try {
+                json = new JSONObject(data);
+                Log.v("OnReceive/Json", json.toString());
+
+                String resultCode = json.optString("result_code", null);
+                String token = json.optString("token", null);
+                Preference pref = new Preference(this);
+                pref.put("token", token);
+
+
+                if("0".equals(resultCode)) {
+                    Log.v("LoginAc/onReceive", "로그인성공");
+                    moveActivity();
+                }
+                else
+                    printToast(getString(R.string.toast_login_account_fail));
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+
+    }
+
+    void requestOnUIThread(final String url)
+    {
+        final OnHttpReceive onReceive = this;
+        this.runOnUiThread(new Runnable() {
+            public void run() {
+                new com.csform.android.uiapptemplate.util.HttpTask(onReceive).execute(url);
+            }
+        });
+    }
+
+    private void setContentView() {
 
         setContentView(R.layout.activity_login_page_light);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_centor);
+        getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
 
 
         mScrollView = (ScrollView)findViewById(R.id.login_scroll_view);
         mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
         mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
-        mEmailView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                {
-                    Log.v("test","test");
-                    mEmailView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mScrollView.smoothScrollBy(0, 1200);
-                        }
-                    },100);
-                }
-                else Log.v("test2","test2");
-            }
-        });
-        mPasswordView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus)
-                {
-                    mPasswordView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mScrollView.smoothScrollBy(0, 1200);
-                        }
-                    },100);
-                }
-            }
-        });
 
         Button login;
         login = (Button)findViewById(R.id.login_button);
@@ -110,6 +134,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         else if(v.getId()== R.id.login_keep_checkbox)
         {
             setAutoLogin();
+
         }
 
 	}
@@ -150,7 +175,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         if (cancel) {
             focusView.requestFocus();
         } else {
-            doLogin("","");
+            doLogin(LoginEmail,LoginPassword);
         }
 
     }
@@ -175,16 +200,26 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         mEmailView.setText(id);
         mPasswordView.setText(password);
         if (!("".equals(id)) && !("".equals(password)))
-            doLogin("","");
+            doLogin(id,password);
 
     }
 
-    private void doLogin(String Id, String password){
-        printToast("doLogin");
+    private void doLogin(String id, String password){
+        Log.v("LoginAc/doLogin", "ID: "+ id + " PASSWORD: " + password);
+        if( "".equals(id)|| "".equals(password))
+            return;
+        else {
+            progressDialog();
+            ManagementMethod.setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_LOGIN);
+            String url = getString(R.string.api_server) + getString(R.string.api_store_login)
+                    + "email=" + id + "&password=" + password;
+            Log.v("LoginAc/doLogin", url);
+            requestOnUIThread(url);
+        }
     }
-    private void DialogProgress(){
-        ProgressDialog mDialog = ProgressDialog.show(LogInPageActivity.this, "",
-                "잠시만 기다려 주세요 ...", true);
+    private void progressDialog(){
+        mDialog = ProgressDialog.show(LogInPageActivity.this, "",
+                getString(R.string.dialog_login), true);
 
         // 창을 끄기
         // dialog.dismiss();
@@ -200,13 +235,16 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
-    public void moveNextActivity(){
+    private void moveActivity(){
         Intent intent = new Intent(this, ClientManagementActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+
     }
 
     public void printToast(String string){
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
+
+
 }

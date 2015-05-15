@@ -104,7 +104,6 @@
     <!-- Added by jun's-->
 
     <string name="actionbar_name_store_management_activity">매장관리</string>
-    <string name="title_activity_login">로그인</string>
     <string name="title_activity_sign_up">고객대기시스템 회원가입 </string>
     <string name="phonenumber">전화번호</string>
     <string name="title_activity_sign_up_activity_first">회원가입</string>
@@ -165,15 +164,21 @@
     <string name="server_api_user_call">http://somabell01.cloudapp.net:8080/store/store/pop?</string>
     <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
     <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
-
     <string name="Server_URL">http://somabell01.cloudapp.net:8080/</string>
-
     <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/store/auth/sms_request?mdn=</string>
     <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
     <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
     <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
     <string name="title_activity_client_management">고객관리화면</string>
 
+    <string name="api_server">http://tongs.kr/api/</string>
+    <string name="api_store_login">store/auth/login/?</string>
+    <string name="api_store_ticket_list">store/ticket/list/?</string>
+    <string name="api_store_ticket_pop">/store/ticket/pop/?</string>
+    <string name="api_store_ticket_push">/store/ticket/push/?</string>
+    <string name="api_store_ticket_remove">/store/ticket/remove/?</string>
+
+    <!--email=somabell15@gmail.com&password=soma2015-->
 
     <!-- ClientManagementActivity  -->
 
@@ -186,6 +191,19 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">JSON Parser Demo</string>
     <string name="str_iv_flag">Flag</string>
+
+
+    <!-- Dialog Ment -->
+    <string name="dialog_login">로그인중입니다. 잠시만 기다려 주세요.</string>
+
+    <!-- Toast Ment -->
+    <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>
+    <string name="toast_login_account_fail">회원정보가 존재하지 않습니다.</string>
+
+    <!--Actionbar Title -->
+
+    <string name="title_actionbar_login">로그인</string>
+    <string name="title_actionbar_client_management">매장 대기 정보</string>
 
 
 </resources>

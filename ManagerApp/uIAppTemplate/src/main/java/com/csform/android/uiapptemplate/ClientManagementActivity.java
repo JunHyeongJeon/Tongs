@@ -1,13 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,12 +11,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Point;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.util.TypedValue;
@@ -36,22 +26,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+
 import android.widget.TextView;
 
 import com.csform.android.uiapptemplate.util.HttpTask;
+import com.csform.android.uiapptemplate.util.ManagementMethod;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.AnimatedExpandableListAdapter;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
+
+import static com.csform.android.uiapptemplate.util.ManagementMethod.isProtocolStatus;
+import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
 
 /**
  * This is an example usage of the AnimatedExpandableListView class.
@@ -62,22 +51,15 @@ import org.json.JSONObject;
  */
 
 
-public class ClientManagementActivity extends ActionBarActivity implements OnHttpReceive{
-
-
-    private String emailToken;
+public class ClientManagementActivity extends ActionBarActivity implements View.OnClickListener, OnHttpReceive{
 
     private AnimatedExpandableListView listView;
     private int m_protocolStatus = 0;
-    public static final int PROTOCOL_STATUS_USER_ADD = 1;
-    public static final int PROTOCOL_STATUS_GET_LIST = 2;
-    public static final int PROTOCOL_STATUS_USER_CALL = 3;
-    public static final int PROTOCOL_STATUS_USER_CANCLE = 4;
 
     public static final int CASE_STATUS_USER_CALL = 0;
     public static final int CASE_STATUS_USER_CANCLE = 1;
 
-
+    private String emailToken = "";
     private String sid = "1";
     private String uid = null;
     private String num = null;
@@ -91,28 +73,21 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expandable_list_view);
 
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.layout.action_bar_centor);
+        Button mClientAddButton;
+        mClientAddButton = (Button)findViewById(R.id.client_add);
+        mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+    }
 
-        emailToken = mPref.getString("emailToken", null);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Button mClientAddButton = (Button) findViewById(R.id.client_add);
-        mClientAddButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                AddClient();
-
-
-            }
-        });
-
-        String url = getText(R.string.server_api_get_url) + "token=" + emailToken
-                + "&sid=" + sid;
-        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-        new HttpTask(this).execute(url);
+    @Override
+    public void onClick(View v)
+    {
+        if(v.getId() == R.id.client_add)
+        {
+            AddClient();
+        }
 
 
     }
@@ -129,7 +104,7 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
     }
 
     @Override
-    public void onReceive(byte[] data) {
+    public void onReceive(String data) {
         String strJson = new String(data);
 
         try {
@@ -140,7 +115,8 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
 
             Log.v("result", m_protocolStatus + " : " + isSuccess);
 
-            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
+            if (isSuccess &&
+                    isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST)) {
                 Log.v("json", json.toString());
 
                 JSONArray jsonArr = json.optJSONArray("tickets");
@@ -319,25 +295,24 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
             }
 
             // 서버로 부터 고객의 리스트를 받아온다.
-            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
+            /*
+            else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_ADD)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
+                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
+
                 requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
+            } else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CALL)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
+                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
                 requestOnUIThread(url);
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
+            } else if (isSuccess && isProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CANCLE)) {
                 String url = getText(R.string.server_api_get_url) + "token=" + emailToken
                         + "&sid=" + sid;
-                setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
-                //new HttpTask().execute(url);
+                setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_GET_LIST);
                 requestOnUIThread(url);
-            }
+            }*/
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -466,15 +441,24 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
 
     }
 
+    private void pushTicket(){
+
+    }
+
+    private void popTicket(){
+
+    }
+    private void removeTicket(){
+
+    }
+    private void getTicketList(){
+
+    }
     private void AddClient() {
         Intent intent = new Intent("com.google.zxing.client.android.SCAN");
         intent.putExtra("SCAN_MODE", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR,EAN_13,EAN_8,UPC_A,QR_CODE");
         startActivityForResult(intent, 0);
 
-      /*  if( !("".equals(intent.getStringExtra("SCAN_RESULT"))) ) {
-            uid = intent.getStringExtra("SCAN_RESULT"); //content에 바코드 값이 들어갑니다.
-            Log.v("Hello","dldld");
-        }*/
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -490,152 +474,6 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
             }
         }
     }
-    public static byte[] remoteSyncHttp(String requestUrl, String arrParam[][])
-    {
-        PrintWriter pw = null;
-        HttpURLConnection conn = null;
-        byte resultData[] = null;
-        try
-        {
-            URL url = new URL(requestUrl);
-            conn = (HttpURLConnection)url.openConnection();
-            if (conn != null) {
-                conn.setConnectTimeout(15000);
-                conn.setReadTimeout(15000);
-                conn.setUseCaches(false);
-
-                if(arrParam != null)
-                {
-                    conn.setRequestMethod("POST");
-                    conn.setDoInput(true);
-                    conn.setDoOutput(true);
-                    conn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-                    StringBuilder param = new StringBuilder();
-                    for (int i=0; i<arrParam.length; i++)
-                    {
-                        param.append(arrParam[i][0]);
-                        param.append("=");
-                        param.append(arrParam[i][1]);
-                        if ( i != (arrParam.length-1) )
-                            param.append("&");
-                    }
-                    String paramStr = param.toString();
-                    conn.setRequestProperty("Content-Length", "" + Integer.toString(paramStr.getBytes().length));
-
-                    pw = new PrintWriter(conn.getOutputStream());
-                    pw.print(paramStr);
-                    pw.flush();
-                    pw.close();
-                }
-                int responseCode = conn.getResponseCode();
-                if ( responseCode == HttpURLConnection.HTTP_OK )
-                {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    InputStream is = conn.getInputStream();
-                    int nRead;
-                    byte data[] = new byte[10240];
-                    while( (nRead = is.read(data)) != -1 )
-                    {
-                        baos.write(data, 0, nRead);
-                    };
-                    resultData = baos.toByteArray();
-                    baos.close();
-                    is.close();
-
-                }
-                else
-                {
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    InputStream is = conn.getErrorStream();
-                    int nRead;
-                    byte data[] = new byte[10240];
-                    while( (nRead = is.read(data)) != -1 )
-                    {
-                        baos.write(data, 0, nRead);
-                    };
-                    resultData = baos.toByteArray();
-                    baos.close();
-                    is.close();
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Log.e("HttpError", requestUrl);
-//            e.printStackTrace();
-        }
-        finally
-        {
-            if(conn != null)
-            {
-                try {
-                    conn.disconnect();
-                } catch(Exception e){}
-            }
-        }
-        return resultData;
-    }
-
-    public String getRemoteData(String url) {
-        byte data[] = new byte[1024 * 64];
-        InputStream is = null;
-        try {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpResponse response = httpclient.execute(new HttpGet(url));
-            is = response.getEntity().getContent();
-
-            int destLength = Integer.parseInt( response.getFirstHeader("Content-Length").getValue() );
-            int totalRead = 0;
-            while(true)
-            {
-                int read = is.read(data, totalRead, 10240);
-                if(read <= 0)
-                    break;
-                totalRead += read;
-            }
-            httpclient.getConnectionManager().shutdown();
-            return new String(data, 0, totalRead);
-
-        } catch (Exception e) {
-            Log.e("[GET REQUEST]", "Network exception", e);
-        }
-        return null;
-    }
-
-    public InputStream getInputStreamFromUrl(String url) {
-        InputStream content = null;
-        try {
-            HttpClient httpclient = new DefaultHttpClient();
-            HttpResponse response = httpclient.execute(new HttpGet(url));
-            content = response.getEntity().getContent();
-        } catch (Exception e) {
-            Log.e("[GET REQUEST]", "Network exception", e);
-        }
-        return content;
-    }
-
-    private static String convertStreamToString(InputStream is) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-
-        String line = null;
-        try {
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return sb.toString();
-
-    }
-
 
     void requestOnUIThread(final String url)
     {
@@ -648,46 +486,6 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
         });
     }
 
-/*
-    class HttpTask extends AsyncTask<String, Void, String> {
-        protected String doInBackground(String... params) {
-
-//            InputStream is = getInputStreamFromUrl(params[0]);
-//            String result = convertStreamToString(is);
-
-            String response = null;
-
-            if(params[0].equals("http://somabell01.cloudapp.net:8080/store/store/get?token=6001b1ce82bc090f7b29964b888903c318f6d518&sid=1"))
-            {
-                response = null;
-            }
-
-            try {
-                //response = getRemoteData(params[0]);
-                byte data[] = remoteSyncHttp(params[0], null);
-                if(data == null)
-                {
-                    Thread.currentThread().sleep(1000);
-                    data = remoteSyncHttp(params[0], null);
-                }
-                if(data == null)
-                    return null;
-                response = new String(data);
-            }
-            catch(Exception e) {
-                e.printStackTrace();
-            }
-
-            return response;
-        }
-
-        protected void onPostExecute(String result) {
-
-//            Log.d("Server_result", result);
-            processReceive(result);
-        }
-    }
-*/
     private void bacodeSplitAndSend(String bacode) {
 
         String[] result = bacode.split("_");
@@ -700,23 +498,13 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
 
         Log.v("url", url);
         //userAdd = true;
-        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
+        setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_ADD);
 
         new HttpTask(this).execute(url);
 
     }
 
-    public void setProtocolStatus(int status) {
-        m_protocolStatus = status;
-    }
 
-    public int getProtocolStatus() {
-        return m_protocolStatus;
-    }
-
-    public boolean isProtocolStatus(int status) {
-        return m_protocolStatus == status ? true : false;
-    }
 
     private void DialogYesNo(String ment, final int cases){
         AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
@@ -749,7 +537,7 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
             String url = getText(R.string.server_api_user_call) +"token=" + emailToken
                     +"&sid=" + sid + "&index=" + mGroupPosition;
             Log.v("caseCall", url);
-            setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
+            setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CALL);
             new HttpTask(this).execute(url);
 
 
@@ -759,7 +547,7 @@ public class ClientManagementActivity extends ActionBarActivity implements OnHtt
             String url = getText(R.string.server_api_user_cancle) + "token=" + emailToken
                     + "&sid=" + sid + "&index=" + mGroupPosition;
             Log.v("caseCancle", url);
-            setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
+            setProtocolStatus(ManagementMethod.PROTOCOL_STATUS_USER_CANCLE);
             new HttpTask(this).execute(url);
         }
 

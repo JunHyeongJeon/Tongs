@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -17,11 +19,10 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.csform.android.uiapptemplate.font.FontelloTextView;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
+
 
 public class SplashScreensActivity extends Activity {
 
@@ -38,6 +39,7 @@ public class SplashScreensActivity extends Activity {
 	private ImageView mSplashImage;
 
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,11 +50,17 @@ public class SplashScreensActivity extends Activity {
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
 		mSplashImage = (ImageView) findViewById(R.id.splash_image_view);
 		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
-
 		setAnimation(SPLASH_SCREEN_OPTION_2);
-
 		getUserInfo();
 
+		Handler handler = new Handler() {
+			public void handleMessage(Message msg) {
+				super.handleMessage(msg);
+				startActivity(new Intent(SplashScreensActivity.this, LogInPageActivity.class));
+				finish();
+			}
+		};
+		handler.sendEmptyMessageDelayed(0, 4000);
 	}
 	
 	/** Animation depends on category.
@@ -88,6 +96,12 @@ public class SplashScreensActivity extends Activity {
 		mSplashImage.setAlpha(1.0F);
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_center);
 		mSplashImage.startAnimation(anim);
+
+
+
+
+
+
 	}
 //
 //	private void animation3() {
@@ -103,9 +117,7 @@ public class SplashScreensActivity extends Activity {
         int action = event.getAction();
         switch(action) {
             case MotionEvent.ACTION_DOWN :    //화면을 터치했을때
-                Intent intent = new Intent(this, LogInPageActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+                moveActivity();
                 finish();
                 break;
             case MotionEvent.ACTION_UP :    //화면을 터치했다 땠을때
@@ -151,8 +163,17 @@ public class SplashScreensActivity extends Activity {
         Preference pref = new Preference(this);
         pref.put(APPVERSION, appVer);
         pref.put(PHONENUMBER,num);
-        pref.put(PHONEMODEL,model);
-        pref.put(OSVERSION,osVer);
+        pref.put(PHONEMODEL, model);
+        pref.put(OSVERSION, osVer);
 
     }
+	private void moveActivity(){
+		Intent intent = new Intent(this, LogInPageActivity.class);
+		startActivity(intent);
+		overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+
+	}
+
 }
+
+
