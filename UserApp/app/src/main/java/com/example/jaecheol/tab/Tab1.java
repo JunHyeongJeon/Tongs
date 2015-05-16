@@ -98,6 +98,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         return view;
     }
 
+
     private ListView.OnItemClickListener onClickListItem = new ListView.OnItemClickListener() {
 
         @Override
@@ -194,7 +195,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             /* 로그인 해제 */
         }
 
-        String url = getText(R.string.Server_URL)
+        String url = getText(R.string.api_server)
                 + "user/store/list"
                 + "?token=" + authToken
                 + "&hyper=" + storeNum;
@@ -404,7 +405,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         if( "0".equals(major) || "0".equals(minor) )
             return;
 
-        String url = getText(R.string.Server_URL)
+        String url = getText(R.string.api_server)
                 + "user/beacon/get"
                 + "?major=" + major
                 + "&minor=" + minor;
@@ -499,12 +500,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
         protected void onPostExecute(String result)
         {
+            Log.d("Hello", result);
             if(m_cb != null)
             {
                 m_cb.onRecv(result);
                 return;
             }
-            Log.d("Hello", result);
         }
     }
 }

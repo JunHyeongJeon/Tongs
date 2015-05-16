@@ -3,7 +3,8 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="Server_URL">http://tongs.kr/api/</string>
+    <string name="api_server">http://tongs.kr/api/</string>
+    <string name="storeview_url">http://tongs.kr/user/info.php</string>
 
 
     <string name="drawer_open">Menu opened</string>

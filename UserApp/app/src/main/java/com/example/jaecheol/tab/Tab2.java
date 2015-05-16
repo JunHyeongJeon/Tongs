@@ -92,7 +92,7 @@ public class Tab2 extends Fragment
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
         authToken = mPref.getString("auth_token", null);
 
-        String url = getText(R.string.Server_URL)
+        String url = getText(R.string.api_server)
                 + "user/ticket/get"
                 + "?token=" + authToken;
 

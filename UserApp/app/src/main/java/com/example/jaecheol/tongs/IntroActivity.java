@@ -106,7 +106,7 @@ public class IntroActivity extends ActionBarActivity
     private void sendGCMKey()
     {
 
-        String url = getText(R.string.Server_URL)
+        String url = getText(R.string.api_server)
                 + "user/auth/gcm"
                 + "?token=" + authToken
                 + "&gcm=" + regid;

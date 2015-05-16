@@ -3,6 +3,9 @@ package com.example.jaecheol.tongs;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -13,8 +16,10 @@ import android.webkit.WebViewClient;
 public class StoreViewActivity extends ActionBarActivity {
 
     WebView webView;
+    Toolbar storeviewToolbar;
 
     String sid;
+    float resolution;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,32 @@ public class StoreViewActivity extends ActionBarActivity {
         setContentView(R.layout.activity_storeview);
 
         initWebView();
+        setToolbar();
+    }
+
+
+    void setToolbar()   {
+        storeviewToolbar = (Toolbar)findViewById(R.id.toolbar_storeview);
+
+        if(storeviewToolbar != null) {
+            setSupportActionBar(storeviewToolbar);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(true);
+        }
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)  {
+        switch( item.getItemId() ) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initWebView() {
@@ -30,6 +61,14 @@ public class StoreViewActivity extends ActionBarActivity {
         sid = intent.getStringExtra("sid");
 
         webView = (WebView)findViewById(R.id.id_webStoreView);
+
+        resolution = getResources().getDisplayMetrics().density;
+        resolution = 2;
+        String url = getString(R.string.storeview_url)
+                + "?sid=" + sid
+                + "&resolution=" + resolution;
+
+        Log.d("HELLO", "STOREVIEW URL : " + url);
 
         WebSettings settings = webView.getSettings();
         WebViewClient webViewClient = new WebViewClient(){
@@ -45,8 +84,6 @@ public class StoreViewActivity extends ActionBarActivity {
 
         webView.setWebViewClient(webViewClient);
         settings.setJavaScriptEnabled(true);
-
-        String url = "http://somabell01.cloudapp.net/tool/shop.php?sid=" + sid;
 
         webView.loadUrl(url);
         webView.addJavascriptInterface(this, "webBridge");

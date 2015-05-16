@@ -164,7 +164,7 @@ public class SignupActivity extends ActionBarActivity
 
                     number = editText.getText().toString();
 
-                    String url = getText(R.string.Server_URL)
+                    String url = getText(R.string.api_server)
                             + "user/auth/sms"
                             + "?mdn=" + number;
 
@@ -199,7 +199,7 @@ public class SignupActivity extends ActionBarActivity
 
                     certificationNumber = editText.getText().toString();
 
-                    String url = getText(R.string.Server_URL)
+                    String url = getText(R.string.api_server)
                             + "user/auth/login"
                             + "?mdn=" + number
                             + "&code=" + certificationNumber;
@@ -281,7 +281,7 @@ public class SignupActivity extends ActionBarActivity
             String str = URLDecoder.decode(jsonUrl, "UTF-8");
             Log.d("Hello", "decode " + jsonUrl);
 
-            String url = getText(R.string.Server_URL)
+            String url = getText(R.string.api_server)
                     + "user/auth/register"
                     + "?token=" + authToken
                     + "&data=" + jsonUrl;
@@ -333,7 +333,7 @@ public class SignupActivity extends ActionBarActivity
     }
 
     private void sendGcmInfo()  {
-        String url = getText(R.string.Server_URL)
+        String url = getText(R.string.api_server)
                 + "user/auth/gcm"
                 + "?token=" + authToken
                 + "&gcm=" + regid;
