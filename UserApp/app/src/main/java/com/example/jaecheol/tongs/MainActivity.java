@@ -134,6 +134,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
             // json 값 제대로 읽어와야함
 
+            // 여기서 티켓값 가져오면됨(API로)
+
             mdn = b.getString("mobile_number");
             title = b.getString("title");
             ticketNum = b.getString("ticket_num");
@@ -143,10 +145,10 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         pager.setCurrentItem(1, true);
 
-        ticketTab.waitingTicket.setStoreName(title);
-        ticketTab.waitingTicket.setCurrentNum(currentNum);
-        ticketTab.waitingTicket.setWaitingNum(ticketNum);
-        ticketTab.showTicketLayout(true);
+//        ticketTab.waitingTicket.setStoreName(title);
+//        ticketTab.waitingTicket.setCurrentNum(currentNum);
+//        ticketTab.waitingTicket.setWaitingNum(ticketNum);
+//        ticketTab.showTicketLayout(true);
     }
 
     @Override

@@ -1,16 +1,35 @@
 package com.example.jaecheol.tongs;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.EditText;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
 /**
  * Created by JaeCheol on 15. 3. 31..
@@ -22,9 +41,15 @@ public class StoreViewActivity extends ActionBarActivity
     Toolbar storeviewToolbar;
 
     String sid;
+    String uid;
+    String authToken;
+    String peopleNumber;
     float resolution;
 
+    AlertDialog dialog;
     Button pushButton;
+    EditText peopleEditText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +58,8 @@ public class StoreViewActivity extends ActionBarActivity
 
         initWebView();
         setToolbar();
-        initButton();
+        initComponent();
+        getDataFromSharedPref();
     }
 
 
@@ -74,8 +100,6 @@ public class StoreViewActivity extends ActionBarActivity
                 + "?sid=" + sid
                 + "&resolution=" + resolution;
 
-        Log.d("HELLO", "STOREVIEW URL : " + url);
-
         WebSettings settings = webView.getSettings();
         WebViewClient webViewClient = new WebViewClient(){
             public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
@@ -95,17 +119,171 @@ public class StoreViewActivity extends ActionBarActivity
         webView.addJavascriptInterface(this, "webBridge");
     }
 
-    void initButton()   {
+    void getDataFromSharedPref()   {
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        uid = mPref.getString("uid", null);
+        authToken = mPref.getString("auth_token", null);
+    }
+
+    void initComponent()   {
         pushButton = (Button)findViewById(R.id.id_pushButton);
         pushButton.setOnClickListener(this);
+
+        peopleEditText = (EditText)findViewById(R.id.id_editText);
+
+        setDialog();
     }
 
     @Override
     public void onClick(View view) {
         switch ( view.getId() )    {
             case R.id.id_pushButton :
-                Log.d("HELLO", "PUSH!!!!");
+                dialog.show();
                 break;
+        }
+    }
+
+    private void setDialog()
+    {
+        // AlertDialog 객체 선언
+        dialog = createInputDialog();
+
+        // Context 얻고, 해당 컨텍스트의 레이아웃 정보 얻기
+        Context context = getApplicationContext();
+        LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        // 레이아웃 설정
+        View layout = layoutInflater.inflate(R.layout.dialog_barcodegenerate,
+                (ViewGroup) findViewById(R.id.id_popup_root));
+        peopleEditText = (EditText)layout.findViewById(R.id.id_popup_edittext);
+
+        // Input 소프트 키보드 보이기
+        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+        // AlertDialog에 레이아웃 추가
+        dialog.setView(layout);
+    }
+
+
+    private AlertDialog createInputDialog() {
+
+        EditText edittext= new EditText(this);
+
+        AlertDialog dialogBox = new AlertDialog.Builder(this)
+                .setTitle("안내")
+                .setMessage("몇명이서 오셨나요?")
+                .setView(edittext)
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 확인 버튼 눌렀을때 액션
+                        if (peopleEditText != null)
+                            peopleNumber = peopleEditText.getText().toString();
+
+
+                        String url = getText(R.string.api_server)
+                                + "user/ticket/push"
+                                + "?token=" + authToken
+                                + "&store=" + sid
+                                + "&people=" + peopleNumber;
+
+                        IHttpRecvCallback cb = new IHttpRecvCallback() {
+                            public void onRecv(String result) {
+                                try {
+                                    JSONObject json = new JSONObject(result);
+                                    String result_code = json.get("result_code").toString();
+                                    Log.d("Hello", result_code);
+                                    if ("-1".equals(result_code)) {
+                                        Log.d("HELLO", "대기열 추가 실패");
+                                        return;
+                                    }
+                                    Log.d("HELLO", "대기열 추가 성공");
+
+                                } catch (Exception e) {
+                                }
+                            }
+                        };
+                        new HttpTask(cb).execute(url);
+
+                    }
+                })
+                .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // 취소 버튼 눌렀을때 액션 구현
+                    }
+                }).create();
+        return dialogBox;
+    }
+
+
+
+
+    private static String convertStreamToString(InputStream is)
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(1024*64);
+        byte data[] = new byte[10240];
+        while(true) {
+            try {
+                int len = is.read(data);
+                if (len == -1)
+                    break;
+                baos.write(data, 0, len);
+            } catch (Exception e) { }
+        }
+        String str = new String(baos.toByteArray());
+        return str;
+    }
+
+
+
+    public InputStream getInputStreamFromUrl(String url) {
+        InputStream content = null;
+        try{
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpResponse response = httpclient.execute(new HttpGet(url));
+            if(response.getStatusLine().getStatusCode() != 200)
+            {
+                // 네트워크 오류입니다.
+                Log.d("Hello", "Network Error");
+            }
+            content = response.getEntity().getContent();
+        } catch (Exception e) {
+            Log.d("[GET REQUEST]", "Network exception", e);
+        }
+
+        return content;
+    }
+
+    interface IHttpRecvCallback
+    {
+        public void onRecv(String result);
+    }
+
+    class HttpTask extends AsyncTask<String , Void , String> {
+
+        IHttpRecvCallback m_cb;
+        HttpTask(IHttpRecvCallback cb)
+        {
+            m_cb = cb;
+        }
+
+        protected String doInBackground(String... params)
+        {
+            InputStream is = getInputStreamFromUrl(params[0]);
+
+            String result = convertStreamToString(is);
+
+            return result;
+        }
+
+        protected void onPostExecute(String result)
+        {
+            Log.d("Hello", result);
+            if(m_cb != null)
+            {
+                m_cb.onRecv(result);
+                return;
+            }
         }
     }
 }
