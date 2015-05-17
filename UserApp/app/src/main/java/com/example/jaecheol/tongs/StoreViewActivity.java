@@ -6,20 +6,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 
 /**
  * Created by JaeCheol on 15. 3. 31..
  */
-public class StoreViewActivity extends ActionBarActivity {
+public class StoreViewActivity extends ActionBarActivity
+                               implements View.OnClickListener    {
 
     WebView webView;
     Toolbar storeviewToolbar;
 
     String sid;
     float resolution;
+
+    Button pushButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,7 @@ public class StoreViewActivity extends ActionBarActivity {
 
         initWebView();
         setToolbar();
+        initButton();
     }
 
 
@@ -87,5 +93,19 @@ public class StoreViewActivity extends ActionBarActivity {
 
         webView.loadUrl(url);
         webView.addJavascriptInterface(this, "webBridge");
+    }
+
+    void initButton()   {
+        pushButton = (Button)findViewById(R.id.id_pushButton);
+        pushButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch ( view.getId() )    {
+            case R.id.id_pushButton :
+                Log.d("HELLO", "PUSH!!!!");
+                break;
+        }
     }
 }

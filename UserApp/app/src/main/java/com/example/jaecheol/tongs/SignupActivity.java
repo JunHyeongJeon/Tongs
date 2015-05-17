@@ -226,7 +226,7 @@ public class SignupActivity extends ActionBarActivity
                                 authToken = json.get("token").toString();
                                 Log.d("HELLO", "AUTH_TOKEN IS "+authToken);
 
-                                uid = json.get("uid").toString();
+                                uid = json.get("id").toString();
 
                             } catch (Exception e) { }
                         }
@@ -319,6 +319,7 @@ public class SignupActivity extends ActionBarActivity
 
                         Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                         intent.putExtra("authToken", authToken);
+                        intent.putExtra("uid", uid);
 //                                startActivity(intent);
                         Log.d("HELLO", "메인페이지로 이동!!");
 
@@ -567,11 +568,11 @@ public class SignupActivity extends ActionBarActivity
 
         protected void onPostExecute(String result)
         {
+            Log.d("Hello", result);
             if(m_cb != null)    {
                 m_cb.onRecv(result);
                 return;
             }
-            Log.d("Hello", result);
         }
     }
 

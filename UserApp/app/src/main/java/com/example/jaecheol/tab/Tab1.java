@@ -93,9 +93,14 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         listView.setOnItemClickListener(onClickListItem);
 
 //        addDummyList();
-        getStoreList(1);
 
         return view;
+    }
+
+    @Override
+    public void onResume()   {
+        getStoreList(1);
+        super.onResume();
     }
 
 
@@ -195,6 +200,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             /* 로그인 해제 */
         }
 
+        adapter.removeList();
+
         String url = getText(R.string.api_server)
                 + "user/store/list"
                 + "?token=" + authToken
@@ -227,8 +234,12 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                         storeDescription = store.get("description").toString();
 
                         adapter.add(storeId, storeName,
-                                    storeLocation, storeDescription,
-                                    storeWaitingNum);
+                                storeLocation, storeDescription,
+                                storeWaitingNum);
+                        adapter.notifyDataSetChanged();
+                        Log.d("HELLO", storeId + "  " + storeName + "  " + storeLocation + "  "
+                                        + storeDescription + "  " + storeWaitingNum);
+
                     }
 
                 }
@@ -490,7 +501,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
         protected String doInBackground(String... params)
         {
-            Log.d("Hello", "Start");
             InputStream is = getInputStreamFromUrl(params[0]);
 
             String result = convertStreamToString(is);

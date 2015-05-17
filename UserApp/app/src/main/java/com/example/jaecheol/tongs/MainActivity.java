@@ -67,6 +67,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     String authToken;
 
     String mobileNumber;
+    String uid;
 
     Tab1 storeTab;
     Tab2 ticketTab;
@@ -270,7 +271,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     public void registerBarcode()    {
 
         try {
-            String barcodeContents = mobileNumber + "_" + currentNum;
+            String barcodeContents = mobileNumber + "_" + uid + "_" + currentNum;
             Log.d("HELLO", barcodeContents);
             barcode = barcodeGenerator.encodeAsBitmap(barcodeContents, BarcodeFormat.CODE_128, 600, 400);
         } catch (Exception e) {
@@ -282,7 +283,10 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     private void renewAll()    {
         /* Store Renew */
 //        storeTab.removeStoreList();
-//        storeTab.getStoreList(1);
+        Tab1 storeTab = (Tab1)adapter.getTab(0);
+        if(storeTab == null)
+            return;
+        storeTab.getStoreList(1);
 //        storeTab.addDummyList();
         /* Ticket Renew */
 
@@ -300,6 +304,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mobileNumber = mPref.getString("number", null);
+        uid = mPref.getString("uid", null);
     }
 
     private void registerEmail() {

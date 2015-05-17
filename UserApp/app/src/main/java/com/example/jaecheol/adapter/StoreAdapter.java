@@ -2,7 +2,6 @@ package com.example.jaecheol.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,7 +147,6 @@ public class StoreAdapter extends BaseAdapter   {
         storeList[2].add(location);
         storeList[3].add(description);
         storeList[4].add(waitingNum);
-        Log.d("HELLO", "ADD");
     }
 
     // 외부에서 아이템 삭제 요청 시 사용
@@ -161,9 +159,8 @@ public class StoreAdapter extends BaseAdapter   {
     }
 
     public void removeList()    {
-        int len = storeList[0].size();
-        for(int i=0; i<len; i++)    {
-            remove(i);
+        for(int i=0; i<5; i++) {
+            storeList[i] = new ArrayList<String>();
         }
     }
 
