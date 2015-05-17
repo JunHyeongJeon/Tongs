@@ -194,6 +194,9 @@
 
     <!-- Dialog Ment -->
     <string name="dialog_login">로그인중입니다. 잠시만 기다려 주세요.</string>
+    <string name="dialog_user_call">고객을 호출을 하시겠습니까?</string>
+    <string name="dialog_user_remove">고객을 삭제 하시겠습니까?</string>
+    <string name="dialog_user_more_information">고객의 상세정보를 보시겠습니까?</string>
 
     <!-- Toast Ment -->
     <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>
@@ -203,6 +206,7 @@
 
     <string name="title_activity_login">로그인</string>
     <string name="title_activity_client_management">매장 대기 정보</string>
+    <string name="title_activity_client_more_information">ClientMoreInformation</string>
 
 
 </resources>

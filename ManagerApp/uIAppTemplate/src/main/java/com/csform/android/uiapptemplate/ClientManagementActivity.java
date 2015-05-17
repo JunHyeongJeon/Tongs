@@ -3,36 +3,46 @@ package com.csform.android.uiapptemplate;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-
-
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
-
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.adapter.DrawerAdapter;
+import com.csform.android.uiapptemplate.model.DrawerItem;
 import com.csform.android.uiapptemplate.util.HttpTask;
-import com.csform.android.uiapptemplate.util.ManagementMethod;
+import com.csform.android.uiapptemplate.util.ImageUtil;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
@@ -52,22 +62,36 @@ import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STA
 
 
 
+
 public class ClientManagementActivity extends ActionBarActivity implements View.OnClickListener, OnHttpReceive{
+
+
+    public static final String LEFT_MENU_OPTION = "com.csform.android.uiapptemplate.LeftMenusActivity";
+    public static final String LEFT_MENU_OPTION_1 = "Left Menu Option 1";
+    public static final String LEFT_MENU_OPTION_2 = "Left Menu Option 2";
 
     private AnimatedExpandableListView listView;
 
     public static final int CASE_STATUS_USER_CALL = 0;
     public static final int CASE_STATUS_USER_CANCLE = 1;
-
+    public static final int CASE_STATUS_USER_MORE_INFORMATION = 2;
     private String mToken;
     private String mTodayDate;
-    private int mGroupPosition;
-    private ProgressDialog dialog;
+    private ProgressDialog mDialog;
+
+    private ListView mDrawerList;
+    private List<DrawerItem> mDrawerItems;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mDrawerToggle;
+
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView();
+        setContentView(savedInstanceState);
 
         Preference pref = new Preference(this);
         mToken = pref.getValue(TOKEN,"");
@@ -91,14 +115,146 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         return todayDate;
 
     }
-    private void setContentView(){
-        setContentView(R.layout.activity_expandable_list_view);
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
+    private void setContentView(Bundle savedInstanceState){
+        setContentView(R.layout.activity_client_management);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mTitle = mDrawerTitle = getTitle();
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.list_view);
+
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        prepareNavigationDrawerItems();
+        setAdapter();
+        //mDrawerList.setAdapter(new DrawerAdapter(this, mDrawerItems));
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
+                R.string.drawer_open,
+                R.string.drawer_close) {
+            public void onDrawerClosed(View view) {
+                getSupportActionBar().setTitle(mTitle);
+                invalidateOptionsMenu();
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                getSupportActionBar().setTitle(mDrawerTitle);
+                invalidateOptionsMenu();
+            }
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        if (savedInstanceState == null) {
+            mDrawerLayout.openDrawer(mDrawerList);
+        }
+
+
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
         Button mClientAddButton;
         mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+
+    private void prepareNavigationDrawerItems() {
+        mDrawerItems = new ArrayList<>();
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.string.drawer_icon_linked_in,
+                        R.string.drawer_title_linked_in,
+                        DrawerItem.DRAWER_ITEM_TAG_LINKED_IN));
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.string.drawer_icon_blog,
+                        R.string.drawer_title_blog,
+                        DrawerItem.DRAWER_ITEM_TAG_BLOG));
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.string.drawer_icon_git_hub,
+                        R.string.drawer_title_git_hub,
+                        DrawerItem.DRAWER_ITEM_TAG_GIT_HUB));
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.string.drawer_icon_instagram,
+                        R.string.drawer_title_instagram,
+                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
+    }
+
+
+    private void setAdapter() {
+        String option = LEFT_MENU_OPTION_1;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey(LEFT_MENU_OPTION)) {
+            option = extras.getString(LEFT_MENU_OPTION, LEFT_MENU_OPTION_1);
+        }
+
+        boolean isFirstType = true;
+
+        View headerView = null;
+        if (option.equals(LEFT_MENU_OPTION_1)) {
+            headerView = prepareHeaderView(R.layout.header_navigation_drawer_1,
+                    "http://pengaja.com/uiapptemplate/avatars/0.jpg",
+                    "dev@csform.com");
+        } else if (option.equals(LEFT_MENU_OPTION_2)) {
+            headerView = prepareHeaderView(R.layout.header_navigation_drawer_2,
+                    "http://pengaja.com/uiapptemplate/avatars/0.jpg",
+                    "dev@csform.com");
+            isFirstType = false;
+        }
+
+        BaseAdapter adapter = new DrawerAdapter(this, mDrawerItems, isFirstType);
+
+        mDrawerList.addHeaderView(headerView);//Add header before adapter (for pre-KitKat)
+        mDrawerList.setAdapter(adapter);
+    }
+
+    private class DrawerItemClickListener implements
+            ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            selectItem(position/*, mDrawerItems.get(position - 1).getTag()*/);
+        }
+    }
+
+    private View prepareHeaderView(int layoutRes, String url, String email) {
+        View headerView = getLayoutInflater().inflate(layoutRes, mDrawerList, false);
+        ImageView iv = (ImageView) headerView.findViewById(R.id.image);
+        TextView tv = (TextView) headerView.findViewById(R.id.email);
+
+        ImageUtil.displayRoundImage(iv, url, null);
+        tv.setText(email);
+
+        return headerView;
+    }
+
+    private void selectItem(int position/*, int drawerTag*/) {
+        // minus 1 because we have header that has 0 position
+        if (position < 1) { //because we have header, we skip clicking on it
+            return;
+        }
+        String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
+        Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
+
+        mDrawerList.setItemChecked(position, true);
+        setTitle(mDrawerItems.get(position - 1).getTitle());
+        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     @Override
@@ -112,13 +268,14 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
     }
 
-
-
+    // need to be change
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
-
+            return true;
+        }
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -149,7 +306,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                     ExampleAdapter adapter = new ExampleAdapter(this);
                     adapter.setData(items);
 
-                    listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
+                    listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
                     listView.setAdapter(adapter);
 
                     Display display = getWindowManager().getDefaultDisplay();
@@ -169,12 +326,12 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                 }
 
                 int ticketLen = jsonArr.length();
-                ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>(ticketLen);
 
                 List<GroupItem> items = new ArrayList<GroupItem>();
 
-
+                final String index[] = new String[ticketLen];
                 for (int i = 0; i < ticketLen; i++) {
+
                     JSONObject obj = jsonArr.optJSONObject(i);
                     if (obj == null)
                         break;
@@ -186,17 +343,9 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                     String status = obj.optString("status", null);
                     String time = obj.optString("time", null);
 
-                    HashMap<String, String> map = new HashMap<String, String>();
-                    map.put("id", id);
-                    map.put("owner", owner);
-                    map.put("store", store);
-                    map.put("pivot",pivot);
-                    map.put("status", status);
-                    map.put("time", time);
+                    index[i] = id;
 
-                    list.add(map);
                     // 레코드 생성 및 추가
-
 
                     GroupItem item = new GroupItem();
 
@@ -226,7 +375,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                 ExampleAdapter adapter = new ExampleAdapter(this);
                 adapter.setData(items);
 
-                listView = (AnimatedExpandableListView) findViewById(R.id.list_view);
+                listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
                 listView.setAdapter(adapter);
 
                 // In order to show animations, we need to use a custom click handler
@@ -251,7 +400,9 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                                                 int groupPosition, int childPosition , long id) {
                         Log.v("ClickgroupPosition", String.valueOf(groupPosition));
                         Log.v("ClickchildPosition", String.valueOf(childPosition));
+                        Log.v("onClick", index[groupPosition]);
 
+                        popDialog(setDialogMent(childPosition), childPosition, index[groupPosition]);
                         return false;
                     }
                 });
@@ -274,9 +425,6 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
 
             }
-
-            // 서버로 부터 고객의 리스트를 받아온다.
-
             else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
                 getTicketList();
             } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
@@ -288,6 +436,20 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private String setDialogMent(int status){
+        String ment;
+        if(status == PROTOCOL_STATUS_USER_CALL) {
+            ment = getString(R.string.dialog_user_call);
+        }
+        else if (status == PROTOCOL_STATUS_USER_CANCLE) {
+            ment = getString(R.string.dialog_user_remove);
+        } else {
+            ment = getString(R.string.dialog_user_more_information);
+        }
+
+        return ment;
+
     }
 
     private class GroupItem {
@@ -423,15 +585,33 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     }
 
     private void popTicket(String id){
+        Log.v("Protocol", "PROTOCOL_STATUS_USER_CALL");
+        setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
+        String url;
+        url = getString(R.string.api_server) +
+                getString(R.string.api_store_ticket_pop) +
+                "token=" + mToken +
+                "&id=" + id;
+
+        requestOnUIThread(url);
 
     }
     private void removeTicket(String id){
+        Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCLE");
 
+        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
+        String url;
+        url = getString(R.string.api_server) +
+                getString(R.string.api_store_ticket_remove) +
+                "token=" + mToken +
+                "&id=" + id;
+        requestOnUIThread(url);
     }
     private void getTicketList(){
+        Log.v("Protocol", "PROTOCOL_STATUS_GET_LIST");
 
-        String url;
         setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+        String url;
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_list) +
                 "token=" + mToken +
@@ -474,9 +654,8 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     void requestOnUIThread(final String url)
     {
         final OnHttpReceive onReceive = this;
-        this.runOnUiThread(new Runnable(){
-            public void run()
-            {
+        this.runOnUiThread(new Runnable() {
+            public void run() {
                 new HttpTask(onReceive).execute(url);
             }
         });
@@ -493,13 +672,13 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
 
 
-    private void DialogYesNo(String ment, final int cases){
+    private void popDialog(String ment, final int status, final String userId){
         AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
         alt_bld.setMessage(ment).setCancelable(false).setPositiveButton("Yes",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                    // Action for 'Yes' Button
-                        userStatusControl(cases);
+                        // Action for 'Yes' Button
+                        controlUserStatus(status,userId);
                     }
                 }).setNegativeButton("No",
                 new DialogInterface.OnClickListener() {
@@ -509,31 +688,56 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                     }
                 });
         AlertDialog alert = alt_bld.create();
-        // Title for AlertDialog
         alert.setTitle("Title");
-        // Icon for AlertDialog
         alert.setIcon(R.drawable.ic_launcher);
         alert.show();
     }
 
-    private void userStatusControl(int cases) {
+    @Override
+    public void setTitle(int titleId) {
+        setTitle(getString(titleId));
+    }
 
-        if (cases == CASE_STATUS_USER_CALL) {
-            Log.v("mCase", mGroupPosition + "&" + cases);
-            popTicket("");
-        }
-        else if ( cases == CASE_STATUS_USER_CANCLE){
+    @Override
+    public void setTitle(CharSequence title) {
+        mTitle = title;
+        getSupportActionBar().setTitle(mTitle);
+    }
 
-            Log.v("mCase", mGroupPosition + "&" + cases);
-            removeTicket("");
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    private void controlUserStatus(int status, String id) {
+
+        if (status == CASE_STATUS_USER_CALL) {
+            popTicket(id);
         }
+        else if (status == CASE_STATUS_USER_CANCLE) {
+            removeTicket(id);
+        }
+        else if (status == CASE_STATUS_USER_MORE_INFORMATION){
+            viewClientMoreInfo();
+        }
+
+
+
+    }
+    private void viewClientMoreInfo(){
+        Log.v("ClientMana/viewClient","viewClientMoreInfo");
 
 
     }
     private void DialogProgress(){
-        dialog = ProgressDialog.show(ClientManagementActivity.this, "",
+        mDialog = ProgressDialog.show(ClientManagementActivity.this, "",
                 "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);
-        // 창을 내린다.
-        // dialog.dismiss();
     }
 }

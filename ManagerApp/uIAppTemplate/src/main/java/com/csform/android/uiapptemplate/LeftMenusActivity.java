@@ -71,21 +71,20 @@ public class LeftMenusActivity extends ActionBarActivity {
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
-		
+
 		if (savedInstanceState == null) {
 			mDrawerLayout.openDrawer(mDrawerList);
 		}
 	}
-	
 	private void setAdapter() {
 		String option = LEFT_MENU_OPTION_1;
 		Bundle extras = getIntent().getExtras();
 		if (extras != null && extras.containsKey(LEFT_MENU_OPTION)) {
 			option = extras.getString(LEFT_MENU_OPTION, LEFT_MENU_OPTION_1);
 		}
-		
+
 		boolean isFirstType = true;
-		
+
 		View headerView = null;
 		if (option.equals(LEFT_MENU_OPTION_1)) {
 			headerView = prepareHeaderView(R.layout.header_navigation_drawer_1,
@@ -97,12 +96,13 @@ public class LeftMenusActivity extends ActionBarActivity {
 					"dev@csform.com");
 			isFirstType = false;
 		}
-		
+
 		BaseAdapter adapter = new DrawerAdapter(this, mDrawerItems, isFirstType);
-		
+
 		mDrawerList.addHeaderView(headerView);//Add header before adapter (for pre-KitKat)
 		mDrawerList.setAdapter(adapter);
 	}
+
 	
 	private View prepareHeaderView(int layoutRes, String url, String email) {
 		View headerView = getLayoutInflater().inflate(layoutRes, mDrawerList, false);
