@@ -1,4 +1,4 @@
-package com.csform.android.uiapptemplate;
+package com.csform.android.uiapptemplate.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -20,13 +20,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.kbv.KenBurnsView;
 
 
 public class SplashScreensActivity extends Activity {
 
-	public static final String SPLASH_SCREEN_OPTION = "com.csform.android.uiapptemplate.SplashScreensActivity";
+	public static final String SPLASH_SCREEN_OPTION = "com.csform.android.uiapptemplate.activity.SplashScreensActivity";
 	public static final String SPLASH_SCREEN_OPTION_1 = "Option 1";
 	public static final String SPLASH_SCREEN_OPTION_2 = "Option 2";
 	public static final String SPLASH_SCREEN_OPTION_3 = "Option 3";

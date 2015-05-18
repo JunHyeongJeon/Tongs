@@ -62,12 +62,12 @@
             android:name=".ImageGallerySubcategoryActivity"
             android:theme="@style/AppTheme.NoShadow" />
         <activity
-            android:name=".LogInPageActivity"
+            android:name=".activity.LogInPageActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name=".SplashScreensActivity"
+            android:name=".activity.SplashScreensActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

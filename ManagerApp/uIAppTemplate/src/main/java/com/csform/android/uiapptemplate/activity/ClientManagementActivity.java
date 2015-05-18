@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -45,10 +46,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.Tab1;
-import com.csform.android.uiapptemplate.Tab2;
-import com.csform.android.uiapptemplate.Tab3;
-import com.csform.android.uiapptemplate.Tab4;
+import com.csform.android.uiapptemplate.tab.Tab1;
+import com.csform.android.uiapptemplate.tab.Tab2;
+import com.csform.android.uiapptemplate.tab.Tab3;
+import com.csform.android.uiapptemplate.tab.Tab4;
 import com.csform.android.uiapptemplate.adapter.DrawerAdapter;
 import com.csform.android.uiapptemplate.model.DrawerItem;
 import com.csform.android.uiapptemplate.util.HttpTask;
@@ -97,6 +98,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
+
+    public ImageView mClientTicket;
 
     SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -542,7 +545,6 @@ public class ClientManagementActivity extends ActionBarActivity
             }
 
             holder.title.setText(item.title);
-            //holder.hint.setText(item.hint);
 
             return convertView;
         }

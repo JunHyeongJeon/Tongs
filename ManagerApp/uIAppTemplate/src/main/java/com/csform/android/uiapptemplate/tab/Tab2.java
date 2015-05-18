@@ -1,4 +1,4 @@
-package com.csform.android.uiapptemplate;
+package com.csform.android.uiapptemplate.tab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,18 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.csform.android.uiapptemplate.R;
+
 @SuppressLint("ValidFragment")
-public class Tab1 extends Fragment {
+public class Tab2 extends Fragment {
 	Context mContext;
 
-	public Tab1(Context context) {
+	public Tab2(Context context) {
 		mContext = context;
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.activity_tabs1, null);
+		View view = inflater.inflate(R.layout.activity_tabs2, null);
 
 		return view;
 	}

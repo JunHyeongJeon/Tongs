@@ -14,7 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.SplashScreensActivity;
+import com.csform.android.uiapptemplate.activity.SplashScreensActivity;
 import com.csform.android.uiapptemplate.adapter.SubcategoryAdapter;
 
 public class SplashScreensFragment extends Fragment implements OnItemClickListener {

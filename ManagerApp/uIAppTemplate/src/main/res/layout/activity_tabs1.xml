@@ -3,9 +3,45 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tab1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="13.5dp">
+            <Button
+                android:id="@+id/before_turn_button"
+                android:text="이전순번"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_width="118.5dp"
+                android:layout_height="61.5dp"
+                android:background="@drawable/before_after_button_shape"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
+            <Button
+                android:layout_weight="3"
+                android:id="@+id/this_turn_button"
+                android:text="이번순번"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:layout_width="151.5dp"
+                android:layout_height="78.5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/this_turn_button_shape"
+                />
+            <Button
+                android:layout_weight="2"
+                android:id="@+id/after_turn_button"
+                android:text="다음순번"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:layout_width="118.5dp"
+                android:layout_height="61.5dp"
+                android:background="@drawable/before_after_button_shape"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+
+
 
 </LinearLayout>

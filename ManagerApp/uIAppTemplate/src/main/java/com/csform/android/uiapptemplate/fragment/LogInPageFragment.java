@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.csform.android.uiapptemplate.LogInPageActivity;
+import com.csform.android.uiapptemplate.activity.LogInPageActivity;
 import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.adapter.SubcategoryAdapter;
 

@@ -1,4 +1,4 @@
-package com.csform.android.uiapptemplate;
+package com.csform.android.uiapptemplate.tab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.csform.android.uiapptemplate.R;
+
 @SuppressLint("ValidFragment")
-public class Tab4 extends Fragment {
+public class Tab3 extends Fragment {
 	Context mContext;
 
-	public Tab4(Context context) {
+	public Tab3(Context context) {
 		mContext = context;
 	}
 

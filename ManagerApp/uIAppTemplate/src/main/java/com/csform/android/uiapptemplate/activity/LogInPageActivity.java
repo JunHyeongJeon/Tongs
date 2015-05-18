@@ -1,4 +1,4 @@
-package com.csform.android.uiapptemplate;
+package com.csform.android.uiapptemplate.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.csform.android.uiapptemplate.activity.ClientManagementActivity;
+import com.csform.android.uiapptemplate.R;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
