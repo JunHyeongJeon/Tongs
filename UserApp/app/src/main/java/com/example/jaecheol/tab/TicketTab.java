@@ -46,7 +46,7 @@ public class TicketTab extends Fragment
                              @Nullable ViewGroup container,
                              @Nullable Bundle SavedInstanceState)
     {
-        View v = inflater.inflate(R.layout.tab_2, container, false);
+        View v = inflater.inflate(R.layout.tab_ticket, container, false);
 
         initWaitingTicket(v);
 

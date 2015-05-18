@@ -32,7 +32,7 @@ public class CouponListActivity extends ActionBarActivity{
     void initCouponActivity()   {
 
         adapter =  new CouponAdapter(getApplicationContext());
-        couponList = (ListView)findViewById(R.id.id_couponList);
+//        couponList = (ListView)findViewById(R.id.id_couponList);
         couponList.setAdapter(adapter);
     }
 

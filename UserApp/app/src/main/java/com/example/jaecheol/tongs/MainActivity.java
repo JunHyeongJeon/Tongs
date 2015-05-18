@@ -30,7 +30,7 @@ import com.google.zxing.BarcodeFormat;
 import java.io.ByteArrayOutputStream;
 
 
-public class MainActivity extends ActionBarActivity //, NavigationDrawerCallbacks
+public class MainActivity extends ActionBarActivity
 {
     Toolbar toolbar;
     ViewPager pager;
@@ -355,7 +355,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
                     startActivity(intent);
                     break;
                 case 22:
-                    intent = new Intent(MainActivity.this, CouponListActivity.class);
+                    intent = new Intent(MainActivity.this, CouponActivity.class);
                     startActivity(intent);
                     break;
             }

@@ -85,7 +85,7 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                              @Nullable ViewGroup container,
                              @Nullable Bundle SavedInstanceState)
     {
-        view = inflater.inflate(R.layout.tab_1, container, false);
+        view = inflater.inflate(R.layout.tab_store, container, false);
 
         adapter = new StoreAdapter(getActivity());
         listView = (ListView)view.findViewById(R.id.id_storeListView);

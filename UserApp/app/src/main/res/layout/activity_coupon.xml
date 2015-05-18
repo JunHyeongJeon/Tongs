@@ -4,21 +4,23 @@
     android:layout_height="match_parent">
 
     <include
+        android:id="@+id/toolbar_coupon"
         layout="@layout/toolbar_coupon"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="쿠폰 액티비티 입니다."
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal" />
-
-    <ListView
+    <com.example.jaecheol.tab.SlidingTabLayout
+        android:id="@+id/couponTabs"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/couponPager"
+
         android:layout_height="match_parent"
-        android:id="@+id/id_couponList" />
+        android:layout_width="match_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>
