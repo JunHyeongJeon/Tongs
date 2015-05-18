@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
-    android:orientation="vertical" android:paddingBottom="@dimen/activity_vertical_margin">
+    android:orientation="vertical">
 
     <include layout="@layout/toolbar"/>
 
@@ -14,11 +12,57 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <com.csform.android.uiapptemplate.view.AnimatedExpandableListView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/client_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                </com.csform.android.uiapptemplate.view.AnimatedExpandableListView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/client_call"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/client_call"
+                        android:layout_weight="1"
+                        android:background="@drawable/buttonshape"
+                        android:layout_marginRight="2dp">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/client_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/client_add"
+                        android:layout_weight="1"
+                        android:background="@drawable/buttonshape"
+                        android:layout_marginLeft="2dp">
+                    </Button>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
 
         <include
             android:layout_width="@dimen/drawer_width"
@@ -26,54 +70,6 @@
             android:layout_gravity="start"
             layout="@layout/list_view" />
     </android.support.v4.widget.DrawerLayout>
-
-
-    <com.csform.android.uiapptemplate.view.AnimatedExpandableListView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/client_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8">
-
-
-
-    </com.csform.android.uiapptemplate.view.AnimatedExpandableListView>
-
-    <LinearLayout
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="0dp"
-        android:gravity="top"
-        android:orientation="horizontal"
-        android:layout_weight="1">
-
-
-        <Button
-            android:id="@+id/client_call"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/client_call"
-            android:layout_weight="1"
-            android:background="@drawable/buttonshape"
-            android:layout_marginRight="2dp"
-
-
-            >
-
-        </Button>
-        <Button
-            android:id="@+id/client_add"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/client_add"
-            android:layout_weight="1"
-            android:background="@drawable/buttonshape"
-            android:layout_marginLeft="2dp"
-            >
-        </Button>
-    </LinearLayout>
 
 
 </LinearLayout>

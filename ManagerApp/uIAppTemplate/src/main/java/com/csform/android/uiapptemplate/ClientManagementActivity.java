@@ -95,11 +95,12 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
         Preference pref = new Preference(this);
         mToken = pref.getValue(TOKEN,"");
+        mTodayDate = getTodayDate();
 
         getTicketList();
         viewTicketList();
 
-        mTodayDate = getTodayDate();
+
 
 
     }
@@ -585,7 +586,6 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     }
 
     private void popTicket(String id){
-        Log.v("Protocol", "PROTOCOL_STATUS_USER_CALL");
         setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
         String url;
         url = getString(R.string.api_server) +
@@ -607,7 +607,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
                 "&id=" + id;
         requestOnUIThread(url);
     }
-    private void getTicketList(){
+    private void getTicketList() {
         Log.v("Protocol", "PROTOCOL_STATUS_GET_LIST");
 
         setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
@@ -615,7 +615,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_list) +
                 "token=" + mToken +
-                "&pivot=" + "20150513" +
+                "&pivot=" + mTodayDate +
                 "&type=" + "0";
 
         requestOnUIThread(url);
@@ -653,6 +653,7 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
     void requestOnUIThread(final String url)
     {
+        Log.v("URL", url);
         final OnHttpReceive onReceive = this;
         this.runOnUiThread(new Runnable() {
             public void run() {

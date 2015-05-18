@@ -173,9 +173,9 @@
     <string name="api_server">http://tongs.kr/api/</string>
     <string name="api_store_login">store/auth/login/?</string>
     <string name="api_store_ticket_list">store/ticket/list/?</string>
-    <string name="api_store_ticket_pop">/store/ticket/pop/?</string>
-    <string name="api_store_ticket_push">/store/ticket/push/?</string>
-    <string name="api_store_ticket_remove">/store/ticket/remove/?</string>
+    <string name="api_store_ticket_pop">store/ticket/pop/?</string>
+    <string name="api_store_ticket_push">store/ticket/push/?</string>
+    <string name="api_store_ticket_remove">store/ticket/remove/?</string>
 
     <!--email=somabell15@gmail.com&password=soma2015-->
 
