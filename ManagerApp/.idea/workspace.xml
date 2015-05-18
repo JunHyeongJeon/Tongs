@@ -26,10 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab4.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/toolbar.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/toolbar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -120,28 +125,87 @@
         <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+              <caret line="792" column="23" selection-start-line="792" selection-start-column="23" selection-end-line="792" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#20911#20952#0" expanded="true" />
-                <element signature="e#21588#21618#0" expanded="true" />
+                <element signature="e#5543#5563#0" expanded="true" />
+                <element signature="e#5581#5602#0" expanded="true" />
+                <element signature="e#6981#7011#0" expanded="true" />
+                <element signature="e#7037#7068#0" expanded="true" />
+                <element signature="e#7216#7241#0" expanded="true" />
+                <element signature="e#7267#7293#0" expanded="true" />
+                <element signature="e#7436#7464#0" expanded="true" />
+                <element signature="e#7490#7519#0" expanded="true" />
+                <element signature="e#7665#7695#0" expanded="true" />
+                <element signature="e#7721#7752#0" expanded="true" />
+                <element signature="e#17172#17208#0" expanded="true" />
+                <element signature="e#17297#17335#0" expanded="true" />
+                <element signature="e#17373#17421#0" expanded="true" />
+                <element signature="e#21132#21162#0" expanded="true" />
+                <element signature="e#21165#21206#0" expanded="true" />
+                <element signature="e#21454#21484#0" expanded="true" />
+                <element signature="e#21503#21543#0" expanded="true" />
+                <element signature="e#21842#21872#0" expanded="true" />
+                <element signature="e#21891#21934#0" expanded="true" />
+                <element signature="e#22218#22248#0" expanded="true" />
+                <element signature="e#22267#22308#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tab2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tab1.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38372093">
+              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionBarActivity.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/uIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar!/android/support/v7/app/ActionBarActivity.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FragmentActivity.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///ADT/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3-sources.jar!/android/support/v4/app/FragmentActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26431718">
-              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            <state vertical-scroll-proportion="-4.137931">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
-                <element signature="e#1889#1910#0" expanded="true" />
-                <element signature="e#2356#2376#0" expanded="true" />
-                <element signature="e#2718#2739#0" expanded="true" />
+                <element signature="e#3025#3046#0" expanded="true" />
+                <element signature="e#3492#3512#0" expanded="true" />
+                <element signature="e#3854#3875#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,24 +234,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.2413793">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.24">
-              <caret line="176" column="43" selection-start-line="176" selection-start-column="43" selection-end-line="176" selection-end-column="43" />
+            <state vertical-scroll-proportion="-14.4">
+              <caret line="214" column="52" selection-start-line="214" selection-start-column="52" selection-end-line="214" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -2904,8 +2955,9 @@
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/toolbar.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab2.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -3029,6 +3081,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uIAppTemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uIAppTemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3067,8 +3175,8 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate" />
       <recent name="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate" />
       <recent name="$PROJECT_DIR$/uIAppTemplate/src/main/res/menu" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com" />
       <recent name="$PROJECT_DIR$/app/src/main/res" />
@@ -3081,11 +3189,11 @@
       <recent name="com.csform.android.uiapptemplate" />
       <recent name="com.google.zxing.client.android" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.csform.android.uiapptemplate" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.uIAppTemplate">
@@ -3369,7 +3477,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23878205" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5448718" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26602563" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3571,30 +3679,6 @@
           <properties />
           <option name="timeStamp" value="152" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java</url>
-          <line>442</line>
-          <properties />
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java</url>
-          <line>445</line>
-          <properties />
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java</url>
-          <line>447</line>
-          <properties />
-          <option name="timeStamp" value="178" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java</url>
-          <line>405</line>
-          <properties />
-          <option name="timeStamp" value="179" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -3604,45 +3688,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/anim/translate_top_to_center.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_splash_screen.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.296875">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///ADT/sdk/sources/android-21/java/lang/CharSequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/fragment/LogInPageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5923913">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/FloatLabeledEditText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///ADT/sdk/sources/android-21/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4018,10 +4063,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml">
+    <entry file="jar:///ADT/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3-sources.jar!/android/support/v4/app/FragmentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.24">
-          <caret line="176" column="43" selection-start-line="176" selection-start-column="43" selection-end-line="176" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/uIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar!/android/support/v7/app/ActionBarActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -4029,12 +4090,39 @@
     <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/ClientManagementActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+          <caret line="792" column="23" selection-start-line="792" selection-start-column="23" selection-end-line="792" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#20911#20952#0" expanded="true" />
-            <element signature="e#21588#21618#0" expanded="true" />
+            <element signature="e#5543#5563#0" expanded="true" />
+            <element signature="e#5581#5602#0" expanded="true" />
+            <element signature="e#6981#7011#0" expanded="true" />
+            <element signature="e#7037#7068#0" expanded="true" />
+            <element signature="e#7216#7241#0" expanded="true" />
+            <element signature="e#7267#7293#0" expanded="true" />
+            <element signature="e#7436#7464#0" expanded="true" />
+            <element signature="e#7490#7519#0" expanded="true" />
+            <element signature="e#7665#7695#0" expanded="true" />
+            <element signature="e#7721#7752#0" expanded="true" />
+            <element signature="e#17172#17208#0" expanded="true" />
+            <element signature="e#17297#17335#0" expanded="true" />
+            <element signature="e#17373#17421#0" expanded="true" />
+            <element signature="e#21132#21162#0" expanded="true" />
+            <element signature="e#21165#21206#0" expanded="true" />
+            <element signature="e#21454#21484#0" expanded="true" />
+            <element signature="e#21503#21543#0" expanded="true" />
+            <element signature="e#21842#21872#0" expanded="true" />
+            <element signature="e#21891#21934#0" expanded="true" />
+            <element signature="e#22218#22248#0" expanded="true" />
+            <element signature="e#22267#22308#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.4">
+          <caret line="214" column="52" selection-start-line="214" selection-start-column="52" selection-end-line="214" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4043,13 +4131,32 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26431718">
-          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
-            <element signature="e#1889#1910#0" expanded="true" />
-            <element signature="e#2356#2376#0" expanded="true" />
-            <element signature="e#2718#2739#0" expanded="true" />
+            <element signature="e#3025#3046#0" expanded="true" />
+            <element signature="e#3492#3512#0" expanded="true" />
+            <element signature="e#3854#3875#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33665836">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/Tab1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38372093">
+          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

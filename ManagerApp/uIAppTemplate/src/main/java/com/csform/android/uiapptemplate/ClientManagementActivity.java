@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -14,6 +16,9 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -63,7 +68,8 @@ import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STA
 
 
 
-public class ClientManagementActivity extends ActionBarActivity implements View.OnClickListener, OnHttpReceive{
+public class ClientManagementActivity extends ActionBarActivity
+        implements View.OnClickListener, OnHttpReceive{
 
 
     public static final String LEFT_MENU_OPTION = "com.csform.android.uiapptemplate.LeftMenusActivity";
@@ -86,6 +92,8 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
+
+    SectionsPagerAdapter mSectionsPagerAdapter;
 
     @SuppressLint("NewApi")
     @Override
@@ -110,7 +118,9 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
         SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
         SimpleDateFormat CurMonthFormat = new SimpleDateFormat("MM");
         SimpleDateFormat CurDayFormat = new SimpleDateFormat("dd");
-        String todayDate = CurYearFormat.format(date) + CurMonthFormat.format(date) + CurDayFormat.format(date);
+        String todayDate = CurYearFormat.format(date) +
+                CurMonthFormat.format(date) +
+                CurDayFormat.format(date);
         Log.v("getTodayDate", todayDate);
 
         return todayDate;
@@ -740,5 +750,54 @@ public class ClientManagementActivity extends ActionBarActivity implements View.
     private void DialogProgress(){
         mDialog = ProgressDialog.show(ClientManagementActivity.this, "",
                 "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        Context mContext;
+
+        public SectionsPagerAdapter(Context mContext, FragmentManager fm) {
+            super(fm);
+            this.mContext = mContext;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a DummySectionFragment (defined as a static inner class
+            // below) with the page number as its lone argument.
+            switch (position) {
+                case 0:
+                    return new Tab1(mContext);
+                case 1:
+                    return new Tab2(mContext);
+                case 2:
+                    return new Tab3(mContext);
+                case 3:
+                    return new Tab4(mContext);
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            // Show 2 total pages.
+            return 4;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            Locale l = Locale.getDefault();
+            switch (position) {
+                case 0:
+                    return getString(R.string.title_section1).toUpperCase(l);
+                case 1:
+                    return getString(R.string.title_section2).toUpperCase(l);
+                case 2:
+                    return getString(R.string.title_section3).toUpperCase(l);
+                case 3:
+                    return getString(R.string.title_section4).toUpperCase(l);
+            }
+            return null;
+        }
     }
 }
