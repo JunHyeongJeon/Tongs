@@ -47,7 +47,7 @@ import java.io.InputStream;
 /**
  * Created by JaeCheol on 15. 4. 7..
  */
-public class Tab1 extends Fragment implements View.OnClickListener {
+public class StoreTab extends Fragment implements View.OnClickListener {
 
     Bitmap barcode;
     ImageView barcodeView;

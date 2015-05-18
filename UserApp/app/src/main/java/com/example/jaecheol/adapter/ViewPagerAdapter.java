@@ -12,8 +12,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     CharSequence Titles[]; // This will Store the Titles of the Tabs which are Going to be passed when ViewPagerAdapter is created
     int NumbOfTabs; // Store the number of tabs, this will also be passed when the ViewPagerAdapter is created
 
-    com.example.jaecheol.tab.Tab1 tab1;
-    com.example.jaecheol.tab.Tab2 tab2;
+    com.example.jaecheol.tab.StoreTab storeTab;
+    com.example.jaecheol.tab.TicketTab ticketTab;
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
     public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
@@ -29,9 +29,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         switch(idx)
         {
             case 0:
-                return tab1;
+                return storeTab;
             case 1:
-                return tab2;
+                return ticketTab;
         }
         return null;
     }
@@ -42,15 +42,15 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         if(position == 0) // if the position is 0 we are returning the First tab
         {
-            if(tab1 == null)
-                tab1 = new com.example.jaecheol.tab.Tab1();
-            return tab1;
+            if(storeTab == null)
+                storeTab = new com.example.jaecheol.tab.StoreTab();
+            return storeTab;
         }
         else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
         {
-            if(tab2 == null)
-                tab2 = new com.example.jaecheol.tab.Tab2();
-            return tab2;
+            if(ticketTab == null)
+                ticketTab = new com.example.jaecheol.tab.TicketTab();
+            return ticketTab;
         }
     }
 

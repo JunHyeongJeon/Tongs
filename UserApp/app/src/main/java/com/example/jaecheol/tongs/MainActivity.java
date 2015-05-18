@@ -22,9 +22,9 @@ import android.widget.Toast;
 
 import com.example.jaecheol.adapter.DrawerAdapter;
 import com.example.jaecheol.tab.SlidingTabLayout;
-import com.example.jaecheol.tab.Tab1;
-import com.example.jaecheol.tab.Tab2;
 import com.example.jaecheol.adapter.ViewPagerAdapter;
+import com.example.jaecheol.tab.StoreTab;
+import com.example.jaecheol.tab.TicketTab;
 import com.google.zxing.BarcodeFormat;
 
 import java.io.ByteArrayOutputStream;
@@ -69,8 +69,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     String mobileNumber;
     String uid;
 
-    Tab1 storeTab;
-    Tab2 ticketTab;
+    StoreTab storeTab;
+    TicketTab ticketTab;
 
 
     String sid;
@@ -118,20 +118,13 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
             sid = bundle.get("store").toString();
             Log.d("HELLO", "GCM Data (store) : " + sid);
 
-            Tab2 ticketTab = (Tab2)adapter.getTab(1);
+            TicketTab ticketTab = (TicketTab)adapter.getTab(1);
             if(ticketTab == null)
                 return;
             ticketTab.getWaitingTicket();
         }
 
         pager.setCurrentItem(1, true);
-
-
-
-//        ticketTab.waitingTicket.setStoreName(title);
-//        ticketTab.waitingTicket.setCurrentNum(currentNum);
-//        ticketTab.waitingTicket.setWaitingNum(ticketNum);
-//        ticketTab.showTicketLayout(true);
     }
 
     @Override
@@ -203,8 +196,8 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(pager);
 
-        storeTab = (Tab1)adapter.getTab(0);
-        ticketTab = (Tab2)adapter.getTab(1);
+        storeTab = (StoreTab)adapter.getTab(0);
+        ticketTab = (TicketTab)adapter.getTab(1);
     }
 
 
@@ -267,14 +260,14 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
     private void renewAll()    {
         /* Store Renew */
-        Tab1 storeTab = (Tab1)adapter.getTab(0);
+        StoreTab storeTab = (StoreTab)adapter.getTab(0);
         if(storeTab == null)
             return;
         storeTab.getStoreList(1);
 
 
         /* Ticket Renew */
-        Tab2 ticketTab = (Tab2)adapter.getTab(1);
+        TicketTab ticketTab = (TicketTab)adapter.getTab(1);
         if(ticketTab == null)
             return;
         ticketTab.getWaitingTicket();

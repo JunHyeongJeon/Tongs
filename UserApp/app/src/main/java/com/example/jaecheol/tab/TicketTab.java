@@ -29,7 +29,7 @@ import java.io.InputStream;
 /**
  * Created by JaeCheol on 15. 4. 7..
  */
-public class Tab2 extends Fragment
+public class TicketTab extends Fragment
                   implements View.OnClickListener   {
 
     public WaitingTicket waitingTicket;
