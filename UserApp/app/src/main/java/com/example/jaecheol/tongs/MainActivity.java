@@ -108,42 +108,19 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
     public void processPush(Intent intent)
     {
-        String mdn;
-        String title;
-        String ticketNum;
-        String currentNum;
 
-        if(intent == null)
-        {
-            mdn = "";
-            title = "진국";
-            ticketNum = "13";
-            currentNum = "4";
+        if(intent == null)  {
+            Log.d("HELLO", "GCM Intent Fail");
         }
         else {
-            Bundle b = intent.getBundleExtra("data");
-            b.getStringArray("ticket");
-
-
-//            title = json.getJSONObject("ticket").getString("ticket");
-//            Log.d("Hello", title);
-//            String currentNum = json.getJSONObject("store").getString("current_num");
-//            Log.d("Hello", currentNum);
-//            String storeName = json.getJSONObject("store").getString("brand_name");
-//            Log.d("Hello", storeName);
-
-            // json 값 제대로 읽어와야함
-
-            // 여기서 티켓값 가져오면됨(API로)
-
-            mdn = b.getString("mobile_number");
-            title = b.getString("title");
-            ticketNum = b.getString("ticket_num");
-            currentNum = b.getString("current_num");
-            Log.d("GCM", b.toString());
+            Bundle bundle;
+            bundle = intent.getExtras();
+            Log.d("HELLO", "GCM Data (store) : " + bundle.get("store"));
         }
 
         pager.setCurrentItem(1, true);
+
+
 
 //        ticketTab.waitingTicket.setStoreName(title);
 //        ticketTab.waitingTicket.setCurrentNum(currentNum);

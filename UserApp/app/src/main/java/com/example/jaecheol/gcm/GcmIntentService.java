@@ -93,11 +93,9 @@ public class GcmIntentService extends IntentService {
                 intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
                                     | Intent.FLAG_ACTIVITY_NEW_TASK
                                     | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent2.putExtra("data", extras);
-                //intent2.setData(Uri.parse(extras.toString()));
+//                intent2.putExtra("data", extras);
+                intent2.putExtras(extras);
                 startActivity(intent2);
-                Log.d("123", "END");
-
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
