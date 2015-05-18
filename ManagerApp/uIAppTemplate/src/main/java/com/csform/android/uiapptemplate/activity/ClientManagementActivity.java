@@ -1,4 +1,4 @@
-package com.csform.android.uiapptemplate;
+package com.csform.android.uiapptemplate.activity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,8 +20,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -44,6 +44,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.csform.android.uiapptemplate.R;
+import com.csform.android.uiapptemplate.Tab1;
+import com.csform.android.uiapptemplate.Tab2;
+import com.csform.android.uiapptemplate.Tab3;
+import com.csform.android.uiapptemplate.Tab4;
 import com.csform.android.uiapptemplate.adapter.DrawerAdapter;
 import com.csform.android.uiapptemplate.model.DrawerItem;
 import com.csform.android.uiapptemplate.util.HttpTask;
@@ -94,6 +99,9 @@ public class ClientManagementActivity extends ActionBarActivity
     private CharSequence mTitle;
 
     SectionsPagerAdapter mSectionsPagerAdapter;
+
+    ViewPager mViewPager;
+
 
     @SuppressLint("NewApi")
     @Override
@@ -168,6 +176,13 @@ public class ClientManagementActivity extends ActionBarActivity
         Button mClientAddButton;
         mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener((View.OnClickListener) this);
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(
+                getApplicationContext(), getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
     }
     @Override

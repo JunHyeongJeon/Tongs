@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 import com.csform.android.uiapptemplate.R;
 
-public class ClientMoreInformation extends ActionBarActivity {
+public class ClientMoreInformationActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

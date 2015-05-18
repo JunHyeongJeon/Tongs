@@ -209,9 +209,9 @@
     <string name="title_activity_client_more_information">ClientMoreInformation</string>
 
     <!--Tabbar Title -->
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_section4">Section 4</string>
+    <string name="title_section1">고객대기자리스트</string>
+    <string name="title_section2">지난순번정보</string>
+    <string name="title_section3">지난순번정보</string>
+    <string name="title_section4">others</string>
 
 </resources>

@@ -1,6 +1,5 @@
 package com.csform.android.uiapptemplate;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,13 +15,13 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.csform.android.uiapptemplate.util.ManagementMethod;
+import com.csform.android.uiapptemplate.activity.ClientManagementActivity;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.FloatLabeledEditText;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import org.json.JSONException;
 import org.json.JSONObject;
-import static com.csform.android.uiapptemplate.util.ManagementMethod.isProtocolStatus;
+
 import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
 import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_MANAGER_LOGIN;
 import static com.csform.android.uiapptemplate.util.ManagementValue.TOKEN;
