@@ -101,7 +101,6 @@ public class Tab2 extends Fragment
                 try {
                     JSONObject json = new JSONObject(result);
                     String result_code = json.get("result_code").toString();
-                    Log.d("Hello", result_code);
                     if( "-1".equals(result_code) ) {
                         Toast.makeText(getActivity(),
                                 "대기표가 존재하지 않습니다.",
@@ -111,12 +110,12 @@ public class Tab2 extends Fragment
                     }
 
 //                    String waitingNum = json.getJSONObject("ticket").getString("ticket");
-                    String waitingNum = json.getJSONObject("number").toString();
+                    String waitingNum = json.get("number").toString();
                     Log.d("Hello", waitingNum);
 //                    String currentNum = json.getJSONObject("store").getString("current_num");
-                    String currentNum = json.getJSONObject("last").toString();
+                    String currentNum = json.get("last").toString();
                     Log.d("Hello", currentNum);
-                    String storeName = json.getJSONObject("store").toString();
+                    String storeName = json.get("store").toString();
                     Log.d("Hello", storeName);
 //                    String extraTime = json.getJSONObject("ticket");
 
@@ -195,10 +194,8 @@ public class Tab2 extends Fragment
 
         protected String doInBackground(String... params)
         {
-            Log.d("Hello", "Start");
             InputStream is = getInputStreamFromUrl(params[0]);
 
-            Log.d("Hello", "Get");
             String result = convertStreamToString(is);
 
             return result;
@@ -206,12 +203,12 @@ public class Tab2 extends Fragment
 
         protected void onPostExecute(String result)
         {
+            Log.d("Hello", result);
             if(m_cb != null)
             {
                 m_cb.onRecv(result);
                 return;
             }
-            Log.d("Hello", result);
         }
     }
 

@@ -190,6 +190,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     public void removeStoreList()   {
         adapter.removeList();
+        adapter.notifyDataSetChanged();
     }
 
     public void getStoreList(int storeNum)   {
@@ -200,7 +201,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             /* 로그인 해제 */
         }
 
-        adapter.removeList();
+        removeStoreList();
 
         String url = getText(R.string.api_server)
                 + "user/store/list"

@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
     Tab2 ticketTab;
 
 
-    int sid;
+    String sid;
     int number;
     int createTime;
     int extraTime;
@@ -115,7 +115,13 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
         else {
             Bundle bundle;
             bundle = intent.getExtras();
-            Log.d("HELLO", "GCM Data (store) : " + bundle.get("store"));
+            sid = bundle.get("store").toString();
+            Log.d("HELLO", "GCM Data (store) : " + sid);
+
+            Tab2 ticketTab = (Tab2)adapter.getTab(1);
+            if(ticketTab == null)
+                return;
+            ticketTab.getWaitingTicket();
         }
 
         pager.setCurrentItem(1, true);
@@ -261,13 +267,17 @@ public class MainActivity extends ActionBarActivity //, NavigationDrawerCallback
 
     private void renewAll()    {
         /* Store Renew */
-//        storeTab.removeStoreList();
         Tab1 storeTab = (Tab1)adapter.getTab(0);
         if(storeTab == null)
             return;
         storeTab.getStoreList(1);
-//        storeTab.addDummyList();
+
+
         /* Ticket Renew */
+        Tab2 ticketTab = (Tab2)adapter.getTab(1);
+        if(ticketTab == null)
+            return;
+        ticketTab.getWaitingTicket();
 
     }
 

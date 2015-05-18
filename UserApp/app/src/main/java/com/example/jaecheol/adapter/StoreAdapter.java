@@ -161,6 +161,8 @@ public class StoreAdapter extends BaseAdapter   {
     public void removeList()    {
         for(int i=0; i<5; i++) {
             storeList[i] = new ArrayList<String>();
+//            remove(i);
+//            Log.d("HELLO", "remove index : " + i);
         }
     }
 
