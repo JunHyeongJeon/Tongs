@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="core-3.2.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/uIAppTemplate/libs/core-3.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/managerapp/libs/core-3.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
