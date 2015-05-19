@@ -1,7 +1,6 @@
 package com.example.jaecheol.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jaecheol.tongs.CouponDetailActivity;
 import com.example.jaecheol.tongs.R;
 
 import java.util.ArrayList;
@@ -22,11 +20,8 @@ public class CouponAdapter extends BaseAdapter  {
     // 문자열을 보관 할 ArrayList
     private ArrayList<String> couponList[] = new ArrayList[5];
 
-    Context context;
-
     // 생성자
-    public CouponAdapter(Context _context) {
-        context = _context;
+    public CouponAdapter() {
 
         for(int i=0; i<5; i++) {
             couponList[i] = new ArrayList<String>();
@@ -103,9 +98,10 @@ public class CouponAdapter extends BaseAdapter  {
 
 
                 String couponId = couponList[0].get(pos);
-                Intent intent = new Intent(context, CouponDetailActivity.class);
-                intent.putExtra("coupon_id", couponId);
-                context.startActivity(intent);
+                Toast.makeText(context, "Coupon Id : " + couponId + "Click", Toast.LENGTH_SHORT);
+//                Intent intent = new Intent(context, CouponDetailActivity.class);
+//                intent.putExtra("coupon_id", couponId);
+//                context.startActivity(intent);
             }
         });
 
