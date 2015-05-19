@@ -154,7 +154,6 @@ public class TicketTab extends Fragment
     }
 
 
-
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
         try{
