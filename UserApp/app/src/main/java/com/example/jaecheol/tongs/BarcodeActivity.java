@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
 /**
@@ -17,11 +18,14 @@ public class BarcodeActivity extends ActionBarActivity  {
 
     ImageView barcodeView;
 
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         barcodeActivityInit();
+        setToolbar();
     }
 
     private void barcodeActivityInit() {
@@ -34,5 +38,15 @@ public class BarcodeActivity extends ActionBarActivity  {
 
         barcodeView = (ImageView)findViewById(R.id.id_barcodeView);
         barcodeView.setImageBitmap(barcode);
+    }
+
+    private void setToolbar() {
+
+        // Creating The Toolbar and setting it as the Toolbar for the activity
+        toolbar = (Toolbar) findViewById(R.id.toolbar_barcode);
+        toolbar.setTitle("");
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 }

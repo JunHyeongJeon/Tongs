@@ -61,9 +61,6 @@ public class TicketTab extends Fragment
         waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
         noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
 
-        refreshButton = (Button)v.findViewById(R.id.id_refreshButton);
-        refreshButton.setOnClickListener(this);
-
         waitingTicket.expectTime = (TextView)v.findViewById(R.id.id_expectText);
         waitingTicket.currentNum = (TextView)v.findViewById(R.id.id_currentText);
         waitingTicket.storeName =  (TextView)v.findViewById(R.id.id_storeNameText);
@@ -136,9 +133,6 @@ public class TicketTab extends Fragment
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.id_refreshButton:
-                getWaitingTicket();
-                break;
         }
     }
 

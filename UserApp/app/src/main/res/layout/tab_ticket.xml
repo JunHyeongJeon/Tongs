@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="320dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout">
             <ImageView
@@ -28,7 +28,7 @@
         android:layout_height="329dp"
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/id_noWaitTicketLayout">
 
         <ImageView
@@ -67,7 +67,7 @@
         android:layout_height="329dp"
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:id="@+id/id_waitTicketLayout">
 
         <ImageView
@@ -175,19 +175,19 @@
     </RelativeLayout>
 
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/btn_solid"
-        android:textColor="#ffffff"
-        android:text="대기표 갱신"
-        android:id="@+id/id_refreshButton"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp" />
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="50dp"-->
+        <!--android:layout_marginRight="50dp"-->
+        <!--android:background="@drawable/btn_solid"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:text="대기표 갱신"-->
+        <!--android:id="@+id/id_refreshButton"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="41dp" />-->
 
 
 </RelativeLayout>

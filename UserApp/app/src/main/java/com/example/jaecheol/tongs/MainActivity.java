@@ -3,6 +3,7 @@ package com.example.jaecheol.tongs;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -46,7 +47,7 @@ public class MainActivity extends ActionBarActivity
 
     /* drawer variable */
     String TITLES[] = { "나의 쿠폰" };
-    int ICONS[] = { R.mipmap.ic_launcher };
+    int ICONS[] = { R.drawable.coupon_icon };
 
     String NAME = "Jaecheol GOD";
     String EMAIL = "jcgod413@gmail.com";
@@ -85,7 +86,7 @@ public class MainActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //title = savedInstanceState.getString("title", null);
+        registerBarcode();
 
         getDataFromSharedPref();
         setToolbar();
@@ -248,9 +249,14 @@ public class MainActivity extends ActionBarActivity
 
     public void registerBarcode()    {
 
+        if( currentNum <= 0 )   {
+            barcode = BitmapFactory.decodeResource(getResources(), R.drawable.no_num);
+            currentNum = 0;
+            return;
+        }
+
         try {
             String barcodeContents = mobileNumber + "_" + uid + "_" + currentNum;
-            Log.d("HELLO", barcodeContents);
             barcode = barcodeGenerator.encodeAsBitmap(barcodeContents, BarcodeFormat.CODE_128, 600, 400);
         } catch (Exception e) {
             e.printStackTrace();
@@ -323,37 +329,33 @@ public class MainActivity extends ActionBarActivity
             switch (msg.what)
             {
                 case 11:
-                    Log.d("HELLO", "PLUS");
                     currentNum++;
                     registerBarcode();
 
                     mAdapter = new DrawerAdapter(TITLES, ICONS, currentNum, barcode, handler);
                     mRecyclerView.setAdapter(mAdapter);
-
                     break;
+
                 case 12:
-                    Log.d("HELLO", "MINUS");
-                    if( currentNum > 0 ) {
-                        currentNum--;
-                        registerBarcode();
+                    currentNum--;
+                    registerBarcode();
 
-                        mAdapter = new DrawerAdapter(TITLES, ICONS, currentNum, barcode, handler);
-                        mRecyclerView.setAdapter(mAdapter);
-                    }
+                    mAdapter = new DrawerAdapter(TITLES, ICONS, currentNum, barcode, handler);
+                    mRecyclerView.setAdapter(mAdapter);
                     break;
+
                 case 21:
-                    if( currentNum == 0 ) {
-                        return;
+                    if( currentNum > 0 ) {
+                        intent = new Intent(MainActivity.this, BarcodeActivity.class);
+
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        barcode.compress(Bitmap.CompressFormat.PNG, 100, baos);
+
+                        intent.putExtra("barcode", baos.toByteArray());
+                        startActivity(intent);
                     }
-
-                    intent = new Intent(MainActivity.this, BarcodeActivity.class);
-
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    barcode.compress(Bitmap.CompressFormat.PNG, 100, baos);
-
-                    intent.putExtra("barcode", baos.toByteArray());
-                    startActivity(intent);
                     break;
+
                 case 22:
                     intent = new Intent(MainActivity.this, CouponActivity.class);
                     startActivity(intent);

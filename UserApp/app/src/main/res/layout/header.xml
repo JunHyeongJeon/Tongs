@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="178dp"
     android:id="@+id/id_drawerTop"
-    android:background="@drawable/profile_background"
+    android:background="@drawable/no_num"
     android:orientation="vertical"
     android:weightSum="1">
 
