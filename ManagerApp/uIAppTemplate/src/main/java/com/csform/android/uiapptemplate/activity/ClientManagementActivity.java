@@ -101,9 +101,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     public ImageView mClientTicket;
 
-    SectionsPagerAdapter mSectionsPagerAdapter;
-
-    ViewPager mViewPager;
 
 
     @SuppressLint("NewApi")
@@ -120,23 +117,8 @@ public class ClientManagementActivity extends ActionBarActivity
         viewTicketList();
 
 
-
-
     }
-    public String getTodayDate(){
-        long now = System.currentTimeMillis();
-        Date date = new Date(now);
-        SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
-        SimpleDateFormat CurMonthFormat = new SimpleDateFormat("MM");
-        SimpleDateFormat CurDayFormat = new SimpleDateFormat("dd");
-        String todayDate = CurYearFormat.format(date) +
-                CurMonthFormat.format(date) +
-                CurDayFormat.format(date);
-        Log.v("getTodayDate", todayDate);
 
-        return todayDate;
-
-    }
     private void setContentView(Bundle savedInstanceState){
         setContentView(R.layout.activity_client_management);
 
@@ -180,12 +162,22 @@ public class ClientManagementActivity extends ActionBarActivity
         mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(
-                getApplicationContext(), getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+    }
+
+    public String getTodayDate(){
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
+        SimpleDateFormat CurMonthFormat = new SimpleDateFormat("MM");
+        SimpleDateFormat CurDayFormat = new SimpleDateFormat("dd");
+        String todayDate = CurYearFormat.format(date) +
+                CurMonthFormat.format(date) +
+                CurDayFormat.format(date);
+        Log.v("getTodayDate", todayDate);
+
+        return todayDate;
 
     }
     @Override
@@ -206,13 +198,14 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_linked_in,
-                        R.string.drawer_title_linked_in,
+                        R.string.drawer_title_setting,
                         DrawerItem.DRAWER_ITEM_TAG_LINKED_IN));
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_blog,
-                        R.string.drawer_title_blog,
+                        R.string.drawer_title_before_client_data,
                         DrawerItem.DRAWER_ITEM_TAG_BLOG));
+        /*
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_git_hub,
@@ -222,7 +215,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 new DrawerItem(
                         R.string.drawer_icon_instagram,
                         R.string.drawer_title_instagram,
-                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
+                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));*/
     }
 
 
@@ -277,6 +270,10 @@ public class ClientManagementActivity extends ActionBarActivity
         // minus 1 because we have header that has 0 position
         if (position < 1) { //because we have header, we skip clicking on it
             return;
+        }
+        if( position == 1){
+            moveActivity();
+
         }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
         Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
@@ -769,52 +766,11 @@ public class ClientManagementActivity extends ActionBarActivity
                 "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
-        Context mContext;
+    private void moveActivity(){
+        Intent intent = new Intent(this, PreviousSequenceInformation.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 
-        public SectionsPagerAdapter(Context mContext, FragmentManager fm) {
-            super(fm);
-            this.mContext = mContext;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a DummySectionFragment (defined as a static inner class
-            // below) with the page number as its lone argument.
-            switch (position) {
-                case 0:
-                    return new Tab1(mContext);
-                case 1:
-                    return new Tab2(mContext);
-                case 2:
-                    return new Tab3(mContext);
-                case 3:
-                    return new Tab4(mContext);
-            }
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            // Show 2 total pages.
-            return 4;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-                case 3:
-                    return getString(R.string.title_section4).toUpperCase(l);
-            }
-            return null;
-        }
     }
+
 }

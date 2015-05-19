@@ -50,7 +50,8 @@
     <string name="drawer_title_blog">Blog</string>
     <string name="drawer_title_git_hub">GitHub</string>
     <string name="drawer_title_instagram">Instagram</string>
-    
+    <string name="drawer_title_setting">설정</string>
+    <string name="drawer_title_before_client_data">지난 순번 정보</string>
     <!-- Fontello icons -->
     <string name="fontello_logo">&#xe802;</string>
     <string name="fontello_search">&#xe816;</string>
@@ -213,5 +214,6 @@
     <string name="title_section2">지난순번정보</string>
     <string name="title_section3">지난순번정보</string>
     <string name="title_section4">others</string>
+    <string name="title_activity_previous_sequence_information">PreviousSequenceInformation</string>
 
 </resources>
