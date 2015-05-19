@@ -334,7 +334,8 @@ public class AnimatedExpandableListView extends ExpandableListView {
          * Override {@link #getChildView(int, int, boolean, View, ViewGroup)} instead.
          */
         @Override
-        public final View getChildView(final int groupPosition, int childPosition, boolean isLastChild, View convertView, final ViewGroup parent) {
+        public final View getChildView(final int groupPosition, int childPosition,
+                                       boolean isLastChild, View convertView, final ViewGroup parent) {
             final GroupInfo info = getGroupInfo(groupPosition);
 
             if (info.animating) {

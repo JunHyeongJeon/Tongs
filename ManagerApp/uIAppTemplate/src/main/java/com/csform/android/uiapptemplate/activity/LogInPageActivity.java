@@ -22,9 +22,8 @@ import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
-import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_MANAGER_LOGIN;
-import static com.csform.android.uiapptemplate.util.ManagementValue.TOKEN;
+import static com.csform.android.uiapptemplate.util.GlobalVar.PROTOCOL_STATUS_MANAGER_LOGIN;
+import static com.csform.android.uiapptemplate.util.GlobalVar.TOKEN;
 
 
 
@@ -50,8 +49,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 		super.onCreate(savedInstanceState);
 
         setContentView();
-        Preference pref = new Preference(this);
-
+        Preference pref = Preference.getInstance();
         mloginKeep.setChecked(pref.getValue(ISAUTOLOGIN, false));
 
         if(mloginKeep.isChecked())
@@ -60,7 +58,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
 
     @Override
-    public void onReceive(String data) {
+    public void onReceive(int protocol, String data) {
         if(null != mDialog)
             mDialog.dismiss();
         Log.v("OnReceive/Login", data);
@@ -74,7 +72,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
                 String resultCode = json.optString("result_code", null);
                 String token = json.optString(TOKEN, null);
-                Preference pref = new Preference(this);
+                Preference pref = Preference.getInstance();
                 pref.put(TOKEN, token);
 
 
@@ -95,12 +93,12 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
     }
 
-    void requestOnUIThread(final String url)
+    void requestOnUIThread(final int protocol, final String url)
     {
         final OnHttpReceive onReceive = this;
         this.runOnUiThread(new Runnable() {
             public void run() {
-                new com.csform.android.uiapptemplate.util.HttpTask(onReceive).execute(url);
+                new com.csform.android.uiapptemplate.util.HttpTask(protocol, onReceive).execute(url);
             }
         });
     }
@@ -186,7 +184,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
     }
     private void setAutoLogin(){
-        Preference pref = new Preference(this);
+        Preference pref = Preference.getInstance();
         if(mloginKeep.isChecked()) {
             Log.v("isCheck","true");
 
@@ -200,7 +198,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         }
     }
     private void doAutoLogin(){
-        Preference pref = new Preference(this);
+        Preference pref = Preference.getInstance();
         String id = pref.getValue(ID, "");
         String password = pref.getValue(PASSWORD, "");
         mEmailView.setText(id);
@@ -220,11 +218,11 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         else
         {
             progressDialog();
-            setProtocolStatus(PROTOCOL_STATUS_MANAGER_LOGIN);
+//            setProtocolStatus(PROTOCOL_STATUS_MANAGER_LOGIN);
             String url = getString(R.string.api_server) + getString(R.string.api_store_login)
                     + "email=" + id + "&password=" + password;
             Log.v("LoginAc/doLogin", url);
-            requestOnUIThread(url);
+            requestOnUIThread(PROTOCOL_STATUS_MANAGER_LOGIN, url);
         }
     }
     private void progressDialog(){

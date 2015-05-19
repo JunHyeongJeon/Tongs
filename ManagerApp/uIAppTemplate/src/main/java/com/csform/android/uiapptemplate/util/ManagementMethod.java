@@ -5,17 +5,26 @@ package com.csform.android.uiapptemplate.util;
  */
 public class ManagementMethod {
 
+    static private ManagementMethod g_this;
 
-    public static int mProtocolStatus;
+    public int mProtocolStatus;
 
-    public static void setProtocolStatus(int status) {
+    public void setProtocolStatus(int status) {
         mProtocolStatus = status;
     }
-    public static int getProtocolStatus() {
+
+    public int getProtocolStatus() {
         return mProtocolStatus;
     }
-    public static boolean isProtocolStatus(int status) {
+    public boolean isProtocolStatus(int status) {
         return mProtocolStatus == status ? true : false;
+    }
+
+    public static ManagementMethod getInstance()
+    {
+        if(g_this == null)
+            g_this = new ManagementMethod();
+        return g_this;
     }
 
 }

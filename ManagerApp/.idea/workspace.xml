@@ -26,15 +26,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_previous_sequence_information.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/PreviousSequenceInformation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/menu/menu_previous_sequence_information.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/grey_title_bar_shape_button.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/ticket_button_shape.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementValue.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/GlobalVar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/AnimatedExpandableListView.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/AnimatedExpandableListView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementMethod.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementMethod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/OnHttpReceive.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/OnHttpReceive.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Preference.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Preference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/SplashScreensActivity.java" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/SplashScreensActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/group_item.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/group_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" />
     </list>
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,64 +127,8 @@
       <file leaf-file-name="LogInPageActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="252" column="5" selection-start-line="247" selection-start-column="3" selection-end-line="252" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="287" column="5" selection-start-line="287" selection-start-column="5" selection-end-line="287" selection-end-column="5" />
-              <folding>
-                <element signature="e#25348#25349#0" expanded="true" />
-                <element signature="e#25392#25393#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="166" column="31" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LeftMenusActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LeftMenusActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PreviousSequenceInformation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/PreviousSequenceInformation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.111111">
+              <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,11 +136,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_previous_sequence_information.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_previous_sequence_information.xml">
+      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32618025">
+              <caret line="476" column="11" selection-start-line="476" selection-start-column="11" selection-end-line="476" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4258#4278#0" expanded="true" />
+                <element signature="e#4296#4317#0" expanded="true" />
+                <element signature="e#6012#6013#0" expanded="true" />
+                <element signature="e#6067#6068#0" expanded="true" />
+                <element signature="e#6245#6275#0" expanded="true" />
+                <element signature="e#6301#6330#0" expanded="true" />
+                <element signature="e#6478#6503#0" expanded="true" />
+                <element signature="e#6529#6569#0" expanded="true" />
+                <element signature="e#10419#10455#0" expanded="true" />
+                <element signature="e#10544#10582#0" expanded="true" />
+                <element signature="e#10620#10668#0" expanded="true" />
+                <element signature="e#14335#14365#0" expanded="true" />
+                <element signature="e#14368#14409#0" expanded="true" />
+                <element signature="e#14547#15067#0" expanded="true" />
+                <element signature="e#15066#15067#0" expanded="true" />
+                <element signature="e#15207#15237#0" expanded="true" />
+                <element signature="e#15240#15280#0" expanded="true" />
+                <element signature="e#15390#15910#0" expanded="true" />
+                <element signature="e#15909#15910#0" expanded="true" />
+                <element signature="e#16113#16143#0" expanded="true" />
+                <element signature="e#16162#16205#0" expanded="true" />
+                <element signature="e#16333#16853#0" expanded="true" />
+                <element signature="e#16852#16853#0" expanded="true" />
+                <element signature="e#17042#17072#0" expanded="true" />
+                <element signature="e#17091#17132#0" expanded="true" />
+                <element signature="e#17302#24098#0" expanded="true" />
+                <element signature="e#17993#18004#0" expanded="true" />
+                <element signature="e#19491#19502#0" expanded="true" />
+                <element signature="e#21636#22310#0" expanded="true" />
+                <element signature="e#22309#22310#0" expanded="true" />
+                <element signature="e#22370#23121#0" expanded="true" />
+                <element signature="e#23120#23121#0" expanded="true" />
+                <element signature="e#24097#24098#0" expanded="true" />
+                <element signature="e#25302#25438#0" expanded="true" />
+                <element signature="e#25437#25438#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExpandableListView.java" pinned="false" current-in-tab="false">
+        <entry file="file:///ADT/sdk/sources/android-21/android/widget/ExpandableListView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="841" column="24" selection-start-line="841" selection-start-column="24" selection-end-line="841" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/list_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.862069">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -201,11 +206,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_main.xml">
+      <file leaf-file-name="group_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/group_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="15" />
+            <state vertical-scroll-proportion="-7.37931">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-43.931034">
+              <caret line="139" column="0" selection-start-line="71" selection-start-column="20" selection-end-line="139" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -223,6 +241,7 @@
         <option value="layoutResourceFile_vertical" />
         <option value="Class" />
         <option value="resourceFile" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -2895,7 +2914,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/SignUpActivityFirst.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/colors_material.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/login_button.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/colors.xml" />
@@ -2905,21 +2923,16 @@
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_splash_screen.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/action_bar_centor.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/fragment/LogInPageFragment.java" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Preference.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_login_page_light.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Martaz.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/SignUpActivityThird.java" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/OnHttpReceive.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/raw/error" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/assets/error" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/action_bar_login.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/action_bar_client_management.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/SplashScreensActivity.java" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementMethod.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LogInPageActivity.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_more_information.xml" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementValue.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_expandable_list_view.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LeftMenusActivity.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/MainActivity.java" />
@@ -2934,13 +2947,24 @@
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/client_call_button_shape.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/client_more_infomation_button_shape.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/AnimatedExpandableListView.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/PreviousSequenceInformation.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_previous_sequence_information.xml" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/AnimatedExpandableListView.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/grey_title_bar_shape_button.xml" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/ticket_button_shape.xml" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/group_item.xml" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Preference.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/SplashScreensActivity.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementMethod.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ITest.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementValue.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/OnHttpReceive.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java" />
+        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java" />
       </list>
     </option>
   </component>
@@ -2989,8 +3013,9 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3067,6 +3092,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uIAppTemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3105,7 +3156,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tab" />
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uIAppTemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uiapptemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3145,7 +3230,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3156,7 +3240,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0ca80414" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_19" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/uIAppTemplate/libs/google-play-services.jar" />
     <property name="android.project.structure.last.selected" value="uIAppTemplate" />
@@ -3458,36 +3542,36 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31891027" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20833333" sideWeight="0.5791599" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257329" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2374798" sideWeight="0.3696145" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23878205" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27323008" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2956381" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32051283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31969026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3974359" sideWeight="0.5791599" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2374798" sideWeight="0.3696145" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23878205" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3682,99 +3766,244 @@
           <properties />
           <option name="timeStamp" value="98" />
         </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java</url>
-          <line>104</line>
-          <properties />
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="181" />
+      <option name="time" value="183" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java">
+    <entry file="file:///ADT/sdk/sources/android-21/java/io/InputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="252" column="5" selection-start-line="247" selection-start-column="3" selection-end-line="252" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="1.2091503">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java">
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_expandable_list_view.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="287" column="5" selection-start-line="287" selection-start-column="5" selection-end-line="287" selection-end-column="5" />
-          <folding>
-            <element signature="e#25348#25349#0" expanded="true" />
-            <element signature="e#25392#25393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="166" column="31" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LeftMenusActivity.java">
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/list_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0625">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_parallax.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/sources/android-21/android/widget/FrameLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/header_navigation_drawer_2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37250996">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/font/RobotoTextView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/sources/android-21/android/widget/ListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="463" column="16" selection-start-line="463" selection-start-column="16" selection-end-line="463" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/fragment/SplashScreensFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2542373">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2261904">
+          <caret line="263" column="5" selection-start-line="263" selection-start-column="5" selection-end-line="263" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2259887">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/model/DrawerItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14124294">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/header_navigation_drawer_1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56772906">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/platforms/android-21/data/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36158192">
+          <caret line="793" column="28" selection-start-line="793" selection-start-column="27" selection-end-line="793" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///ADT/sdk/extras/android/m2repository/com/android/support/support-v4/21.0.3/support-v4-21.0.3-sources.jar!/android/support/v4/app/FragmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34651163">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/toolbar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37406483">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/StoreManagementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12765957">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/PreviousSequenceInformation.java">
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/this_turn_button_shape.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.51724136">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_previous_sequence_information.xml">
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/before_after_button_shape.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/client_call_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92610836">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/client_more_infomation_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.036945812">
+          <caret line="1" column="93" selection-start-line="1" selection-start-column="93" selection-end-line="1" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/uIAppTemplate/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar!/android/support/v7/app/ActionBarActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23622048">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36945814">
+          <caret line="27" column="62" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientMoreInformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7758621">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/sources/android-21/android/app/ActionBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33251232">
+          <caret line="133" column="28" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/menu/menu_previous_sequence_information.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/tab/Tab2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49118388">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50268817">
+          <caret line="54" column="27" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/tab/Tab1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49118388">
+          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_tabs1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.9701085">
+          <caret line="171" column="46" selection-start-line="5" selection-start-column="1" selection-end-line="171" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -3791,6 +4020,232 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_previous_sequence_information.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/PreviousSequenceInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#5846#5847#0" expanded="false" />
+            <element signature="e#5901#5902#0" expanded="false" />
+            <element signature="e#7112#7113#0" expanded="false" />
+            <element signature="e#7156#7157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="57" selection-start-line="164" selection-start-column="57" selection-end-line="164" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LeftMenusActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/view/AnimatedExpandableListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6666667">
+          <caret line="244" column="62" selection-start-line="244" selection-start-column="33" selection-end-line="244" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/grey_title_bar_shape_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/list_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.862069">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/Preference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.524173">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/SplashScreensActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7744565">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/sources/android-21/android/widget/ExpandableListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="841" column="24" selection-start-line="841" selection-start-column="24" selection-end-line="841" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/drawable/ticket_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99236643">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_management.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-43.931034">
+          <caret line="139" column="0" selection-start-line="71" selection-start-column="20" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/group_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.37931">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1908397">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/OnHttpReceive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16778524">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/LogInPageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.111111">
+          <caret line="168" column="36" selection-start-line="168" selection-start-column="36" selection-end-line="168" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/ManagementMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5063291">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/GlobalVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8227848">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/util/HttpTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46566522">
+          <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+          <folding>
+            <element signature="method#remoteSyncHttp#0;class#HttpTask#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/activity/ClientManagementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32618025">
+          <caret line="476" column="11" selection-start-line="476" selection-start-column="11" selection-end-line="476" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4258#4278#0" expanded="true" />
+            <element signature="e#4296#4317#0" expanded="true" />
+            <element signature="e#6012#6013#0" expanded="true" />
+            <element signature="e#6067#6068#0" expanded="true" />
+            <element signature="e#6245#6275#0" expanded="true" />
+            <element signature="e#6301#6330#0" expanded="true" />
+            <element signature="e#6478#6503#0" expanded="true" />
+            <element signature="e#6529#6569#0" expanded="true" />
+            <element signature="e#10419#10455#0" expanded="true" />
+            <element signature="e#10544#10582#0" expanded="true" />
+            <element signature="e#10620#10668#0" expanded="true" />
+            <element signature="e#14335#14365#0" expanded="true" />
+            <element signature="e#14368#14409#0" expanded="true" />
+            <element signature="e#14547#15067#0" expanded="true" />
+            <element signature="e#15066#15067#0" expanded="true" />
+            <element signature="e#15207#15237#0" expanded="true" />
+            <element signature="e#15240#15280#0" expanded="true" />
+            <element signature="e#15390#15910#0" expanded="true" />
+            <element signature="e#15909#15910#0" expanded="true" />
+            <element signature="e#16113#16143#0" expanded="true" />
+            <element signature="e#16162#16205#0" expanded="true" />
+            <element signature="e#16333#16853#0" expanded="true" />
+            <element signature="e#16852#16853#0" expanded="true" />
+            <element signature="e#17042#17072#0" expanded="true" />
+            <element signature="e#17091#17132#0" expanded="true" />
+            <element signature="e#17302#24098#0" expanded="true" />
+            <element signature="e#17993#18004#0" expanded="true" />
+            <element signature="e#19491#19502#0" expanded="true" />
+            <element signature="e#21636#22310#0" expanded="true" />
+            <element signature="e#22309#22310#0" expanded="true" />
+            <element signature="e#22370#23121#0" expanded="true" />
+            <element signature="e#23120#23121#0" expanded="true" />
+            <element signature="e#24097#24098#0" expanded="true" />
+            <element signature="e#25302#25438#0" expanded="true" />
+            <element signature="e#25437#25438#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

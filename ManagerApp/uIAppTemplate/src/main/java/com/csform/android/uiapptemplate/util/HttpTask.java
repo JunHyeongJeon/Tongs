@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.csform.android.uiapptemplate.R;
 
+import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -24,12 +25,17 @@ import java.net.URL;
  * Created by jun on 15. 5. 2..
  */
 public class HttpTask extends AsyncTask<String, Void, String>{
+
+    int m_protocol;
     OnHttpReceive mHttpReceive;
     private int mServerError;
     public static final int MAXNETWORKEXCEPTIONCOUNT = 5;
 
-    public HttpTask(OnHttpReceive httpReceive)
+    String mContentType;
+
+    public HttpTask(int protocol, OnHttpReceive httpReceive)
     {
+        m_protocol = protocol;
         mHttpReceive = httpReceive;
     }
     protected String doInBackground(String... params)
@@ -37,7 +43,11 @@ public class HttpTask extends AsyncTask<String, Void, String>{
         InputStream is = getInputStreamFromUrl(params[0]);
 
         String result = "Error";
-        if(mServerError < MAXNETWORKEXCEPTIONCOUNT)
+        if(mServerError >= MAXNETWORKEXCEPTIONCOUNT)
+            return result;
+
+        String type = mContentType;
+        if(type != null && type.indexOf("text") != -1)
             result = convertStreamToString(is);
 
         return result;
@@ -50,7 +60,7 @@ public class HttpTask extends AsyncTask<String, Void, String>{
             Log.v("HttpTask/onPostExecute","mHttpReceive is not null");
             return;
         }
-        mHttpReceive.onReceive(result);
+        mHttpReceive.onReceive(m_protocol, result);
 
     }
     private static String convertStreamToString(InputStream is)
@@ -100,6 +110,10 @@ public class HttpTask extends AsyncTask<String, Void, String>{
         try{
             HttpClient httpclient = new DefaultHttpClient();
             HttpResponse response = httpclient.execute(new HttpGet(url));
+
+            Header hdr = response.getEntity().getContentType();
+            mContentType = hdr.getValue();
+
             content = response.getEntity().getContent();
             status = response.getStatusLine().getStatusCode();
             Log.v("HtttpTask/InPutStream",content.toString()+" "+status);

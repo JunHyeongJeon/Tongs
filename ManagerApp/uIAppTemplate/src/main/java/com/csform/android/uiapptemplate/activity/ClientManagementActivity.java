@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -15,13 +14,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -46,14 +40,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csform.android.uiapptemplate.R;
-import com.csform.android.uiapptemplate.tab.Tab1;
-import com.csform.android.uiapptemplate.tab.Tab2;
-import com.csform.android.uiapptemplate.tab.Tab3;
-import com.csform.android.uiapptemplate.tab.Tab4;
 import com.csform.android.uiapptemplate.adapter.DrawerAdapter;
 import com.csform.android.uiapptemplate.model.DrawerItem;
 import com.csform.android.uiapptemplate.util.HttpTask;
 import com.csform.android.uiapptemplate.util.ImageUtil;
+import com.csform.android.uiapptemplate.util.GlobalVar;
 import com.csform.android.uiapptemplate.util.OnHttpReceive;
 import com.csform.android.uiapptemplate.util.Preference;
 import com.csform.android.uiapptemplate.view.AnimatedExpandableListView;
@@ -63,19 +54,9 @@ import com.csform.android.uiapptemplate.view.AnimatedExpandableListView.Animated
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import static com.csform.android.uiapptemplate.util.ManagementMethod.isProtocolStatus;
-import static com.csform.android.uiapptemplate.util.ManagementMethod.setProtocolStatus;
-import static com.csform.android.uiapptemplate.util.ManagementValue.TOKEN;
-import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_GET_LIST;
-import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_ADD;
-import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_CALL;
-import static com.csform.android.uiapptemplate.util.ManagementValue.PROTOCOL_STATUS_USER_CANCLE;
-
-
-
 
 public class ClientManagementActivity extends ActionBarActivity
-        implements View.OnClickListener, OnHttpReceive{
+        implements View.OnClickListener, GlobalVar {
 
 
     public static final String LEFT_MENU_OPTION = "com.csform.android.uiapptemplate.LeftMenusActivity";
@@ -109,7 +90,8 @@ public class ClientManagementActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(savedInstanceState);
 
-        Preference pref = new Preference(this);
+
+        Preference pref = Preference.getInstance();
         mToken = pref.getValue(TOKEN,"");
         mTodayDate = getTodayDate();
 
@@ -271,7 +253,7 @@ public class ClientManagementActivity extends ActionBarActivity
         if (position < 1) { //because we have header, we skip clicking on it
             return;
         }
-        if( position == 1){
+        if( position == 2){
             moveActivity();
 
         }
@@ -307,162 +289,14 @@ public class ClientManagementActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /*
     @Override
-    public void onReceive(String data) {
+    public void onReceive(int protocol, String data) {
         Log.v("ClientMa/onReceive",data);
 
-        try {
-            JSONObject json = new JSONObject(data);
 
-            String result_code = json.optString("result_code", null);
-            boolean isSuccess = "0".equals(result_code) ? true : false;
-
-
-            if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_GET_LIST)) {
-                Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
-
-                JSONArray jsonArr = json.optJSONArray("list");
-                if (jsonArr == null) {
-                    List<GroupItem> items = new ArrayList<GroupItem>();
-
-                    GroupItem item = new GroupItem();
-                    item.title = "대기열에 아무도 없습니다.";
-                    items.add(item);
-
-                    ExampleAdapter adapter = new ExampleAdapter(this);
-                    adapter.setData(items);
-
-                    listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
-                    listView.setAdapter(adapter);
-
-                    Display display = getWindowManager().getDefaultDisplay();
-                    Point size = new Point();
-                    display.getSize(size);
-                    int width = size.x;
-                    Resources r = getResources();
-                    int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                            50, r.getDisplayMetrics());
-                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                        listView.setIndicatorBounds(width - px, width);
-                    } else {
-                        listView.setIndicatorBoundsRelative(width - px, width);
-                    }
-
-                    return;
-                }
-
-                int ticketLen = jsonArr.length();
-
-                List<GroupItem> items = new ArrayList<GroupItem>();
-
-                final String index[] = new String[ticketLen];
-                for (int i = 0; i < ticketLen; i++) {
-
-                    JSONObject obj = jsonArr.optJSONObject(i);
-                    if (obj == null)
-                        break;
-
-                    String id = obj.optString("id", null);
-                    String owner = obj.optString("owner", null);
-                    String store = obj.optString("store", null);
-                    String pivot = obj.optString("pivot", null);
-                    String status = obj.optString("status", null);
-                    String time = obj.optString("time", null);
-
-                    index[i] = id;
-
-                    // 레코드 생성 및 추가
-
-                    GroupItem item = new GroupItem();
-
-                    item.title = "ID : " + id + "\n"
-                            + "owner : " + owner + "\n"
-                            + "status : " + status + "\n";
-
-
-
-                    ChildItem child = new ChildItem();
-                    child.title = "호출";
-
-                    item.items.add(child);
-                    child = new ChildItem();
-                    child.title = "대기열 삭제";
-
-
-                    item.items.add(child);
-                    child = new ChildItem();
-                    child.title = "고객 상세정보";
-
-                    item.items.add(child);
-
-                    items.add(item);
-                }
-
-                ExampleAdapter adapter = new ExampleAdapter(this);
-                adapter.setData(items);
-
-                listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
-                listView.setAdapter(adapter);
-
-                // In order to show animations, we need to use a custom click handler
-                // for our ExpandableListView.
-                listView.setOnGroupClickListener(new OnGroupClickListener() {
-
-                    @Override
-                    public boolean onGroupClick(ExpandableListView parent, View v,
-                                                int groupPosition, long id) {
-                        if (listView.isGroupExpanded(groupPosition)) {
-                            listView.collapseGroupWithAnimation(groupPosition);
-                        } else {
-                            listView.expandGroupWithAnimation(groupPosition);
-                        }
-                        return true;
-                    }
-
-                });
-                listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-                    @Override
-                    public boolean onChildClick(ExpandableListView parent, View v,
-                                                int groupPosition, int childPosition , long id) {
-                        Log.v("ClickgroupPosition", String.valueOf(groupPosition));
-                        Log.v("ClickchildPosition", String.valueOf(childPosition));
-                        Log.v("onClick", index[groupPosition]);
-
-                        popDialog(setDialogMent(childPosition), childPosition, index[groupPosition]);
-                        return false;
-                    }
-                });
-
-
-
-                // Set indicator (arrow) to the right
-                Display display = getWindowManager().getDefaultDisplay();
-                Point size = new Point();
-                display.getSize(size);
-                int width = size.x;
-                Resources r = getResources();
-                int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                        50, r.getDisplayMetrics());
-                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                    listView.setIndicatorBounds(width - px, width);
-                } else {
-                    listView.setIndicatorBoundsRelative(width - px, width);
-                }
-
-
-            }
-            else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_ADD)) {
-                getTicketList();
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CALL)) {
-                getTicketList();
-            } else if (isSuccess && isProtocolStatus(PROTOCOL_STATUS_USER_CANCLE)) {
-                getTicketList();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
+    */
     private String setDialogMent(int status){
         String ment;
         if(status == PROTOCOL_STATUS_USER_CALL) {
@@ -601,40 +435,76 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private void pushTicket(String user, String people){
 
-        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
+//        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
         String url;
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_push)
                 + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate;
-        requestOnUIThread(url);
+        requestOnUIThread(PROTOCOL_STATUS_USER_ADD, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+                    getTicketList();
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
 
     private void popTicket(String id){
-        setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
+        //setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
         String url;
-        url = getString(R.string.api_server) +
-                getString(R.string.api_store_ticket_pop) +
-                "token=" + mToken +
-                "&id=" + id;
-
-        requestOnUIThread(url);
+        url = getString(R.string.api_server) + getString(R.string.api_store_ticket_pop)
+                + "token=" + mToken + "&id=" + id;
+        requestOnUIThread(PROTOCOL_STATUS_USER_CALL, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+                    getTicketList();
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
     private void removeTicket(String id){
         Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCLE");
 
-        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
+//        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
         String url;
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_remove) +
                 "token=" + mToken +
                 "&id=" + id;
-        requestOnUIThread(url);
+        requestOnUIThread(PROTOCOL_STATUS_USER_CANCLE, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+                    getTicketList();
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
     }
     private void getTicketList() {
         Log.v("Protocol", "PROTOCOL_STATUS_GET_LIST");
 
-        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
+//        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
         String url;
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_list) +
@@ -642,7 +512,152 @@ public class ClientManagementActivity extends ActionBarActivity
                 "&pivot=" + mTodayDate +
                 "&type=" + "0";
 
-        requestOnUIThread(url);
+        requestOnUIThread(PROTOCOL_STATUS_GET_LIST, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+
+
+                    if (isSuccess && protocol == PROTOCOL_STATUS_GET_LIST) {
+                        Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
+
+                        JSONArray jsonArr = json.optJSONArray("list");
+                        if (jsonArr == null) {
+                            List<GroupItem> items = new ArrayList<GroupItem>();
+
+                            GroupItem item = new GroupItem();
+                            item.title = "대기열에 아무도 없습니다.";
+                            items.add(item);
+
+                            ExampleAdapter adapter = new ExampleAdapter(ClientManagementActivity.this);
+                            adapter.setData(items);
+
+                            listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
+                            listView.setAdapter(adapter);
+
+                            Display display = getWindowManager().getDefaultDisplay();
+                            Point size = new Point();
+                            display.getSize(size);
+                            int width = size.x;
+                            Resources r = getResources();
+                            int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                                    50, r.getDisplayMetrics());
+                            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                                listView.setIndicatorBounds(width - px, width);
+                            } else {
+                                listView.setIndicatorBoundsRelative(width - px, width);
+                            }
+
+                            return;
+                        }
+
+                        int ticketLen = jsonArr.length();
+
+                        List<GroupItem> items = new ArrayList<GroupItem>();
+
+                        final String index[] = new String[ticketLen];
+                        for (int i = 0; i < ticketLen; i++) {
+
+                            JSONObject obj = jsonArr.optJSONObject(i);
+                            if (obj == null)
+                                break;
+
+                            String id = obj.optString("id", null);
+                            String owner = obj.optString("owner", null);
+                            String store = obj.optString("store", null);
+                            String pivot = obj.optString("pivot", null);
+                            String status = obj.optString("status", null);
+                            String time = obj.optString("time", null);
+
+                            index[i] = id;
+
+                            // 레코드 생성 및 추가
+
+                            GroupItem item = new GroupItem();
+
+                            item.title = "ID : " + id + "\n"
+                                    + "owner : " + owner + "\n"
+                                    + "status : " + status + "\n";
+
+                            ChildItem child = new ChildItem();
+                            child.title = "호출";
+
+                            item.items.add(child);
+                            child = new ChildItem();
+                            child.title = "대기열 삭제";
+
+
+                            item.items.add(child);
+                            child = new ChildItem();
+                            child.title = "고객 상세정보";
+
+                            item.items.add(child);
+
+                            items.add(item);
+                        }
+
+                        ExampleAdapter adapter = new ExampleAdapter(ClientManagementActivity.this);
+                        adapter.setData(items);
+
+                        listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
+                        listView.setAdapter(adapter);
+
+                        // In order to show animations, we need to use a custom click handler
+                        // for our ExpandableListView.
+                        listView.setOnGroupClickListener(new OnGroupClickListener() {
+
+                            @Override
+                            public boolean onGroupClick(ExpandableListView parent, View v,
+                                                        int groupPosition, long id) {
+                                if (listView.isGroupExpanded(groupPosition)) {
+                                    listView.collapseGroupWithAnimation(groupPosition);
+                                } else {
+                                    listView.expandGroupWithAnimation(groupPosition);
+                                }
+                                return true;
+                            }
+
+                        });
+                        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+                            @Override
+                            public boolean onChildClick(ExpandableListView parent, View v,
+                                                        int groupPosition, int childPosition , long id) {
+                                Log.v("ClickgroupPosition", String.valueOf(groupPosition));
+                                Log.v("ClickchildPosition", String.valueOf(childPosition));
+                                Log.v("onClick", index[groupPosition]);
+
+                                popDialog(setDialogMent(childPosition), childPosition, index[groupPosition]);
+                                return false;
+                            }
+                        });
+
+
+
+                        // Set indicator (arrow) to the right
+                        Display display = getWindowManager().getDefaultDisplay();
+                        Point size = new Point();
+                        display.getSize(size);
+                        int width = size.x;
+                        Resources r = getResources();
+                        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                                50, r.getDisplayMetrics());
+                        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                            listView.setIndicatorBounds(width - px, width);
+                        } else {
+                            listView.setIndicatorBoundsRelative(width - px, width);
+                        }
+
+
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
     private void viewTicketList(){
 
@@ -675,13 +690,12 @@ public class ClientManagementActivity extends ActionBarActivity
         }
     }
 
-    void requestOnUIThread(final String url)
+    void requestOnUIThread(final int protocol, final String url, final OnHttpReceive onReceive)
     {
         Log.v("URL", url);
-        final OnHttpReceive onReceive = this;
         this.runOnUiThread(new Runnable() {
             public void run() {
-                new HttpTask(onReceive).execute(url);
+                new HttpTask(protocol, onReceive).execute(url);
             }
         });
     }

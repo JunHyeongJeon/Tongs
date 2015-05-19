@@ -47,6 +47,8 @@ public class SplashScreensActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE); //Removing ActionBar
 		setContentView(R.layout.activity_splash_screen);
+
+		Preference.getInstance().init(this.getApplicationContext());
 		
 		mKenBurns = (KenBurnsView) findViewById(R.id.ken_burns_images);
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
@@ -165,7 +167,7 @@ public class SplashScreensActivity extends Activity {
 	}
     private void setUserInfo(String appVer, String num, String model, String osVer){
 
-        Preference pref = new Preference(this);
+        Preference pref = Preference.getInstance();
         pref.put(APPVERSION, appVer);
         pref.put(PHONENUMBER,num);
         pref.put(PHONEMODEL, model);

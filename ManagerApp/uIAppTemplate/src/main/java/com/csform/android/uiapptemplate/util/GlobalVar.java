@@ -3,7 +3,7 @@ package com.csform.android.uiapptemplate.util;
 /**
  * Created by jun on 15. 5. 15..
  */
-public class ManagementValue {
+public interface GlobalVar {
     public static final int PROTOCOL_STATUS_USER_CALL = 0;
     public static final int PROTOCOL_STATUS_USER_CANCLE = 1;
     public static final int PROTOCOL_STATUS_GET_LIST = 2;

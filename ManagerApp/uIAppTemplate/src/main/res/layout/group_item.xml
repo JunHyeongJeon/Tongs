@@ -3,20 +3,110 @@
     xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp" >
 
-    <com.csform.android.uiapptemplate.font.FontelloTextView
-        style="@style/TextViewAppearance.Title1"
+    <Button
+        android:id="@+id/grey_titile_bar"
+        android:text="대기번호 0번"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_width="319dp"
+        android:layout_height="24dp"
+        android:background="@drawable/grey_title_bar_shape_button"
+        android:layout_gravity="center"
+        android:layout_marginBottom="7.1dp"
+        />
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:minHeight="64dp"
-        android:padding="8dp"
-        android:text="@string/fontello_user"
-        android:textColor="@color/main_color_grey_700"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+
+            android:id="@+id/ticket_number"
+            android:text="대기번호 0번"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_width="81.5dp"
+            android:layout_height="47dp"
+            android:background="@drawable/ticket_button_shape"
+            android:layout_marginRight="23.3dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_people"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12.2dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="11dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11.7dp"
+                android:text="인원수"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="명"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_watch"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12.2dp"
+            android:layout_marginLeft="11dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="11dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11.7dp"
+                android:text="대기시간"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
 
     <com.csform.android.uiapptemplate.font.RobotoTextView
         android:id="@+id/textTitle"
@@ -30,5 +120,6 @@
         android:textColor="@color/main_color_grey_700"
         android:textSize="16sp"
         app:typeface="robotoRegular" />
+
 
 </LinearLayout>

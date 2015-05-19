@@ -13,11 +13,22 @@ public class Preference {
     public final static String PREF_INTRO_USER_AGREEMENT = "PREF_USER_AGREEMENT";
     public final static String PREF_MAIN_VALUE = "PREF_MAIN_VALUE";
 
+    static Preference g_this;
+    Context mContext;
 
-    static Context mContext;
+    private Preference() {
+    }
 
-    public Preference(Context c) {
-        mContext = c;
+    public void init(Context ctx)
+    {
+        mContext = ctx;
+    }
+
+    public static Preference getInstance()
+    {
+        if(g_this == null)
+            g_this = new Preference();
+        return g_this;
     }
 
     public void put(String key, String value) {
