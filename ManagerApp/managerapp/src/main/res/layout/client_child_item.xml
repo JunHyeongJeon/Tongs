@@ -3,26 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp" >
 
-    <com.csform.android.managerapp.font.FontelloTextView
-        style="@style/TextViewAppearance.Title1"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:minHeight="48dp"
-        android:padding="8dp"
-        android:text="@string/fontello_heart_full"
-        android:textColor="@color/main_color_grey_700"
-        android:textSize="16sp" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="9.5dp">
+
+        <Button
+            android:id="@+id/listview_child_client_more_info_button"
+            android:text="상세정보"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:background="@drawable/listview_child_client_more_info_button_shape"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/listview_child_client_cancel_button"
+            android:text="취소"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:background="@drawable/listview_child_client_more_info_button_shape"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+
+            android:id="@+id/listview_child_client_call"
+            android:text="고객호출"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="116dp"
+            android:layout_height="24dp"
+            android:background="@drawable/listview_chile_client_call_button_shape"
+            />
+
+    </LinearLayout>
+
+
 
     <com.csform.android.managerapp.font.RobotoTextView
         android:id="@+id/textTitle"
         style="@style/TextViewAppearance.Title1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="16dp"
         android:gravity="center_vertical"
         android:minHeight="48dp"

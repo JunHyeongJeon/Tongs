@@ -585,18 +585,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
                             ChildItem child = new ChildItem();
                             child.title = "호출";
-
                             item.items.add(child);
-                            child = new ChildItem();
-                            child.title = "대기열 삭제";
-
-
-                            item.items.add(child);
-                            child = new ChildItem();
-                            child.title = "고객 상세정보";
-
-                            item.items.add(child);
-
                             items.add(item);
                         }
 
