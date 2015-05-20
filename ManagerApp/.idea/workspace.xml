@@ -25,15 +25,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.csform.android.uiapptemplate" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/certify_number_send_button_shape.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/layout_weight_control.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/sign_up_button_shape.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -163,8 +155,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72115386">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state vertical-scroll-proportion="-7.0288463">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#260#295#0" expanded="true" />
                 <element signature="e#321#356#0" expanded="true" />
@@ -2950,7 +2942,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2970,7 +2962,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2956381" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2956381" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31891027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3625,8 +3617,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72115386">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state vertical-scroll-proportion="-7.0288463">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#260#295#0" expanded="true" />
             <element signature="e#321#356#0" expanded="true" />
