@@ -66,7 +66,7 @@ public class SplashScreensActivity extends Activity {
 				}
 			}
 		};
-		handler.sendEmptyMessageDelayed(0, 3000);
+		handler.sendEmptyMessageDelayed(0, 1500);
 	}
 	
 	/** Animation depends on category.

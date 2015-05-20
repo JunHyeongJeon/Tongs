@@ -50,7 +50,8 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         setContentView();
         Preference pref = Preference.getInstance();
-        mloginKeep.setChecked(pref.getValue(ISAUTOLOGIN, false));
+        boolean isChecked = pref.getValue(ISAUTOLOGIN, false);
+        mloginKeep.setChecked(isChecked);
 
         if(mloginKeep.isChecked())
             doAutoLogin();

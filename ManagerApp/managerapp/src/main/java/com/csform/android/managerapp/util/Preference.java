@@ -16,8 +16,6 @@ public class Preference {
     static Preference g_this;
     Context mContext;
 
-    private Preference() {
-    }
 
     public void init(Context ctx)
     {

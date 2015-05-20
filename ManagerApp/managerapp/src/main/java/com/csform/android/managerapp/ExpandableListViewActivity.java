@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -74,6 +75,7 @@ public class ExpandableListViewActivity extends ActionBarActivity {
 			@Override
 			public boolean onGroupClick(ExpandableListView parent, View v,
 					int groupPosition, long id) {
+				Log.v("onGroupClick",""+groupPosition);
 				// We call collapseGroupWithAnimation(int) and
 				// expandGroupWithAnimation(int) to animate group
 				// expansion/collapse.
@@ -90,9 +92,10 @@ public class ExpandableListViewActivity extends ActionBarActivity {
 		// Set indicator (arrow) to the right
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
+
 		display.getSize(size);
 		int width = size.x;
-		//Log.v("width", width + "");
+
 		Resources r = getResources();
 		int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
 				50, r.getDisplayMetrics());

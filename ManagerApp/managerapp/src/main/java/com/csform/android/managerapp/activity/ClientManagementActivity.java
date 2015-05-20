@@ -92,7 +92,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
         Preference pref = Preference.getInstance();
-        mToken = pref.getValue(TOKEN,"");
+        String token = pref.getValue(TOKEN,"");
+        mToken = token;
         mTodayDate = getTodayDate();
 
         getTicketList();
@@ -364,7 +365,7 @@ public class ClientManagementActivity extends ActionBarActivity
             ChildItem item = getChild(groupPosition, childPosition);
             if (convertView == null) {
                 holder = new ChildHolder();
-                convertView = inflater.inflate(R.layout.list_item, parent,
+                convertView = inflater.inflate(R.layout.client_child_item, parent,
                         false);
                 holder.title = (TextView) convertView
                         .findViewById(R.id.textTitle);
@@ -407,7 +408,7 @@ public class ClientManagementActivity extends ActionBarActivity
             GroupItem item = getGroup(groupPosition);
             if (convertView == null) {
                 holder = new GroupHolder();
-                convertView = inflater.inflate(R.layout.group_item, parent,
+                convertView = inflater.inflate(R.layout.client_group_item, parent,
                         false);
                 holder.title = (TextView) convertView
                         .findViewById(R.id.textTitle);
@@ -612,6 +613,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             @Override
                             public boolean onGroupClick(ExpandableListView parent, View v,
                                                         int groupPosition, long id) {
+                                Log.v("onGroupClick",""+groupPosition);
                                 if (listView.isGroupExpanded(groupPosition)) {
                                     listView.collapseGroupWithAnimation(groupPosition);
                                 } else {
