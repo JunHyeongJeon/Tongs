@@ -70,6 +70,7 @@ public class ClientManagementActivity extends ActionBarActivity
     public static final int CASE_STATUS_USER_MORE_INFORMATION = 2;
     private String mToken;
     private String mTodayDate;
+    private long mTime;
     private ProgressDialog mDialog;
 
     private ListView mDrawerList;
@@ -150,8 +151,12 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     public String getTodayDate(){
+
         long now = System.currentTimeMillis();
+        mTime = now/1000;
+        Log.v("unixTime", now + "");
         Date date = new Date(now);
+
         SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
         SimpleDateFormat CurMonthFormat = new SimpleDateFormat("MM");
         SimpleDateFormat CurDayFormat = new SimpleDateFormat("dd");
@@ -162,6 +167,16 @@ public class ClientManagementActivity extends ActionBarActivity
 
         return todayDate;
 
+    }
+
+    public String dateSplit(String date){
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+        SimpleDateFormat month = new SimpleDateFormat("MM");
+        SimpleDateFormat day = new SimpleDateFormat("dd");
+        String result = year.format(date) + "." +
+                month.format(date) + "." +
+                day.format(date) + ".";
+        return result;
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -314,7 +329,11 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private class GroupItem {
-        String title;
+        String ticketNum;
+        String peopleNum;
+        String waitTime;
+        String order;
+        String pivot;
         List<ChildItem> items = new ArrayList<ChildItem>();
     }
 
@@ -329,110 +348,17 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private class GroupHolder {
-        TextView title;
+        TextView ticketNum;
+        TextView peopleNum;
+        TextView waitTime;
+        TextView order;
+        TextView pivot;
     }
 
     /**
      * Adapter for our list of {@link GroupItem}s.
      */
-    private class ExampleAdapter extends AnimatedExpandableListAdapter {
-        private LayoutInflater inflater;
 
-        private List<GroupItem> items;
-
-        public ExampleAdapter(Context context) {
-            inflater = LayoutInflater.from(context);
-        }
-
-        public void setData(List<GroupItem> items) {
-            this.items = items;
-        }
-
-        @Override
-        public ChildItem getChild(int groupPosition, int childPosition) {
-            return items.get(groupPosition).items.get(childPosition);
-        }
-
-        @Override
-        public long getChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        @Override
-        public View getRealChildView(int groupPosition, int childPosition,
-                                     boolean isLastChild, View convertView, ViewGroup parent) {
-            ChildHolder holder;
-            ChildItem item = getChild(groupPosition, childPosition);
-            if (convertView == null) {
-                holder = new ChildHolder();
-                convertView = inflater.inflate(R.layout.client_child_item, parent,
-                        false);
-                holder.title = (TextView) convertView
-                        .findViewById(R.id.textTitle);
-				/*holder.hint = (TextView) convertView
-						.findViewById(R.id.textHint);*/
-                convertView.setTag(holder);
-            } else {
-                holder = (ChildHolder) convertView.getTag();
-            }
-
-            holder.title.setText(item.title);
-
-            return convertView;
-        }
-
-        @Override
-        public int getRealChildrenCount(int groupPosition) {
-            return items.get(groupPosition).items.size();
-        }
-
-        @Override
-        public GroupItem getGroup(int groupPosition) {
-            return items.get(groupPosition);
-        }
-
-        @Override
-        public int getGroupCount() {
-            return items.size();
-        }
-
-        @Override
-        public long getGroupId(int groupPosition) {
-            return groupPosition;
-        }
-
-        @Override
-        public View getGroupView(int groupPosition, boolean isExpanded,
-                                 View convertView, ViewGroup parent) {
-            GroupHolder holder;
-            GroupItem item = getGroup(groupPosition);
-            if (convertView == null) {
-                holder = new GroupHolder();
-                convertView = inflater.inflate(R.layout.client_group_item, parent,
-                        false);
-                holder.title = (TextView) convertView
-                        .findViewById(R.id.textTitle);
-                convertView.setTag(holder);
-            } else {
-                holder = (GroupHolder) convertView.getTag();
-            }
-
-            holder.title.setText(item.title);
-
-            return convertView;
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return true;
-        }
-
-        @Override
-        public boolean isChildSelectable(int arg0, int arg1) {
-            return true;
-        }
-
-    }
 
     private void pushTicket(String user, String people){
 
@@ -530,10 +456,10 @@ public class ClientManagementActivity extends ActionBarActivity
                             List<GroupItem> items = new ArrayList<GroupItem>();
 
                             GroupItem item = new GroupItem();
-                            item.title = "대기열에 아무도 없습니다.";
+                            item.ticketNum = "000";
                             items.add(item);
 
-                            ExampleAdapter adapter = new ExampleAdapter(ClientManagementActivity.this);
+                            ExpandListViewAdapter adapter = new ExpandListViewAdapter(ClientManagementActivity.this);
                             adapter.setData(items);
 
                             listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
@@ -569,19 +495,27 @@ public class ClientManagementActivity extends ActionBarActivity
                             String id = obj.optString("id", null);
                             String owner = obj.optString("owner", null);
                             String store = obj.optString("store", null);
-                            String pivot = obj.optString("pivot", null);
                             String status = obj.optString("status", null);
-                            String time = obj.optString("time", null);
+                            String pivot = obj.optString("pivot", null);
+                            String people = obj.optString("people",null);
+                            long popTime = obj.optLong("time",0);
 
                             index[i] = id;
+
+                            long time = (mTime - popTime)/60;
+
+                            //pivot = dateSplit(pivot);
 
                             // 레코드 생성 및 추가
 
                             GroupItem item = new GroupItem();
 
-                            item.title = "ID : " + id + "\n"
-                                    + "owner : " + owner + "\n"
-                                    + "status : " + status + "\n";
+                            item.ticketNum = id;
+                            item.peopleNum = people;
+                            item.waitTime = time+"";
+                            item.order = i+"";
+                            item.pivot = pivot;
+
 
                             ChildItem child = new ChildItem();
                             child.title = "호출";
@@ -589,7 +523,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             items.add(item);
                         }
 
-                        ExampleAdapter adapter = new ExampleAdapter(ClientManagementActivity.this);
+                        ExpandListViewAdapter adapter = new ExpandListViewAdapter(ClientManagementActivity.this);
                         adapter.setData(items);
 
                         listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
@@ -775,6 +709,121 @@ public class ClientManagementActivity extends ActionBarActivity
         Intent intent = new Intent(this, PreviousSequenceInformation.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+
+    }
+
+    private class ExpandListViewAdapter extends AnimatedExpandableListView.AnimatedExpandableListAdapter {
+
+
+        private LayoutInflater inflater;
+
+        private List<GroupItem> items;
+
+        public ExpandListViewAdapter(Context context) {
+            inflater = LayoutInflater.from(context);
+        }
+
+        public void setData(List<GroupItem> items) {
+            this.items = items;
+        }
+
+        @Override
+        public ChildItem getChild(int groupPosition, int childPosition) {
+            return items.get(groupPosition).items.get(childPosition);
+        }
+
+        @Override
+        public long getChildId(int groupPosition, int childPosition) {
+            return childPosition;
+        }
+
+        @Override
+        public View getRealChildView(int groupPosition, int childPosition,
+                                     boolean isLastChild, View convertView, ViewGroup parent) {
+            ChildHolder holder;
+            ChildItem item = getChild(groupPosition, childPosition);
+            if (convertView == null) {
+                holder = new ChildHolder();
+                convertView = inflater.inflate(R.layout.client_child_item, parent,
+                        false);
+                holder.title = (TextView) convertView
+                        .findViewById(R.id.textTitle);
+				/*holder.hint = (TextView) convertView
+						.findViewById(R.id.textHint);*/
+                convertView.setTag(holder);
+            } else {
+                holder = (ChildHolder) convertView.getTag();
+            }
+
+            holder.title.setText(item.title);
+
+            return convertView;
+        }
+
+        @Override
+        public int getRealChildrenCount(int groupPosition) {
+            return items.get(groupPosition).items.size();
+        }
+
+        @Override
+        public GroupItem getGroup(int groupPosition) {
+            return items.get(groupPosition);
+        }
+
+        @Override
+        public int getGroupCount() {
+            return items.size();
+        }
+
+        @Override
+        public long getGroupId(int groupPosition) {
+            return groupPosition;
+        }
+
+        @Override
+        public View getGroupView(int groupPosition, boolean isExpanded,
+                                 View convertView, ViewGroup parent) {
+            GroupHolder holder;
+            GroupItem item = getGroup(groupPosition);
+            if (convertView == null) {
+                holder = new GroupHolder();
+                convertView = inflater.inflate(R.layout.client_group_item, parent,
+                        false);
+                holder.ticketNum = (TextView) convertView
+                        .findViewById(R.id.ticket_number);
+                holder.peopleNum = (TextView) convertView
+                        .findViewById(R.id.people_number);
+                holder.order = (TextView) convertView
+                        .findViewById(R.id.grey_titile_bar_order);
+                holder.pivot = (TextView) convertView
+                        .findViewById(R.id.grey_titile_bar_pivot);
+                holder.waitTime = (TextView) convertView
+                        .findViewById(R.id.wait_time);
+
+                convertView.setTag(holder);
+            } else {
+                holder = (GroupHolder) convertView.getTag();
+            }
+
+            holder.ticketNum.setText(item.ticketNum);
+            holder.peopleNum.setText(item.peopleNum);
+            holder.order.setText(item.order);
+            holder.pivot.setText(item.pivot);
+            holder.waitTime.setText(item.waitTime);
+
+            return convertView;
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
+        @Override
+        public boolean isChildSelectable(int arg0, int arg1) {
+            return true;
+        }
+
 
     }
 

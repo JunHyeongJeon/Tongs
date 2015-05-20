@@ -20,6 +20,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
+import com.csform.android.managerapp.activity.ClientManagementActivity;
+
 /**
  * This class defines an ExpandableListView which supports animations for
  * collapsing and expanding groups.
@@ -491,6 +493,7 @@ public class AnimatedExpandableListView extends ExpandableListView {
                 return getRealChildrenCount(groupPosition);
             }
         }
+
 
     }
 

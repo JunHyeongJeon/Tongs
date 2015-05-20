@@ -26,141 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_ads_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appindexing_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_appstate_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_base_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_cast_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_drive_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_games_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_identity_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_location_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_maps_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_plus_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/import-summary.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/dictionaries/jun.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/appcompat_v7_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_ads_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_analytics_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_appindexing_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_appstate_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_base_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_cast_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_drive_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_fitness_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_games_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_gcm_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_identity_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_location_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_maps_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_nearby_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_panorama_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_plus_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_safetynet_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_wallet_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/play_services_wearable_7_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/support_annotations_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/libraries/support_v4_22_0_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/legacy.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/regacy.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/androidTest/androidTest.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/androidTest/java/com/tongs/hostapp/ApplicationTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/Agreement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/LoginActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/SignupActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/SignupActivity_page1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/java/com/tongs/hostapp/SignupActivity_page2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/main6.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/cycle_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/fade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/hold.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/hyperspace_in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/hyperspace_out.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_animation_row_left_slide.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_animation_row_right_slide.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_animation_table.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_bottom_to_top_slide.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_grid_fade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_grid_inverse_fade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_random_fade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/layout_wave_scale.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/push_left_in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/push_left_out.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/push_up_in.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/push_up_out.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/shake.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_in_left.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_in_right.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_left.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_out_left.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_out_right.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_right.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/slide_top_to_bottom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/wave_scale.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/zoom_enter.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/anim/zoom_exit.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_agreement.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_login.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_signup.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_signup_activity_page1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/layout/activity_signup_activity_page2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/menu/menu_agreement.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/menu/menu_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/menu/menu_signup.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/menu/menu_signup_activity_page1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/menu/menu_signup_activity_page2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/raw/collectpersonalinformation" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/raw/useagreement" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values-w820dp/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values/colors.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values/strings_activity_login.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/legacy/src/main/res/values/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/gradlew" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/gradlew.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SignUpActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ITest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/ManagementMethod.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tempWorkspace.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -247,25 +115,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.807611">
+              <caret line="811" column="49" selection-start-line="811" selection-start-column="49" selection-end-line="811" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4279#4299#0" expanded="true" />
+                <element signature="e#4317#4338#0" expanded="true" />
+                <element signature="e#6718#6748#0" expanded="true" />
+                <element signature="e#6774#6803#0" expanded="true" />
+                <element signature="e#6951#6976#0" expanded="true" />
+                <element signature="e#7002#7042#0" expanded="true" />
+                <element signature="e#10892#10928#0" expanded="true" />
+                <element signature="e#11017#11055#0" expanded="true" />
+                <element signature="e#11093#11141#0" expanded="true" />
+                <element signature="e#11379#11390#0" expanded="true" />
+                <element signature="e#11957#11987#0" expanded="true" />
+                <element signature="e#11990#12031#0" expanded="true" />
+                <element signature="e#12829#12859#0" expanded="true" />
+                <element signature="e#12862#12902#0" expanded="true" />
+                <element signature="e#13735#13765#0" expanded="true" />
+                <element signature="e#13784#13827#0" expanded="true" />
+                <element signature="e#14664#14694#0" expanded="true" />
+                <element signature="e#14713#14754#0" expanded="true" />
+                <element signature="e#15615#15626#0" expanded="true" />
+                <element signature="e#17120#17131#0" expanded="true" />
+                <element signature="e#19209#19955#0" expanded="true" />
+                <element signature="e#19954#19955#0" expanded="true" />
+                <element signature="e#25977#25978#0" expanded="true" />
+                <element signature="e#26040#26041#0" expanded="true" />
+                <element signature="e#26094#26095#0" expanded="true" />
+                <element signature="e#26136#26137#0" expanded="true" />
+                <element signature="e#26399#26400#0" expanded="true" />
+                <element signature="e#26443#26444#0" expanded="true" />
+                <element signature="e#27799#27800#0" expanded="true" />
+                <element signature="e#27843#27844#0" expanded="true" />
+                <element signature="e#29490#29491#0" expanded="true" />
+                <element signature="e#29525#29526#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
+      <file leaf-file-name="client_group_item.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.37931">
+              <caret line="127" column="17" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="17" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -275,10 +178,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -2928,8 +2831,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LogInPageActivity.java" />
-        <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_client_more_information.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/res/layout/activity_expandable_list_view.xml" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/LeftMenusActivity.java" />
         <option value="$PROJECT_DIR$/uIAppTemplate/src/main/java/com/csform/android/uiapptemplate/MainActivity.java" />
@@ -2969,8 +2870,6 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/Preference.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/SplashScreensActivity.java" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/listview_child_client_more_info_button_shape.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/listview_chile_client_call_button_shape.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" />
@@ -2979,6 +2878,10 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
         <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/ExpandListViewAdapter.java" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" />
       </list>
     </option>
   </component>
@@ -3055,7 +2958,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stickyListHeaders" />
+              <option name="myItemId" value="managerapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3070,6 +2973,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="managerapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managerapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managerapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ManagerApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managerapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managerapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3416,12 +3391,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13461539" sideWeight="0.5791599" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257329" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -3430,13 +3406,13 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23878205" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32852563" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15384616" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2956381" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2956381" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31891027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3445,7 +3421,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3646,12 +3621,6 @@
           <properties class="android.widget.ExpandableListView.OnGroupClickListener" method="onGroupClick" />
           <option name="timeStamp" value="202" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java</url>
-          <line>602</line>
-          <properties method="onGroupClick" />
-          <option name="timeStamp" value="207" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -3748,6 +3717,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3900,14 +3870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3979,17 +3941,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4558011">
-          <caret line="194" column="54" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/styles_text_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4009,10 +3960,40 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8439898">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3314917">
+          <caret line="194" column="32" selection-start-line="194" selection-start-column="32" selection-end-line="194" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1815858">
+          <caret line="496" column="8" selection-start-line="496" selection-start-column="8" selection-end-line="496" selection-end-column="8" />
+          <folding>
+            <element signature="e#11760#11761#0" expanded="true" />
+            <element signature="e#11792#11793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4447513">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state vertical-scroll-proportion="-7.37931">
+          <caret line="127" column="17" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -4022,19 +4003,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.807611">
+          <caret line="811" column="49" selection-start-line="811" selection-start-column="49" selection-end-line="811" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4279#4299#0" expanded="true" />
+            <element signature="e#4317#4338#0" expanded="true" />
+            <element signature="e#6718#6748#0" expanded="true" />
+            <element signature="e#6774#6803#0" expanded="true" />
+            <element signature="e#6951#6976#0" expanded="true" />
+            <element signature="e#7002#7042#0" expanded="true" />
+            <element signature="e#10892#10928#0" expanded="true" />
+            <element signature="e#11017#11055#0" expanded="true" />
+            <element signature="e#11093#11141#0" expanded="true" />
+            <element signature="e#11379#11390#0" expanded="true" />
+            <element signature="e#11957#11987#0" expanded="true" />
+            <element signature="e#11990#12031#0" expanded="true" />
+            <element signature="e#12829#12859#0" expanded="true" />
+            <element signature="e#12862#12902#0" expanded="true" />
+            <element signature="e#13735#13765#0" expanded="true" />
+            <element signature="e#13784#13827#0" expanded="true" />
+            <element signature="e#14664#14694#0" expanded="true" />
+            <element signature="e#14713#14754#0" expanded="true" />
+            <element signature="e#15615#15626#0" expanded="true" />
+            <element signature="e#17120#17131#0" expanded="true" />
+            <element signature="e#19209#19955#0" expanded="true" />
+            <element signature="e#19954#19955#0" expanded="true" />
+            <element signature="e#25977#25978#0" expanded="true" />
+            <element signature="e#26040#26041#0" expanded="true" />
+            <element signature="e#26094#26095#0" expanded="true" />
+            <element signature="e#26136#26137#0" expanded="true" />
+            <element signature="e#26399#26400#0" expanded="true" />
+            <element signature="e#26443#26444#0" expanded="true" />
+            <element signature="e#27799#27800#0" expanded="true" />
+            <element signature="e#27843#27844#0" expanded="true" />
+            <element signature="e#29490#29491#0" expanded="true" />
+            <element signature="e#29525#29526#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
