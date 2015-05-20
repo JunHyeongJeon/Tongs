@@ -91,10 +91,6 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up" >
-        </activity>
-        <activity
             android:name=".SignUpActivityFirst"
             android:label="@string/title_activity_sign_up_activity_first" >
         </activity>

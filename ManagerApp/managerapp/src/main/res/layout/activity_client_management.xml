@@ -197,7 +197,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:groupIndicator="@android:color/transparent"
-                    >
+                    android:divider="#00000000">
 
                 </com.csform.android.managerapp.view.AnimatedExpandableListView>
 
