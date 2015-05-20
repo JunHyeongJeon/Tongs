@@ -365,7 +365,8 @@ public class ClientManagementActivity extends ActionBarActivity
 //        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
         String url;
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_push)
-                + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate;
+                + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate
+                + "&people=" + people;
         requestOnUIThread(PROTOCOL_STATUS_USER_ADD, url, new OnHttpReceive() {
             @Override
             public void onReceive(int protocol, String data) {
@@ -604,10 +605,10 @@ public class ClientManagementActivity extends ActionBarActivity
                 String[] bacodeData;
                 bacodeData = bacodeSplit(contents);
 
-                String phoneNum = bacodeData[0];
+                String user = bacodeData[1];
                 String peopleNum = bacodeData[2];
 
-                pushTicket(phoneNum, peopleNum);
+                pushTicket(user, peopleNum);
 
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel
