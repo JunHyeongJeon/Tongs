@@ -1,52 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="67dp"
     android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="6dp"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="매장 이름"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        />
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="매장 위치"
-        android:textSize="13dp"
-        android:textColor="@android:color/secondary_text_light"
+
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/food2"
+        android:id="@+id/image"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
-    <TextView
-        android:id="@+id/introduction"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:layout_marginBottom="10dp"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="매장 소개"
-        android:textSize="17dp"
-        android:textColor="#000000"
-        android:layout_alignParentBottom="true"/>
-
-    <Button
-        android:id="@+id/number"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
-        android:textAppearance="?android:attr/textAppearanceButton"
-        android:textColor="#000000"
-        android:text="num"
+        android:orientation="vertical"
         android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toEndOf="@+id/image">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="매장 이름"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="#23272e"
+            />
+        <TextView
+            android:id="@+id/introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="매장 소개"
+            android:textSize="12dp"
+            android:textColor="#23272e"
+            android:layout_alignParentBottom="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/location_icon"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textAppearance="?android:attr/textAppearanceInverse"
+                android:text="매장 위치"
+                android:textSize="10dp"
+                android:textColor="#888888"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="74dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ticket_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="3dp"
+            android:text="4"
+            android:textSize="22dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/number" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="31dp"
+            android:layout_marginBottom="5dp"
+            android:text="대기인원"
+            android:textSize="8dp"
+            android:textColor="#888888"
+            android:id="@+id/textView3"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

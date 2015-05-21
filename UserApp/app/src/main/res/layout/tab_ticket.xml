@@ -11,168 +11,164 @@
         android:layout_height="2dp"
         android:background="@drawable/toolber_dropshadow" />
 
+
     <RelativeLayout
-        android:layout_width="320dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/ticket"
         android:id="@+id/relativeLayout">
-            <ImageView
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/id_waitTicketLayout">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/entrance_xhdpi"/>
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:id="@+id/id_storeNameText"
+                android:text="아남마트"
+                android:textStyle="bold"
+                android:textSize="36dp"/>
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal|center_vertical"
+                android:id="@+id/id_waitingnum"
+                android:text="18"
+                android:textSize="82dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="@color/tabsScrollColor"
+                android:layout_below="@id/id_storeNameText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/line1"
+                android:layout_below="@id/id_waitingnum"
+                android:background="@color/tabsScrollColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:text="현재 입장번호"
+                android:textSize="18dp"
+                android:id="@+id/currentText"
+                android:layout_below="@id/line1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line1"
+                android:layout_toRightOf="@id/currentText"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/id_currentText"
+                android:textStyle="bold"
+                android:text="18번"
+                android:textSize="18dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/line1"
+                android:background="#23272e"
+                android:id="@+id/line2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:text="대기 예상시간"
+                android:textSize="18dp"
+                android:id="@+id/expectText"
+                android:layout_below="@id/line2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line2"
+                android:layout_toRightOf="@id/expectText"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/id_expectText"
+                android:textStyle="bold"
+                android:text="1시간 18분"
+                android:textSize="18dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@id/line2"
+                android:background="@color/tabsScrollColor"
+                android:id="@+id/line3"/>
+
         </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="294dp"
-        android:layout_height="329dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginTop="100dp"
-        android:id="@+id/id_noWaitTicketLayout">
 
-        <ImageView
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="340dp"
+            android:layout_height="match_parent"
+            android:id="@+id/id_noWaitTicketLayout">
 
-            android:src="@drawable/bg_ticket"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/id_noTicketText"
+                android:text="대기표 없음"
+                android:textStyle="bold"
+                android:textSize="42dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/id_noTicketText"
-            android:text="No ticket"
-            android:textStyle="bold"
-            android:textSize="32dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_below="@id/id_noTicketText"
+                android:text="매니저에게 바코드를 보여주거나\n주변 매장 탐색버튼을 눌러보세요."
+                android:textSize="18dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@id/id_noTicketText"
-            android:text="매니저에게 바코드를 보여주거나\n주변 매장 탐색버튼을 눌러보세요."/>
+        </RelativeLayout>
+
+
 
     </RelativeLayout>
 
 
-    <RelativeLayout
-        android:layout_width="294dp"
-        android:layout_height="329dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginTop="100dp"
-        android:id="@+id/id_waitTicketLayout">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="340dp"
 
-            android:src="@drawable/bg_ticket"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/id_storeNameText"
-            android:text="아남마트"
-            android:textStyle="bold"
-            android:textSize="32dp"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal|center_vertical"
-            android:id="@+id/id_waitingnum"
-            android:text="18"
-            android:textSize="76dp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:background="@color/tabsScrollColor"
-            android:layout_below="@id/id_storeNameText"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="32.5dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:id="@+id/line1"
-            android:layout_below="@id/id_waitingnum"
-            android:background="@color/tabsScrollColor" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="40dp"
-            android:text="현재 입장번호"
-            android:id="@+id/currentText"
-            android:layout_below="@id/line1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line1"
-            android:layout_toRightOf="@id/currentText"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/id_currentText"
-            android:textStyle="bold"
-            android:text="18번"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.2dp"
-            android:layout_marginTop="36.5dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@id/line1"
-            android:background="#23272e"
-            android:id="@+id/line2"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="40dp"
-            android:text="대기 예상시간"
-            android:id="@+id/expectText"
-            android:layout_below="@id/line2"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/line2"
-            android:layout_toRightOf="@id/expectText"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/id_expectText"
-            android:textStyle="bold"
-            android:text="1시간 18분"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="36.5dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_below="@id/line2"
-            android:background="@color/tabsScrollColor"
-            android:id="@+id/line3"/>
-
-    </RelativeLayout>
 
 
     <!--<Button-->

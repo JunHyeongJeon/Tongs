@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +59,7 @@ public class StoreAdapter extends BaseAdapter   {
         TextView title = null;
         TextView location = null;
         TextView introduction = null;
-        Button number = null;
+        TextView number = null;
 
         StoreHolder holder = null;
 
@@ -74,7 +73,7 @@ public class StoreAdapter extends BaseAdapter   {
             title = (TextView)convertView.findViewById(R.id.title);
             location = (TextView)convertView.findViewById(R.id.location);
             introduction = (TextView)convertView.findViewById(R.id.introduction);
-            number = (Button)convertView.findViewById(R.id.number);
+            number = (TextView)convertView.findViewById(R.id.number);
 
             // 홀더 생성 및 Tag로 등록
             holder = new StoreHolder();
@@ -171,6 +170,6 @@ public class StoreAdapter extends BaseAdapter   {
         TextView m_title;
         TextView m_location;
         TextView m_description;
-        Button m_number;
+        TextView m_number;
     }
 }
