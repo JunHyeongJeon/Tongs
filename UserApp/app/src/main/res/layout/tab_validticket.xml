@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:background="@android:color/white"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/noValidCouponLayout"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nocoupon"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="쿠폰이 존재하지 않습니다."
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,6 +39,7 @@
         android:layout_marginBottom="24dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
+        android:id="@+id/validCouponLayout"
         android:background="@drawable/coupon_bg">
 
         <TextView
@@ -18,13 +47,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
+            android:id="@+id/id_validCouponLocation"
             android:text="[강남점] delacourt"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:textSize="16dp"/>
 
         <Button
-            android:id="@+id/angry_btn"
+            android:id="@+id/id_validCouponTitle"
 
             android:text="눈꽃빙수 20% 할인쿠폰"
             android:textColor="#FFFFFF"
@@ -42,12 +72,13 @@
             android:layout_width="match_parent"
             android:layout_height="112dp"
             android:orientation="horizontal"
-            android:layout_below="@id/angry_btn"
+            android:layout_below="@id/id_validCouponTitle"
             android:layout_marginTop="20dp">
 
             <ImageView
                 android:layout_width="145dp"
                 android:layout_height="112dp"
+                android:id="@+id/id_validCouponImage"
                 android:src="@drawable/food"/>
 
             <LinearLayout
@@ -64,6 +95,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/id_validCouponTime"
                     android:text="2015.5.15 ~ 2015.7.15\n"
                     android:textSize="13dp"/>
                 <TextView
@@ -75,6 +107,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/id_validCouponContents"
                     android:text="테이블 당 1개의 쿠폰 이용가능.\n적립 및 할인 중복 불가"
                     android:textSize="13dp"/>
 
@@ -96,6 +129,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
+                android:id="@+id/id_validCouponBarcode"
                 android:src="@drawable/barcode"/>
 
 
@@ -132,4 +166,4 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

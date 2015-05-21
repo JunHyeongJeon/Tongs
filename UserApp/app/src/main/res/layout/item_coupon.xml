@@ -4,35 +4,74 @@
     android:layout_height="80dp"
     android:layout_marginTop="10dp">
 
-    <TextView
-        android:id="@+id/id_couponTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="쿠폰 이름"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        />
-    <TextView
-        android:id="@+id/id_couponContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="쿠폰 내용"
-        android:textSize="20dp"
-        android:textColor="#000000"
+
+    <ImageView
+        android:layout_width="71dp"
+        android:layout_height="45.5dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/food"
+        android:id="@+id/image"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
-    <TextView
-        android:id="@+id/id_couponTime"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:textAppearance="?android:attr/textAppearanceInverse"
-        android:text="쿠폰 사용시간"
-        android:textSize="15dp"
-        android:textColor="#000000"
-        android:layout_alignParentBottom="true"/>
+        android:layout_marginLeft="12dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/image">
+
+        <TextView
+            android:id="@+id/id_couponTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="쿠폰 이름"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:textColor="#23272e"
+            />
+        <TextView
+            android:id="@+id/id_couponContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="쿠폰 소개"
+            android:textSize="12dp"
+            android:textColor="#23272e"
+            android:layout_alignParentBottom="true"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/location_icon"/>
+
+            <TextView
+                android:id="@+id/id_couponLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textAppearance="?android:attr/textAppearanceInverse"
+                android:text="매장 위치"
+                android:textSize="10dp"
+                android:textColor="#888888"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/coupon_disable"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

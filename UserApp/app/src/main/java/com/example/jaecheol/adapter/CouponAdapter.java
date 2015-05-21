@@ -67,7 +67,7 @@ public class CouponAdapter extends BaseAdapter  {
 
             title = (TextView)convertView.findViewById(R.id.id_couponTitle);
             content = (TextView)convertView.findViewById(R.id.id_couponContent);
-            time = (TextView)convertView.findViewById(R.id.id_couponTime);
+            time = (TextView)convertView.findViewById(R.id.id_couponLocation);
 
             // 홀더 생성 및 Tag로 등록
             holder = new StoreHolder();
