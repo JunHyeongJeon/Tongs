@@ -60,6 +60,7 @@ public class StoreViewActivity extends ActionBarActivity
         setToolbar();
         initComponent();
         getDataFromSharedPref();
+        getWaitingInfo();
     }
 
 
@@ -163,6 +164,33 @@ public class StoreViewActivity extends ActionBarActivity
 
         // AlertDialog에 레이아웃 추가
         dialog.setView(layout);
+    }
+
+    private void getWaitingInfo()   {
+        /*
+        String url = getText(R.string.api_server)
+                + "user/ticket/push"
+                + "?token=" + authToken
+                + "&store=" + sid
+                + "&people=" + peopleNumber;
+
+        IHttpRecvCallback cb = new IHttpRecvCallback() {
+            public void onRecv(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    Log.d("Hello", result_code);
+                    if ("-1".equals(result_code)) {
+                        Log.d("HELLO", "대기열 추가 실패");
+                        return;
+                    }
+                    Log.d("HELLO", "대기열 추가 성공");
+
+                } catch (Exception e) {
+                }
+            }
+        };
+        new HttpTask(cb).execute(url);*/
     }
 
 

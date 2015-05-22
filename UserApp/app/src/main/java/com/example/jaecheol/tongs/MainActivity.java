@@ -83,6 +83,7 @@ public class MainActivity extends ActionBarActivity
 
     private final static int ACTIVITY_SUMMON = 0;
 
+    String hid="1";
     String sid;
     int number;
     int createTime;
@@ -128,18 +129,22 @@ public class MainActivity extends ActionBarActivity
 
             String collapseKey = null;
 
-            sid = bundle.get("store").toString();
+            if( bundle.get("store") != null )
+                sid = bundle.getString("store").toString();
             Log.d("HELLO", "GCM Data (store) : " + sid);
 
-            collapseKey = bundle.get("collapseKey").toString();
+            collapseKey = bundle.get("collapse_key").toString();
             Log.d("HELLO", "collapseKey : " + collapseKey);
 
             TicketTab ticketTab = (TicketTab)adapter.getTab(1);
             if(ticketTab != null) {
                 ticketTab.getWaitingTicket();
             }
-            if( collapseKey != null )   {
+            if( collapseKey.equals("turn") )   {
                 Intent intent2 = new Intent(MainActivity.this, SummonActivity.class);
+                intent2.putExtra("hid", hid);
+                intent2.putExtra("sid", sid);
+                intent2.putExtra("authToken", authToken);
                 startActivityForResult(intent2, ACTIVITY_SUMMON);
             }
         }

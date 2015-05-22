@@ -108,41 +108,41 @@ public class ValidCouponTab extends Fragment
     }
 
     public void getCouponInfo() {
-        String url = getText(R.string.api_server)
-                + "user/coupon/get"
-                + "?token=" + authToken;
+    String url = getText(R.string.api_server)
+            + "user/coupon/get"
+            + "?token=" + authToken;
 
-        IHttpRecvCallback cb = new IHttpRecvCallback(){
-            public void onRecv(String result) {
-                try {
-                    JSONObject json = new JSONObject(result);
-                    String result_code = json.get("result_code").toString();
-                    Log.d("Hello", result_code);
-                    if( "-1".equals(result_code) )  {
-                        showCouponLayout(false);
-                        return;
-                    }
-                    else    {
-                        showCouponLayout(true);
-                    }
-
-                    String sid = json.getString("store");
-                    String title = json.getString("title");
-                    String location = json.getString("location");
-                    String content = json.getString("content");
-                    String time = String.valueOf(Integer.parseInt(json.getString("start"))
-                            - Integer.parseInt(json.getString("end")));
-
-                    couponTitle.setText(title);
-                    couponLocation.setText(location);
-                    couponContents.setText(content);
-                    couponTime.setText(time);
+    IHttpRecvCallback cb = new IHttpRecvCallback(){
+        public void onRecv(String result) {
+            try {
+                JSONObject json = new JSONObject(result);
+                String result_code = json.get("result_code").toString();
+                Log.d("Hello", result_code);
+                if( "-1".equals(result_code) )  {
+                    showCouponLayout(false);
+                    return;
                 }
-                catch(Exception e){}
+                else    {
+                    showCouponLayout(true);
+                }
+
+                String sid = json.getString("store");
+                String title = json.getString("title");
+                String location = json.getString("location");
+                String content = json.getString("content");
+                String time = String.valueOf(Integer.parseInt(json.getString("start"))
+                        - Integer.parseInt(json.getString("end")));
+
+                couponTitle.setText(title);
+                couponLocation.setText(location);
+                couponContents.setText(content);
+                couponTime.setText(time);
             }
-        };
-        new HttpTask(cb).execute(url);
-    }
+            catch(Exception e){}
+        }
+    };
+    new HttpTask(cb).execute(url);
+}
 
 
     private static String convertStreamToString(InputStream is)
@@ -160,8 +160,6 @@ public class ValidCouponTab extends Fragment
         String str = new String(baos.toByteArray());
         return str;
     }
-
-
 
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;
