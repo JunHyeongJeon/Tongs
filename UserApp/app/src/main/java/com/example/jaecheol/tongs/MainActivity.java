@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity
     ViewPagerAdapter adapter;
     com.example.jaecheol.tab.SlidingTabLayout tabs;
 
-    CharSequence titles[] = {"바코드", "대기표"};
+    CharSequence titles[] = {"매장", "대기표"};
     int numOfTabs = 2;
 
     int currentNum = 0;

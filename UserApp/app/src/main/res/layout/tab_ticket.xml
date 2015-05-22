@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="25dp"
-                android:text="현재 입장번호"
+                android:text="남은 대기팀수"
                 android:textSize="18dp"
                 android:id="@+id/currentText"
                 android:layout_below="@id/line1"/>
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="25dp"
-                android:text="대기 예상시간"
+                android:text="평균 대기시간"
                 android:textSize="18dp"
                 android:id="@+id/expectText"
                 android:layout_below="@id/line2"/>

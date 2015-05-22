@@ -128,7 +128,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="88dp"
                 android:id="@+id/id_validCouponBarcode"
                 android:src="@drawable/barcode"/>
 

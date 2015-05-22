@@ -1,6 +1,7 @@
 package com.example.jaecheol.tab;
 
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,7 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.jaecheol.tongs.BarcodeGenerator;
 import com.example.jaecheol.tongs.R;
+import com.google.zxing.BarcodeFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -36,6 +39,8 @@ public class ValidCouponTab extends Fragment
     View view;
 
     String authToken;
+    String uid;
+    String mobileNumber;
 
     String sid;
 
@@ -43,10 +48,15 @@ public class ValidCouponTab extends Fragment
     RelativeLayout validCouponLayout;
 
     ImageView couponImageView;
+    ImageView couponBarcode;
     Button couponTitle;
     TextView couponContents;
     TextView couponLocation;
     TextView couponTime;
+
+    Bitmap barcode;
+
+    BarcodeGenerator barcodeGenerator;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -57,6 +67,7 @@ public class ValidCouponTab extends Fragment
 
         initValidTab();
         getDataFromSharedPref();
+        setBarcode();
 
         showCouponLayout(false);
 
@@ -77,12 +88,26 @@ public class ValidCouponTab extends Fragment
         }
     }
 
+    private void setBarcode()   {
+        barcodeGenerator = new BarcodeGenerator();
+
+        try {
+            String barcodeContents = mobileNumber + "_" + uid;
+            barcode = barcodeGenerator.encodeAsBitmap(barcodeContents, BarcodeFormat.CODE_128, 600, 200);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        couponBarcode.setImageBitmap(barcode);
+    }
+
     private void initValidTab() {
 
         noValidCouponLayout = (LinearLayout)view.findViewById(R.id.noValidCouponLayout);
         validCouponLayout = (RelativeLayout)view.findViewById(R.id.validCouponLayout);
 
         couponImageView = (ImageView)view.findViewById(R.id.id_validCouponImage);
+        couponBarcode = (ImageView)view.findViewById(R.id.id_validCouponBarcode);
         couponTitle = (Button)view.findViewById(R.id.id_validCouponTitle);
         couponLocation = (TextView)view.findViewById(R.id.id_validCouponLocation);
         couponContents = (TextView)view.findViewById(R.id.id_validCouponContents);
@@ -105,6 +130,8 @@ public class ValidCouponTab extends Fragment
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         authToken = mPref.getString("auth_token", null);
+        mobileNumber = mPref.getString("number", null);
+        uid = mPref.getString("uid", null);
     }
 
     public void getCouponInfo() {
