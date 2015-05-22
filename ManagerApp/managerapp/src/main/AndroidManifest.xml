@@ -5,7 +5,7 @@
     android:versionName="1.1" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="11"
         android:targetSdkVersion="21" />
 
     <!-- GCM connects to Google Services. -->
@@ -70,6 +70,10 @@
             android:name=".activity.SplashScreensActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".ListViewsActivity" >
@@ -81,11 +85,6 @@
         <activity android:name=".GoogleCardsActivity" />
         <activity android:name=".ExpandableListViewActivity" />
         <activity android:name=".StickyListHeadersActivity" />
-        <activity
-            android:name=".StoreManagementActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
         <activity
             android:name=".SignUpActivityFirst"
             android:label="@string/title_activity_sign_up_activity_first" >
@@ -136,12 +135,6 @@
             </intent-filter>
         </receiver>
 
-        <!--
-          Application-specific subclass of GCMBaseIntentService that will
-          handle received messages.
-
-          By default, it must be named .GCMIntentService, unless the
-          application uses a custom BroadcastReceiver that redefines its name.
         -->
         <service android:name=".gcm.GcmIntentService" />
 
@@ -150,18 +143,9 @@
             android:label="@string/title_activity_client_more_information" >
         </activity>
         <activity
-            android:name=".activity.PreviousSequenceInformation"
-            android:label="@string/title_activity_previous_sequence_information"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".activity.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

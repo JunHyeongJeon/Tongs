@@ -123,17 +123,19 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
                 R.string.drawer_open,
                 R.string.drawer_close) {
+            public void onDrawerOpened(View drawerView) {
+                getSupportActionBar().setTitle(mDrawerTitle);
+                invalidateOptionsMenu();
+            }
             public void onDrawerClosed(View view) {
                 getSupportActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
 
-            public void onDrawerOpened(View drawerView) {
-                getSupportActionBar().setTitle(mDrawerTitle);
-                invalidateOptionsMenu();
-            }
+
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerToggle.onDrawerClosed(mDrawerLayout);
 
         if (savedInstanceState == null) {
             mDrawerLayout.openDrawer(mDrawerList);
@@ -707,9 +709,9 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private void moveActivity(){
-        Intent intent = new Intent(this, PreviousSequenceInformation.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+       // Intent intent = new Intent(this, PreviousSequenceInformation.class);
+       // startActivity(intent);
+       // overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 
     }
 

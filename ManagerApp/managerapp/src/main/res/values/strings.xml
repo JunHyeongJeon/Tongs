@@ -216,4 +216,8 @@
     <string name="title_section4">others</string>
     <string name="title_activity_previous_sequence_information">PreviousSequenceInformation</string>
 
+    <string name="sample_show_log">Show Log</string>
+    <string name="sample_hide_log">Hide Log</string>
+
+
 </resources>
