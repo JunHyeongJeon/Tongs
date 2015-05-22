@@ -26,14 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/color/selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/tab_store.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/tab_ticket.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/PreviousClientListActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/PreviousClientListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_sample.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_sample.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_1_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -120,14 +113,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SlidingTabsBasicFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SlidingTabsBasicFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SlidingTabsBasicFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6711956">
+            <state vertical-scroll-proportion="0.0">
               <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
               <folding>
                 <element signature="e#0#6502#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.68328446">
+              <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding>
+                <element signature="e#1864#1882#0" expanded="true" />
+                <element signature="e#2028#2067#0" expanded="true" />
+                <element signature="e#2157#2175#0" expanded="true" />
+                <element signature="e#2798#2828#0" expanded="true" />
+                <element signature="e#3008#3026#0" expanded="true" />
+                <element signature="e#3840#3887#0" expanded="true" />
+                <element signature="e#4003#4051#0" expanded="true" />
+                <element signature="e#4166#4213#0" expanded="true" />
+                <element signature="e#4328#4375#0" expanded="true" />
+                <element signature="e#4504#4546#0" expanded="true" />
+                <element signature="e#5898#5946#0" expanded="true" />
+                <element signature="e#6065#6097#0" expanded="true" />
+                <element signature="e#6228#6273#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2283,7 +2300,6 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/SlidingTabLayout.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_previous_client_list.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SlidingTabsBasicFragment.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/tab/StoreTab.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/ViewPagerAdapter.java" />
@@ -2297,6 +2313,7 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/PreviousClientListActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_sample.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -3319,28 +3336,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-77.77778">
-          <caret line="140" column="45" selection-start-line="140" selection-start-column="45" selection-end-line="140" selection-end-column="45" />
-          <folding>
-            <element signature="e#1864#1882#0" expanded="true" />
-            <element signature="e#2028#2067#0" expanded="true" />
-            <element signature="e#2157#2175#0" expanded="true" />
-            <element signature="e#2798#2828#0" expanded="true" />
-            <element signature="e#3008#3026#0" expanded="true" />
-            <element signature="e#3635#3682#0" expanded="true" />
-            <element signature="e#3798#3846#0" expanded="true" />
-            <element signature="e#3961#4008#0" expanded="true" />
-            <element signature="e#4123#4170#0" expanded="true" />
-            <element signature="e#4299#4341#0" expanded="true" />
-            <element signature="e#5693#5741#0" expanded="true" />
-            <element signature="e#5860#5892#0" expanded="true" />
-            <element signature="e#6023#6068#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_previous_sequence_information.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3490,11 +3485,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SlidingTabsBasicFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6711956">
+        <state vertical-scroll-proportion="0.0">
           <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
           <folding>
             <element signature="e#0#6502#0" expanded="true" />
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68328446">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#1864#1882#0" expanded="true" />
+            <element signature="e#2028#2067#0" expanded="true" />
+            <element signature="e#2157#2175#0" expanded="true" />
+            <element signature="e#2798#2828#0" expanded="true" />
+            <element signature="e#3008#3026#0" expanded="true" />
+            <element signature="e#3840#3887#0" expanded="true" />
+            <element signature="e#4003#4051#0" expanded="true" />
+            <element signature="e#4166#4213#0" expanded="true" />
+            <element signature="e#4328#4375#0" expanded="true" />
+            <element signature="e#4504#4546#0" expanded="true" />
+            <element signature="e#5898#5946#0" expanded="true" />
+            <element signature="e#6065#6097#0" expanded="true" />
+            <element signature="e#6228#6273#0" expanded="true" />
           </folding>
         </state>
       </provider>
