@@ -82,6 +82,7 @@ public class MainActivity extends ActionBarActivity
     TicketTab ticketTab;
 
     private final static int ACTIVITY_SUMMON = 0;
+    private final static int ACTIVITY_BARCODE = 1;
 
     String hid="1";
     String sid;
@@ -117,6 +118,13 @@ public class MainActivity extends ActionBarActivity
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
     public void processPush(Intent intent)
     {
 
@@ -150,13 +158,6 @@ public class MainActivity extends ActionBarActivity
         }
 
         pager.setCurrentItem(1, true);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
@@ -196,6 +197,18 @@ public class MainActivity extends ActionBarActivity
 
             if( resultCode == RESULT_CANCELED ) {
                 cancelTicket();
+            }
+        }
+        else if( requestCode == ACTIVITY_BARCODE )  {
+            Log.d("HELLO", "BARCODE ACTIVITY CLOSE");
+
+            if( resultCode == RESULT_OK ) {
+                currentNum = intent.getIntExtra("currentNum", currentNum);
+
+                registerBarcode();
+
+                mAdapter = new DrawerAdapter(TITLES, ICONS, currentNum, barcode, handler);
+                mRecyclerView.setAdapter(mAdapter);
             }
         }
     }
@@ -408,12 +421,11 @@ public class MainActivity extends ActionBarActivity
                 case 21:
                     if( currentNum > 0 ) {
                         intent = new Intent(MainActivity.this, BarcodeActivity.class);
+                        intent.putExtra("uid", uid);
+                        intent.putExtra("currentNum", currentNum);
+                        intent.putExtra("mobileNumber", mobileNumber);
 
-                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                        barcode.compress(Bitmap.CompressFormat.PNG, 100, baos);
-
-                        intent.putExtra("barcode", baos.toByteArray());
-                        startActivity(intent);
+                        startActivityForResult(intent, ACTIVITY_BARCODE);
                     }
                     break;
 
