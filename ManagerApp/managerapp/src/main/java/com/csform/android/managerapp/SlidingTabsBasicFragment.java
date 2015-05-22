@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ import com.csform.android.managerapp.view.SlidingTabLayout;
  */
 public class SlidingTabsBasicFragment extends Fragment {
 
+    private View v;
     static final String LOG_TAG = "SlidingTabsBasicFragment";
 
     /**
@@ -53,7 +55,14 @@ public class SlidingTabsBasicFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sample, container, false);
+
+        try{
+            v = inflater.inflate(R.layout.fragment_sample, container, false);
+        }
+        catch (InflateException e){
+            v = null;
+        }
+        return v;
     }
 
     // BEGIN_INCLUDE (fragment_onviewcreated)
@@ -80,6 +89,17 @@ public class SlidingTabsBasicFragment extends Fragment {
         mSlidingTabLayout = (SlidingTabLayout) view.findViewById(R.id.sliding_tabs);
         mSlidingTabLayout.setViewPager(mViewPager);
         // END_INCLUDE (setup_slidingtablayout)
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if(v!=null){
+            ViewGroup parent = (ViewGroup)v.getParent();
+            if(parent!=null){
+                parent.removeView(v);
+            }
+        }
     }
     // END_INCLUDE (fragment_onviewcreated)
 
