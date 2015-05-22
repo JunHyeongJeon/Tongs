@@ -53,6 +53,12 @@ public class TicketTab extends Fragment
         return v;
     }
 
+    @Override
+    public void onResume()   {
+        getWaitingTicket();
+        super.onResume();
+    }
+
 
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
@@ -106,15 +112,9 @@ public class TicketTab extends Fragment
                         return;
                     }
 
-//                    String waitingNum = json.getJSONObject("ticket").getString("ticket");
                     String waitingNum = json.get("number").toString();
-                    Log.d("Hello", waitingNum);
-//                    String currentNum = json.getJSONObject("store").getString("current_num");
-                    String currentNum = json.get("last").toString();
-                    Log.d("Hello", currentNum);
+                    String currentNum = json.get("people").toString();
                     String storeName = json.get("store").toString();
-                    Log.d("Hello", storeName);
-//                    String extraTime = json.getJSONObject("ticket");
 
                     waitingTicket.setWaitingNum(waitingNum);
                     waitingTicket.setCurrentNum(currentNum);

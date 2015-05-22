@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginLeft="16dp"
-            android:text="대기 예상 시간"
+            android:text="평균 대기 시간"
             android:textSize="13dp"
             android:layout_below="@+id/textView5" />
 

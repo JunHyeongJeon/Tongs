@@ -227,16 +227,16 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                     String storeName;
                     String storeLocation;
                     String storeDescription;
-                    String storeWaitingNum="0";
+                    String storeWaitingNum;
 
                     JSONArray storeJArray = json.getJSONArray("list");
                     for(int i=0; i<storeJArray.length(); i++)   {
                         JSONObject store = storeJArray.getJSONObject(i);
 
-
                         storeId = store.getString("id");
                         storeName = store.getString("name");
                         storeLocation = store.getString("location");
+                        storeWaitingNum = store.getString("wait");
                         storeDescription = store.getString("description");
 
                         adapter.add(storeId, storeName,

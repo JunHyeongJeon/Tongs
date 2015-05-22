@@ -109,16 +109,18 @@ public class UsedCouponTab extends Fragment
                     String title = null;
                     String content = null;
                     String time = null;
+                    String location = null;
 
                     JSONArray couponJArray = json.getJSONArray("list");
                     for(int i=0; i<couponJArray.length(); i++)   {
                         JSONObject coupon = couponJArray.getJSONObject(i);
 
 
-                        title = coupon.get("title").toString();
-                        content = coupon.get("content").toString();
+                        title = coupon.getString("title");
+                        content = coupon.getString("content");
+                        location = coupon.getString("location");
 
-                        adapter.add(sid, couponId, title, content, time);
+                        adapter.add(sid, location, title, content, time);
                         adapter.notifyDataSetChanged();
                         Log.d("HELLO", sid + "  " + couponId + "  " + title + "  "
                                 + content + "  " + time);

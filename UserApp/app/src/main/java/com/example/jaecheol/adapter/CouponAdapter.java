@@ -55,6 +55,7 @@ public class CouponAdapter extends BaseAdapter  {
         TextView title = null;
         TextView content = null;
         TextView time = null;
+        TextView location = null;
 
         StoreHolder holder = null;
 
@@ -67,35 +68,38 @@ public class CouponAdapter extends BaseAdapter  {
 
             title = (TextView)convertView.findViewById(R.id.id_couponTitle);
             content = (TextView)convertView.findViewById(R.id.id_couponContent);
-            time = (TextView)convertView.findViewById(R.id.id_couponLocation);
+//            time = (TextView)convertView.findViewById(R.id.);
+            location = (TextView)convertView.findViewById(R.id.id_couponItemLocation);
 
             // 홀더 생성 및 Tag로 등록
             holder = new StoreHolder();
             holder.m_title = title;
             holder.m_content = content;
-            holder.m_time = time;
+//            holder.m_time = time;
+            holder.m_location = location;
             convertView.setTag(holder);
         }
         else {
             holder = (StoreHolder)convertView.getTag();
             title = holder.m_title;
             content = holder.m_content;
-            time = holder.m_time;
+//            time = holder.m_time;
+            location = holder.m_location;
         }
 
         // Text 등록
+        location.setText(couponList[1].get(position));
         title.setText(couponList[2].get(position));
         content.setText(couponList[3].get(position));
-        time.setText(couponList[4].get(position));
+//        time.setText(couponList[4].get(position));
 
-        // 리스트 아이템을 터치 했을 때 이벤트 발생
+                                                                                                                                                                                                                                                                                                                                                                       // 리스트 아이템을 터치 했을 때 이벤트 발생
         convertView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // 터치 시 해당 아이템 이름 출력
                 Toast.makeText(context, "리스트 클릭 : "+couponList[0].get(pos), Toast.LENGTH_SHORT).show();
-
 
                 String couponId = couponList[0].get(pos);
                 Toast.makeText(context, "Coupon Id : " + couponId + "Click", Toast.LENGTH_SHORT);
@@ -120,11 +124,11 @@ public class CouponAdapter extends BaseAdapter  {
     }
 
     // 외부에서 아이템 추가 요청 시 사용
-    public void add(String id, String store,
+    public void add(String id, String location,
                     String title, String content,
                     String time) {
         couponList[0].add(id);
-        couponList[1].add(store);
+        couponList[1].add(location);
         couponList[2].add(title);
         couponList[3].add(content);
         couponList[4].add(time);
@@ -153,5 +157,6 @@ public class CouponAdapter extends BaseAdapter  {
         TextView m_title;
         TextView m_content;
         TextView m_time;
+        TextView m_location;
     }
 }
