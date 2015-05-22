@@ -306,7 +306,7 @@ public class MainActivity extends ActionBarActivity
         StoreTab storeTab = (StoreTab)adapter.getTab(0);
         if(storeTab == null)
             return;
-        storeTab.getStoreList(1);
+        storeTab.getStoreList();
 
 
         /* Ticket Renew */

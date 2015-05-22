@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Created by JaeCheol on 15. 4. 7..
@@ -64,8 +66,10 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     String peopleNumber;
     String uid;
     String sid;
+    String hid = "1";
     String authToken;
     EditText peopleEditText;
+    TextView hyperText;
 
     BarcodeGenerator barcodeGenerator;
 
@@ -78,6 +82,10 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     private ListView listView;
     private StoreAdapter adapter;
 
+    private RelativeLayout searchLayout;
+
+    private ArrayList<String> hyperList[] = new ArrayList[2];
+
     View view;
 
     @Override
@@ -87,22 +95,36 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     {
         view = inflater.inflate(R.layout.tab_store, container, false);
 
-        adapter = new StoreAdapter(getActivity());
-        listView = (ListView)view.findViewById(R.id.id_storeListView);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(onClickListItem);
+        initStoreTab();
+        getDataFromSharedPref();
 
-//        addDummyList();
+        getHyperList();
 
         return view;
     }
 
     @Override
     public void onResume()   {
-        getStoreList(1);
+        getStoreList();
         super.onResume();
     }
 
+    private void initStoreTab() {
+
+        adapter = new StoreAdapter(getActivity());
+        listView = (ListView) view.findViewById(R.id.id_storeListView);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(onClickListItem);
+
+        searchLayout = (RelativeLayout) view.findViewById(R.id.searchLayout);
+        searchLayout.setOnClickListener(this);
+
+        hyperText = (TextView) view.findViewById(R.id.id_hyperText);
+
+        for (int i = 0; i < 2; i++) {
+            hyperList[i] = new ArrayList<String>();
+        }
+    }
 
     private ListView.OnItemClickListener onClickListItem = new ListView.OnItemClickListener() {
 
@@ -111,6 +133,13 @@ public class StoreTab extends Fragment implements View.OnClickListener {
             Toast.makeText(view.getContext(), adapter.getItem(arg2).toString(), Toast.LENGTH_SHORT).show();
         }
     };
+
+
+    private void getDataFromSharedPref()    {
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        authToken = mPref.getString("auth_token", null);
+    }
 
     private void setBarcode(View view)
     {
@@ -164,27 +193,9 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         switch ( v.getId() )    {
-//            case R.id.id_barcodeGenerateButton :
-//                dialog.show();
-//
-//                break;
-//
-//            case R.id.id_scanBLEButton :
-//
-                //Intent intent2 = new Intent();
-                //intent2.setAction("android.intent.action.GCMRECV");
-//                intent2.setData(Uri.parse(extras.toString()));
-                //getActivity().sendBroadcast(intent2);
-
-//            {
-//                MainActivity activity = (MainActivity)getActivity();
-//                activity.processPush(null);
-//                break;
-//                isStoreSearched = false;
-//                scanBeacon();
-//            }
-
-
+            case R.id.searchLayout :
+                showHyperDialog();
+                break;
         }
     }
 
@@ -193,20 +204,14 @@ public class StoreTab extends Fragment implements View.OnClickListener {
         adapter.notifyDataSetChanged();
     }
 
-    public void getStoreList(int storeNum)   {
-
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        authToken = mPref.getString("auth_token", null);
-        if( authToken == null ) {
-            /* 로그인 해제 */
-        }
+    public void getStoreList()   {
 
         removeStoreList();
 
         String url = getText(R.string.api_server)
                 + "user/store/list"
                 + "?token=" + authToken
-                + "&hyper=" + storeNum;
+                + "&hyper=" + hid;
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
@@ -239,7 +244,7 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                                 storeWaitingNum);
                         adapter.notifyDataSetChanged();
                         Log.d("HELLO", storeId + "  " + storeName + "  " + storeLocation + "  "
-                                        + storeDescription + "  " + storeWaitingNum);
+                                + storeDescription + "  " + storeWaitingNum);
 
                     }
 
@@ -248,6 +253,65 @@ public class StoreTab extends Fragment implements View.OnClickListener {
             }
         };
         new HttpTask(cb).execute(url);
+    }
+
+    private void getHyperList() {
+        String url = getText(R.string.api_server)
+                + "user/hyper/list"
+                + "?token=" + authToken;
+
+        IHttpRecvCallback cb = new IHttpRecvCallback(){
+            public void onRecv(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    if( result_code == "-1" ) {
+                        Log.d("HELLO", "getHyperListFail");
+                        return;
+                    }
+
+                    if( hyperList[0] != null ) {
+                        hyperList[0].clear();
+                        hyperList[1].clear();
+                    }
+                    JSONArray hyperJArray = json.getJSONArray("list");
+                    for(int i=0; i<hyperJArray.length(); i++)   {
+                        JSONObject hyper = hyperJArray.getJSONObject(i);
+
+                        hyperList[0].add(hyper.getString("id"));
+                        hyperList[1].add(hyper.getString("name"));
+                    }
+
+                    hyperText.setText(" 현재마켓 : " + hyperList[1].get(Integer.parseInt(hid)-1));
+                }
+                catch(Exception e){}
+            }
+        };
+        new HttpTask(cb).execute(url);
+    }
+
+    private void showHyperDialog()   {
+
+        int len = hyperList[0].size();
+        final CharSequence items[] = new CharSequence[len];
+        for(int i=0; i<len; i++)   {
+            items[i] = hyperList[1].get(i);
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        builder.setTitle("마켓 선택");
+        builder.setItems(items, new DialogInterface.OnClickListener()   {
+
+            public void onClick(DialogInterface dialog, int item)   {
+                if( !hid.equals(String.valueOf(item+1)) ) {
+                    hid = String.valueOf(item+1);
+                    getStoreList();
+                    hyperText.setText(" 현재마켓 : " + items[item]);
+                }
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     public void addDummyList() {
