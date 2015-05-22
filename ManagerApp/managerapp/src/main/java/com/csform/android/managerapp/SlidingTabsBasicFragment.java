@@ -34,7 +34,6 @@ import com.csform.android.managerapp.view.SlidingTabLayout;
  */
 public class SlidingTabsBasicFragment extends Fragment {
 
-    private View v;
     static final String LOG_TAG = "SlidingTabsBasicFragment";
 
     /**
@@ -56,13 +55,10 @@ public class SlidingTabsBasicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-        try{
-            v = inflater.inflate(R.layout.fragment_sample, container, false);
-        }
-        catch (InflateException e){
-            v = null;
-        }
-        return v;
+
+          return inflater.inflate(R.layout.fragment_sample, container, false);
+
+
     }
 
     // BEGIN_INCLUDE (fragment_onviewcreated)
@@ -91,16 +87,7 @@ public class SlidingTabsBasicFragment extends Fragment {
         // END_INCLUDE (setup_slidingtablayout)
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        if(v!=null){
-            ViewGroup parent = (ViewGroup)v.getParent();
-            if(parent!=null){
-                parent.removeView(v);
-            }
-        }
-    }
+
     // END_INCLUDE (fragment_onviewcreated)
 
     /**
@@ -116,7 +103,7 @@ public class SlidingTabsBasicFragment extends Fragment {
          */
         @Override
         public int getCount() {
-            return 10;
+            return 3;
         }
 
         /**
@@ -138,7 +125,14 @@ public class SlidingTabsBasicFragment extends Fragment {
          */
         @Override
         public CharSequence getPageTitle(int position) {
-            return "Item " + (position + 1);
+            String title = null;
+            if ( position == 0)
+                title = "입장완료";
+            else if(position == 1)
+                title = "예약부도";
+            else
+                title = "예약취소";
+            return title;
         }
         // END_INCLUDE (pageradapter_getpagetitle)
 
@@ -149,18 +143,26 @@ public class SlidingTabsBasicFragment extends Fragment {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             // Inflate a new layout from our resources
-            View view = getActivity().getLayoutInflater().inflate(R.layout.pager_item,
-                    container, false);
-            // Add the newly created View to the ViewPager
+            View view = null;
+            if ( position == 0) {
+                view = getActivity().getLayoutInflater().inflate(R.layout.complete_entry_client_list_tab,
+                        container, false);
+                // Add the newly created View to the ViewPager
+            }
+            else if (position == 1)
+            {
+                view = getActivity().getLayoutInflater().inflate(R.layout.not_complete_entry_client_list_tab,
+                        container, false);
+            }
+            else {
+                view = getActivity().getLayoutInflater().inflate(R.layout.cancel_entry_client_list_tab,
+                        container, false);
+            }
             container.addView(view);
-
-            // Retrieve a TextView from the inflated View, and update it's text
-            TextView title = (TextView) view.findViewById(R.id.item_title);
-            title.setText(String.valueOf(position + 1));
-
 
             // Return the View
             return view;
+
         }
 
         /**
@@ -172,5 +174,8 @@ public class SlidingTabsBasicFragment extends Fragment {
             container.removeView((View) object);
             }
 
+
     }
+
+
 }

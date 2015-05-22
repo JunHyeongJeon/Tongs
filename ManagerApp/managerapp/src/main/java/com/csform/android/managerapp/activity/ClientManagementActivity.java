@@ -83,8 +83,18 @@ public class ClientManagementActivity extends ActionBarActivity
 
     public ImageView mClientTicket;
 
+    TextView mBeforeTurnTextView;
+    TextView mThisTurnTextView;
+    TextView mAfterTurnTextView;
+    TextView mThisTurnWaitPeopleTextView;
+    TextView mThisTurnWaitTimeTextView;
 
+    String mBeforeFirstId = "";
+    String mFirstId = "";
+    String mAfterFirstId = "";
 
+    String mThisTurnWaitPeople = "0";
+    String mThisTurnWaitTime = "0";
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +115,13 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private void setContentView(Bundle savedInstanceState){
         setContentView(R.layout.activity_client_management);
+
+
+        mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
+        mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
+        mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
+        mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
+        mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -134,11 +151,12 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
         };
+
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerToggle.onDrawerClosed(mDrawerLayout);
+
 
         if (savedInstanceState == null) {
-            mDrawerLayout.openDrawer(mDrawerList);
+            mDrawerLayout.closeDrawer(mDrawerList);
         }
 
 
@@ -205,17 +223,17 @@ public class ClientManagementActivity extends ActionBarActivity
                         R.string.drawer_icon_blog,
                         R.string.drawer_title_before_client_data,
                         DrawerItem.DRAWER_ITEM_TAG_BLOG));
-        /*
+
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_git_hub,
-                        R.string.drawer_title_git_hub,
+                        R.string.drawer_title_auto_login_release,
                         DrawerItem.DRAWER_ITEM_TAG_GIT_HUB));
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_instagram,
-                        R.string.drawer_title_instagram,
-                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));*/
+                        R.string.drawer_title_logout,
+                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
     }
 
 
@@ -336,6 +354,8 @@ public class ClientManagementActivity extends ActionBarActivity
         String waitTime;
         String order;
         String pivot;
+
+
         List<ChildItem> items = new ArrayList<ChildItem>();
     }
 
@@ -486,22 +506,43 @@ public class ClientManagementActivity extends ActionBarActivity
 
                         int ticketLen = jsonArr.length();
 
+
+                        JSONObject obj = jsonArr.optJSONObject(0);
+
+
+
+
+                        mFirstId = obj.optString("id", null);
+                        mThisTurnTextView.setText(mFirstId);
+
+                        String firstPeople = obj.optString("people",null);
+                        mThisTurnWaitPeopleTextView.setText(firstPeople);
+
+                        long firstPopTime = obj.optLong("time", 0);
+                        long firstTime = (mTime - firstPopTime)/60;
+                        mThisTurnWaitTimeTextView.setText(firstTime+"");
+
+
+                        obj = jsonArr.optJSONObject(1);
+                        mAfterFirstId = obj.optString("id", null);
+                        mAfterTurnTextView.setText(mAfterFirstId);
+
                         List<GroupItem> items = new ArrayList<GroupItem>();
 
                         final String index[] = new String[ticketLen];
-                        for (int i = 0; i < ticketLen; i++) {
+                        for (int i = 1; i < ticketLen; i++) {
 
-                            JSONObject obj = jsonArr.optJSONObject(i);
+                            JSONObject inObj = jsonArr.optJSONObject(i);
                             if (obj == null)
                                 break;
 
-                            String id = obj.optString("id", null);
-                            String owner = obj.optString("owner", null);
-                            String store = obj.optString("store", null);
-                            String status = obj.optString("status", null);
-                            String pivot = obj.optString("pivot", null);
-                            String people = obj.optString("people",null);
-                            long popTime = obj.optLong("time",0);
+                            String id = inObj.optString("id", null);
+                            String owner = inObj.optString("owner", null);
+                            String store = inObj.optString("store", null);
+                            String status = inObj.optString("status", null);
+                            String pivot = inObj.optString("pivot", null);
+                            String people = inObj.optString("people",null);
+                            long popTime = inObj.optLong("time",0);
 
                             index[i] = id;
 
@@ -709,9 +750,9 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private void moveActivity(){
-       // Intent intent = new Intent(this, PreviousSequenceInformation.class);
-       // startActivity(intent);
-       // overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+        Intent intent = new Intent(this, PreviousClientListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 
     }
 
@@ -828,6 +869,10 @@ public class ClientManagementActivity extends ActionBarActivity
         }
 
 
+    }
+
+    void moveActivityClientMoreInfo(){
+        
     }
 
 }
