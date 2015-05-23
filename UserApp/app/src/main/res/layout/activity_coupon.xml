@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
-    <com.example.jaecheol.tab.SlidingTabLayout
+    <com.example.user.tab.SlidingTabLayout
         android:id="@+id/couponTabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

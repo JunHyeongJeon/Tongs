@@ -43,7 +43,7 @@
 
 
         <activity
-            android:name=".IntroActivity"
+            android:name="com.example.user.tongs.IntroActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -54,7 +54,7 @@
         </activity>
 
         <activity
-            android:name=".SignupTermsActivity"
+            android:name="com.example.user.tongs.SignupTermsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -65,7 +65,7 @@
         </activity>
 
         <activity
-            android:name=".SignupActivity"
+            android:name="com.example.user.tongs.SignupActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -76,7 +76,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.user.tongs.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -87,7 +87,7 @@
         </activity>
 
         <activity
-            android:name=".StoreViewActivity"
+            android:name="com.example.user.tongs.StoreViewActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -98,7 +98,7 @@
         </activity>
 
         <activity
-            android:name=".WaitingTicketActivity"
+            android:name="com.example.user.tongs.WaitingTicketActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -109,7 +109,7 @@
         </activity>
 
         <activity
-            android:name=".CouponActivity"
+            android:name="com.example.user.tongs.CouponActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -120,7 +120,7 @@
         </activity>
 
         <activity
-            android:name=".SummonActivity"
+            android:name="com.example.user.tongs.SummonActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -131,7 +131,7 @@
         </activity>
 
         <activity
-            android:name=".BarcodeActivity"
+            android:name="com.example.user.tongs.BarcodeActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
             <intent-filter>
@@ -152,7 +152,7 @@
          so only GCM services can send data messages for the app.
        -->
         <receiver
-            android:name="com.example.jaecheol.gcm.GcmBroadcastReceiver"
+            android:name="com.example.user.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <!-- Receives the actual messages. -->
@@ -163,7 +163,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.example.jaecheol.gcm.GcmReceiver" >
+        <receiver android:name="com.example.user.gcm.GcmReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.GCMRECV" />
                 <data android:scheme="sample"/>
@@ -177,7 +177,7 @@
           By default, it must be named .GCMIntentService, unless the
           application uses a custom BroadcastReceiver that redefines its name.
         -->
-        <service android:name="com.example.jaecheol.gcm.GcmIntentService" />
+        <service android:name="com.example.user.gcm.GcmIntentService" />
 
     </application>
 
