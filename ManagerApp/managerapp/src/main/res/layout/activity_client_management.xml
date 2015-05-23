@@ -43,13 +43,15 @@
                             android:layout_height="wrap_content"
                             android:text="이전순번"
                             android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
+                            android:textSize="10sp"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/before_turn_textview"
+                            android:textStyle="bold"
+
                             android:textColor="#FFFFFF"
-                            android:textSize="25sp"/>
+                            android:textSize="28sp"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -64,12 +66,14 @@
                             android:layout_height="wrap_content"
                             android:text="현재순번"
                             android:textColor="#FFFFFF"
-                            android:textSize="20sp"/>
+                            android:textSize="15sp"
+                            android:layout_marginBottom="-7dp"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:textSize="30sp"
+                            android:textSize="45sp"
                             android:id="@+id/this_turn_textview"/>
                     </LinearLayout>
 
@@ -87,13 +91,14 @@
                             android:layout_height="wrap_content"
                             android:text="다음순번"
                             android:textColor="#FFFFFF"
-                            android:textSize="15sp"/>
+                            android:textSize="10sp"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/after_turn_textview"
+                            android:textStyle="bold"
                             android:textColor="#FFFFFF"
-                            android:textSize="25sp"/>
+                            android:textSize="28sp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -185,7 +190,7 @@
                             app:rippleColor="@color/main_color_grey_400"
                             android:layout_marginBottom="8dp">
                         <Button
-                            android:id="@+id/client_more_infomation"
+                            android:id="@+id/first_client_more_infomation_button"
                             android:text="상세정보"
                             android:textColor="#FFFFFF"
                             android:textSize="15sp"
@@ -202,7 +207,7 @@
                             android:layout_height="wrap_content"
                             app:rippleColor="@color/main_color_grey_400">
                         <Button
-                            android:id="@+id/client_cancle"
+                            android:id="@+id/first_client_cancel_button"
                             android:text="대기취소"
                             android:textColor="#FFFFFF"
                             android:textSize="15sp"

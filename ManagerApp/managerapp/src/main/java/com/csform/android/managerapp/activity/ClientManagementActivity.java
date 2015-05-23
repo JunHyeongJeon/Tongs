@@ -66,7 +66,7 @@ public class ClientManagementActivity extends ActionBarActivity
     private AnimatedExpandableListView listView;
 
     public static final int CASE_STATUS_USER_CALL = 0;
-    public static final int CASE_STATUS_USER_CANCLE = 1;
+    public static final int CASE_STATUS_USER_CANCEL = 1;
     public static final int CASE_STATUS_USER_MORE_INFORMATION = 2;
     private String mToken;
     private String mTodayDate;
@@ -83,18 +83,21 @@ public class ClientManagementActivity extends ActionBarActivity
 
     public ImageView mClientTicket;
 
-    TextView mBeforeTurnTextView;
-    TextView mThisTurnTextView;
-    TextView mAfterTurnTextView;
-    TextView mThisTurnWaitPeopleTextView;
-    TextView mThisTurnWaitTimeTextView;
+    private TextView mBeforeTurnTextView;
+    private TextView mThisTurnTextView;
+    private TextView mAfterTurnTextView;
+    private TextView mThisTurnWaitPeopleTextView;
+    private TextView mThisTurnWaitTimeTextView;
 
-    String mBeforeFirstId = "";
-    String mFirstId = "";
-    String mAfterFirstId = "";
+    private Button mFirstClientMoreInfoButton;
+    private Button mFirstClientCancelButton;
 
-    String mThisTurnWaitPeople = "0";
-    String mThisTurnWaitTime = "0";
+    private String mBeforeFirstId = "";
+    private String mFirstId = "";
+    private String mAfterFirstId = "";
+
+    private String mThisTurnWaitPeople = "0";
+    private String mThisTurnWaitTime = "0";
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +125,12 @@ public class ClientManagementActivity extends ActionBarActivity
         mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
         mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
         mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
+
+        mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
+        mFirstClientMoreInfoButton.setOnClickListener(this);
+
+        mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
+        mFirstClientCancelButton.setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -189,15 +198,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
 
-    public String dateSplit(String date){
-        SimpleDateFormat year = new SimpleDateFormat("yyyy");
-        SimpleDateFormat month = new SimpleDateFormat("MM");
-        SimpleDateFormat day = new SimpleDateFormat("dd");
-        String result = year.format(date) + "." +
-                month.format(date) + "." +
-                day.format(date) + ".";
-        return result;
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -290,7 +290,7 @@ public class ClientManagementActivity extends ActionBarActivity
             return;
         }
         if( position == 2){
-            moveActivity();
+            movePreClientListActivity();
 
         }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
@@ -307,6 +307,16 @@ public class ClientManagementActivity extends ActionBarActivity
         if(v.getId() == R.id.client_add)
         {
             recognitionBacode();
+        }
+        else if (v.getId() == R.id.first_client_more_infomation_button)
+        {
+            moveClientMoreInfoActivity();
+        }
+        else if (v.getId() == R.id.first_client_cancel_button)
+        {
+            removeTicket(mFirstId);
+            mBeforeFirstId = mFirstId;
+            mBeforeTurnTextView.setText(mBeforeFirstId);
         }
 
 
@@ -338,7 +348,7 @@ public class ClientManagementActivity extends ActionBarActivity
         if(status == PROTOCOL_STATUS_USER_CALL) {
             ment = getString(R.string.dialog_user_call);
         }
-        else if (status == PROTOCOL_STATUS_USER_CANCLE) {
+        else if (status == PROTOCOL_STATUS_USER_CANCEL) {
             ment = getString(R.string.dialog_user_remove);
         } else {
             ment = getString(R.string.dialog_user_more_information);
@@ -428,7 +438,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
     private void removeTicket(String id){
-        Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCLE");
+        Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCEL");
 
 //        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
         String url;
@@ -436,7 +446,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 getString(R.string.api_store_ticket_remove) +
                 "token=" + mToken +
                 "&id=" + id;
-        requestOnUIThread(PROTOCOL_STATUS_USER_CANCLE, url, new OnHttpReceive() {
+        requestOnUIThread(PROTOCOL_STATUS_USER_CANCEL, url, new OnHttpReceive() {
             @Override
             public void onReceive(int protocol, String data) {
                 try {
@@ -475,7 +485,8 @@ public class ClientManagementActivity extends ActionBarActivity
                         Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
 
                         JSONArray jsonArr = json.optJSONArray("list");
-                        if (jsonArr == null) {
+                        if (jsonArr == null || "[]".equals(jsonArr.toString()) ) {
+                            /*
                             List<GroupItem> items = new ArrayList<GroupItem>();
 
                             GroupItem item = new GroupItem();
@@ -500,7 +511,8 @@ public class ClientManagementActivity extends ActionBarActivity
                             } else {
                                 listView.setIndicatorBoundsRelative(width - px, width);
                             }
-
+                                */
+                            printToast("대기열이 없습니다.");
                             return;
                         }
 
@@ -512,7 +524,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
 
-                        mFirstId = obj.optString("id", null);
+                        mFirstId = obj.optString("number", null);
                         mThisTurnTextView.setText(mFirstId);
 
                         String firstPeople = obj.optString("people",null);
@@ -524,7 +536,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
                         obj = jsonArr.optJSONObject(1);
-                        mAfterFirstId = obj.optString("id", null);
+                        mAfterFirstId ="";
+                        mAfterFirstId = obj.optString("number", null);
                         mAfterTurnTextView.setText(mAfterFirstId);
 
                         List<GroupItem> items = new ArrayList<GroupItem>();
@@ -542,6 +555,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             String status = inObj.optString("status", null);
                             String pivot = inObj.optString("pivot", null);
                             String people = inObj.optString("people",null);
+                            String number = inObj.optString("number", null);
                             long popTime = inObj.optLong("time",0);
 
                             index[i] = id;
@@ -729,7 +743,7 @@ public class ClientManagementActivity extends ActionBarActivity
         if (status == CASE_STATUS_USER_CALL) {
             popTicket(id);
         }
-        else if (status == CASE_STATUS_USER_CANCLE) {
+        else if (status == CASE_STATUS_USER_CANCEL) {
             removeTicket(id);
         }
         else if (status == CASE_STATUS_USER_MORE_INFORMATION){
@@ -749,12 +763,6 @@ public class ClientManagementActivity extends ActionBarActivity
                 "인증번호를 서버와 통신중입니다.. 잠시만 기다려 주세요 ...", true);
     }
 
-    private void moveActivity(){
-        Intent intent = new Intent(this, PreviousClientListActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
-
-    }
 
     private class ExpandListViewAdapter extends AnimatedExpandableListView.AnimatedExpandableListAdapter {
 
@@ -871,8 +879,21 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
 
-    void moveActivityClientMoreInfo(){
-        
+
+    private void movePreClientListActivity(){
+        Intent intent = new Intent(this, PreviousClientListActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+
+    }
+    void moveClientMoreInfoActivity(){
+
     }
 
+    void sendSMS(){
+
+    }
+    public void printToast(String string){
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+    }
 }

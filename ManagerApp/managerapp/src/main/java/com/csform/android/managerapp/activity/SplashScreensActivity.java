@@ -21,11 +21,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.csform.android.managerapp.R;
+import com.csform.android.managerapp.util.GlobalVar;
+import com.csform.android.managerapp.util.HttpTask;
+import com.csform.android.managerapp.util.OnHttpReceive;
 import com.csform.android.managerapp.util.Preference;
 import com.csform.android.managerapp.view.kbv.KenBurnsView;
 
+import org.json.JSONObject;
 
-public class SplashScreensActivity extends Activity {
+
+public class SplashScreensActivity extends Activity implements GlobalVar{
 
 	public static final String SPLASH_SCREEN_OPTION = "com.csform.android.uiapptemplate.activity.SplashScreensActivity";
 	public static final String SPLASH_SCREEN_OPTION_1 = "Option 1";
@@ -56,7 +61,7 @@ public class SplashScreensActivity extends Activity {
 		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
 		setAnimation(SPLASH_SCREEN_OPTION_2);
 		getUserInfo();
-
+		requestGlobalSet();
 		Handler handler = new Handler() {
 			public void handleMessage(Message msg) {
 				if( !isClickStatus ){
@@ -180,6 +185,39 @@ public class SplashScreensActivity extends Activity {
 		overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 
 	}
+	void requestGlobalSet(){
+
+		Log.v("Protocol", "PROTOCOL_STATUS_GET_GLOBAL_SET");
+
+//        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
+		String url;
+		url = getString(R.string.api_server) +
+				getString(R.string.api_store_global_set_request	);
+		requestOnUIThread(PROTOCOL_STATUS_GET_GLOBAL_SET, url, new OnHttpReceive() {
+			@Override
+			public void onReceive(int protocol, String data) {
+				try {
+					JSONObject json = new JSONObject(data);
+					String result_code = json.optString("result_code", null);
+					boolean isSuccess = "0".equals(result_code) ? true : false;
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	void requestOnUIThread(final int protocol, final String url, final OnHttpReceive onReceive)
+	{
+		Log.v("URL", url);
+		this.runOnUiThread(new Runnable() {
+			public void run() {
+				new HttpTask(protocol, onReceive).execute(url);
+			}
+		});
+	}
+
 
 }
 

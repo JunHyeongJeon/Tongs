@@ -179,6 +179,7 @@
     <string name="api_store_ticket_pop">store/ticket/pop/?</string>
     <string name="api_store_ticket_push">store/ticket/push/?</string>
     <string name="api_store_ticket_remove">store/ticket/remove/?</string>
+    <string name="api_store_global_set_request">store/config/store.json</string>
 
     <!--email=somabell15@gmail.com&password=soma2015-->
 

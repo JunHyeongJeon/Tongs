@@ -43,7 +43,9 @@ public class HttpTask extends AsyncTask<String, Void, String>{
             return result;
 
         String type = mContentType;
-        if(type != null && type.indexOf("text") != -1)
+        if(type != null && type.indexOf("image") != -1)
+            ;
+        else
             result = convertStreamToString(is);
 
         return result;
