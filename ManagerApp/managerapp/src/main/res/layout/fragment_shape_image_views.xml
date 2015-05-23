@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" >
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/a"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -22,7 +22,7 @@
                 android:layout_weight="1"
                 app:siShape="@raw/a" />
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/b"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" >
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/c"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -45,7 +45,7 @@
                 android:layout_weight="1"
                 app:siShape="@raw/c" />
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/d"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" >
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/e"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -68,7 +68,7 @@
                 android:layout_weight="1"
                 app:siShape="@raw/e" />
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/f"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp" >
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/g"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"
@@ -91,7 +91,7 @@
                 android:layout_weight="1"
                 app:siShape="@raw/g" />
 
-            <com.csform.android.managerapp.view.siv.ShapeImageView
+            <com.tongs.store.view.siv.ShapeImageView
                 android:id="@+id/h"
                 style="@style/ImageViewStyle"
                 android:layout_width="0dp"

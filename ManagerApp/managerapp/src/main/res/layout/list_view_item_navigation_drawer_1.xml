@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.csform.android.managerapp.view.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+<com.tongs.store.view.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     style="@style/RippleStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         android:paddingBottom="4dp"
         android:paddingTop="4dp" >
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:id="@+id/icon"
             style="@style/TextViewAppearance.Title1"
             android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
             android:paddingLeft="18dp"
             android:textColor="@drawable/selector_text_empty" />
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             android:id="@+id/title"
             style="@style/TextViewAppearance.Body1"
             android:layout_width="match_parent"
@@ -33,4 +33,4 @@
             app:typeface="robotoBold" />
     </LinearLayout>
 
-</com.csform.android.managerapp.view.MaterialRippleLayout>
+</com.tongs.store.view.MaterialRippleLayout>

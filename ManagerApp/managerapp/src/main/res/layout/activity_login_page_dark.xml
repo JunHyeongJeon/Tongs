@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_background_dark"
@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="24dp" >
 
-    <com.csform.android.managerapp.font.FontelloTextView
+    <com.tongs.store.font.FontelloTextView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical" >
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -34,7 +34,7 @@
             android:textSize="16dp"
             tools:ignore="SpUsage" />
 
-        <com.csform.android.managerapp.view.FloatLabeledEditText
+        <com.tongs.store.view.FloatLabeledEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -51,7 +51,7 @@
         android:layout_marginTop="6dp"
         android:gravity="center_vertical" >
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -60,7 +60,7 @@
             android:textSize="16dp"
             tools:ignore="SpUsage" />
 
-        <com.csform.android.managerapp.view.FloatLabeledEditText
+        <com.tongs.store.view.FloatLabeledEditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -77,14 +77,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp" >
 
-        <com.csform.android.managerapp.view.MaterialRippleLayout
+        <com.tongs.store.view.MaterialRippleLayout
             style="@style/RippleStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
             app:rippleColor="@color/main_color_grey_400" >
 
-            <com.csform.android.managerapp.font.RobotoTextView
+            <com.tongs.store.font.RobotoTextView
                 android:id="@+id/login"
                 style="@style/ButtonStyle.RaisedEmpty"
                 android:layout_width="wrap_content"
@@ -94,16 +94,16 @@
                 android:minWidth="112dp"
                 android:text="@string/login"
                 android:textColor="#fff" />
-        </com.csform.android.managerapp.view.MaterialRippleLayout>
+        </com.tongs.store.view.MaterialRippleLayout>
 
-        <com.csform.android.managerapp.view.MaterialRippleLayout
+        <com.tongs.store.view.MaterialRippleLayout
             style="@style/RippleStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             app:rippleColor="@color/main_color_grey_400" >
 
-            <com.csform.android.managerapp.font.RobotoTextView
+            <com.tongs.store.font.RobotoTextView
                 android:id="@+id/register"
                 style="@style/ButtonStyle.RaisedEmpty"
                 android:layout_width="wrap_content"
@@ -113,10 +113,10 @@
                 android:minWidth="112dp"
                 android:text="@string/register"
                 android:textColor="#fff" />
-        </com.csform.android.managerapp.view.MaterialRippleLayout>
+        </com.tongs.store.view.MaterialRippleLayout>
     </LinearLayout>
 
-    <com.csform.android.managerapp.view.MaterialRippleLayout
+    <com.tongs.store.view.MaterialRippleLayout
         style="@style/RippleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
         android:layout_marginTop="54dp"
         app:rippleColor="@color/main_color_grey_400" >
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             android:id="@+id/skip"
             style="@style/ButtonStyle.RaisedEmpty"
             android:layout_width="wrap_content"
@@ -135,6 +135,6 @@
             android:minWidth="112dp"
             android:text="@string/skip"
             android:textColor="@color/main_color_A400" />
-    </com.csform.android.managerapp.view.MaterialRippleLayout>
+    </com.tongs.store.view.MaterialRippleLayout>
 
 </LinearLayout>

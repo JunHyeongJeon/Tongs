@@ -3,8 +3,8 @@
   <component name="AndroidConfiguredLogFilters">
     <filters>
       <filter>
-        <option name="name" value="app: com.csform.android.uiapptemplate" />
-        <option name="packageNamePattern" value="com.csform.android.uiapptemplate" />
+        <option name="name" value="app: com.tongs.store" />
+        <option name="packageNamePattern" value="com.tongs.store" />
       </filter>
       <filter>
         <option name="name" value="app: com.tongs.hostapp" />
@@ -18,7 +18,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.csform.android.uiapptemplate" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.tongs.store" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa44bc9a-2b47-4d91-8383-8e62b28df88a" name="Default" comment="" />
@@ -2336,7 +2336,7 @@
       <recent name="$PROJECT_DIR$/src/main/res/raw" />
     </key>
     <key name="android.template.packageName">
-      <recent name="com.csform.android.uiapptemplate" />
+      <recent name="com.tongs.store" />
     </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />

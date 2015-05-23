@@ -14,7 +14,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp" />
 
-    <com.csform.android.managerapp.font.RobotoTextView
+    <com.tongs.store.font.RobotoTextView
         android:id="@+id/text"
         style="@style/TextViewAppearance.Caption1"
         android:layout_width="0dp"
@@ -24,7 +24,7 @@
         android:textColor="@color/main_color_grey_700"
         android:textSize="16sp" />
 
-    <com.csform.android.managerapp.font.FontelloTextView
+    <com.tongs.store.font.FontelloTextView
         android:id="@+id/icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

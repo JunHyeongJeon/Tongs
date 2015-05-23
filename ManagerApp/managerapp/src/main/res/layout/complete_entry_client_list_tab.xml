@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <com.csform.android.managerapp.view.AnimatedExpandableListView
+    <com.tongs.store.view.AnimatedExpandableListView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/complete_entry_client_list_view"
         android:layout_width="match_parent"
@@ -15,6 +15,6 @@
         android:groupIndicator="@android:color/transparent"
         android:divider="#00000000">
 
-    </com.csform.android.managerapp.view.AnimatedExpandableListView>
+    </com.tongs.store.view.AnimatedExpandableListView>
 
 </LinearLayout>

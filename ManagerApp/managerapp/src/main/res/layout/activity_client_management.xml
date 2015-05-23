@@ -183,7 +183,7 @@
                         android:orientation="vertical"
                         android:layout_marginBottom="10dp">
 
-                        <com.csform.android.managerapp.view.MaterialRippleLayout
+                        <com.tongs.store.view.MaterialRippleLayout
                             style="@style/RippleStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -199,9 +199,9 @@
                             android:background="@drawable/client_more_infomation_button_shape"
 
                             />
-                        </com.csform.android.managerapp.view.MaterialRippleLayout>
+                        </com.tongs.store.view.MaterialRippleLayout>
 
-                        <com.csform.android.managerapp.view.MaterialRippleLayout
+                        <com.tongs.store.view.MaterialRippleLayout
                             style="@style/RippleStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -216,12 +216,12 @@
                             android:background="@drawable/client_more_infomation_button_shape"
                             />
 
-                        </com.csform.android.managerapp.view.MaterialRippleLayout>
+                        </com.tongs.store.view.MaterialRippleLayout>
 
                     </LinearLayout>
                 </LinearLayout>
 
-                <com.csform.android.managerapp.view.MaterialRippleLayout
+                <com.tongs.store.view.MaterialRippleLayout
                     style="@style/RippleStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -237,7 +237,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/client_call_button_shape"
                         />
-                </com.csform.android.managerapp.view.MaterialRippleLayout>
+                </com.tongs.store.view.MaterialRippleLayout>
                 <ImageView
                     android:layout_marginTop="17.3dp"
                     android:layout_width="match_parent"
@@ -253,7 +253,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginBottom="10.6dp"/>
 
-                <com.csform.android.managerapp.view.AnimatedExpandableListView
+                <com.tongs.store.view.AnimatedExpandableListView
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/client_list_view"
                     android:layout_width="match_parent"
@@ -262,7 +262,7 @@
                     android:groupIndicator="@android:color/transparent"
                     android:divider="#00000000">
 
-                </com.csform.android.managerapp.view.AnimatedExpandableListView>
+                </com.tongs.store.view.AnimatedExpandableListView>
 
             </LinearLayout>
 

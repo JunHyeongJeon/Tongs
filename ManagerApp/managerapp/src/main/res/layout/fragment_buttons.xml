@@ -18,39 +18,39 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
 
-        <com.csform.android.managerapp.view.MaterialRippleLayout
+        <com.tongs.store.view.MaterialRippleLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            	style="@style/RippleStyle" >
 
-            <com.csform.android.managerapp.font.RobotoTextView
+            <com.tongs.store.font.RobotoTextView
                 style="@style/ButtonStyle.RaisedFull"
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:text="@string/raised" />
-        </com.csform.android.managerapp.view.MaterialRippleLayout>
+        </com.tongs.store.view.MaterialRippleLayout>
 
-        <com.csform.android.managerapp.view.MaterialRippleLayout
+        <com.tongs.store.view.MaterialRippleLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.csform.android.managerapp.font.RobotoTextView
+            <com.tongs.store.font.RobotoTextView
                 style="@style/ButtonStyle.RaisedEmpty"
                 android:layout_width="112dp"
                 android:layout_height="wrap_content"
                 android:text="@string/flat" />
-        </com.csform.android.managerapp.view.MaterialRippleLayout>
+        </com.tongs.store.view.MaterialRippleLayout>
 
-        <com.csform.android.managerapp.view.MaterialRippleLayout
+        <com.tongs.store.view.MaterialRippleLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.csform.android.managerapp.font.FontelloTextView
+            <com.tongs.store.font.FontelloTextView
                 style="@style/ButtonStyle.RaisedFull"
                 android:layout_width="56dp"
                 android:layout_height="wrap_content"
                 android:text="@string/drawer_icon_blog" />
-        </com.csform.android.managerapp.view.MaterialRippleLayout>
+        </com.tongs.store.view.MaterialRippleLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -58,19 +58,19 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/raised" />
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedEmpty"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/flat" />
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
@@ -82,19 +82,19 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal" >
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/raised" />
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedEmpty"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/flat" />
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
@@ -107,20 +107,20 @@
         android:background="@color/main_color_500"
         android:gravity="center_horizontal" >
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:text="@string/raised" />
 
-        <com.csform.android.managerapp.font.RobotoTextView
+        <com.tongs.store.font.RobotoTextView
             style="@style/ButtonStyle.RaisedEmpty"
             android:layout_width="112dp"
             android:layout_height="wrap_content"
             android:enabled="true"
             android:text="@string/flat" />
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             style="@style/ButtonStyle.RaisedFull"
             android:layout_width="56dp"
             android:layout_height="wrap_content"

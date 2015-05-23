@@ -11,7 +11,7 @@
         android:background="@color/main_color_600"
         android:gravity="center_vertical" >
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -31,7 +31,7 @@
             android:textColor="#fff"
             android:textCursorDrawable="@drawable/edit_text_cursor_drawable_accent" />
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:id="@+id/search_microfon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
             android:textSize="18dp"
             tools:ignore="SpUsage" />
 
-        <com.csform.android.managerapp.font.FontelloTextView
+        <com.tongs.store.font.FontelloTextView
             android:id="@+id/search_x"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

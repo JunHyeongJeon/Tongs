@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     android:layout_width="match_parent"
     android:layout_height="92dp" >
 
@@ -16,7 +16,7 @@
         android:layout_height="64dp"
         android:layout_margin="16dp" />
 
-    <com.csform.android.managerapp.font.RobotoTextView
+    <com.tongs.store.font.RobotoTextView
         android:id="@+id/email"
         style="@style/TextViewAppearance.Body1"
         android:layout_width="wrap_content"

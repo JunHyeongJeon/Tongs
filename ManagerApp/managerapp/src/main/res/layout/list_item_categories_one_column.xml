@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-    <com.csform.android.managerapp.view.ScaledLinearLayout
+    <com.tongs.store.view.ScaledLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
@@ -14,7 +14,7 @@
             android:layout_weight="1"
             android:orientation="vertical" >
 
-            <com.csform.android.managerapp.view.MaterialRippleLayout
+            <com.tongs.store.view.MaterialRippleLayout
                 style="@style/RippleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
@@ -22,7 +22,7 @@
                 <ImageView
                     android:id="@+id/list_item_image_1"
                     style="@style/ImageViewStyle" />
-            </com.csform.android.managerapp.view.MaterialRippleLayout>
+            </com.tongs.store.view.MaterialRippleLayout>
 
             <LinearLayout
                 android:id="@+id/layout_top_bottom_1"
@@ -61,7 +61,7 @@
                         android:textColor="#fff" />
                 </LinearLayout>
 
-                <com.csform.android.managerapp.font.FontelloTextView
+                <com.tongs.store.font.FontelloTextView
                     android:id="@+id/list_item_favourite_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,6 +79,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />
-    </com.csform.android.managerapp.view.ScaledLinearLayout>
+    </com.tongs.store.view.ScaledLinearLayout>
 
 </LinearLayout>

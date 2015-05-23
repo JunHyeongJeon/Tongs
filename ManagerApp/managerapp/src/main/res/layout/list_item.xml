@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.csform.android.uiapptemplate"
+    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingLeft="10dp"
     android:paddingRight="10dp" >
 
-    <com.csform.android.managerapp.font.FontelloTextView
+    <com.tongs.store.font.FontelloTextView
         style="@style/TextViewAppearance.Title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:textColor="@color/main_color_grey_700"
         android:textSize="16sp" />
 
-    <com.csform.android.managerapp.font.RobotoTextView
+    <com.tongs.store.font.RobotoTextView
         android:id="@+id/textTitle"
         style="@style/TextViewAppearance.Title1"
         android:layout_width="match_parent"
