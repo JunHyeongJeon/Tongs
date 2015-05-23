@@ -1,0 +1,7 @@
+AuthName "Admin page"
+AuthType Basic
+AuthUserFile /home/somabell/.htpasswd
+AuthGroupFile /dev/null
+<Limit GET>
+	require valid-user
+</Limit>

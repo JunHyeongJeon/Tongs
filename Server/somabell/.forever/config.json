@@ -1,0 +1,17 @@
+{
+  "root": "/home/somabell/.forever",
+  "pidPath": "/home/somabell/.forever/pids",
+  "sockPath": "/home/somabell/.forever/sock",
+  "loglength": 100,
+  "logstream": false,
+  "columns": [
+    "uid",
+    "command",
+    "script",
+    "forever",
+    "pid",
+    "id",
+    "logfile",
+    "uptime"
+  ]
+}

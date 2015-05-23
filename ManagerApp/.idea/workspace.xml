@@ -26,185 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/Contents.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ExpandableListViewActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/FinishListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/GoogleCardsActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/HttpHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ImageGalleryCategoryActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ImageGallerySubcategoryActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/InactivityTimer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/IntentSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/Intents.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/LeftMenusActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ListViewsActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/MainApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ParallaxActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/ParallaxKenBurnsActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SearchBarsActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SignUpActivityFirst.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SignUpActivityForth.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SignUpActivitySecond.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SignUpActivityThird.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/SlidingTabsBasicFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/StickyListHeadersActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientManagementActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/ClientMoreInformationActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/LogInPageActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/PreviousClientListActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/SignUpActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/activity/SplashScreensActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/DefaultAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/DrawerAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/GoogleCardsAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/ImageGalleryCategoryAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/ImageGallerySubcategoryAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/MyStickyListHeadersAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/SearchAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/adapter/SubcategoryAdapter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/font/FontelloTextView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/font/RobotoTextView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/AudioPlayerFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ButtonsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/CalendarsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/CheckAndRadioBoxesFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/DialogsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ImageGalleryFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/LeftMenusFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ListViewsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/LogInPageFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ParallaxEffectsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ProgressBarsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/SearchBarsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/ShapeImageViewsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/SplashScreensFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/TextViewsFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/fragment/VideoPlayerFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/gcm/GcmBroadcastReceiver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/gcm/GcmIntentService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/gcm/GcmReceiver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/model/DrawerItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/model/DummyModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/model/ImageGalleryCategoryModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/model/ImageGallerySubcategoryModel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/tab/Tab1.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/tab/Tab2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/tab/Tab3.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/DummyContent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/GlobalVar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/HttpTask.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/ImageUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/OnHttpReceive.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/util/Preference.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AlphaForegroundColorSpan.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/AnimatedExpandableListView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/FloatLabeledEditText.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/MaterialRippleLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/ProgressWheel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/PullToZoomListView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/PullToZoomScrollView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/ScaledLinearLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/SlidingTabLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/SlidingTabStrip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/CircularAnimatedDrawable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/CircularProgressButton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/CircularProgressDrawable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/MorphingAnimation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/OnAnimationEndListener.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/StateManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/cpb/StrokeGradientDrawable.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/IncompatibleRatioException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/KenBurnsView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/MathUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/RandomTransitionGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/Transition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/kbv/TransitionGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/BubbleImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/CircularImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/DiamondImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/HeartImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/HexagonImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/OctogonImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/PentagonImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/RoundedImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/ShaderImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/ShapeImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/StarImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/mask/PorterCircularImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/mask/PorterImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/mask/PorterShapeImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/SvgUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/CopyInputStream.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/IdHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/IoUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/NumberParse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/ParseUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/ParserHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/PathInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/PathParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/SvgToPath.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/path/parser/TransformParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/shader/BubbleShader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/shader/CircleShader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/shader/RoundedShader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/shader/ShaderHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/csform/android/managerapp/view/siv/shader/SvgShader.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_more_information.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_more_information.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_expandable_list_view.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_expandable_list_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax_ken_burns.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax_ken_burns.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_search_bars_dark.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_search_bars_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_search_bars_light.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_search_bars_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/build.gradle" afterPath="$PROJECT_DIR$/managerapp/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/cancel_entry_client_list_tab.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/cancel_entry_client_list_tab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/complete_entry_client_list_tab.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/complete_entry_client_list_tab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_audio_player.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_audio_player.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_buttons.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_buttons.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_calendars.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_calendars.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_dialogs.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_dialogs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_progress_bars.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_progress_bars.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_sample.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_sample.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_text_views.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_text_views.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_video_player.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_video_player.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_2.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_header.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_categories_one_column.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_categories_one_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_categories_two_columns.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_categories_two_columns.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_default.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_google_cards.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_google_cards.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_undo_view.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_undo_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_row.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_1.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_2.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_search.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_search.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_subcategory.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_subcategory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_more_information.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_more_information.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_first.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_first.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_forth.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_forth.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_second.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_second.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_third.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_sign_up_activity_third.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_store_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_store_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/not_complete_entry_client_list_tab.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/not_complete_entry_client_list_tab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_bad_client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_bad_client_group_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/managerapp/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -289,210 +111,7 @@
     <favorites_list name="android" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_login_page_dark.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2413793">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FloatLabeledEditText.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/FloatLabeledEditText.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_parallax.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5517242">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="R.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/managerapp/build/generated/source/r/debug/com/tongs/store/R.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2186589">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
-        <entry file="file:///ADT/sdk/sources/android-21/android/app/Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5608" column="0" selection-start-line="5608" selection-start-column="0" selection-end-line="5608" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#260237#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#36141#36142#0" expanded="false" />
-                <element signature="e#36202#36203#0" expanded="false" />
-                <element signature="e#36963#36978#0" expanded="false" />
-                <element signature="e#38000#38001#0" expanded="false" />
-                <element signature="e#38030#38031#0" expanded="false" />
-                <element signature="e#38417#38418#0" expanded="false" />
-                <element signature="e#38452#38453#0" expanded="false" />
-                <element signature="e#38560#38561#0" expanded="false" />
-                <element signature="e#38595#38596#0" expanded="false" />
-                <element signature="e#38698#38699#0" expanded="false" />
-                <element signature="e#38736#38737#0" expanded="false" />
-                <element signature="e#38850#38851#0" expanded="false" />
-                <element signature="e#38880#38881#0" expanded="false" />
-                <element signature="e#38994#38995#0" expanded="false" />
-                <element signature="e#39031#39032#0" expanded="false" />
-                <element signature="e#39379#39380#0" expanded="false" />
-                <element signature="e#39409#39410#0" expanded="false" />
-                <element signature="e#40668#40669#0" expanded="false" />
-                <element signature="e#40741#40742#0" expanded="false" />
-                <element signature="e#49531#49532#0" expanded="false" />
-                <element signature="e#49583#49584#0" expanded="false" />
-                <element signature="e#53256#53257#0" expanded="false" />
-                <element signature="e#53286#53287#0" expanded="false" />
-                <element signature="e#55436#55437#0" expanded="false" />
-                <element signature="e#55483#55484#0" expanded="false" />
-                <element signature="e#55699#55700#0" expanded="false" />
-                <element signature="e#55738#55739#0" expanded="false" />
-                <element signature="e#67164#67165#0" expanded="false" />
-                <element signature="e#67192#67193#0" expanded="false" />
-                <element signature="e#67972#67973#0" expanded="false" />
-                <element signature="e#67999#68000#0" expanded="false" />
-                <element signature="e#75727#75728#0" expanded="false" />
-                <element signature="e#75768#75769#0" expanded="false" />
-                <element signature="e#80051#80052#0" expanded="false" />
-                <element signature="e#80078#80079#0" expanded="false" />
-                <element signature="e#81776#81777#0" expanded="false" />
-                <element signature="e#81803#81804#0" expanded="false" />
-                <element signature="e#83854#83855#0" expanded="false" />
-                <element signature="e#83887#83888#0" expanded="false" />
-                <element signature="e#91283#91284#0" expanded="false" />
-                <element signature="e#91334#91335#0" expanded="false" />
-                <element signature="e#97560#97561#0" expanded="false" />
-                <element signature="e#97612#97613#0" expanded="false" />
-                <element signature="e#97782#97783#0" expanded="false" />
-                <element signature="e#97836#97837#0" expanded="false" />
-                <element signature="e#105557#105558#0" expanded="false" />
-                <element signature="e#105585#105586#0" expanded="false" />
-                <element signature="e#106960#106961#0" expanded="false" />
-                <element signature="e#106988#106989#0" expanded="false" />
-                <element signature="e#108012#108013#0" expanded="false" />
-                <element signature="e#108040#108041#0" expanded="false" />
-                <element signature="e#109490#109491#0" expanded="false" />
-                <element signature="e#109518#109519#0" expanded="false" />
-                <element signature="e#110748#110749#0" expanded="false" />
-                <element signature="e#110776#110777#0" expanded="false" />
-                <element signature="e#115258#115259#0" expanded="false" />
-                <element signature="e#115282#115283#0" expanded="false" />
-                <element signature="e#119787#119788#0" expanded="false" />
-                <element signature="e#119814#119815#0" expanded="false" />
-                <element signature="e#131688#131689#0" expanded="false" />
-                <element signature="e#131725#131726#0" expanded="false" />
-                <element signature="e#134525#134526#0" expanded="false" />
-                <element signature="e#134589#134590#0" expanded="false" />
-                <element signature="e#135814#135815#0" expanded="false" />
-                <element signature="e#135871#135872#0" expanded="false" />
-                <element signature="e#136207#136208#0" expanded="false" />
-                <element signature="e#136264#136265#0" expanded="false" />
-                <element signature="e#136566#136567#0" expanded="false" />
-                <element signature="e#136604#136605#0" expanded="false" />
-                <element signature="e#136740#136741#0" expanded="false" />
-                <element signature="e#136803#136804#0" expanded="false" />
-                <element signature="e#138400#138401#0" expanded="false" />
-                <element signature="e#138427#138428#0" expanded="false" />
-                <element signature="e#140129#140130#0" expanded="false" />
-                <element signature="e#140170#140171#0" expanded="false" />
-                <element signature="e#140364#140365#0" expanded="false" />
-                <element signature="e#140409#140410#0" expanded="false" />
-                <element signature="e#142119#142120#0" expanded="false" />
-                <element signature="e#142155#142156#0" expanded="false" />
-                <element signature="e#151843#151844#0" expanded="false" />
-                <element signature="e#151889#151890#0" expanded="false" />
-                <element signature="e#153631#153632#0" expanded="false" />
-                <element signature="e#153685#153686#0" expanded="false" />
-                <element signature="e#168937#168938#0" expanded="false" />
-                <element signature="e#168985#168986#0" expanded="false" />
-                <element signature="e#170793#170794#0" expanded="false" />
-                <element signature="e#170839#170840#0" expanded="false" />
-                <element signature="e#193306#193307#0" expanded="false" />
-                <element signature="e#193338#193339#0" expanded="false" />
-                <element signature="e#193517#193518#0" expanded="false" />
-                <element signature="e#193550#193551#0" expanded="false" />
-                <element signature="e#194114#194115#0" expanded="false" />
-                <element signature="e#194160#194161#0" expanded="false" />
-                <element signature="e#196059#196060#0" expanded="false" />
-                <element signature="e#196088#196089#0" expanded="false" />
-                <element signature="e#197808#197809#0" expanded="false" />
-                <element signature="e#197832#197833#0" expanded="false" />
-                <element signature="e#200003#200004#0" expanded="false" />
-                <element signature="e#200031#200032#0" expanded="false" />
-                <element signature="e#209802#209803#0" expanded="false" />
-                <element signature="e#209835#209836#0" expanded="false" />
-                <element signature="e#212070#212071#0" expanded="false" />
-                <element signature="e#212112#212113#0" expanded="false" />
-                <element signature="e#212704#212705#0" expanded="false" />
-                <element signature="e#212733#212734#0" expanded="false" />
-                <element signature="e#212773#212774#0" expanded="false" />
-                <element signature="e#212807#212808#0" expanded="false" />
-                <element signature="e#219273#219274#0" expanded="false" />
-                <element signature="e#219332#219333#0" expanded="false" />
-                <element signature="e#220741#220742#0" expanded="false" />
-                <element signature="e#220796#220797#0" expanded="false" />
-                <element signature="e#221939#221940#0" expanded="false" />
-                <element signature="e#221966#221967#0" expanded="false" />
-                <element signature="e#234146#234147#0" expanded="false" />
-                <element signature="e#234176#234177#0" expanded="false" />
-                <element signature="e#247227#247228#0" expanded="false" />
-                <element signature="e#247293#247294#0" expanded="false" />
-                <element signature="e#247762#247763#0" expanded="false" />
-                <element signature="e#247794#247795#0" expanded="false" />
-                <element signature="e#256753#256754#0" expanded="false" />
-                <element signature="e#256784#256785#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="181" column="71" selection-start-line="181" selection-start-column="71" selection-end-line="181" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2690,10 +2309,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2778,46 +2394,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="managerapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3163,11 +2748,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="740" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43910256" sideWeight="0.5791599" order="3" side_tool="false" content_ui="tabs" />
@@ -3193,21 +2777,22 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257329" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23828755" sideWeight="0.54521275" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31891027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3226,8 +2811,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45673078" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3653846" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -3461,7 +3046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48672566">
           <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3472,7 +3056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3494,7 +3077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7079646">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3567,7 +3149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71153843">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3578,7 +3159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6181319">
           <caret line="15" column="48" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3663,7 +3243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -3709,6 +3288,52 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/build/generated/source/r/debug/com/tongs/store/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18867925">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2388535">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/FloatLabeledEditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2186589">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29936305">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file:///ADT/sdk/sources/android-21/android/app/Activity.java">
@@ -3847,54 +3472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="181" column="71" selection-start-line="181" selection-start-column="71" selection-end-line="181" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2413793">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/FloatLabeledEditText.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5517242">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/build/generated/source/r/debug/com/tongs/store/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2186589">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
         </state>
       </provider>
