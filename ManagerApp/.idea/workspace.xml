@@ -25,9 +25,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.tongs.store" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="" />
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
