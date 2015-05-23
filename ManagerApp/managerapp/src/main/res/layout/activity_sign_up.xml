@@ -1,5 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -23,28 +25,40 @@
         android:background="#9E9E9F" />
     <include layout="@layout/layout_weight_control"/>
 
-    
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFFFFF"/>
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"/>
-    
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-        android:background="#FFFFFF"/>
-    <include layout="@layout/layout_weight_control"/>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#9E9E9F" />
+    <com.tongs.store.view.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fletFloatingHint="@string/sign_up_username"
+        app:fletHintTextColor="@color/main_color_grey_900"
+        app:fletSingleLine="true"
+        app:fletTextBackground="@drawable/edit_text_background_accent"
+        app:fletTextColor="@color/text_grey"
+        android:id= "@+id/sign_up_email"/>
+
+    <com.tongs.store.view.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="47.5dp"
+        app:fletFloatingHint="@string/password"
+        app:fletHintTextColor="@color/main_color_500"
+        app:fletPassword="true"
+        app:fletSingleLine="true"
+        app:fletTextBackground="@drawable/edit_text_background_accent"
+        app:fletTextColor="@color/main_color_grey_400"
+        android:id ="@+id/sign_up_password" />
+
+    <com.tongs.store.view.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="47.5dp"
+        app:fletFloatingHint="@string/sign_up_password_check"
+        app:fletHintTextColor="@color/main_color_500"
+        app:fletPassword="true"
+        app:fletSingleLine="true"
+        app:fletTextBackground="@drawable/edit_text_background_accent"
+        app:fletTextColor="@color/main_color_grey_400"
+        android:id ="@+id/sign_up_password_check" />
+
+
     <include layout="@layout/layout_weight_control"/>
 
 
@@ -53,43 +67,29 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp">
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF"/>
-        <Button
-            android:id="@+id/certify_number_send_button"
-            android:layout_marginLeft="8dp"
-            android:text="전송하기"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:layout_width="91dp"
-            android:layout_height="40dp"
-            android:background="@drawable/certify_number_send_button_shape" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        <com.tongs.store.view.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="47.5dp"
+            app:fletFloatingHint="@string/sign_up_store_name"
+            app:fletHintTextColor="@color/main_color_500"
+            app:fletSingleLine="true"
+            app:fletTextBackground="@drawable/edit_text_background_accent"
+            app:fletTextColor="@color/main_color_grey_400"
+            android:id ="@+id/sign_up_store_name" />
 
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="#FFFFFF" />
-        <Button
-            android:id="@+id/certify_button"
-            android:layout_marginLeft="8dp"
-            android:text="인증"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:layout_width="91dp"
-            android:layout_height="40dp"
-            android:background="@drawable/certify_number_send_button_shape" />
     </LinearLayout>
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </Spinner>
+
+
 
     <include layout="@layout/layout_weight_control"/>
-
 
     <TextView
         android:layout_width="fill_parent"
@@ -106,7 +106,8 @@
 
         <CheckBox
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/use_agree_check_box"/>
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
@@ -116,11 +117,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right">
-            <ImageView
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/pop_dialog"
-                android:layout_marginRight="15dp"/>
+                app:rippleColor="@color/main_color_grey_400"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp">
+                <Button
+                    android:layout_width="15dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/pop_dialog"
+                    android:id="@+id/pop_use_agree_dialog_button"/>
+            </com.tongs.store.view.MaterialRippleLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -131,7 +140,8 @@
 
         <CheckBox
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/person_info_agree_check_box"/>
         <TextView
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
@@ -141,11 +151,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right">
-            <ImageView
+
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/pop_dialog"
-                android:layout_marginRight="15dp"/>
+                app:rippleColor="@color/main_color_grey_400"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp">
+                <Button
+                    android:layout_width="15dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/pop_dialog"
+                    android:id="@+id/pop_person_info_agree_dialog_button"
+                    />
+            </com.tongs.store.view.MaterialRippleLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -158,20 +178,23 @@
 
     <include layout="@layout/layout_weight_control"/>
 
+    <com.tongs.store.view.MaterialRippleLayout
+        style="@style/RippleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:rippleColor="@color/main_color_grey_400"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/sign_up_button"
+            android:text="회원가입"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:background="@drawable/sign_up_button_shape"
+            android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/sign_up_button"
-        android:text="회원가입"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:background="@drawable/sign_up_button_shape"
-        android:layout_gravity="center"/>
-
+    </com.tongs.store.view.MaterialRippleLayout>
     <include layout="@layout/layout_weight_control"/>
-
-
-
 
 </LinearLayout>

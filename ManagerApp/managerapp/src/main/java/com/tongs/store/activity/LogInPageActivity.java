@@ -22,6 +22,8 @@ import com.tongs.store.util.OnHttpReceive;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import javax.security.auth.login.LoginException;
+
 import static com.tongs.store.util.GlobalVar.PROTOCOL_STATUS_MANAGER_LOGIN;
 import static com.tongs.store.util.GlobalVar.TOKEN;
 
@@ -252,7 +254,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     }
 
     public void printToast(String string){
-        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LogInPageActivity.this, string, Toast.LENGTH_SHORT).show();
     }
 
 

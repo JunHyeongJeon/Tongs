@@ -893,6 +893,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
     public void printToast(String string){
-        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
+        Toast.makeText(ClientManagementActivity.this, string, Toast.LENGTH_SHORT).show();
     }
 }

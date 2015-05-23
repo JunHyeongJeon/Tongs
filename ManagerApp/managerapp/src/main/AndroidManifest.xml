@@ -19,8 +19,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <android:uses-permission
-        android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -34,6 +33,10 @@
     <!-- This app has permission to register and receive data message. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -44,11 +47,6 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
         <activity
             android:name=".ParallaxKenBurnsActivity"
             android:theme="@style/AppTheme.Overlay" />
@@ -68,12 +66,6 @@
             android:name=".activity.SplashScreensActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
         <activity android:name=".ListViewsActivity" >
         </activity>
@@ -84,22 +76,6 @@
         <activity android:name=".GoogleCardsActivity" />
         <activity android:name=".ExpandableListViewActivity" />
         <activity android:name=".StickyListHeadersActivity" />
-        <activity
-            android:name=".SignUpActivityFirst"
-            android:label="@string/title_activity_sign_up_activity_first" >
-        </activity>
-        <activity
-            android:name=".SignUpActivitySecond"
-            android:label="@string/title_activity_sign_up_activity_second" >
-        </activity>
-        <activity
-            android:name=".SignUpActivityThird"
-            android:label="@string/title_activity_sign_up_activity_third" >
-        </activity>
-        <activity
-            android:name=".SignUpActivityForth"
-            android:label="@string/title_activity_sign_up_activity_forth" >
-        </activity>
         <activity
             android:name=".activity.ClientManagementActivity"
             android:label="@string/title_activity_client_management"
@@ -143,12 +119,20 @@
         <activity
             android:name=".activity.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.PreviousClientListActivity"
             android:label="@string/title_activity_previous_client_list" >
-
-           </activity>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>

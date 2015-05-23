@@ -26,10 +26,10 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.tongs.store.activity.ClientManagementActivity;
-import com.tongs.store.SignUpActivityForth;
 
 import com.tongs.store.R;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.tongs.store.activity.SplashScreensActivity;
 
 /**
  * This {@code IntentService} does the actual handling of the GCM message.
@@ -111,7 +111,7 @@ public class GcmIntentService extends IntentService {
 
 
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, SignUpActivityForth.class), 0);
+                new Intent(this, SplashScreensActivity.class), 0);
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)

@@ -90,7 +90,11 @@
     <string name="password">비밀번호</string>
     <string name="welcome">Welcome!\nTouch Me!</string>
 
-
+    <string name="sign_up_username">이메일</string>
+    <string name="sign_up_password_check">비밀번호 확인</string>
+    <string name="sign_up_store_name">상점 이름</string>
+    <string name="sign_up_store_location">상점 위치</string>
+    
     <string name="undo_deletion">UNDO DELETION</string>
     <string name="download">DOWNLOAD</string>
     <string name="done">DONE</string>
@@ -146,6 +150,7 @@
     <string name="error_invalid_password_check_test">비밀번호와 일치</string>
     <string name="error_invalid_password">비밀번호가 너무 짧습니다</string>
     <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_store_name">매장이름이 이상합니다.</string>
     <string name="error_field_required">이 칸을 채워주세요</string>
     <string name="cellphone_certification">인증받을 전화번호</string>
     <string name="phone_certification_page_ment">핸드폰 인증과정입니다. 문자를 받을수 있는 전화번호를 입력해 주세요</string>
@@ -156,6 +161,7 @@
     <string name="under_the_email">이메일 주소로는 계정을 확인하기 위한 메일이 갈것입니다. 정확한 이메일을 입력해 주세요. 발송되는 이메일에는 계정을 활성화 시키는 코드가 들어있습니다.</string>
     <string name="send_button">보내기</string>
     <string name="check_button">확인</string>
+
 
     <!-- Sign up Activity third -->
     <string name="button_certification">인증하기</string>
@@ -180,6 +186,7 @@
     <string name="api_store_ticket_push">store/ticket/push/?</string>
     <string name="api_store_ticket_remove">store/ticket/remove/?</string>
     <string name="api_store_global_set_request">store/config/store.json</string>
+    <string name="api_store_register">store/auth/register/?</string>
 
     <!--email=somabell15@gmail.com&password=soma2015-->
 
@@ -201,6 +208,7 @@
     <string name="dialog_user_call">고객을 호출을 하시겠습니까?</string>
     <string name="dialog_user_remove">고객을 삭제 하시겠습니까?</string>
     <string name="dialog_user_more_information">고객의 상세정보를 보시겠습니까?</string>
+    <string name="dialog_look_agreement">약관을 보세요.</string>
 
     <!-- Toast Ment -->
     <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>
