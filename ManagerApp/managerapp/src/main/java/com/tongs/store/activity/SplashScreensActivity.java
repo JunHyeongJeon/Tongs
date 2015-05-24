@@ -72,6 +72,8 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 			}
 		};
 		handler.sendEmptyMessageDelayed(0, 1500);
+
+
 	}
 	
 	/** Animation depends on category.

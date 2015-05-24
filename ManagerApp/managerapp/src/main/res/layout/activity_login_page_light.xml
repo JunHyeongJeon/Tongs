@@ -81,13 +81,47 @@
                 android:text="로그인유지"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_gravity="bottom"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="아이디 / 비밀번호를 잊으셨나요?"
+            android:orientation="vertical"
             android:layout_marginTop="30dp"
-            android:textSize="18.5px"/>
+            android:layout_gravity="bottom|right"
+
+            >
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400"
+                >
+                <Button
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="저희의 회원이 아니신가요?"
+                    android:textSize="13dp"
+                    android:textColor="#888888"
+                    android:background="#00ff0000"
+                    android:id="@+id/sign_up_button"/>
+            </com.tongs.store.view.MaterialRippleLayout>®
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400"
+                >
+                <Button
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:text="아이디 / 비밀번호를 잊으셨나요?"
+                    android:textSize="13dp"
+                    android:textColor="#888888"
+                    android:background="#00ff0000"/>
+            </com.tongs.store.view.MaterialRippleLayout>®
+
+        </LinearLayout>
 
 
     </LinearLayout>

@@ -1,7 +1,9 @@
 package com.tongs.store.activity;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.tongs.store.R;
+import com.tongs.store.util.BackPressCloseHandler;
 import com.tongs.store.util.GlobalVar;
 import com.tongs.store.util.HttpTask;
 import com.tongs.store.util.OnHttpReceive;
@@ -51,6 +54,11 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
 
     private CheckBox mUseAgreeCheckBox;
     private CheckBox mPersonInfoUseAgreeCheckBox;
+
+    private ProgressDialog mDialog;
+
+
+    private BackPressCloseHandler backPressCloseHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +95,10 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
         Button personInfoAgreePost =(Button)findViewById(R.id.pop_person_info_agree_dialog_button);
         personInfoAgreePost.setOnClickListener(this);
 
+        backPressCloseHandler = new BackPressCloseHandler(this);
     }
+
+
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.sign_up_button) {
@@ -231,10 +242,16 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
             requestOnUIThread(PROTOCOL_STATUS_SIGN_UP, url, new OnHttpReceive() {
                 @Override
                 public void onReceive(int protocol, String data) {
+                    mDialog.dismiss();
+                    if("Error".equals(data))
+                        printToast(getString(R.string.toast_signup_server_fail));
+
                     try {
                         JSONObject json = new JSONObject(data);
                         String result_code = json.optString("result_code", null);
                         boolean isSuccess = "0".equals(result_code) ? true : false;
+                        if( isSuccess )
+                            moveLoginActivity();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -249,6 +266,7 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
     void requestOnUIThread(final int protocol, final String url, final OnHttpReceive onReceive)
     {
         Log.v("URL", url);
+        progressDialog();
         this.runOnUiThread(new Runnable() {
             public void run() {
                 new HttpTask(protocol, onReceive).execute(url);
@@ -278,5 +296,21 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
         alert.setTitle("Title");
         alert.setIcon(R.drawable.ic_launcher);
         alert.show();
+    }
+
+    private void progressDialog(){
+        mDialog = ProgressDialog.show(SignUpActivity.this, "",
+                getString(R.string.dialog_login), true);
+
+        // 창을 끄기
+        // dialog.dismiss();
+    }
+    private void moveLoginActivity(){
+
+        Intent intent = new Intent(this, LogInPageActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+        this.finish();
+
     }
 }

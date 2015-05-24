@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.tongs.store.R;
+import com.tongs.store.util.BackPressCloseHandler;
 import com.tongs.store.util.Preference;
 import com.tongs.store.view.FloatLabeledEditText;
 import com.tongs.store.util.OnHttpReceive;
@@ -46,6 +47,9 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     private CheckBox mloginKeep;
     private ProgressDialog mDialog;
 
+    private BackPressCloseHandler backPressCloseHandler;
+
+
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,8 +61,13 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         if(mloginKeep.isChecked())
             doAutoLogin();
+        backPressCloseHandler = new BackPressCloseHandler(this);
     }
 
+    @Override
+    public void onBackPressed(){
+        backPressCloseHandler.onBackPressed();
+    }
 
     @Override
     public void onReceive(int protocol, String data) {
@@ -81,7 +90,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
                 if("0".equals(resultCode)) {
                     Log.v("LoginAc/onReceive", "로그인성공");
-                    moveActivity();
+                    moveClientManagementActivity();
                 }
                 else
                     printToast(getString(R.string.toast_login_account_fail));
@@ -118,10 +127,11 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         mEmailView = (FloatLabeledEditText)findViewById(R.id.login_email);
         mPasswordView = (FloatLabeledEditText)findViewById(R.id.login_password);
 
-        Button login;
+        Button login,signUp;
         login = (Button)findViewById(R.id.login_button);
         login.setOnClickListener(this);
-
+        signUp = (Button)findViewById(R.id.sign_up_button);
+        signUp.setOnClickListener(this);
         mloginKeep = (CheckBox)findViewById(R.id.login_keep_checkbox);
         mloginKeep.setOnClickListener(this);
 
@@ -142,6 +152,9 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         {
             setAutoLogin();
 
+        }
+        else if(v.getId() == R.id.sign_up_button){
+            moveSignUpActivity();
         }
 
 	}
@@ -212,7 +225,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     }
 
     private void doLogin(String id, String password){
-        Log.v("LoginAc/doLogin", "ID: "+ id + " PASSWORD: " + password);
+        Log.v("LoginAc/doLogin", "ID: " + id + " PASSWORD: " + password);
 
         if( "".equals(id)|| "".equals(password)){
             return;
@@ -246,10 +259,11 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
-    private void moveActivity(){
+    private void moveClientManagementActivity(){
         Intent intent = new Intent(this, ClientManagementActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+        this.finish();
 
     }
 
@@ -257,5 +271,11 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         Toast.makeText(LogInPageActivity.this, string, Toast.LENGTH_SHORT).show();
     }
 
+    private void moveSignUpActivity(){
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
+
+    }
 
 }

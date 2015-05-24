@@ -213,6 +213,7 @@
     <!-- Toast Ment -->
     <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>
     <string name="toast_login_account_fail">회원정보가 존재하지 않습니다.</string>
+    <string name="toast_signup_server_fail">회원가입 서버가 응답하지 않습니다.</string>
 
     <!--Activity Title -->
 

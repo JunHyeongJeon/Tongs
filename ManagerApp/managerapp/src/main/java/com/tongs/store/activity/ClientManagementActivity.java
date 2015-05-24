@@ -42,6 +42,7 @@ import android.widget.Toast;
 import com.tongs.store.R;
 import com.tongs.store.adapter.DrawerAdapter;
 import com.tongs.store.model.DrawerItem;
+import com.tongs.store.util.BackPressCloseHandler;
 import com.tongs.store.util.HttpTask;
 import com.tongs.store.util.ImageUtil;
 import com.tongs.store.util.GlobalVar;
@@ -97,6 +98,9 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private String mThisTurnWaitPeople = "0";
     private String mThisTurnWaitTime = "0";
+
+    private BackPressCloseHandler backPressCloseHandler;
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +162,7 @@ public class ClientManagementActivity extends ActionBarActivity
             }
 
 
+
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -176,7 +181,15 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
 
+        backPressCloseHandler = new BackPressCloseHandler(this);
+
     }
+
+    @Override
+    public void onBackPressed(){
+        backPressCloseHandler.onBackPressed();
+    }
+
 
     public String getTodayDate(){
 
