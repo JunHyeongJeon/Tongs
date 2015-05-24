@@ -9,8 +9,8 @@
         android:layout_width="71dp"
         android:layout_height="45.5dp"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/food2"
-        android:id="@+id/image"
+        android:src="@drawable/placeholder"
+        android:id="@+id/id_storeImageView"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
@@ -20,10 +20,10 @@
         android:layout_marginLeft="12dp"
         android:orientation="vertical"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image">
+        android:layout_toEndOf="@+id/id_storeImageView">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/id_storeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
@@ -33,7 +33,7 @@
             android:textColor="#23272e"
             />
         <TextView
-            android:id="@+id/introduction"
+            android:id="@+id/id_storeDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
@@ -51,7 +51,7 @@
                 android:src="@drawable/location_icon"/>
 
             <TextView
-                android:id="@+id/location"
+                android:id="@+id/id_storeLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dp"
@@ -85,7 +85,7 @@
             android:text="13"
             android:textSize="22dp"
             android:textColor="@color/colorPrimary"
-            android:id="@+id/number"
+            android:id="@+id/id_storeNumber"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
         <TextView

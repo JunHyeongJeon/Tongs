@@ -10,7 +10,7 @@
         android:layout_height="45.5dp"
         android:layout_marginLeft="20dp"
         android:src="@drawable/food"
-        android:id="@+id/image"
+        android:id="@+id/id_couponImage"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
@@ -20,7 +20,7 @@
         android:layout_marginLeft="12dp"
         android:orientation="vertical"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image">
+        android:layout_toEndOf="@+id/id_couponImage">
 
         <TextView
             android:id="@+id/id_couponTitle"
@@ -33,7 +33,7 @@
             android:textColor="#23272e"
             />
         <TextView
-            android:id="@+id/id_couponContent"
+            android:id="@+id/id_couponDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
@@ -51,7 +51,7 @@
                 android:src="@drawable/location_icon"/>
 
             <TextView
-                android:id="@+id/id_couponItemLocation"
+                android:id="@+id/id_couponLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dp"

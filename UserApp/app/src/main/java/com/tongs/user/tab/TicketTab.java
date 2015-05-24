@@ -215,6 +215,12 @@ public class TicketTab extends Fragment
             waitingNum.setText(text);
         }
         public void setStoreName(String text)   {
+            if( text.length() > 10 )    {
+                storeName.setTextSize(26);
+            }
+            else    {
+                storeName.setTextSize(36);
+            }
             storeName.setText(text);
         }
         public void setCurrentNum(String text)  {

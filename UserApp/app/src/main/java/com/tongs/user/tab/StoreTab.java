@@ -1,6 +1,7 @@
 package com.tongs.user.tab;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -28,12 +29,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tongs.user.ble.BleManager;
+import com.google.zxing.BarcodeFormat;
 import com.tongs.user.adapter.StoreAdapter;
+import com.tongs.user.ble.BleManager;
+import com.tongs.user.item.StoreItem;
 import com.tongs.user.tongs.BarcodeGenerator;
 import com.tongs.user.tongs.R;
 import com.tongs.user.tongs.StoreViewActivity;
-import com.google.zxing.BarcodeFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -75,6 +77,8 @@ public class StoreTab extends Fragment implements View.OnClickListener {
 
     AlertDialog dialog;
 
+    ProgressDialog mProgressDialog;
+
     boolean isStoreSearched;
 
     private ServiceHandler handler;
@@ -111,9 +115,9 @@ public class StoreTab extends Fragment implements View.OnClickListener {
 
     private void initStoreTab() {
 
-        adapter = new StoreAdapter(getActivity());
+//        adapter = new StoreAdapter();
         listView = (ListView) view.findViewById(R.id.id_storeListView);
-        listView.setAdapter(adapter);
+//        listView.setAdapter(adapter);
         listView.setOnItemClickListener(onClickListItem);
 
         searchLayout = (RelativeLayout) view.findViewById(R.id.searchLayout);
@@ -129,8 +133,11 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     private ListView.OnItemClickListener onClickListItem = new ListView.OnItemClickListener() {
 
         @Override
-        public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-            Toast.makeText(view.getContext(), adapter.getItem(arg2).toString(), Toast.LENGTH_SHORT).show();
+        public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+            StoreItem newsData = (StoreItem) listView.getItemAtPosition(position);
+
+            sid = newsData.getId();
+            showStoreView();
         }
     };
 
@@ -200,8 +207,8 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     }
 
     public void removeStoreList()   {
-        adapter.removeList();
-        adapter.notifyDataSetChanged();
+//        adapter.removeList();
+//        adapter.notifyDataSetChanged();
     }
 
     public void getStoreList()   {
@@ -223,36 +230,33 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                         return;
                     }
 
-                    String storeId;
-                    String storeName;
-                    String storeLocation;
-                    String storeDescription;
-                    String storeWaitingNum;
+                    ArrayList<StoreItem> listData = new ArrayList<StoreItem>();
 
                     JSONArray storeJArray = json.getJSONArray("list");
                     for(int i=0; i<storeJArray.length(); i++)   {
                         JSONObject store = storeJArray.getJSONObject(i);
 
-                        storeId = store.getString("id");
-                        storeName = store.getString("name");
-                        storeLocation = store.getString("location");
-                        storeWaitingNum = store.getString("wait");
-                        storeDescription = store.getString("description");
+                        StoreItem newData = new StoreItem();
+                        newData.setUrl(store.getString("img"));
+                        newData.setId(store.getString("id"));
+                        newData.setName(store.getString("name"));
+                        newData.setLocation(store.getString("location"));
+                        newData.setWaitingNum(store.getString("wait"));
+                        newData.setDescription(store.getString("description"));
 
-                        adapter.add(storeId, storeName,
-                                storeLocation, storeDescription,
-                                storeWaitingNum);
-                        adapter.notifyDataSetChanged();
-                        Log.d("HELLO", storeId + "  " + storeName + "  " + storeLocation + "  "
-                                + storeDescription + "  " + storeWaitingNum);
-
+                        listData.add(newData);
                     }
+
+                    listView.setAdapter(new StoreAdapter(view.getContext(), listData));
+
+//                    adapter.notifyDataSetChanged();
 
                 }
                 catch(Exception e){}
             }
         };
         new HttpTask(cb).execute(url);
+        Log.d("HELLO", "QQQ");
     }
 
     private void getHyperList() {
@@ -312,55 +316,6 @@ public class StoreTab extends Fragment implements View.OnClickListener {
         });
         AlertDialog alert = builder.create();
         alert.show();
-    }
-
-    public void addDummyList() {
-
-        adapter.add("0",
-                "애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("1",
-                "델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("2",
-                "황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
-        adapter.add("3",
-                "애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("4",
-                "델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("5",
-                "황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
-        adapter.add("6",
-                "애슐리",
-                "서울특별시 관악구 봉천동 862-1 라붐아울렛 9층",
-                "애슐리 서울대입구점 입니다.",
-                "15");
-        adapter.add("7",
-                "델라코트",
-                "서울특별시 강남구 삼성동 159 코엑스 H113",
-                "코엑스 맛집 델라코트!.",
-                "21");
-        adapter.add("8",
-                "황태 명가",
-                "서울특별시 강남구 삼성동 107",
-                "토속음식 전문점",
-                "9");
     }
 
     public void setBarcodeContents(String _barcodeContents) {
@@ -559,13 +514,12 @@ public class StoreTab extends Fragment implements View.OnClickListener {
     class HttpTask extends AsyncTask<String , Void , String> {
 
         IHttpRecvCallback m_cb;
-        HttpTask(IHttpRecvCallback cb)
-        {
+
+        HttpTask(IHttpRecvCallback cb) {
             m_cb = cb;
         }
 
-        protected String doInBackground(String... params)
-        {
+        protected String doInBackground(String... params) {
             InputStream is = getInputStreamFromUrl(params[0]);
 
             String result = convertStreamToString(is);
@@ -573,11 +527,9 @@ public class StoreTab extends Fragment implements View.OnClickListener {
             return result;
         }
 
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
             Log.d("Hello", result);
-            if(m_cb != null)
-            {
+            if (m_cb != null) {
                 m_cb.onRecv(result);
                 return;
             }

@@ -22,13 +22,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.zxing.BarcodeFormat;
 import com.tongs.user.adapter.DrawerAdapter;
-import com.tongs.user.tab.SlidingTabLayout;
 import com.tongs.user.adapter.ViewPagerAdapter;
+import com.tongs.user.tab.SlidingTabLayout;
 import com.tongs.user.tab.StoreTab;
 import com.tongs.user.tab.TicketTab;
-import com.tongs.user.tongs.R;
-import com.google.zxing.BarcodeFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -199,6 +198,9 @@ public class MainActivity extends ActionBarActivity
             if( resultCode == RESULT_CANCELED ) {
                 cancelTicket();
             }
+            else if( resultCode == RESULT_OK )  {
+                acceptSummon();
+            }
         }
         else if( requestCode == ACTIVITY_BARCODE )  {
             Log.d("HELLO", "BARCODE ACTIVITY CLOSE");
@@ -291,7 +293,6 @@ public class MainActivity extends ActionBarActivity
         }; // Drawer Toggle Object Made
         Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
         mDrawerToggle.syncState();               // F
-
     }
 
     private void setBarcode()   {
@@ -312,7 +313,6 @@ public class MainActivity extends ActionBarActivity
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     private void renewAll()    {
@@ -322,13 +322,11 @@ public class MainActivity extends ActionBarActivity
             return;
         storeTab.getStoreList();
 
-
         /* Ticket Renew */
         TicketTab ticketTab = (TicketTab)adapter.getTab(1);
         if(ticketTab == null)
             return;
         ticketTab.getWaitingTicket();
-
     }
 
 
@@ -363,6 +361,30 @@ public class MainActivity extends ActionBarActivity
                     }
 
                     Log.d("HELLO", "대기표 취소 성공");
+                }
+                catch(Exception e){}
+            }
+        };
+        new HttpTask(cb).execute(url);
+    }
+
+    private void acceptSummon() {
+        String url = getText(R.string.api_server)
+                + "user/ticket/accept"
+                + "?token=" + authToken;
+
+        IHttpRecvCallback cb = new IHttpRecvCallback(){
+            public void onRecv(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    Log.d("Hello", result_code);
+                    if( "-1".equals(result_code) )  {
+                        Log.d("HELLO", "대기호출 확인 실패");
+                        return;
+                    }
+
+                    Log.d("HELLO", "대기표 확인 성공");
                 }
                 catch(Exception e){}
             }
@@ -470,8 +492,8 @@ public class MainActivity extends ActionBarActivity
         } catch (Exception e) {
             Log.d("[GET REQUEST]", "Network exception", e);
         }
-        return content;
 
+        return content;
     }
 
     interface IHttpRecvCallback
