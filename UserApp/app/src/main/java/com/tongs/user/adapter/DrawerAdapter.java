@@ -29,32 +29,18 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
     private String mNavTitles[]; // String Array to store the passed titles Value from MainActivity.java
     private int mIcons[];       // Int Array to store the passed icons resource value from MainActivity.java
 
-//    private String name;        //String Resource for header View Name
-//    private int profile;        //int Resource for header view profile picture
-//    private String email;       //String Resource for header view email
-
-
     private Bitmap barcode;
     private int currentNum;
     static private Handler mHandler=null;
-
-    // Creating a ViewHolder which extends the RecyclerView View Holder
-    // ViewHolder are used to to store the inflated views in order to recycle them
-
-
 
     public DrawerAdapter(String Titles[], int Icons[], int _currentNum, Bitmap _barcode, Handler handler){ // MyAdapter Constructor with titles and icons parameter
         // titles, icons, name, email, profile pic are passed from the main activity as we
         mNavTitles = Titles;                //have seen earlier
         mIcons = Icons;
-//        name = Name;
-//        email = Email;
-//        profile = Profile;                     //here we assign those passed values to the values we declared here
         currentNum = _currentNum;
         barcode = _barcode;
         mHandler = handler;
         //in adapter
-
     }
 
 
@@ -64,13 +50,9 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
         TextView textView;
         ImageView imageView;
         TextView currentNumText;
-//        ImageView profile;
         TextView Name;
-//        TextView email;
 
         RelativeLayout drawerTopLayout;
-
-
 
         public ViewHolder(View itemView, int ViewType) {                 // Creating ViewHolder Constructor with View and viewType As a parameter
             super(itemView);
@@ -89,9 +71,6 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
                 itemView.findViewById(R.id.id_plusButton).setOnClickListener(mClickListener);
                 itemView.findViewById(R.id.id_minusButton).setOnClickListener(mClickListener);
 
-//                Name = (TextView) itemView.findViewById(R.id.name);         // Creating Text View object from header.xml for name
-//                email = (TextView) itemView.findViewById(R.id.email);       // Creating Text View object from header.xml for email
-//                profile = (ImageView) itemView.findViewById(R.id.circleView);// Creating Image view object from header.xml for profile pic
                 Holderid = 0;                                                // Setting holder id = 0 as the object being populated are of type header view
             }
         }
@@ -151,8 +130,6 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.ViewHolder
             ViewHolder vhItem = new ViewHolder(v,viewType); //Creating ViewHolder and passing the object of type view
 
             return vhItem; // Returning the created object
-
-            //inflate your layout and pass it to view holder
 
         } else if (viewType == TYPE_HEADER) {
 

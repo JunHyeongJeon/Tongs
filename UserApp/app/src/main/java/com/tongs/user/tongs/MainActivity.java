@@ -180,6 +180,9 @@ public class MainActivity extends ActionBarActivity
 
             case R.id.action_summon:
                 Intent intent = new Intent(MainActivity.this, SummonActivity.class);
+                intent.putExtra("authToken", authToken);
+                intent.putExtra("sid", sid);
+                intent.putExtra("hid", hid);
                 startActivityForResult(intent, ACTIVITY_SUMMON);
                 break;
         }

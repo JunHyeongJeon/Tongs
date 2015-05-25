@@ -9,8 +9,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
-import com.tongs.user.tongs.R;
+import com.tongs.user.asynctask.ImageDownloaderTask;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -39,29 +40,35 @@ public class SummonActivity extends ActionBarActivity
     String sid;
     String authToken;
 
+    ImageView summonImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summon);
 
         summonInit();
+        getStoreInfo();
 
         vibrate(true);
     }
 
     private void summonInit()   {
-        intent = new Intent();
+        intent = getIntent();
         hid = intent.getStringExtra("hid");
         sid = intent.getStringExtra("sid");
         authToken = intent.getStringExtra("authToken");
 
         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 
+        summonImageView = (ImageView)findViewById(R.id.id_summonImageView);
+
         checkButton = (Button)findViewById(R.id.id_checkButton);
         checkButton.setOnClickListener(this);
 
         cancelButton = (Button)findViewById(R.id.id_cancelButton);
         cancelButton.setOnClickListener(this);
+
     }
 
     public void vibrate(boolean flag)   {
@@ -110,8 +117,10 @@ public class SummonActivity extends ActionBarActivity
 
                     String name = json.getString("name");
                     String location = json.getString("location");
+                    String url = json.getString("img");
 
-
+                    // get Image and register in image view
+                    new ImageDownloaderTask(summonImageView).execute(url);
                 }
                 catch(Exception e){}
             }

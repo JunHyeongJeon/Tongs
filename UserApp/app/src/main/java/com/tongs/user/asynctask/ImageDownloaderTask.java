@@ -29,8 +29,8 @@ public class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
     }
 
     @Override
-    protected Bitmap doInBackground(String... params) {
-        return downloadBitmap(params[0]);
+    protected Bitmap doInBackground(String... urls) {
+        return downloadBitmap(urls[0]);
     }
 
     @Override
@@ -54,6 +54,7 @@ public class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
     }
 
     private Bitmap downloadBitmap(String url) {
+
         HttpURLConnection urlConnection = null;
         try {
             URL uri = new URL(url);
