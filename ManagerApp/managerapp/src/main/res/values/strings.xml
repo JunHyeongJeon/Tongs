@@ -168,16 +168,6 @@
     <string name="button_certification_success">인증성공</string>
 
     <!-- URL String  -->
-    <string name="server_api_email_request">http://somabell01.cloudapp.net:8080/store/auth/email_request?</string>
-    <string name="server_api_user_cancle">http://somabell01.cloudapp.net:8080/store/store/cancle?</string>
-    <string name="server_api_user_call">http://somabell01.cloudapp.net:8080/store/store/pop?</string>
-    <string name="server_api_put_url">http://somabell01.cloudapp.net:8080/store/store/put?</string>
-    <string name="server_api_get_url">http://somabell01.cloudapp.net:8080/store/store/get?</string>
-    <string name="Server_URL">http://somabell01.cloudapp.net:8080/</string>
-    <string name="sign_up_sms_check_url">http://somabell01.cloudapp.net:8080/store/auth/sms_request?mdn=</string>
-    <string name="sign_up_email">http://somabell01.cloudapp.net:8080/store/auth/email_request?email=</string>
-    <string name="sign_up_sms_check">http://somabell01.cloudapp.net:8080/store/auth/sms_check?token=</string>
-    <string name="title_activity_sign_up_activity_forth">SignUpActivityForth</string>
 
     <string name="api_server">http://tongs.kr/api/</string>
     <string name="api_store_login">store/auth/login/?</string>
@@ -187,6 +177,7 @@
     <string name="api_store_ticket_remove">store/ticket/remove/?</string>
     <string name="api_store_global_set_request">store/config/store.json</string>
     <string name="api_store_register">store/auth/register/?</string>
+    <string name="api_store_gcm_init">store/auth/gcm/?</string>
 
     <!--email=somabell15@gmail.com&password=soma2015-->
 

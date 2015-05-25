@@ -17,22 +17,14 @@ import android.widget.Toast;
 
 import com.tongs.store.R;
 import com.tongs.store.util.BackPressCloseHandler;
+import com.tongs.store.util.GlobalVar;
 import com.tongs.store.util.Preference;
 import com.tongs.store.view.FloatLabeledEditText;
 import com.tongs.store.util.OnHttpReceive;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import javax.security.auth.login.LoginException;
-
-import static com.tongs.store.util.GlobalVar.PROTOCOL_STATUS_MANAGER_LOGIN;
-import static com.tongs.store.util.GlobalVar.TOKEN;
-
-
-
-
-
-public class LogInPageActivity extends ActionBarActivity implements OnClickListener, OnHttpReceive {
+public class LogInPageActivity extends ActionBarActivity implements OnClickListener, OnHttpReceive, GlobalVar {
 
 	public static final String DARK = "Dark";
 	public static final String LIGHT = "Light";

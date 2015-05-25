@@ -1,19 +1,28 @@
 package com.tongs.store.activity;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -39,6 +48,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.tongs.store.R;
 import com.tongs.store.adapter.DrawerAdapter;
 import com.tongs.store.model.DrawerItem;
@@ -50,18 +62,21 @@ import com.tongs.store.util.OnHttpReceive;
 import com.tongs.store.util.Preference;
 import com.tongs.store.view.AnimatedExpandableListView;
 
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 
 public class ClientManagementActivity extends ActionBarActivity
         implements View.OnClickListener, GlobalVar {
-
+    static final String TAG = "GCM Demo";
 
     public static final String LEFT_MENU_OPTION = "com.tongs.store.LeftMenusActivity";
     public static final String LEFT_MENU_OPTION_1 = "Left Menu Option 1";
     public static final String LEFT_MENU_OPTION_2 = "Left Menu Option 2";
+
+
+    public static final String PROPERTY_REG_ID = "registration_id";
+    private static final String PROPERTY_APP_VERSION = "appVersion";
 
     private AnimatedExpandableListView listView;
 
@@ -92,16 +107,30 @@ public class ClientManagementActivity extends ActionBarActivity
     private Button mFirstClientMoreInfoButton;
     private Button mFirstClientCancelButton;
 
-    private String mBeforeFirstId = "";
+    private String mBeforeFirstNumber = "";
     private String mFirstId = "";
-    private String mAfterFirstId = "";
+    private String mFirstNumber="";
+    private String mAfterFirstNumber = "";
 
-    private String mThisTurnWaitPeople = "0";
-    private String mThisTurnWaitTime = "0";
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+
+    private String regid;
+
+    GoogleCloudMessaging gcm;
+    AtomicInteger msgId = new AtomicInteger();
+
+    Context context;
+
+    /**
+     * Substitute you own sender ID here. This is the project number you got
+     * from the API Console, as described in "Getting Started."
+     */
+    String SENDER_ID = "211629096961";
 
     private BackPressCloseHandler backPressCloseHandler;
 
     @SuppressLint("NewApi")
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,14 +143,59 @@ public class ClientManagementActivity extends ActionBarActivity
         mTodayDate = getTodayDate();
 
         getTicketList();
-        viewTicketList();
+
+        if (checkPlayServices()) {
+            gcm = GoogleCloudMessaging.getInstance(this);
+            regid = getRegistrationId();
+
+            String msg = "";
+
+            if (regid.isEmpty()) {
+                registerInBackground();
+            } else {
+                Log.i(TAG, "No valid Google Play Services APK found.");
+            }
+        }
+    }
 
 
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+    private String getRegistrationId() {
+
+        Preference pref = Preference.getInstance();
+        String registrationId = pref.getValue(PROPERTY_REG_ID, "");
+        if (registrationId.isEmpty()) {
+            Log.i(TAG, "Registration not found.");
+            return "";
+        }
+        // Check if app was updated; if so, it must clear the registration ID
+        // since the existing regID is not guaranteed to work with the new
+        // app version.
+        int registeredVersion = pref.getValue(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
+        int currentVersion = getAppVersion(context);
+        if (registeredVersion != currentVersion) {
+            Log.i(TAG, "App version changed.");
+            return "";
+        }
+        Log.d("SF", registrationId);
+        return registrationId;
+    }
+
+
+
+    private static int getAppVersion(Context context) {
+        try {
+            PackageInfo packageInfo = context.getPackageManager()
+                    .getPackageInfo(context.getPackageName(), 0);
+            return packageInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            // should never happen
+            throw new RuntimeException("Could not get package name: " + e);
+        }
     }
 
     private void setContentView(Bundle savedInstanceState){
         setContentView(R.layout.activity_client_management);
-
 
         mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
         mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
@@ -146,7 +220,6 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         prepareNavigationDrawerItems();
         setAdapter();
-        //mDrawerList.setAdapter(new DrawerAdapter(this, mDrawerItems));
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,
@@ -161,10 +234,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 invalidateOptionsMenu();
             }
 
-
-
         };
-
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
 
@@ -172,14 +242,9 @@ public class ClientManagementActivity extends ActionBarActivity
             mDrawerLayout.closeDrawer(mDrawerList);
         }
 
-
-        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        //getSupportActionBar().setCustomView(R.layout.action_bar_client_management);
         Button mClientAddButton;
         mClientAddButton = (Button)findViewById(R.id.client_add);
         mClientAddButton.setOnClickListener((View.OnClickListener) this);
-
-
 
         backPressCloseHandler = new BackPressCloseHandler(this);
 
@@ -327,8 +392,10 @@ public class ClientManagementActivity extends ActionBarActivity
         else if (v.getId() == R.id.first_client_cancel_button)
         {
             removeTicket(mFirstId);
-            mBeforeFirstId = mFirstId;
-            mBeforeTurnTextView.setText(mBeforeFirstId);
+            mBeforeFirstNumber = mFirstNumber;
+            mBeforeTurnTextView.setText(mBeforeFirstNumber);
+            mFirstNumber = mAfterFirstNumber;
+            mThisTurnTextView.setText(mFirstNumber);
         }
 
 
@@ -347,14 +414,6 @@ public class ClientManagementActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    @Override
-    public void onReceive(int protocol, String data) {
-        Log.v("ClientMa/onReceive",data);
-
-
-    }
-    */
     private String setDialogMent(int status){
         String ment;
         if(status == PROTOCOL_STATUS_USER_CALL) {
@@ -399,14 +458,8 @@ public class ClientManagementActivity extends ActionBarActivity
         TextView pivot;
     }
 
-    /**
-     * Adapter for our list of {@link GroupItem}s.
-     */
-
-
     private void pushTicket(String user, String people){
 
-//        setProtocolStatus(PROTOCOL_STATUS_USER_ADD);
         String url;
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_push)
                 + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate
@@ -429,7 +482,6 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private void popTicket(String id){
-        //setProtocolStatus(PROTOCOL_STATUS_USER_CALL);
         String url;
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_pop)
                 + "token=" + mToken + "&id=" + id;
@@ -452,7 +504,6 @@ public class ClientManagementActivity extends ActionBarActivity
     private void removeTicket(String id){
         Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCEL");
 
-//        setProtocolStatus(PROTOCOL_STATUS_USER_CANCLE);
         String url;
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_remove) +
@@ -466,8 +517,7 @@ public class ClientManagementActivity extends ActionBarActivity
                     String result_code = json.optString("result_code", null);
                     boolean isSuccess = "0".equals(result_code) ? true : false;
                     getTicketList();
-                }
-                catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -497,33 +547,8 @@ public class ClientManagementActivity extends ActionBarActivity
                         Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
 
                         JSONArray jsonArr = json.optJSONArray("list");
-                        if (jsonArr == null || "[]".equals(jsonArr.toString()) ) {
-                            /*
-                            List<GroupItem> items = new ArrayList<GroupItem>();
+                        if (jsonArr == null || "[]".equals(jsonArr.toString())) {
 
-                            GroupItem item = new GroupItem();
-                            item.ticketNum = "000";
-                            items.add(item);
-
-                            ExpandListViewAdapter adapter = new ExpandListViewAdapter(ClientManagementActivity.this);
-                            adapter.setData(items);
-
-                            listView = (AnimatedExpandableListView) findViewById(R.id.client_list_view);
-                            listView.setAdapter(adapter);
-
-                            Display display = getWindowManager().getDefaultDisplay();
-                            Point size = new Point();
-                            display.getSize(size);
-                            int width = size.x;
-                            Resources r = getResources();
-                            int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                                    50, r.getDisplayMetrics());
-                            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                                listView.setIndicatorBounds(width - px, width);
-                            } else {
-                                listView.setIndicatorBoundsRelative(width - px, width);
-                            }
-                                */
                             printToast("대기열이 없습니다.");
                             return;
                         }
@@ -534,23 +559,23 @@ public class ClientManagementActivity extends ActionBarActivity
                         JSONObject obj = jsonArr.optJSONObject(0);
 
 
+                        mFirstId = obj.optString("id", null);
+                        mFirstNumber = obj.optString("number", null);
 
+                        mThisTurnTextView.setText(mFirstNumber);
 
-                        mFirstId = obj.optString("number", null);
-                        mThisTurnTextView.setText(mFirstId);
-
-                        String firstPeople = obj.optString("people",null);
+                        String firstPeople = obj.optString("people", null);
                         mThisTurnWaitPeopleTextView.setText(firstPeople);
 
                         long firstPopTime = obj.optLong("time", 0);
-                        long firstTime = (mTime - firstPopTime)/60;
-                        mThisTurnWaitTimeTextView.setText(firstTime+"");
+                        long firstTime = (mTime - firstPopTime) / 60;
+                        mThisTurnWaitTimeTextView.setText(firstTime + "");
 
 
                         obj = jsonArr.optJSONObject(1);
-                        mAfterFirstId ="";
-                        mAfterFirstId = obj.optString("number", null);
-                        mAfterTurnTextView.setText(mAfterFirstId);
+                        mAfterFirstNumber = "";
+                        mAfterFirstNumber = obj.optString("number", null);
+                        mAfterTurnTextView.setText(mAfterFirstNumber);
 
                         List<GroupItem> items = new ArrayList<GroupItem>();
 
@@ -566,13 +591,13 @@ public class ClientManagementActivity extends ActionBarActivity
                             String store = inObj.optString("store", null);
                             String status = inObj.optString("status", null);
                             String pivot = inObj.optString("pivot", null);
-                            String people = inObj.optString("people",null);
+                            String people = inObj.optString("people", null);
                             String number = inObj.optString("number", null);
-                            long popTime = inObj.optLong("time",0);
+                            long popTime = inObj.optLong("time", 0);
 
                             index[i] = id;
 
-                            long time = (mTime - popTime)/60;
+                            long time = (mTime - popTime) / 60;
 
                             //pivot = dateSplit(pivot);
 
@@ -580,10 +605,10 @@ public class ClientManagementActivity extends ActionBarActivity
 
                             GroupItem item = new GroupItem();
 
-                            item.ticketNum = id;
+                            item.ticketNum = number;
                             item.peopleNum = people;
-                            item.waitTime = time+"";
-                            item.order = i+"";
+                            item.waitTime = time + "";
+                            item.order = i + "";
                             item.pivot = pivot;
 
 
@@ -606,7 +631,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             @Override
                             public boolean onGroupClick(ExpandableListView parent, View v,
                                                         int groupPosition, long id) {
-                                Log.v("onGroupClick",""+groupPosition);
+                                Log.v("onGroupClick", "" + groupPosition);
                                 if (listView.isGroupExpanded(groupPosition)) {
                                     listView.collapseGroupWithAnimation(groupPosition);
                                 } else {
@@ -619,7 +644,7 @@ public class ClientManagementActivity extends ActionBarActivity
                         listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
                             @Override
                             public boolean onChildClick(ExpandableListView parent, View v,
-                                                        int groupPosition, int childPosition , long id) {
+                                                        int groupPosition, int childPosition, long id) {
                                 Log.v("ClickgroupPosition", String.valueOf(groupPosition));
                                 Log.v("ClickchildPosition", String.valueOf(childPosition));
                                 Log.v("onClick", index[groupPosition]);
@@ -628,7 +653,6 @@ public class ClientManagementActivity extends ActionBarActivity
                                 return false;
                             }
                         });
-
 
 
                         // Set indicator (arrow) to the right
@@ -654,14 +678,11 @@ public class ClientManagementActivity extends ActionBarActivity
             }
         });
     }
-    private void viewTicketList(){
 
-    }
     private void recognitionBacode() {
         Intent intent = new Intent("com.google.zxing.client.android.SCAN");
         intent.putExtra("SCAN_MODE", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR,EAN_13,EAN_8,UPC_A,QR_CODE");
         startActivityForResult(intent, 0);
-
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -908,4 +929,89 @@ public class ClientManagementActivity extends ActionBarActivity
     public void printToast(String string){
         Toast.makeText(ClientManagementActivity.this, string, Toast.LENGTH_SHORT).show();
     }
+
+    private void sendGCMKey()
+    {
+
+        String url = getString(R.string.api_server) +
+                getString(R.string.api_store_gcm_init) +
+                "token=" + mToken + "&gcm=" + regid;
+
+        requestOnUIThread(PROTOCOL_STATUS_GCM_INIT, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+                    if (isSuccess)
+                        Log.v("PROTOCOL_STATUS_GCM", data);
+                    else return;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Check device for Play Services APK.
+        checkPlayServices();
+    }
+
+    private boolean checkPlayServices() {
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            } else {
+                Log.i(TAG, "This device is not supported.");
+                finish();
+            }
+            return false;
+        }
+        return true;
+    }
+
+    private void registerInBackground() {
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg = "";
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(context);
+                    }
+                    regid = gcm.register(SENDER_ID);
+                    msg = "Device registered, registration ID=" + regid;
+
+                    sendGCMKey();
+
+                    // You should send the registration ID to your server over HTTP, so it
+                    // can use GCM/HTTP or CCS to send messages to your app.
+
+                    // For this demo: we don't need to send it because the device will send
+                    // upstream messages to a server that echo back the message using the
+                    // 'from' address in the message.
+
+                    // Persist the regID - no need to register again.
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+                    // If there is an error, don't just keep trying to register.
+                    // Require the user to click a button again, or perform
+                    // exponential back-off.
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+            }
+        }.execute(null, null, null);
+    }
+
+
 }

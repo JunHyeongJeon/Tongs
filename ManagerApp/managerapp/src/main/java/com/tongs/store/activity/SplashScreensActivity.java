@@ -2,8 +2,11 @@ package com.tongs.store.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -20,6 +23,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.tongs.store.R;
 import com.tongs.store.util.GlobalVar;
 import com.tongs.store.util.HttpTask;
@@ -28,6 +34,9 @@ import com.tongs.store.util.Preference;
 import com.tongs.store.view.kbv.KenBurnsView;
 
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class SplashScreensActivity extends Activity implements GlobalVar{
@@ -44,8 +53,6 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 	private KenBurnsView mKenBurns;
 	private ImageView mSplashImage;
 	private boolean isClickStatus;
-
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +78,7 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 				}
 			}
 		};
-		handler.sendEmptyMessageDelayed(0, 1500);
+		handler.sendEmptyMessageDelayed(0, 3000);
 
 
 	}
@@ -202,8 +209,7 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 					JSONObject json = new JSONObject(data);
 					String result_code = json.optString("result_code", null);
 					boolean isSuccess = "0".equals(result_code) ? true : false;
-				}
-				catch(Exception e){
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}

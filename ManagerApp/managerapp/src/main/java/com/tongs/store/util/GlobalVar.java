@@ -13,6 +13,7 @@ public interface GlobalVar {
     public static final int PROTOCOL_STATUS_MANAGER_LOGOUT = 8;
     public static final int PROTOCOL_STATUS_GET_GLOBAL_SET=9;
     public static final int PROTOCOL_STATUS_SIGN_UP = 10;
+    public static final int PROTOCOL_STATUS_GCM_INIT = 11;
 
     public static final String TOKEN = "token";
 }
