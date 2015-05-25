@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -14,8 +13,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -95,9 +92,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-
-    public ImageView mClientTicket;
-
     private TextView mBeforeTurnTextView;
     private TextView mThisTurnTextView;
     private TextView mAfterTurnTextView;
@@ -117,8 +111,6 @@ public class ClientManagementActivity extends ActionBarActivity
     private String regid;
 
     GoogleCloudMessaging gcm;
-    AtomicInteger msgId = new AtomicInteger();
-
     Context context;
 
     /**
@@ -524,6 +516,9 @@ public class ClientManagementActivity extends ActionBarActivity
         });
     }
     private void getTicketList() {
+
+        mTodayDate = getTodayDate();
+
         Log.v("Protocol", "PROTOCOL_STATUS_GET_LIST");
 
 //        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
