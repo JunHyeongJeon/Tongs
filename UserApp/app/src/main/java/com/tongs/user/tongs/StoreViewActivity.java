@@ -22,8 +22,6 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.tongs.user.tongs.R;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -44,6 +42,7 @@ public class StoreViewActivity extends ActionBarActivity
 
     String sid;
     String uid;
+    String hid;
     String authToken;
     String peopleNumber;
     float resolution;
@@ -169,30 +168,31 @@ public class StoreViewActivity extends ActionBarActivity
     }
 
     private void getWaitingInfo()   {
-        /*
-        String url = getText(R.string.api_server)
-                + "user/ticket/push"
-                + "?token=" + authToken
-                + "&store=" + sid
-                + "&people=" + peopleNumber;
 
-        IHttpRecvCallback cb = new IHttpRecvCallback() {
+        String url = getText(R.string.api_server)
+                + "user/store/get"
+                + "?token=" + authToken
+                + "&hyper=" + hid
+                + "&id=" + sid;
+
+        IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
                 try {
                     JSONObject json = new JSONObject(result);
                     String result_code = json.get("result_code").toString();
                     Log.d("Hello", result_code);
-                    if ("-1".equals(result_code)) {
-                        Log.d("HELLO", "대기열 추가 실패");
+                    if( "-1".equals(result_code) )  {
                         return;
                     }
-                    Log.d("HELLO", "대기열 추가 성공");
 
-                } catch (Exception e) {
+                    String url = json.getString("img");
+
                 }
+                catch(Exception e){}
             }
         };
-        new HttpTask(cb).execute(url);*/
+        new HttpTask(cb).execute(url);
+
     }
 
 

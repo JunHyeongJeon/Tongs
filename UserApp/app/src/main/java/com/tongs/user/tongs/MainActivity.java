@@ -84,7 +84,7 @@ public class MainActivity extends ActionBarActivity
     private final static int ACTIVITY_SUMMON = 0;
     private final static int ACTIVITY_BARCODE = 1;
 
-    String hid="1";
+    String hid;
     String sid;
     int number;
     int createTime;
@@ -144,16 +144,25 @@ public class MainActivity extends ActionBarActivity
             collapseKey = bundle.get("collapse_key").toString();
             Log.d("HELLO", "collapseKey : " + collapseKey);
 
-            TicketTab ticketTab = (TicketTab)adapter.getTab(1);
-            if(ticketTab != null) {
-                ticketTab.getWaitingTicket();
+
+            if( collapseKey.equals("change") ) {
+
+                TicketTab ticketTab = (TicketTab) adapter.getTab(1);
+                if (ticketTab != null) {
+                    ticketTab.getWaitingTicket();
+                }
             }
-            if( collapseKey.equals("turn") )   {
-                Intent intent2 = new Intent(MainActivity.this, SummonActivity.class);
-                intent2.putExtra("hid", hid);
-                intent2.putExtra("sid", sid);
-                intent2.putExtra("authToken", authToken);
-                startActivityForResult(intent2, ACTIVITY_SUMMON);
+            else if( collapseKey.equals("turn") ) {
+
+                if ( SummonActivity.g_isOpened == false ) {
+                    Intent intent2 = new Intent(MainActivity.this, SummonActivity.class);
+                    intent2.putExtra("hid", hid);
+                    intent2.putExtra("sid", sid);
+                    intent2.putExtra("authToken", authToken);
+                    startActivityForResult(intent2, ACTIVITY_SUMMON);
+                } else {
+                    Log.e("HELLO", "PUSH SKIP");
+                }
             }
         }
 
@@ -228,6 +237,7 @@ public class MainActivity extends ActionBarActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
+
 
     private void setTabView() {
 
@@ -345,6 +355,7 @@ public class MainActivity extends ActionBarActivity
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mobileNumber = mPref.getString("number", null);
         uid = mPref.getString("uid", null);
+        hid = mPref.getString("hid", "1");
     }
 
     private void cancelTicket() {

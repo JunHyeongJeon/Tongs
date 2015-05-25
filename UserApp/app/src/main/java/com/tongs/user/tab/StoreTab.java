@@ -310,6 +310,12 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                 if( !hid.equals(String.valueOf(item+1)) ) {
                     hid = String.valueOf(item+1);
                     getStoreList();
+
+                    SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+                    SharedPreferences.Editor editor = mPref.edit();
+                    editor.putString("hid", hid);
+                    editor.commit();
+
                     hyperText.setText(" 현재마켓 : " + items[item]);
                 }
             }

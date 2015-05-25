@@ -28,6 +28,7 @@ import java.io.InputStream;
 public class SummonActivity extends ActionBarActivity
                             implements View.OnClickListener
 {
+    public static boolean g_isOpened;
     Intent intent;
 
     Vibrator vibe;
@@ -47,10 +48,18 @@ public class SummonActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summon);
 
+        g_isOpened = true;
+
         summonInit();
         getStoreInfo();
 
         vibrate(true);
+    }
+
+    @Override
+    protected void onDestroy(){
+        g_isOpened = false;
+        super.onDestroy();
     }
 
     private void summonInit()   {
