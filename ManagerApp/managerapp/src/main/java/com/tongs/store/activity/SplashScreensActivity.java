@@ -170,7 +170,14 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 
 		// get user infomation
 		String appVer = getVersionName(this);
-		String num = getPhoneNumber(this);
+		String num;
+		try{
+			num = getPhoneNumber(this);
+		}
+		catch (Exception e){
+			Log.v("getUserInfo", "not opening");
+			num = "";
+		}
 		String model = Build.MODEL;
 		String osVer = Build.VERSION.RELEASE;
 
