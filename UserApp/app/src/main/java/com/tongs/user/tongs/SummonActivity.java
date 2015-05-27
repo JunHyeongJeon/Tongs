@@ -30,6 +30,10 @@ import java.io.InputStream;
 public class SummonActivity extends ActionBarActivity
                             implements View.OnClickListener
 {
+    final int RETRY_CNT = 1;
+    final int CALL_TIME = 30*1000;
+    final int DELAY_TIME = 60*1000;
+
     public static boolean g_isOpened;
     Intent intent;
 
@@ -45,6 +49,8 @@ public class SummonActivity extends ActionBarActivity
 
     ImageView summonImageView;
 
+    int retry = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +61,7 @@ public class SummonActivity extends ActionBarActivity
         summonInit();
         getStoreInfo();
 
-        vibrate(true);
-        Handler handler = new Handler() {
-            public void handleMessage(Message msg) {
-                vibrate(false);
-            }
-        };
-        handler.sendEmptyMessageDelayed(0, 30000);
+        startNotice();
     }
 
     @Override
@@ -88,6 +88,28 @@ public class SummonActivity extends ActionBarActivity
 
     }
 
+    private void startNotice()  {
+        vibrate(true);
+
+        final Handler retryHandler = new Handler()    {
+            public void handleMessage(Message msg)  {
+                startNotice();
+            }
+        };
+
+        Handler handler = new Handler() {
+            public void handleMessage(Message msg) {
+                vibrate(false);
+                if( retry++ == RETRY_CNT ) {
+                    cancelCall();
+                    return;
+                }
+                retryHandler.sendEmptyMessageDelayed(0, DELAY_TIME);
+            }
+        };
+        handler.sendEmptyMessageDelayed(0, CALL_TIME);
+    }
+
     public void vibrate(boolean flag)   {
         if( flag ) {
             vibe.vibrate(vibePattern, 0);
@@ -101,14 +123,24 @@ public class SummonActivity extends ActionBarActivity
         switch (v.getId()) {
 
             case R.id.id_checkButton:
-                this.setResult(RESULT_OK);
+                acceptCall();
                 break;
 
             case R.id.id_cancelButton:
-                this.setResult(RESULT_CANCELED);
+                cancelCall();
                 break;
         }
+    }
 
+    private void acceptCall() {
+        this.setResult(RESULT_OK);
+        vibrate(false);
+
+        this.finish();
+    }
+
+    private void cancelCall()  {
+        this.setResult(RESULT_CANCELED);
         vibrate(false);
 
         this.finish();
