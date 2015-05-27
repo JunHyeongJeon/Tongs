@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="67dp"
-    android:layout_marginTop="10dp">
+    android:layout_height="82dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp">
 
 
     <ImageView
-        android:layout_width="71dp"
-        android:layout_height="45.5dp"
+        android:layout_width="82dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
+        android:scaleType="fitXY"
         android:src="@drawable/placeholder"
         android:id="@+id/id_storeImageView"
         android:layout_centerVertical="true"
@@ -28,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="매장 이름"
-            android:textSize="14dp"
+            android:textSize="16dp"
             android:textStyle="bold"
             android:textColor="#23272e"
             />
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="매장 소개"
-            android:textSize="12dp"
+            android:textSize="13dp"
             android:textColor="#23272e"
             android:layout_alignParentBottom="true"/>
         <LinearLayout
@@ -46,8 +48,8 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
                 android:src="@drawable/location_icon"/>
 
             <TextView

@@ -22,7 +22,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tongs.user.tongs.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -98,7 +97,6 @@ public class SignupActivity extends ActionBarActivity
         infoLayout.setVisibility(LinearLayout.INVISIBLE);
 
         initGCM();
-
 
         ageAdapter = ArrayAdapter.createFromResource(this, R.array.selected_age,
                 android.R.layout.simple_spinner_item);
@@ -233,23 +231,12 @@ public class SignupActivity extends ActionBarActivity
                         }
                     };
 
-
                     new HttpTask(cb).execute(url);
-
                 }
                 break;
 
             case R.id.id_startButton:
-
-                Log.d("HELLO", "START_BUTTON");
-
                 sendExtraInfoToServer();
-
-                // register api되면 삭제
-//                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-//                intent.putExtra("auth_token", authToken);
-//                startActivity(intent);
-
                 break;
         }
     }
@@ -258,7 +245,6 @@ public class SignupActivity extends ActionBarActivity
         if( checkPlayServices() )   {
             gcm = GoogleCloudMessaging.getInstance(this);
             regid = getRegistrationId(context);
-            Log.d("HHGKGKORKGOR", regid);
 
             if( regid.isEmpty() )   {
                 registerInBackground();
@@ -298,16 +284,12 @@ public class SignupActivity extends ActionBarActivity
                             Toast toast3 = Toast.makeText(getApplicationContext(),
                                     "회원가입에 실패하셨습니다.", Toast.LENGTH_SHORT);
                             toast3.show();
-
                             return;
                         }
 
-
-                        Log.d("HELLO", "회원가입에 성공하셧씁니다.");
                         Toast toast3 = Toast.makeText(getApplicationContext(),
                                 "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT);
                         toast3.show();
-
 
                         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                         SharedPreferences.Editor editor = mPref.edit();

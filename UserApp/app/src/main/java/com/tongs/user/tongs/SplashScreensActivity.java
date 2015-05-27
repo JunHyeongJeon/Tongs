@@ -49,7 +49,7 @@ public class SplashScreensActivity extends Activity	{
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
 		mSplashImage = (ImageView) findViewById(R.id.splash_image_view);
 		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
-		setAnimation(SPLASH_SCREEN_OPTION_2);
+		setAnimation(SPLASH_SCREEN_OPTION_3);
 		getUserInfo();
 
 		Handler handler = new Handler() {
@@ -74,7 +74,7 @@ public class SplashScreensActivity extends Activity	{
 			animation2();
 		} else if (category.equals(SPLASH_SCREEN_OPTION_3)) {
 			animation2();
-			//animation3();
+//			animation3();
 		}
 	}
 
@@ -100,7 +100,7 @@ public class SplashScreensActivity extends Activity	{
 		mSplashImage.startAnimation(anim);
 
 	}
-//
+
 //	private void animation3() {
 //		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mwelcomeText, "alpha", 0.0F, 1.0F);
 //

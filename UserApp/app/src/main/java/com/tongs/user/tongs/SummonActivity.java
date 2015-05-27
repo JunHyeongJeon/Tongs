@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -54,6 +56,12 @@ public class SummonActivity extends ActionBarActivity
         getStoreInfo();
 
         vibrate(true);
+        Handler handler = new Handler() {
+            public void handleMessage(Message msg) {
+                vibrate(false);
+            }
+        };
+        handler.sendEmptyMessageDelayed(0, 30000);
     }
 
     @Override
