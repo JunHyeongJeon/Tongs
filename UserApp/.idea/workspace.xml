@@ -33,32 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/BarcodeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/BarcodeActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/BarcodeGenerator.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/BarcodeGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/CouponActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/CouponActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/CouponDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/CouponDetailActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/IntroActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/IntroActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/MainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/NetworkActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/NetworkActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/RecyclerItemClickListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/RecyclerItemClickListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SignupActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SignupActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SignupTermsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SignupTermsActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SplashScreensActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SplashScreensActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/StoreViewActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/StoreViewActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SummonActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/WaitingTicketActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/WaitingTicketActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/CouponAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/CouponAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/DrawerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/DrawerAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/asynctask/ImageDownloaderTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/asynctask/ImageDownloaderTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/SlidingTabLayout.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/SlidingTabLayout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/StoreAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/StoreAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/TicketTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/TicketTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/UsedCouponTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/UsedCouponTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="UserApp.iws" />
@@ -128,7 +103,32 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#295#296#0" expanded="false" />
+                <element signature="e#320#321#0" expanded="false" />
+                <element signature="e#359#360#0" expanded="false" />
+                <element signature="e#383#384#0" expanded="false" />
+                <element signature="e#414#415#0" expanded="false" />
+                <element signature="e#440#441#0" expanded="false" />
+                <element signature="e#478#479#0" expanded="false" />
+                <element signature="e#504#505#0" expanded="false" />
+                <element signature="e#535#536#0" expanded="false" />
+                <element signature="e#562#563#0" expanded="false" />
+                <element signature="e#604#605#0" expanded="false" />
+                <element signature="e#632#633#0" expanded="false" />
+                <element signature="e#667#668#0" expanded="false" />
+                <element signature="e#698#699#0" expanded="false" />
+                <element signature="e#748#749#0" expanded="false" />
+                <element signature="e#784#785#0" expanded="false" />
+                <element signature="e#822#823#0" expanded="false" />
+                <element signature="e#856#857#0" expanded="false" />
+                <element signature="e#912#913#0" expanded="false" />
+                <element signature="e#954#955#0" expanded="false" />
+                <element signature="e#991#992#0" expanded="false" />
+                <element signature="e#1024#1025#0" expanded="false" />
+                <element signature="e#1078#1079#0" expanded="false" />
+                <element signature="e#1118#1119#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,12 +159,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CouponItem.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CouponItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/CouponItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23400936">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SummonActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9828393">
+              <caret line="92" column="39" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="39" />
+              <folding>
+                <element signature="e#2439#2566#0" expanded="true" />
+                <element signature="e#2565#2566#0" expanded="true" />
+                <element signature="e#2587#2905#0" expanded="true" />
+                <element signature="e#2904#2905#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,7 +190,27 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3567#3870#0" expanded="false" />
+                <element signature="e#3869#3870#0" expanded="false" />
+                <element signature="e#6379#7784#0" expanded="false" />
+                <element signature="e#6841#6852#0" expanded="false" />
+                <element signature="e#7783#7784#0" expanded="false" />
+                <element signature="e#8025#9124#0" expanded="false" />
+                <element signature="e#9123#9124#0" expanded="false" />
+                <element signature="e#9621#10306#0" expanded="false" />
+                <element signature="e#10305#10306#0" expanded="false" />
+                <element signature="e#10444#10445#0" expanded="false" />
+                <element signature="e#10494#10495#0" expanded="false" />
+                <element signature="e#10537#10538#0" expanded="false" />
+                <element signature="e#10575#10576#0" expanded="false" />
+                <element signature="e#11285#12451#0" expanded="false" />
+                <element signature="e#12450#12451#0" expanded="false" />
+                <element signature="e#12493#12693#0" expanded="false" />
+                <element signature="e#12692#12693#0" expanded="false" />
+                <element signature="e#14510#15170#0" expanded="false" />
+                <element signature="e#15169#15170#0" expanded="false" />
+                <element signature="e#16737#16738#0" expanded="false" />
+                <element signature="e#16770#16771#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1479,7 +1514,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/StoreViewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml" />
@@ -1530,6 +1564,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SummonActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" />
       </list>
     </option>
   </component>
@@ -2334,7 +2369,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432743994271</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="package명 수정">
+      <created>1432747834221</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1432747834221</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2361,7 +2402,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13045794" sideWeight="0.5121951" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049947" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2890542" sideWeight="0.47130647" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2890542" sideWeight="0.47130647" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.497558" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2420,7 +2461,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="대기하기 버튼, 인원수 등록 후 서버전송(+GCM 안정화)" />
     <MESSAGE value="gcm store id 가져오기" />
     <MESSAGE value="대기표 gcm 연동" />
     <MESSAGE value="store tab, ticket tab 이름 변경" />
@@ -2445,7 +2485,8 @@
     <MESSAGE value="store list 레이아웃 수정" />
     <MESSAGE value="호출 재시도 추가" />
     <MESSAGE value="hypermarket dialog수정, 아이콘추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="hypermarket dialog수정, 아이콘추가" />
+    <MESSAGE value="package명 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="package명 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2537,7 +2578,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#295#296#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#359#360#0" expanded="false" />
+            <element signature="e#383#384#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
+            <element signature="e#440#441#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#504#505#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#667#668#0" expanded="false" />
+            <element signature="e#698#699#0" expanded="false" />
+            <element signature="e#748#749#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#822#823#0" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#954#955#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1024#1025#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+            <element signature="e#1118#1119#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2576,7 +2642,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3567#3870#0" expanded="false" />
+            <element signature="e#3869#3870#0" expanded="false" />
+            <element signature="e#6379#7784#0" expanded="false" />
+            <element signature="e#6841#6852#0" expanded="false" />
+            <element signature="e#7783#7784#0" expanded="false" />
+            <element signature="e#8025#9124#0" expanded="false" />
+            <element signature="e#9123#9124#0" expanded="false" />
+            <element signature="e#9621#10306#0" expanded="false" />
+            <element signature="e#10305#10306#0" expanded="false" />
+            <element signature="e#10444#10445#0" expanded="false" />
+            <element signature="e#10494#10495#0" expanded="false" />
+            <element signature="e#10537#10538#0" expanded="false" />
+            <element signature="e#10575#10576#0" expanded="false" />
+            <element signature="e#11285#12451#0" expanded="false" />
+            <element signature="e#12450#12451#0" expanded="false" />
+            <element signature="e#12493#12693#0" expanded="false" />
+            <element signature="e#12692#12693#0" expanded="false" />
+            <element signature="e#14510#15170#0" expanded="false" />
+            <element signature="e#15169#15170#0" expanded="false" />
+            <element signature="e#16737#16738#0" expanded="false" />
+            <element signature="e#16770#16771#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2620,7 +2706,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#295#296#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#359#360#0" expanded="false" />
+            <element signature="e#383#384#0" expanded="false" />
+            <element signature="e#414#415#0" expanded="false" />
+            <element signature="e#440#441#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#504#505#0" expanded="false" />
+            <element signature="e#535#536#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#667#668#0" expanded="false" />
+            <element signature="e#698#699#0" expanded="false" />
+            <element signature="e#748#749#0" expanded="false" />
+            <element signature="e#784#785#0" expanded="false" />
+            <element signature="e#822#823#0" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#954#955#0" expanded="false" />
+            <element signature="e#991#992#0" expanded="false" />
+            <element signature="e#1024#1025#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+            <element signature="e#1118#1119#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2648,8 +2759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/CouponItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23400936">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -2659,7 +2770,40 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3567#3870#0" expanded="false" />
+            <element signature="e#3869#3870#0" expanded="false" />
+            <element signature="e#6379#7784#0" expanded="false" />
+            <element signature="e#6841#6852#0" expanded="false" />
+            <element signature="e#7783#7784#0" expanded="false" />
+            <element signature="e#8025#9124#0" expanded="false" />
+            <element signature="e#9123#9124#0" expanded="false" />
+            <element signature="e#9621#10306#0" expanded="false" />
+            <element signature="e#10305#10306#0" expanded="false" />
+            <element signature="e#10444#10445#0" expanded="false" />
+            <element signature="e#10494#10495#0" expanded="false" />
+            <element signature="e#10537#10538#0" expanded="false" />
+            <element signature="e#10575#10576#0" expanded="false" />
+            <element signature="e#11285#12451#0" expanded="false" />
+            <element signature="e#12450#12451#0" expanded="false" />
+            <element signature="e#12493#12693#0" expanded="false" />
+            <element signature="e#12692#12693#0" expanded="false" />
+            <element signature="e#14510#15170#0" expanded="false" />
+            <element signature="e#15169#15170#0" expanded="false" />
+            <element signature="e#16737#16738#0" expanded="false" />
+            <element signature="e#16770#16771#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9828393">
+          <caret line="92" column="39" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="39" />
+          <folding>
+            <element signature="e#2439#2566#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
+            <element signature="e#2587#2905#0" expanded="true" />
+            <element signature="e#2904#2905#0" expanded="true" />
           </folding>
         </state>
       </provider>

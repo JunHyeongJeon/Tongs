@@ -37,6 +37,9 @@ public class SummonActivity extends ActionBarActivity
     public static boolean g_isOpened;
     Intent intent;
 
+    Handler handler;
+    Handler retryHandler;
+
     Vibrator vibe;
     long[] vibePattern = {1000, 1500};
 
@@ -67,6 +70,9 @@ public class SummonActivity extends ActionBarActivity
     @Override
     protected void onDestroy(){
         g_isOpened = false;
+        handler.removeMessages(0);
+        retryHandler.removeMessages(0);
+
         super.onDestroy();
     }
 
@@ -91,13 +97,13 @@ public class SummonActivity extends ActionBarActivity
     private void startNotice()  {
         vibrate(true);
 
-        final Handler retryHandler = new Handler()    {
+        retryHandler = new Handler()    {
             public void handleMessage(Message msg)  {
                 startNotice();
             }
         };
 
-        Handler handler = new Handler() {
+        handler = new Handler() {
             public void handleMessage(Message msg) {
                 vibrate(false);
                 if( retry++ == RETRY_CNT ) {
