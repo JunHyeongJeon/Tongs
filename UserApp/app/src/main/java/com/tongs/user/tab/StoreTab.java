@@ -248,15 +248,11 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                     }
 
                     listView.setAdapter(new StoreAdapter(view.getContext(), listData));
-
-//                    adapter.notifyDataSetChanged();
-
                 }
                 catch(Exception e){}
             }
         };
         new HttpTask(cb).execute(url);
-        Log.d("HELLO", "QQQ");
     }
 
     private void getHyperList() {
@@ -303,12 +299,12 @@ public class StoreTab extends Fragment implements View.OnClickListener {
         }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-        builder.setTitle("마켓 선택");
-        builder.setItems(items, new DialogInterface.OnClickListener()   {
-
-            public void onClick(DialogInterface dialog, int item)   {
-                if( !hid.equals(String.valueOf(item+1)) ) {
-                    hid = String.valueOf(item+1);
+        builder.setTitle("마켓을 선택해주세요");
+        builder.setIcon(R.drawable.store_icon);
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                if (!hid.equals(String.valueOf(item + 1))) {
+                    hid = String.valueOf(item + 1);
                     getStoreList();
 
                     SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
@@ -318,6 +314,7 @@ public class StoreTab extends Fragment implements View.OnClickListener {
 
                     hyperText.setText(" 현재마켓 : " + items[item]);
                 }
+                dialog.cancel();
             }
         });
         AlertDialog alert = builder.create();
