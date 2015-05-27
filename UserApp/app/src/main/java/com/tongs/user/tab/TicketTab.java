@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

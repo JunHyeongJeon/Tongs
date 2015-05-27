@@ -25,9 +25,9 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.tongs.user.tongs.MainActivity;
-import com.tongs.user.tongs.R;
-import com.tongs.user.tongs.SignupActivity;
+import com.tongs.user.activity.MainActivity;
+import com.tongs.user.activity.R;
+import com.tongs.user.activity.SignupActivity;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 /**

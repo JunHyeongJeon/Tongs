@@ -48,8 +48,8 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
                 android:src="@drawable/location_icon"/>
 
             <TextView

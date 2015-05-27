@@ -1,11 +1,9 @@
-package com.tongs.user.tongs;
+package com.tongs.user.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-
-import com.tongs.user.tongs.R;
 
 /**
  * Created by JaeCheol on 15. 5. 15..

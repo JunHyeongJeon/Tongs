@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.tongs.user.asynctask.ImageDownloaderTask;
 import com.tongs.user.item.StoreItem;
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 import java.util.ArrayList;
 

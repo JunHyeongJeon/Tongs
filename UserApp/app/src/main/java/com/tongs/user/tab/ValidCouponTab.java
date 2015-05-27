@@ -17,8 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.tongs.user.tongs.BarcodeGenerator;
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.BarcodeGenerator;
+import com.tongs.user.activity.R;
 import com.google.zxing.BarcodeFormat;
 
 import org.apache.http.HttpResponse;

@@ -1,4 +1,4 @@
-package com.tongs.user.tongs;
+package com.tongs.user.activity;
 
 import android.os.AsyncTask;
 import android.util.Log;

@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.tongs.user.adapter.CouponAdapter;
 import com.tongs.user.item.CouponItem;
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

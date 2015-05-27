@@ -31,7 +31,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to

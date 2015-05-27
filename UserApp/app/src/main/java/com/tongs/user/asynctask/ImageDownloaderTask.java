@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 import org.apache.http.HttpStatus;
 

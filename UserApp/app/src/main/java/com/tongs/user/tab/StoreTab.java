@@ -33,9 +33,9 @@ import com.google.zxing.BarcodeFormat;
 import com.tongs.user.adapter.StoreAdapter;
 import com.tongs.user.ble.BleManager;
 import com.tongs.user.item.StoreItem;
-import com.tongs.user.tongs.BarcodeGenerator;
-import com.tongs.user.tongs.R;
-import com.tongs.user.tongs.StoreViewActivity;
+import com.tongs.user.activity.BarcodeGenerator;
+import com.tongs.user.activity.R;
+import com.tongs.user.activity.StoreViewActivity;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

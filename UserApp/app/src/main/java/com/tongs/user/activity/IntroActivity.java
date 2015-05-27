@@ -1,4 +1,4 @@
-package com.tongs.user.tongs;
+package com.tongs.user.activity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,7 +18,6 @@ import android.widget.Button;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
-import com.tongs.user.tongs.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -80,7 +79,7 @@ public class IntroActivity extends ActionBarActivity
         switch (v.getId()) {
             case R.id.id_startButton:
 //                Intent intent = new Intent(IntroActivity.this, SignupTermsActivity.class);
-                Intent intent = new Intent(IntroActivity.this, com.tongs.user.tongs.SignupActivity.class);
+                Intent intent = new Intent(IntroActivity.this, com.tongs.user.activity.SignupActivity.class);
                 startActivity(intent);
                 this.finish();
                 break;
@@ -123,7 +122,7 @@ public class IntroActivity extends ActionBarActivity
             initGCM();
             sendGCMKey();
 
-            Intent intent = new Intent(IntroActivity.this, com.tongs.user.tongs.MainActivity.class);
+            Intent intent = new Intent(IntroActivity.this, com.tongs.user.activity.MainActivity.class);
             intent.putExtra("auth_token", authToken);
             startActivity(intent);
             this.finish();
@@ -311,7 +310,7 @@ public class IntroActivity extends ActionBarActivity
     private SharedPreferences getGcmPreferences(Context context) {
         // This sample app persists the registration ID in shared preferences, but
         // how you store the regID in your app is up to you.
-        return getSharedPreferences(com.tongs.user.tongs.SignupActivity.class.getSimpleName(),
+        return getSharedPreferences(com.tongs.user.activity.SignupActivity.class.getSimpleName(),
                 Context.MODE_PRIVATE);
     }
 

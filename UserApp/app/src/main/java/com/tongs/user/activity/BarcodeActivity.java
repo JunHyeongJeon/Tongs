@@ -1,4 +1,4 @@
-package com.tongs.user.tongs;
+package com.tongs.user.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tongs.user.tongs.R;
 import com.google.zxing.BarcodeFormat;
 
 /**

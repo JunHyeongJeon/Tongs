@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.tongs.user.tongs.R;
+import com.tongs.user.activity.R;
 
 
 /**

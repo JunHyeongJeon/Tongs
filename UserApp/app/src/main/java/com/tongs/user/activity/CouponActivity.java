@@ -1,4 +1,4 @@
-package com.tongs.user.tongs;
+package com.tongs.user.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -8,7 +8,6 @@ import android.view.MenuItem;
 
 import com.tongs.user.adapter.CouponPagerAdapter;
 import com.tongs.user.tab.SlidingTabLayout;
-import com.tongs.user.tongs.R;
 
 /**
  * Created by JaeCheol on 15. 5. 19..
