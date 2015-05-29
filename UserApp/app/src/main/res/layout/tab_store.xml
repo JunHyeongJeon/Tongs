@@ -44,6 +44,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:id="@+id/id_storeSwipeLayout"
         android:layout_marginTop="5dp">
 
@@ -53,8 +54,6 @@
             android:id="@+id/id_storeListView">
         </ListView>
 
-
     </android.support.v4.widget.SwipeRefreshLayout>
-
 
 </LinearLayout>
