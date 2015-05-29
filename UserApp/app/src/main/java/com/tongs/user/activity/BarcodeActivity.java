@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -46,6 +47,19 @@ public class BarcodeActivity extends ActionBarActivity
         registerBarcode();
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)  {
+        switch( item.getItemId() ) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private void barcodeActivityInit() {
 
         setContentView(R.layout.activity_barcode);
@@ -78,6 +92,9 @@ public class BarcodeActivity extends ActionBarActivity
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
     }
 
     private void setBarcode()   {
