@@ -6,15 +6,16 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.tongs.user.activity.R;
 import com.tongs.user.adapter.CouponAdapter;
 import com.tongs.user.item.CouponItem;
-import com.tongs.user.activity.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -31,11 +32,12 @@ import java.util.ArrayList;
  * Created by JaeCheol on 15. 5. 19..
  */
 public class UsedCouponTab extends Fragment
-        implements View.OnClickListener
 {
 
     private ListView couponList;
     private CouponAdapter adapter;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private View view;
 
@@ -45,12 +47,11 @@ public class UsedCouponTab extends Fragment
     public View onCreateView(LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle SavedInstanceState) {
-        view = inflater.inflate(R.layout.tab_usedticket, container, false);
+        view = inflater.inflate(R.layout.tab_usedcoupon, container, false);
 
         initUsedCouponTab();
         getDataFromSharedPref();
         getCouponList();
-//        addDummyList();
 
         return view;
     }
@@ -61,18 +62,17 @@ public class UsedCouponTab extends Fragment
         super.onResume();
     }
 
-    public void onClick(View v) {
-
-        switch ( v.getId() )    {
-
-        }
-    }
-
     void initUsedCouponTab()   {
-
-//        adapter =  new CouponAdapter(view.getContext(), );
         couponList = (ListView)view.findViewById(R.id.id_couponList);
-//        couponList.setAdapter(adapter);
+
+        swipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.id_usedcouponlayout);
+        swipeRefreshLayout.setColorScheme(R.color.color1, R.color.color2, R.color.color3, R.color.color4);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getCouponList();
+            }
+        });
     }
 
     private void getDataFromSharedPref()    {
@@ -114,6 +114,7 @@ public class UsedCouponTab extends Fragment
 
                     couponList.setAdapter(new CouponAdapter(view.getContext(), listData));
 
+                    swipeRefreshLayout.setRefreshing(false);
                 }
                 catch(Exception e){}
             }

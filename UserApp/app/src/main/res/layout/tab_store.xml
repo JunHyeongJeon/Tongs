@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/id_tab1_layout"
-    android:background="#ffffff">
+    android:id="@+id/id_tab1_layout">
 
     <View
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:layout_marginLeft="19dp"
             android:layout_marginRight="19dp"
             android:background="#ffffff"
-            android:text=" 현재마켓 : 코엑스"
+            android:text=" 현재마켓 :"
             android:textSize="16dp"
             android:gravity="left"
             android:layout_centerVertical="true"

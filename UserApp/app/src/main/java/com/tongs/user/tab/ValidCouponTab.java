@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.tongs.user.activity.BarcodeGenerator;
 import com.tongs.user.activity.R;
 import com.google.zxing.BarcodeFormat;
+import com.tongs.user.asynctask.ImageDownloaderTask;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -63,7 +64,7 @@ public class ValidCouponTab extends Fragment
                              @Nullable ViewGroup container,
                              @Nullable Bundle SavedInstanceState)
     {
-        view = inflater.inflate(R.layout.tab_validticket, container, false);
+        view = inflater.inflate(R.layout.tab_validcoupon, container, false);
 
         initValidTab();
         getDataFromSharedPref();
@@ -153,24 +154,29 @@ public class ValidCouponTab extends Fragment
                     showCouponLayout(true);
                 }
 
-                String sid = json.getString("store");
+                String sid = json.getString("target");
+                String name = json.getString("store");
                 String title = json.getString("title");
                 String location = json.getString("location");
                 String content = json.getString("content");
-                String time = String.valueOf(Integer.parseInt(json.getString("start"))
-                        - Integer.parseInt(json.getString("end")));
+                String url = json.getString("img");
+                String time = json.getString("end");
+//                String time = String.valueOf(Integer.parseInt(json.getString("end"))
+//                        - Integer.parseInt(json.getString("start")));
 
                 couponTitle.setText(title);
                 couponLocation.setText(location);
                 couponContents.setText(content);
                 couponTime.setText(time);
+
+                // get Image and register in image view
+                new ImageDownloaderTask(couponImageView).execute(url);
             }
             catch(Exception e){}
         }
     };
     new HttpTask(cb).execute(url);
 }
-
 
     private static String convertStreamToString(InputStream is)
     {
