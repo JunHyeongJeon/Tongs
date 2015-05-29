@@ -2,7 +2,6 @@ package com.tongs.user.tab;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,11 +13,11 @@ import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,12 +29,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
-import com.tongs.user.adapter.StoreAdapter;
-import com.tongs.user.ble.BleManager;
-import com.tongs.user.item.StoreItem;
 import com.tongs.user.activity.BarcodeGenerator;
 import com.tongs.user.activity.R;
 import com.tongs.user.activity.StoreViewActivity;
+import com.tongs.user.adapter.StoreAdapter;
+import com.tongs.user.ble.BleManager;
+import com.tongs.user.item.StoreItem;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -51,13 +50,17 @@ import java.util.ArrayList;
 /**
  * Created by JaeCheol on 15. 4. 7..
  */
-public class StoreTab extends Fragment implements View.OnClickListener {
+public class StoreTab extends Fragment
+                      implements View.OnClickListener
+{
 
     Bitmap barcode;
     ImageView barcodeView;
     String barcodeContents;
     Button barcodeGenerateButton;
     TextView currentNumText;
+
+    SwipeRefreshLayout storeSwipeLayout;
 
     Button scanBLEButton;
 
@@ -128,6 +131,15 @@ public class StoreTab extends Fragment implements View.OnClickListener {
         for (int i = 0; i < 2; i++) {
             hyperList[i] = new ArrayList<String>();
         }
+
+        storeSwipeLayout = (SwipeRefreshLayout)view.findViewById(R.id.id_storeSwipeLayout);
+        storeSwipeLayout.setColorScheme(R.color.color1, R.color.color2, R.color.color3, R.color.color4);
+        storeSwipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getStoreList();
+            }
+        });
     }
 
     private ListView.OnItemClickListener onClickListItem = new ListView.OnItemClickListener() {
@@ -146,42 +158,6 @@ public class StoreTab extends Fragment implements View.OnClickListener {
 
         SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
         authToken = mPref.getString("auth_token", null);
-    }
-
-    private void setBarcode(View view)
-    {
-//        barcodeGenerator = new BarcodeGenerator();
-//
-//        barcodeView = (ImageView)view.findViewById(R.id.id_barcodeView);
-//        barcodeLayout = (LinearLayout)view.findViewById(R.id.id_barcodeLayout);
-//        noBarcodeLayout = (LinearLayout)view.findViewById(R.id.id_noBarcodeLayout);
-//        currentNumText = (TextView)view.findViewById(R.id.id_currentNum);
-//
-//        barcodeGenerateButton = (Button)view.findViewById(R.id.id_barcodeGenerateButton);
-//        barcodeGenerateButton.setOnClickListener(this);
-//
-//        showBarcodeLayout(false);
-    }
-
-    private void setDialog(View view)
-    {
-        // AlertDialog 객체 선언
-        dialog = createInputDialog();
-
-        // Context 얻고, 해당 컨텍스트의 레이아웃 정보 얻기
-        Context context = getActivity();
-        LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        // 레이아웃 설정
-        View layout = layoutInflater.inflate(R.layout.dialog_barcodegenerate,
-                (ViewGroup) view.findViewById(R.id.id_popup_root));
-        peopleEditText = (EditText)layout.findViewById(R.id.id_popup_edittext);
-
-        // Input 소프트 키보드 보이기
-        dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-
-        // AlertDialog에 레이아웃 추가
-        dialog.setView(layout);
     }
 
     private void showBarcodeLayout(boolean isBarcodeExist) {
@@ -248,6 +224,8 @@ public class StoreTab extends Fragment implements View.OnClickListener {
                     }
 
                     listView.setAdapter(new StoreAdapter(view.getContext(), listData));
+
+                    storeSwipeLayout.setRefreshing(false);
                 }
                 catch(Exception e){}
             }
@@ -470,6 +448,7 @@ public class StoreTab extends Fragment implements View.OnClickListener {
 
         Intent intent = new Intent(getView().getContext(),StoreViewActivity.class);
         intent.putExtra("sid", sid);
+        intent.putExtra("hid", hid);
         startActivity(intent);
     }
 

@@ -21,6 +21,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -35,7 +36,7 @@ import java.io.InputStream;
  * Created by JaeCheol on 15. 3. 31..
  */
 public class StoreViewActivity extends ActionBarActivity
-                               implements View.OnClickListener    {
+                               implements View.OnClickListener {
 
     WebView webView;
     Toolbar storeviewToolbar;
@@ -51,24 +52,29 @@ public class StoreViewActivity extends ActionBarActivity
     Button pushButton;
     EditText peopleEditText;
 
+    TextView currentPeopleText;
+    TextView expectTimeText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeview);
 
+        getDataFromIntent();
+        getDataFromSharedPref();
+
         initWebView();
         setToolbar();
         initComponent();
-        getDataFromSharedPref();
         getWaitingInfo();
     }
 
 
-    void setToolbar()   {
-        storeviewToolbar = (Toolbar)findViewById(R.id.toolbar_storeview);
+    void setToolbar() {
+        storeviewToolbar = (Toolbar) findViewById(R.id.toolbar_storeview);
 
-        if(storeviewToolbar != null) {
+        if (storeviewToolbar != null) {
             setSupportActionBar(storeviewToolbar);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,8 +85,8 @@ public class StoreViewActivity extends ActionBarActivity
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)  {
-        switch( item.getItemId() ) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 this.finish();
@@ -89,10 +95,21 @@ public class StoreViewActivity extends ActionBarActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void initWebView() {
+    private void getDataFromIntent() {
 
         Intent intent = this.getIntent();
         sid = intent.getStringExtra("sid");
+        hid = intent.getStringExtra("hid");
+    }
+
+    void getDataFromSharedPref()   {
+
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        uid = mPref.getString("uid", null);
+        authToken = mPref.getString("auth_token", null);
+    }
+
+    private void initWebView() {
 
         webView = (WebView)findViewById(R.id.id_webStoreView);
 
@@ -121,18 +138,12 @@ public class StoreViewActivity extends ActionBarActivity
         webView.addJavascriptInterface(this, "webBridge");
     }
 
-    void getDataFromSharedPref()   {
-
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        uid = mPref.getString("uid", null);
-        authToken = mPref.getString("auth_token", null);
-    }
-
     void initComponent()   {
         pushButton = (Button)findViewById(R.id.id_pushButton);
         pushButton.setOnClickListener(this);
 
-        peopleEditText = (EditText)findViewById(R.id.id_editText);
+        currentPeopleText = (TextView)findViewById(R.id.storeView_currentNum);
+        expectTimeText = (TextView)findViewById(R.id.storeView_expectTime);
 
         setDialog();
     }
@@ -170,10 +181,8 @@ public class StoreViewActivity extends ActionBarActivity
     private void getWaitingInfo()   {
 
         String url = getText(R.string.api_server)
-                + "user/store/get"
-                + "?token=" + authToken
-                + "&hyper=" + hid
-                + "&id=" + sid;
+                + "user/ticket/get"
+                + "?token=" + authToken;
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
@@ -185,14 +194,24 @@ public class StoreViewActivity extends ActionBarActivity
                         return;
                     }
 
-                    String url = json.getString("img");
+                    String currentNum = json.getString("people");
+                    String expectTime = "SJC";//json.getString("expect_time");
 
+                    modifyWaitInfo(currentNum, expectTime);
                 }
-                catch(Exception e){}
+                catch(Exception e){
+                    e.printStackTrace();
+                }
             }
         };
         new HttpTask(cb).execute(url);
 
+    }
+
+    private void modifyWaitInfo(String currentNum, String expectTime)    {
+
+        currentPeopleText.setText(currentNum);
+        expectTimeText.setText(expectTime);
     }
 
 
@@ -209,7 +228,6 @@ public class StoreViewActivity extends ActionBarActivity
                         // 확인 버튼 눌렀을때 액션
                         if (peopleEditText != null)
                             peopleNumber = peopleEditText.getText().toString();
-
 
                         String url = getText(R.string.api_server)
                                 + "user/ticket/push"
