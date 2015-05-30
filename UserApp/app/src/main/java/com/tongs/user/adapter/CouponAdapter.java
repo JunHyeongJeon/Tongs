@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tongs.user.asynctask.ImageDownloaderTask;
-import com.tongs.user.item.CouponItem;
 import com.tongs.user.activity.R;
+import com.tongs.user.item.CouponItem;
+import com.tongs.user.tool.ImageDownloaderTask;
 
 import java.util.ArrayList;
 
@@ -58,6 +58,7 @@ public class CouponAdapter extends BaseAdapter  {
             holder.locationView = (TextView)convertView.findViewById(R.id.id_couponLocation);
             holder.descriptionView = (TextView)convertView.findViewById(R.id.id_couponDescription);
             holder.imageView = (ImageView)convertView.findViewById(R.id.id_couponImage);
+            holder.validView = (ImageView)convertView.findViewById(R.id.id_validView);
             convertView.setTag(holder);
         }
         else    {
@@ -69,7 +70,8 @@ public class CouponAdapter extends BaseAdapter  {
         holder.locationView.setText(newItem.getLocation());
         holder.descriptionView.setText(newItem.getDescription());
 //        holder.timeView.setText(newItem.getTime());
-
+        holder.validView.setBackground(newItem.getValid() ? convertView.getResources().getDrawable(R.drawable.coupon_valid)
+                                                            : convertView.getResources().getDrawable(R.drawable.coupon_invalid));
         if( holder.imageView != null )  {
             new ImageDownloaderTask(holder.imageView).execute(newItem.getUrl());
         }
@@ -85,5 +87,6 @@ public class CouponAdapter extends BaseAdapter  {
         TextView timeView;
 
         ImageView imageView;
+        ImageView validView;
     }
 }

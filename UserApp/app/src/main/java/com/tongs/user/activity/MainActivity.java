@@ -28,6 +28,7 @@ import com.tongs.user.adapter.ViewPagerAdapter;
 import com.tongs.user.tab.SlidingTabLayout;
 import com.tongs.user.tab.StoreTab;
 import com.tongs.user.tab.TicketTab;
+import com.tongs.user.tool.BarcodeGenerator;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

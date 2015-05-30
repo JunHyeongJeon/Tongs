@@ -1,26 +1,25 @@
 package com.tongs.user.tab;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.tongs.user.activity.BarcodeGenerator;
-import com.tongs.user.activity.R;
 import com.google.zxing.BarcodeFormat;
-import com.tongs.user.asynctask.ImageDownloaderTask;
+import com.tongs.user.activity.R;
+import com.tongs.user.tool.BarcodeGenerator;
+import com.tongs.user.tool.ImageDownloaderTask;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -34,18 +33,18 @@ import java.io.InputStream;
 /**
  * Created by JaeCheol on 15. 5. 19..
  */
-public class ValidCouponTab extends Fragment
+public class ValidCouponTab extends ActionBarActivity
         implements View.OnClickListener
 {
-    View view;
+    Intent intent;
+    Toolbar toolbar;
 
     String authToken;
     String uid;
     String mobileNumber;
 
-    String sid;
+    String cid;
 
-    LinearLayout noValidCouponLayout;
     RelativeLayout validCouponLayout;
 
     ImageView couponImageView;
@@ -60,25 +59,31 @@ public class ValidCouponTab extends Fragment
     BarcodeGenerator barcodeGenerator;
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle SavedInstanceState)
-    {
-        view = inflater.inflate(R.layout.tab_validcoupon, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         initValidTab();
+        setToolbar();
+        getDataFromIntent();
         getDataFromSharedPref();
         setBarcode();
-
-        showCouponLayout(false);
-
-        return view;
     }
 
     @Override
     public void onResume()   {
         getCouponInfo();
         super.onResume();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)  {
+        switch( item.getItemId() ) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void onClick(View v) {
@@ -98,38 +103,44 @@ public class ValidCouponTab extends Fragment
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         couponBarcode.setImageBitmap(barcode);
     }
 
-    private void initValidTab() {
+    private void setToolbar() {
 
-        noValidCouponLayout = (LinearLayout)view.findViewById(R.id.noValidCouponLayout);
-        validCouponLayout = (RelativeLayout)view.findViewById(R.id.validCouponLayout);
+        // Creating The Toolbar and setting it as the Toolbar for the activity
+        toolbar = (Toolbar)findViewById(R.id.toolbar_coupon2);
+        toolbar.setTitle("");
 
-        couponImageView = (ImageView)view.findViewById(R.id.id_validCouponImage);
-        couponBarcode = (ImageView)view.findViewById(R.id.id_validCouponBarcode);
-        couponTitle = (Button)view.findViewById(R.id.id_validCouponTitle);
-        couponLocation = (TextView)view.findViewById(R.id.id_validCouponLocation);
-        couponContents = (TextView)view.findViewById(R.id.id_validCouponContents);
-        couponTime = (TextView)view.findViewById(R.id.id_validCouponTime);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
     }
 
-    private void showCouponLayout(boolean flag) {
+    private void initValidTab() {
+        setContentView(R.layout.tab_validcoupon);
 
-        if( flag )  {
-            validCouponLayout.setVisibility(View.VISIBLE);
-            noValidCouponLayout.setVisibility(View.GONE);
-        }
-        else    {
-            validCouponLayout.setVisibility(View.GONE);
-            noValidCouponLayout.setVisibility(View.VISIBLE);
-        }
+        validCouponLayout = (RelativeLayout)findViewById(R.id.validCouponLayout);
+
+        couponImageView = (ImageView)findViewById(R.id.id_validCouponImage);
+        couponBarcode = (ImageView)findViewById(R.id.id_validCouponBarcode);
+        couponTitle = (Button)findViewById(R.id.id_validCouponTitle);
+        couponLocation = (TextView)findViewById(R.id.id_validCouponLocation);
+        couponContents = (TextView)findViewById(R.id.id_validCouponContents);
+        couponTime = (TextView)findViewById(R.id.id_validCouponTime);
+    }
+
+    private void getDataFromIntent()    {
+        intent = getIntent();
+
+        cid = intent.getStringExtra("cid");
     }
 
     private void getDataFromSharedPref()    {
 
-        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
+        SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         authToken = mPref.getString("auth_token", null);
         mobileNumber = mPref.getString("number", null);
         uid = mPref.getString("uid", null);
@@ -138,7 +149,8 @@ public class ValidCouponTab extends Fragment
     public void getCouponInfo() {
     String url = getText(R.string.api_server)
             + "user/coupon/get"
-            + "?token=" + authToken;
+            + "?token=" + authToken
+            + "&id=" + cid;
 
     IHttpRecvCallback cb = new IHttpRecvCallback(){
         public void onRecv(String result) {
@@ -147,11 +159,7 @@ public class ValidCouponTab extends Fragment
                 String result_code = json.get("result_code").toString();
                 Log.d("Hello", result_code);
                 if( "-1".equals(result_code) )  {
-                    showCouponLayout(false);
                     return;
-                }
-                else    {
-                    showCouponLayout(true);
                 }
 
                 String sid = json.getString("target");

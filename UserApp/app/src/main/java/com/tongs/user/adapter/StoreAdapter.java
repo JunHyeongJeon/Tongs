@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tongs.user.asynctask.ImageDownloaderTask;
+import com.tongs.user.tool.ImageDownloaderTask;
 import com.tongs.user.item.StoreItem;
 import com.tongs.user.activity.R;
 
@@ -77,39 +77,6 @@ public class StoreAdapter extends BaseAdapter   {
 
         return convertView;
     }
-//
-//    // 외부에서 아이템 추가 요청 시 사용
-//    public void add(String id, String title,
-//                    String location, String description,
-//                    String waitingNum, Bitmap bitmap) {
-//        storeList[0].add(id);
-//        storeList[1].add(title);
-//        storeList[2].add(location);
-//        storeList[3].add(description);
-//        storeList[4].add(waitingNum);
-//
-//        storeImageList.add(bitmap);
-//    }
-//
-//    // 외부에서 아이템 삭제 요청 시 사용
-//    private void remove(int _position) {
-//        storeList[0].remove(_position);
-//        storeList[1].remove(_position);
-//        storeList[2].remove(_position);
-//        storeList[3].remove(_position);
-//        storeList[4].remove(_position);
-//
-//        storeImageList.remove(_position);
-//    }
-//
-//    public void removeList()    {
-//        for(int i=0; i<5; i++) {
-//            storeList[i] = new ArrayList<String>();
-//        }
-//
-//        storeImageList = new ArrayList<Bitmap>();
-//    }
-
 
     private class StoreHolder {
         TextView nameView;

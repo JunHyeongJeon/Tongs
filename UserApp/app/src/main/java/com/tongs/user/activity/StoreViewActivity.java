@@ -45,16 +45,21 @@ public class StoreViewActivity extends ActionBarActivity
     String uid;
     String hid;
     String authToken;
-    String peopleNumber;
     float resolution;
 
     AlertDialog dialog;
     Button pushButton;
-    EditText peopleEditText;
 
     TextView currentPeopleText;
     TextView expectTimeText;
 
+    Button plusButton;
+    Button minusButton;
+    TextView peopleText;
+
+    final int MAX_PEOPLE = 20;
+    final int MIN_PEOPLE = 1;
+    int peopleNum = MIN_PEOPLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,14 +153,33 @@ public class StoreViewActivity extends ActionBarActivity
         setDialog();
     }
 
+
     @Override
     public void onClick(View view) {
         switch ( view.getId() )    {
             case R.id.id_pushButton :
                 dialog.show();
                 break;
+
+            case R.id.dialog_plusButton :
+                peopleNum++;
+                setPeopleText();
+                break;
+            case R.id.dialog_minusButton :
+                peopleNum--;
+                setPeopleText();
+                break;
         }
     }
+
+    private void setPeopleText() {
+
+        peopleNum = peopleNum > MAX_PEOPLE ? MAX_PEOPLE : peopleNum;
+        peopleNum = peopleNum < MIN_PEOPLE ? MIN_PEOPLE : peopleNum;
+
+        peopleText.setText(String.valueOf(peopleNum));
+    }
+
 
     private void setDialog()
     {
@@ -167,9 +191,14 @@ public class StoreViewActivity extends ActionBarActivity
         LayoutInflater layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // 레이아웃 설정
-        View layout = layoutInflater.inflate(R.layout.dialog_barcodegenerate,
+        View layout = layoutInflater.inflate(R.layout.dialog_peoplecount,
                 (ViewGroup) findViewById(R.id.id_popup_root));
-        peopleEditText = (EditText)layout.findViewById(R.id.id_popup_edittext);
+        plusButton = (Button)layout.findViewById(R.id.dialog_plusButton);
+        minusButton = (Button)layout.findViewById(R.id.dialog_minusButton);
+        peopleText = (TextView)layout.findViewById(R.id.dialog_peopleText);
+
+        plusButton.setOnClickListener(this);
+        minusButton.setOnClickListener(this);
 
         // Input 소프트 키보드 보이기
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
@@ -181,8 +210,9 @@ public class StoreViewActivity extends ActionBarActivity
     private void getWaitingInfo()   {
 
         String url = getText(R.string.api_server)
-                + "user/ticket/get"
-                + "?token=" + authToken;
+                + "user/store/time"
+                + "?token=" + authToken
+                + "&id=" + sid;
 
         IHttpRecvCallback cb = new IHttpRecvCallback(){
             public void onRecv(String result) {
@@ -194,10 +224,10 @@ public class StoreViewActivity extends ActionBarActivity
                         return;
                     }
 
-                    String currentNum = json.getString("people");
-                    String expectTime = "SJC";//json.getString("expect_time");
+                    String extraNum = json.getString("extra");
+                    String expectTime = json.getString("time");
 
-                    modifyWaitInfo(currentNum, expectTime);
+                    modifyWaitInfo(extraNum, expectTime);
                 }
                 catch(Exception e){
                     e.printStackTrace();
@@ -211,7 +241,7 @@ public class StoreViewActivity extends ActionBarActivity
     private void modifyWaitInfo(String currentNum, String expectTime)    {
 
         currentPeopleText.setText(currentNum);
-        expectTimeText.setText(expectTime);
+        expectTimeText.setText(expectTime + "분");
     }
 
 
@@ -220,14 +250,12 @@ public class StoreViewActivity extends ActionBarActivity
         EditText edittext= new EditText(this);
 
         AlertDialog dialogBox = new AlertDialog.Builder(this)
-                .setTitle("안내")
-                .setMessage("몇명이서 오셨나요?")
+                .setTitle("인원수 설정")
                 .setView(edittext)
                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // 확인 버튼 눌렀을때 액션
-                        if (peopleEditText != null)
-                            peopleNumber = peopleEditText.getText().toString();
+                        String peopleNumber = String.valueOf(peopleNum);
 
                         String url = getText(R.string.api_server)
                                 + "user/ticket/push"
@@ -262,6 +290,7 @@ public class StoreViewActivity extends ActionBarActivity
                 }).create();
         return dialogBox;
     }
+
 
 
 

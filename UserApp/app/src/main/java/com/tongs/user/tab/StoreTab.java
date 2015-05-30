@@ -29,7 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
-import com.tongs.user.activity.BarcodeGenerator;
+import com.tongs.user.tool.BarcodeGenerator;
 import com.tongs.user.activity.R;
 import com.tongs.user.activity.StoreViewActivity;
 import com.tongs.user.adapter.StoreAdapter;

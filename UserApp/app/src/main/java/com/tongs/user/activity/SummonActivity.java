@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.tongs.user.asynctask.ImageDownloaderTask;
+import com.tongs.user.tool.ImageDownloaderTask;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

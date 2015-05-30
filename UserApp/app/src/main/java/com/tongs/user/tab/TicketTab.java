@@ -62,7 +62,6 @@ public class TicketTab extends Fragment
 
     private void initWaitingTicket(View v)   {
         waitingTicket = new WaitingTicket();
-//                    String storeName = json.getJSONObject("store").getString("brand_name");
 
         waitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_waitTicketLayout);
         noWaitTicketLayout = (RelativeLayout)v.findViewById(R.id.id_noWaitTicketLayout);
@@ -78,15 +77,11 @@ public class TicketTab extends Fragment
     public void showTicketLayout(boolean isTicketExist)    {
         if( isTicketExist == true ) {
             noWaitTicketLayout.setVisibility(View.GONE);
-
             waitTicketLayout.setVisibility(View.VISIBLE);
-//            refreshButton.setVisibility(View.VISIBLE);
         }
         else    {
             noWaitTicketLayout.setVisibility(View.VISIBLE);
-
             waitTicketLayout.setVisibility(View.GONE);
-//            refreshButton.setVisibility(View.GONE);
         }
     }
 
@@ -112,14 +107,15 @@ public class TicketTab extends Fragment
                         return;
                     }
 
-                    String waitingNum = json.get("number").toString();
-                    String currentNum = json.get("people").toString();
-                    String storeName = json.get("store").toString();
+                    String waitingNum = json.getString("number");
+                    String currentNum = json.getString("people");
+                    String storeName = json.getString("store");
+                    String extraTime = json.getString("time");
 
                     waitingTicket.setWaitingNum(waitingNum);
                     waitingTicket.setCurrentNum(currentNum);
                     waitingTicket.setStoreName(storeName);
-//                    waitingTicket.setExpectTime(extraTime);
+                    waitingTicket.setExpectTime(extraTime + "분");
 
                     showTicketLayout(true);
                 }

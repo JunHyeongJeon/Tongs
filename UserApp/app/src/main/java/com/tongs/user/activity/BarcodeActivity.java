@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.zxing.BarcodeFormat;
+import com.tongs.user.tool.BarcodeGenerator;
 
 /**
  * Created by JaeCheol on 15. 5. 10..

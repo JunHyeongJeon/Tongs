@@ -11,6 +11,7 @@ public class CouponItem {
     String description;
     String time;
     String url;
+    Boolean valid;
 
     public String getId()   {
         return id;
@@ -52,5 +53,12 @@ public class CouponItem {
     }
     public void setTime(String _time)   {
         time = _time;
+    }
+
+    public Boolean getValid()   {
+        return valid;
+    }
+    public void setValid(boolean _valid) {
+        valid = _valid;
     }
 }
