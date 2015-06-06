@@ -163,6 +163,7 @@ public class CouponActivity extends ActionBarActivity
                     String result_code = json.get("result_code").toString();
                     Log.d("Hello", result_code);
                     if( "-1".equals(result_code) )  {
+                        swipeRefreshLayout.setRefreshing(false);
                         return;
                     }
 

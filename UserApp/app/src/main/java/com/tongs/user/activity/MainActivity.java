@@ -145,7 +145,6 @@ public class MainActivity extends ActionBarActivity
             collapseKey = bundle.get("collapse_key").toString();
             Log.d("HELLO", "collapseKey : " + collapseKey);
 
-
             if( collapseKey.equals("change") ) {
 
                 TicketTab ticketTab = (TicketTab) adapter.getTab(1);

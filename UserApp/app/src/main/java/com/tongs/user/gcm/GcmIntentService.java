@@ -25,10 +25,11 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.tongs.user.activity.CouponActivity;
 import com.tongs.user.activity.MainActivity;
 import com.tongs.user.activity.R;
 import com.tongs.user.activity.SignupActivity;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 /**
  * This {@code IntentService} does the actual handling of the GCM message.
@@ -62,38 +63,30 @@ public class GcmIntentService extends IntentService {
              * not interested in, or that you don't recognize.
              */
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR.equals(messageType)) {
-                sendNotification("Send error: " + extras.toString());
+                sendNotification("Send error: " + extras.toString(), 1);
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
-                sendNotification("Deleted messages on server: " + extras.toString());
+                sendNotification("Deleted messages on server: " + extras.toString(), 1);
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
 
-//                String title = extras.getString("title");
-//                String message = extras.getString("message");
-//
-//                // This loop represents the service doing some work.
-//                for (int i = 0; i < 2; i++) {
-//                    Log.i(TAG, "Working... " + (i + 1)
-//                            + "/5 @ " + SystemClock.elapsedRealtime());
-//                    try {
-//                        Thread.sleep(2000);
-//                    } catch (InterruptedException e) {
-//                    }
-//                }
-//                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
-                // Post notification of received message.
-//                sendNotification("Received: " + extras.toString());
-                sendNotification("Received: " + extras.getString("key1")
-                                                + extras.getString("key2"));
+                String mode = extras.getString("collapse_key");
+
+                if( mode.equals("change") )   {
+                    sendNotification("차례가 변경되었습니다.", 1);
+                }
+                else if( mode.equals("turn") )    {
+                    sendNotification("차례가 되었습니다.", 1);
+                }
+                else if( mode.equals("coupon") )    {
+                    sendNotification("쿠폰이 발급되었습니다.", 2);
+                }
+
                 Log.i(TAG, "Received: " + extras.toString());
 
-
-                Log.d("123", "START");
                 Intent intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
                                     | Intent.FLAG_ACTIVITY_NEW_TASK
                                     | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                intent2.putExtra("data", extras);
                 intent2.putExtras(extras);
                 startActivity(intent2);
             }
@@ -105,24 +98,37 @@ public class GcmIntentService extends IntentService {
     // Put the message into a notification and post it.
     // This is just one simple example of what you might choose to do with
     // a GCM message.
-    private void sendNotification(String msg) {
+    private void sendNotification(String msg, int mode) {
+        final int TICKET = 1;
+        final int COUPON = 2;
+
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
 
-
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, SignupActivity.class), 0);
+        PendingIntent contentIntent;
+        if( mode == TICKET ) {   // ticket renew
+            contentIntent = PendingIntent.getActivity(this, 0,
+                    new Intent(this, MainActivity.class), 0);
+        }
+        else if( mode == COUPON )   {           // coupon received
+            contentIntent = PendingIntent.getActivity(this, 0,
+                    new Intent(this, CouponActivity.class), 0);
+        }
+        else    {
+            contentIntent = PendingIntent.getActivity(this, 0,
+                    new Intent(this, SignupActivity.class), 0);
+        }
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
         .setSmallIcon(R.mipmap.ic_launcher)
-        .setContentTitle("GCM Notification")
+        .setContentTitle("고대기")
         .setStyle(new NotificationCompat.BigTextStyle()
         .bigText(msg))
         .setContentText(msg)
-        .setVibrate(new long[] {0, 800});
+        .setVibrate(new long[] {0, 500});
 
         mBuilder.setContentIntent(contentIntent);
-        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+
     }
 }
