@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +24,8 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.tongs.user.ble.BleManager;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -41,17 +45,23 @@ public class StoreViewActivity extends ActionBarActivity
     WebView webView;
     Toolbar storeviewToolbar;
 
+    private ServiceHandler handler;
+
     String sid;
     String uid;
     String hid;
     String authToken;
     float resolution;
 
+    String storeMajor;
+    String storeMinor;
+
     AlertDialog dialog;
     Button pushButton;
 
     TextView currentPeopleText;
     TextView expectTimeText;
+    TextView waitInfoText;
 
     Button plusButton;
     Button minusButton;
@@ -75,7 +85,6 @@ public class StoreViewActivity extends ActionBarActivity
         getWaitingInfo();
     }
 
-
     void setToolbar() {
         storeviewToolbar = (Toolbar) findViewById(R.id.toolbar_storeview);
 
@@ -87,7 +96,6 @@ public class StoreViewActivity extends ActionBarActivity
             getSupportActionBar().setDisplayShowTitleEnabled(true);
         }
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -133,7 +141,6 @@ public class StoreViewActivity extends ActionBarActivity
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
             };
-
         };
 
         webView.setWebViewClient(webViewClient);
@@ -144,15 +151,17 @@ public class StoreViewActivity extends ActionBarActivity
     }
 
     void initComponent()   {
+        handler = new ServiceHandler();
+
         pushButton = (Button)findViewById(R.id.id_pushButton);
         pushButton.setOnClickListener(this);
 
         currentPeopleText = (TextView)findViewById(R.id.storeView_currentNum);
         expectTimeText = (TextView)findViewById(R.id.storeView_expectTime);
+        waitInfoText = (TextView)findViewById(R.id.id_showWaitInfo);
 
         setDialog();
     }
-
 
     @Override
     public void onClick(View view) {
@@ -179,7 +188,6 @@ public class StoreViewActivity extends ActionBarActivity
 
         peopleText.setText(String.valueOf(peopleNum));
     }
-
 
     private void setDialog()
     {
@@ -226,8 +234,14 @@ public class StoreViewActivity extends ActionBarActivity
 
                     String extraNum = json.getString("extra");
                     String expectTime = json.getString("time");
+                    String waitType = json.getString("wait");
 
-                    modifyWaitInfo(extraNum, expectTime);
+                    String beaconData = json.getString("beacon");
+                    JSONObject beacon = new JSONObject(beaconData);
+                    storeMajor = beacon.getString("major");
+                    storeMinor = beacon.getString("minor");
+
+                    modifyWaitInfo(extraNum, expectTime, Integer.parseInt(waitType));
                 }
                 catch(Exception e){
                     e.printStackTrace();
@@ -235,15 +249,26 @@ public class StoreViewActivity extends ActionBarActivity
             }
         };
         new HttpTask(cb).execute(url);
-
     }
 
-    private void modifyWaitInfo(String currentNum, String expectTime)    {
+    private void modifyWaitInfo(String currentNum, String expectTime, int waitType)    {
+        final int WAIT_BARCODE = 1;
+        final int WAIT_BEACON = 2;
+        final int WAIT_REMOTE = 4;
 
         currentPeopleText.setText(currentNum);
         expectTimeText.setText(expectTime + "분");
-    }
 
+        if( (waitType & WAIT_BARCODE) == WAIT_BARCODE )  {
+            pushButtonShow(false);
+        }
+        if( (waitType & WAIT_BEACON) == WAIT_BEACON )  {
+            scanBeacon();
+        }
+        if( (waitType & WAIT_REMOTE) == WAIT_REMOTE )  {
+            pushButtonShow(true);
+        }
+    }
 
     private AlertDialog createInputDialog() {
 
@@ -291,7 +316,71 @@ public class StoreViewActivity extends ActionBarActivity
         return dialogBox;
     }
 
+    private void pushButtonShow(boolean flag) {
+        if( flag )  {
+            pushButton.setVisibility(View.VISIBLE);
+            waitInfoText.setVisibility(View.INVISIBLE);
+        }
+        else    {
+            pushButton.setVisibility(View.INVISIBLE);
+            waitInfoText.setVisibility(View.VISIBLE);
+        }
+    }
 
+
+    class ServiceHandler extends Handler
+    {
+        public void handleMessage(Message msg)
+        {
+            String scanData;
+
+            switch (msg.what)
+            {
+                case 111:
+                    Log.d("BLE", "SEARCH COMPLETE");
+                    break;
+                case 112:
+                    scanData = (String)msg.obj;
+                    if( scanData != null) {
+                        Log.d("BLE", scanData);
+
+                        parseDataToBeacon(scanData);
+                    }
+//                    m_webView.loadUrl("javascript:output('"+scanData+"')");
+                    break;
+                case 113:
+                    scanData = (String)msg.obj;
+                    Log.d("JACH", "load success");
+
+//                    m_webView.loadUrl("javascript:getSoundScanJson('"+scanData+"')");
+                    break;
+
+                default:
+                    super.handleMessage(msg);
+            }
+        }
+    }
+
+    public void scanBeacon()
+    {
+        BleManager.getInstance(getApplicationContext(), handler).scanLeDevice(true);
+    }
+
+    private void parseDataToBeacon(String scanData) {
+
+        String beaconData[] = scanData.split("_");
+
+        String beconName=beaconData[0];
+        String uuid=beaconData[1];
+        String major=beaconData[2];
+        String minor=beaconData[3];
+        String accurancy=beaconData[4];
+
+        if( storeMajor.equals(major) && storeMinor.equals(minor) )    {
+            pushButtonShow(true);
+        }
+//        getStoreInfo(major, minor);
+    }
 
 
 
@@ -310,8 +399,6 @@ public class StoreViewActivity extends ActionBarActivity
         String str = new String(baos.toByteArray());
         return str;
     }
-
-
 
     public InputStream getInputStreamFromUrl(String url) {
         InputStream content = null;

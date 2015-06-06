@@ -133,7 +133,7 @@ public class BleManager implements BluetoothAdapter.LeScanCallback
 		}
 		else
 		{
-			sendHandler(112, "Fail startLeScan");
+			sendHandler(404, "Fail startLeScan");
 			stopScanning();
 			return false;
 		}
