@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="top"
+android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="89dp"
+    android:layout_marginTop="18dp"
+    android:layout_marginBottom="13.5dp"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_width="0dp"
+        android:layout_height="61.5dp"
+        android:background="@drawable/before_after_button_shape"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:layout_marginRight="-41dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이전순번"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/before_turn_textview"
+            android:textStyle="bold"
+
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="78.5dp"
+        android:gravity="center"
+        android:background="@drawable/this_turn_button_shape"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재순번"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_marginBottom="-7dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp"
+            android:id="@+id/this_turn_textview"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="61.5dp"
+        android:background="@drawable/before_after_button_shape"
+        android:gravity="center"
+        android:layout_marginLeft="-41dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음순번"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/after_turn_textview"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"/>
+    </LinearLayout>
+
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_people"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="12.2dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="11dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11.7dp"
+            android:text="인원수"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/this_turn_people_num_textview"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="명"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icon_watch"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="12.2dp"
+        android:layout_marginLeft="11dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="11dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11.7dp"
+            android:text="대기시간"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:id="@+id/this_turn_wait_time_textview"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp">
+
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rippleColor="@color/main_color_grey_400"
+            android:layout_marginBottom="8dp">
+            <Button
+                android:id="@+id/first_client_more_infomation_button"
+                android:text="상세정보"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/client_more_infomation_button_shape"
+
+                />
+        </com.tongs.store.view.MaterialRippleLayout>
+
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rippleColor="@color/main_color_grey_400">
+            <Button
+                android:id="@+id/first_client_cancel_button"
+                android:text="대기취소"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:background="@drawable/client_more_infomation_button_shape"
+                />
+
+        </com.tongs.store.view.MaterialRippleLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+<com.tongs.store.view.MaterialRippleLayout
+    style="@style/RippleStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:rippleColor="@color/main_color_grey_400"
+    android:layout_gravity="center"
+    >
+    <Button
+        android:id="@+id/client_add"
+        android:text="고객등록"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:background="@drawable/client_call_button_shape"
+        />
+</com.tongs.store.view.MaterialRippleLayout>
+
+
+
+</LinearLayout>

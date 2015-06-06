@@ -92,14 +92,14 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-    private TextView mBeforeTurnTextView;
-    private TextView mThisTurnTextView;
-    private TextView mAfterTurnTextView;
-    private TextView mThisTurnWaitPeopleTextView;
-    private TextView mThisTurnWaitTimeTextView;
-
-    private Button mFirstClientMoreInfoButton;
-    private Button mFirstClientCancelButton;
+//    private TextView mBeforeTurnTextView;
+//    private TextView mThisTurnTextView;
+//    private TextView mAfterTurnTextView;
+//    private TextView mThisTurnWaitPeopleTextView;
+//    private TextView mThisTurnWaitTimeTextView;
+//
+//    private Button mFirstClientMoreInfoButton;
+//    private Button mFirstClientCancelButton;
 
     private String mBeforeFirstNumber = "";
     private String mFirstId = "";
@@ -189,17 +189,21 @@ public class ClientManagementActivity extends ActionBarActivity
     private void setContentView(Bundle savedInstanceState){
         setContentView(R.layout.activity_client_management);
 
-        mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
-        mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
-        mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
-        mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
-        mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
+//        mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
+//        mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
+//        mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
+//        mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
+//        mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
 
-        mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
-        mFirstClientMoreInfoButton.setOnClickListener(this);
+//        mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
+//        mFirstClientMoreInfoButton.setOnClickListener(this);
+//
+//        mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
+//        mFirstClientCancelButton.setOnClickListener(this);
 
-        mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
-        mFirstClientCancelButton.setOnClickListener(this);
+//        Button mClientAddButton;
+//        mClientAddButton = (Button)findViewById(R.id.client_add);
+//        mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -234,9 +238,6 @@ public class ClientManagementActivity extends ActionBarActivity
             mDrawerLayout.closeDrawer(mDrawerList);
         }
 
-        Button mClientAddButton;
-        mClientAddButton = (Button)findViewById(R.id.client_add);
-        mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
         backPressCloseHandler = new BackPressCloseHandler(this);
 
@@ -284,11 +285,6 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerItems = new ArrayList<>();
         mDrawerItems.add(
                 new DrawerItem(
-                        R.string.drawer_icon_linked_in,
-                        R.string.drawer_title_setting,
-                        DrawerItem.DRAWER_ITEM_TAG_LINKED_IN));
-        mDrawerItems.add(
-                new DrawerItem(
                         R.string.drawer_icon_blog,
                         R.string.drawer_title_before_client_data,
                         DrawerItem.DRAWER_ITEM_TAG_BLOG));
@@ -296,36 +292,24 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_git_hub,
-                        R.string.drawer_title_auto_login_release,
+                        R.string.drawer_title_logout,
                         DrawerItem.DRAWER_ITEM_TAG_GIT_HUB));
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_instagram,
-                        R.string.drawer_title_logout,
+                        R.string.drawer_title_setting,
                         DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
     }
 
 
     private void setAdapter() {
-        String option = LEFT_MENU_OPTION_1;
         Bundle extras = getIntent().getExtras();
-        if (extras != null && extras.containsKey(LEFT_MENU_OPTION)) {
-            option = extras.getString(LEFT_MENU_OPTION, LEFT_MENU_OPTION_1);
-        }
 
         boolean isFirstType = true;
-
         View headerView = null;
-        if (option.equals(LEFT_MENU_OPTION_1)) {
             headerView = prepareHeaderView(R.layout.header_navigation_drawer_1,
                     "http://pengaja.com/uiapptemplate/avatars/0.jpg",
                     "dev@csform.com");
-        } else if (option.equals(LEFT_MENU_OPTION_2)) {
-            headerView = prepareHeaderView(R.layout.header_navigation_drawer_2,
-                    "http://pengaja.com/uiapptemplate/avatars/0.jpg",
-                    "dev@csform.com");
-            isFirstType = false;
-        }
 
         BaseAdapter adapter = new DrawerAdapter(this, mDrawerItems, isFirstType);
 
@@ -341,7 +325,7 @@ public class ClientManagementActivity extends ActionBarActivity
             selectItem(position/*, mDrawerItems.get(position - 1).getTag()*/);
         }
     }
-
+    // set the navigation draw bar
     private View prepareHeaderView(int layoutRes, String url, String email) {
         View headerView = getLayoutInflater().inflate(layoutRes, mDrawerList, false);
         ImageView iv = (ImageView) headerView.findViewById(R.id.image);
@@ -355,11 +339,19 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private void selectItem(int position/*, int drawerTag*/) {
         // minus 1 because we have header that has 0 position
-        if (position < 1) { //because we have header, we skip clicking on it
+        if (position == 0) { //because we have header, we skip clicking on it
             return;
         }
-        if( position == 2){
-            movePreClientListActivity();
+        else if (position == 1) {
+            moveActivity(PreviousClientListActivity.class);
+        }
+
+        else if( position == 2){
+            this.finish();
+            moveActivity(LogInPageActivity.class);
+        }
+        else if (position == 3){
+            moveActivity(StoreSettingActivity.class);
 
         }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
@@ -379,15 +371,12 @@ public class ClientManagementActivity extends ActionBarActivity
         }
         else if (v.getId() == R.id.first_client_more_infomation_button)
         {
-            moveClientMoreInfoActivity();
+            moveActivity(ClientMoreInformationActivity.class);
         }
         else if (v.getId() == R.id.first_client_cancel_button)
         {
             removeTicket(mFirstId);
-            mBeforeFirstNumber = mFirstNumber;
-            mBeforeTurnTextView.setText(mBeforeFirstNumber);
-            mFirstNumber = mAfterFirstNumber;
-            mThisTurnTextView.setText(mFirstNumber);
+
         }
 
 
@@ -408,10 +397,10 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private String setDialogMent(int status){
         String ment;
-        if(status == PROTOCOL_STATUS_USER_CALL) {
+        if(status == PROTOCOL_STATUS_USER_POP) {
             ment = getString(R.string.dialog_user_call);
         }
-        else if (status == PROTOCOL_STATUS_USER_CANCEL) {
+        else if (status == PROTOCOL_STATUS_USER_REMOVE) {
             ment = getString(R.string.dialog_user_remove);
         } else {
             ment = getString(R.string.dialog_user_more_information);
@@ -456,7 +445,7 @@ public class ClientManagementActivity extends ActionBarActivity
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_push)
                 + "token=" + mToken + "&user=" + user + "&pivot=" + mTodayDate
                 + "&people=" + people;
-        requestOnUIThread(PROTOCOL_STATUS_USER_ADD, url, new OnHttpReceive() {
+        requestOnUIThread(PROTOCOL_STATUS_USER_PUSH, url, new OnHttpReceive() {
             @Override
             public void onReceive(int protocol, String data) {
                 try {
@@ -477,7 +466,7 @@ public class ClientManagementActivity extends ActionBarActivity
         String url;
         url = getString(R.string.api_server) + getString(R.string.api_store_ticket_pop)
                 + "token=" + mToken + "&id=" + id;
-        requestOnUIThread(PROTOCOL_STATUS_USER_CALL, url, new OnHttpReceive() {
+        requestOnUIThread(PROTOCOL_STATUS_USER_POP, url, new OnHttpReceive() {
             @Override
             public void onReceive(int protocol, String data) {
                 try {
@@ -493,15 +482,37 @@ public class ClientManagementActivity extends ActionBarActivity
         });
 
     }
+    private void callTicket(String id){
+        Log.v("Protocol","PROTOCOL_STATUS_USER_CALL");
+
+        String url;
+        url = getString(R.string.api_server) +
+                getString(R.string.api_store_ticket_pop) +
+                "token=" + mToken +
+                "&id=" + id;
+        requestOnUIThread(PROTOCOL_STATUS_USER_CALL, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+                    boolean isSuccess = "0".equals(result_code) ? true : false;
+                    getTicketList();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
     private void removeTicket(String id){
-        Log.v("Protocol", "PROTOCOL_STATUS_USER_CANCEL");
+        Log.v("Protocol", "PROTOCOL_STATUS_USER_REMOVE");
 
         String url;
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_remove) +
                 "token=" + mToken +
                 "&id=" + id;
-        requestOnUIThread(PROTOCOL_STATUS_USER_CANCEL, url, new OnHttpReceive() {
+        requestOnUIThread(PROTOCOL_STATUS_USER_REMOVE, url, new OnHttpReceive() {
             @Override
             public void onReceive(int protocol, String data) {
                 try {
@@ -557,21 +568,22 @@ public class ClientManagementActivity extends ActionBarActivity
                         mFirstId = obj.optString("id", null);
                         mFirstNumber = obj.optString("number", null);
 
-                        mThisTurnTextView.setText(mFirstNumber);
-
-                        String firstPeople = obj.optString("people", null);
-                        mThisTurnWaitPeopleTextView.setText(firstPeople);
-
-                        long firstPopTime = obj.optLong("time", 0);
-                        long firstTime = (mTime - firstPopTime) / 60;
-                        mThisTurnWaitTimeTextView.setText(firstTime + "");
-
-
-                        obj = jsonArr.optJSONObject(1);
-                        mAfterFirstNumber = "";
-                        mAfterFirstNumber = obj.optString("number", null);
-                        mAfterTurnTextView.setText(mAfterFirstNumber);
-
+//                        mThisTurnTextView.setText(mFirstNumber);
+//
+//                        String firstPeople = obj.optString("people", null);
+//                        mThisTurnWaitPeopleTextView.setText(firstPeople);
+//
+//                        long firstPopTime = obj.optLong("time", 0);
+//                        long firstTime = (mTime - firstPopTime) / 60;
+//                        mThisTurnWaitTimeTextView.setText(firstTime + "");
+//
+//
+//                        obj = jsonArr.optJSONObject(1);
+//                        if(obj != null) {
+//                            mAfterFirstNumber = "";
+//                            mAfterFirstNumber = obj.optString("number", null);
+//                            mAfterTurnTextView.setText(mAfterFirstNumber);
+//                        }
                         List<GroupItem> items = new ArrayList<GroupItem>();
 
                         final String index[] = new String[ticketLen];
@@ -782,7 +794,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
     private void viewClientMoreInfo(){
-        Log.v("ClientMana/viewClient","viewClientMoreInfo");
+        Log.v("ClientMana/viewClient", "viewClientMoreInfo");
 
 
     }
@@ -908,16 +920,11 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
 
-    private void movePreClientListActivity(){
-        Intent intent = new Intent(this, PreviousClientListActivity.class);
+    private void moveActivity(Class c){
+        Intent intent = new Intent(this, c);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
-
     }
-    void moveClientMoreInfoActivity(){
-
-    }
-
     void sendSMS(){
 
     }

@@ -173,6 +173,7 @@
     <string name="api_store_login">store/auth/login/?</string>
     <string name="api_store_ticket_list">store/ticket/list/?</string>
     <string name="api_store_ticket_pop">store/ticket/pop/?</string>
+    <string name="api_store_ticket_call">store/ticket/call/?</string>
     <string name="api_store_ticket_push">store/ticket/push/?</string>
     <string name="api_store_ticket_remove">store/ticket/remove/?</string>
     <string name="api_store_global_set_request">store/config/store.json</string>
@@ -222,6 +223,7 @@
     <string name="sample_show_log">Show Log</string>
     <string name="sample_hide_log">Hide Log</string>
     <string name="title_activity_previous_client_list">PreviousClientListActivity</string>
+    <string name="title_activity_store_setting">StoreSettingActivity</string>
 
 
 </resources>

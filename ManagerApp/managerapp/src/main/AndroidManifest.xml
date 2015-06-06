@@ -124,7 +124,6 @@
         <activity
             android:name=".activity.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
-
         </activity>
         <activity
             android:name=".activity.PreviousClientListActivity"
@@ -133,6 +132,10 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".activity.StoreSettingActivity"
+            android:label="@string/title_activity_store_setting" >
         </activity>
     </application>
 

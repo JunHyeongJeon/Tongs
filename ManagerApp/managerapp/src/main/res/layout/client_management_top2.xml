@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="159dp"
+                android:layout_height="78.5dp"
+                android:gravity="center"
+                android:background="@drawable/this_turn_button_shape"
+                android:orientation="vertical" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="현재순번"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="-7dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp"
+                    android:id="@+id/this_turn_textview"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp">
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            app:rippleColor="@color/main_color_grey_400"
+            android:layout_gravity="center" >
+            <Button
+                android:id="@+id/client_add"
+                android:text="고객등록"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/client_call_button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+        </com.tongs.store.view.MaterialRippleLayout>
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            app:rippleColor="@color/main_color_grey_400"
+            android:layout_gravity="center" >
+            <Button
+                android:id="@+id/client_call"
+                android:text="고객호출"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/client_call_button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+        </com.tongs.store.view.MaterialRippleLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp">
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            app:rippleColor="@color/main_color_grey_400"
+            android:layout_gravity="center" >
+            <Button
+                android:id="@+id/client_enter"
+                android:text="고객입장"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/client_call_button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+        </com.tongs.store.view.MaterialRippleLayout>
+        <com.tongs.store.view.MaterialRippleLayout
+            style="@style/RippleStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            app:rippleColor="@color/main_color_grey_400"
+            android:layout_gravity="center" >
+            <Button
+                android:id="@+id/client_more_info"
+                android:text="상세정보"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/client_call_button_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+        </com.tongs.store.view.MaterialRippleLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

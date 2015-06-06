@@ -28,9 +28,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
 	public static final String DARK = "Dark";
 	public static final String LIGHT = "Light";
-    public static final String ISAUTOLOGIN = "autoLogin";
-    public static final String ID = "id";
-    public static final String PASSWORD = "password";
+
 
 
     private ScrollView mScrollView;
@@ -82,7 +80,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
                 if("0".equals(resultCode)) {
                     Log.v("LoginAc/onReceive", "로그인성공");
-                    moveClientManagementActivity();
+                    moveActivity(ClientManagementActivity.class);
                 }
                 else
                     printToast(getString(R.string.toast_login_account_fail));
@@ -92,9 +90,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
             }
 
         }
-
-
-
     }
 
     void requestOnUIThread(final int protocol, final String url)
@@ -146,7 +141,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         }
         else if(v.getId() == R.id.sign_up_button){
-            moveSignUpActivity();
+            moveActivity(SignUpActivity.class);
         }
 
 	}
@@ -221,12 +216,10 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         if( "".equals(id)|| "".equals(password)){
             return;
-
         }
         else
         {
             progressDialog();
-//            setProtocolStatus(PROTOCOL_STATUS_MANAGER_LOGIN);
             String url = getString(R.string.api_server) + getString(R.string.api_store_login)
                     + "email=" + id + "&password=" + password;
             Log.v("LoginAc/doLogin", url);
@@ -242,8 +235,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
     }
 
     private boolean isEmailValid(String email) {
-
-
         return email.contains("@") && email.contains(".");
     }
 
@@ -251,20 +242,14 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
-    private void moveClientManagementActivity(){
-        Intent intent = new Intent(this, ClientManagementActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
-        this.finish();
-
-    }
 
     public void printToast(String string){
         Toast.makeText(LogInPageActivity.this, string, Toast.LENGTH_SHORT).show();
     }
 
-    private void moveSignUpActivity(){
-        Intent intent = new Intent(this, SignUpActivity.class);
+
+    private void moveActivity(Class c){
+        Intent intent = new Intent(this, c);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_out_left);
 

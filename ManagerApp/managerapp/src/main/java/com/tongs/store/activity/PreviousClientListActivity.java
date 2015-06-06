@@ -1,6 +1,7 @@
 package com.tongs.store.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.support.v4.app.FragmentTransaction;
@@ -63,8 +64,14 @@ public class PreviousClientListActivity extends ActionBarActivity implements Glo
         getTicketList();
 
     }
+    @Override
+    public void onBackPressed() {
+        this.finish();
+        overridePendingTransition(R.anim.slide_right, R.anim.slide_out_right);
 
-    public String getTodayDate(){
+    }
+
+        public String getTodayDate(){
 
         long now = System.currentTimeMillis();
         mTime = now/1000;
