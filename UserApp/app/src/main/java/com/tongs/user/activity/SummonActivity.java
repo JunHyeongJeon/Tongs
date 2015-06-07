@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.tongs.user.tool.ImageDownloaderTask;
+import com.tongs.user.tool.PushWakeLock;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -61,6 +62,8 @@ public class SummonActivity extends ActionBarActivity
 
         g_isOpened = true;
 
+        new PushWakeLock().acquireCpuWakeLock(this);
+
         summonInit();
         getStoreInfo();
 
@@ -73,6 +76,7 @@ public class SummonActivity extends ActionBarActivity
         handler.removeMessages(0);
         retryHandler.removeMessages(0);
 
+        new PushWakeLock().releaseCpuLock();
         super.onDestroy();
     }
 

@@ -87,11 +87,6 @@ public class MainActivity extends ActionBarActivity
 
     String hid;
     String sid;
-    int number;
-    int createTime;
-    int extraTime;
-
-    String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +100,7 @@ public class MainActivity extends ActionBarActivity
         setTabView();
         setDrawer();
         setBarcode();
+        wakeLockCheck();
 
         getDataFromIntent();
     }
@@ -116,7 +112,6 @@ public class MainActivity extends ActionBarActivity
         super.onNewIntent(intent);
 
         processPush(intent);
-
     }
 
     @Override
@@ -126,35 +121,31 @@ public class MainActivity extends ActionBarActivity
         return true;
     }
 
-    public void processPush(Intent intent)
-    {
-
-        if(intent == null)  {
+    public void processPush(Intent intent) {
+        if (intent == null) {
             Log.d("HELLO", "GCM Intent Fail");
-        }
-        else {
+        } else {
             Bundle bundle;
             bundle = intent.getExtras();
 
             String collapseKey = null;
 
-            if( bundle.get("store") != null )
+            if (bundle.get("store") != null)
                 sid = bundle.getString("store").toString();
             Log.d("HELLO", "GCM Data (store) : " + sid);
 
             collapseKey = bundle.get("collapse_key").toString();
             Log.d("HELLO", "collapseKey : " + collapseKey);
 
-            if( collapseKey.equals("change") ) {
+            if (collapseKey.equals("change")) {
 
                 TicketTab ticketTab = (TicketTab) adapter.getTab(1);
                 if (ticketTab != null) {
                     ticketTab.getWaitingTicket();
                 }
-            }
-            else if( collapseKey.equals("turn") ) {
+            } else if (collapseKey.equals("turn")) {
 
-                if ( SummonActivity.g_isOpened == false ) {
+                if (SummonActivity.g_isOpened == false) {
                     hid = bundle.get("hyper").toString();
                     sid = bundle.get("store").toString();
 
@@ -180,9 +171,6 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         switch (id) {
-//            case R.id.action_registerEmail:
-//                registerEmail();
-//                break;
             case R.id.action_renew:
                 renewAll();
                 break;
@@ -232,7 +220,6 @@ public class MainActivity extends ActionBarActivity
     }
 
     private void setToolbar() {
-
         // Creating The Toolbar and setting it as the Toolbar for the activity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -243,7 +230,6 @@ public class MainActivity extends ActionBarActivity
 
 
     private void setTabView() {
-
         // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         adapter = new ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
 
@@ -432,6 +418,14 @@ public class MainActivity extends ActionBarActivity
         Intent intent = new Intent(MainActivity.this, IntroActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+    private void wakeLockCheck() {
+        Bundle bundle = getIntent().getExtras();
+
+        if( bundle.get("store") != null )   {
+            processPush(getIntent());
+        }
     }
 
     class ServiceHandler extends Handler
