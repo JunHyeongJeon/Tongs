@@ -27,13 +27,12 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" />
+    <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="쿠폰 이용기간 yyyy/mm/d 형식으로 수정">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="UserApp.iws" />
@@ -68,13 +67,13 @@
       <file leaf-file-name="ValidCouponTab.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7480916">
-              <caret line="186" column="38" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.53173244">
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4331#4359#0" expanded="true" />
-                <element signature="e#7095#7096#0" expanded="true" />
-                <element signature="e#7128#7129#0" expanded="true" />
+                <element signature="e#7272#7273#0" expanded="true" />
+                <element signature="e#7305#7306#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1533,8 +1532,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-308" />
     <option name="y" value="-1057" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -2118,12 +2117,6 @@
       <option name="number" value="Default" />
       <updated>1431101985681</updated>
     </task>
-    <task id="LOCAL-00005" summary="navigation drawer 리스너 추가, 쿠폰 페이지 연결">
-      <created>1431191911222</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1431191911222</updated>
-    </task>
     <task id="LOCAL-00006" summary="navigation drawer 바코드 페이지 연결">
       <created>1431192331182</created>
       <option name="number" value="00006" />
@@ -2412,7 +2405,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433607489505</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="유닉스 타임 변환">
+      <created>1433653033123</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1433653033124</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2425,28 +2424,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-308" y="-1057" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="-308" y="-1057" width="1680" height="1027" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24174654" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.496337" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27417642" sideWeight="0.66719913" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27417642" sideWeight="0.66719913" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2752391" sideWeight="0.33280087" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30670926" sideWeight="0.2591508" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35164836" sideWeight="0.26022914" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13045794" sideWeight="0.5121951" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.4765708" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2646121" sideWeight="0.75825346" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32930845" sideWeight="0.4765708" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27113062" sideWeight="0.75825346" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.497558" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30670926" sideWeight="0.7408492" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35164836" sideWeight="0.7397709" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31243357" sideWeight="0.42492014" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2498,8 +2497,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gcm 연결" />
-    <MESSAGE value="하이퍼마켓 dialog추가, 하이퍼마켓별 스토어보기" />
     <MESSAGE value="바코드 현재인원 drawer와 barcodepage 동기화" />
     <MESSAGE value="쿠폰에 바코드 추가" />
     <MESSAGE value="쿠폰리스트 주소가져오기 수정" />
@@ -2523,7 +2520,9 @@
     <MESSAGE value="너무많은걸 수정" />
     <MESSAGE value="gcm왔을때 분기 태우기(쿠폰, 티켓)" />
     <MESSAGE value="비컨대기추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="비컨대기추가" />
+    <MESSAGE value="유닉스 타임 변환" />
+    <MESSAGE value="쿠폰 이용기간 yyyy/mm/d 형식으로 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="쿠폰 이용기간 yyyy/mm/d 형식으로 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2833,6 +2832,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12417219">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2902,6 +2902,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63809526">
           <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3017,13 +3018,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7480916">
-          <caret line="186" column="38" selection-start-line="186" selection-start-column="38" selection-end-line="186" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.53173244">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4331#4359#0" expanded="true" />
-            <element signature="e#7095#7096#0" expanded="true" />
-            <element signature="e#7128#7129#0" expanded="true" />
+            <element signature="e#7272#7273#0" expanded="true" />
+            <element signature="e#7305#7306#0" expanded="true" />
           </folding>
         </state>
       </provider>

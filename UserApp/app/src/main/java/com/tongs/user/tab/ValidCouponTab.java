@@ -172,11 +172,14 @@ public class ValidCouponTab extends ActionBarActivity
                 String time = json.getString("end");
 
                 Date date = new Date(Long.parseLong(time)*1000L);
+                String dateInfo =  " ~ " + (date.getYear()+1900) + "." +
+                                    date.getMonth() + "." +
+                                    date.getDay();
 
                 couponTitle.setText(title);
                 couponLocation.setText(location);
                 couponContents.setText(content);
-                couponTime.setText(date.toString());
+                couponTime.setText(dateInfo);
 
                 // get Image and register in image view
                 new ImageDownloaderTask(couponImageView).execute(url);
