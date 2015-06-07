@@ -13,7 +13,7 @@ android:orientation="vertical">
     android:layout_marginTop="18dp"
     android:layout_marginBottom="13.5dp"
     android:gravity="center">
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginLeft="20dp"
         android:layout_width="0dp"
         android:layout_height="61.5dp"
@@ -33,18 +33,18 @@ android:orientation="vertical">
             android:layout_height="wrap_content"
             android:id="@+id/before_turn_textview"
             android:textStyle="bold"
-
             android:textColor="#FFFFFF"
             android:textSize="28sp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
     <LinearLayout
         android:layout_weight="3"
         android:layout_width="0dp"
         android:layout_height="78.5dp"
         android:gravity="center"
         android:background="@drawable/this_turn_button_shape"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/this_turn" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

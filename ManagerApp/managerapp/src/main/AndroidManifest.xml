@@ -137,6 +137,11 @@
             android:name=".activity.StoreSettingActivity"
             android:label="@string/title_activity_store_setting" >
         </activity>
+        <activity
+            android:name=".activity.CouponActivity"
+            android:label="@string/title_activity_coupon"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

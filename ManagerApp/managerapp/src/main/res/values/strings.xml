@@ -172,6 +172,7 @@
     <string name="api_server">http://tongs.kr/api/</string>
     <string name="api_store_login">store/auth/login/?</string>
     <string name="api_store_ticket_list">store/ticket/list/?</string>
+    <string name="api_store_ticket_all">store/ticket/all/?</string>
     <string name="api_store_ticket_pop">store/ticket/pop/?</string>
     <string name="api_store_ticket_call">store/ticket/call/?</string>
     <string name="api_store_ticket_push">store/ticket/push/?</string>
@@ -224,6 +225,7 @@
     <string name="sample_hide_log">Hide Log</string>
     <string name="title_activity_previous_client_list">PreviousClientListActivity</string>
     <string name="title_activity_store_setting">StoreSettingActivity</string>
+    <string name="title_activity_coupon">CouponActivity</string>
 
 
 </resources>

@@ -92,14 +92,14 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
-//    private TextView mBeforeTurnTextView;
-//    private TextView mThisTurnTextView;
-//    private TextView mAfterTurnTextView;
-//    private TextView mThisTurnWaitPeopleTextView;
-//    private TextView mThisTurnWaitTimeTextView;
-//
-//    private Button mFirstClientMoreInfoButton;
-//    private Button mFirstClientCancelButton;
+    private TextView mBeforeTurnTextView;
+    private TextView mThisTurnTextView;
+    private TextView mAfterTurnTextView;
+    private TextView mThisTurnWaitPeopleTextView;
+    private TextView mThisTurnWaitTimeTextView;
+
+    private Button mFirstClientMoreInfoButton;
+    private Button mFirstClientCancelButton;
 
     private String mBeforeFirstNumber = "";
     private String mFirstId = "";
@@ -109,6 +109,9 @@ public class ClientManagementActivity extends ActionBarActivity
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
     private String regid;
+
+    private View mTapLine;
+    private View mTapView;
 
     GoogleCloudMessaging gcm;
     Context context;
@@ -127,6 +130,7 @@ public class ClientManagementActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(savedInstanceState);
+
 
 
         Preference pref = Preference.getInstance();
@@ -189,21 +193,23 @@ public class ClientManagementActivity extends ActionBarActivity
     private void setContentView(Bundle savedInstanceState){
         setContentView(R.layout.activity_client_management);
 
-//        mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
-//        mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
-//        mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
-//        mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
-//        mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
+        mBeforeTurnTextView = (TextView)findViewById(R.id.before_turn_textview);
+        mThisTurnTextView = (TextView)findViewById(R.id.this_turn_textview);
+        mAfterTurnTextView = (TextView)findViewById(R.id.after_turn_textview);
+        mThisTurnWaitPeopleTextView = (TextView)findViewById(R.id.this_turn_people_num_textview);
+        mThisTurnWaitTimeTextView = (TextView)findViewById(R.id.this_turn_wait_time_textview);
+        mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
+        mFirstClientMoreInfoButton.setOnClickListener(this);
 
-//        mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
-//        mFirstClientMoreInfoButton.setOnClickListener(this);
-//
-//        mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
-//        mFirstClientCancelButton.setOnClickListener(this);
+        mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
+        mFirstClientCancelButton.setOnClickListener(this);
 
-//        Button mClientAddButton;
-//        mClientAddButton = (Button)findViewById(R.id.client_add);
-//        mClientAddButton.setOnClickListener((View.OnClickListener) this);
+        mTapLine = (View) findViewById(R.id.tap_line);
+        mTapView = (View) findViewById(R.id.tap_button);
+
+        Button mClientAddButton;
+        mClientAddButton = (Button)findViewById(R.id.client_add);
+        mClientAddButton.setOnClickListener((View.OnClickListener) this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -299,6 +305,11 @@ public class ClientManagementActivity extends ActionBarActivity
                         R.string.drawer_icon_instagram,
                         R.string.drawer_title_setting,
                         DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.string.drawer_icon_instagram,
+                        R.string.drawer_title_setting,
+                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
     }
 
 
@@ -354,6 +365,9 @@ public class ClientManagementActivity extends ActionBarActivity
             moveActivity(StoreSettingActivity.class);
 
         }
+        else if (position == 4) {
+            moveActivity(CouponActivity.class);
+        }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
         Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
 
@@ -376,7 +390,6 @@ public class ClientManagementActivity extends ActionBarActivity
         else if (v.getId() == R.id.first_client_cancel_button)
         {
             removeTicket(mFirstId);
-
         }
 
 
@@ -535,10 +548,8 @@ public class ClientManagementActivity extends ActionBarActivity
 //        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
         String url;
         url = getString(R.string.api_server) +
-                getString(R.string.api_store_ticket_list) +
-                "token=" + mToken +
-                "&pivot=" + mTodayDate +
-                "&type=" + "0";
+                getString(R.string.api_store_ticket_all) +
+                "token=" + mToken ;
 
         requestOnUIThread(PROTOCOL_STATUS_GET_LIST, url, new OnHttpReceive() {
             @Override
@@ -566,24 +577,24 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
                         mFirstId = obj.optString("id", null);
-                        mFirstNumber = obj.optString("number", null);
+                        mFirstNumber = obj.optString("id", null);
 
-//                        mThisTurnTextView.setText(mFirstNumber);
-//
-//                        String firstPeople = obj.optString("people", null);
-//                        mThisTurnWaitPeopleTextView.setText(firstPeople);
-//
-//                        long firstPopTime = obj.optLong("time", 0);
-//                        long firstTime = (mTime - firstPopTime) / 60;
-//                        mThisTurnWaitTimeTextView.setText(firstTime + "");
-//
-//
-//                        obj = jsonArr.optJSONObject(1);
-//                        if(obj != null) {
-//                            mAfterFirstNumber = "";
-//                            mAfterFirstNumber = obj.optString("number", null);
-//                            mAfterTurnTextView.setText(mAfterFirstNumber);
-//                        }
+                        mThisTurnTextView.setText(mFirstNumber);
+
+                        String firstPeople = obj.optString("people", null);
+                        mThisTurnWaitPeopleTextView.setText(firstPeople);
+
+                        long firstPopTime = obj.optLong("time", 0);
+                        long firstTime = (mTime - firstPopTime) / 60;
+                        mThisTurnWaitTimeTextView.setText(firstTime + "");
+
+
+                        obj = jsonArr.optJSONObject(1);
+                        if(obj != null) {
+                            mAfterFirstNumber = "";
+                            mAfterFirstNumber = obj.optString("id", null);
+                            mAfterTurnTextView.setText(mAfterFirstNumber);
+                        }
                         List<GroupItem> items = new ArrayList<GroupItem>();
 
                         final String index[] = new String[ticketLen];
@@ -606,13 +617,12 @@ public class ClientManagementActivity extends ActionBarActivity
 
                             long time = (mTime - popTime) / 60;
 
-                            //pivot = dateSplit(pivot);
 
                             // 레코드 생성 및 추가
 
                             GroupItem item = new GroupItem();
 
-                            item.ticketNum = number;
+                            item.ticketNum = id;
                             item.peopleNum = people;
                             item.waitTime = time + "";
                             item.order = i + "";
@@ -641,8 +651,12 @@ public class ClientManagementActivity extends ActionBarActivity
                                 Log.v("onGroupClick", "" + groupPosition);
                                 if (listView.isGroupExpanded(groupPosition)) {
                                     listView.collapseGroupWithAnimation(groupPosition);
+
+
                                 } else {
                                     listView.expandGroupWithAnimation(groupPosition);
+
+
                                 }
                                 return true;
                             }

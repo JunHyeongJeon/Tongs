@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -141,14 +140,42 @@
                     android:text="분"/>
             </LinearLayout>
 
+
+
         </LinearLayout>
-
-
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="319dp"
+        android:layout_height="1dp"
+        android:background="#ffce06"
+        android:layout_gravity="center"
+        android:id="@+id/tap_line"/>
+    
+    <LinearLayout
+        android:layout_width="168dp"
+        android:layout_height="13.8dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tap"
+        android:gravity="center"
+        android:layout_marginTop="-0.5dp"
+        android:id="@+id/tap_button">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_tab"
+            android:gravity="center"/>
+    </LinearLayout>
 <!--    <com.tongs.store.font.RobotoTextView
 -->
+
+
+
+
+
+
 
 
     <TextView
