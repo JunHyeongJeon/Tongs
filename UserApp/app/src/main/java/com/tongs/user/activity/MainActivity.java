@@ -155,6 +155,9 @@ public class MainActivity extends ActionBarActivity
             else if( collapseKey.equals("turn") ) {
 
                 if ( SummonActivity.g_isOpened == false ) {
+                    hid = bundle.get("hyper").toString();
+                    sid = bundle.get("store").toString();
+
                     Intent intent2 = new Intent(MainActivity.this, SummonActivity.class);
                     intent2.putExtra("hid", hid);
                     intent2.putExtra("sid", sid);
