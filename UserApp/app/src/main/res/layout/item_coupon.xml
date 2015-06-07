@@ -34,7 +34,7 @@
             android:textColor="#23272e" />
         <TextView
             android:id="@+id/id_couponDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="쿠폰 소개"

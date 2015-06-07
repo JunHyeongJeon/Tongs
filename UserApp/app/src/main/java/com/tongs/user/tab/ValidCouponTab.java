@@ -29,6 +29,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.util.Date;
 
 /**
  * Created by JaeCheol on 15. 5. 19..
@@ -147,13 +148,13 @@ public class ValidCouponTab extends ActionBarActivity
     }
 
     public void getCouponInfo() {
-    String url = getText(R.string.api_server)
-            + "user/coupon/get"
-            + "?token=" + authToken
-            + "&id=" + cid;
+        String url = getText(R.string.api_server)
+                + "user/coupon/get"
+                + "?token=" + authToken
+                + "&id=" + cid;
 
-    IHttpRecvCallback cb = new IHttpRecvCallback(){
-        public void onRecv(String result) {
+        IHttpRecvCallback cb = new IHttpRecvCallback(){
+            public void onRecv(String result) {
             try {
                 JSONObject json = new JSONObject(result);
                 String result_code = json.get("result_code").toString();
@@ -169,22 +170,22 @@ public class ValidCouponTab extends ActionBarActivity
                 String content = json.getString("content");
                 String url = json.getString("img");
                 String time = json.getString("end");
-//                String time = String.valueOf(Integer.parseInt(json.getString("end"))
-//                        - Integer.parseInt(json.getString("start")));
+
+                Date date = new Date(Long.parseLong(time)*1000L);
 
                 couponTitle.setText(title);
                 couponLocation.setText(location);
                 couponContents.setText(content);
-                couponTime.setText(time);
+                couponTime.setText(date.toString());
 
                 // get Image and register in image view
                 new ImageDownloaderTask(couponImageView).execute(url);
             }
             catch(Exception e){}
-        }
-    };
-    new HttpTask(cb).execute(url);
-}
+            }
+        };
+        new HttpTask(cb).execute(url);
+    }
 
     private static String convertStreamToString(InputStream is)
     {

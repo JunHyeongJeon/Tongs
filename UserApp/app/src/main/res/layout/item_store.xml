@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/id_storeName"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="매장 이름"
@@ -36,16 +36,18 @@
             />
         <TextView
             android:id="@+id/id_storeDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="매장 소개"
             android:textSize="13dp"
             android:textColor="#23272e"
             android:layout_alignParentBottom="true"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="1">
 
             <ImageView
                 android:layout_width="11dp"
@@ -62,7 +64,8 @@
                 android:textSize="10dp"
                 android:textColor="#888888"
                 android:layout_centerVertical="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_weight="109.67" />
 
         </LinearLayout>
 

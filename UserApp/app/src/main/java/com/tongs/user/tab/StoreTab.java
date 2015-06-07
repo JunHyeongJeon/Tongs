@@ -71,7 +71,7 @@ public class StoreTab extends Fragment
     String peopleNumber;
     String uid;
     String sid;
-    String hid = "1";
+    String hid = "0";
     String authToken;
     EditText peopleEditText;
     TextView hyperText;
@@ -260,7 +260,7 @@ public class StoreTab extends Fragment
                         hyperList[1].add(hyper.getString("name"));
                     }
 
-                    hyperText.setText(" 현재마켓 : " + hyperList[1].get(Integer.parseInt(hid)-1));
+                    hyperText.setText(" 현재마켓 : " + hyperList[1].get(Integer.parseInt(hid)));
                 }
                 catch(Exception e){}
             }
@@ -281,8 +281,8 @@ public class StoreTab extends Fragment
         builder.setIcon(R.drawable.store_icon);
         builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                if (!hid.equals(String.valueOf(item + 1))) {
-                    hid = String.valueOf(item + 1);
+                if (!hid.equals(String.valueOf(item))) {
+                    hid = String.valueOf(item);
                     getStoreList();
 
                     SharedPreferences mPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());

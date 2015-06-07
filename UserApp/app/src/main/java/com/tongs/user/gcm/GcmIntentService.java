@@ -70,25 +70,34 @@ public class GcmIntentService extends IntentService {
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
 
                 String mode = extras.getString("collapse_key");
+                Intent intent2 = null;
 
                 if( mode.equals("change") )   {
                     sendNotification("차례가 변경되었습니다.", 1);
+                    intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
+                    intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent2.putExtras(extras);
+                    startActivity(intent2);
                 }
                 else if( mode.equals("turn") )    {
                     sendNotification("차례가 되었습니다.", 1);
+                    intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
+                    intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                            | Intent.FLAG_ACTIVITY_NEW_TASK
+                            | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent2.putExtras(extras);
+                    startActivity(intent2);
                 }
                 else if( mode.equals("coupon") )    {
                     sendNotification("쿠폰이 발급되었습니다.", 2);
                 }
+                else    {
+                    return;
+                }
 
                 Log.i(TAG, "Received: " + extras.toString());
-
-                Intent intent2 = new Intent(this.getApplicationContext(), MainActivity.class);
-                intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
-                                    | Intent.FLAG_ACTIVITY_NEW_TASK
-                                    | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent2.putExtras(extras);
-                startActivity(intent2);
             }
         }
         // Release the wake lock provided by the WakefulBroadcastReceiver.
@@ -102,33 +111,43 @@ public class GcmIntentService extends IntentService {
         final int TICKET = 1;
         final int COUPON = 2;
 
+        long vibrateTime = 0;
+
         mNotificationManager = (NotificationManager)
                 this.getSystemService(Context.NOTIFICATION_SERVICE);
 
+        Intent intent = null;
         PendingIntent contentIntent;
         if( mode == TICKET ) {   // ticket renew
-            contentIntent = PendingIntent.getActivity(this, 0,
-                    new Intent(this, MainActivity.class), 0);
+            intent = new Intent(this, MainActivity.class);
+            contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            vibrateTime = 0;
         }
         else if( mode == COUPON )   {           // coupon received
-            contentIntent = PendingIntent.getActivity(this, 0,
-                    new Intent(this, CouponActivity.class), 0);
+            intent = new Intent(this, CouponActivity.class);
+            contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            vibrateTime = 800;
         }
         else    {
             contentIntent = PendingIntent.getActivity(this, 0,
                     new Intent(this, SignupActivity.class), 0);
+            vibrateTime = 1000;
         }
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                | Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
-        .setSmallIcon(R.mipmap.ic_launcher)
-        .setContentTitle("고대기")
-        .setStyle(new NotificationCompat.BigTextStyle()
-        .bigText(msg))
-        .setContentText(msg)
-        .setVibrate(new long[] {0, 500});
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("고대기")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText(msg))
+                        .setContentText(msg)
+                        .setVibrate(new long[] {0, vibrateTime});
 
         mBuilder.setContentIntent(contentIntent);
-
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
 }
