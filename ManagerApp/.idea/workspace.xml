@@ -23,16 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/divider.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -122,33 +115,54 @@
       <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71907216">
-              <caret line="768" column="20" selection-start-line="768" selection-start-column="20" selection-end-line="768" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.28869048">
+              <caret line="376" column="5" selection-start-line="376" selection-start-column="5" selection-end-line="376" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8915#8916#0" expanded="true" />
-                <element signature="e#8968#8969#0" expanded="true" />
-                <element signature="e#9884#9885#0" expanded="true" />
-                <element signature="e#9939#9940#0" expanded="true" />
-                <element signature="e#15352#15382#0" expanded="true" />
-                <element signature="e#15385#15426#0" expanded="true" />
-                <element signature="e#17049#17079#0" expanded="true" />
-                <element signature="e#17098#17138#0" expanded="true" />
-                <element signature="e#17264#17770#0" expanded="true" />
-                <element signature="e#17769#17770#0" expanded="true" />
-                <element signature="e#17914#17944#0" expanded="true" />
-                <element signature="e#17963#18006#0" expanded="true" />
-                <element signature="e#18134#18640#0" expanded="true" />
-                <element signature="e#18639#18640#0" expanded="true" />
-                <element signature="e#19054#25724#0" expanded="true" />
-                <element signature="e#25723#25724#0" expanded="true" />
-                <element signature="e#28113#28375#0" expanded="true" />
-                <element signature="e#28374#28375#0" expanded="true" />
-                <element signature="e#28417#28661#0" expanded="true" />
-                <element signature="e#28660#28661#0" expanded="true" />
-                <element signature="e#33364#33563#0" expanded="true" />
-                <element signature="e#33562#33563#0" expanded="true" />
-                <element signature="method#sendGCMKey#0;class#ClientManagementActivity#0" expanded="false" />
+                <element signature="e#8049#8069#0" expanded="true" />
+                <element signature="e#8087#8108#0" expanded="true" />
+                <element signature="e#8744#8745#0" expanded="true" />
+                <element signature="e#8797#8798#0" expanded="true" />
+                <element signature="e#9713#9714#0" expanded="true" />
+                <element signature="e#9768#9769#0" expanded="true" />
+                <element signature="e#9946#9971#0" expanded="true" />
+                <element signature="e#9997#10037#0" expanded="true" />
+                <element signature="e#10181#10209#0" expanded="true" />
+                <element signature="e#10235#10263#0" expanded="true" />
+                <element signature="e#10409#10439#0" expanded="true" />
+                <element signature="e#10465#10494#0" expanded="true" />
+                <element signature="e#10642#10672#0" expanded="true" />
+                <element signature="e#10698#10727#0" expanded="true" />
+                <element signature="e#14280#14316#0" expanded="true" />
+                <element signature="e#14405#14443#0" expanded="true" />
+                <element signature="e#14481#14529#0" expanded="true" />
+                <element signature="e#15278#15308#0" expanded="true" />
+                <element signature="e#15311#15352#0" expanded="true" />
+                <element signature="e#16133#16163#0" expanded="true" />
+                <element signature="e#16166#16206#0" expanded="true" />
+                <element signature="e#16975#17005#0" expanded="true" />
+                <element signature="e#17024#17064#0" expanded="true" />
+                <element signature="e#17190#17696#0" expanded="true" />
+                <element signature="e#17695#17696#0" expanded="true" />
+                <element signature="e#17840#17870#0" expanded="true" />
+                <element signature="e#17889#17932#0" expanded="true" />
+                <element signature="e#18060#18566#0" expanded="true" />
+                <element signature="e#18565#18566#0" expanded="true" />
+                <element signature="e#18794#18824#0" expanded="true" />
+                <element signature="e#18843#18883#0" expanded="true" />
+                <element signature="e#18980#25662#0" expanded="true" />
+                <element signature="e#25661#25662#0" expanded="true" />
+                <element signature="e#28051#28313#0" expanded="true" />
+                <element signature="e#28312#28313#0" expanded="true" />
+                <element signature="e#28355#28599#0" expanded="true" />
+                <element signature="e#28598#28599#0" expanded="true" />
+                <element signature="e#33302#33501#0" expanded="true" />
+                <element signature="e#33500#33501#0" expanded="true" />
+                <element signature="e#34590#34620#0" expanded="true" />
+                <element signature="e#34639#34677#0" expanded="true" />
+                <element signature="method#onResume#0;class#ClientManagementActivity#0" expanded="false" />
+                <element signature="e#37658#37659#0" expanded="true" />
+                <element signature="e#37702#37703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,7 +182,17 @@
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -178,9 +202,35 @@
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="58" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
+              <caret line="135" column="11" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="11" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.275862">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client_management_top.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1724138">
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2331,10 +2381,10 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/divider.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
       </list>
     </option>
@@ -2355,7 +2405,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="736" />
+    <option name="height" value="730" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -3054,29 +3104,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="736" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="730" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32410422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28548387" sideWeight="0.5791599" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257329" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.273021" sideWeight="0.41538462" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2625202" sideWeight="0.42711" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35967743" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36319217" sideWeight="0.6704362" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2625202" sideWeight="0.5846154" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31774193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2625202" sideWeight="0.57289004" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31758958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3085,7 +3136,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3163,7 +3213,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java</url>
-          <line>387</line>
+          <line>378</line>
           <properties />
           <option name="timeStamp" value="283" />
         </line-breakpoint>
@@ -3194,13 +3244,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///ADT/sdk/sources/android-21/android/content/Intent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33266532">
-          <caret line="3994" column="11" selection-start-line="3994" selection-start-column="11" selection-end-line="3994" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///ADT/sdk/sources/android-21/android/widget/ListView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33266532">
@@ -3311,13 +3354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientMoreInformationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/list_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3398,6 +3434,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33221477">
           <caret line="4812" column="0" selection-start-line="4812" selection-start-column="0" selection-end-line="4812" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3462,6 +3499,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1436567">
           <caret line="1184" column="25" selection-start-line="1184" selection-start-column="13" selection-end-line="1184" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3523,33 +3561,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5294118">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/layout_weight_control.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2647059">
@@ -3583,17 +3594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8392857">
-          <caret line="234" column="48" selection-start-line="234" selection-start-column="48" selection-end-line="234" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3605,10 +3605,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3970588">
-          <caret line="23" column="58" selection-start-line="23" selection-start-column="58" selection-end-line="23" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.53892213">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -3616,43 +3616,118 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.275862">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1724138">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientMoreInformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8181818">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="58" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
+          <caret line="135" column="11" selection-start-line="135" selection-start-column="11" selection-end-line="135" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71907216">
-          <caret line="768" column="20" selection-start-line="768" selection-start-column="20" selection-end-line="768" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.28869048">
+          <caret line="376" column="5" selection-start-line="376" selection-start-column="5" selection-end-line="376" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8915#8916#0" expanded="true" />
-            <element signature="e#8968#8969#0" expanded="true" />
-            <element signature="e#9884#9885#0" expanded="true" />
-            <element signature="e#9939#9940#0" expanded="true" />
-            <element signature="e#15352#15382#0" expanded="true" />
-            <element signature="e#15385#15426#0" expanded="true" />
-            <element signature="e#17049#17079#0" expanded="true" />
-            <element signature="e#17098#17138#0" expanded="true" />
-            <element signature="e#17264#17770#0" expanded="true" />
-            <element signature="e#17769#17770#0" expanded="true" />
-            <element signature="e#17914#17944#0" expanded="true" />
-            <element signature="e#17963#18006#0" expanded="true" />
-            <element signature="e#18134#18640#0" expanded="true" />
-            <element signature="e#18639#18640#0" expanded="true" />
-            <element signature="e#19054#25724#0" expanded="true" />
-            <element signature="e#25723#25724#0" expanded="true" />
-            <element signature="e#28113#28375#0" expanded="true" />
-            <element signature="e#28374#28375#0" expanded="true" />
-            <element signature="e#28417#28661#0" expanded="true" />
-            <element signature="e#28660#28661#0" expanded="true" />
-            <element signature="e#33364#33563#0" expanded="true" />
-            <element signature="e#33562#33563#0" expanded="true" />
-            <element signature="method#sendGCMKey#0;class#ClientManagementActivity#0" expanded="false" />
+            <element signature="e#8049#8069#0" expanded="true" />
+            <element signature="e#8087#8108#0" expanded="true" />
+            <element signature="e#8744#8745#0" expanded="true" />
+            <element signature="e#8797#8798#0" expanded="true" />
+            <element signature="e#9713#9714#0" expanded="true" />
+            <element signature="e#9768#9769#0" expanded="true" />
+            <element signature="e#9946#9971#0" expanded="true" />
+            <element signature="e#9997#10037#0" expanded="true" />
+            <element signature="e#10181#10209#0" expanded="true" />
+            <element signature="e#10235#10263#0" expanded="true" />
+            <element signature="e#10409#10439#0" expanded="true" />
+            <element signature="e#10465#10494#0" expanded="true" />
+            <element signature="e#10642#10672#0" expanded="true" />
+            <element signature="e#10698#10727#0" expanded="true" />
+            <element signature="e#14280#14316#0" expanded="true" />
+            <element signature="e#14405#14443#0" expanded="true" />
+            <element signature="e#14481#14529#0" expanded="true" />
+            <element signature="e#15278#15308#0" expanded="true" />
+            <element signature="e#15311#15352#0" expanded="true" />
+            <element signature="e#16133#16163#0" expanded="true" />
+            <element signature="e#16166#16206#0" expanded="true" />
+            <element signature="e#16975#17005#0" expanded="true" />
+            <element signature="e#17024#17064#0" expanded="true" />
+            <element signature="e#17190#17696#0" expanded="true" />
+            <element signature="e#17695#17696#0" expanded="true" />
+            <element signature="e#17840#17870#0" expanded="true" />
+            <element signature="e#17889#17932#0" expanded="true" />
+            <element signature="e#18060#18566#0" expanded="true" />
+            <element signature="e#18565#18566#0" expanded="true" />
+            <element signature="e#18794#18824#0" expanded="true" />
+            <element signature="e#18843#18883#0" expanded="true" />
+            <element signature="e#18980#25662#0" expanded="true" />
+            <element signature="e#25661#25662#0" expanded="true" />
+            <element signature="e#28051#28313#0" expanded="true" />
+            <element signature="e#28312#28313#0" expanded="true" />
+            <element signature="e#28355#28599#0" expanded="true" />
+            <element signature="e#28598#28599#0" expanded="true" />
+            <element signature="e#33302#33501#0" expanded="true" />
+            <element signature="e#33500#33501#0" expanded="true" />
+            <element signature="e#34590#34620#0" expanded="true" />
+            <element signature="e#34639#34677#0" expanded="true" />
+            <element signature="method#onResume#0;class#ClientManagementActivity#0" expanded="false" />
+            <element signature="e#37658#37659#0" expanded="true" />
+            <element signature="e#37702#37703#0" expanded="true" />
           </folding>
         </state>
       </provider>

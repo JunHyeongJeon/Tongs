@@ -2,13 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.tongs.store.activity.ClientManagementActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
     <item
         android:id="@+id/add_user"
-        android:title="test"
         android:orderInCategory="200"
         app:showAsAction="always"
-        >
+        android:title="회원추가">
+    </item>
+    <item
+        android:id="@+id/add_non_user"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        android:title="비회원추가">
     </item>
 </menu>

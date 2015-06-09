@@ -133,7 +133,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
         Preference pref = Preference.getInstance();
-        String token = pref.getValue(TOKEN,"");
+        String token = pref.getValue(TOKEN, "");
         mToken = token;
         mTodayDate = getTodayDate();
 
@@ -202,11 +202,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
         mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
         mFirstClientCancelButton.setOnClickListener(this);
-
-
-        Button clientAddButton;
-        clientAddButton = (Button)findViewById(R.id.client_add);
-        clientAddButton.setOnClickListener((View.OnClickListener) this);
 
         Button clinetCallButton;
         clinetCallButton = (Button) findViewById(R.id.client_call);
@@ -380,11 +375,7 @@ public class ClientManagementActivity extends ActionBarActivity
     @Override
     public void onClick(View v)
     {
-        if(v.getId() == R.id.client_add)
-        {
-            recognitionBacode();
-        }
-        else if (v.getId() == R.id.client_call){
+        if (v.getId() == R.id.client_call){
             callTicket(mFirstId);
         }
         else if (v.getId() == R.id.first_client_more_infomation_button)
@@ -402,12 +393,21 @@ public class ClientManagementActivity extends ActionBarActivity
     // need to be change
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
         if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
+
+        else if (id == R.id.add_user){
+            Log.v("meun", "add_user");
+            recognitionBacode();
+        }
+        else if (id == R.id.add_non_user){
+            Log.v("meun", "add_non_user");
+            pushNonUserTicket();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -588,7 +588,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
                         mFirstId = obj.optString("id", null);
-                        mFirstNumber = obj.optString("id", null);
+                        mFirstNumber = obj.optString("number", null);
 
                         mThisTurnTextView.setText(mFirstNumber);
 
@@ -603,7 +603,7 @@ public class ClientManagementActivity extends ActionBarActivity
                         obj = jsonArr.optJSONObject(1);
                         if(obj != null) {
                             mAfterFirstNumber = "";
-                            mAfterFirstNumber = obj.optString("id", null);
+                            mAfterFirstNumber = obj.optString("number", null);
                             mAfterTurnTextView.setText(mAfterFirstNumber);
                         }
                         List<GroupItem> items = new ArrayList<GroupItem>();
@@ -633,7 +633,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
                             GroupItem item = new GroupItem();
 
-                            item.ticketNum = id;
+                            item.ticketNum = number;
                             item.peopleNum = people;
                             item.waitTime = time + "";
                             item.order = i + "";
@@ -1077,6 +1077,10 @@ public class ClientManagementActivity extends ActionBarActivity
             protected void onPostExecute(String msg) {
             }
         }.execute(null, null, null);
+    }
+
+    void pushNonUserTicket(){
+        Log.v("pushNonUser", "test");
     }
 
 
