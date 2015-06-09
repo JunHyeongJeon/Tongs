@@ -115,10 +115,10 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
                 mPersonInfoUseAgreeCheckBox.setChecked(false);
             }
         } else if(v.getId() == R.id.pop_use_agree_dialog_button){
-            popDialog("ㅠㅠ");
+            popDialog("약관");
             mUseAgreeDialogRead = true;
         } else if(v.getId() == R.id.pop_person_info_agree_dialog_button){
-            popDialog("ㅠㅠㅠ");
+            popDialog("약관");
             mPersonInfoAgreeDialogRead = true;
         }
 
@@ -251,6 +251,8 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
                         boolean isSuccess = "0".equals(result_code) ? true : false;
                         if( isSuccess )
                             moveLoginActivity();
+                        else
+                            printToast("회원가입에 실패하였습니다.");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -299,7 +301,7 @@ public class SignUpActivity extends ActionBarActivity implements View.OnClickLis
 
     private void progressDialog(){
         mDialog = ProgressDialog.show(SignUpActivity.this, "",
-                getString(R.string.dialog_login), true);
+                getString(R.string.dialog_sign_up), true);
 
         // 창을 끄기
         // dialog.dismiss();

@@ -26,6 +26,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
@@ -110,8 +111,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private String regid;
 
-    private View mTapLine;
-    private View mTapView;
 
     GoogleCloudMessaging gcm;
     Context context;
@@ -204,14 +203,16 @@ public class ClientManagementActivity extends ActionBarActivity
         mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
         mFirstClientCancelButton.setOnClickListener(this);
 
-        mTapLine = (View) findViewById(R.id.tap_line);
-        mTapView = (View) findViewById(R.id.tap_button);
 
-        Button mClientAddButton;
-        mClientAddButton = (Button)findViewById(R.id.client_add);
-        mClientAddButton.setOnClickListener((View.OnClickListener) this);
+        Button clientAddButton;
+        clientAddButton = (Button)findViewById(R.id.client_add);
+        clientAddButton.setOnClickListener((View.OnClickListener) this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Button clinetCallButton;
+        clinetCallButton = (Button) findViewById(R.id.client_call);
+        clinetCallButton.setOnClickListener((View.OnClickListener) this);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.client_management_activity_toolbar);
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -277,7 +278,7 @@ public class ClientManagementActivity extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.menu_client_management, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -383,6 +384,9 @@ public class ClientManagementActivity extends ActionBarActivity
         {
             recognitionBacode();
         }
+        else if (v.getId() == R.id.client_call){
+            callTicket(mFirstId);
+        }
         else if (v.getId() == R.id.first_client_more_infomation_button)
         {
             moveActivity(ClientMoreInformationActivity.class);
@@ -450,6 +454,13 @@ public class ClientManagementActivity extends ActionBarActivity
         TextView waitTime;
         TextView order;
         TextView pivot;
+
+        TextView mTapLine;
+        View mTapView;
+
+
+
+
     }
 
     private void pushTicket(String user, String people){
@@ -651,12 +662,8 @@ public class ClientManagementActivity extends ActionBarActivity
                                 Log.v("onGroupClick", "" + groupPosition);
                                 if (listView.isGroupExpanded(groupPosition)) {
                                     listView.collapseGroupWithAnimation(groupPosition);
-
-
                                 } else {
                                     listView.expandGroupWithAnimation(groupPosition);
-
-
                                 }
                                 return true;
                             }
@@ -681,13 +688,14 @@ public class ClientManagementActivity extends ActionBarActivity
                         Point size = new Point();
                         display.getSize(size);
                         int width = size.x;
+                        int height = size.y;
                         Resources r = getResources();
                         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                                 50, r.getDisplayMetrics());
                         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                            listView.setIndicatorBounds(width - px, width);
+                            listView.setIndicatorBounds(width / 2 - GetPixelFromDips(15), width / 2  + GetPixelFromDips(15));
                         } else {
-                            listView.setIndicatorBoundsRelative(width - px, width);
+                            listView.setIndicatorBoundsRelative(width / 2 - GetPixelFromDips(15), width / 2  + GetPixelFromDips(15));
                         }
 
 
@@ -698,6 +706,35 @@ public class ClientManagementActivity extends ActionBarActivity
                 }
             }
         });
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent)
+    {
+        super.onNewIntent(intent);
+
+        processPush(intent);
+    }
+
+    public void processPush(Intent intent) {
+        if (intent == null) {
+            Log.d("processPush", "GCM Intent Fail");
+        }
+        else {
+            getTicketList();
+
+        }
+
+
+    }
+
+
+    public int GetPixelFromDips(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 0.5f);
     }
 
     private void recognitionBacode() {
@@ -905,6 +942,18 @@ public class ClientManagementActivity extends ActionBarActivity
                         .findViewById(R.id.grey_titile_bar_pivot);
                 holder.waitTime = (TextView) convertView
                         .findViewById(R.id.wait_time);
+                holder.mTapView = (View) convertView
+                        .findViewById(R.id.tap_button);
+                holder.mTapView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                            Log.v("test","test");
+                    }
+                });
+
+
+
 
                 convertView.setTag(holder);
             } else {
@@ -932,6 +981,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
     }
+
 
 
     private void moveActivity(Class c){

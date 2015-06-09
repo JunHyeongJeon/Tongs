@@ -151,8 +151,9 @@
         android:layout_height="1dp"
         android:background="#ffce06"
         android:layout_gravity="center"
-        android:id="@+id/tap_line"/>
-    
+        android:id="@+id/tap_line"
+        android:visibility="visible"/>
+
     <LinearLayout
         android:layout_width="168dp"
         android:layout_height="13.8dp"
@@ -162,7 +163,7 @@
         android:layout_marginTop="-0.5dp"
         android:id="@+id/tap_button">
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_tab"

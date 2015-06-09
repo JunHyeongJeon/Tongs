@@ -4,4 +4,11 @@
     tools:context="com.tongs.store.activity.ClientManagementActivity">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item
+        android:id="@+id/add_user"
+        android:title="test"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        >
+    </item>
 </menu>

@@ -62,38 +62,47 @@ public class GcmIntentService extends IntentService {
              * not interested in, or that you don't recognize.
              */
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR.equals(messageType)) {
-                sendNotification("Send error: " + extras.toString());
+          //      sendNotification("Send error: " + extras.toString());
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED.equals(messageType)) {
-                sendNotification("Deleted messages on server: " + extras.toString());
+           //     sendNotification("Deleted messages on server: " + extras.toString());
             // If it's a regular GCM message, do some work.
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
 
-//                String title = extras.getString("title");
-//                String message = extras.getString("message");
-//
-//                // This loop represents the service doing some work.
-//                for (int i = 0; i < 2; i++) {
-//                    Log.i(TAG, "Working... " + (i + 1)
-//                            + "/5 @ " + SystemClock.elapsedRealtime());
-//                    try {
-//                        Thread.sleep(2000);
-//                    } catch (InterruptedException e) {
-//                    }
-//                }
-//                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
-                // Post notification of received message.
-//                sendNotification("Received: " + extras.toString());
-                sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
+                String collapseKey = extras.getString("collapse_key");
+
+                Intent gcmIntent = null;
+
+
+                if( "change".equals(collapseKey) )   {
+
+                    gcmIntent = new Intent(this.getApplicationContext(), ClientManagementActivity.class);
+                    gcmIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+                        | Intent.FLAG_ACTIVITY_NEW_TASK
+                        | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    gcmIntent.putExtras(extras);
+                    startActivity(gcmIntent);
+                    Log.v("GCMTEST", collapseKey.toString());
+                }
+                else if("change".equals(collapseKey))    {
+                    Log.v("GCMTEST", collapseKey.toString() );
+                }
+                else if("change".equals(collapseKey))    {
+                    Log.v("GCMTEST", collapseKey.toString() );
+                }
+                else    {
+                    return;
+                }
+
+
+//                sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
                 Log.i(TAG, "Received: " + extras.toString());
 
 
-                Log.d("123", "START");
                 Intent intent2 = new Intent(this.getApplicationContext(), ClientManagementActivity.class);
                 intent2.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent2.putExtra("data", extras);
                 //intent2.setData(Uri.parse(extras.toString()));
                 startActivity(intent2);
-                Log.d("123", "END");
 
             }
         }
@@ -104,24 +113,47 @@ public class GcmIntentService extends IntentService {
     // Put the message into a notification and post it.
     // This is just one simple example of what you might choose to do with
     // a GCM message.
-    private void sendNotification(String msg) {
-        mNotificationManager = (NotificationManager)
-                this.getSystemService(Context.NOTIFICATION_SERVICE);
-
-
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, ClientManagementActivity.class), 0);
-
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-        .setSmallIcon(R.drawable.ic_launcher)
-        .setContentTitle("GCM Notification")
-        .setStyle(new NotificationCompat.BigTextStyle()
-        .bigText(msg))
-        .setContentText(msg)
-        .setVibrate(new long[] {0, 800});
-
-        mBuilder.setContentIntent(contentIntent);
-        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-    }
+//    private void sendNotification(String msg, int mode) {
+//        final int TICKET = 1;
+//        final int COUPON = 2;
+//
+//        long vibrateTime = 0;
+//
+//        mNotificationManager = (NotificationManager)
+//                this.getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//        Intent intent = null;
+//        PendingIntent contentIntent;
+//        if( mode == TICKET ) {   // ticket renew
+//            intent = new Intent(this, MainActivity.class);
+//            contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+//            vibrateTime = 0;
+//        }
+//        else if( mode == COUPON )   {           // coupon received
+//            intent = new Intent(this, CouponActivity.class);
+//            contentIntent = PendingIntent.getActivity(this, 0, intent, 0);
+//            vibrateTime = 800;
+//        }
+//        else    {
+//            contentIntent = PendingIntent.getActivity(this, 0,
+//                    new Intent(this, SignupActivity.class), 0);
+//            vibrateTime = 1000;
+//        }
+//
+//        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP
+//                | Intent.FLAG_ACTIVITY_NEW_TASK
+//                | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//        NotificationCompat.Builder mBuilder =
+//                new NotificationCompat.Builder(this)
+//                        .setSmallIcon(R.mipmap.ic_launcher)
+//                        .setContentTitle("고대기")
+//                        .setStyle(new NotificationCompat.BigTextStyle()
+//                                .bigText(msg))
+//                        .setContentText(msg)
+//                        .setVibrate(new long[] {0, vibrateTime});
+//
+//        mBuilder.setContentIntent(contentIntent);
+//        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+//    }
 }
