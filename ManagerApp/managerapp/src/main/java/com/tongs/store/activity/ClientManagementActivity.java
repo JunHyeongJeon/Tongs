@@ -17,6 +17,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -106,6 +107,7 @@ public class ClientManagementActivity extends ActionBarActivity
     private String mFirstId = "";
     private String mFirstNumber="";
     private String mAfterFirstNumber = "";
+    private String mFirstReVisit = "";
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
@@ -432,7 +434,7 @@ public class ClientManagementActivity extends ActionBarActivity
         String waitTime;
         String order;
         String pivot;
-        String vipClass;
+        int vipClass;
 
 
         List<ChildItem> items = new ArrayList<ChildItem>();
@@ -455,6 +457,8 @@ public class ClientManagementActivity extends ActionBarActivity
         TextView order;
         TextView pivot;
 
+        ImageView vipClass;
+        TextView vipClassText;
         TextView mTapLine;
         View mTapView;
 
@@ -621,11 +625,16 @@ public class ClientManagementActivity extends ActionBarActivity
 
                         mFirstId = obj.optString("id", null);
                         mFirstNumber = obj.optString("number", null);
+                        mFirstReVisit = obj.optString("revisit", null);
+
+
 
                         mThisTurnTextView.setText(mFirstNumber);
 
                         String firstPeople = obj.optString("people", null);
                         mThisTurnWaitPeopleTextView.setText(firstPeople);
+                        int color = vipClass(mFirstReVisit);
+                        mThisTurnWaitPeopleTextView.setTextColor(color);
 
                         long firstPopTime = obj.optLong("time", 0);
                         long firstTime = (mTime - firstPopTime) / 60;
@@ -997,6 +1006,8 @@ public class ClientManagementActivity extends ActionBarActivity
                         .findViewById(R.id.wait_time);
                 holder.mTapView = (View) convertView
                         .findViewById(R.id.tap_button);
+
+                holder.vipClass = (ImageView) convertView.findViewById(R.id.people_image_view);
                 holder.mTapView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1018,6 +1029,8 @@ public class ClientManagementActivity extends ActionBarActivity
             holder.order.setText(item.order);
             holder.pivot.setText(item.pivot);
             holder.waitTime.setText(item.waitTime);
+            holder.peopleNum.setTextColor(item.vipClass);
+           // holder.vipClass
 
             return convertView;
         }
@@ -1137,23 +1150,21 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
 
-    private String vipClass(String revisit){
-        String color = "black";
-        if( "0".equals(revisit)){
-
-            color = "black";
-        }
+    private int vipClass(String revisit){
+        int color = Color.BLACK;
+        if( "0".equals(revisit))
+            ;
 
         else if ( "1".equals(revisit)){
-            color = "blue";
+            color = Color.BLUE;
 
         }
         else if ( "2".equals(revisit)){
-            color = "green";
+            color = Color.GREEN;
 
         }
         else {
-            color = "yellow";
+            color = Color.YELLOW;
 
         }
         return color;
@@ -1163,6 +1174,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
     private void responseClientFalse(){
-        
+
     }
 }

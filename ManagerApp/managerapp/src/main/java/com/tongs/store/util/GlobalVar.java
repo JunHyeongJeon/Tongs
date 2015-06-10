@@ -23,10 +23,7 @@ public interface GlobalVar {
     public static final String PASSWORD = "password";
     public static final String COUPON_ID = "couponId";
 
-    public static final int BLACK = 0;
-    public static final int BLUE = 1;
-    public static final int GREEN = 2;
-    public static final int YELLOW = 3;
+
 
 
 
