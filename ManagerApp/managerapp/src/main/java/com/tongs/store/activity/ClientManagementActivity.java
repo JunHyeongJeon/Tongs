@@ -122,6 +122,7 @@ public class ClientManagementActivity extends ActionBarActivity
     String SENDER_ID = "211629096961";
 
     private BackPressCloseHandler backPressCloseHandler;
+    Preference mpref = Preference.getInstance();;
 
     @SuppressLint("NewApi")
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
@@ -132,8 +133,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
 
-        Preference pref = Preference.getInstance();
-        String token = pref.getValue(TOKEN, "");
+        String token = mpref.getValue(TOKEN, "");
         mToken = token;
         mTodayDate = getTodayDate();
 
@@ -157,8 +157,7 @@ public class ClientManagementActivity extends ActionBarActivity
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     private String getRegistrationId() {
 
-        Preference pref = Preference.getInstance();
-        String registrationId = pref.getValue(PROPERTY_REG_ID, "");
+        String registrationId = mpref.getValue(PROPERTY_REG_ID, "");
         if (registrationId.isEmpty()) {
             Log.i(TAG, "Registration not found.");
             return "";
@@ -166,7 +165,7 @@ public class ClientManagementActivity extends ActionBarActivity
         // Check if app was updated; if so, it must clear the registration ID
         // since the existing regID is not guaranteed to work with the new
         // app version.
-        int registeredVersion = pref.getValue(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
+        int registeredVersion = mpref.getValue(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
         int currentVersion = getAppVersion(context);
         if (registeredVersion != currentVersion) {
             Log.i(TAG, "App version changed.");
@@ -433,6 +432,7 @@ public class ClientManagementActivity extends ActionBarActivity
         String waitTime;
         String order;
         String pivot;
+        String vipClass;
 
 
         List<ChildItem> items = new ArrayList<ChildItem>();
@@ -655,6 +655,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             String people = inObj.optString("people", null);
                             String number = inObj.optString("number", null);
                             long popTime = inObj.optLong("time", 0);
+                            String revisit = inObj.optString("revisit",null);
 
                             index[i] = id;
 
@@ -670,6 +671,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             item.waitTime = time + "";
                             item.order = i + "";
                             item.pivot = pivot;
+                            item.vipClass = vipClass(revisit);
 
 
                             ChildItem child = new ChildItem();
@@ -794,8 +796,15 @@ public class ClientManagementActivity extends ActionBarActivity
                 }
                 else if (bacodeData.length == 2 )
                 {
-                    Log.v("bacode","bacodeCoupon");
+                    Log.v("bacode", "bacodeCoupon");
+
+                    String phoneNum = bacodeData[0];
+                    String couponId = bacodeData[1];
+
+                    mpref.put(COUPON_ID,couponId);
+
                     moveActivity(CouponActivity.class);
+
 
                 }
                 else {
@@ -835,7 +844,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Action for 'Yes' Button
-                        controlUserStatus(status,userId);
+                        //controlUserStatus(status,userId);
                     }
                 }).setNegativeButton("No",
                 new DialogInterface.OnClickListener() {
@@ -876,7 +885,7 @@ public class ClientManagementActivity extends ActionBarActivity
     private void controlUserStatus(int status, String id) {
 
         if (status == CASE_STATUS_USER_CALL) {
-            popTicket(id);
+            callTicket(id);
         }
         else if (status == CASE_STATUS_USER_CANCEL) {
             removeTicket(id);
@@ -1123,9 +1132,37 @@ public class ClientManagementActivity extends ActionBarActivity
         }.execute(null, null, null);
     }
 
-    void pushNonUserTicket(){
+    private void pushNonUserTicket(){
         Log.v("pushNonUser", "test");
     }
 
 
+    private String vipClass(String revisit){
+        String color = "black";
+        if( "0".equals(revisit)){
+
+            color = "black";
+        }
+
+        else if ( "1".equals(revisit)){
+            color = "blue";
+
+        }
+        else if ( "2".equals(revisit)){
+            color = "green";
+
+        }
+        else {
+            color = "yellow";
+
+        }
+        return color;
+    }
+
+    private void responseClientTrue(){
+
+    }
+    private void responseClientFalse(){
+        
+    }
 }

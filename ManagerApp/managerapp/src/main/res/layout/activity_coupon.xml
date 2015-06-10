@@ -4,11 +4,6 @@
     android:background="@android:color/white"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/toolbar_coupon2"
-        layout="@layout/toolbar_coupon"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
 
     <RelativeLayout
         android:layout_width="match_parent"

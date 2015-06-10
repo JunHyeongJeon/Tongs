@@ -180,7 +180,11 @@
     <string name="api_store_global_set_request">store/config/store.json</string>
     <string name="api_store_register">store/auth/register/?</string>
     <string name="api_store_gcm_init">store/auth/gcm/?</string>
+    <string name="api_store_coupon_get">store/coupon/get</string>
 
+    <string name="admin_server">http://tongs.kr/admin/login_token.php?</string>
+
+    <string name="admin_store_setting">/admin/store_edit.php</string>
     <!--email=somabell15@gmail.com&password=soma2015-->
 
     <!-- ClientManagementActivity  -->
@@ -227,6 +231,7 @@
     <string name="title_activity_previous_client_list">PreviousClientListActivity</string>
     <string name="title_activity_store_setting">StoreSettingActivity</string>
     <string name="title_activity_coupon">CouponActivity</string>
+
 
 
 </resources>

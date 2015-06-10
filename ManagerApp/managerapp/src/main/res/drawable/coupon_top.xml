@@ -8,7 +8,7 @@
         android:bottomRightRadius="0dp"
         />
     <solid
-        android:color="#71bd0b"
+        android:color="@color/AppYellow"
         />
     <size
         android:width="312dp"
