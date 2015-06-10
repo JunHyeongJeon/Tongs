@@ -205,31 +205,25 @@ android:orientation="vertical">
     </LinearLayout>
 </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.tongs.store.view.MaterialRippleLayout
+        style="@style/RippleStyle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        app:rippleColor="@color/main_color_grey_400"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:id="@+id/client_call"
+            android:text="고객호출"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:background="@drawable/client_call_button_shape"
+            />
+    </com.tongs.store.view.MaterialRippleLayout>
 
-        <com.tongs.store.view.MaterialRippleLayout
-            android:layout_marginLeft="10dp"
-            style="@style/RippleStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:rippleColor="@color/main_color_grey_400"
-            android:layout_gravity="center"
-            >
-            <Button
-                android:id="@+id/client_call"
-                android:text="고객호출"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:layout_width="290dp"
-                android:layout_height="40dp"
-                android:background="@drawable/client_call_button_shape"
-                />
-        </com.tongs.store.view.MaterialRippleLayout>
 
-    </LinearLayout>
 
 
 

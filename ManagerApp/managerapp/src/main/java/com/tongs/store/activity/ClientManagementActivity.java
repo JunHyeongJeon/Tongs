@@ -601,7 +601,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
                         obj = jsonArr.optJSONObject(1);
-                        if(obj != null) {
+                        if (obj != null) {
                             mAfterFirstNumber = "";
                             mAfterFirstNumber = obj.optString("number", null);
                             mAfterTurnTextView.setText(mAfterFirstNumber);
@@ -693,9 +693,9 @@ public class ClientManagementActivity extends ActionBarActivity
                         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                                 50, r.getDisplayMetrics());
                         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                            listView.setIndicatorBounds(width / 2 - GetPixelFromDips(15), width / 2  + GetPixelFromDips(15));
+                            listView.setIndicatorBounds(width / 2 - GetPixelFromDips(15), width / 2 + GetPixelFromDips(15));
                         } else {
-                            listView.setIndicatorBoundsRelative(width / 2 - GetPixelFromDips(15), width / 2  + GetPixelFromDips(15));
+                            listView.setIndicatorBoundsRelative(width / 2 - GetPixelFromDips(15), width / 2 + GetPixelFromDips(15));
                         }
 
 
@@ -753,11 +753,22 @@ public class ClientManagementActivity extends ActionBarActivity
                 String[] bacodeData;
                 bacodeData = bacodeSplit(contents);
 
-                String user = bacodeData[1];
-                String peopleNum = bacodeData[2];
+                Log.v("bacode", bacodeData.length+"");
+                if(bacodeData.length == 3) {
+                    String user = bacodeData[1];
+                    String peopleNum = bacodeData[2];
 
-                pushTicket(user, peopleNum);
+                    pushTicket(user, peopleNum);
+                }
+                else if (bacodeData.length == 2 )
+                {
+                    Log.v("bacode","bacodeCoupon");
 
+                }
+                else {
+
+                    Log.v("bacode","bacodeNot");
+                }
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel
             }
@@ -776,11 +787,10 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private String[] bacodeSplit(String bacode) {
 
-    //    String[] result = bacode.split("_");
-    //    String phoneNumber = result[0];
-    //    String peopleNumber = result[2];
 
-        return bacode.split("_");
+        String[] result = bacode.split("_");
+
+        return result;
     }
 
 

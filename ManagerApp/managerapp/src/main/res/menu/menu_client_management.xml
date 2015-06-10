@@ -6,7 +6,7 @@
         android:id="@+id/add_user"
         android:orderInCategory="200"
         app:showAsAction="always"
-        android:title="회원추가">
+        android:title="바코드인식">
     </item>
     <item
         android:id="@+id/add_non_user"
