@@ -255,7 +255,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
         long now = System.currentTimeMillis();
         mTime = now/1000;
-        Log.v("unixTime", now + "");
+
         Date date = new Date(now);
 
         SimpleDateFormat CurYearFormat = new SimpleDateFormat("yyyy");
@@ -264,7 +264,7 @@ public class ClientManagementActivity extends ActionBarActivity
         String todayDate = CurYearFormat.format(date) +
                 CurMonthFormat.format(date) +
                 CurDayFormat.format(date);
-        Log.v("getTodayDate", todayDate);
+
 
         return todayDate;
 
@@ -475,8 +475,14 @@ public class ClientManagementActivity extends ActionBarActivity
                 try {
                     JSONObject json = new JSONObject(data);
                     String result_code = json.optString("result_code", null);
-                    boolean isSuccess = "0".equals(result_code) ? true : false;
-                    getTicketList();
+
+                    if("0".equals(result_code))
+                        printToast("고객을 대기열에 추가하였습니다.");
+                    else if("-2".equals(result_code))
+                        printToast("중복 대기 회원입니다.");
+                    else {
+                        printToast("고객대기를 실패하였습니다.");
+                    }
                 }
                 catch(Exception e){
                     e.printStackTrace();
@@ -497,7 +503,11 @@ public class ClientManagementActivity extends ActionBarActivity
                     JSONObject json = new JSONObject(data);
                     String result_code = json.optString("result_code", null);
                     boolean isSuccess = "0".equals(result_code) ? true : false;
-                    getTicketList();
+                    //getTicketList();
+                    if(isSuccess)
+                        printToast("고객을 대기열에서 삭제합니다.");
+                    else
+                        printToast("고객을 대기열에서 삭제하는데 실패하였습니다.");
                 }
                 catch(Exception e){
                     e.printStackTrace();
@@ -511,7 +521,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
         String url;
         url = getString(R.string.api_server) +
-                getString(R.string.api_store_ticket_pop) +
+                getString(R.string.api_store_ticket_call) +
                 "token=" + mToken +
                 "&id=" + id;
         requestOnUIThread(PROTOCOL_STATUS_USER_CALL, url, new OnHttpReceive() {
@@ -521,7 +531,18 @@ public class ClientManagementActivity extends ActionBarActivity
                     JSONObject json = new JSONObject(data);
                     String result_code = json.optString("result_code", null);
                     boolean isSuccess = "0".equals(result_code) ? true : false;
-                    getTicketList();
+                    if(isSuccess) {
+                        printToast("고객을 호훌합니다.");
+
+                      //  mThisTurnTextView.setText("");
+                      //  mThisTurnWaitPeopleTextView.setText("");
+                      //  mThisTurnWaitTimeTextView.setText("");
+
+                    }
+                    else
+                    {
+                        printToast("고객호출을 실패하였습니다.");
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -543,7 +564,12 @@ public class ClientManagementActivity extends ActionBarActivity
                     JSONObject json = new JSONObject(data);
                     String result_code = json.optString("result_code", null);
                     boolean isSuccess = "0".equals(result_code) ? true : false;
-                    getTicketList();
+                    if(isSuccess)
+                    {
+                        printToast("고객을 대기열에서 삭제합니다.");
+                    }
+                    else
+                        printToast("고객을 삭제하는데 실패하였습니다.");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -570,10 +596,16 @@ public class ClientManagementActivity extends ActionBarActivity
                     String result_code = json.optString("result_code", null);
                     boolean isSuccess = "0".equals(result_code) ? true : false;
 
+                    if(!isSuccess){
+                        printToast("대기열에 고객이 없습니다.");
 
-                    if (isSuccess && protocol == PROTOCOL_STATUS_GET_LIST) {
-                        Log.v("onReceive/Protocol", "PROTOCOL_STATUS_GET_LIST");
-
+                        mThisTurnTextView.setText("");
+                        mThisTurnWaitPeopleTextView.setText("");
+                        mThisTurnWaitTimeTextView.setText("");
+                        mAfterTurnTextView.setText("");
+                    }
+                    else
+                    {
                         JSONArray jsonArr = json.optJSONArray("list");
                         if (jsonArr == null || "[]".equals(jsonArr.toString())) {
 
@@ -753,7 +785,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 String[] bacodeData;
                 bacodeData = bacodeSplit(contents);
 
-                Log.v("bacode", bacodeData.length+"");
+
                 if(bacodeData.length == 3) {
                     String user = bacodeData[1];
                     String peopleNum = bacodeData[2];
@@ -763,11 +795,13 @@ public class ClientManagementActivity extends ActionBarActivity
                 else if (bacodeData.length == 2 )
                 {
                     Log.v("bacode","bacodeCoupon");
+                    moveActivity(CouponActivity.class);
 
                 }
                 else {
 
                     Log.v("bacode","bacodeNot");
+                    printToast("바코드 형식이 일치하지 않습니다.");
                 }
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel
