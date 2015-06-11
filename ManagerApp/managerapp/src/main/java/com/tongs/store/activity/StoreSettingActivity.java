@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.HttpAuthHandler;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Switch;
@@ -21,7 +22,7 @@ import com.tongs.store.R;
 import com.tongs.store.util.GlobalVar;
 import com.tongs.store.util.Preference;
 
-public class StoreSettingActivity extends ActionBarActivity implements OnClickListener, GlobalVar {
+public class StoreSettingActivity extends ActionBarActivity implements GlobalVar {
 
     Switch mAutoLoginSwitch;
     private WebView mWebView;
@@ -35,12 +36,17 @@ public class StoreSettingActivity extends ActionBarActivity implements OnClickLi
         Preference pref = Preference.getInstance();
         String token = pref.getValue(TOKEN, "");
 
-        mAutoLoginSwitch = (Switch) findViewById(R.id.auto_login_switch);
-        mAutoLoginSwitch.setOnClickListener(this);
-        mAutoLoginSwitch.setChecked(pref.getValue(ISAUTOLOGIN, false));
+      //  mAutoLoginSwitch = (Switch) findViewById(R.id.auto_login_switch);
+      //  mAutoLoginSwitch.setOnClickListener(this);
+      //  mAutoLoginSwitch.setChecked(pref.getValue(ISAUTOLOGIN, false));
 
         mWebView = (WebView) findViewById(R.id.webview);
-        mWebView.getSettings().setJavaScriptEnabled(true);
+        WebSettings setting = mWebView.getSettings();
+        setting.setBuiltInZoomControls(false);
+        setting.setSupportZoom(false);
+        setting.setJavaScriptEnabled(true);
+        setting.setDomStorageEnabled(true);
+        setting.setDatabaseEnabled(true);
 
         mToken = token;
 
@@ -52,31 +58,42 @@ public class StoreSettingActivity extends ActionBarActivity implements OnClickLi
        // url = "http://www.naver.com";
 
         mWebView.loadUrl(url);
-        mWebView.setWebViewClient(new CustomWebViewClient());
+        mWebView.setWebViewClient(new WebViewClientClass());
         //mWebView.setWebChromeClient(new CustomWebChormeClient());
 
     }
 
     private class WebViewClientClass extends WebViewClient {
+//        @Override
+//        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//            view.loadUrl(url);
+//            return true;
+//        }
+
         @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    }
-
-    @Override
-    public void onClick(View v)
-    {
-        if( v.getId() == R.id.auto_login_switch){
-            Preference pref = Preference.getInstance();
-            if ( mAutoLoginSwitch.isChecked() )
-                pref.put(ISAUTOLOGIN, true);
-            else
-                pref.put(ISAUTOLOGIN, false);
+        public void onPageStarted(WebView view, String url, Bitmap fav) {
+            Log.e("WV", "Start:" + url);
 
         }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            Log.e("WV", "Finish:"+url);
+        }
     }
+//
+//    @Override
+//    public void onClick(View v)
+//    {
+//        if( v.getId() == R.id.auto_login_switch){
+//            Preference pref = Preference.getInstance();
+//            if ( mAutoLoginSwitch.isChecked() )
+//                pref.put(ISAUTOLOGIN, true);
+//            else
+//                pref.put(ISAUTOLOGIN, false);
+//
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

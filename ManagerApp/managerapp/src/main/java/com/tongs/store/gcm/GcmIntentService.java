@@ -73,6 +73,8 @@ public class GcmIntentService extends IntentService {
                 Intent gcmIntent = null;
 
 
+                Log.i(TAG, "Received: " + extras.toString());
+
                 if( "change".equals(collapseKey) )   {
 
                     gcmIntent = new Intent(this.getApplicationContext(), ClientManagementActivity.class);
@@ -94,8 +96,6 @@ public class GcmIntentService extends IntentService {
                 }
 
 
-//                sendNotification("Received: " + extras.getString("key1") + extras.getString("key2"));
-                Log.i(TAG, "Received: " + extras.toString());
 
 
                 Intent intent2 = new Intent(this.getApplicationContext(), ClientManagementActivity.class);
