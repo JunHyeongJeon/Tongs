@@ -51,6 +51,7 @@
     <string name="drawer_title_git_hub">GitHub</string>
     <string name="drawer_title_instagram">Instagram</string>
     <string name="drawer_title_setting">설정</string>
+    <string name="drawer_title_coupon">쿠폰리스트</string>
     <string name="drawer_title_before_client_data">지난 순번 정보</string>
     <string name="drawer_title_logout">로그아웃</string>
     <string name="drawer_title_auto_login_release">자동로그인</string>

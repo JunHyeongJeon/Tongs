@@ -22,6 +22,7 @@ import android.graphics.Point;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -112,6 +113,7 @@ public class ClientManagementActivity extends ActionBarActivity
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
 
     private String regid;
+    private String mEmail;
 
 
     GoogleCloudMessaging gcm;
@@ -136,6 +138,10 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
         String token = mpref.getValue(TOKEN, "");
+        String email = mpref.getValue(ID,"");
+
+        mEmail = email;
+
         mToken = token;
         mTodayDate = getTodayDate();
 
@@ -153,6 +159,9 @@ public class ClientManagementActivity extends ActionBarActivity
                 Log.i(TAG, "No valid Google Play Services APK found.");
             }
         }
+
+
+
     }
 
 
@@ -201,6 +210,8 @@ public class ClientManagementActivity extends ActionBarActivity
         mFirstClientMoreInfoButton = (Button) findViewById(R.id.first_client_more_infomation_button);
         mFirstClientMoreInfoButton.setOnClickListener(this);
 
+
+
         mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
         mFirstClientCancelButton.setOnClickListener(this);
 
@@ -212,6 +223,7 @@ public class ClientManagementActivity extends ActionBarActivity
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         mTitle = mDrawerTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.list_view);
@@ -229,7 +241,7 @@ public class ClientManagementActivity extends ActionBarActivity
                 invalidateOptionsMenu();
             }
             public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle(mTitle);
+                getSupportActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
 
@@ -317,7 +329,7 @@ public class ClientManagementActivity extends ActionBarActivity
         View headerView = null;
             headerView = prepareHeaderView(R.layout.header_navigation_drawer_1,
                     "http://pengaja.com/uiapptemplate/avatars/0.jpg",
-                    "dev@csform.com");
+                    mEmail);
 
         BaseAdapter adapter = new DrawerAdapter(this, mDrawerItems, isFirstType);
 
@@ -902,8 +914,6 @@ public class ClientManagementActivity extends ActionBarActivity
         else if (status == CASE_STATUS_USER_MORE_INFORMATION){
             viewClientMoreInfo();
         }
-
-
 
     }
     private void viewClientMoreInfo(){
