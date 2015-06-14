@@ -15,6 +15,14 @@
         android:paddingBottom="4dp"
         android:paddingTop="4dp" >
 
+        <ImageView
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_icon" />
+
+        <!--
         <com.tongs.store.font.FontelloTextView
             android:id="@+id/icon"
             style="@style/TextViewAppearance.Title1"
@@ -22,6 +30,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="18dp"
             android:textColor="@drawable/selector_text_empty" />
+            -->
 
         <com.tongs.store.font.RobotoTextView
             android:id="@+id/title"

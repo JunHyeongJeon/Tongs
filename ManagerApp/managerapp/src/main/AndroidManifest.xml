@@ -144,6 +144,10 @@
             android:label="@string/title_activity_coupon"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".activity.CouponListActivity"
+            android:label="@string/title_activity_coupon_list" >
+        </activity>
     </application>
 
 </manifest>

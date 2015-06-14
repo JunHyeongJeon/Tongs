@@ -142,7 +142,6 @@ public class ClientManagementActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(savedInstanceState);
 
 
 
@@ -153,6 +152,9 @@ public class ClientManagementActivity extends ActionBarActivity
 
         mToken = token;
         mTodayDate = getTodayDate();
+
+        setContentView(savedInstanceState);
+
 
         getTicketList();
 
@@ -221,6 +223,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
 
+
+
         mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
         mFirstClientCancelButton.setOnClickListener(this);
 
@@ -243,7 +247,6 @@ public class ClientManagementActivity extends ActionBarActivity
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.list_view);
-
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         prepareNavigationDrawerItems();
         setAdapter();
@@ -316,14 +319,20 @@ public class ClientManagementActivity extends ActionBarActivity
         mDrawerItems = new ArrayList<>();
         mDrawerItems.add(
                 new DrawerItem(
-                        R.string.drawer_icon_blog,
+                        R.drawable.navi_coupon_list,
+                        R.string.drawer_title_coupon_list,
+                        DrawerItem.DRAWER_ITEM_TAG_BLOG));
+
+        mDrawerItems.add(
+                new DrawerItem(
+                        R.drawable.navi_previous_ticket,
                         R.string.drawer_title_before_client_data,
                         DrawerItem.DRAWER_ITEM_TAG_BLOG));
 
 
         mDrawerItems.add(
                 new DrawerItem(
-                        R.string.drawer_icon_instagram,
+                        R.drawable.navi_setting,
                         R.string.drawer_title_setting,
                         DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
 
@@ -371,17 +380,20 @@ public class ClientManagementActivity extends ActionBarActivity
             return;
         }
         else if (position == 1) {
-            moveActivity(PreviousClientListActivity.class);
+            moveActivity(CouponListActivity.class);
+
         }
 
         else if( position == 2){
             //this.finish();
             //moveActivity(LogInPageActivity.class);
-            moveActivity(StoreSettingActivity.class);
+            moveActivity(PreviousClientListActivity.class);
 
         }
         else if (position == 3){
             //
+            moveActivity(StoreSettingActivity.class);
+
         }
         else if (position == 4) {
             //moveActivity(CouponActivity.class);
@@ -1228,7 +1240,7 @@ public class ClientManagementActivity extends ActionBarActivity
             setLayout();
             setTitle(mTitle);
             setContent(mContent);
-            setClickListener(mLeftClickListener , mRightClickListener);
+          //  setClickListener(mLeftClickListener , mRightClickListener);
         }
 
         public CustomDialog(Context context) {
@@ -1240,7 +1252,7 @@ public class ClientManagementActivity extends ActionBarActivity
                             View.OnClickListener singleListener) {
             super(context , android.R.style.Theme_Translucent_NoTitleBar);
             this.mTitle = title;
-            this.mLeftClickListener = singleListener;
+            //this.mLeftClickListener = singleListener;
         }
 
         public CustomDialog(Context context , String title , String content ,
@@ -1248,8 +1260,8 @@ public class ClientManagementActivity extends ActionBarActivity
             super(context , android.R.style.Theme_Translucent_NoTitleBar);
             this.mTitle = title;
             this.mContent = content;
-            this.mLeftClickListener = leftListener;
-            this.mRightClickListener = rightListener;
+          //  this.mLeftClickListener = leftListener;
+         //   this.mRightClickListener = rightListener;
         }
 
         private void setTitle(String title){
@@ -1275,16 +1287,23 @@ public class ClientManagementActivity extends ActionBarActivity
         //private TextView mContentView;
         //private Button mLeftButton;
         //private Button mRightButton;
+        private Button mExitButton;
         private String mTitle;
         private String mContent;
 
-        private View.OnClickListener mLeftClickListener;
-        private View.OnClickListener mRightClickListener;
+
 
         /*
          * Layout
          */
         private void setLayout(){
+            mExitButton = (Button) findViewById(R.id.dialog_exit_button);
+            mExitButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    CustomDialog.this.dismiss();
+                }
+            });
+
 //            mTitleView = (TextView) findViewById(R.id.tv_title);
 //            mContentView = (TextView) findViewById(R.id.tv_content);
 //            mLeftButton = (Button) findViewById(R.id.bt_left);
