@@ -135,9 +135,9 @@ public class SlidingTabLayout extends HorizontalScrollView {
      *
      * @see ViewPager#setOnPageChangeListener(ViewPager.OnPageChangeListener)
      */
-    public void setOnPageChangeListener(ViewPager.OnPageChangeListener listener) {
-        mViewPagerPageChangeListener = listener;
-    }
+//    public void setOnPageChangeListener() {
+//        mViewPagerPageChangeListener = listener;
+//    }
 
     /**
      * Set the custom layout to be inflated for the tab views.

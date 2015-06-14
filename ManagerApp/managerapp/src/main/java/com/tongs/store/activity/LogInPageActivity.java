@@ -5,14 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tongs.store.R;
@@ -53,6 +57,14 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
             doAutoLogin();
         backPressCloseHandler = new BackPressCloseHandler(this);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_login_page_activity, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 
     @Override
     public void onBackPressed(){
@@ -106,8 +118,18 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
 
         setContentView(R.layout.activity_login_page_light);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar_login);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
+        TextView toolbarText = (TextView) findViewById(R.id.toolbar_title);
+        toolbarText.setText("LOG IN");
+       // getSupportActionBar
+            //toolbar.setTi
+
+
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.layout.action_bar_login);
 
 
         mScrollView = (ScrollView)findViewById(R.id.login_scroll_view);
@@ -125,6 +147,7 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         ImageView imageView;
         imageView = (ImageView)findViewById(R.id.login_image_view);
         imageView.setImageResource(R.drawable.logo_y);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 	}
 
 
@@ -190,7 +213,6 @@ public class LogInPageActivity extends ActionBarActivity implements OnClickListe
         Preference pref = Preference.getInstance();
         if(mloginKeep.isChecked()) {
             Log.v("isCheck","true");
-
             pref.put(ID, mEmailView.getTextString());
             pref.put(PASSWORD, mPasswordView.getTextString());
             pref.put(ISAUTOLOGIN, true);

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.tongs.store.view.MaterialRippleLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/RippleStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/selector_background_empty" >
+    android:background="@drawable/selector_background_empty">
 
     <LinearLayout
         android:layout_width="match_parent"

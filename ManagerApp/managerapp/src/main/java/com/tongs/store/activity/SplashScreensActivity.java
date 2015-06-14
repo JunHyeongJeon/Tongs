@@ -52,6 +52,7 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 
 	private KenBurnsView mKenBurns;
 	private ImageView mSplashImage;
+	private ImageView mSplashText;
 	private boolean isClickStatus;
 
 	@Override
@@ -66,6 +67,12 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 		mKenBurns.setImageResource(R.drawable.splash_screen_background);
 		mSplashImage = (ImageView) findViewById(R.id.splash_image_view);
 		mSplashImage.setImageResource(R.drawable.splash_screen_logo);
+		mSplashImage.setScaleType(ImageView.ScaleType.FIT_XY);
+
+		mSplashText = (ImageView) findViewById(R.id.splash_txt_image_view);
+		mSplashText.setImageResource(R.drawable.splash_screen_txt);
+		mSplashText.setScaleType(ImageView.ScaleType.FIT_XY);
+
 		setAnimation(SPLASH_SCREEN_OPTION_2);
 		getUserInfo();
 		requestGlobalSet();
@@ -91,8 +98,8 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 		} else if (category.equals(SPLASH_SCREEN_OPTION_2)) {
 			animation2();
 		} else if (category.equals(SPLASH_SCREEN_OPTION_3)) {
-			animation2();
-			//animation3();
+			//animation2();
+			animation3();
 		}
 	}
 
@@ -113,8 +120,22 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 	}
 	
 	private void animation2() {
-		mSplashImage.setAlpha(1.0F);
+		mSplashText.setAlpha(1.0F);
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_center);
+		mSplashText.startAnimation(anim);
+
+
+		final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				// Do something after 5s = 5000ms
+			}
+		}, 5000);
+
+
+		mSplashImage.setAlpha(1.0F);
+		anim = AnimationUtils.loadAnimation(this, R.anim.translate_top_to_center);
 		mSplashImage.startAnimation(anim);
 
 
@@ -124,13 +145,13 @@ public class SplashScreensActivity extends Activity implements GlobalVar{
 
 	}
 //
-//	private void animation3() {
-//		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mwelcomeText, "alpha", 0.0F, 1.0F);
-//
-//        alphaAnimation_welcome.setStartDelay(1700);
-//        alphaAnimation_welcome.setDuration(500);
-//        alphaAnimation_welcome.start();
-//  }
+	private void animation3() {
+		ObjectAnimator alphaAnimation_welcome = ObjectAnimator.ofFloat(mSplashImage, "alpha", 0.0F, 1.0F);
+
+		alphaAnimation_welcome.setStartDelay(1700);
+        alphaAnimation_welcome.setDuration(500);
+        alphaAnimation_welcome.start();
+  }
     //화면 터치 이벤트
     @Override
     public boolean onTouchEvent(MotionEvent event) {

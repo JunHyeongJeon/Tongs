@@ -224,7 +224,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        mTitle = mDrawerTitle = getTitle();
+        mTitle = mDrawerTitle = "";
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.list_view);
 
@@ -237,11 +238,11 @@ public class ClientManagementActivity extends ActionBarActivity
                 R.string.drawer_open,
                 R.string.drawer_close) {
             public void onDrawerOpened(View drawerView) {
-                getSupportActionBar().setTitle(mDrawerTitle);
+            //    getSupportActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
             public void onDrawerClosed(View view) {
-                getSupportActionBar().setTitle(mDrawerTitle);
+             //   getSupportActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu();
             }
 
@@ -381,7 +382,7 @@ public class ClientManagementActivity extends ActionBarActivity
         Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
 
         mDrawerList.setItemChecked(position, true);
-        setTitle(mDrawerItems.get(position - 1).getTitle());
+   //     setTitle(mDrawerItems.get(position - 1).getTitle());
         mDrawerLayout.closeDrawer(mDrawerList);
     }
 

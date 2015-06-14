@@ -9,7 +9,17 @@
     android:layout_height="48dp"
     android:background="@color/AppYellow"
     app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
-    app:theme="@style/AppTheme.Title" >
-    
+    app:theme="@style/AppTheme.Title"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="매장대기정보"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#ffffff"/>
+
 </android.support.v7.widget.Toolbar>
+
     <!--"?android:attr/actionBarSize"-->

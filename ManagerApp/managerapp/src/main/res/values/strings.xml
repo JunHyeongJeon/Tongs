@@ -87,8 +87,8 @@
     
     <string name="number_of_images">%d image(s)</string>
     
-    <string name="username">사용자아이디</string>
-    <string name="password">비밀번호</string>
+    <string name="username">EMAIL</string>
+    <string name="password">PASSWORD</string>
     <string name="welcome">Welcome!\nTouch Me!</string>
 
     <string name="sign_up_username">이메일</string>
@@ -100,7 +100,7 @@
     <string name="download">DOWNLOAD</string>
     <string name="done">DONE</string>
     <string name="error">ERROR</string>
-    <string name="login">로그인</string>
+    <string name="login">LOG IN</string>
     <string name="register">회원가입</string>
     <string name="skip">SKIP</string>
     <string name="raised">RAISED</string>
@@ -208,6 +208,7 @@
     <string name="dialog_user_remove">고객을 삭제 하시겠습니까?</string>
     <string name="dialog_user_more_information">고객의 상세정보를 보시겠습니까?</string>
     <string name="dialog_look_agreement">약관을 보세요.</string>
+    <string name="dialog_loading">로딩중입니다.</string>
 
     <!-- Toast Ment -->
     <string name="toast_login_server_fail">로그인 서버가 응답하지 않습니다.</string>

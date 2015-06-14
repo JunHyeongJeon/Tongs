@@ -38,11 +38,18 @@
         android:textColor="@color/main_color_500" />
         -->
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/splash_image_view"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        android:layout_marginTop="238dp"/>
+    <ImageView
+        android:layout_width="136dp"
+        android:layout_height="18dp"
+        android:id="@+id/splash_txt_image_view"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="187dp"/>
 
 
 </RelativeLayout>

@@ -60,6 +60,7 @@
         <activity
             android:name=".activity.LogInPageActivity"
             android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity

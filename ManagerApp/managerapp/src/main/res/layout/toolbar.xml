@@ -8,5 +8,16 @@
     android:layout_height="48dp"
     android:background="@color/AppYellow"
     app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
-    app:theme="@style/AppTheme.Title" />
+    app:theme="@style/AppTheme.Title"
+    android:layout_gravity="center"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:id="@+id/toolbar_title"
+        android:gravity="center"/>
+</android.support.v7.widget.Toolbar>
     <!--"?android:attr/actionBarSize"-->

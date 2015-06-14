@@ -15,7 +15,7 @@
 ~ limitations under the License.-->
 <com.tongs.store.font.RobotoTextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/com.tongs.store"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/list_row_draganddrop_textview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

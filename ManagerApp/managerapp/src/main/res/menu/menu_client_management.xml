@@ -6,12 +6,15 @@
         android:id="@+id/add_user"
         android:orderInCategory="200"
         app:showAsAction="always"
-        android:title="바코드인식">
+        android:title="바코드인식"
+        android:icon="@drawable/camera">
     </item>
     <item
         android:id="@+id/add_non_user"
         android:orderInCategory="200"
         app:showAsAction="always"
-        android:title="비회원추가">
+        android:title="비회원추가"
+        android:icon="@drawable/add_people" >
     </item>
+
 </menu>
