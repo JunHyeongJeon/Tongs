@@ -22,58 +22,28 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.tongs.store" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_login_page_activity.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/add_user.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/edit_text_background_accent.9.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/edit_text_background_accent.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-mdpi/edit_text_background_accent.9.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-mdpi/edit_text_background_accent.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxhdpi/edit_text_background_accent.9.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxhdpi/edit_text_background_accent.9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-mdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xxxhdpi/ic_launcher.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/logo_y.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/logo_y.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/splash_screen_background.jpg" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/splash_screen_background.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/splash_screen_logo.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/splash_screen_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/custom_dialog.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/add_people.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/add_people.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/add_people.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/add_people.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/camera.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/camera.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/camera.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/camera.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/q_mark.png" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/q_mark.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/PreviousClientListActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/PreviousClientListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/SlidingTabLayout.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/SlidingTabLayout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/SlidingTabsBasicFragment.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/SlidingTabsBasicFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SplashScreensActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SplashScreensActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_more_infomation_button_shape.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_more_infomation_button_shape.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_2.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_header.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_google_cards.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_google_cards.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_row.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_1.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_2.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_navigation_drawer_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_search.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_search.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_subcategory.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/list_view_item_subcategory.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_bad_client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_bad_client_group_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -160,21 +130,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33199194">
-              <caret line="384" column="18" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="18" />
+            <state vertical-scroll-proportion="-3.9629629">
+              <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8208#8228#0" expanded="true" />
-                <element signature="e#8246#8267#0" expanded="true" />
-                <element signature="e#10089#10129#0" expanded="true" />
-                <element signature="e#10327#10355#0" expanded="true" />
-                <element signature="e#10557#10586#0" expanded="true" />
-                <element signature="e#10790#10819#0" expanded="true" />
-                <element signature="e#30988#30989#0" expanded="true" />
-                <element signature="e#31032#31033#0" expanded="true" />
+                <element signature="e#10452#10477#0" expanded="true" />
+                <element signature="e#10503#10543#0" expanded="true" />
+                <element signature="e#10688#10718#0" expanded="true" />
+                <element signature="e#10744#10773#0" expanded="true" />
+                <element signature="e#15441#15471#0" expanded="true" />
+                <element signature="e#15474#15515#0" expanded="true" />
+                <element signature="e#15692#16410#0" expanded="true" />
+                <element signature="e#16409#16410#0" expanded="true" />
+                <element signature="e#16494#16524#0" expanded="true" />
+                <element signature="e#16527#16567#0" expanded="true" />
+                <element signature="e#19902#19932#0" expanded="true" />
+                <element signature="e#19951#19991#0" expanded="true" />
+                <element signature="e#30814#31078#0" expanded="true" />
+                <element signature="e#31077#31078#0" expanded="true" />
+                <element signature="e#31120#31364#0" expanded="true" />
+                <element signature="e#31363#31364#0" expanded="true" />
+                <element signature="e#36163#36362#0" expanded="true" />
+                <element signature="e#36361#36362#0" expanded="true" />
+                <element signature="e#37588#37626#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,45 +163,35 @@
       </file>
       <file leaf-file-name="activity_client_management.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.1034484">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="38" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom_dialog.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/custom_dialog.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.137931">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state vertical-scroll-proportion="-6.240185">
+              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client_management_activity_toolbar.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.344828">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="LogInPageActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java">
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="18" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignUpActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+              <caret line="226" column="35" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -2332,12 +2303,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top2.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar_coupon.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/divider.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_previous_client_list.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/coupon_top.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/CouponActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_coupon.xml" />
@@ -2345,7 +2310,6 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_store_setting.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/StoreSettingActivity.java" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_previous_client_list.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/SlidingTabLayout.java" />
@@ -2365,24 +2329,31 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SplashScreensActivity.java" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_login_page_activity.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_call_button_shape.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_more_infomation_button_shape.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/custom_dialog.xml" />
       </list>
     </option>
   </component>
@@ -2555,84 +2526,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-xhdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="managerapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerApp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="managerapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3012,7 +2915,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3020,8 +2923,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3034258" sideWeight="0.49676898" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0995106" sideWeight="0.5549273" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0995106" sideWeight="0.4450727" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20065252" sideWeight="0.5549273" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0995106" sideWeight="0.4450727" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2625202" sideWeight="0.42366412" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
@@ -3033,7 +2936,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.5763359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2907916" sideWeight="0.5763359" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31647635" sideWeight="0.4838449" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3100,222 +3003,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/list_item_google_cards.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1034484">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/list_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6551723">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_2.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.862069">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/list_header.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.172414">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.862069">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/group_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3448277">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/splash_screen_logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_splash_screen.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.689655">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///ADT/sdk/sources/android-21/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33261338">
-          <caret line="530" column="25" selection-start-line="530" selection-start-column="25" selection-end-line="530" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///ADT/sdk/platforms/android-21/data/res/layout/simple_spinner_dropdown_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.343318">
-          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_parallax.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38018432">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7235023">
-          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_check_and_radio_boxes.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03456221">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/fragment_shape_image_views.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.7304147">
           <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SplashScreensActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35205182">
           <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
-          <folding>
-            <element signature="e#4661#4760#0" expanded="true" />
-            <element signature="e#4759#4760#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_dark.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5207373">
           <caret line="44" column="56" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09719223">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///ADT/sdk/platforms/android-21/data/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33261338">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/SlidingTabsBasicFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4773218">
-          <caret line="224" column="40" selection-start-line="224" selection-start-column="40" selection-end-line="224" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#21471#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#8936#15771#0" expanded="true" />
-            <element signature="e#9627#9638#0" expanded="true" />
-            <element signature="e#11205#11216#0" expanded="true" />
-            <element signature="e#15770#15771#0" expanded="true" />
-            <element signature="e#19792#19803#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4285715">
           <caret line="12" column="27" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="27" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4230769">
-          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_login_page_activity.xml">
@@ -3330,7 +3055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.14583333">
           <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3347,14 +3071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7708333">
-          <caret line="152" column="47" selection-start-line="152" selection-start-column="47" selection-end-line="152" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable-hdpi/check_on_light.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3364,15 +3080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18796992">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60150373">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3396,7 +3103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3433,14 +3139,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7766749">
           <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values-v21/styles.xml">
@@ -3459,27 +3165,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.20833333">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable-nodpi/edit_text_background_accent.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable-xhdpi/edit_text_background_accent.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
+      <provider editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="images">
+      <provider selected="true" editor-type-id="ninepatcheditor">
         <state />
       </provider>
     </entry>
@@ -3487,29 +3185,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="251" column="16" selection-start-line="251" selection-start-column="16" selection-end-line="251" selection-end-column="16" />
-          <folding>
-            <element signature="e#9101#9102#0" expanded="true" />
-            <element signature="e#9140#9141#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_sign_up.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.0344827">
           <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java">
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.5152672">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030303031">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/complete_entry_client_list_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3030303">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="23.275862">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/SlidingTabsBasicFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33199194">
+          <caret line="482" column="66" selection-start-line="482" selection-start-column="66" selection-end-line="482" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#21471#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#9627#9638#0" expanded="false" />
+            <element signature="e#11205#11216#0" expanded="false" />
+            <element signature="e#19792#19803#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/PreviousClientListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65839696">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/client_more_infomation_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.085877866">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/client_call_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.114503816">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientMoreInformationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14122137">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3521,52 +3294,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml">
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SignUpActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5152672">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#8273#8274#0" expanded="false" />
+            <element signature="e#8300#8301#0" expanded="false" />
+            <element signature="e#8937#9793#0" expanded="false" />
+            <element signature="e#9792#9793#0" expanded="false" />
+            <element signature="e#9999#10135#0" expanded="false" />
+            <element signature="e#10134#10135#0" expanded="false" />
+            <element signature="e#10479#10684#0" expanded="false" />
+            <element signature="e#10683#10684#0" expanded="false" />
+            <element signature="e#10726#10970#0" expanded="false" />
+            <element signature="e#10969#10970#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.248497">
+          <caret line="220" column="52" selection-start-line="220" selection-start-column="52" selection-end-line="220" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="226" column="35" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51417005">
+          <caret line="270" column="4" selection-start-line="270" selection-start-column="4" selection-end-line="270" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/gcm/GcmIntentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39271256">
+          <caret line="70" column="67" selection-start-line="70" selection-start-column="55" selection-end-line="70" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/sources/android-21/android/view/ViewGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3319838">
+          <caret line="6336" column="19" selection-start-line="6336" selection-start-column="19" selection-end-line="6336" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097402595">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_group_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33251232">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///ADT/sdk/platforms/android-21/data/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46320346">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_child_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.143187">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097402595">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/this_turn_button_shape.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45454547">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_top.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17321016">
+          <caret line="83" column="50" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9629629">
+          <caret line="211" column="38" selection-start-line="211" selection-start-column="38" selection-end-line="211" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10452#10477#0" expanded="true" />
+            <element signature="e#10503#10543#0" expanded="true" />
+            <element signature="e#10688#10718#0" expanded="true" />
+            <element signature="e#10744#10773#0" expanded="true" />
+            <element signature="e#15441#15471#0" expanded="true" />
+            <element signature="e#15474#15515#0" expanded="true" />
+            <element signature="e#15692#16410#0" expanded="true" />
+            <element signature="e#16409#16410#0" expanded="true" />
+            <element signature="e#16494#16524#0" expanded="true" />
+            <element signature="e#16527#16567#0" expanded="true" />
+            <element signature="e#19902#19932#0" expanded="true" />
+            <element signature="e#19951#19991#0" expanded="true" />
+            <element signature="e#30814#31078#0" expanded="true" />
+            <element signature="e#31077#31078#0" expanded="true" />
+            <element signature="e#31120#31364#0" expanded="true" />
+            <element signature="e#31363#31364#0" expanded="true" />
+            <element signature="e#36163#36362#0" expanded="true" />
+            <element signature="e#36361#36362#0" expanded="true" />
+            <element signature="e#37588#37626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45454547">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_client_management.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.137931">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        <state vertical-scroll-proportion="-3.1034484">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="38" selection-end-column="58" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/custom_dialog.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.344828">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state vertical-scroll-proportion="-6.240185">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33199194">
-          <caret line="384" column="18" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8208#8228#0" expanded="true" />
-            <element signature="e#8246#8267#0" expanded="true" />
-            <element signature="e#10089#10129#0" expanded="true" />
-            <element signature="e#10327#10355#0" expanded="true" />
-            <element signature="e#10557#10586#0" expanded="true" />
-            <element signature="e#10790#10819#0" expanded="true" />
-            <element signature="e#30988#30989#0" expanded="true" />
-            <element signature="e#31032#31033#0" expanded="true" />
-          </folding>
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

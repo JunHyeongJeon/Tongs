@@ -8,7 +8,9 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -38,6 +40,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -101,6 +104,9 @@ public class ClientManagementActivity extends ActionBarActivity
     private TextView mThisTurnWaitPeopleTextView;
     private TextView mThisTurnWaitTimeTextView;
 
+    private ImageView mNoneListImage;
+    private TextView mNoneListText;
+
     private Button mFirstClientMoreInfoButton;
     private Button mFirstClientCancelButton;
 
@@ -118,6 +124,9 @@ public class ClientManagementActivity extends ActionBarActivity
 
     GoogleCloudMessaging gcm;
     Context context;
+
+    private CustomDialog mCustomDialog;
+
 
     /**
      * Substitute you own sender ID here. This is the project number you got
@@ -215,6 +224,12 @@ public class ClientManagementActivity extends ActionBarActivity
         mFirstClientCancelButton = (Button) findViewById(R.id.first_client_cancel_button);
         mFirstClientCancelButton.setOnClickListener(this);
 
+        mNoneListImage = (ImageView) findViewById(R.id.list_none);
+        mNoneListImage.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        mNoneListText = (TextView) findViewById(R.id.list_none_text);
+
+
         Button clinetCallButton;
         clinetCallButton = (Button) findViewById(R.id.client_call);
         clinetCallButton.setOnClickListener((View.OnClickListener) this);
@@ -305,21 +320,13 @@ public class ClientManagementActivity extends ActionBarActivity
                         R.string.drawer_title_before_client_data,
                         DrawerItem.DRAWER_ITEM_TAG_BLOG));
 
-        mDrawerItems.add(
-                new DrawerItem(
-                        R.string.drawer_icon_git_hub,
-                        R.string.drawer_title_logout,
-                        DrawerItem.DRAWER_ITEM_TAG_GIT_HUB));
+
         mDrawerItems.add(
                 new DrawerItem(
                         R.string.drawer_icon_instagram,
                         R.string.drawer_title_setting,
                         DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
-        mDrawerItems.add(
-                new DrawerItem(
-                        R.string.drawer_icon_instagram,
-                        R.string.drawer_title_setting,
-                        DrawerItem.DRAWER_ITEM_TAG_INSTAGRAM));
+
     }
 
 
@@ -368,15 +375,16 @@ public class ClientManagementActivity extends ActionBarActivity
         }
 
         else if( position == 2){
-            this.finish();
-            moveActivity(LogInPageActivity.class);
-        }
-        else if (position == 3){
+            //this.finish();
+            //moveActivity(LogInPageActivity.class);
             moveActivity(StoreSettingActivity.class);
 
         }
+        else if (position == 3){
+            //
+        }
         else if (position == 4) {
-            moveActivity(CouponActivity.class);
+            //moveActivity(CouponActivity.class);
         }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
         Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
@@ -394,8 +402,8 @@ public class ClientManagementActivity extends ActionBarActivity
         }
         else if (v.getId() == R.id.first_client_more_infomation_button)
         {
-            moveActivity(ClientMoreInformationActivity.class);
-        }
+            mCustomDialog = new CustomDialog(this);
+            mCustomDialog.show();        }
         else if (v.getId() == R.id.first_client_cancel_button)
         {
             removeTicket(mFirstId);
@@ -616,6 +624,9 @@ public class ClientManagementActivity extends ActionBarActivity
                     if(!isSuccess){
                         printToast("대기열에 고객이 없습니다.");
 
+                        mNoneListImage.setVisibility(View.VISIBLE);
+                        mNoneListText.setVisibility(View.VISIBLE);
+
                         mThisTurnTextView.setText("");
                         mThisTurnWaitPeopleTextView.setText("");
                         mThisTurnWaitTimeTextView.setText("");
@@ -662,6 +673,15 @@ public class ClientManagementActivity extends ActionBarActivity
                         }
                         List<GroupItem> items = new ArrayList<GroupItem>();
 
+
+                        if(ticketLen < 2) {
+                            mNoneListImage.setVisibility(View.VISIBLE);
+                            mNoneListText.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            mNoneListImage.setVisibility(View.GONE);
+                            mNoneListText.setVisibility(View.GONE);
+                        }
                         final String index[] = new String[ticketLen];
                         for (int i = 1; i < ticketLen; i++) {
 
@@ -778,6 +798,7 @@ public class ClientManagementActivity extends ActionBarActivity
             Log.d("processPush", "GCM Intent Fail");
         }
         else {
+            printToast("대기 리스트가 변경되었습니다.");
             getTicketList();
 
         }
@@ -1185,6 +1206,90 @@ public class ClientManagementActivity extends ActionBarActivity
 
     }
     private void responseClientFalse(){
+
+    }
+
+
+    public class CustomDialog extends Dialog {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+            lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            lpWindow.dimAmount = 0.8f;
+          //  lpWindow.width = WindowManager.LayoutParams.MATCH_PARENT;
+          //  lpWindow.height = WindowManager.LayoutParams.MATCH_PARENT;
+            getWindow().setAttributes(lpWindow);
+
+            setContentView(R.layout.custom_dialog);
+
+            setLayout();
+            setTitle(mTitle);
+            setContent(mContent);
+            setClickListener(mLeftClickListener , mRightClickListener);
+        }
+
+        public CustomDialog(Context context) {
+            // Dialog 배경을 투명 처리 해준다.
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+        }
+
+        public CustomDialog(Context context , String title ,
+                            View.OnClickListener singleListener) {
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+            this.mTitle = title;
+            this.mLeftClickListener = singleListener;
+        }
+
+        public CustomDialog(Context context , String title , String content ,
+                            View.OnClickListener leftListener , View.OnClickListener rightListener) {
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+            this.mTitle = title;
+            this.mContent = content;
+            this.mLeftClickListener = leftListener;
+            this.mRightClickListener = rightListener;
+        }
+
+        private void setTitle(String title){
+          //  mTitleView.setText(title);
+        }
+
+        private void setContent(String content){
+         //   mContentView.setText(content);
+        }
+
+        private void setClickListener(View.OnClickListener left , View.OnClickListener right){
+            if(left!=null && right!=null){
+           //     mLeftButton.setOnClickListener(left);
+           //     mRightButton.setOnClickListener(right);
+            }else if(left!=null && right==null){
+           //     mLeftButton.setOnClickListener(left);
+            }else {
+
+            }
+        }
+
+        //private TextView mTitleView;
+        //private TextView mContentView;
+        //private Button mLeftButton;
+        //private Button mRightButton;
+        private String mTitle;
+        private String mContent;
+
+        private View.OnClickListener mLeftClickListener;
+        private View.OnClickListener mRightClickListener;
+
+        /*
+         * Layout
+         */
+        private void setLayout(){
+//            mTitleView = (TextView) findViewById(R.id.tv_title);
+//            mContentView = (TextView) findViewById(R.id.tv_content);
+//            mLeftButton = (Button) findViewById(R.id.bt_left);
+//            mRightButton = (Button) findViewById(R.id.bt_right);
+        }
 
     }
 }

@@ -22,7 +22,8 @@
             android:layout_marginLeft="5dp"
             android:id="@+id/grey_titile_bar_pivot"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"/>
+            android:textSize="14sp"
+            android:textStyle="bold"/>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
@@ -32,12 +33,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/grey_titile_bar_order"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"/>
+                android:textSize="14sp"
+                android:textStyle="bold"/>
             <TextView
                 android:layout_marginRight="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:text=" 번째"/>
 
@@ -47,7 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="81.5dp"
@@ -63,6 +67,7 @@
                 android:textSize="12sp"
                 android:textColor="#FFFFFF" />
             <TextView
+                android:layout_marginTop="-5dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11.7dp"
+                android:textSize="12sp"
                 android:text="인원수"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -101,10 +106,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="명"/>
+                    android:text=" 명"/>
             </LinearLayout>
 
         </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="0.5dp"
+            android:layout_height="44dp"
+            android:background="@color/lineColor"
+            android:layout_marginBottom="3dp"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,7 +144,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11.7dp"
+                android:textSize="12sp"
                 android:text="대기시간"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -137,7 +160,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="분"/>
+                    android:text=" 분"/>
             </LinearLayout>
 
 
@@ -160,7 +183,7 @@
         android:layout_gravity="center"
         android:background="@drawable/tap"
         android:gravity="center"
-        android:layout_marginTop="-0.5dp"
+        android:layout_marginTop="-1dp"
         android:id="@+id/tap_button">
 
         <ImageView
@@ -169,15 +192,6 @@
             android:background="@drawable/btn_tab"
             android:gravity="center"/>
     </LinearLayout>
-<!--    <com.tongs.store.font.RobotoTextView
--->
-
-
-
-
-
-
-
 
     <TextView
         android:id="@+id/textTitle"

@@ -19,17 +19,19 @@
             android:id="@+id/listview_child_client_more_info_button"
             android:text="상세정보"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_width="80dp"
             android:layout_height="24dp"
             android:background="@drawable/listview_child_client_more_info_button_shape"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp" />
 
         <Button
             android:id="@+id/listview_child_client_cancel_button"
             android:text="취소"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_width="80dp"
             android:layout_height="24dp"
             android:background="@drawable/listview_child_client_more_info_button_shape"
@@ -40,7 +42,8 @@
             android:id="@+id/listview_child_client_call"
             android:text="고객호출"
             android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:layout_width="116dp"
             android:layout_height="24dp"
             android:background="@drawable/listview_chile_client_call_button_shape"

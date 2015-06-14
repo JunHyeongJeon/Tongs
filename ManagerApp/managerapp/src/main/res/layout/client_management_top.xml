@@ -16,18 +16,19 @@
         android:layout_gravity="center" >
         <LinearLayout
             android:layout_width="125dp"
-            android:layout_height="61.5dp"
+            android:layout_height="70dp"
             android:background="@drawable/before_after_button_shape"
             android:gravity="center"
             android:layout_alignParentLeft="true"
             android:orientation="vertical"
-            android:layout_centerVertical="true">
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이전순번"
                 android:textColor="#FFFFFF"
-                android:textSize="10sp"/>
+                android:textSize="12sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,31 +41,45 @@
 
         <LinearLayout
             android:layout_width="125dp"
-            android:layout_height="61.5dp"
-            android:background="@drawable/before_after_button_shape"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="다음순번"
-                android:textColor="#FFFFFF"
-                android:textSize="10sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/after_turn_textview"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center_horizontal">
+            <LinearLayout
+                android:layout_width="125dp"
+                android:layout_height="70dp"
+                android:background="@drawable/before_after_button_shape"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다음순번"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/after_turn_textview"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"/>
+            </LinearLayout>
+
+            <!--<View-->
+                <!--android:layout_width="124dp"-->
+                <!--android:layout_height="4dp"-->
+                <!--android:layout_marginTop="-3.5dp"-->
+                <!--android:background="@drawable/toolbar_dropshadow" />-->
+
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="160dp"
-            android:layout_height="78.5dp"
+            android:layout_height="89dp"
             android:gravity="center"
             android:background="@drawable/this_turn_button_shape"
             android:orientation="vertical"
@@ -90,9 +105,12 @@
 
     </RelativeLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
         <ImageView
             android:id="@+id/people_image_view"
             android:layout_width="wrap_content"
@@ -108,11 +126,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11.7dp"
-                android:text="인원수"/>
+                android:textSize="12sp"
+                android:text="인원수"
+                android:layout_marginTop="6dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,10 +144,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="명"/>
+                    android:text=" 명"/>
             </LinearLayout>
-
         </LinearLayout>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="0.5dp"
+            android:layout_height="44dp"
+            android:background="@color/lineColor"
+            android:layout_marginBottom="3dp"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,11 +177,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="11.7dp"
-                android:text="대기시간"/>
+                android:textSize="12sp"
+                android:text="대기시간"
+                android:layout_marginTop="6dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,16 +195,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="분"/>
+                    android:text=" 분"/>
             </LinearLayout>
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp">
+            android:orientation="vertical">
 
             <com.tongs.store.view.MaterialRippleLayout
                 style="@style/RippleStyle"
@@ -181,7 +220,8 @@
                     android:id="@+id/first_client_more_infomation_button"
                     android:text="상세정보"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:background="@drawable/client_more_infomation_button_shape"
@@ -198,7 +238,8 @@
                     android:id="@+id/first_client_cancel_button"
                     android:text="대기취소"
                     android:textColor="#FFFFFF"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     android:layout_width="80dp"
                     android:layout_height="24dp"
                     android:background="@drawable/client_more_infomation_button_shape"
@@ -220,7 +261,8 @@
             android:id="@+id/client_call"
             android:text="고객호출"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:layout_width="290dp"
             android:layout_height="40dp"
             android:background="@drawable/client_call_button_shape"

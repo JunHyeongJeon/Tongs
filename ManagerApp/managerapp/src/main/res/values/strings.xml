@@ -218,7 +218,7 @@
     <!--Activity Title -->
 
     <string name="title_activity_login">로그인</string>
-    <string name="title_activity_client_management">매장 대기 정보</string>
+    <string name="title_activity_client_management"></string>
     <string name="title_activity_client_more_information">ClientMoreInformation</string>
 
     <!--Tabbar Title -->

@@ -223,4 +223,6 @@
 
     <color name="AppYellow">#ffce06</color>
     <color name="colorBackground">#eeeef0</color>
+
+    <color name="lineColor">#bbbbbb</color>
 </resources>

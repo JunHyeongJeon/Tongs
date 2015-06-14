@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+
+        android:layout_width="280dp"
+        android:layout_height="335dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/dialog_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cancle"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="-7dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="125dp"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:background="@drawable/this_turn_button_shape"
+            android:orientation="vertical"
+            android:id="@+id/this_turn"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <TextView
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="현재순번"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginBottom="-7dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="35sp"
+                android:id="@+id/this_turn_textview"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/phone_shape_icon"/>
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="고객 연락처"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#666666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:textSize = "14sp"
+                android:text="01033334444"
+                android:textColor="#666666"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="0.5dp"
+            android:background="@color/lineColor" />
+
+        <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hyper_store_shape_icon"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="하이퍼마켓"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#666666"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:textSize = "14sp"
+            android:text="홈플러스"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="0.5dp"
+            android:background="@color/lineColor" />
+
+        <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/store_shape_icon"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="상호명"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#666666"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:textSize = "14sp"
+            android:text="윤씨밀방"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="0.5dp"
+            android:background="@color/lineColor" />
+
+        <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/people_shape_icon"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="인원수"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#666666"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:textSize = "14sp"
+            android:text="3명"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="0.5dp"
+            android:background="@color/lineColor" />
+
+        <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginLeft="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/clock_shape_icon"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="접수시간"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#666666"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:textSize = "14sp"
+            android:text="20150527"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
