@@ -66,6 +66,8 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
 
     private ProgressDialog mDialog;
 
+    private int mPos = R.layout.previous_client_group_complete_item;
+
 
     static final String LOG_TAG = "SlidingTabsBasicFragment";
 
@@ -200,8 +202,11 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
             int pos;
             if ( position == 0) {
 
+                mPos = R.layout.previous_client_group_complete_item;
+
                 view = getActivity().getLayoutInflater().inflate(com.tongs.store.R.layout.complete_entry_client_list_tab,
                         container, false);
+
                 pos = R.id.complete_entry_client_list_view;
                // getTicketList(pos);
                 // Add the newly created View to the ViewPager
@@ -210,15 +215,18 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
             }
             else if (position == 1)
             {
+                mPos = R.layout.previous_client_group_not_comming_item;
+
                 view = getActivity().getLayoutInflater().inflate(com.tongs.store.R.layout.not_complete_entry_client_list_tab,
                         container, false);
-                pos = R.id.not_complete_entry_client_list_view;
              //   getTicketList(pos);
-
+                pos = R.id.not_complete_entry_client_list_view;
                 getTicketList(pos, "2");
 
             }
             else {
+                mPos = R.layout.previous_client_group_cancle_item;
+
                 view = getActivity().getLayoutInflater().inflate(com.tongs.store.R.layout.cancel_entry_client_list_tab,
                         container, false);
                 pos = R.id.cancel_entry_client_list_view;
@@ -247,7 +255,7 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
 
     }
 
-    private void getTicketList(final int reid, String type) {
+    private void getTicketList(final int reId, String type) {
         Log.v("Protocol", "PROTOCOL_STATUS_GET_LIST");
 
 //        setProtocolStatus(PROTOCOL_STATUS_GET_LIST);
@@ -282,7 +290,7 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
                             ExpandListViewAdapter adapter = new ExpandListViewAdapter(activity);
                             adapter.setData(items);
 
-                            listView = (AnimatedExpandableListView) activity.findViewById(reid);
+                            listView = (AnimatedExpandableListView) activity.findViewById(reId);
                             listView.setAdapter(adapter);
 
                             Display display = activity.getWindowManager().getDefaultDisplay();
@@ -346,7 +354,7 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
                         ExpandListViewAdapter adapter = new ExpandListViewAdapter(SlidingTabsBasicFragment.this.getActivity());
                         adapter.setData(items);
 
-                        listView = (AnimatedExpandableListView) getActivity().findViewById(reid);
+                        listView = (AnimatedExpandableListView) getActivity().findViewById(reId);
                         listView.setAdapter(adapter);
 
                         // In order to show animations, we need to use a custom click handler
@@ -480,7 +488,7 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
             GroupItem item = getGroup(groupPosition);
             if (convertView == null) {
                 holder = new GroupHolder();
-                convertView = inflater.inflate(R.layout.previous_client_group_item, parent,
+                convertView = inflater.inflate(mPos, parent,
                         false);
                 holder.ticketNum = (TextView) convertView
                         .findViewById(R.id.ticket_number);

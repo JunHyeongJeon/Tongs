@@ -22,6 +22,7 @@ import android.os.Build;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -66,9 +67,10 @@ public class SlidingTabLayout extends HorizontalScrollView {
     }
 
     private static final int TITLE_OFFSET_DIPS = 24;
-    private static final int TAB_VIEW_PADDING_DIPS = 16;
-    private static final int TAB_VIEW_TEXT_SIZE_SP = 12;
+    private static final int TAB_VIEW_PADDING_DIPS = 18;
+    private static final int TAB_VIEW_TEXT_SIZE_SP = 14;
 
+    private int mTabViewHorizonPadding = 38;
     private int mTitleOffset;
 
     private int mTabViewLayoutId;
@@ -189,7 +191,12 @@ public class SlidingTabLayout extends HorizontalScrollView {
         }
 
         int padding = (int) (TAB_VIEW_PADDING_DIPS * getResources().getDisplayMetrics().density);
-        textView.setPadding(padding, padding, padding, padding);
+
+        int re = (int) getResources().getDisplayMetrics().widthPixels;
+        Log.v("test", re + "");
+
+        int horipadding = (int) ( mTabViewHorizonPadding * getResources().getDisplayMetrics().density);
+        textView.setPadding(horipadding, padding, horipadding, padding);
 
         return textView;
     }
@@ -206,6 +213,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 // If there is a custom tab view layout id set, try and inflate it
                 tabView = LayoutInflater.from(getContext()).inflate(mTabViewLayoutId, mTabStrip,
                         false);
+//                tabView.setScrollBarSize();
                 tabTitleView = (TextView) tabView.findViewById(mTabViewTextViewId);
             }
 

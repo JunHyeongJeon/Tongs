@@ -127,6 +127,8 @@ public class ClientManagementActivity extends ActionBarActivity
 
     private CustomDialog mCustomDialog;
 
+    private CustomClientAddDialog mCCAD;
+
 
     /**
      * Substitute you own sender ID here. This is the project number you got
@@ -415,7 +417,8 @@ public class ClientManagementActivity extends ActionBarActivity
         else if (v.getId() == R.id.first_client_more_infomation_button)
         {
             mCustomDialog = new CustomDialog(this);
-            mCustomDialog.show();        }
+            mCustomDialog.show();
+        }
         else if (v.getId() == R.id.first_client_cancel_button)
         {
             removeTicket(mFirstId);
@@ -1190,7 +1193,9 @@ public class ClientManagementActivity extends ActionBarActivity
     }
 
     private void pushNonUserTicket(){
-        Log.v("pushNonUser", "test");
+        //Log.v("pushNonUser", "test");
+        mCCAD = new CustomClientAddDialog(this);
+        mCCAD.show();
     }
 
 
@@ -1260,8 +1265,8 @@ public class ClientManagementActivity extends ActionBarActivity
             super(context , android.R.style.Theme_Translucent_NoTitleBar);
             this.mTitle = title;
             this.mContent = content;
-          //  this.mLeftClickListener = leftListener;
-         //   this.mRightClickListener = rightListener;
+
+
         }
 
         private void setTitle(String title){
@@ -1274,19 +1279,17 @@ public class ClientManagementActivity extends ActionBarActivity
 
         private void setClickListener(View.OnClickListener left , View.OnClickListener right){
             if(left!=null && right!=null){
-           //     mLeftButton.setOnClickListener(left);
-           //     mRightButton.setOnClickListener(right);
+
+
             }else if(left!=null && right==null){
-           //     mLeftButton.setOnClickListener(left);
+
+
             }else {
+
 
             }
         }
 
-        //private TextView mTitleView;
-        //private TextView mContentView;
-        //private Button mLeftButton;
-        //private Button mRightButton;
         private Button mExitButton;
         private String mTitle;
         private String mContent;
@@ -1303,11 +1306,89 @@ public class ClientManagementActivity extends ActionBarActivity
                     CustomDialog.this.dismiss();
                 }
             });
+        }
 
-//            mTitleView = (TextView) findViewById(R.id.tv_title);
-//            mContentView = (TextView) findViewById(R.id.tv_content);
-//            mLeftButton = (Button) findViewById(R.id.bt_left);
-//            mRightButton = (Button) findViewById(R.id.bt_right);
+    }
+
+    public class CustomClientAddDialog extends Dialog {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            WindowManager.LayoutParams lpWindow = new WindowManager.LayoutParams();
+            lpWindow.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            lpWindow.dimAmount = 0.8f;
+            //  lpWindow.width = WindowManager.LayoutParams.MATCH_PARENT;
+            //  lpWindow.height = WindowManager.LayoutParams.MATCH_PARENT;
+            getWindow().setAttributes(lpWindow);
+
+            setContentView(R.layout.custom_client_add_dialog);
+
+            setLayout();
+            setTitle(mTitle);
+            setContent(mContent);
+            //  setClickListener(mLeftClickListener , mRightClickListener);
+        }
+
+        public CustomClientAddDialog(Context context) {
+            // Dialog 배경을 투명 처리 해준다.
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+        }
+
+        public CustomClientAddDialog(Context context , String title ,
+                            View.OnClickListener singleListener) {
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+            this.mTitle = title;
+            //this.mLeftClickListener = singleListener;
+        }
+
+        public CustomClientAddDialog(Context context , String title , String content ,
+                            View.OnClickListener leftListener , View.OnClickListener rightListener) {
+            super(context , android.R.style.Theme_Translucent_NoTitleBar);
+            this.mTitle = title;
+            this.mContent = content;
+
+
+        }
+
+        private void setTitle(String title){
+            //  mTitleView.setText(title);
+        }
+
+        private void setContent(String content){
+            //   mContentView.setText(content);
+        }
+
+        private void setClickListener(View.OnClickListener left , View.OnClickListener right){
+            if(left!=null && right!=null){
+
+
+            }else if(left!=null && right==null){
+
+
+            }else {
+
+
+            }
+        }
+
+        private Button mExitButton;
+        private String mTitle;
+        private String mContent;
+
+
+
+        /*
+         * Layout
+         */
+        private void setLayout(){
+            mExitButton = (Button) findViewById(R.id.dialog_exit_button);
+            mExitButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    CustomClientAddDialog.this.dismiss();
+                }
+            });
         }
 
     }

@@ -8,7 +8,7 @@
 
     <com.tongs.store.view.AnimatedExpandableListView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/complete_entry_client_list_view"
+            android:id="@+id/complete_entry_client_list_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

@@ -90,6 +90,7 @@
     <string name="username">EMAIL</string>
     <string name="password">PASSWORD</string>
     <string name="welcome">Welcome!\nTouch Me!</string>
+    <string name="phone_number">PHONE NUMBER</string>
 
     <string name="sign_up_username">이메일</string>
     <string name="sign_up_password_check">비밀번호 확인</string>

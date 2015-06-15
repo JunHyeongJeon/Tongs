@@ -43,26 +43,44 @@
 
 
         <com.tongs.store.view.FloatLabeledEditText
-            android:layout_width="296dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             app:fletFloatingHint="@string/username"
             app:fletHintTextColor="@color/login_edit_text_hint_color"
             app:fletSingleLine="true"
-            app:fletTextBackground="@drawable/edit_text_background_accent"
+            app:fletTextBackground="@android:color/transparent"
             app:fletTextColor="@color/login_edit_text_color"
             android:id= "@+id/login_email"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffce06"
+                android:layout_gravity="center"
+                android:visibility="visible"/>
+        </com.tongs.store.view.FloatLabeledEditText>
+
 
         <com.tongs.store.view.FloatLabeledEditText
-            android:layout_width="296dp"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
             app:fletFloatingHint="@string/password"
             app:fletHintTextColor="@color/login_edit_text_hint_color"
             app:fletPassword="true"
             app:fletSingleLine="true"
-            app:fletTextBackground="@drawable/edit_text_background_accent"
+            app:fletTextBackground="@android:color/transparent"
             app:fletTextColor="@color/login_edit_text_color"
-            android:id ="@+id/login_password" />
+            android:id ="@+id/login_password" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffce06"
+                android:layout_gravity="center"
+                android:visibility="visible"/>
+        </com.tongs.store.view.FloatLabeledEditText>
+
+
 
         <com.tongs.store.view.MaterialRippleLayout
             style="@style/RippleStyle"
@@ -86,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginLeft="12dp">
+            android:layout_marginLeft="10dp">
             <CheckBox
                 android:id="@+id/login_keep_checkbox"
                 android:layout_width="wrap_content"

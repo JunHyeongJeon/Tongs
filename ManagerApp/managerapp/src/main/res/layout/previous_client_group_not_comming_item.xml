@@ -57,7 +57,7 @@
             android:orientation="vertical"
             android:layout_width="81.5dp"
             android:layout_height="47dp"
-            android:background="@drawable/ticket_button_shape"
+            android:background="@drawable/ticket_button_shape_grey"
             android:layout_marginRight="23.3dp"
             >
             <TextView

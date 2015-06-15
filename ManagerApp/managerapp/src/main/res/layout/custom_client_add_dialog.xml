@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:layout_width="280dp"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/dialog_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right">
+            <Button
+                android:id="@+id/dialog_exit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cancle"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비회원 등록"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-4dp"
+            android:layout_marginBottom="36dp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/phone_shape_icon"/>
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="고객 연락처"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#666666"/>
+
+        </LinearLayout>
+
+        <com.tongs.store.view.FloatLabeledEditText
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            app:fletFloatingHint="@string/phone_number"
+            app:fletHintTextColor="@color/login_edit_text_color"
+            app:fletSingleLine="true"
+            app:fletTextBackground="@android:color/transparent"
+            app:fletTextColor="@color/login_edit_text_color"
+            android:id= "@+id/client_add_phone_number"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffce06"
+                android:layout_gravity="center"
+                android:visibility="visible"/>
+        </com.tongs.store.view.FloatLabeledEditText>
+
+
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:layout_marginLeft="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/people_shape_icon"/>
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="인원수"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#666666"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
