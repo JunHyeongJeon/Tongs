@@ -64,6 +64,7 @@ import com.tongs.store.util.GlobalVar;
 import com.tongs.store.util.OnHttpReceive;
 import com.tongs.store.util.Preference;
 import com.tongs.store.view.AnimatedExpandableListView;
+import com.tongs.store.view.FloatLabeledEditText;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -1306,6 +1307,8 @@ public class ClientManagementActivity extends ActionBarActivity
                     CustomDialog.this.dismiss();
                 }
             });
+
+
         }
 
     }
@@ -1377,6 +1380,9 @@ public class ClientManagementActivity extends ActionBarActivity
         private String mTitle;
         private String mContent;
 
+        private FloatLabeledEditText mPhoneNumberEdit;
+
+
 
 
         /*
@@ -1389,6 +1395,8 @@ public class ClientManagementActivity extends ActionBarActivity
                     CustomClientAddDialog.this.dismiss();
                 }
             });
+
+            mPhoneNumberEdit = (FloatLabeledEditText) findViewById(R.id.client_add_phone_number);
         }
 
     }

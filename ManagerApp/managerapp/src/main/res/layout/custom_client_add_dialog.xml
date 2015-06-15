@@ -4,19 +4,22 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <LinearLayout
 
         android:layout_width="280dp"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:background="@drawable/dialog_background">
+        android:background="@drawable/dialog_backgroun_client_add">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical|right">
+            android:gravity="center_vertical|right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
             <Button
                 android:id="@+id/dialog_exit_button"
                 android:layout_width="wrap_content"
@@ -32,8 +35,8 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="-4dp"
-            android:layout_marginBottom="36dp"/>
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="25dp"/>
 
 
 
@@ -67,7 +70,8 @@
             app:fletTextBackground="@android:color/transparent"
             app:fletTextColor="@color/login_edit_text_color"
             android:id= "@+id/client_add_phone_number"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="20dp"
+            android:textSize="10sp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -78,13 +82,12 @@
         </com.tongs.store.view.FloatLabeledEditText>
 
 
-
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="40dp"
             android:gravity="center_vertical|left"
             android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="1dp">
             <ImageView
                 android:layout_marginLeft="2dp"
                 android:layout_width="wrap_content"
@@ -102,6 +105,87 @@
         </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center_vertical">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/minus"
+                android:id="@+id/people_minus_button"/>
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:textColor="#ffce06"
+                android:id="@+id/people_number_textview"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"/>
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/plus"
+                android:id="@+id/people_plus_button"/>
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bbbbbb"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="취 소"
+                android:background="@android:color/transparent"
+
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="#bbbbbb"/>
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="확 인"
+                android:background="@android:color/transparent"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#333333"
+                android:gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
