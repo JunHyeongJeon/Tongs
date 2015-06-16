@@ -26,9 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622684c6-f901-4e03-82be-120ff511bc2e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_backgroun_client_add.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" afterPath="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/layout/custom_client_add_dialog.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/layout/custom_client_add_dialog.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android.iws" />
@@ -115,53 +117,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="73" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.0">
-              <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientManagementActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5555553">
-              <caret line="1394" column="37" selection-start-line="1394" selection-start-column="37" selection-end-line="1394" selection-end-column="37" />
-              <folding />
+            <state vertical-scroll-proportion="0.23648648">
+              <caret line="1424" column="35" selection-start-line="1424" selection-start-column="35" selection-end-line="1424" selection-end-column="35" />
+              <folding>
+                <element signature="e#8717#8737#0" expanded="true" />
+                <element signature="e#8755#8776#0" expanded="true" />
+                <element signature="e#10600#10633#0" expanded="true" />
+                <element signature="e#10834#10874#0" expanded="true" />
+                <element signature="e#11068#11097#0" expanded="true" />
+                <element signature="e#14741#14777#0" expanded="true" />
+                <element signature="e#14866#14904#0" expanded="true" />
+                <element signature="e#14942#14990#0" expanded="true" />
+                <element signature="e#15820#15850#0" expanded="true" />
+                <element signature="e#15853#15894#0" expanded="true" />
+                <element signature="e#16071#16789#0" expanded="true" />
+                <element signature="e#16788#16789#0" expanded="true" />
+                <element signature="e#16873#16903#0" expanded="true" />
+                <element signature="e#16906#16946#0" expanded="true" />
+                <element signature="e#17896#17926#0" expanded="true" />
+                <element signature="e#17945#17986#0" expanded="true" />
+                <element signature="e#19147#19177#0" expanded="true" />
+                <element signature="e#19196#19239#0" expanded="true" />
+                <element signature="e#20204#20234#0" expanded="true" />
+                <element signature="e#20253#20295#0" expanded="true" />
+                <element signature="e#20540#21246#0" expanded="true" />
+                <element signature="e#21245#21246#0" expanded="true" />
+                <element signature="e#21476#21506#0" expanded="true" />
+                <element signature="e#21525#21565#0" expanded="true" />
+                <element signature="e#21662#29475#0" expanded="true" />
+                <element signature="e#26797#27546#0" expanded="true" />
+                <element signature="e#27545#27546#0" expanded="true" />
+                <element signature="e#29474#29475#0" expanded="true" />
+                <element signature="e#32388#32652#0" expanded="true" />
+                <element signature="e#32651#32652#0" expanded="true" />
+                <element signature="e#32694#32938#0" expanded="true" />
+                <element signature="e#32937#32938#0" expanded="true" />
+                <element signature="e#39113#39143#0" expanded="true" />
+                <element signature="e#39162#39200#0" expanded="true" />
+                <element signature="e#48077#48241#0" expanded="true" />
+                <element signature="e#48240#48241#0" expanded="true" />
+                <element signature="e#48368#48532#0" expanded="true" />
+                <element signature="e#48531#48532#0" expanded="true" />
+                <element signature="e#48656#48932#0" expanded="true" />
+                <element signature="e#48931#48932#0" expanded="true" />
+                <element signature="e#49053#49276#0" expanded="true" />
+                <element signature="e#49275#49276#0" expanded="true" />
+                <element signature="e#49400#49696#0" expanded="true" />
+                <element signature="e#49695#49696#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_client_add_dialog.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom_client_add_dialog.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/custom_client_add_dialog.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6230032">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state vertical-scroll-proportion="-2.267857">
+              <caret line="140" column="31" selection-start-line="140" selection-start-column="31" selection-end-line="140" selection-end-column="31" />
               <folding>
-                <element signature="e#2488#2510#0" expanded="true" />
+                <element signature="e#2813#2835#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,31 +187,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dialog_background.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml">
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialog_backgroun_client_add.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_backgroun_client_add.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogInPageActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="32" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="32" />
+            <state vertical-scroll-proportion="5.04">
+              <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -220,8 +217,8 @@
     </FindUsagesManager>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="$USER_HOME$/Desktop/managerApp_key.jks" />
-    <option name="KEY_ALIAS" value="manager_app_key_20150613" />
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/manager_app_key_20150616.jks" />
+    <option name="KEY_ALIAS" value="managerapp" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
@@ -2316,13 +2313,11 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/SplashScreensActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/toolbar.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_login_page_activity.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/menu/menu_client_management.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/client_management_activity_toolbar.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_call_button_shape.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/client_more_infomation_button_shape.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/values/colors_material.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/toolbar_dropshadow.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/header_navigation_drawer_1.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/model/DrawerItem.java" />
@@ -2351,12 +2346,14 @@
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/previous_client_group_not_comming_item.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/complete_entry_client_list_tab.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/SlidingTabsBasicFragment.java" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_backgroun_client_add.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/managerapp/src/main/res/layout/custom_client_add_dialog.xml" />
+        <option value="$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java" />
       </list>
     </option>
   </component>
@@ -2697,10 +2694,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3090,18 +3087,18 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3964111" sideWeight="0.5549273" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0995106" sideWeight="0.4450727" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2625202" sideWeight="0.42366412" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20516963" sideWeight="0.43489584" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36268175" sideWeight="0.45478722" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.32956383" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3735726" sideWeight="0.49353796" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36215335" sideWeight="0.5218094" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18597063" sideWeight="0.5218094" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20516963" sideWeight="0.5763359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32714054" sideWeight="0.5651042" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31647635" sideWeight="0.4838449" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="123" width="1080" height="540" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3379,7 +3376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3420,10 +3416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28213167">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#1704#1736#0" expanded="false" />
-            <element signature="e#1802#1841#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3431,7 +3423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29467085">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3439,7 +3430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="899" column="66" selection-start-line="899" selection-start-column="60" selection-end-line="899" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3458,10 +3448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.99122804">
           <caret line="316" column="29" selection-start-line="316" selection-start-column="17" selection-end-line="316" selection-end-column="29" />
-          <folding>
-            <element signature="e#13561#13562#0" expanded="false" />
-            <element signature="e#13587#13588#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3579,7 +3565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6905371">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3646,49 +3631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52715653">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="73" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0">
-          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/view/FloatLabeledEditText.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.8571428">
@@ -3697,41 +3639,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6320225">
+          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5477528">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_background.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.21929824">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/drawable/dialog_backgroun_client_add.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.39473686">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/LogInPageActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5555553">
-          <caret line="1394" column="37" selection-start-line="1394" selection-start-column="37" selection-end-line="1394" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="264" column="36" selection-start-line="264" selection-start-column="36" selection-end-line="264" selection-end-column="36" />
+          <folding>
+            <element signature="e#7809#7839#0" expanded="true" />
+            <element signature="e#7842#7877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/activity_login_page_light.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33216783">
+          <caret line="133" column="23" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.04">
+          <caret line="177" column="62" selection-start-line="177" selection-start-column="62" selection-end-line="177" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/managerapp/src/main/res/layout/custom_client_add_dialog.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6230032">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state vertical-scroll-proportion="-2.267857">
+          <caret line="140" column="31" selection-start-line="140" selection-start-column="31" selection-end-line="140" selection-end-column="31" />
           <folding>
-            <element signature="e#2488#2510#0" expanded="true" />
+            <element signature="e#2813#2835#0" expanded="true" />
           </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/managerapp/src/main/java/com/tongs/store/activity/ClientManagementActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23648648">
+          <caret line="1424" column="35" selection-start-line="1424" selection-start-column="35" selection-end-line="1424" selection-end-column="35" />
+          <folding>
+            <element signature="e#8717#8737#0" expanded="true" />
+            <element signature="e#8755#8776#0" expanded="true" />
+            <element signature="e#10600#10633#0" expanded="true" />
+            <element signature="e#10834#10874#0" expanded="true" />
+            <element signature="e#11068#11097#0" expanded="true" />
+            <element signature="e#14741#14777#0" expanded="true" />
+            <element signature="e#14866#14904#0" expanded="true" />
+            <element signature="e#14942#14990#0" expanded="true" />
+            <element signature="e#15820#15850#0" expanded="true" />
+            <element signature="e#15853#15894#0" expanded="true" />
+            <element signature="e#16071#16789#0" expanded="true" />
+            <element signature="e#16788#16789#0" expanded="true" />
+            <element signature="e#16873#16903#0" expanded="true" />
+            <element signature="e#16906#16946#0" expanded="true" />
+            <element signature="e#17896#17926#0" expanded="true" />
+            <element signature="e#17945#17986#0" expanded="true" />
+            <element signature="e#19147#19177#0" expanded="true" />
+            <element signature="e#19196#19239#0" expanded="true" />
+            <element signature="e#20204#20234#0" expanded="true" />
+            <element signature="e#20253#20295#0" expanded="true" />
+            <element signature="e#20540#21246#0" expanded="true" />
+            <element signature="e#21245#21246#0" expanded="true" />
+            <element signature="e#21476#21506#0" expanded="true" />
+            <element signature="e#21525#21565#0" expanded="true" />
+            <element signature="e#21662#29475#0" expanded="true" />
+            <element signature="e#26797#27546#0" expanded="true" />
+            <element signature="e#27545#27546#0" expanded="true" />
+            <element signature="e#29474#29475#0" expanded="true" />
+            <element signature="e#32388#32652#0" expanded="true" />
+            <element signature="e#32651#32652#0" expanded="true" />
+            <element signature="e#32694#32938#0" expanded="true" />
+            <element signature="e#32937#32938#0" expanded="true" />
+            <element signature="e#39113#39143#0" expanded="true" />
+            <element signature="e#39162#39200#0" expanded="true" />
+            <element signature="e#48077#48241#0" expanded="true" />
+            <element signature="e#48240#48241#0" expanded="true" />
+            <element signature="e#48368#48532#0" expanded="true" />
+            <element signature="e#48531#48532#0" expanded="true" />
+            <element signature="e#48656#48932#0" expanded="true" />
+            <element signature="e#48931#48932#0" expanded="true" />
+            <element signature="e#49053#49276#0" expanded="true" />
+            <element signature="e#49275#49276#0" expanded="true" />
+            <element signature="e#49400#49696#0" expanded="true" />
+            <element signature="e#49695#49696#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

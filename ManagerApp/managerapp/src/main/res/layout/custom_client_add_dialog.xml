@@ -14,17 +14,25 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:background="@drawable/dialog_backgroun_client_add">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|right"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp">
+
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400" >
             <Button
                 android:id="@+id/dialog_exit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/cancle"/>
+            </com.tongs.store.view.MaterialRippleLayout>
         </LinearLayout>
 
         <TextView
@@ -113,18 +121,24 @@
             android:gravity="center_vertical">
 
 
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400" >
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/minus"
                 android:id="@+id/people_minus_button"/>
+            </com.tongs.store.view.MaterialRippleLayout>
 
 
             <TextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4"
+                android:text="1"
                 android:textSize="36sp"
                 android:textStyle="bold"
                 android:textColor="#ffce06"
@@ -134,12 +148,18 @@
 
 
 
+
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400" >
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/plus"
                 android:id="@+id/people_plus_button"/>
-
+            </com.tongs.store.view.MaterialRippleLayout>
 
 
 
@@ -157,6 +177,8 @@
             android:layout_gravity="bottom"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp">
+
+
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -167,12 +189,17 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="#333333"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:id="@+id/dialog_cancle_button"/>
+
+
             <TextView
                 android:layout_width="1dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:background="#bbbbbb"/>
+
+
 
 
             <Button
@@ -184,7 +211,8 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:textColor="#333333"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:id="@+id/dialog_apply_button"/>
         </LinearLayout>
     </LinearLayout>
 

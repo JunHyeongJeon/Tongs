@@ -175,6 +175,7 @@
     <string name="api_store_login">store/auth/login/?</string>
     <string name="api_store_ticket_list">store/ticket/list/?</string>
     <string name="api_store_ticket_all">store/ticket/all/?</string>
+    <string name="api_store_ticket_unreg">store/ticket/unreg/?</string>
     <string name="api_store_ticket_pop">store/ticket/pop/?</string>
     <string name="api_store_ticket_call">store/ticket/call/?</string>
     <string name="api_store_ticket_push">store/ticket/push/?</string>

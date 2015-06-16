@@ -617,6 +617,39 @@ public class ClientManagementActivity extends ActionBarActivity
             }
         });
     }
+    private void pushUnregTicket(String people, String phoneNumber){
+      //  mTodayDate = getTodayDate();
+        String url;
+        url = getString(R.string.api_server) +
+                getString(R.string.api_store_ticket_unreg) +
+                "token=" + mToken +
+                "&people=" + people +
+                "&pivot=" + mTodayDate +
+                "&mdn=" + phoneNumber;
+
+        Log.v("pushUn",url);
+        requestOnUIThread(PROTOCOL_STATUS_USER_PUSH, url, new OnHttpReceive() {
+            @Override
+            public void onReceive(int protocol, String data) {
+                try {
+                    JSONObject json = new JSONObject(data);
+                    String result_code = json.optString("result_code", null);
+
+                    if ("0".equals(result_code))
+                        printToast("고객을 대기열에 추가하였습니다.");
+                    else if ("-2".equals(result_code))
+                        printToast("중복 대기 회원입니다.");
+                    else {
+                        printToast("고객대기를 실패하였습니다.");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
     private void getTicketList() {
 
         mTodayDate = getTodayDate();
@@ -1382,19 +1415,64 @@ public class ClientManagementActivity extends ActionBarActivity
 
         private FloatLabeledEditText mPhoneNumberEdit;
 
+        private Button mCancleButton;
+        private Button mApplyButton;
+        private Button mPlusButton;
+        private Button mMinusButton;
 
+        private TextView mPeopleNumTextView;
+
+        private int mPeopleName = 1;
 
 
         /*
          * Layout
          */
         private void setLayout(){
+
+            mPeopleNumTextView = (TextView) findViewById(R.id.people_number_textview);
+
             mExitButton = (Button) findViewById(R.id.dialog_exit_button);
             mExitButton.setOnClickListener(new Button.OnClickListener(){
                 public void onClick(View v){
                     CustomClientAddDialog.this.dismiss();
                 }
             });
+
+            mCancleButton = (Button) findViewById(R.id.dialog_cancle_button);
+            mCancleButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    CustomClientAddDialog.this.dismiss();
+                }
+            });
+
+            mApplyButton = (Button) findViewById(R.id.dialog_apply_button);
+            mApplyButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    pushUnregTicket(mPeopleNumTextView.getText().toString(), mPhoneNumberEdit.getTextString());
+                    CustomClientAddDialog.this.dismiss();
+                }
+            });
+
+            mPlusButton = (Button) findViewById(R.id.people_plus_button);
+            mPlusButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    String num = String.valueOf(++mPeopleName);
+                    mPeopleNumTextView.setText(num);
+                }
+            });
+
+            mMinusButton = (Button) findViewById(R.id.people_minus_button);
+            mMinusButton.setOnClickListener(new Button.OnClickListener(){
+                public void onClick(View v){
+                    if( mPeopleName > 0) {
+                        String num = String.valueOf(--mPeopleName);
+                        mPeopleNumTextView.setText(num);
+                    }
+                }
+            });
+
+
 
             mPhoneNumberEdit = (FloatLabeledEditText) findViewById(R.id.client_add_phone_number);
         }
