@@ -1,0 +1,28 @@
+{
+  "app" : {
+    "versionCode": "1",
+    "force_update": true
+  },
+  "call_setting" : 
+    { 
+      "use_sns" : true,
+      "use_sms" : true
+    },
+  "promotion":{
+    "oncreate": {
+      "active": true,
+      "url": "http://tongs.kr/...",
+      "expose": "always"
+    },
+    "onclose": {
+      "active": true,
+      "url": "http://tongs.kr/...",
+      "expose": "hourly"
+    },
+    "onsetting": {
+      "active": true,
+      "url": "http://tongs.kr/...",
+      "expose": "daily"
+    }
+  }
+}
