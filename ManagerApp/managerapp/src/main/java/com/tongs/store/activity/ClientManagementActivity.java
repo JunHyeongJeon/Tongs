@@ -707,7 +707,7 @@ public class ClientManagementActivity extends ActionBarActivity
                         String firstPeople = obj.optString("people", null);
                         mThisTurnWaitPeopleTextView.setText(firstPeople);
                         int color = vipClass(mFirstReVisit);
-                        mThisTurnWaitPeopleTextView.setTextColor(color);
+                       // mThisTurnWaitPeopleTextView.setTextColor(color);
 
                         long firstPopTime = obj.optLong("time", 0);
                         long firstTime = (mTime - firstPopTime) / 60;
@@ -1077,8 +1077,7 @@ public class ClientManagementActivity extends ActionBarActivity
                         false);
                 holder.ticketNum = (TextView) convertView
                         .findViewById(R.id.ticket_number);
-                holder.peopleNum = (TextView) convertView
-                        .findViewById(R.id.people_number);
+                holder.peopleNum = (TextView) convertView.findViewById(R.id.people_number);
                 holder.order = (TextView) convertView
                         .findViewById(R.id.grey_titile_bar_order);
                 holder.pivot = (TextView) convertView
@@ -1110,7 +1109,7 @@ public class ClientManagementActivity extends ActionBarActivity
             holder.order.setText(item.order);
             holder.pivot.setText(item.pivot);
             holder.waitTime.setText(item.waitTime);
-            holder.peopleNum.setTextColor(item.vipClass);
+            //holder.peopleNum.setTextColor(item.vipClass);
            // holder.vipClass
 
             return convertView;

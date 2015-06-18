@@ -18,6 +18,10 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:id="@+id/toolbar_title"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginLeft="34dp">
+
+    </TextView>
 </android.support.v7.widget.Toolbar>
     <!--"?android:attr/actionBarSize"-->

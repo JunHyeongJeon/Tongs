@@ -5,8 +5,8 @@
         <item name="actionBarStyle">@style/ActionBarStyle</item>
         <item name="windowActionBar">false</item>
 
-	    <item name="colorPrimary">@color/main_color_500</item>
-	    <item name="colorPrimaryDark">@color/main_color_700</item>
+	    <item name="colorPrimary">@color/Black</item>
+	    <item name="colorPrimaryDark">@color/Black</item>
     </style>
 
 </resources>

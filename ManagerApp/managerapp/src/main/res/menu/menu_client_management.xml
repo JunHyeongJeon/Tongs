@@ -7,8 +7,11 @@
         android:orderInCategory="200"
         app:showAsAction="always"
         android:title="바코드인식"
-        android:icon="@drawable/camera">
+        android:icon="@drawable/camera" >
     </item>
+    <padding
+        android:left="10dp" >
+    </padding>
     <item
         android:id="@+id/add_non_user"
         android:orderInCategory="200"

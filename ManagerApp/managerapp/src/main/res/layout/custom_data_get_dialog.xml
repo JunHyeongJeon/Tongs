@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/dialog_background"
+>
+        <DatePicker
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_picker">
+
+        </DatePicker>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp">
+
+
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400">
+                <Button
+                    android:id="@+id/previous_dialog_cancle"
+                    android:text="취 소"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_under_date_picker_button"
+                    android:layout_marginRight="16dp"
+                    />
+            </com.tongs.store.view.MaterialRippleLayout>
+
+
+            <com.tongs.store.view.MaterialRippleLayout
+                style="@style/RippleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/main_color_grey_400">
+                <Button
+                    android:id="@+id/previous_dialog_confirm"
+                    android:text="확 인"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_under_date_picker_button"
+                    />
+            </com.tongs.store.view.MaterialRippleLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

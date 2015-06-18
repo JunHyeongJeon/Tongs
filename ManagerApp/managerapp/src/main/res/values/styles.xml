@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/ActionBarStyle</item>
 
-	    <item name="colorPrimary">@color/main_color_500</item>
-	    <item name="colorPrimaryDark">@color/main_color_700</item>
+	    <item name="colorPrimary">@color/Black</item>
+	    <item name="colorPrimaryDark">@color/Black</item>
     </style>
 
 
@@ -13,8 +13,8 @@
         <item name="actionBarStyle">@style/ActionBarStyle</item>
         <item name="windowActionBar">false</item>
 
-	    <item name="colorPrimary">@color/main_color_500</item>
-	    <item name="colorPrimaryDark">@color/main_color_700</item>
+	    <item name="colorPrimary">@color/Black</item>
+	    <item name="colorPrimaryDark">@color/Black</item>
     </style>
     <style name="AppTheme.Title" parent="Theme.AppCompat">
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -57,9 +57,11 @@
     </style>
 
     <style name="ActionBarStyle.NoShadow" parent="@style/ActionBarStyle">
-        <item name="android:background">@color/main_color_600</item>
+        <item name="android:background">@color/Black</item>
         <item name="android:titleTextStyle">@style/ActionBarStyle.TitleTextStyle</item>
     </style>
+
+
     <!-- ActionBar related themes end here -->
 
 
@@ -99,7 +101,7 @@
         <item name="android:layout_marginBottom">24dp</item>
         <item name="android:layout_marginLeft">8dp</item>
         <item name="android:layout_marginRight">8dp</item>
-        <item name="android:background">@color/divider_color</item>
+        <item name="android:background">@color/Black</item>
         <!-- Supports API Level 17+ -->
         <!-- <item name="android:layout_marginStart">8dp</item> -->
         <!-- Supports API Level 17+ -->
