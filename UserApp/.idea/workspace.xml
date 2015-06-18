@@ -27,44 +27,9 @@
       </layout>
     </layouts>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="HELLO" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/adapter/CouponAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponPagerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/adapter/CouponPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/DrawerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/adapter/DrawerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/StoreAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/adapter/StoreAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/ViewPagerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/adapter/ViewPagerAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/ble/BleManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/ble/BleManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/ble/MyBeacon.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/ble/MyBeacon.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/gcm/GcmBroadcastReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/gcm/GcmBroadcastReceiver.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/gcm/GcmIntentService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/gcm/GcmIntentService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/gcm/GcmReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/gcm/GcmReceiver.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/SlidingTabLayout.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/SlidingTabLayout.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/SlidingTabStrip.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/SlidingTabStrip.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/StoreTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/StoreTab.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/TicketTab.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/UsedCouponTab.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/ValidCouponTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tab/ValidCouponTab.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/BarcodeActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeGenerator.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/BarcodeGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/CouponActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/CouponDetailActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/CouponListActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/IntroActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/MainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/NetworkActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/NetworkActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/RecyclerItemClickListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/RecyclerItemClickListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SignupActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/SignupActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SignupTermsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/SignupTermsActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/StoreViewActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/StoreViewActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/SummonActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/WaitingTicketActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/WaitingTicketActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="UserApp.iws" />
@@ -86,50 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tab_validticket.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_validticket.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="49" column="51" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_storeview.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_coupon.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/example/jaecheol/tongs_v10/ApplicationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <caret line="406" column="18" selection-start-line="406" selection-start-column="18" selection-end-line="406" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -139,34 +65,87 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="188" column="47" selection-start-line="188" selection-start-column="45" selection-end-line="188" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IntroActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45380875">
-              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-              <folding>
-                <element signature="e#2742#2770#0" expanded="true" />
-                <element signature="e#2846#3615#0" expanded="true" />
-                <element signature="e#3614#3615#0" expanded="true" />
-                <element signature="e#4274#4302#0" expanded="true" />
-                <element signature="e#4443#4891#0" expanded="true" />
-                <element signature="e#4890#4891#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.24590164">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignupActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/SignupActivity.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="318" selection-end-column="40" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GcmIntentService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntentService.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/app/IntentService.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handler.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/Handler.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Looper.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/Looper.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HandlerThread.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/HandlerThread.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TicketTab.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/TicketTab.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="13" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -177,15 +156,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
         <option value="resourceFile" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/app/signature/release.jks" />
+    <option name="KEY_ALIAS" value="myreleasekey" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -1156,7 +1146,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4289565518000" />
+        <entry key="$PROJECT_DIR$" value="4292226807000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1459,57 +1449,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/drawer/DrawerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_1.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/store/StoreAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_coupondetail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/DrawerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/StoreViewActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/KenBurnsView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/TransitionGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/MathUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/Transition.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/IncompatibleRatioException.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/view/RandomTransitionGenerator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_splash_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SplashScreensActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SignupActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_summon.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/IntroActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_storeview.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SignupActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/gcm/GcmIntentService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/Tab1.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/Tab2.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/ViewPagerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponPagerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar_coupon.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/DrawerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/SlidingTabLayout.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/coupon_top.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_usedticket.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/header.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/StoreAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/StoreViewActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_barcode.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/color/selector.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tongs/SummonActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/StoreItem.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_validticket.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/ValidCouponTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_usedticket.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_usedcoupon.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/UsedCouponTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/BarcodeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/translate_top_to_center.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/dialog/PeopleCountDialog.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_peoplecount.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/TicketTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/CouponItem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/CouponAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/StoreAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/CouponActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_validcoupon.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SignupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/ble/BleManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/StoreTab.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/StoreViewActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SplashScreensActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/tool/PushWakeLock.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java" />
       </list>
     </option>
   </component>
@@ -1527,8 +1517,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="443" />
     <option name="y" value="23" />
-    <option name="width" value="1177" />
+    <option name="width" value="1237" />
     <option name="height" value="1023" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -1554,13 +1545,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="UserApp" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1571,6 +1565,126 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ic_launcher.png" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="color" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anim" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1591,7 +1705,7 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tongs" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1612,6 +1726,10 @@
               <option name="myItemId" value="user" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1627,15 +1745,166 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tongs_v10" />
+              <option name="myItemId" value="user" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tongs_v10" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tab" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="item" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gcm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ble" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1648,14 +1917,52 @@
     <property name="android.sdk.path" value="$USER_HOME$/Desktop/Workspace/Android/adt-bundle-mac-x86_64-20131030/android-sdk-macosx" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Workspace/Android/Tongs/Tongs_git" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4100b420c8fdb123" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="598ca5dd06a3c261" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
-    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/JaeCheol/Documents/Workspace/Android/Tongs/Tongs_git/UserApp/app/src/main/java/com/example/jaecheol/tongs/IntroActivity.java" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/JaeCheol/Documents/Workspace/Android/Tongs/Tongs_git/UserApp/app/src/main/java/com/tongs/user/activity/StoreViewActivity.java&#10;gcm notification&#9;null&#9;null&#10;GCM Notice&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tongs.user.view" />
+      <recent name="com.tongs.user.tongs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
+    <configuration default="false" name="StoreViewActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
+      <module name="app" />
+      <option name="ACTIVITY_CLASS" value="com.tongs.user.activity.StoreViewActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_SELECTION_ERROR" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1822,9 +2129,15 @@
       <option name="INVALID_CLOUD_SELECTION_ERROR" value="" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android Application.app" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.StoreViewActivity" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Android Application.StoreViewActivity" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -1852,60 +2165,6 @@
       <created>1431101985681</created>
       <option name="number" value="Default" />
       <updated>1431101985681</updated>
-    </task>
-    <task id="LOCAL-00001" summary="백업">
-      <created>1431102779261</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1431102779261</updated>
-    </task>
-    <task id="LOCAL-00002" summary="navigation drawer 바코드 레이아웃 구성">
-      <created>1431126713351</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1431126713351</updated>
-    </task>
-    <task id="LOCAL-00003" summary="navigation drawer 바코드 갱신">
-      <created>1431135316539</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1431135316540</updated>
-    </task>
-    <task id="LOCAL-00004" summary="navigation drawer 인원수 갱신">
-      <created>1431136791031</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1431136791032</updated>
-    </task>
-    <task id="LOCAL-00005" summary="navigation drawer 리스너 추가, 쿠폰 페이지 연결">
-      <created>1431191911222</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1431191911222</updated>
-    </task>
-    <task id="LOCAL-00006" summary="navigation drawer 바코드 페이지 연결">
-      <created>1431192331182</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1431192331182</updated>
-    </task>
-    <task id="LOCAL-00007" summary="store listview추가">
-      <created>1431228594174</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1431228594174</updated>
-    </task>
-    <task id="LOCAL-00008" summary="store view 배치">
-      <created>1431254878922</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1431254878922</updated>
-    </task>
-    <task id="LOCAL-00009" summary="회원가입 연동">
-      <created>1431262758306</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1431262758306</updated>
     </task>
     <task id="LOCAL-00010" summary="리스트 클릭 시 웹뷰연결">
       <created>1431534840960</created>
@@ -2045,7 +2304,163 @@
       <option name="project" value="LOCAL" />
       <updated>1432324070513</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="packge명 변경, 글로벌 설정 가져오기">
+      <created>1432353545087</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1432353545087</updated>
+    </task>
+    <task id="LOCAL-00034" summary="패키지명 변경">
+      <created>1432355588446</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1432355588446</updated>
+    </task>
+    <task id="LOCAL-00035" summary="패키지명 변경">
+      <created>1432355692810</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1432355692810</updated>
+    </task>
+    <task id="LOCAL-00036" summary="store, coupon 사진 가져오기. (async task)">
+      <created>1432449782719</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1432449782719</updated>
+    </task>
+    <task id="LOCAL-00037" summary="summon activity 매장 이미지 받아오기">
+      <created>1432518464487</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1432518464487</updated>
+    </task>
+    <task id="LOCAL-00038" summary="매장 호출 안정화">
+      <created>1432535857656</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1432535857656</updated>
+    </task>
+    <task id="LOCAL-00039" summary=" 스플래시 추가">
+      <created>1432734907540</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1432734907540</updated>
+    </task>
+    <task id="LOCAL-00040" summary="store list 레이아웃 수정">
+      <created>1432740435214</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1432740435214</updated>
+    </task>
+    <task id="LOCAL-00041" summary="호출 재시도 추가">
+      <created>1432742102187</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1432742102187</updated>
+    </task>
+    <task id="LOCAL-00042" summary="hypermarket dialog수정, 아이콘추가">
+      <created>1432743994271</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1432743994271</updated>
+    </task>
+    <task id="LOCAL-00043" summary="package명 수정">
+      <created>1432747834221</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1432747834221</updated>
+    </task>
+    <task id="LOCAL-00044" summary="handler 취소해도 동작하던 문제해결">
+      <created>1432749000505</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1432749000505</updated>
+    </task>
+    <task id="LOCAL-00045" summary="waiting ticket activity 삭제">
+      <created>1432751093311</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1432751093311</updated>
+    </task>
+    <task id="LOCAL-00046" summary="resource명 변경, used coupon tab에 pull to refrsh 추가">
+      <created>1432881365744</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1432881365744</updated>
+    </task>
+    <task id="LOCAL-00047" summary="ticket layout수정">
+      <created>1432882091820</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1432882091820</updated>
+    </task>
+    <task id="LOCAL-00048" summary="store view 대기정보 연결">
+      <created>1432886791837</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1432886791837</updated>
+    </task>
+    <task id="LOCAL-00049" summary="바코드 페이지 툴바에 뒤로가기 버튼 추가&#10;&#10;">
+      <created>1432887271382</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1432887271382</updated>
+    </task>
+    <task id="LOCAL-00050" summary="스플래시 백그라운드 이미지 수정">
+      <created>1432888441277</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1432888441280</updated>
+    </task>
+    <task id="LOCAL-00051" summary="너무많은걸 수정">
+      <created>1432968499860</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1432968499861</updated>
+    </task>
+    <task id="LOCAL-00052" summary="gcm왔을때 분기 태우기(쿠폰, 티켓)">
+      <created>1433592862742</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1433592862743</updated>
+    </task>
+    <task id="LOCAL-00053" summary="비컨대기추가">
+      <created>1433607489504</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1433607489505</updated>
+    </task>
+    <task id="LOCAL-00054" summary="유닉스 타임 변환">
+      <created>1433653033123</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1433653033124</updated>
+    </task>
+    <task id="LOCAL-00055" summary="쿠폰 이용기간 yyyy/mm/d 형식으로 수정">
+      <created>1433653413881</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1433653413881</updated>
+    </task>
+    <task id="LOCAL-00056" summary="gcm turn시 id가져와서 id 갱신">
+      <created>1433665350745</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1433665350746</updated>
+    </task>
+    <task id="LOCAL-00057" summary="고대기 로고, 스플래시, top logo 수정 ,앱이름 수정">
+      <created>1433666410166</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1433666410166</updated>
+    </task>
+    <task id="LOCAL-00058" summary="고대기 로고, 스플래시, top logo 수정 ,앱이름 수정">
+      <created>1433672924706</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1433672924706</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2058,34 +2473,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1177" height="1023" extended-state="0" />
-    <editor active="true" />
+    <frame x="443" y="23" width="1237" height="1023" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28886437" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2986185" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17521368" sideWeight="0.5066225" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.496337" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.49069768" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28335172" sideWeight="0.66719913" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2752391" sideWeight="0.33280087" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3573222" sideWeight="0.36821705" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13045794" sideWeight="0.5121951" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33262485" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30981258" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.4765708" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43109152" sideWeight="0.75825346" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.497558" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21585903" sideWeight="0.49337748" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31753033" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3573222" sideWeight="0.63178295" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3109151" sideWeight="0.42492014" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24174654" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21497798" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.48722044" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2131,32 +2546,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="navigation drawer 바코드 페이지 연결" />
-    <MESSAGE value="store listview추가" />
-    <MESSAGE value="store view 배치" />
-    <MESSAGE value="회원가입 연동" />
-    <MESSAGE value="리스트 클릭 시 웹뷰연결" />
-    <MESSAGE value="호출상황연결" />
-    <MESSAGE value="액션바 색상변경" />
-    <MESSAGE value="스토어 뷰 연결" />
-    <MESSAGE value="대기하기 버튼 로그" />
-    <MESSAGE value="대기하기 버튼, 인원수 등록 후 서버전송(+GCM 안정화)" />
-    <MESSAGE value="gcm store id 가져오기" />
-    <MESSAGE value="대기표 gcm 연동" />
-    <MESSAGE value="store tab, ticket tab 이름 변경" />
-    <MESSAGE value="쿠폰 탭 추가" />
-    <MESSAGE value="쿠폰 탭 레이아웃 적용" />
-    <MESSAGE value="drawer 바코드 레이아웃 변경" />
-    <MESSAGE value="호출 취소버튼 연결&#10;" />
-    <MESSAGE value="store list 레이아웃 변경" />
-    <MESSAGE value="하이퍼마켓 설정 레이아웃 수정" />
-    <MESSAGE value="valid 쿠폰 연동" />
-    <MESSAGE value="gcm 연결" />
-    <MESSAGE value="하이퍼마켓 dialog추가, 하이퍼마켓별 스토어보기" />
-    <MESSAGE value="바코드 현재인원 drawer와 barcodepage 동기화" />
-    <MESSAGE value="쿠폰에 바코드 추가" />
     <MESSAGE value="쿠폰리스트 주소가져오기 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="쿠폰리스트 주소가져오기 수정" />
+    <MESSAGE value="packge명 변경, 글로벌 설정 가져오기" />
+    <MESSAGE value="패키지명 변경" />
+    <MESSAGE value="store, coupon 사진 가져오기. (async task)" />
+    <MESSAGE value="summon activity 매장 이미지 받아오기" />
+    <MESSAGE value="매장 호출 안정화" />
+    <MESSAGE value=" 스플래시 추가" />
+    <MESSAGE value="store list 레이아웃 수정" />
+    <MESSAGE value="호출 재시도 추가" />
+    <MESSAGE value="hypermarket dialog수정, 아이콘추가" />
+    <MESSAGE value="package명 수정" />
+    <MESSAGE value="handler 취소해도 동작하던 문제해결" />
+    <MESSAGE value="waiting ticket activity 삭제" />
+    <MESSAGE value="resource명 변경, used coupon tab에 pull to refrsh 추가" />
+    <MESSAGE value="ticket layout수정" />
+    <MESSAGE value="store view 대기정보 연결" />
+    <MESSAGE value="바코드 페이지 툴바에 뒤로가기 버튼 추가&#10;&#10;" />
+    <MESSAGE value="스플래시 백그라운드 이미지 수정" />
+    <MESSAGE value="너무많은걸 수정" />
+    <MESSAGE value="gcm왔을때 분기 태우기(쿠폰, 티켓)" />
+    <MESSAGE value="비컨대기추가" />
+    <MESSAGE value="유닉스 타임 변환" />
+    <MESSAGE value="쿠폰 이용기간 yyyy/mm/d 형식으로 수정" />
+    <MESSAGE value="gcm turn시 id가져와서 id 갱신" />
+    <MESSAGE value="고대기 로고, 스플래시, top logo 수정 ,앱이름 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="고대기 로고, 스플래시, top logo 수정 ,앱이름 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2198,63 +2613,264 @@
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
-          <line>102</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/StoreAdapter.java</url>
+          <line>19</line>
           <properties />
-          <option name="timeStamp" value="154" />
+          <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java</url>
+          <line>375</line>
+          <properties />
+          <option name="timeStamp" value="335" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java</url>
           <line>74</line>
           <properties />
-          <option name="timeStamp" value="156" />
+          <option name="timeStamp" value="364" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
-          <line>90</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/MainActivity.java</url>
+          <line>354</line>
           <properties />
-          <option name="timeStamp" value="157" />
+          <option name="timeStamp" value="365" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
-          <line>96</line>
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java</url>
+          <line>66</line>
           <properties />
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="160" />
+          <option name="timeStamp" value="366" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="161" />
+      <option name="time" value="367" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_validticket.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_peoplecount.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="51" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="51" />
-          <folding />
+        <state vertical-scroll-proportion="0.5251397">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tool/ImageDownloaderTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3828829">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/CouponAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.518018">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/IntroActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/CouponItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11261261">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SignupTermsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/tongs/user/activity/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/CouponActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/view/View.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34591195">
+          <caret line="185" column="28" selection-start-line="185" selection-start-column="28" selection-end-line="185" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/java/lang/Integer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34658188">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/StoreAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29966888">
+          <caret line="58" column="98" selection-start-line="58" selection-start-column="98" selection-end-line="58" selection-end-column="98" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/item/StoreItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12417219">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33227345">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/java/lang/ThreadGroup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8489666">
+          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/java/lang/reflect/InvocationTargetException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4054054">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/adapter/ViewPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/ble/BleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.63809526">
+          <caret line="142" column="13" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7372612">
+          <caret line="87" column="42" selection-start-line="87" selection-start-column="42" selection-end-line="87" selection-end-column="42" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_validcoupon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.072231136">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_usedcoupon.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/SlidingTabStrip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/StoreViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="261" column="0" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/StoreTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="395" column="0" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#3894#3895#0" expanded="false" />
+            <element signature="e#3940#3941#0" expanded="false" />
+            <element signature="e#9564#9565#0" expanded="false" />
+            <element signature="e#9614#9615#0" expanded="false" />
+            <element signature="e#9657#9658#0" expanded="false" />
+            <element signature="e#9695#9696#0" expanded="false" />
+            <element signature="e#15894#15895#0" expanded="false" />
+            <element signature="e#15927#15928#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2264,219 +2880,41 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-          <folding />
+          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/example/jaecheol/tongs_v10/ApplicationTest.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/ValidCouponTab.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
+          <caret line="150" column="49" selection-start-line="150" selection-start-column="49" selection-end-line="150" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6896553">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.137931">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_storeview.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar_coupon.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.862069">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/coupon_top.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coupondetail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.206897">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/coupon_bg.9.png">
-      <provider selected="true" editor-type-id="ninepatcheditor">
-        <state />
-      </provider>
-      <provider editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.724138">
-          <caret line="102" column="0" selection-start-line="7" selection-start-column="4" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_barcodegenerate.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signupterms.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_intro.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.172414">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/header.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2142856">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2413793">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_barcode.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6551723">
-          <caret line="73" column="47" selection-start-line="73" selection-start-column="47" selection-end-line="73" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/widget/TextView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23302108">
-          <caret line="559" column="22" selection-start-line="559" selection-start-column="22" selection-end-line="559" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/22.0.0/support-v4-22.0.0-sources.jar!/android/support/v4/app/FragmentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="812" column="29" selection-start-line="812" selection-start-column="29" selection-end-line="812" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.413794">
-          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2486,85 +2924,70 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="63" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="63" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="32" />
-          <folding />
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_usedticket.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.724138">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.232143">
-          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/color/selector.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tool/PushWakeLock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SplashScreensActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
-          <folding />
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_validticket.xml">
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="51" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="51" />
-          <folding />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmBroadcastReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-          <folding />
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/com/example/jaecheol/tongs_v10/ApplicationTest.java">
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/app/Service.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/SummonActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65112543">
+          <caret line="50" column="15" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
+          <folding>
+            <element signature="e#3832#3860#0" expanded="false" />
+            <element signature="e#4034#4820#0" expanded="false" />
+            <element signature="e#4819#4820#0" expanded="false" />
+            <element signature="e#6197#6198#0" expanded="false" />
+            <element signature="e#6230#6231#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="406" column="18" selection-start-line="406" selection-start-column="18" selection-end-line="406" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -2572,39 +2995,72 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="188" column="47" selection-start-line="188" selection-start-column="45" selection-end-line="188" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13089006">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.24590164">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/SignupActivity.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="310" column="0" selection-start-line="310" selection-start-column="0" selection-end-line="318" selection-end-column="40" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/user/tongs/IntroActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/gcm/GcmIntentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45380875">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <element signature="e#2742#2770#0" expanded="true" />
-            <element signature="e#2846#3615#0" expanded="true" />
-            <element signature="e#3614#3615#0" expanded="true" />
-            <element signature="e#4274#4302#0" expanded="true" />
-            <element signature="e#4443#4891#0" expanded="true" />
-            <element signature="e#4890#4891#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/app/IntentService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/Handler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/Looper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-21/android.jar!/android/os/HandlerThread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tongs/user/tab/TicketTab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

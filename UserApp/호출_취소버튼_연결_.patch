@@ -1,0 +1,740 @@
+Index: app/src/main/java/com/example/jaecheol/tongs/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/jaecheol/tongs/MainActivity.java	(revision 9a3d6d8d556446ab929cddac20077aec70b2d073)
++++ app/src/main/java/com/example/jaecheol/tongs/MainActivity.java	(revision )
+@@ -4,6 +4,7 @@
+ import android.content.SharedPreferences;
+ import android.graphics.Bitmap;
+ import android.graphics.BitmapFactory;
++import android.os.AsyncTask;
+ import android.os.Bundle;
+ import android.os.Handler;
+ import android.os.Message;
+@@ -28,7 +29,14 @@
+ import com.example.jaecheol.tab.TicketTab;
+ import com.google.zxing.BarcodeFormat;
+ 
++import org.apache.http.HttpResponse;
++import org.apache.http.client.HttpClient;
++import org.apache.http.client.methods.HttpGet;
++import org.apache.http.impl.client.DefaultHttpClient;
++import org.json.JSONObject;
++
+ import java.io.ByteArrayOutputStream;
++import java.io.InputStream;
+ 
+ 
+ public class MainActivity extends ActionBarActivity
+@@ -73,6 +81,7 @@
+     StoreTab storeTab;
+     TicketTab ticketTab;
+ 
++    private final static int ACTIVITY_SUMMON = 0;
+ 
+     String sid;
+     int number;
+@@ -116,14 +125,24 @@
+         else {
+             Bundle bundle;
+             bundle = intent.getExtras();
++
++            String collapseKey = null;
++
+             sid = bundle.get("store").toString();
+             Log.d("HELLO", "GCM Data (store) : " + sid);
+ 
++            collapseKey = bundle.get("collapseKey").toString();
++            Log.d("HELLO", "collapseKey : " + collapseKey);
++
+             TicketTab ticketTab = (TicketTab)adapter.getTab(1);
+-            if(ticketTab == null)
+-                return;
++            if(ticketTab != null) {
+-            ticketTab.getWaitingTicket();
+-        }
++                ticketTab.getWaitingTicket();
++            }
++            if( collapseKey != null )   {
++                Intent intent2 = new Intent(MainActivity.this, SummonActivity.class);
++                startActivityForResult(intent2, ACTIVITY_SUMMON);
++            }
++        }
+ 
+         pager.setCurrentItem(1, true);
+     }
+@@ -155,14 +174,27 @@
+ 
+             case R.id.action_summon:
+                 Intent intent = new Intent(MainActivity.this, SummonActivity.class);
+-                startActivity(intent);
++                startActivityForResult(intent, ACTIVITY_SUMMON);
+                 break;
+         }
+ 
+         return super.onOptionsItemSelected(item);
+     }
+ 
++    @Override
++    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
++        super.onActivityResult(requestCode, resultCode, intent);
+ 
++        Bundle extraBundle;
++        if( requestCode == ACTIVITY_SUMMON )    {
++            Log.d("HELLO", "SUMMON ACTIVITY CLOSE");
++
++            if( resultCode == RESULT_CANCELED ) {
++                cancelTicket();
++            }
++        }
++    }
++
+     private void setToolbar() {
+ 
+         // Creating The Toolbar and setting it as the Toolbar for the activity
+@@ -295,6 +327,30 @@
+         uid = mPref.getString("uid", null);
+     }
+ 
++    private void cancelTicket() {
++        String url = getText(R.string.api_server)
++                + "user/ticket/remove"
++                + "?token=" + authToken;
++
++        IHttpRecvCallback cb = new IHttpRecvCallback(){
++            public void onRecv(String result) {
++                try {
++                    JSONObject json = new JSONObject(result);
++                    String result_code = json.get("result_code").toString();
++                    Log.d("Hello", result_code);
++                    if( "-1".equals(result_code) )  {
++                        Log.d("HELLO", "대기표 취소 실패");
++                        return;
++                    }
++
++                    Log.d("HELLO", "대기표 취소 성공");
++                }
++                catch(Exception e){}
++            }
++        };
++        new HttpTask(cb).execute(url);
++    }
++
+     private void registerEmail() {
+ 
+         Toast toast = Toast.makeText(getApplicationContext(),
+@@ -364,4 +420,72 @@
+         }
+     }
+ 
++
++    private static String convertStreamToString(InputStream is)
++    {
++        ByteArrayOutputStream baos = new ByteArrayOutputStream(1024*64);
++        byte data[] = new byte[10240];
++        while(true) {
++            try {
++                int len = is.read(data);
++                if (len == -1)
++                    break;
++                baos.write(data, 0, len);
++            } catch (Exception e) { }
++        }
++        String str = new String(baos.toByteArray());
++        return str;
++    }
++
++
++    public InputStream getInputStreamFromUrl(String url) {
++        InputStream content = null;
++        try{
++            HttpClient httpclient = new DefaultHttpClient();
++            HttpResponse response = httpclient.execute(new HttpGet(url));
++            if(response.getStatusLine().getStatusCode() != 200)
++            {
++                // 네트워크 오류입니다.
++                Log.d("Hello", "Network Error");
++            }
++            content = response.getEntity().getContent();
++        } catch (Exception e) {
++            Log.d("[GET REQUEST]", "Network exception", e);
++        }
++        return content;
++
++    }
++
++    interface IHttpRecvCallback
++    {
++        public void onRecv(String result);
++    }
++
++    class HttpTask extends AsyncTask<String , Void , String> {
++
++        IHttpRecvCallback m_cb;
++        HttpTask(IHttpRecvCallback cb)
++        {
++            m_cb = cb;
++        }
++
++        protected String doInBackground(String... params)
++        {
++            InputStream is = getInputStreamFromUrl(params[0]);
++
++            String result = convertStreamToString(is);
++
++            return result;
++        }
++
++        protected void onPostExecute(String result)
++        {
++            Log.d("Hello", result);
++            if(m_cb != null)
++            {
++                m_cb.onRecv(result);
++                return;
++            }
++        }
++    }
+ }
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 9a3d6d8d556446ab929cddac20077aec70b2d073)
++++ .idea/workspace.xml	(revision )
+@@ -27,18 +27,14 @@
+       </layout>
+     </layouts>
+   </component>
++  <component name="AndroidLogFilters">
++    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="drawer 바코드 레이아웃 변경">
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/coupon.png" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/coupon_icon.png" />
+-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/no_num.png" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java" />
++    <list default="true" id="9dbacdb7-feec-4196-af7d-9f3db3ab88be" name="Default" comment="">
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_barcode.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_barcode.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/header.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/header.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+     </list>
+     <ignored path="UserApp.iws" />
+@@ -52,7 +48,7 @@
+   </component>
+   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+   <component name="CreatePatchCommitExecutor">
+-    <option name="PATCH_PATH" value="" />
++    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+   <component name="FavoritesManager">
+@@ -60,41 +56,55 @@
+   </component>
+   <component name="FileEditorManager">
+     <leaf>
+-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
++      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java">
+           <provider selected="true" editor-type-id="text-editor">
++            <state vertical-scroll-proportion="0.20950705">
++              <caret line="159" column="19" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
++              <folding>
++                <element signature="imports" expanded="true" />
++                <element signature="e#8230#8247#0" expanded="true" />
++                <element signature="e#8249#8266#0" expanded="true" />
++                <element signature="e#9028#9029#0" expanded="true" />
++                <element signature="e#9085#9086#0" expanded="true" />
++                <element signature="e#10440#10468#0" expanded="true" />
++                <element signature="e#10581#11153#0" expanded="true" />
++                <element signature="e#11152#11153#0" expanded="true" />
++              </folding>
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file leaf-file-name="UsedCouponTab.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java">
++          <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
++              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+               <folding>
+                 <element signature="imports" expanded="true" />
+-                <element signature="e#7906#7907#0" expanded="true" />
+-                <element signature="e#7963#7964#0" expanded="true" />
+               </folding>
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="BarcodeActivity.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java">
++      <file leaf-file-name="WaitingTicketActivity.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/WaitingTicketActivity.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
++              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="activity_coupon.xml" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_coupon.xml">
++      <file leaf-file-name="SummonActivity.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-2.586207">
+-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="9" selection-end-column="46" />
++            <state vertical-scroll-proportion="0.0">
++              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+               <folding />
+             </state>
+           </provider>
+-          <provider editor-type-id="android-designer">
+-            <state />
+-          </provider>
+         </entry>
+       </file>
+       <file leaf-file-name="activity_barcode.xml" pinned="false" current-in-tab="false">
+@@ -136,46 +146,31 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="CouponActivity.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponActivity.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.0">
+-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+-              <folding>
+-                <element signature="imports" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+       <file leaf-file-name="TicketTab.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java">
+           <provider selected="true" editor-type-id="text-editor">
+             <state vertical-scroll-proportion="0.0">
+-              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
++              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="205" selection-end-column="5" />
+               <folding />
+             </state>
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="tab_store.xml" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml">
++      <file leaf-file-name="StoreTab.java" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/StoreTab.java">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-18.62069">
+-              <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
++            <state vertical-scroll-proportion="0.0">
++              <caret line="443" column="38" selection-start-line="419" selection-start-column="8" selection-end-line="443" selection-end-column="38" />
+               <folding />
+             </state>
+           </provider>
+-          <provider editor-type-id="android-designer">
+-            <state />
+-          </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="item_store.xml" pinned="false" current-in-tab="true">
++      <file leaf-file-name="item_store.xml" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store.xml">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.93587524">
+-              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
++            <state vertical-scroll-proportion="-11.896552">
++              <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+               <folding />
+             </state>
+           </provider>
+@@ -1009,7 +1004,6 @@
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/store/StoreAdapter.java" />
+         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_coupon.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_coupondetail.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponDetailActivity.java" />
+@@ -1045,14 +1039,15 @@
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/CouponListActivity.java" />
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java" />
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponAdapter.java" />
+-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_ticket.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_store.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_barcode.xml" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/header.xml" />
+-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" />
+         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_store.xml" />
++        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java" />
++        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java" />
++        <option value="$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java" />
+       </list>
+     </option>
+   </component>
+@@ -1067,9 +1062,9 @@
+     <order />
+   </component>
+   <component name="ProjectFrameBounds">
+-    <option name="y" value="-1057" />
+-    <option name="width" value="1920" />
+-    <option name="height" value="1053" />
++    <option name="y" value="-1027" />
++    <option name="width" value="1680" />
++    <option name="height" value="1023" />
+   </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <OptionsSetting value="true" id="Add" />
+@@ -1701,7 +1696,13 @@
+       <option name="project" value="LOCAL" />
+       <updated>1432019737745</updated>
+     </task>
+-    <option name="localTasksCounter" value="22" />
++    <task id="LOCAL-00022" summary="drawer 바코드 레이아웃 변경">
++      <created>1432026363124</created>
++      <option name="number" value="00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1432026363124</updated>
++    </task>
++    <option name="localTasksCounter" value="23" />
+     <servers />
+   </component>
+   <component name="TodoView">
+@@ -1714,30 +1715,30 @@
+     </todo-panel>
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="0" y="-1057" width="1920" height="1053" extended-state="6" />
+-    <editor active="false" />
++    <frame x="0" y="-1027" width="1680" height="1023" extended-state="6" />
++    <editor active="true" />
+     <layout>
+       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34078807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3907204" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29242262" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
++      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29217198" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2986185" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
+-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17521368" sideWeight="0.5066225" order="2" side_tool="true" content_ui="tabs" />
+       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32855567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32337245" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3094984" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33406836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30871004" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15282215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32123798" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17521368" sideWeight="0.49337748" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32083791" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+@@ -1786,44 +1787,22 @@
+       <breakpoints>
+         <line-breakpoint enabled="true" type="java-line">
+           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java</url>
+-          <line>273</line>
++          <line>131</line>
+           <properties />
+-          <option name="timeStamp" value="25" />
++          <option name="timeStamp" value="82" />
+         </line-breakpoint>
+         <line-breakpoint enabled="true" type="java-line">
+           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java</url>
+-          <line>119</line>
++          <line>188</line>
+           <properties />
+-          <option name="timeStamp" value="82" />
++          <option name="timeStamp" value="97" />
+         </line-breakpoint>
+       </breakpoints>
+-      <option name="time" value="97" />
++      <option name="time" value="98" />
+     </breakpoint-manager>
+     <watches-manager />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_storeview.xml">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+-        </state>
+-      </provider>
+-      <provider editor-type-id="android-designer">
+-        <state />
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="304" column="94" selection-start-line="304" selection-start-column="94" selection-end-line="304" selection-end-column="94" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-            <element signature="e#7906#7907#0" expanded="true" />
+-            <element signature="e#7963#7964#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SignupTermsActivity.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+@@ -2082,14 +2061,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/StoreTab.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/adapter/CouponAdapter.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-14.555555">
+@@ -2102,16 +2073,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+-          <folding>
+-            <element signature="imports" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_usedticket.xml">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-4.6551723">
+@@ -2217,14 +2178,6 @@
+         <state />
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/BarcodeActivity.java">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+@@ -2266,27 +2219,74 @@
+         <state />
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java">
++    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store.xml">
+       <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="-11.896552">
++          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
++          <folding />
++        </state>
++      </provider>
++      <provider editor-type-id="android-designer">
++        <state />
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/WaitingTicketActivity.java">
++      <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+-          <caret line="271" column="33" selection-start-line="271" selection-start-column="33" selection-end-line="271" selection-end-column="33" />
++          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.0">
++          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/StoreTab.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.0">
++          <caret line="443" column="38" selection-start-line="419" selection-start-column="8" selection-end-line="443" selection-end-column="38" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/UsedCouponTab.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.0">
++          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+           <folding>
+             <element signature="imports" expanded="true" />
+-            <element signature="e#7906#7907#0" expanded="true" />
+-            <element signature="e#7963#7964#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_store.xml">
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tab/TicketTab.java">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.93587524">
+-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
++        <state vertical-scroll-proportion="0.0">
++          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="205" selection-end-column="5" />
+           <folding />
+         </state>
+       </provider>
+-      <provider editor-type-id="android-designer">
+-        <state />
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jaecheol/tongs/MainActivity.java">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.20950705">
++          <caret line="159" column="19" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
++          <folding>
++            <element signature="imports" expanded="true" />
++            <element signature="e#8230#8247#0" expanded="true" />
++            <element signature="e#8249#8266#0" expanded="true" />
++            <element signature="e#9028#9029#0" expanded="true" />
++            <element signature="e#9085#9086#0" expanded="true" />
++            <element signature="e#10440#10468#0" expanded="true" />
++            <element signature="e#10581#11153#0" expanded="true" />
++            <element signature="e#11152#11153#0" expanded="true" />
++          </folding>
++        </state>
+       </provider>
+     </entry>
+   </component>
+\ No newline at end of file
+Index: app/src/main/java/com/example/jaecheol/tab/TicketTab.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/jaecheol/tab/TicketTab.java	(revision 9a3d6d8d556446ab929cddac20077aec70b2d073)
++++ app/src/main/java/com/example/jaecheol/tab/TicketTab.java	(revision )
+@@ -154,7 +154,6 @@
+     }
+ 
+ 
+-
+     public InputStream getInputStreamFromUrl(String url) {
+         InputStream content = null;
+         try{
+Index: app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java	(revision 9a3d6d8d556446ab929cddac20077aec70b2d073)
++++ app/src/main/java/com/example/jaecheol/tongs/SummonActivity.java	(revision )
+@@ -1,6 +1,7 @@
+ package com.example.jaecheol.tongs;
+ 
+ import android.content.Context;
++import android.content.Intent;
+ import android.os.Bundle;
+ import android.os.Vibrator;
+ import android.support.v7.app.ActionBarActivity;
+@@ -13,11 +14,13 @@
+ public class SummonActivity extends ActionBarActivity
+                             implements View.OnClickListener
+ {
++    Intent intent;
+ 
+     Vibrator vibe;
+     long[] vibePattern = {1000, 1500};
+ 
+     Button checkButton;
++    Button cancelButton;
+ 
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+@@ -26,30 +29,44 @@
+ 
+         summonInit();
+ 
+-        callSummon();
++        vibrate(true);
+     }
+ 
+     private void summonInit()   {
++        intent = new Intent();
+ 
+         vibe = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
++
+         checkButton = (Button)findViewById(R.id.id_checkButton);
+         checkButton.setOnClickListener(this);
++
++        cancelButton = (Button)findViewById(R.id.id_cancelButton);
++        cancelButton.setOnClickListener(this);
+     }
+ 
+-    public void callSummon()   {
++    public void vibrate(boolean flag)   {
++        if( flag ) {
+-        vibe.vibrate(vibePattern, 0);
+-    }
++            vibe.vibrate(vibePattern, 0);
++        }
+-
+-    public void checkSummon()   {
++        else    {
+-        vibe.cancel();
+-    }
++            vibe.cancel();
++        }
++    }
+ 
+     public void onClick(View v) {
+         switch (v.getId()) {
+ 
+             case R.id.id_checkButton:
+-                checkSummon();
++                this.setResult(RESULT_OK);
+                 break;
++
++            case R.id.id_cancelButton:
++                this.setResult(RESULT_CANCELED);
++                break;
+         }
++
++        vibrate(false);
++
++        this.finish();
+     }
+ }

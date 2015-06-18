@@ -17,7 +17,7 @@
         android:background="@drawable/btn_o"
         android:layout_gravity="center_horizontal"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="55dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 
@@ -40,7 +40,7 @@
         android:textStyle="bold"
         android:id="@+id/textView6"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/id_summonImageView"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        android:text="매니저에게 바코드를 보여주세요"
+        android:text="매니저에게 대기표를 보여주세요"
         android:textStyle="bold"
         android:id="@+id/textView7"
         android:layout_below="@id/textView10"
@@ -68,9 +68,33 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:id="@+id/imageView"
-        android:background="@drawable/wallpaper"
+        android:scaleType="fitXY"
+        android:id="@+id/id_summonImageView"
+        android:background="#000000"
         android:layout_alignParentStart="true"
         android:layout_marginTop="43dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="53dp"
+        android:text="대기 확인"
+        android:textStyle="bold"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/id_cancelButton"
+        android:layout_alignParentEnd="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="53dp"
+        android:text="대기 취소"
+        android:textStyle="bold"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/id_cancelButton"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

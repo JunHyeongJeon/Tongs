@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_popup_root"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:background="@color/colorBackground">
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/dialog_minusButton"
+        android:background="@color/colorBackground"
+        android:text="-"
+        android:textSize="76dp"
+        android:textStyle="bold"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+    <Button
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="3dp"
+        android:id="@+id/dialog_plusButton"
+        android:background="@color/colorBackground"
+        android:text="+"
+        android:textSize="64dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_alignBottom="@+id/dialog_peopleText"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="1"
+        android:textSize="96dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/dialog_peopleText" />
+</RelativeLayout>

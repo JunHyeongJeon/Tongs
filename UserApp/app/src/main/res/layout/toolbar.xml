@@ -12,12 +12,12 @@
     <RelativeLayout
         android:id="@+id/action_bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
+        android:layout_height="match_parent"
+        android:layout_marginRight="12dp" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
+            android:layout_width="156dp"
+            android:layout_height="38dp"
             android:src="@drawable/toplogo_white"
             android:layout_centerHorizontal="true"/>
 

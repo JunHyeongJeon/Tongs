@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:layout_marginTop="10dp">
-
+    android:layout_height="96dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp">
 
     <ImageView
-        android:layout_width="71dp"
-        android:layout_height="45.5dp"
+        android:layout_width="82dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="20dp"
-        android:src="@drawable/food"
-        android:id="@+id/image"
+        android:scaleType="fitXY"
+        android:src="@drawable/placeholder"
+        android:id="@+id/id_couponImage"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
@@ -20,7 +21,7 @@
         android:layout_marginLeft="12dp"
         android:orientation="vertical"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image">
+        android:layout_toEndOf="@+id/id_couponImage">
 
         <TextView
             android:id="@+id/id_couponTitle"
@@ -28,17 +29,16 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="쿠폰 이름"
-            android:textSize="14dp"
+            android:textSize="16dp"
             android:textStyle="bold"
-            android:textColor="#23272e"
-            />
+            android:textColor="#23272e" />
         <TextView
-            android:id="@+id/id_couponContent"
-            android:layout_width="wrap_content"
+            android:id="@+id/id_couponDescription"
+            android:layout_width="156dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceInverse"
             android:text="쿠폰 소개"
-            android:textSize="12dp"
+            android:textSize="13dp"
             android:textColor="#23272e"
             android:layout_alignParentBottom="true"/>
         <LinearLayout
@@ -46,12 +46,12 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
                 android:src="@drawable/location_icon"/>
 
             <TextView
-                android:id="@+id/id_couponItemLocation"
+                android:id="@+id/id_couponLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dp"
@@ -68,9 +68,13 @@
 
     <ImageView
         android:layout_width="60dp"
-        android:layout_height="35dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="18dp"
         android:layout_marginRight="12dp"
-        android:src="@drawable/coupon_disable"
+        android:id="@+id/id_validView"
+        android:background="@drawable/coupon_invalid"
+        android:scaleType="fitXY"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
 
