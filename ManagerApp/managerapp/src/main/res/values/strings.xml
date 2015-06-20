@@ -188,6 +188,7 @@
     <string name="admin_server">http://tongs.kr/admin/login_token.php?</string>
 
     <string name="admin_store_setting">/admin/store_edit.php</string>
+    <string name="admin_store_coupon_list">/admin/coupon_view.php</string>
     <!--email=somabell15@gmail.com&password=soma2015-->
 
     <!-- ClientManagementActivity  -->

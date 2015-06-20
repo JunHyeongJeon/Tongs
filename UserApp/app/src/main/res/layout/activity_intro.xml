@@ -3,24 +3,27 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorBackground">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo_xhdpi"/>
-
+        android:layout_height="fill_parent"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="70dp"
+            android:id="@+id/intro_image"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/user_logo"/>
+    </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:text="시작하기"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="110dp"
         android:background="@drawable/btn_solid"
         android:textColor="#ffffff"
         android:textStyle="bold"

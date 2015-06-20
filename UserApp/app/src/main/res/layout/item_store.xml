@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="96dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp">
+
+
+    <ImageView
+        android:layout_width="82dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/placeholder"
+        android:id="@+id/id_storeImageView"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/id_storeImageView">
+
+        <TextView
+            android:id="@+id/id_storeName"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="매장 이름"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="#23272e"
+            />
+        <TextView
+            android:id="@+id/id_storeDescription"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceInverse"
+            android:text="매장 소개"
+            android:textSize="13dp"
+            android:textColor="#23272e"
+            android:layout_alignParentBottom="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:src="@drawable/location_icon"/>
+
+            <TextView
+                android:id="@+id/id_storeLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textAppearance="?android:attr/textAppearanceInverse"
+                android:text="매장 위치"
+                android:textSize="10dp"
+                android:textColor="#888888"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="109.67" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:background="@drawable/ticket_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/id_storeNumber"
+            android:layout_marginBottom="-5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대기인원"
+            android:textSize="8sp"
+            android:textColor="#888888"
+            android:id="@+id/textView3" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

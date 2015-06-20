@@ -265,7 +265,7 @@ public class SlidingTabsBasicFragment extends Fragment implements GlobalVar {
         url = getString(R.string.api_server) +
                 getString(R.string.api_store_ticket_list) +
                 "token=" + mToken +
-                "&pivot=" + "20150610" +
+                "&pivot=" + "20150619" +
                 "&type=" + type;
 
         requestOnUIThread(PROTOCOL_STATUS_GET_LIST, url, new OnHttpReceive() {

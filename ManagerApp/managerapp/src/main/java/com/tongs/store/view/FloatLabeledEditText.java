@@ -39,7 +39,7 @@ public class FloatLabeledEditText extends LinearLayout {
 
     private String hint;
     private int gravity;
-    private int inputType;
+    public int inputType;
     private int imeOptions;
     private int imeActionId;
     private int textLines;

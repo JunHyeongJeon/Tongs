@@ -44,6 +44,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ImageView;
@@ -348,7 +349,7 @@ public class ClientManagementActivity extends ActionBarActivity
         boolean isFirstType = true;
         View headerView = null;
             headerView = prepareHeaderView(R.layout.header_navigation_drawer_1,
-                    "http://pengaja.com/uiapptemplate/avatars/0.jpg",
+                    "http://cfile8.uf.tistory.com/image/1971F9375017F416058976",
                     mEmail);
 
         BaseAdapter adapter = new DrawerAdapter(this, mDrawerItems, isFirstType);
@@ -402,7 +403,7 @@ public class ClientManagementActivity extends ActionBarActivity
             //moveActivity(CouponActivity.class);
         }
         String drawerTitle = getString(mDrawerItems.get(position - 1).getTitle());
-        Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
+  //      Toast.makeText(this, "You selected " + drawerTitle + " at position: " + position, Toast.LENGTH_SHORT).show();
 
         mDrawerList.setItemChecked(position, true);
    //     setTitle(mDrawerItems.get(position - 1).getTitle());
@@ -1474,6 +1475,7 @@ public class ClientManagementActivity extends ActionBarActivity
 
 
             mPhoneNumberEdit = (FloatLabeledEditText) findViewById(R.id.client_add_phone_number);
+            mPhoneNumberEdit.inputType = 1;
         }
 
     }

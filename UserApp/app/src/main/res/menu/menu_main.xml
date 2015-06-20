@@ -5,6 +5,12 @@
     <!--<item android:id="@+id/action_registerEmail" android:title="이메일 등록"-->
         <!--android:orderInCategory="100" app:showAsAction="never" />-->
 
+    <item android:id="@+id/action_renew" android:title="새로고침"
+        android:orderInCategory="100" app:showAsAction="never" />
+
     <item android:id="@+id/action_logout" android:title="로그아웃"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/action_summon" android:title="호출"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>

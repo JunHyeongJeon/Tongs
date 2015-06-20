@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="178dp"
     android:id="@+id/id_drawerTop"
-    android:background="@drawable/profile_background"
+    android:background="@drawable/no_num"
     android:orientation="vertical"
     android:weightSum="1">
 
@@ -19,9 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="16dp"
-            android:textColor="@android:color/black"
+            android:layout_marginBottom="10dp"
+            android:textColor="#23272e"
             android:text="나의 바코드"
-            android:textSize="18dp"
+            android:textSize="18sp"
+
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -30,21 +32,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="#ffffff">
+        android:background="@android:color/white">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/id_minusButton"
             android:text="-"
-            android:textSize="24dp"
-            android:textStyle="bold"/>
+            android:textSize="48dp"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:background="@android:color/white"
+            style="?android:attr/borderlessButtonStyle"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/id_currentNumText"
             android:text="현재 인원수 0명"
-            android:textSize="18dp"
+            android:textSize="18sp"
+            android:textColor="#666666"
             android:textStyle="bold"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
@@ -52,20 +58,21 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:id="@+id/id_plusButton"
             android:text="+"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            android:textSize="36dp"
+            android:textStyle="bold"
+            android:textColor="#666666"
+            android:background="@android:color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
-    <!--<de.hdodenhof.circleimageview.CircleImageView-->
-        <!--android:layout_width="70dp"-->
-        <!--android:layout_height="70dp"-->
-        <!--android:layout_marginLeft="16dp"-->
-        <!--android:layout_marginTop="38dp"-->
-        <!--android:id="@+id/circleView"-->
-        <!--android:src="@drawable/profile"-->
-        <!--/>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBackground" />
+
 </RelativeLayout>

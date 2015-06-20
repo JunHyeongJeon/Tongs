@@ -79,7 +79,8 @@
             app:fletTextColor="@color/login_edit_text_color"
             android:id= "@+id/client_add_phone_number"
             android:layout_marginBottom="20dp"
-            android:textSize="10sp">
+            android:textSize="10sp"
+            android:inputType="number">
 
             <TextView
                 android:layout_width="match_parent"

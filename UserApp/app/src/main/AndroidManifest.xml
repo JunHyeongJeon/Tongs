@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jaecheol.tongs" >
+    package="com.tongs.user.activity" >
 
     <!-- GCM connects to Google Services. -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -43,7 +43,7 @@
 
 
         <activity
-            android:name=".IntroActivity"
+            android:name="com.tongs.user.activity.SplashScreensActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -54,7 +54,7 @@
         </activity>
 
         <activity
-            android:name=".SignupTermsActivity"
+            android:name="com.tongs.user.activity.IntroActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -65,7 +65,7 @@
         </activity>
 
         <activity
-            android:name=".SignupActivity"
+            android:name="com.tongs.user.activity.SignupTermsActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -76,7 +76,7 @@
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.tongs.user.activity.SignupActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -87,7 +87,7 @@
         </activity>
 
         <activity
-            android:name=".StoreViewActivity"
+            android:name="com.tongs.user.activity.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -98,7 +98,7 @@
         </activity>
 
         <activity
-            android:name=".WaitingTicketActivity"
+            android:name="com.tongs.user.activity.StoreViewActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -109,7 +109,7 @@
         </activity>
 
         <activity
-            android:name=".CouponActivity"
+            android:name="com.tongs.user.activity.CouponActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -120,9 +120,31 @@
         </activity>
 
         <activity
-            android:name=".BarcodeActivity"
+            android:name="com.tongs.user.activity.SummonActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tongs.user.tab.ValidCouponTab"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tongs.user.activity.BarcodeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_VIEW" />
 
@@ -141,7 +163,7 @@
          so only GCM services can send data messages for the app.
        -->
         <receiver
-            android:name="com.example.jaecheol.gcm.GcmBroadcastReceiver"
+            android:name="com.tongs.user.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <!-- Receives the actual messages. -->
@@ -152,7 +174,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.example.jaecheol.gcm.GcmReceiver" >
+        <receiver android:name="com.tongs.user.gcm.GcmReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.GCMRECV" />
                 <data android:scheme="sample"/>
@@ -166,7 +188,7 @@
           By default, it must be named .GCMIntentService, unless the
           application uses a custom BroadcastReceiver that redefines its name.
         -->
-        <service android:name="com.example.jaecheol.gcm.GcmIntentService" />
+        <service android:name="com.tongs.user.gcm.GcmIntentService" />
 
     </application>
 
