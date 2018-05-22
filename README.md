@@ -1,4 +1,4 @@
 # Tongs
 
-Korean Project
+Next-generation expectations system
 
